@@ -1,0 +1,311 @@
+/* coolstyle CSS v4.2.1 */
+
+@charset "utf-8";
+
+/*
+@font-face {
+    font-family: 'Kristen';
+    src: url("/Fonts/Kristen.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Emulogic';
+    src: url("/Fonts/emulogic.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arcade';
+    src: url("/Fonts/Arcade Classic.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Adore';
+    src: url("/Fonts/Adore64.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Annie';
+    src:url("/Fonts/AnnieUseYourTelescope.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DeepDown';
+    src:url("/Fonts/DeepDown.ttf"); 
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Moria';
+    src:url("/Fonts/MoriaCitadel.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "C64";
+    src: url("/Fonts/C64_Pro-STYLE.ttf");
+    font-display: swap;
+}
+*/
+
+/* Overrriding Bootstrap */
+
+body {
+    /*background: linear-gradient(90deg, #ff7f00, #ffc04d, #ff7f00) !important;*/
+    background: linear-gradient(90deg, #ff7f00, #fdb32d, #ff7f00) !important;
+    font-family: "roboto-slab", serif !important;
+}
+
+fieldset, legend {
+    all: revert;
+}
+
+/* changing bootstrap*/
+
+.dropdown a:hover {
+    background-color: #a71a0b;
+}
+
+a.nav-link.white_text:hover {
+    background-color: #a71a0b;
+}
+
+/* coolschool colors */
+h1, h2 {
+    text-shadow: 1px 1px #666 !important;
+}
+
+.coolback {
+    background-color: #ffc04d !important;
+    /*background-color: #ff7f00 !important;*/
+}
+
+.coolspan {
+    background-color: #a71a0b !important;
+    color: #fff !important;
+}
+
+.coolspan_light {
+    /*background-color: #ff7f00 !important;*/
+    background-color: #D34D06 !important;
+    color: #fff !important;
+}
+
+.coollist {
+    list-style-image: url(/Images/eyes16.svg);
+}
+
+.coollist li {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.4rem;
+}
+
+span.cool {
+    font-family: consolas, serif;
+}
+
+.kidfont {
+    font-family: 'Kristen', monospace;
+}
+
+.cool_page {
+    /*background: #ffc04d !important;*/
+    /*background: #fdb32d !important;*/
+    border-radius: 0.5rem !important;
+}
+
+.cool_page_trans {
+    border-radius: 0.5rem !important;
+}
+
+.btn-coolbutton {
+    background: #971b0d !important;
+    color: #fff !important;
+}
+
+.cool_dark_orange {
+    background: #971b0d !important;
+    color: #fff !important;
+}
+
+.white_text {
+    color: #fff !important;
+}
+
+.cool_radius {
+    border-radius: 0.25rem !important;
+}
+
+.about p {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    border-top: 2px #AAA ridge !important;
+    border-bottom: 2px #AAA ridge !important;
+}
+
+.cool_shadow {
+    /* unused */
+    box-shadow: 2px 0px 5px -1px rgba(255, 127, 0, 1);
+}
+
+/* icons */
+
+.cool_icon {
+    width: 5rem;
+    height: 5rem;
+}
+
+.big-icon {
+    font-size: 3rem;
+}
+
+/* index page */
+
+.covered {
+    position: relative;
+    padding: 30px;
+}
+
+.covered-img {
+    background: url('/Images/index_background.jpg');
+    opacity: 0.15;
+    background-size: cover;
+    /* cover will scale the image so that the smallest dimension = the widest dimension of the box */
+    background-position: center;
+    /* vs the top-left that is default */
+    position: absolute;
+    /* take me out of the render context! let me define my own positioning */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* this could also work with width:100%; height:100%;, but is simpler */
+}
+
+/* Games compatibility and specifics */
+
+
+.winTrans {
+    width: 960px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 32px 32px;
+    box-sizing: content-box;
+}
+
+.layer {
+    position: absolute;
+    left: 0;
+}
+
+#hiscore {
+    border: 1px dotted #888;
+    border-radius: 13px;
+    padding: 20px;
+    box-shadow: 2px 3px 3px 3px #333;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    white-space: pre;
+    width: 250px;
+    margin-top: 8px;
+    line-height: 1.2;
+}
+
+#SC {
+    float: right;
+}
+
+.gw {
+    float: left;
+}
+
+.gh {
+    float: none;
+    clear: both;
+}
+
+.setup_container {
+    padding: 10px;
+    float: left;
+    margin: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.version {
+    font-family: Consolas, serif !important;
+    font-size: 0.7rem !important;
+}
+
+.section {
+    display: none;
+    font-family: Consolas, serif !important;
+    font-size: 0.7rem !important;
+}
+
+.section fieldset {
+    border: 2px #AAA ridge;
+    border-radius: 7px !important;
+    width: 600px !important;
+}
+
+.section fieldset p {
+    font-size: 0.7rem !important;
+}
+
+.section fieldset legend {
+    font-size: 0.7rem !important;
+}
+
+#gameResolutionAlert {
+    width: 95%;
+    background: #ff0000;
+    margin: auto;
+    margin-top: 12px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+/********** ExtraLarge devices only **********/
+
+@media (min-width: 1200px) {
+    .hide_extraLarge {
+        display: none;
+    }
+}
+
+/********** Large devices only **********/
+
+@media (min-width: 1048px) and (max-width: 1199px) {
+    .hide_large {
+        display: none;
+    }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1047px) {
+    .hide_medium {
+        display: none;
+    }
+}
+
+/********** XS devices only **********/
+
+@media (max-width: 576px) {
+    .force_width {
+        width: 90%;
+    }
+
+    .row {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}

@@ -587,6 +587,7 @@ const WebGL = {
         gl.enableVertexAttribArray(this.pickProgram.attribLocations.vertexPosition);
     },
     renderDungeon() {
+        //console.info("render dungeon");
         const gl = this.CTX;
         gl.useProgram(this.program.program);
         this.enableAttributes(gl);
@@ -1104,10 +1105,18 @@ class $3D_player {
             }
             if (typeof (this.scale) === "number") this.scale = new Float32Array([this.scale, this.scale, this.scale]);
             this.setModel();
-            this.matrixUpdate();
             this.minY = this.model.meshes[0].primitives[0].positions.min[1] * this.scale[1];
+            this.matrixUpdate();
             WebGL.playerList.push(this);
         };
+        this.setMode("idle");
+    }
+    setMode(mode) {
+        /**
+         * idle
+         * walking
+         */
+        this.mode = mode;
     }
     setModel() {
         this.model = $3D_MODEL[this.model];
@@ -1151,6 +1160,8 @@ class $3D_player {
             this.matrixUpdate();
             this.actor.animate(Date.now());
         }
+        if (this.mode === "idle") this.birth = Date.now();
+        this.setMode('walking');
     }
     setSwordTip() {
         this.swordTipPosition = this.pos.translate(this.dir, this.r);
@@ -1159,6 +1170,7 @@ class $3D_player {
         this.dir = dir;
         if (this.pos) this.setSwordTip();
         if (this.camera) this.camera.update();
+        this.setMode('walking');
     }
     setMap(map) {
         this.map = map;
@@ -1206,7 +1218,6 @@ class $3D_player {
 
         if (check) {
             this.setPos(nextPos3);
-            //this.actor.animate(Date.now());
         }
     }
     strafe(rotDirection, lapsedTime) {
@@ -1291,7 +1302,7 @@ class $3D_player {
         }
     }
     draw(gl) {
-        console.info("drawing 3d player HERO");
+        //console.warn("mode:", this.mode);
         const program = WebGL.model_program.program;
         //uniforms
         //material
@@ -1316,7 +1327,16 @@ class $3D_player {
 
         //u_jointMat
         const uJointMat = gl.getUniformLocation(program, "u_jointMat");
-        gl.uniformMatrix4fv(uJointMat, false, this.jointMatrix);
+        switch (this.mode) {
+            case "idle":
+                gl.uniformMatrix4fv(uJointMat, false, this.restPose);
+                break;
+            case "walking":
+                gl.uniformMatrix4fv(uJointMat, false, this.jointMatrix);
+                break;
+            default:
+                throw Error(`3D played mode error: ${this.mode}`);
+        }
 
         for (let mesh of this.model.meshes) {
             for (let [index, primitive] of mesh.primitives.entries()) {

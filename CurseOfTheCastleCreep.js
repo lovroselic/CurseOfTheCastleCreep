@@ -178,7 +178,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.01.01",
+    VERSION: "0.01.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -663,6 +663,9 @@ const HERO = {
             this.scroll = new Inventory();
         }
     },
+    concludeAction() {
+        this.player.setMode("idle");
+    }
 };
 
 const GAME = {
@@ -909,6 +912,7 @@ const GAME = {
         if (interaction) GAME.processInteraction(interaction);
 
         GAME.frameDraw(lapsedTime);
+        HERO.concludeAction();
         if (HERO.dead) GAME.checkIfProcessesComplete();
     },
     processInteraction(interaction) {

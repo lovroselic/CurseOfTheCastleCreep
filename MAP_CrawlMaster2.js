@@ -852,7 +852,7 @@ const SPAWN = {
     },
     studyMonsters() {
         const monsterLocations = [
-            { grid: new FP_Grid(5.5, 6.5), dir: UP, type: MONSTER_TYPE.MissGalaxyDemo },
+            { grid: new FP_Grid(5.5, 4.5), dir: UP, type: MONSTER_TYPE.MissGalaxyDemo },
             { grid: new FP_Grid(12.5, 4.5), dir: UP, type: MONSTER_TYPE.MissGalaxyDemo },
             { grid: new FP_Grid(11.5, 4.5), dir: UP, type: MONSTER_TYPE.SkeletonDemo },
         ];
@@ -1479,7 +1479,7 @@ const MONSTER_TYPE = {
         attackSound: "HumanAttack1",
         hurtSound: "Ow",
         behaviourArguments: [5, ["wanderer"], 3, ["advancer"]],
-        moveSpeed: 0.001,
+        moveSpeed: 0.01,
         material: MATERIAL.standard,
     },
     SkeletonDemo: {
@@ -1499,7 +1499,7 @@ const MONSTER_TYPE = {
         attackSound: "MonsterAttack2",
         hurtSound: "MonsterHurt2",
         behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 0.001,
+        moveSpeed: 0.01,
         material: MATERIAL.standardShine,
     },
 };

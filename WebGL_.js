@@ -1114,6 +1114,7 @@ class $3D_player {
         this.jointMatrix = Float32Array.from(this.model.skins[0].jointMatrix);
         this.restPose = Float32Array.from(this.model.skins[0].jointMatrix);
         this.boundingBox = new BoundingBox(this.model.meshes[0].primitives[0].positions.max, this.model.meshes[0].primitives[0].positions.min, this.scale);
+        this.birth = Date.now();
         this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
         const dZ = (this.boundingBox.max.z - this.boundingBox.min.z) / 2;
         const dX = (this.boundingBox.max.x - this.boundingBox.min.x) / 2;
@@ -1145,8 +1146,11 @@ class $3D_player {
     setPos(position) {
         this.pos = position;
         this.setSwordTip();
-        if (this.camera) this.camera.update();
-        this.matrixUpdate();
+        if (this.camera) {
+            this.camera.update();
+            this.matrixUpdate();
+            this.actor.animate(Date.now());
+        }
     }
     setSwordTip() {
         this.swordTipPosition = this.pos.translate(this.dir, this.r);
@@ -1202,6 +1206,7 @@ class $3D_player {
 
         if (check) {
             this.setPos(nextPos3);
+            //this.actor.animate(Date.now());
         }
     }
     strafe(rotDirection, lapsedTime) {
@@ -1357,7 +1362,7 @@ class $3D_player {
                     gl.bindTexture(gl.TEXTURE_2D, this.model.textures[index]);
                 }
 
-                
+
                 gl.drawElements(gl.TRIANGLES, primitive.indices.count, gl[primitive.indices.type], 0);
             }
         }

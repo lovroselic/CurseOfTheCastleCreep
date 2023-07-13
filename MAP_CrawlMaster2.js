@@ -1802,5 +1802,6 @@ const HERO_TYPE = {
         scale: 1.82 / 2 ** 2,
         rotateToNorth: Math.PI,
         material: MATERIAL.standard,
+        moveSpeed: 2.0
     }
 };

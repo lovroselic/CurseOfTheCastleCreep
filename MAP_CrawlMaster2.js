@@ -1794,3 +1794,13 @@ const SCROLL_TYPE = {
     Luck: 100,
     HalfLife: 50
 };
+
+const HERO_TYPE = {
+    GhostFace: {
+        name: "GhostFace",
+        model: "GhostFace",
+        scale: 1.82 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        material: MATERIAL.standard,
+    }
+};

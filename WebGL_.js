@@ -88,6 +88,7 @@ const WebGL = {
     targetTexture: null,
     depthBuffer: null,
     frameBuffer: null,
+    playerList: [],
     staticDecalList: [DECAL3D, LIGHTS3D, BUMP3D],
     interactiveDecalList: [INTERACTIVE_DECAL3D],
     dynamicDecalList: [GATE3D, ITEM3D],
@@ -594,7 +595,7 @@ const WebGL = {
         gl.useProgram(this.program.program);
         gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 
-        /**  draw per world slice */
+        /**  draw per slice of the world  */
 
         //wall
         gl.drawElements(gl.TRIANGLES, this.world.offset.wall_count, gl.UNSIGNED_SHORT, this.world.offset.wall_start * 2);
@@ -666,17 +667,26 @@ const WebGL = {
         }
 
         //pov 
-        for (const pov of INTERFACE3D.POOL) {
-            if (pov) {
-                pov.drawObject(gl);
+        if (this.CONFIG.firstperson) {
+            for (const pov of INTERFACE3D.POOL) {
+                if (pov) {
+                    pov.drawObject(gl);
+                }
             }
         }
 
         //entities
         gl.useProgram(WebGL.model_program.program);
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
         for (const entity of ENTITY3D.POOL) {
             if (entity) {
                 entity.drawSkin(gl);
+            }
+        }
+        //and HERO
+        if (!this.CONFIG.firstperson) {
+            for (const player of this.playerList) {
+                player.draw(gl);
             }
         }
 
@@ -1057,10 +1067,11 @@ class World {
 }
 
 class $3D_Camera {
-    constructor(reference, translation_direction, translation_offset, direction_offset, fov = 70) {
+    constructor(reference, translation_direction, translation_offset, direction_offset, back_offset = 1, fov = 70) {
         this.translation_direction = translation_direction;
         this.translation_offset = translation_offset;
         this.direction_offset = direction_offset;
+        this.back_offset = back_offset;
         this.reference = reference;
         this.setFov(fov);
         this.update();
@@ -1071,11 +1082,12 @@ class $3D_Camera {
     update() {
         this.pos = this.reference.pos.translate(this.translation_direction, this.translation_offset);
         this.dir = this.reference.dir.add(this.direction_offset);
+        this.pos = this.pos.translate(this.reference.dir.reverse2D(), this.back_offset);
     }
 }
 
 class $3D_player {
-    constructor(position, dir, map = null, size = 0.5, H = 0.5) {
+    constructor(position, dir, map = null, type = null, size = 0.5) {
         this.setDir(dir);
         this.setPos(position);
         this.setMap(map);
@@ -1083,7 +1095,49 @@ class $3D_player {
         this.setFov();
         this.rotationResolution = 64;
         this.setSpeed(4.0);
-        this.H = H;
+        this.camera = null;
+        this.model = null;
+        this.type = type;
+        if (this.type) {
+            for (const prop in type) {
+                this[prop] = type[prop];
+            }
+            if (typeof (this.scale) === "number") this.scale = new Float32Array([this.scale, this.scale, this.scale]);
+            this.setModel();
+            this.matrixUpdate();
+            this.minY = this.model.meshes[0].primitives[0].positions.min[1] * this.scale[1];
+            WebGL.playerList.push(this);
+        };
+    }
+    setModel() {
+        this.model = $3D_MODEL[this.model];
+        this.jointMatrix = Float32Array.from(this.model.skins[0].jointMatrix);
+        this.restPose = Float32Array.from(this.model.skins[0].jointMatrix);
+        this.boundingBox = new BoundingBox(this.model.meshes[0].primitives[0].positions.max, this.model.meshes[0].primitives[0].positions.min, this.scale);
+        this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
+        const dZ = (this.boundingBox.max.z - this.boundingBox.min.z) / 2;
+        const dX = (this.boundingBox.max.x - this.boundingBox.min.x) / 2;
+        const avgDim = (dZ + dX) / 2;
+        const maxDim = Math.max(dZ, dX);
+        this.r = Math.max((avgDim + maxDim) / 2, WebGL.INI.MIN_R);
+    }
+    associateExternalCamera(camera) {
+        this.camera = camera;
+    }
+    matrixUpdate() {
+        this.setRotation();
+        this.setTranslation();
+    }
+    setTranslation() {
+        this.translation = glMatrix.mat4.create();
+        const modelPosition = this.pos.clone();
+        modelPosition.set_y(this.minY);
+        glMatrix.mat4.fromTranslation(this.translation, modelPosition.array);
+    }
+    setRotation() {
+        this.rotation = glMatrix.mat4.create();
+        const angle = -FP_Vector.toClass(UP).radAngleBetweenVectors(Vector3.to_FP_Vector(this.dir));
+        glMatrix.mat4.rotate(this.rotation, this.rotation, this.rotateToNorth + angle, [0, 1, 0]);
     }
     setSpeed(speed) {
         this.moveSpeed = speed;
@@ -1091,6 +1145,8 @@ class $3D_player {
     setPos(position) {
         this.pos = position;
         this.setSwordTip();
+        if (this.camera) this.camera.update();
+        this.matrixUpdate();
     }
     setSwordTip() {
         this.swordTipPosition = this.pos.translate(this.dir, this.r);
@@ -1098,6 +1154,7 @@ class $3D_player {
     setDir(dir) {
         this.dir = dir;
         if (this.pos) this.setSwordTip();
+        if (this.camera) this.camera.update();
     }
     setMap(map) {
         this.map = map;
@@ -1226,6 +1283,83 @@ class $3D_player {
         if (map[ENGINE.KEY.map.LT] || map[ENGINE.KEY.map.LTC]) {
             this.dir = Vector3.from_2D_dir(Vector3.to_FP_Vector(this.dir).ortoAlign(), this.dir.y);
             return;
+        }
+    }
+    draw(gl) {
+        console.info("drawing 3d player HERO");
+        const program = WebGL.model_program.program;
+        //uniforms
+        //material
+        gl.uniform3fv(WebGL.model_program.uniforms.uMaterialAmbientColor, this.material.ambientColor);
+        gl.uniform3fv(WebGL.model_program.uniforms.uMaterialDiffuseColor, this.material.diffuseColor);
+        gl.uniform3fv(WebGL.model_program.uniforms.uMaterialSpecularColor, this.material.specularColor);
+        gl.uniform1f(WebGL.model_program.uniforms.uMaterialShininess, this.material.shininess);
+
+        //scale
+        const mScaleMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
+        const uScaleMatrix = gl.getUniformLocation(program, 'uScale');
+        gl.uniformMatrix4fv(uScaleMatrix, false, mScaleMatrix);
+
+        //translate
+        const uTranslateMatrix = gl.getUniformLocation(program, 'uTranslate');
+        gl.uniformMatrix4fv(uTranslateMatrix, false, this.translation);
+
+        //rotate
+        const uRotatematrix = gl.getUniformLocation(program, 'uRotateY');
+        gl.uniformMatrix4fv(uRotatematrix, false, this.rotation);
+
+        //u_jointMat
+        const uJointMat = gl.getUniformLocation(program, "u_jointMat");
+        gl.uniformMatrix4fv(uJointMat, false, this.jointMatrix);
+
+        for (let mesh of this.model.meshes) {
+            for (let [index, primitive] of mesh.primitives.entries()) {
+
+                //positions
+                gl.bindBuffer(gl.ARRAY_BUFFER, primitive.positions.buffer);
+                const vertexPosition = gl.getAttribLocation(program, "aVertexPosition");
+                gl.vertexAttribPointer(vertexPosition, 3, gl[primitive.positions.type], false, 0, 0);
+                gl.enableVertexAttribArray(vertexPosition);
+
+                //texture
+                gl.bindBuffer(gl.ARRAY_BUFFER, primitive.textcoord.buffer);
+                const textureCoord = gl.getAttribLocation(program, "aTextureCoord");
+                gl.vertexAttribPointer(textureCoord, 2, gl[primitive.textcoord.type], false, 0, 0);
+                gl.enableVertexAttribArray(textureCoord);
+
+                //normals
+                gl.bindBuffer(gl.ARRAY_BUFFER, primitive.normals.buffer);
+                const vertexNormal = gl.getAttribLocation(program, "aVertexNormal");
+                gl.vertexAttribPointer(vertexNormal, 3, gl[primitive.normals.type], false, 0, 0);
+                gl.enableVertexAttribArray(vertexNormal);
+
+                //aJoint
+                gl.bindBuffer(gl.ARRAY_BUFFER, primitive.joints.buffer);
+                const joints = gl.getAttribLocation(program, "aJoint");
+                gl.vertexAttribPointer(joints, 4, gl[primitive.joints.type], false, 0, 0);
+                gl.enableVertexAttribArray(joints);
+
+                //aWeight
+                gl.bindBuffer(gl.ARRAY_BUFFER, primitive.weights.buffer);
+                const weights = gl.getAttribLocation(program, "aWeight");
+                gl.vertexAttribPointer(weights, 4, gl[primitive.weights.type], false, 0, 0);
+                gl.enableVertexAttribArray(weights);
+
+                //indices
+                gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, primitive.indices.buffer);
+
+                //binding texture data
+                gl.activeTexture(gl.TEXTURE0);
+                if (this.texture) {
+                    gl.bindTexture(gl.TEXTURE_2D, this.texture);
+                } else {
+                    gl.bindTexture(gl.TEXTURE_2D, this.model.textures[index]);
+                }
+
+                
+                gl.drawElements(gl.TRIANGLES, primitive.indices.count, gl[primitive.indices.type], 0);
+            }
         }
     }
 }

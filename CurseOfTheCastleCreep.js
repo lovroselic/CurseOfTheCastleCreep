@@ -178,8 +178,8 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.00.00",
-    NAME: "Curse Of The Castle Creep",
+    VERSION: "0.01.00",
+    NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
     CSS: "color: #239AFF;",
@@ -223,10 +223,10 @@ const PRG = {
 
 
         //boxes
-        ENGINE.gameWIDTH = 640;
-        ENGINE.titleWIDTH = 1040 + 64;
+        ENGINE.gameWIDTH = 800;
+        ENGINE.titleWIDTH = 1280;
         ENGINE.sideWIDTH = (ENGINE.titleWIDTH - ENGINE.gameWIDTH) / 2;
-        ENGINE.gameHEIGHT = 480;
+        ENGINE.gameHEIGHT = 600;
         ENGINE.titleHEIGHT = 80;
         ENGINE.bottomHEIGHT = 40;
         ENGINE.bottomWIDTH = ENGINE.titleWIDTH;
@@ -623,6 +623,7 @@ const HERO = {
         }
     },
     shoot() {
+        HERO.player.matrixUpdate();
         let cost = Missile.calcMana(HERO.reference_magic);
         if (DEBUG.FREE_MAGIC) cost = 0;
         if (cost > HERO.mana) {
@@ -795,8 +796,14 @@ const GAME = {
         };
 
         WebGL.updateShaders();
-        //WebGL.init('webgl', MAP[level].world, textureData, HERO.player, decalsAreSet);
-        WebGL.init('webgl', MAP[level].world, textureData, HERO.topCamera, decalsAreSet);
+
+
+        if (WebGL.CONFIG.firstperson) {
+            WebGL.init('webgl', MAP[level].world, textureData, HERO.player, decalsAreSet);  //firstperson
+        } else {
+            WebGL.init('webgl', MAP[level].world, textureData, HERO.topCamera, decalsAreSet); //thirdperson
+        }
+
         MINIMAP.init(MAP[level].map, INI.MIMIMAP_WIDTH, INI.MIMIMAP_HEIGHT, HERO.player);
     },
     initLevel(level) {
@@ -806,15 +813,24 @@ const GAME = {
         let start_grid = Grid.toClass(MAP[level].map.entrance.grid).add(start_dir);
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
 
-        HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map);
-        //HERO.topCamera = new $3D_Camera(start_grid.translate(DIR_UP, 3), Vector3.from_2D_dir(start_dir, -1), 70);
-        HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 3, DIR_DOWN, 70);
+        //WebGL.CONFIG.set("first_person");
+        WebGL.CONFIG.set("third_person");
+
+        if (WebGL.CONFIG.firstperson) {
+            //first person
+            HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map);
+        } else {
+            //third person
+            HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.GhostFace);
+            HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
+            HERO.player.associateExternalCamera(HERO.topCamera);
+        }
+
 
 
         AI.initialize(HERO.player, "3D");
 
-        //WebGL.CONFIG.set("first_person");
-        WebGL.CONFIG.set("third_person");
+
         WebGL.init_required_IAM(MAP[level].map, HERO);
         WebGL.MOUSE.initialize("ROOM");
         WebGL.setContext('webgl');

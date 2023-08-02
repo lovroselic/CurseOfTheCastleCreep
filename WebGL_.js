@@ -1134,6 +1134,9 @@ class $3D_player {
     associateExternalCamera(camera) {
         this.camera = camera;
     }
+    clearCamera() {
+        this.camera = null;
+    }
     matrixUpdate() {
         this.setRotation();
         this.setTranslation();

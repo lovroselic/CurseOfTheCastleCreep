@@ -2,7 +2,7 @@
 
 @charset "utf-8";
 
-/*
+
 @font-face {
     font-family: 'Kristen';
     src: url("/Fonts/Kristen.ttf");
@@ -29,19 +29,19 @@
 
 @font-face {
     font-family: 'Annie';
-    src:url("/Fonts/AnnieUseYourTelescope.ttf");
+    src: url("/Fonts/AnnieUseYourTelescope.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'DeepDown';
-    src:url("/Fonts/DeepDown.ttf"); 
+    src: url("/Fonts/DeepDown.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Moria';
-    src:url("/Fonts/MoriaCitadel.ttf");
+    src: url("/Fonts/MoriaCitadel.ttf");
     font-display: swap;
 }
 
@@ -50,12 +50,11 @@
     src: url("/Fonts/C64_Pro-STYLE.ttf");
     font-display: swap;
 }
-*/
+
 
 /* Overrriding Bootstrap */
 
 body {
-    /*background: linear-gradient(90deg, #ff7f00, #ffc04d, #ff7f00) !important;*/
     background: linear-gradient(90deg, #ff7f00, #fdb32d, #ff7f00) !important;
     font-family: "roboto-slab", serif !important;
 }
@@ -253,7 +252,12 @@ span.cool {
 .section fieldset {
     border: 2px #AAA ridge;
     border-radius: 7px !important;
-    width: 600px !important;
+    padding: 20px;
+    /*width: 600px !important;*/
+}
+
+.section fieldset select {
+    margin: 10px;
 }
 
 .section fieldset p {

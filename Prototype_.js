@@ -6,7 +6,7 @@
 console.clear();
 
 var LIB = {
-  VERSION: "3.13",
+  VERSION: "3.14",
   CSS: "color: #EFE",
   log: function () {
     console.log(`%cPrototype LIB ${LIB.VERSION} loaded`, LIB.CSS);
@@ -189,7 +189,6 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, width, height, ra
 Array.create2DArray = function(rows, columns, initialValue = 0) {
   return new Array(rows).fill().map(() => new Array(columns).fill(initialValue));
 };
-
 Array.prototype.clear = function () {
   this.length = 0;
 };
@@ -211,19 +210,16 @@ Array.prototype.sum = function () {
 Array.prototype.average = function () {
   return this.reduce((a, b) => a + b) / this.length;
 };
-Array.prototype.createPool = function (mx, N) {
+Array.prototype.createPool = function(mx, N) {
   if (!this) return false;
-  this.clear();
-  var tempArray = [];
-  for (var ix = 0; ix < mx; ix++) {
-    tempArray[ix] = ix;
-  }
-  var top;
-  for (var iy = 0; iy < N; iy++) {
-    top = tempArray.length;
-    var addx = RND(0, top - 1);
-    this[iy] = tempArray[addx];
-    tempArray.splice(addx, 1);
+  this.length = 0; 
+  let tempArray = Array.from({length: mx}, (_, i) => i);
+  for (let i = 0; i < N; i++) {
+    let top = tempArray.length;
+    let addx = RND(0, top - 1);
+    this.push(tempArray[addx]);
+    tempArray[addx] = tempArray[top - 1];
+    tempArray.length--;
   }
   return this;
 };
@@ -243,10 +239,9 @@ Array.prototype.removeIfInArray = function (arr) {
     }
   }
 };
-
 Array.prototype.remove = function (value) {
-  var LN = this.length;
-  for (var x = this.length - 1; x >= 0; x--) {
+  const LN = this.length;
+  for (var x = LN - 1; x >= 0; x--) {
     if (this[x] === value) {
       this.splice(x, 1);
     }
@@ -264,17 +259,16 @@ Array.prototype.removeRandom = function () {
 };
 Array.prototype.removeRandomPool = function (N) {
   let LN = this.length;
+  if (N <= 0) return [];
   if (N >= LN) {
     let temp = this.clone();
     this.clear();
     return temp;
   }
-  if (N <= 0) return [];
   let temp = [];
-  do {
+  for (let i = 0; i < N; i++) {
     temp.push(this.removeRandom());
-    N--;
-  } while (N > 0);
+  }
   return temp;
 };
 Array.prototype.clone = function () {
@@ -291,7 +285,6 @@ Array.prototype.deepClone = function () {
     }
   });
 };
-
 Array.prototype.sortByPropAsc = function (prop) {
   this.sort(sort);
 
@@ -326,7 +319,6 @@ Array.prototype.midsort = function () {
     sorted.push(this[start - i]);
     sorted.push(this[start + i]);
   }
-
   return sorted;
 };
 Array.prototype.addUnique = function (arr) {

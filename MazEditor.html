@@ -4,12 +4,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="./coolstyle.css" rel="stylesheet" type="text/css">
-    <style>
-        .section fieldset {
-            width: 400px !important;
-        }
-    </style>
+    <link href="./CCC.css" rel="stylesheet" type="text/css">
     <title>MazEditor</title>
 
 </head>
@@ -26,9 +21,9 @@
         <div id="setup">
             <div id="load"></div>
             <h1 id="title"></h1>
-            <p>Editor for R.U.N. CrawlMaster2 and other games.</p>
+            <p>Editor for R.U.N., CrawlMaster2, The Curse of the Castle Creep and other games.</p>
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <div class="setup_container section" id="selector">
                         <fieldset>
                             <legend>
@@ -62,7 +57,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <div class="setup_container section" id="paint">
                         <fieldset>
                             <legend>
@@ -86,17 +81,75 @@
                             GRID: <span id="grid_version"></span><br>
                             MAZE: <span id="maze_version"></span><br>
                             Prototype LIB: <span id="lib_version"></span><br>
+                            IAM: <span id="iam_version"></span><br>
+                            WebGL: <span id="webgl_version"></span><br>
                         </fieldset>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="setup_container section">
+                        <fieldset>
+                            <legend>
+                                Wall Texture
+                            </legend>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <select id="walltexture"> </select>
+                                </div>
+                                <div>
+                                    <canvas id="wallcanvas" width="360" height="160"></canvas>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="setup_container section">
+                        <fieldset>
+                            <legend>
+                                Floor Texture
+                            </legend>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <select id="floortexture"> </select>
+                                </div>
+                                <div>
+                                    <canvas id="floorcanvas" width="360" height="160"></canvas>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="setup_container section">
+                        <fieldset>
+                            <legend>
+                                Ceiling Texture
+                            </legend>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <select id="ceiltexture"> </select>
+                                </div>
+                                <div>
+                                    <canvas id="ceilcanvas" width="360" height="160"></canvas>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+
             <div class=" row">
                 <div class="setup_container section">
                     <fieldset>
                         <legend>
                             Export:
                         </legend>
-                        <textarea id="exp" style="width: 500px; height: 128px;"></textarea>
+                        <textarea id="exp" style="width: 1200px; height: 256px;"></textarea>
 
                     </fieldset>
                 </div>
@@ -108,8 +161,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div id="game" class="winTrans"></div>
     <div id="bottom" class="cb" style="margin-top: 1024px"></div>
@@ -125,10 +176,12 @@
         </script>
 
     <script src="./Prototype_.js" type="text/javascript"></script>
-    <script src="./ENGINE_.js" type="text/javascript"></script>
-    <script src="./GRID_.js" type="text/javascript"></script>
-    <script src="./MAZE_.js" type="text/javascript"></script>
+    <script src="./ENGINE_4_00.js" type="text/javascript"></script>
+    <script src="./GRID_3_10.js" type="text/javascript"></script>
+    <script src="./MAZE_4_00.js" type="text/javascript"></script>
     <script src="./BWT_1_00.js" type="text/javascript"></script>
+    <script src='./IndexArrayManagers_3_00.js'></script>
+    <script src="./WebGL_.js" type="text/javascript"></script>
     <script src="./assets_MazEditor.js" type="text/javascript"></script>
     <script src="./MazEditor.js" type="text/javascript"></script>
 

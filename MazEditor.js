@@ -27,7 +27,7 @@ var INI = {
   SPACE_Y: 2048
 };
 var PRG = {
-  VERSION: "0.05.06",
+  VERSION: "0.06.00",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -66,6 +66,8 @@ var PRG = {
     $("#grid_version").html(GRID.VERSION);
     $("#maze_version").html(DUNGEON.VERSION);
     $("#lib_version").html(LIB.VERSION);
+    $("#webgl_version").html(WebGL.VERSION);
+    $("#iam_version").html(IndexArrayManagers.VERSION);
 
     $(".section").show();
   },
@@ -143,7 +145,7 @@ var GAME = {
     let corr = $("input[name='corr']")[0].checked;
     ENGINE.resizeBOX("ROOM");
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
-    ENGINE.TEXTUREGRID.configure("pacgrid", "wall", 'RockFloor', 'BrickWall4');
+    ENGINE.TEXTUREGRID.configure("pacgrid", "wall", $("#floortexture")[0].value, $("#walltexture")[0].value);
     ENGINE.TEXTUREGRID.draw(MAP.map, corr);
   },
   tileGrid() {
@@ -239,11 +241,50 @@ var GAME = {
     $("#buttons").append("<input type='button' id='new' value='New'>");
     $("#buttons").append("<input type='button' id='export' value='Export'>");
     $("#buttons").append("<input type='button' id='import' value='Import'>");
+
+    for (const prop in TEXTURE) {
+      $("#walltexture").append(`<option value="${prop}">${prop}</option>`);
+      $("#floortexture").append(`<option value="${prop}">${prop}</option>`);
+      $("#ceiltexture").append(`<option value="${prop}">${prop}</option>`);
+      LAYER.wallcanvas = $("#wallcanvas")[0].getContext("2d");
+      LAYER.floorcanvas = $("#floorcanvas")[0].getContext("2d");
+      LAYER.ceilcanvas = $("#ceilcanvas")[0].getContext("2d");
+      ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
+      ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
+      ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
+    }
+
+    $("#walltexture").change(function () {
+      ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
+      //repaint
+      if ($("#selector input[name=renderer]:checked").val() === "texture") {
+        GAME.texture();
+      }
+    });
+    $("#floortexture").change(function () {
+      ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
+      //repaint
+      if ($("#selector input[name=renderer]:checked").val() === "texture") {
+        GAME.texture();
+      }
+    });
+    $("#ceiltexture").change(function () {
+      ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
+    });
+  },
+  texture() {
+    GAME.textureGrid();
   },
   export() {
     let rle = MAP.map.GA.exportMap();
     let Export = { width: MAP.width, height: MAP.height, map: rle };
-    $("#exp").val(JSON.stringify(Export));
+    let roomExport = `RoomID : {
+      data: '${JSON.stringify(Export)}',
+      wall: "${$("#walltexture")[0].value}",
+      floor: "${$("#floortexture")[0].value}",
+      ceil: "${$("#ceiltexture")[0].value}",
+    }`;
+    $("#exp").val(roomExport);
   },
   import() {
     let Import = JSON.parse($("#exp").val());

@@ -178,7 +178,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.01.02",
+    VERSION: "0.01.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -696,6 +696,7 @@ const GAME = {
         $("#pause").prop("disabled", false);
         $("#pause").off();
         GAME.paused = true;
+        $("#p1").prop("disabled", false);
 
         let GameRD = new RenderData("Moria", 50, "#f6602d", "text", "#F22", 2, 2, 2);
         ENGINE.TEXT.setRD(GameRD);
@@ -800,11 +801,10 @@ const GAME = {
 
         WebGL.updateShaders();
 
-
         if (WebGL.CONFIG.firstperson) {
-            WebGL.init('webgl', MAP[level].world, textureData, HERO.player, decalsAreSet);  //firstperson
+            WebGL.init('webgl', MAP[level].world, textureData, HERO.player, decalsAreSet);              //firstperson
         } else {
-            WebGL.init('webgl', MAP[level].world, textureData, HERO.topCamera, decalsAreSet); //thirdperson
+            WebGL.init('webgl', MAP[level].world, textureData, HERO.topCamera, decalsAreSet);           //thirdperson
         }
 
         MINIMAP.init(MAP[level].map, INI.MIMIMAP_WIDTH, INI.MIMIMAP_HEIGHT, HERO.player);
@@ -1078,7 +1078,28 @@ const GAME = {
         $("#startGame").prop("disabled", true);
         $("#conv").remove();
         GAME.WIN_LEVEL = INI.FINAL_LEVEL + 1;
+        $("#p1").on("click", GAME.setFirstPerson);
+        $("#p3").on("click", GAME.setThirdPerson);
     },
+    setFirstPerson() {
+        //console.info("#### Setting FIRST person view ####");
+        $("#p1").prop("disabled", true);
+        $("#p3").prop("disabled", false);
+        WebGL.CONFIG.set("first_person");
+        HERO.player.clearCamera();
+        WebGL.setCamera(HERO.player);
+     },
+    setThirdPerson() {
+        //console.info("#### Setting THIRD person view ####");
+        $("#p1").prop("disabled", false);
+        $("#p3").prop("disabled", true);
+        WebGL.CONFIG.set("third_person");
+        HERO.player.associateExternalCamera(HERO.topCamera);
+        WebGL.setCamera(HERO.topCamera);
+        //position  update
+        HERO.player.camera.update();
+        HERO.player.matrixUpdate();
+     },
     setTitle() {
         const text = GAME.generateTitleText();
         const RD = new RenderData("Annie", 16, "#0E0", "bottomText");

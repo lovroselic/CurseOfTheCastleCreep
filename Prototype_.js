@@ -26,6 +26,7 @@ changelog:
 3.11: date prototypes - used by CoolWeb!
 3.12: float bin search, 
 3.13: splitByN corrected, Array.create2DArray
+3.14: string regex prototipes
 */
 
 (function () {
@@ -186,7 +187,7 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, width, height, ra
 };
 
 /* collection of prototypes LS */
-Array.create2DArray = function(rows, columns, initialValue = 0) {
+Array.create2DArray = function (rows, columns, initialValue = 0) {
   return new Array(rows).fill().map(() => new Array(columns).fill(initialValue));
 };
 Array.prototype.clear = function () {
@@ -210,10 +211,10 @@ Array.prototype.sum = function () {
 Array.prototype.average = function () {
   return this.reduce((a, b) => a + b) / this.length;
 };
-Array.prototype.createPool = function(mx, N) {
+Array.prototype.createPool = function (mx, N) {
   if (!this) return false;
-  this.length = 0; 
-  let tempArray = Array.from({length: mx}, (_, i) => i);
+  this.length = 0;
+  let tempArray = Array.from({ length: mx }, (_, i) => i);
   for (let i = 0; i < N; i++) {
     let top = tempArray.length;
     let addx = RND(0, top - 1);
@@ -374,6 +375,14 @@ String.prototype.splitOnLastDot = function () {
     return [firstPart, secondPart];
   }
 };
+String.prototype.extract = function (regexString) {
+  let regex = new RegExp(regexString);
+  return this.match(regex)[0];
+};
+String.prototype.extractGroup = function(regexString){
+  let regex = new RegExp(regexString);
+    return regex.exec(this)[1];
+  };
 Set.prototype.moveFrom = function (s) {
   s.forEach(e => {
     this.add(e);

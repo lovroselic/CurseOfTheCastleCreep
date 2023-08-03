@@ -27,7 +27,7 @@ var INI = {
   SPACE_Y: 2048
 };
 var PRG = {
-  VERSION: "0.06.00",
+  VERSION: "0.06.01",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -271,6 +271,32 @@ var GAME = {
     $("#ceiltexture").change(function () {
       ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
     });
+
+    for (const pic of DECAL_PAINTINGS) {
+      $("#picture_decal").append(`<option value="${pic}">${pic}</option>`);
+    }
+    ENGINE.drawToId("picturecanvas", 0, 0, SPRITE[$("#picture_decal")[0].value]);
+
+    $("#picture_decal").change(function () {
+      ENGINE.drawToId("picturecanvas", 0, 0, SPRITE[$("#picture_decal")[0].value]);
+    });
+
+    for (const crest of [...DECAL_CRESTS, ...BOTTOM_CRESTS, ...TOP_CRESTS]) {
+      $("#crest_decal").append(`<option value="${crest}">${crest}</option>`);
+    }
+    ENGINE.drawToId("crestcanvas", 0, 0, SPRITE[$("#crest_decal")[0].value]);
+
+    $("#crest_decal").change(function () {
+      ENGINE.drawToId("crestcanvas", 0, 0, SPRITE[$("#crest_decal")[0].value]);
+    });
+
+    for (const light of LIGHT_DECALS) {
+      $("#light_decal").append(`<option value="${light}">${light}</option>`);
+    }
+    ENGINE.drawToId("lightcanvas", 0, 0, SPRITE[$("#light_decal")[0].value]);
+    $("#light_decal").change(function () {
+      ENGINE.drawToId("lightcanvas", 0, 0, SPRITE[$("#light_decal")[0].value]);
+    });
   },
   texture() {
     GAME.textureGrid();
@@ -287,7 +313,18 @@ var GAME = {
     $("#exp").val(roomExport);
   },
   import() {
-    let Import = JSON.parse($("#exp").val());
+    const ImportText = $("#exp").val();
+    const Import = JSON.parse(ImportText.extractGroup(/data:\s\'(.*)\'/));
+    const wall = ImportText.extractGroup(/wall:\s\"(.*)\"/);
+    const floor = ImportText.extractGroup(/floor:\s\"(.*)\"/);
+    const ceil = ImportText.extractGroup(/ceil:\s\"(.*)\"/);
+    $("#walltexture").val(wall);
+    $("#floortexture").val(floor);
+    $("#ceiltexture").val(ceil);
+    ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
+    ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
+    ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
+
     MAP.map = FREE_MAP.import(Import);
     console.log(MAP.map);
     MAP.width = Import.width;

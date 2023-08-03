@@ -47,7 +47,7 @@ const DownRight = new Vector(1, 1);
 const DownLeft = new Vector(-1, 1);
 
 const ENGINE = {
-  VERSION: "4.00",
+  VERSION: "4.01",
   CSS: "color: #0FA",
   INI: {
     ANIMATION_INTERVAL: 16,
@@ -263,6 +263,15 @@ const ENGINE = {
   },
   draw(layer, X, Y, image) {
     let CTX = LAYER[layer];
+    CTX.drawImage(image, X, Y);
+  },
+  drawToId(id, X, Y, image, clear = true, center = true) {
+    let CTX = $(`#${id}`)[0].getContext("2d");
+    if (clear) ENGINE.clearContext(CTX);
+    if (center) {
+      X = (CTX.canvas.width - image.width) / 2;
+      Y = (CTX.canvas.height - image.height) / 2;
+    }
     CTX.drawImage(image, X, Y);
   },
   drawScaled(layer, X, Y, image, scale = 1) {

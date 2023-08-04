@@ -15,10 +15,15 @@
 
  */
 ////////////////////////////////////////////////////
-var MAP = {
-  map: null
+const MAP = {
+  map: null,
+  decals: [],
+  clear() {
+    this.map = null;
+    this.decals.clear();
+  }
 };
-var INI = {
+const INI = {
   MAXINT: 96,
   MININT: 8,
   MAX_GRID: 64,
@@ -26,8 +31,8 @@ var INI = {
   SPACE_X: 2048,
   SPACE_Y: 2048
 };
-var PRG = {
-  VERSION: "0.06.02",
+const PRG = {
+  VERSION: "0.06.03",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -82,7 +87,7 @@ var PRG = {
     GAME.start();
   }
 };
-var GAME = {
+const GAME = {
   start() {
     $("#bottom")[0].scrollIntoView();
     ENGINE.topCanvas = ENGINE.getCanvasName("ROOM");
@@ -97,6 +102,7 @@ var GAME = {
     let grid = new Grid(x, y);
     var radio = $("#paint input[name=painter]:checked").val();
     let GA = MAP.map.GA;
+    let currentValue, dir, nameId, type;
 
     switch (radio) {
       case 'flip':
@@ -105,25 +111,76 @@ var GAME = {
         } else {
           GA.toWall(grid);
         }
+        $("#error_message").html("All is fine");
         break;
       case "space":
         GA.carveDot(grid);
+        $("#error_message").html("All is fine");
         break;
       case "wall":
         GA.toWall(grid);
+        $("#error_message").html("All is fine");
         break;
       case "door":
         GA.toDoor(grid);
+        $("#error_message").html("All is fine");
         break;
       case "trapdoor":
         GA.addTrapDoor(grid);
+        $("#error_message").html("All is fine");
         break;
       case "blockwall":
         GA.addBlockWall(grid);
+        $("#error_message").html("All is fine");
+        break;
+      case "gate":
+        console.log("gate");
+        break;
+      case "decal":
+        currentValue = GA.getValue(grid);
+        console.log("decal, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            dir = NOWAY;
+            [nameId, type] = GAME.getSelectedDecal();
+            break;
+          case MAPDICT.WALL:
+            dir = GAME.getSelectedDir();
+            if (dir.same(NOWAY)) {
+              $("#error_message").html("Wall decal needs direction");
+              return;
+            }
+            [nameId, type] = GAME.getSelectedDecal();
+            break;
+          default:
+            $("#error_message").html(`Decal placement not supported on value: ${currentValue}`);
+            return;
+        }
+        console.log(".created decal: grid", grid, "dir", dir, "nameId", nameId, "type", type);
+        $("#error_message").html("All is fine");
+        break;
+      case "light":
+        console.log("light");
         break;
     }
 
     GAME.render();
+  },
+  getSelectedDecal() {
+    const radio = $("#selector2 input[name=decalusage]:checked").val();
+    switch (radio) {
+      case "picture":
+        return [$("#picture_decal")[0].value, radio];
+      case "crest":
+        return [$("#crest_decal")[0].value, radio];
+      default:
+        console.error("decalusage error");
+        return [NULL, NULL];
+    }
+  },
+  getSelectedDir() {
+    const radio = $("#selector input[name=directions]:checked").val();
+    return eval(radio);
   },
   pacGrid() {
     let corr = $("input[name='corr']")[0].checked;
@@ -162,7 +219,7 @@ var GAME = {
     MAP.height = $("#verticalGrid").val();
   },
   render() {
-    var radio = $("#selector input[name=renderer]:checked").val();
+    const radio = $("#selector input[name=renderer]:checked").val();
     switch (radio) {
       case "line":
         GAME.pacGrid();
@@ -246,13 +303,16 @@ var GAME = {
       $("#walltexture").append(`<option value="${prop}">${prop}</option>`);
       $("#floortexture").append(`<option value="${prop}">${prop}</option>`);
       $("#ceiltexture").append(`<option value="${prop}">${prop}</option>`);
-      LAYER.wallcanvas = $("#wallcanvas")[0].getContext("2d");
-      LAYER.floorcanvas = $("#floorcanvas")[0].getContext("2d");
-      LAYER.ceilcanvas = $("#ceilcanvas")[0].getContext("2d");
-      ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
-      ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
-      ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
+
     }
+    LAYER.wallcanvas = $("#wallcanvas")[0].getContext("2d");
+    LAYER.floorcanvas = $("#floorcanvas")[0].getContext("2d");
+    LAYER.ceilcanvas = $("#ceilcanvas")[0].getContext("2d");
+    $("#floortexture").val("RockFloor");
+    $("#ceiltexture").val("Pavement");
+    ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
+    ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
+    ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
 
     $("#walltexture").change(function () {
       ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
@@ -314,7 +374,8 @@ var GAME = {
   export() {
     let rle = MAP.map.GA.exportMap();
     let Export = { width: MAP.width, height: MAP.height, map: rle };
-    let roomExport = `RoomID : {
+    let RoomID = $("#roomid")[0].value;
+    let roomExport = `${RoomID} : {
       data: '${JSON.stringify(Export)}',
       wall: "${$("#walltexture")[0].value}",
       floor: "${$("#floortexture")[0].value}",
@@ -324,13 +385,16 @@ var GAME = {
   },
   import() {
     const ImportText = $("#exp").val();
+    console.info("ImportText", ImportText);
     const Import = JSON.parse(ImportText.extractGroup(/data:\s\'(.*)\'/));
     const wall = ImportText.extractGroup(/wall:\s\"(.*)\"/);
     const floor = ImportText.extractGroup(/floor:\s\"(.*)\"/);
     const ceil = ImportText.extractGroup(/ceil:\s\"(.*)\"/);
+    const roomId = ImportText.extract(/^\w*/);
     $("#walltexture").val(wall);
     $("#floortexture").val(floor);
     $("#ceiltexture").val(ceil);
+    $("#roomid").val(roomId);
     ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
     ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
     ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);

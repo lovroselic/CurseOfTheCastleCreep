@@ -524,18 +524,22 @@ const MAPDICT = {
   EMPTY: 0, //0
   WALL: 2 ** 0, //1
   ROOM: 2 ** 1, //2
-  DOOR: 2 ** 2, //4
+  DOOR: 2 ** 2, //4 - inner door!
+  //original - for random maps
   RESERVED: 2 ** 3, //8
   START_POSITION: 2 ** 4, //16
   STAIR: 2 ** 5, //32
   SHRINE: 2 ** 6, // 64
   FOG: 2 ** 7, //128 - fog should remain largest!
-  //alternative1
+  //alternative1 - RUN scpecific
   TRAP_DOOR: 2 ** 3, //8
   BLOCKWALL: 2 ** 4, //16
   VACANT_PLACEHODLER: 2 ** 5, //32
   DEAD_END: 2 ** 6, //64
   WATER: 2 ** 7, //128 - fog,water should remain largest!
+  //alternative2 - CCC generation
+  HOLE: 2 ** 3, //8
+  GATE: 2 ** 5, //32 - STAIR alias -> route to another dungeon
 };
 
 class ArrayBasedDataStructure {

@@ -36,12 +36,15 @@
                             <br />
                             Grid size (px):
                             <input name="gridsize" id="gridsize" type="text" size="2" maxlength="2" value="64">
-                            <br /><br />
+                            <br />
+                            RoomID:
+                            <input name="roomid" id="roomid" type="text" size="16" maxlength="16" value="1">
+                            <br />
                             <br /> WIDTH (px) = <span id="ENGINEgameWIDTH"></span> / <span id="spacex"></span>
                             <br />
                             HEIGHT (px) =
                             <span id="ENGINEgameHEIGHT"></span> / <span id="spacey"></span><br />
-                            <br />
+
                         </fieldset>
                         <fieldset>
                             <legend>
@@ -71,21 +74,44 @@
                                 <select id="lighttype"> </select>
                             </div>
                         </fieldset>
+                        <fieldset>
+                            <legend>
+                                Connections
+                            </legend>
+                            Source GateID: <input name="sgateID" id="sgateID" type="text" size="16" maxlength="16"
+                                value="1.1"><br />
+                            Target GateID: <input name="tgateID" id="tgateID" type="text" size="16" maxlength="16"
+                                value="2.1"><br />
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Directions
+                            </legend>
+                            <input type="radio" name="directions" value="UP"> UP <br />
+                            <input type="radio" name="directions" value="DOWN"> DOWN <br />
+                            <input type="radio" name="directions" value="LEFT"> LEFT <br />
+                            <input type="radio" name="directions" value="RIGHT"> RIGHT <br />
+                            <input type="radio" name="directions" value="NOWAY" checked="checked"> NOWAY <br />
+
+                        </fieldset>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="setup_container section" id="paint">
                         <fieldset>
                             <legend>
-                                On click, paint:
+                                On click, paint/set:
                             </legend>
                             <input type="radio" name="painter" value="flip" checked="checked"> Flip (Wall
                             &lt-&gt Space)<br />
                             <input type="radio" name="painter" value="wall"> Wall <br />
                             <input type="radio" name="painter" value="space"> Space <br />
                             <input type="radio" name="painter" value="door"> Door <br />
-                            <input type="radio" name="painter" value="trapdoor"> TrapDoor <br />
-                            <input type="radio" name="painter" value="blockwall"> BlockWall <br />
+                            <input type="radio" name="painter" value="trapdoor"> Hole/TrapDoor <br />
+                            <input type="radio" name="painter" value="blockwall" disabled> BlockWall (CCC disabled)<br />
+                            <input type="radio" name="painter" value="gate"> Gate <br />
+                            <input type="radio" name="painter" value="decal"> Decal <br />
+                            <input type="radio" name="painter" value="light"> Light <br />
                         </fieldset>
 
                         <fieldset>
@@ -114,11 +140,12 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="setup_container section">
+                    <div class="setup_container section" id="selector2">
                         <fieldset>
                             <legend>Wall Pictures
                             </legend>
                             <div>
+                                <input type="radio" name="decalusage" value="picture" checked="checked"> Use pictures <br/>
                                 <div class="d-flex justify-content-center">
                                     <select id="picture_decal"> </select>
                                 </div>
@@ -131,6 +158,7 @@
                             <legend>Crests
                             </legend>
                             <div>
+                                <input type="radio" name="decalusage" value="crest"> Use crests<br/>
                                 <div class="d-flex justify-content-center">
                                     <select id="crest_decal"> </select>
                                 </div>
@@ -197,7 +225,6 @@
                 </div>
             </div>
 
-
             <div class=" row">
                 <div class="setup_container section">
                     <fieldset>
@@ -213,6 +240,9 @@
             <div class=" row">
                 <p class="cb" id="buttons"></p>
                 <p class="version cb" id="version"></p>
+            </div>
+            <div class=" row">
+                <p><span>Error: </span><span id="error_message">Everything is fine</span></p>
             </div>
         </div>
     </div>

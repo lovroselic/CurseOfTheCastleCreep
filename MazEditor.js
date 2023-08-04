@@ -27,7 +27,7 @@ var INI = {
   SPACE_Y: 2048
 };
 var PRG = {
-  VERSION: "0.06.01",
+  VERSION: "0.06.02",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -297,6 +297,16 @@ var GAME = {
     $("#light_decal").change(function () {
       ENGINE.drawToId("lightcanvas", 0, 0, SPRITE[$("#light_decal")[0].value]);
     });
+
+    for (const light in LIGHT_COLORS) {
+      $("#lighttype").append(`<option value="${light}">${light}</option>`);
+    }
+
+    for (const material in MATERIAL) {
+      if (material !== "VERSION") {
+        $("#materialtype").append(`<option value="${material}">${material}</option>`);
+      }
+    }
   },
   texture() {
     GAME.textureGrid();

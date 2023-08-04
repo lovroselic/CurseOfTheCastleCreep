@@ -16,7 +16,7 @@ known bugs:
 */
 
 const GRID = {
-  VERSION: "3.10",
+  VERSION: "3.11",
   CSS: "color: #0AA",
   SETTING: {
     ALLOW_CROSS: false,

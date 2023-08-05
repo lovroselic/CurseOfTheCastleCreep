@@ -2058,9 +2058,7 @@ const ENGINE = {
         }
       }
       ENGINE.flattenLayers(ENGINE.TEXTUREGRID.wallLayerString, ENGINE.TEXTUREGRID.floorLayerString);
-      if (ENGINE.verbose) {
-        console.log(`%cTEXTUREGRID draw ${performance.now() - t0} ms`, ENGINE.CSS);
-      }
+      if (ENGINE.verbose) console.log(`%cTEXTUREGRID draw ${performance.now() - t0} ms`, ENGINE.CSS);
     },
     drawTiles(maze, corr = false) {
       let t0 = performance.now();
@@ -2277,7 +2275,21 @@ const ENGINE = {
           }
         }
       }
+      //cont here
+      ENGINE.BLOCKGRID.decalDraw(maze, CTX);
+      if (ENGINE.verbose) console.log(`%cBLOCKGRID draw ${performance.now() - t0} ms`, ENGINE.CSS);
     },
+    decalDraw(maze, CTX) {
+      const GA = maze.GA;
+      console.warn("drawing decals ...", maze.decals);
+      for (const decal of maze.decals){
+        console.log("decal", decal);
+        let grid = GA.indexToGrid(decal[0]);
+        let dir = Vector.fromInt(decal[1]);
+        console.log(".grid", grid, "dir", dir);
+      }
+
+     },
     wall(x, y, CTX, value) {
       let FS;
       switch (value) {

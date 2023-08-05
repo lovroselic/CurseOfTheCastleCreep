@@ -16,11 +16,11 @@
  */
 ////////////////////////////////////////////////////
 const MAP = {
-  map: null,
-  decals: [],
-  clear() {
-    this.map = null;
-    this.decals.clear();
+  map: {
+
+  },
+  init() {
+    this.map.decals = [];
   }
 };
 const INI = {
@@ -32,7 +32,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.04",
+  VERSION: "0.06.05",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -102,7 +102,7 @@ const GAME = {
     let grid = new Grid(x, y);
     var radio = $("#paint input[name=painter]:checked").val();
     let GA = MAP.map.GA;
-    let currentValue, dir, nameId, type;
+    let currentValue, dir, nameId, type, gridIndex, dirIndex;
 
     switch (radio) {
       case 'flip':
@@ -138,7 +138,7 @@ const GAME = {
         break;
       case "decal":
         currentValue = GA.getValue(grid);
-        console.log("decal, value", currentValue, "grid", grid);
+        //console.log("decal, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             dir = NOWAY;
@@ -156,11 +156,15 @@ const GAME = {
             $("#error_message").html(`Decal placement not supported on value: ${currentValue}`);
             return;
         }
-        console.log(".created decal: grid", grid, "dir", dir, "nameId", nameId, "type", type);
+
+        MAP.map.decals.push(Array(GA.gridToIndex(grid), dir.toInt(), nameId, type));
         $("#error_message").html("All is fine");
         break;
       case "light":
         console.log("light");
+        break;
+      case "cleargrid":
+        console.log("cleargrid");
         break;
     }
 
@@ -168,7 +172,6 @@ const GAME = {
   },
   printMaterialDetails() {
     const material = MATERIAL[$("#materialtype")[0].value];
-    console.log("material", material);
     const html = `
     <span>Ambient: ${colorVectorToHex(material.ambientColor)}</span><br/>
     <span>Diffuse: ${colorVectorToHex(material.diffuseColor)}</span><br/>
@@ -272,7 +275,8 @@ const GAME = {
       MAP.width = $("#horizontalGrid").val();
       MAP.height = $("#verticalGrid").val();
       MAP.map = FREE_MAP.create(MAP.width, MAP.height);
-      console.log(MAP.map);
+      MAP.init();
+      console.log("map:", MAP.map);
       GAME.render();
     }
   },
@@ -407,6 +411,7 @@ const GAME = {
       wall: "${$("#walltexture")[0].value}",
       floor: "${$("#floortexture")[0].value}",
       ceil: "${$("#ceiltexture")[0].value}",
+      decals: '${JSON.stringify(MAP.map.decals)}',
     }`;
     $("#exp").val(roomExport);
   },
@@ -418,6 +423,7 @@ const GAME = {
     const floor = ImportText.extractGroup(/floor:\s\"(.*)\"/);
     const ceil = ImportText.extractGroup(/ceil:\s\"(.*)\"/);
     const roomId = ImportText.extract(/^\w*/);
+    const decals = ImportText.extractGroup(/decals:\s\'(.*)\'/);
     $("#walltexture").val(wall);
     $("#floortexture").val(floor);
     $("#ceiltexture").val(ceil);
@@ -427,6 +433,7 @@ const GAME = {
     ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
 
     MAP.map = FREE_MAP.import(Import);
+    MAP.map.decals = JSON.parse(decals);
     console.log(MAP.map);
     MAP.width = Import.width;
     MAP.height = Import.height;

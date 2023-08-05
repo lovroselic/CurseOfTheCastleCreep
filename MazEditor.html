@@ -51,12 +51,12 @@
                                 Renderer:
                             </legend>
                             <input type="radio" name="renderer" value="line"> Line <br />
-                            <input type="radio" name="renderer" value="block"> Block<br />
-                            <input type="radio" name="renderer" value="texture" checked="checked"> Texture <br />
+                            <input type="radio" name="renderer" value="block" checked="checked"> Block (decal, item support)<br />
+                            <input type="radio" name="renderer" value="texture" > Texture <br />
                             <input type="radio" name="renderer" value="tile"> Tile <br />
                             <input type="checkbox" id="corr" value="corr" name="corr"> Draw corridor gridline<br />
-                            <input type="checkbox" id="grid" value="grid" name="grid"> Main grid<br />
-                            <input type="checkbox" id="coord" value="coord" name="coord"> Coordinates<br />
+                            <input type="checkbox" id="grid" value="grid" name="grid" checked="checked"> Main grid<br />
+                            <input type="checkbox" id="coord" value="coord" name="coord" checked="checked"> Coordinates<br />
                         </fieldset>
                         <fieldset>
                             <legend>
@@ -112,9 +112,13 @@
                             <input type="radio" name="painter" value="door"> Door <br />
                             <input type="radio" name="painter" value="trapdoor"> Hole/TrapDoor <br />
                             <input type="radio" name="painter" value="blockwall" disabled> BlockWall (CCC disabled)<br />
+                            <hr>
                             <input type="radio" name="painter" value="gate"> Gate <br />
                             <input type="radio" name="painter" value="decal"> Decal <br />
                             <input type="radio" name="painter" value="light"> Light <br />
+                            <hr>
+                            <input type="radio" name="painter" value="cleargrid"> Clear grid <br />
+                           
                         </fieldset>
 
                         <fieldset>

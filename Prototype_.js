@@ -572,6 +572,7 @@ class FP_Vector {
   }
 }
 class Vector {
+  static W = 3;
   constructor(x = 0, y = 0) {
     this.x = parseInt(x, 10);
     this.y = parseInt(y, 10);
@@ -758,6 +759,14 @@ class Vector {
       sum = sum.add(arr.pop());
     }
     return sum;
+  }
+  toInt() {
+    return (this.x + 1) + (this.y + 1) * Vector.W;
+  }
+  static fromInt(int) {
+    let x = int % Vector.W - 1;
+    let y = Math.floor(int / Vector.W) - 1;
+    return new Vector(x, y);
   }
 }
 

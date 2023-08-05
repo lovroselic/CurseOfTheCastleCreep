@@ -68,15 +68,22 @@ changelog:
     return null;
   }
   function colorStringToVector(str) {
-    if (!/^#[0-9A-Fa-f]{6}$/.test(str)) {
-      throw new Error(`Invalid color string: ${str}`);
-    }
+    if (!/^#[0-9A-Fa-f]{6}$/.test(str)) throw new Error(`Invalid color string: ${str}`);
     let vec = new Float32Array(3);
     vec[0] = parseInt(str.substring(1, 3), 16) / 255;
     vec[1] = parseInt(str.substring(3, 5), 16) / 255;
     vec[2] = parseInt(str.substring(5, 7), 16) / 255;
-
     return vec;
+  }
+  function colorVectorToHex(vector) {
+    if (vector.length !== 3) throw new Error(`Invalid length of color vector: ${vector.length}`);
+    let hexStr = "#";
+    for (let dim in vector) {
+      let int = Math.round(Math.max(0, Math.min(vector[dim], 1)) * 255);
+      let hex = int.toString(16).toUpperCase().padStart(2, '0');
+      hexStr += hex;
+    }
+    return hexStr;
   }
   function binarySearch(arr, target) {
     let low = 0, high = arr.length;
@@ -115,6 +122,7 @@ changelog:
   window.randomSign = randomSign;
   window.weightedRnd = weightedRnd;
   window.colorStringToVector = colorStringToVector;
+  window.colorVectorToHex = colorVectorToHex;
   window.binarySearch = binarySearch;
   window.binarySearchClosestLowFloat = binarySearchClosestLowFloat;
 })();
@@ -379,10 +387,10 @@ String.prototype.extract = function (regexString) {
   let regex = new RegExp(regexString);
   return this.match(regex)[0];
 };
-String.prototype.extractGroup = function(regexString){
+String.prototype.extractGroup = function (regexString) {
   let regex = new RegExp(regexString);
-    return regex.exec(this)[1];
-  };
+  return regex.exec(this)[1];
+};
 Set.prototype.moveFrom = function (s) {
   s.forEach(e => {
     this.add(e);

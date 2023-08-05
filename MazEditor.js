@@ -32,7 +32,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.03",
+  VERSION: "0.06.04",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -165,6 +165,28 @@ const GAME = {
     }
 
     GAME.render();
+  },
+  printMaterialDetails() {
+    const material = MATERIAL[$("#materialtype")[0].value];
+    console.log("material", material);
+    const html = `
+    <span>Ambient: ${colorVectorToHex(material.ambientColor)}</span><br/>
+    <span>Diffuse: ${colorVectorToHex(material.diffuseColor)}</span><br/>
+    <span>Specular: ${colorVectorToHex(material.specularColor)}</span><br/>
+    <span>Shininess: ${material.shininess}</span><br/>
+    `;
+    $("#material-details").html(html);
+  },
+  printLightDetails() {
+    const light = LIGHT_COLORS[$("#lighttype")[0].value];
+    const html = `
+      <span>R: ${light[0]}</span><br/>
+      <span>G: ${light[1]}</span><br/>
+      <span>B: ${light[2]}</span><br/>
+    `;
+    $("#light-details").html(html);
+    const code = colorVectorToHex(light);
+    $("#light-code").html(`<span> Code: ${code}</span>`);
   },
   getSelectedDecal() {
     const radio = $("#selector2 input[name=decalusage]:checked").val();
@@ -354,6 +376,7 @@ const GAME = {
       $("#light_decal").append(`<option value="${light}">${light}</option>`);
     }
     ENGINE.drawToId("lightcanvas", 0, 0, SPRITE[$("#light_decal")[0].value]);
+
     $("#light_decal").change(function () {
       ENGINE.drawToId("lightcanvas", 0, 0, SPRITE[$("#light_decal")[0].value]);
     });
@@ -361,12 +384,16 @@ const GAME = {
     for (const light in LIGHT_COLORS) {
       $("#lighttype").append(`<option value="${light}">${light}</option>`);
     }
+    GAME.printLightDetails();
+    $("#lighttype").change(GAME.printLightDetails);
 
     for (const material in MATERIAL) {
       if (material !== "VERSION") {
         $("#materialtype").append(`<option value="${material}">${material}</option>`);
       }
     }
+    GAME.printMaterialDetails();
+    $("#materialtype").change(GAME.printMaterialDetails);
   },
   texture() {
     GAME.textureGrid();

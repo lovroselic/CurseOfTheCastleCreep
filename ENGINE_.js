@@ -340,6 +340,12 @@ const ENGINE = {
     CTX.lineWidth = width;
     CTX.stroke();
   },
+  drawCircle(CTX, pCenter, radius, color) {
+    CTX.beginPath();
+    CTX.arc(pCenter.x, pCenter.y, radius, 0, 2 * Math.PI);
+    CTX.fillStyle = color;
+    CTX.fill();
+  },
   trimCanvas(data) {
     let top = 0;
     let bottom = data.height;
@@ -2316,7 +2322,20 @@ const ENGINE = {
         let pDirs = dir.getPerpendicularDirs();
         let pStart = start.translate(pDirs[0], W);
         let pEnd = start.translate(pDirs[1], W);
-        ENGINE.drawLine(CTX, pStart, pEnd, "#0000FF", decalWidth);
+        if (pDirs[0].same(NOWAY)) {
+          ENGINE.drawCircle(CTX, pStart, decalWidth * 2, "#0000FF");
+        } else {
+          ENGINE.drawLine(CTX, pStart, pEnd, "#0000FF", decalWidth);
+        }
+      }
+      for (const light of maze.lights) {
+        console.log("light", light);
+        let grid = GA.indexToGrid(light[0]);
+        let dir = Vector.fromInt(light[1]);
+        let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
+        let mid = GRID.gridToCenterPX(grid);
+        let start = mid.translate(dir, W);
+        ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
       }
     },
     wall(x, y, CTX, value) {

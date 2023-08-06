@@ -20,7 +20,8 @@ const MAP = {
 
   },
   init() {
-    this.map.decals = [];
+    MAP.map.decals = [];
+    MAP.map.lights = [];
   }
 };
 const INI = {
@@ -32,7 +33,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.06",
+  VERSION: "0.06.07",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -102,7 +103,8 @@ const GAME = {
     let grid = new Grid(x, y);
     var radio = $("#paint input[name=painter]:checked").val();
     let GA = MAP.map.GA;
-    let currentValue, dir, nameId, type, dirIndex;
+    let dir, nameId, type, dirIndex;
+    let currentValue = GA.getValue(grid);
     let gridIndex = GA.gridToIndex(grid);
 
     switch (radio) {
@@ -138,8 +140,6 @@ const GAME = {
         console.log("gate");
         break;
       case "decal":
-        currentValue = GA.getValue(grid);
-        //console.log("decal, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             dir = NOWAY;
@@ -158,17 +158,33 @@ const GAME = {
             return;
         }
 
-        //gridIndex = GA.gridToIndex(grid);
         dirIndex = dir.toInt();
         $("#error_message").html("All is fine");
         GAME.assertUniqueDecalPosition(gridIndex, dirIndex, MAP.map.decals);
         MAP.map.decals.push(Array(gridIndex, dirIndex, nameId, type));
         break;
       case "light":
-        console.log("light");
+        console.log("light, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.WALL:
+            dir = GAME.getSelectedDir();
+            console.log(".dir", dir);
+            if (dir.same(NOWAY)) {
+              $("#error_message").html("Light decal needs direction");
+              return;
+            }
+            dirIndex = dir.toInt();
+            nameId = $("#light_decal")[0].value;
+            type = $("#lighttype")[0].value;
+            MAP.map.lights.push(Array(gridIndex, dirIndex, nameId, type));
+            break;
+          default:
+            $("#error_message").html(`Light placement not supported on value: ${currentValue}`);
+            return;
+        }
         break;
       case "cleargrid":
-        for (let arrType of [MAP.map.decals]) {
+        for (let arrType of [MAP.map.decals, MAP.map.lights]) {
           let iElementToRemove = [];
           for (let [index, element] of arrType.entries()) {
             if (element[0] === gridIndex) {
@@ -198,9 +214,9 @@ const GAME = {
   printMaterialDetails() {
     const material = MATERIAL[$("#materialtype")[0].value];
     const html = `
-    <span>Ambient: ${colorVectorToHex(material.ambientColor)}</span><br/>
-    <span>Diffuse: ${colorVectorToHex(material.diffuseColor)}</span><br/>
-    <span>Specular: ${colorVectorToHex(material.specularColor)}</span><br/>
+    <span style="background-color: ${colorVectorToRGB_String(material.ambientColor)}">Ambient: ${colorVectorToHex(material.ambientColor)}</span><br/>
+    <span style="background-color: ${colorVectorToRGB_String(material.diffuseColor)}">Diffuse: ${colorVectorToHex(material.diffuseColor)}</span><br/>
+    <span style="background-color: ${colorVectorToRGB_String(material.specularColor)}">Specular: ${colorVectorToHex(material.specularColor)}</span><br/>
     <span>Shininess: ${material.shininess}</span><br/>
     `;
     $("#material-details").html(html);
@@ -214,7 +230,7 @@ const GAME = {
     `;
     $("#light-details").html(html);
     const code = colorVectorToHex(light);
-    $("#light-code").html(`<span> Code: ${code}</span>`);
+    $("#light-code").html(`<span style="background-color: ${colorVectorToRGB_String(light)}"> Code: ${code}</span>`);
   },
   getSelectedDecal() {
     const radio = $("#selector2 input[name=decalusage]:checked").val();
@@ -350,6 +366,8 @@ const GAME = {
     $("#buttons").append("<input type='button' id='export' value='Export'>");
     $("#buttons").append("<input type='button' id='import' value='Import'>");
 
+    $("#gridsize").on("change", GAME.render);
+
     for (const prop in TEXTURE) {
       $("#walltexture").append(`<option value="${prop}">${prop}</option>`);
       $("#floortexture").append(`<option value="${prop}">${prop}</option>`);
@@ -437,6 +455,7 @@ const GAME = {
       floor: "${$("#floortexture")[0].value}",
       ceil: "${$("#ceiltexture")[0].value}",
       decals: '${JSON.stringify(MAP.map.decals)}',
+      lights: '${JSON.stringify(MAP.map.lights)}',
     }`;
     $("#exp").val(roomExport);
   },
@@ -449,6 +468,7 @@ const GAME = {
     const ceil = ImportText.extractGroup(/ceil:\s\"(.*)\"/);
     const roomId = ImportText.extract(/^\w*/);
     const decals = ImportText.extractGroup(/decals:\s\'(.*)\'/);
+    const lights = ImportText.extractGroup(/lights:\s\'(.*)\'/);
     $("#walltexture").val(wall);
     $("#floortexture").val(floor);
     $("#ceiltexture").val(ceil);
@@ -458,7 +478,9 @@ const GAME = {
     ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
 
     MAP.map = FREE_MAP.import(Import);
+    MAP.init();
     MAP.map.decals = JSON.parse(decals);
+    MAP.map.lights = JSON.parse(lights);
     console.log(MAP.map);
     MAP.width = Import.width;
     MAP.height = Import.height;

@@ -85,6 +85,23 @@ changelog:
     }
     return hexStr;
   }
+  function colorVectorToRGB_Vector(vector) {
+    const rgb = new Uint8Array(3);
+    for (let dim in vector) {
+      let int = Math.round(Math.max(0, Math.min(vector[dim], 1)) * 255);
+      rgb[dim] = int;
+    }
+    return rgb;
+  }
+
+  function RGB_vectorToRGB_string(rgb) {
+    if (rgb.length !== 3) throw new Error(`Invalid length of rgb vector: ${rbg.length}`);
+    return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+  }
+
+  function colorVectorToRGB_String(vector) {
+    return RGB_vectorToRGB_string(colorVectorToRGB_Vector(vector));
+  }
   function binarySearch(arr, target) {
     let low = 0, high = arr.length;
     while (low < high) {
@@ -125,6 +142,9 @@ changelog:
   window.colorVectorToHex = colorVectorToHex;
   window.binarySearch = binarySearch;
   window.binarySearchClosestLowFloat = binarySearchClosestLowFloat;
+  window.colorVectorToRGB_Vector = colorVectorToRGB_Vector;
+  window.RGB_vectorToRGB_string = RGB_vectorToRGB_string;
+  window.colorVectorToRGB_String = colorVectorToRGB_String;
 })();
 
 /** Date prototypes */
@@ -721,7 +741,8 @@ class Vector {
       return "x";
     } else if (this.y !== 0) {
       return "y";
-    } else throw ("error getting direction axis from", this);
+    }
+    return 0;
   }
   getDirectionProperty() {
     if (this.x !== 0) {
@@ -735,6 +756,7 @@ class Vector {
     switch (axis) {
       case "x": return [UP, DOWN];
       case "y": return [LEFT, RIGHT];
+      case 0: return [NOWAY, NOWAY];
       default:
         throw ("error getting perpenicular directions from", this);
     }

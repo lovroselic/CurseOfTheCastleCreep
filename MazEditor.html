@@ -51,12 +51,14 @@
                                 Renderer:
                             </legend>
                             <input type="radio" name="renderer" value="line"> Line <br />
-                            <input type="radio" name="renderer" value="block" checked="checked"> Block (decal, item support)<br />
-                            <input type="radio" name="renderer" value="texture" > Texture <br />
+                            <input type="radio" name="renderer" value="block" checked="checked"> Block (decal, item
+                            support)<br />
+                            <input type="radio" name="renderer" value="texture"> Texture <br />
                             <input type="radio" name="renderer" value="tile"> Tile <br />
                             <input type="checkbox" id="corr" value="corr" name="corr"> Draw corridor gridline<br />
                             <input type="checkbox" id="grid" value="grid" name="grid" checked="checked"> Main grid<br />
-                            <input type="checkbox" id="coord" value="coord" name="coord" checked="checked"> Coordinates<br />
+                            <input type="checkbox" id="coord" value="coord" name="coord" checked="checked">
+                            Coordinates<br />
                         </fieldset>
                         <fieldset>
                             <legend>
@@ -111,14 +113,15 @@
                             <input type="radio" name="painter" value="space"> Space <br />
                             <input type="radio" name="painter" value="door"> Door <br />
                             <input type="radio" name="painter" value="trapdoor"> Hole/TrapDoor <br />
-                            <input type="radio" name="painter" value="blockwall" disabled> BlockWall (CCC disabled)<br />
+                            <input type="radio" name="painter" value="blockwall" disabled> BlockWall (CCC
+                            disabled)<br />
                             <hr>
                             <input type="radio" name="painter" value="gate"> Gate <br />
                             <input type="radio" name="painter" value="decal"> Decal <br />
                             <input type="radio" name="painter" value="light"> Light <br />
                             <hr>
                             <input type="radio" name="painter" value="cleargrid"> Clear grid <br />
-                           
+
                         </fieldset>
 
                         <fieldset>
@@ -152,7 +155,8 @@
                             <legend>Wall Pictures
                             </legend>
                             <div>
-                                <input type="radio" name="decalusage" value="picture" checked="checked"> Use pictures <br/>
+                                <input type="radio" name="decalusage" value="picture" checked="checked"> Use pictures
+                                <br />
                                 <div class="d-flex justify-content-center">
                                     <select id="picture_decal"> </select>
                                 </div>
@@ -165,7 +169,7 @@
                             <legend>Crests
                             </legend>
                             <div>
-                                <input type="radio" name="decalusage" value="crest"> Use crests<br/>
+                                <input type="radio" name="decalusage" value="crest"> Use crests<br />
                                 <div class="d-flex justify-content-center">
                                     <select id="crest_decal"> </select>
                                 </div>
@@ -238,7 +242,15 @@
                         <legend>
                             Export:
                         </legend>
-                        <textarea id="exp" style="width: 1200px; height: 256px;"></textarea>
+                        <textarea id="exp" style="width: 1200px; height: 256px;">
+1 : {
+    data: '{"width":"16","height":"16","map":"BB5AA5BB5AA2BABB4ABB18AA2BB5ABB13ABB19ABB2AA2BB5ABB15$BB146A"}',
+    wall: "BrickWall4",
+    floor: "RockFloor",
+    ceil: "Pavement",
+    decals: '[[99,1,"AA3","picture"],[40,7,"AA3","picture"],[72,5,"Bagitman90","picture"],[26,3,"1942_2","picture"],[40,3,"1942_2","picture"],[40,1,"1942_2","picture"]]',
+    }
+                        </textarea>
 
                     </fieldset>
                 </div>

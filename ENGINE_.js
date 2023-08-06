@@ -316,6 +316,30 @@ const ENGINE = {
       ENGINE.spriteDraw(layer, pool[i].x, pool[i].y, sprite);
     }
   },
+  drawRectangleCW(CTX, point, dir, w, h, fillColor) {
+    CTX.fillStyle = fillColor;
+    CTX.beginPath();
+    CTX.moveTo(point.x, point.y); //1
+    point = point.translate(dir, w);
+    CTX.lineTo(point.x, point.y); //2
+    dir = dir.cw();
+    point = point.translate(dir, h);
+    CTX.lineTo(point.x, point.y); //3
+    dir = dir.cw();
+    point = point.translate(dir, w);
+    CTX.lineTo(point.x, point.y); //4
+    CTX.closePath();
+    CTX.fill();
+    return;
+  },
+  drawLine(CTX, pFrom, pTo, color, width) {
+    CTX.beginPath();
+    CTX.moveTo(pFrom.x, pFrom.y);
+    CTX.lineTo(pTo.x, pTo.y);
+    CTX.strokeStyle = color;
+    CTX.lineWidth = width;
+    CTX.stroke();
+  },
   trimCanvas(data) {
     let top = 0;
     let bottom = data.height;
@@ -2058,6 +2082,7 @@ const ENGINE = {
         }
       }
       ENGINE.flattenLayers(ENGINE.TEXTUREGRID.wallLayerString, ENGINE.TEXTUREGRID.floorLayerString);
+      ENGINE.BLOCKGRID.decalDraw(maze, ENGINE.TEXTUREGRID.wallLayer);
       if (ENGINE.verbose) console.log(`%cTEXTUREGRID draw ${performance.now() - t0} ms`, ENGINE.CSS);
     },
     drawTiles(maze, corr = false) {
@@ -2280,16 +2305,20 @@ const ENGINE = {
       if (ENGINE.verbose) console.log(`%cBLOCKGRID draw ${performance.now() - t0} ms`, ENGINE.CSS);
     },
     decalDraw(maze, CTX) {
+      const decalWidth = 3;
+      const W = (ENGINE.INI.GRIDPIX / 2) - decalWidth;
       const GA = maze.GA;
-      console.warn("drawing decals ...", maze.decals);
-      for (const decal of maze.decals){
-        console.log("decal", decal);
+      for (const decal of maze.decals) {
         let grid = GA.indexToGrid(decal[0]);
         let dir = Vector.fromInt(decal[1]);
-        console.log(".grid", grid, "dir", dir);
+        let mid = GRID.gridToCenterPX(grid);
+        let start = mid.translate(dir, W);
+        let pDirs = dir.getPerpendicularDirs();
+        let pStart = start.translate(pDirs[0], W);
+        let pEnd = start.translate(pDirs[1], W);
+        ENGINE.drawLine(CTX, pStart, pEnd, "#0000FF", decalWidth);
       }
-
-     },
+    },
     wall(x, y, CTX, value) {
       let FS;
       switch (value) {

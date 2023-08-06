@@ -242,12 +242,32 @@ Array.prototype.compare = function (array) {
   return true;
 };
 Array.prototype.removeIfInArray = function (arr) {
-  for (var x = this.length - 1; x >= 0; x--) {
-    if (arr.includes(this[x])) {
+  //remove if value
+  const valueSet = new Set(arr);
+  for (let x = this.length - 1; x >= 0; x--) {
+    if (valueSet.has(this[x])) {
       this.splice(x, 1);
     }
   }
 };
+Array.prototype.removeIfIndexInArray = function (arr) {
+  //remove if index
+  const indexSet = new Set(arr);
+  for (let x = this.length - 1; x >= 0; x--) {
+    if (indexSet.has(x)) {
+      this.splice(x, 1);
+    }
+  }
+};
+Array.prototype.removeIndices = function (indices) {
+  //remove if index, new array
+  return this.filter((_, index) => !indices.includes(index));
+}
+Array.prototype.removeValues = function (values) {
+  //remove if value, new array
+  return this.filter((el, _) => !values.includes(el));
+}
+
 Array.prototype.remove = function (value) {
   const LN = this.length;
   for (var x = LN - 1; x >= 0; x--) {
@@ -709,6 +729,15 @@ class Vector {
     } else if (this.y !== 0) {
       return "height";
     } else throw ("error getting direction property from", this);
+  }
+  getPerpendicularDirs() {
+    let axis = this.getDirectionAxis();
+    switch (axis) {
+      case "x": return [UP, DOWN];
+      case "y": return [LEFT, RIGHT];
+      default:
+        throw ("error getting perpenicular directions from", this);
+    }
   }
   trimMirror(dirArray) {
     let axis = this.getDirectionAxis();

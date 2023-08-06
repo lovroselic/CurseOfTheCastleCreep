@@ -32,7 +32,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.05",
+  VERSION: "0.06.06",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -102,7 +102,8 @@ const GAME = {
     let grid = new Grid(x, y);
     var radio = $("#paint input[name=painter]:checked").val();
     let GA = MAP.map.GA;
-    let currentValue, dir, nameId, type, gridIndex, dirIndex;
+    let currentValue, dir, nameId, type, dirIndex;
+    let gridIndex = GA.gridToIndex(grid);
 
     switch (radio) {
       case 'flip':
@@ -157,18 +158,42 @@ const GAME = {
             return;
         }
 
-        MAP.map.decals.push(Array(GA.gridToIndex(grid), dir.toInt(), nameId, type));
+        //gridIndex = GA.gridToIndex(grid);
+        dirIndex = dir.toInt();
         $("#error_message").html("All is fine");
+        GAME.assertUniqueDecalPosition(gridIndex, dirIndex, MAP.map.decals);
+        MAP.map.decals.push(Array(gridIndex, dirIndex, nameId, type));
         break;
       case "light":
         console.log("light");
         break;
       case "cleargrid":
-        console.log("cleargrid");
+        for (let arrType of [MAP.map.decals]) {
+          let iElementToRemove = [];
+          for (let [index, element] of arrType.entries()) {
+            if (element[0] === gridIndex) {
+              iElementToRemove.push(index);
+            }
+          }
+          arrType.removeIfIndexInArray(iElementToRemove);
+        }
+        $("#error_message").html("All is fine: grid cleared");
         break;
     }
 
     GAME.render();
+  },
+  assertUniqueDecalPosition(gridIndex, dirIndex, array) {
+    for (let [index, element] of array.entries()) {
+      if (element[0] === gridIndex) {
+        if (element[1] === dirIndex) {
+          let remove = array.splice(index, 1);
+          $("#error_message").html("removed duplicate decal");
+          console.warn("removed duplicate decal", remove);
+          return;
+        }
+      }
+    }
   },
   printMaterialDetails() {
     const material = MATERIAL[$("#materialtype")[0].value];

@@ -22,6 +22,7 @@ const MAP = {
   init() {
     MAP.map.decals = [];
     MAP.map.lights = [];
+    MAP.map.start = [];
   }
 };
 const INI = {
@@ -33,7 +34,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.07",
+  VERSION: "0.06.08",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -67,6 +68,7 @@ const PRG = {
     $("#buttons").on("click", "#new", GAME.init);
     $("#buttons").on("click", "#export", GAME.export);
     $("#buttons").on("click", "#import", GAME.import);
+    $("#buttons").on("click", "#copy", GAME.copyToClipboard);
 
     $("#engine_version").html(ENGINE.VERSION);
     $("#grid_version").html(GRID.VERSION);
@@ -194,6 +196,24 @@ const GAME = {
           arrType.removeIfIndexInArray(iElementToRemove);
         }
         $("#error_message").html("All is fine: grid cleared");
+        break;
+      case "start":
+        console.log("start, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            dir = GAME.getSelectedDir();
+            console.log(".dir", dir);
+            if (dir.same(NOWAY)) {
+              $("#error_message").html("Start needs direction");
+              return;
+            }
+            dirIndex = dir.toInt();
+            MAP.map.start = [gridIndex, dirIndex];
+            break;
+          default:
+            $("#error_message").html(`Start placement not supported on value: ${currentValue}`);
+            return;
+        }
         break;
     }
 
@@ -355,6 +375,15 @@ const GAME = {
     $("#spacey").html(INI.SPACE_Y);
     GAME.resize();
   },
+  async copyToClipboard() {
+    let copyText = $("#exp")[0];
+    console.log("copyText", copyText);
+    try {
+      await navigator.clipboard.writeText(copyText.value);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  },
   setup() {
     console.log("GAME SETUP started");
     GAME.updateWH();
@@ -365,6 +394,7 @@ const GAME = {
     $("#buttons").append("<input type='button' id='new' value='New'>");
     $("#buttons").append("<input type='button' id='export' value='Export'>");
     $("#buttons").append("<input type='button' id='import' value='Import'>");
+    $("#buttons").append("<input type='button' id='copy' value='Copy to Clipboard'>");
 
     $("#gridsize").on("change", GAME.render);
 
@@ -454,6 +484,7 @@ const GAME = {
       wall: "${$("#walltexture")[0].value}",
       floor: "${$("#floortexture")[0].value}",
       ceil: "${$("#ceiltexture")[0].value}",
+      start: '${JSON.stringify(MAP.map.start)}',
       decals: '${JSON.stringify(MAP.map.decals)}',
       lights: '${JSON.stringify(MAP.map.lights)}',
     }`;
@@ -469,6 +500,7 @@ const GAME = {
     const roomId = ImportText.extract(/^\w*/);
     const decals = ImportText.extractGroup(/decals:\s\'(.*)\'/);
     const lights = ImportText.extractGroup(/lights:\s\'(.*)\'/);
+    const start = ImportText.extractGroup(/start:\s\'(.*)\'/);
     $("#walltexture").val(wall);
     $("#floortexture").val(floor);
     $("#ceiltexture").val(ceil);
@@ -481,6 +513,7 @@ const GAME = {
     MAP.init();
     MAP.map.decals = JSON.parse(decals);
     MAP.map.lights = JSON.parse(lights);
+    MAP.map.start = JSON.parse(start);
     console.log(MAP.map);
     MAP.width = Import.width;
     MAP.height = Import.height;

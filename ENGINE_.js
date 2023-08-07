@@ -2314,6 +2314,13 @@ const ENGINE = {
       const decalWidth = 3;
       const W = (ENGINE.INI.GRIDPIX / 2) - decalWidth;
       const GA = maze.GA;
+      //start
+      {
+        let grid = GA.indexToGrid(maze.start[0]);
+        let mid = GRID.gridToCenterPX(grid);
+        ENGINE.drawCircle(CTX, mid, decalWidth * 2, "#000000");
+      }
+
       for (const decal of maze.decals) {
         let grid = GA.indexToGrid(decal[0]);
         let dir = Vector.fromInt(decal[1]);

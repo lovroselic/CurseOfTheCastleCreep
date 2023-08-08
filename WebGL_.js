@@ -2575,6 +2575,8 @@ const DirectionToFace = function (dir) {
         return "LEFT";
     } else if (GRID.same(dir, RIGHT)) {
         return "RIGHT";
+    } else if (GRID.same(dir, NOWAY)) {
+        return "TOP";
     } else {
         console.error("DirectionToFace, invalid direction", dir);
     }

@@ -2336,7 +2336,6 @@ const ENGINE = {
         }
       }
       for (const light of maze.lights) {
-        console.log("light", light);
         let grid = GA.indexToGrid(light[0]);
         let dir = Vector.fromInt(light[1]);
         let color = colorVectorToHex(LIGHT_COLORS[light[3]]);

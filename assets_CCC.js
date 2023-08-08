@@ -8,6 +8,7 @@ console.log("%cAssets for CrawlMaster2 ready.", "color: orange");
 
 LoadTextures = [
     /** wall, floor, ceil */
+    { srcName: "BrickWall4.jpg", name: "BrickWall4" },
     { srcName: "BrickWall128.jpg", name: "BrickWall" },
     { srcName: "BrickWall2_128.jpg", name: "BrickWall2" },
     { srcName: "BlackBrickWall128.jpg", name: "BlackBrickWall" },

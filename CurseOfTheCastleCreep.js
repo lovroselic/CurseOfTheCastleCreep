@@ -24,7 +24,7 @@ const DEBUG = {
     INVINCIBLE: true,
     FREE_MAGIC: true,
     LOAD: false,
-    STUDY: true,
+    STUDY: false,
     keys: true,
     study() {
         console.info("######## FIXED DUNGEON - STUDY MODE ########");
@@ -178,7 +178,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.01.03",
+    VERSION: "0.02.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -759,40 +759,15 @@ const GAME = {
         GAME.continueLevel(GAME.level);
     },
     newDungeon(level) {
-        DUNGEON.MIN_PADDING = MAP[level].minPad;
-        let randomDungeon;
-        if (level < INI.FINAL_LEVEL) {
-            randomDungeon = DUNGEON.create(MAP[level].width, MAP[level].height);
-        } else if (GAME.level === INI.FINAL_LEVEL) {
-            console.log("newDungeon: CREATE FINAL LEVEL");
-            randomDungeon = ARENA.create(MAP[level].width, MAP[level].height);
-        } else {
-            console.info("****** STUDY - FIXED DUNGEON ******");
-            randomDungeon = FREE_MAP.import(JSON.parse(MAP[level].data));
-            console.info(randomDungeon);
-        }
-
-        MAP[level].map = randomDungeon;
-        MAP[level].pw = MAP[level].map.width * ENGINE.INI.GRIDPIX;
-        MAP[level].ph = MAP[level].map.height * ENGINE.INI.GRIDPIX;
-        MAP[level].map.GA.massSet(MAPDICT.FOG);
-        MAP[level].map.level = level;
-        if (DEBUG.STUDY) {
-            MAP[level].map.entrance = MAP[level].entrance;
-            MAP[level].map.exit = MAP[level].exit;
-        }
+        MAP_TOOLS.unpack(level);
     },
     buildWorld(level) {
-        if (level === INI.FINAL_LEVEL) {
-            SPAWN.arena(level);
-        } else if (DEBUG.STUDY) {
-            SPAWN.study(level);
-        } else {
-            SPAWN.spawn(level);
-        }
+        console.warn("building world, level", level);
+        SPAWN_TOOLS.spawn(level);
         MAP[level].world = WORLD.build(MAP[level].map);
     },
     setWorld(level, decalsAreSet = false) {
+        console.log("setting world");
         const textureData = {
             wall: TEXTURE[MAP[level].wall],
             floor: TEXTURE[MAP[level].floor],
@@ -812,8 +787,8 @@ const GAME = {
     initLevel(level) {
         this.newDungeon(level);
 
-        const start_dir = MAP[level].map.entrance.vector;
-        let start_grid = Grid.toClass(MAP[level].map.entrance.grid).add(start_dir);
+        const start_dir = MAP[level].map.startPosition.vector;
+        let start_grid = MAP[level].map.startPosition.grid;
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
 
         //WebGL.CONFIG.set("first_person");
@@ -829,11 +804,7 @@ const GAME = {
             HERO.player.associateExternalCamera(HERO.topCamera);
         }
 
-
-
         AI.initialize(HERO.player, "3D");
-
-
         WebGL.init_required_IAM(MAP[level].map, HERO);
         WebGL.MOUSE.initialize("ROOM");
         WebGL.setContext('webgl');
@@ -1087,19 +1058,21 @@ const GAME = {
         $("#p3").prop("disabled", false);
         WebGL.CONFIG.set("first_person");
         HERO.player.clearCamera();
+        HERO.player.moveSpeed = 4.0;
         WebGL.setCamera(HERO.player);
-     },
+    },
     setThirdPerson() {
         //console.info("#### Setting THIRD person view ####");
         $("#p1").prop("disabled", false);
         $("#p3").prop("disabled", true);
         WebGL.CONFIG.set("third_person");
         HERO.player.associateExternalCamera(HERO.topCamera);
+        HERO.player.moveSpeed = 2.0;
         WebGL.setCamera(HERO.topCamera);
         //position  update
         HERO.player.camera.update();
         HERO.player.matrixUpdate();
-     },
+    },
     setTitle() {
         const text = GAME.generateTitleText();
         const RD = new RenderData("Annie", 16, "#0E0", "bottomText");

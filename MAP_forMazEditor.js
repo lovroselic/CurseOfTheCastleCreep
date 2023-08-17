@@ -7,7 +7,7 @@
 
 /** Decals */
 const DECAL_PAINTINGS = [
-    "AA1", "AA2", "AA3", "AA5", "AA7", "AA8", "AA9", "AMC", "Amberstar", "Apshai", "Arena",
+    "AA1", "AA2", "AA5", "AA7", "AA8", "AA9", "Amberstar", "Apshai", "Arena",
     "Bagitman", "Barbarian5", "BeachHead", "BoogaBoo1", "BoogaBoo3",
     "C64", "CH1", "CSB1", "CW1", "CW6", "Castle", "Commando2",
     "CrystalCastles", "CyberPunk1", "DDID2", "DK", "DK2", "DM1", "DM12", "DM4", "DM5", "DM6",
@@ -28,7 +28,7 @@ const DECAL_PAINTINGS = [
     "Apshai4", "Apshai3", "Paperboy", "RobinOfTheWood2", "Pyjamarama", "ThePawn", "KokotoniWilf", "Cauldron1",
     "Zeppelin2", "Hero30", "SVS30", "AirWolf", "AA41", "AA40", "SeaWolf", "GIJoe10",
     "Hobbit3", "Ghostbusters2", "Commando3", "Hobbit6", "Hobbit7", "Hobbit8", "Hobbit9", "AticAtac1", "Infiltrator1", "ManicMiner2",
-    "ManicMiner3", "Infiltrator2", "1942_2", "Arnie1", "BTF1", "BlueThunder1", "BrianBloodaxe1", "BrideOfFrakenstein1",
+    "ManicMiner3", "Infiltrator2", "Arnie1", "BTF1", "BlueThunder1", "BrianBloodaxe1", "BrideOfFrakenstein1",
     "BruceLee1", "Captive", "Fred3", "Fred4", "JSW4", "ManiacMansion2", "PQ1", "Pengo", "Pirates", "PolePosition", "Silkworm1", "SirFred1",
     "SirFred2", "SirFred3", "Unknown1", "BattleThroughTime", "BOF3", "Chopper2", "Cliffhanger", "F1", "IM10", "MoonPatrol", "SummerGames10",
     "FF5", "LaraCroft1", "LaraCroft2", "IM13", "FF101", "FF100", "AA100", "UW10", "KL10", "SVS100", "SVS101", "SP4", "JSW10", "Vixen3", "WOW10", "ESB",
@@ -113,7 +113,7 @@ const DECAL_CRESTS = ["LS", "Skull4", "Skull3", "Skull2", "Skull1", "Crack4", "C
     "PrayingSkeleton10", "SittingSkeleton2", "Skeleton21", "Skull10", "Skull11", "WOWc1", "WOWc2", "Reaper", "AticAtacCrest1"];
 const BOTTOM_CRESTS = ["Grate1_128"];
 const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond"];
-const LIGHT_DECALS = ["WallLamp","WallLamp2","WallLamp3","WallTorch", "Lamp4"];
-
+const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4"];
+const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue"];
 
 console.log("%cMAP for MazEditor loaded.", "color: #888");

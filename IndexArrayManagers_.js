@@ -12,7 +12,7 @@ TODO:
 */
 
 const IndexArrayManagers = {
-    VERSION: "3.00",
+    VERSION: "3.01",
     VERBOSE: false,
     DEAD_LAPSED_TIME: 5,
 };
@@ -328,8 +328,6 @@ class Missile_RC extends IAM {
         }
     }
 }
-
-
 
 class Decal_IA extends IAM {
     constructor() {
@@ -918,10 +916,11 @@ const DECAL3D = new Decal3D();
 const LIGHTS3D = new Decal3D();
 const VANISHING3D = new Decal3D();
 const INTERFACE3D = new Decal3D();
-const GATE3D = new Decal3D(100);
-const ITEM3D = new Decal3D(1000);
+const GATE3D = new Decal3D(256);
+const ITEM3D = new Decal3D(1024);
 const EXPLOSION3D = new ParticleEmmission3D();
-const INTERACTIVE_DECAL3D = new Decal3D(1000);
+const INTERACTIVE_DECAL3D = new Decal3D(1024);
+const INTERACTIVE_BUMP3D = new Decal3D(256);
 const BUMP3D = new Decal_IA_3D();
 const ENTITY3D = new Animated_3d_entity();
 const MISSILE3D = new Missile3D("enemyIA", ENTITY3D);

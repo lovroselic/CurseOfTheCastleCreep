@@ -4,196 +4,22 @@
 /*jshint -W061 */
 
 "use strict";
-
-/** Decals */
-const DECAL_PAINTINGS = [
-    "AA1", "AA2", "AA3", "AA5", "AA7", "AA8", "AA9", "AMC", "Amberstar", "Apshai", "Arena",
-    "Bagitman", "Barbarian5", "BeachHead", "BoogaBoo1", "BoogaBoo3",
-    "C64", "CH1", "CSB1", "CW1", "CW6", "Castle", "Commando2",
-    "CrystalCastles", "CyberPunk1", "DDID2", "DK", "DK2", "DM1", "DM12", "DM4", "DM5", "DM6",
-    "Drelbs", "EOB1", "EOB2", "EOB3", "EOB4", "Eric", "FA3", "FF2",
-    "Fred1", "Fred2", "Frogger", "Galaxian3", "Ghostbusters", "Goonies", "GreenBeret", "HL1", "HL2", "HL3",
-    "HL4", "HL5", "HOB11", "HOB2", "Hero1", "Hero10", "Hero2", "Hero3", "HoraceSki",
-    "Iceman", "Imhotep", "JSW", "JSW2", "JSW3", "Jumpman", "JumpmanJr", "KQ1",
-    "Kangaroo", "Karateka", "Knightlore", "LSL20", "LSL6", "LTUT", "Lode",
-    "Maniac", "Miner", "MonkeyIsland", "Montezuma", "Moon", "Oblivion", "Oblivion2", "OperationWolf",
-    "OperationWolf2", "PAC2", "Penta", "Phara", "Pipeline", "Pitfall3", "Pitfall4", "Pitstop", "Pooyan",
-    "Portal1", "Prince1", "Prince2", "RRR", "RickDangerous", "SOF", "SQ1", "SVS10", "SVS2", "SVS3",
-    "SW4", "Scramble3", "Scramble4", "Skyrim", "Sorcery2", "Sorcery3", "TR1", "TR1", "TR10", "TR2", "TR2", "TR3",
-    "Tut2", "UU", "UU2", "Ultima1", "Ultima2", "VIC20", "Valhalla", "WOW1",
-    "WOW2", "Walls", "Wally", "Winter", "Wolf1", "Zak", "Zaxxon", "ZimSalaBim", "Zong", "galaxian", "sabre2",
-    "zx1", "Witcher5", "LSL9", "Shamus1", "PharaohCurse3", "Witcher4", "Witcher3", "TempleOfApshai", "Witcher2", "KnightLore2",
-    "Witcher1", "Spelunker", "ShamusCase2", "Ishar2", "Pitfall5", "PharaohCurse2", "Frontier", "LSL8",
-    "SVS24", "KQ10", "Shamus20", "Pitfall21", "Apshai6", "Apshai5", "PacClose", "PacGhost", "Pitfall20", "SVS22", "SVS21",
-    "Apshai4", "Apshai3", "Paperboy", "RobinOfTheWood2", "Pyjamarama", "ThePawn", "KokotoniWilf", "Cauldron1",
-    "Zeppelin2", "Hero30", "SVS30", "AirWolf", "AA41", "AA40", "SeaWolf", "GIJoe10",
-    "Hobbit3", "Ghostbusters2", "Commando3", "Hobbit6", "Hobbit7", "Hobbit8", "Hobbit9", "AticAtac1", "Infiltrator1", "ManicMiner2",
-    "ManicMiner3", "Infiltrator2", "1942_2", "Arnie1", "BTF1", "BlueThunder1", "BrianBloodaxe1", "BrideOfFrakenstein1",
-    "BruceLee1", "Captive", "Fred3", "Fred4", "JSW4", "ManiacMansion2", "PQ1", "Pengo", "Pirates", "PolePosition", "Silkworm1", "SirFred1",
-    "SirFred2", "SirFred3", "Unknown1", "BattleThroughTime", "BOF3", "Chopper2", "Cliffhanger", "F1", "IM10", "MoonPatrol", "SummerGames10",
-    "FF5", "LaraCroft1", "LaraCroft2", "IM13", "FF101", "FF100", "AA100", "UW10", "KL10", "SVS100", "SVS101", "SP4", "JSW10", "Vixen3", "WOW10", "ESB",
-    "Galaxians10", "BC10",
-    "ActecChallenge2", "AlleyKat", "BeachHead100", "Blackwyche2", "Hero100", "Invaders2", "KL102", "Karn1", "LastNinja10", "MoonBuggy", "PQ3",
-    "Pitfall2-100", "SVS103",
-    "Amiga", "Apshai10", "BC103", "Barbarian3", "BattleChopper", "Belwothe", "BladeRunner", "BlueMax20", "BrideOfFrankenstein", "Goonies5", "Hero103",
-    "LSL100", "LaraCroft21", "MoonZX",
-    "OlympicSkier", "Pitfall23", "Prince4", "PurpleHeart", "AntAttack2", "BeachHeadReplace", "Cavelon13", "Cavelon4", "CongoBongo2", "FalconPatrol7",
-    "Fred21", "Frogger2", "LSL31",
-    "LaraCroft123", "RobinToTheRescue1", "Ski64", "SpaceQuest10", "AtariST", "BC11", "BladeRunner7", "BlueMax11", "C64_hard", "CastleHaunt", "Cavelon11",
-    "CrawlMaster2", "DM100", "DigDug2", "DotHunter", "EricTheViking10", "FireAnt2", "HungryHorace11", "Invasion", "KQ100", "KQ101", "LSL_Eve2", "ManiacMansion11",
-    "ORileysMine2", "PWE", "Pitfall100", "Scramble10", "SuperDogfight3", "Tutanham11", "Tutanham12", "Ultima11", "WinterGames10",
-    "AntAttack4", "Cauldron10", "DM103", "DM104", "DonkeyKong100", "Elvira1", "Elvira2", "Elvira3", "FalconPatrol8", "FalconPatrol9", "FortApocalypse",
-    "Fred101", "Fred102",
-    "GatewayToApshai11", "Grog1", "Hero104", "HungryHorace12", "KQ102", "LSL101", "LSL102", "LSL103", "LadyTut10", "LodeRunner10", "LodeRunner11", "MissileCommand",
-    "OlympicSkier6", "Pitfall27", "Popeye2", "PrinceMac", "SVS102", "SabreWulf11", "Scramble7", "Shamus4", "Ski23", "Skyrim3", "Tutankham102", "Unknown3", "Witcher47",
-    "Wolf10", "Zaxxon3", "ZimSalaBim2", "ArticShipwreck2", "BoogaBoo11", "CastleOFTerror11", "Cauldron8", "DM105", "DM106", "DM107", "DefenderOfTheCrown", "EOB11",
-    "FortApocalypse41", "Hobbit101", "LCP", "LadyTut102", "ManicMiner11", "ManicMiner12", "MatchPoint2", "Miner2049_1", "MrRobot11", "Paratroopers2", "PharaohCurse11",
-    "Rambo3", "RobinOfTheWood4", "SP111", "ST2", "SammyLightfoot2", "SirFred4", "Skyrim9", "SkyrimElf", "Tutankham105", "UW27", "WOW104", "WinterGames11",
-    "Arena2", "Barbarian13", "BoogaBoo4", "BrianBloodaxe11", "CastleOfTerror3", "CastleOfTerror4", "CrystalCastles2", "Daggerfall3", "Daggerfall4", "EnigmaForce2",
-    "EveryoneIsAWally2", "GI_Joe2", "Gauntlet", "Gods2", "ImpossibleMission11", "JungleHunt2", "LaraCroft102", "ManicMiner14", "Miranda1", "Montezuma's revenge2",
-    "Nebulus2", "Neptune's daughters", "RobinHood3", "SammyLightfoot4", "Scramble23", "Skullkeep", "Soccer3", "SpaceQuest103", "TheHobbit13", "TheHobbit14",
-    "TheHobbit15", "Trashman2", "Triss", "Tutankham104", "Yennefer", "ZX Spectrum", "AirWolf31", "ArticShipwreck7", "AtariFalcon", "Bagitman11", "BattleThroughTime2",
-    "BoogaBoo41", "CBM_VIC20", "CastleWolfenstein21", "CodenameIceman2", "CodenameIceman3", "F2", "FalconPatrol99", "GoldenAxe2", "HalfLife11", "HalfLife12", "HalfLife13",
-    "HalfLife14", "HeadOverHeels3", "IK2", "Ishar11", "Ishar13", "Ishar14", "Ishar15", "Jetpac3", "Jumpman3", "JungleHunt12", "KnightLore31", "KokotoniWilf2",
-    "LeisureSuitLarry201", "MassEffect1", "MassEffect2", "Maze", "Miner3", "Paperboy2", "Paratroopers3", "Pooyan3", "Prince41", "Pyjamarama11", "RedWarrior1",
-    "ReturnToCastleWolfenstein11", "ReturnToCastleWolfenstein12", "ReturnToCastleWolfenstein13", "ReturnToCastleWolfenstein14", "RickDangerous11", "Sorcery31",
-    "Spike'sPeak1", "SpyVsSpy41", "TheHobbit16", "Valhalla2", "WhoDaresWins1", "Wolfenstein31", "Yennefer21", "Zeppelin4",
-    "AppleLisa", "BC90", "BackToNature1", "Bagitman90", "BeyondForbiddenForest2", "Biggles2", "BoogaBoo90", "CamelotWarriors", "CastleOfTerror91",
-    "Choplifter11", "Choplifter12", "CrystalCastles90", "Cuthbert90", "DM90", "Drelbs2", "DungeonMaster91", "DungeonMaster92", "ElvenWarrior1",
-    "EyeOfTheBeholder90", "FireAnt21", "ForbiddenForest90", "ForbiddenForest91", "Geos", "HalfLife91", "Imhotep2", "ImpossibleMission90", "JetSetWilly11",
-    "LeisureSuitLarry90", "LeisureSuitLarry91", "MontezumasRevenge90", "Nebulus90", "Pitfall90", "Pitfall91", "Pitstop3", "Rambo11", "SexOlympics1", "SexOlympics2",
-    "Shamus91", "Tornado1",
-    "BrianBloodaxe20", "CodenameIceman98", "Cuthbert20", "DonkeyKong99", "Drelbs3", "DungeonMaster96", "DungeonMaster97", "F1-1", "ForbiddenForest99", "ForgottenForest1",
-    "FranticFreddie3",
-    "Gods99", "Goonies90", "Ishar98", "Ishar99", "JupiterLander99", "LeisureSuitLarry93", "LeisureSuitLarry94", "MontyMole99", "Pitfall96", "RadarRatRace10", "SabreWulf99",
-    "Soccer99", "TheHobbit99", "Unknown30", "Wally99", "AMC2", "AMC3", "ArabianNights1", "CrystalsOfZong10", "HalfLife 89", "Hero80", "Hero81", "Hero82", "HeroesOfKarn80",
-    "HunchBack10", "Ishar80", "JetSetWilly88", "JetSetWilly89", "JungleHunt89", "LeisureSuitLarry88", "LeisureSuitLarry89", "Pitfall88", "Pitfall89", "RobinToTheRescue89",
-    "SabreWulf89", "TempleOfApshai89", "TheHobbit89", "Vixen89", "WhoDaresWins10", "WizardOfWor89", "ZX81-89", "ZakMcKraken89", "Zaxxon89", "Zeppelin89",
-    "Goonies88", "HalfLife88", "Pipeline88", "Pssst", "RadarRatRace20", "RiverRaid2", "RobinOfTheWood88", "RobinsonsRequiem1", "SabreWulf87", "SeaWolf88", "Sentinel2",
-    "SirFred88", "Sorcery88", "TheHobbit88", "Tornado88", "Tutankhamun88", "Ultima89", "Uridium2", "Valhalla88", "Vixen79", "Wally88", "WhoDaresWins88", "WinterGames79", "Zeppelin88",
-    "BrianBloodaxe70", "BrianBloodaxe71", "ChuckieEgg1", "ChuckieEgg2", "Cuthbert70", "DungeonMaster70", "EveryoneIsAWally70", "EveryoneIsAWally71", "EyeOfTheBeholder70",
-    "FalconPatrol70", "FalconPatrol71", "FalconPatrol72", "FireAnt70", "Friday70", "GIJoe70", "GIJoe71", "Galaga70", "Galaga71", "Gods70", "Goonies70", "HalfLife70",
-    "HalfLife71", "HalfLife72", "Hero70", "Hero71", "Hero72", "HunchBack70", "HunchBack71", "Iceman70", "Infiltrator70", "Infiltrator71", "Ishar70", "Ishar71",
-    "Ishar72", "Jawbreaker", "JetPac70", "Jumpman70", "JupiterLander70", "KokotoniWilf70", "LeisureSuitLarry70", "LeisureSuitLarry71", "LeisureSuitLarry72",
-    "LeisureSuitLarry73", "LeisureSuitLarry74", "LeisureSuitLarry75", "LeisureSuitLarry76", "LeisureSuitLarry77", "Miner70", "MrRobot70", "Pitfall70", "Pitfall71",
-    "Pitfall72", "Pitfall73", "Pyjamarama70", "RickDangerous70", "RiverRaid70", "SirFred70", "Sorcery70", "Spelunker70", "TempleOfApshai70", "TheHobbit70", "TheHobbit71",
-    "TheHobbit72", "TheHobbit73", "TimeTunnel70", "Ultima70", "Vixen70", "WhoDaresWins70", "WhoDaresWins71", "Wolfenstein70", "Yeppelin70", "Zaxxon70",
-    "DynaBlaster60", "FireAnt60", "Gods60", "HalfLife60", "HeavyOnTheMagick60", "Hero60", "Imhotep60", "Infiltrator60", "JetSetWilly60", "JungleStory60", "Kangaroo60",
-    "Killerwat60", "KingsQuest60", "KokotoniWilf60", "LadyTut60", "LeisureSuitLarry60", "LeisureSuitLarry61", "ManicMiner60", "ManicMiner61", "ManicMiner62",
-    "ManicMiner63", "ManicMiner64", "MrRobot60", "ORiley'sMine60", "Pitfall60", "RickDangerous60", "SP60", "SP62", "SP63", "SP64", "SP65", "SP66", "SP67", "SP68",
-    "SP69", "SP70", "SP71", "SasbreWulf60", "Scramble60", "ScubaDive60", "SeaWolf60", "Shamus60", "SirFred60", "SirFred61", "SirFred62", "SkoolDaze60", "SkoolDaze61",
-    "Sp61", "SumerGames60", "TimeTunnel60", "F50", "HalfLife50", "Hero50", "Hero51", "Hero52", "HeroQuest50", "JetPac50", "JungleHunt50", "Kangaroo50", "Killerwat50",
-    "Killerwat51", "KingsQuest50", "KingsQuest51", "KingsQuest52", "KingsQuest53", "LeisureSuitLarry50", "ManicMiner50", "ManicMiner51", "ManicMiner52", "MontyMole50",
-    "MontyMole51", "MontyMole52", "Nebulus50", "OReillyMine50", "OilWell50", "OilWell51", "OperationWolf50", "Paperboy50", "Pipeline50", "Pipeline51", "Pitfall50", "Platoon50",
-    "Predator50", "Prince50", "Prince51", "Pyjamarama50", "RMC50", "RickDangerous50", "RickDangerous51", "RobinOfTheWood50", "SabreWulf50", "Sentinel50", "Serpentine50",
-    "SkoolDaze50", "TimeTunnel50", "Tutamkham50", "Ultima50", "Vixen50", "Vixen51", "Wadca", "WhoDaresWins50", "Wolfenstein50", "Zak50", "Zak51", "Zeppelin50",
-    "AztecChallenge100", "AztecChallenge101", "Barbarian100", "DefenderOfTheCrown100", "DungeonMaster100", "EyeOfTheBeholder100", "EyeOfTheBeholder101", "Fred100",
-    "MonkeyIsland100", "MonkeyIsland101", "MonkeyIsland102", "MontyMole100", "Morrowind100", "Oblivion100", "SVS1001", "SVS1011", "TombRaider100", "TombRaider101",
-    "TombRaider102", "TombRaider103", "TombRaider104", "TombRaider105", "TombRaider106", "TombRaider107", "TombRaider108", "TombRaider109", "TombRaider95",
-    "TombRaider96", "TombRaider97", "TombRaider98", "TombRaider99", "Underwurlde100", "Witcher100", "Witcher101", "Witcher102", "Witcher103",
-    "AticAtac110", "AticAtac111", "AticAtac112", "AticAtac113", "AticAtac114", "AticAtac115", "AticAtac116", "AticAtac117", "AztecChallenge110",
-    "AztecChallenge111", "AztecChallenge112", "Barbarian110", "Barbarian111", "Barbarian112", "BeyondForbiddenForest110", "BeyondForbiddenForest111",
-    "Blackwyche110", "CrawlMaster110", "CrawlMaster111", "CrawlMaster112", "CrawlMaster113", "CrawlMaster114", "CrawlMaster115", "Defender110",
-    "DefenderOfTheCrown110", "DragonSkulle110", "EyeOfTheBeholder110", "EyeOfTheBeholder111", "EyeOfTheBeholder112", "ForbiddenForest110", "Fred110",
-    "Fred111", "Fred112", "Fred113", "Frogger110", "Frogger111", "Frogger112", "GatewayToApshai110", "ImpossibleMsission110", "ImpossibleMsission111",
-    "ImpossibleMsission112", "ImpossibleMsission113", "JSW110", "JSW111", "JSW112", "JSW113", "KnightLore110", "KnightLore111", "LastNinja110",
-    "LastNinja111", "MonkeyIsland110", "MonkeyIsland111", "MonkeyIsland112", "MontyMole110", "MontyMole111", "MontyMole112", "Oblivion110",
-    "PharaohCurse110", "PharaohCurse111", "PharaohCurse112", "SVS110", "SVS111", "SVS112", "TombRaider110", "TombRaider111", "TombRaider112",
-    "TombRaider113", "Underwurlde110", "Underwurlde111", "Witcher110", "Witcher111", "Witcher112", "Witcher113",
-    "AticAtac130", "AticAtac131", "AztecChallenge130", "Barbarian130", "Barbarian131", "CrawlMaster130", "CrawlMaster131", "CrawlMaster132",
-    "CrawlMaster133", "EyeOfTheBeholder130", "Fred130", "GatewayToApshai130", "ImpossibleMission130", "LastNinja130", "LastNinja131", "Morrowind130",
-    "PharaohCurse130", "Portal130", "Portal131", "Portal132", "SVS130", "SVS131", "SVS132", "TombRaider130", "Underwurlde130", "Underwurlde131", "Witcher130",
-    "AticAtac140", "EyeOfTheBeholder140", "GatewayToApshai140", "ImpossibleMission140", "LastNinja140", "MonkeyIsland140", "MonkeyIsland141", "MonkeyIsland142",
-    "MonkeyIsland143", "Morrowind140", "Oblivion140", "Oblivion141", "PharaohCurse140", "Portal140", "Tombraider140", "Tombraider141", "Underwurlde140", "Underwurlde141"
-];
-if (ENGINE.verbose) console.log("DECAL_PAINTINGS", DECAL_PAINTINGS.length, DECAL_PAINTINGS.sort());
-
-/** Light decals */
-
-const LIGHT_DECALS = [
-    { sprite: "WallLamp", color: LIGHT_COLORS.standard },
-    { sprite: "WallLamp2", color: LIGHT_COLORS.standard },
-    { sprite: "WallLamp", color: LIGHT_COLORS.standard },
-    { sprite: "WallLamp2", color: LIGHT_COLORS.standard },
-    { sprite: "WallLamp3", color: LIGHT_COLORS.red },
-    { sprite: "WallTorch", color: LIGHT_COLORS.fire },
-    { sprite: "Lamp4", color: LIGHT_COLORS.yellowgreen }
-];
-
-/** Crests */
-
-const DECAL_CRESTS = ["LS", "Skull4", "Skull3", "Skull2", "Skull1", "Crack4", "Crack3", "Skeleton11", "Skeleton12", "Crack20", "Crack21", "DancingSkeletons2",
-    "PrayingSkeleton10", "SittingSkeleton2", "Skeleton21", "Skull10", "Skull11", "WOWc1", "WOWc2", "Reaper", "AticAtacCrest1"];
-const BOTTOM_CRESTS = ["Grate1_128"];
-const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond"];
-
-
-const DECAL_SOURCES = { picture: DECAL_PAINTINGS, crest: DECAL_CRESTS };
-const TOP_BOTTOM_SOURCES = { TOP: TOP_CRESTS, BOTTOM: BOTTOM_CRESTS };
-if (ENGINE.verbose) console.log("DECAL_CRESTS", DECAL_CRESTS.sort());
+const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue"];
 
 console.log("%cMAP for CrawlMaster2 loaded.", "color: #888");
 
 /** Map definitions */
 const MAP = {
-    /*1: {
-        width: 40,
-        height: 40,
-        floor: "GreenDungeonWall",
-        ceil: "GreyDungeonFloor",
-        wall: "DungeonWall",
-        minPad: 3,
-    },*/
-    1 : {
+    1: {
         data: '{"width":"16","height":"16","map":"BB2ABAA7BABABAA2BB2ABB2ABABAA2BAA5BAA7BABAA2BAA3BAA4BB3AA2BAA15BAA7BABABAA3BAA5BAA3BAA3BB6ABB2ABB2ABB3AA2BB2AA2BB11ABB6ABB5AA2BB3AA2BB9AA3BB2AA2BB4AA2BB2ABB2ABB11ABB9ABB4AA3BB19ABB16AB$"}',
         wall: "DungeonWall",
         floor: "GreenDungeonWall",
         ceil: "GreyDungeonFloor",
         start: '[24,7]',
-        decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"]]',
+        decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"]]',
         lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"]]',
-      },
-    2: {
-        width: 40,
-        height: 40,
-        floor: "MorgueFloor",
-        ceil: "GreyDungeonFloor",
-        wall: "GreenDungeonWall",
-        minPad: 3,
-    },
-    3: {
-        width: 37,
-        height: 37,
-        floor: "BrokenTile1",
-        ceil: "SmallTiles1",
-        wall: "Wall8",
-        minPad: 2,
-    },
-    4: {
-        width: 37,
-        height: 37,
-        floor: "Broken1",
-        ceil: "BrokenTile1",
-        wall: "Wall11",
-        minPad: 2,
-    },
-    5: {
-        width: 37,
-        height: 37,
-        floor: "Tile",
-        ceil: "OldFloor",
-        wall: "Wall7",
-        minPad: 3,
-    },
-    999: {
-        data: '{"width":"16","height":"16","map":"BB5ABB7AA2BABAA12BAA2BB4AA5BAA2BAA19BAA11BAA5BAA2BAA2BAA5BAA12BAA3BB6ABAA2BABB4AA11BB2AA2BAA3BB2AA3BB9AA6BB2ABAA2BAA2BABB2AA2BAA7BB3ABAA2BABABB2AA3BABB8ABB3AA4BAA2BB9ABB18A$"}',
-        floor: "GreenDungeonWall",
-        ceil: "GreyDungeonFloor",
-        wall: "DungeonWall",
-        minPad: 3,
-        entrance: new Pointer(new Grid(0, 4), RIGHT),
-        exit: new Pointer(new Grid(15, 4), LEFT),
-    },
+        gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"]]'
+    }
 };
 
 

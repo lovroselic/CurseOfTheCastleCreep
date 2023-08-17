@@ -148,6 +148,14 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 ];
 
 LoadSprites = [
+    //gates
+    { srcName: "DungeonDoor.png", name: "DungeonDoor_Closed" },
+    { srcName: "dungeondoor_blue.png", name: "DungeonDoor_Blue" },
+    { srcName: "dungeondoor_gold.png", name: "DungeonDoor_Gold" },
+    { srcName: "dungeondoor_green.png", name: "DungeonDoor_Green" },
+    { srcName: "dungeondoor_open.png", name: "DungeonDoor_Open" },
+    { srcName: "dungeondoor_red.png", name: "DungeonDoor_Red" },
+    { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
     //lights
     { srcName: "WallLamp256.png", name: "WallLamp" },
     { srcName: "WallLamp2.png", name: "WallLamp2" },
@@ -256,14 +264,14 @@ LoadSprites = [
     { srcName: "AA8.png", name: "AA8" },
     { srcName: "AA7.png", name: "AA7" },
     { srcName: "AA5.png", name: "AA5" },
-    { srcName: "AA3.png", name: "AA3" },
+    //{ srcName: "AA3.png", name: "AA3" },
     { srcName: "AA2.png", name: "AA2" },
     { srcName: "AticAtacPicture.png", name: "AA1" },
     { srcName: "Hero2.png", name: "Hero2" },
     { srcName: "HERO3.png", name: "Hero3" },
     { srcName: "HeroPicture.png", name: "Hero1" },
     { srcName: "Bagitman.png", name: "Bagitman" },
-    { srcName: "AMC.png", name: "AMC" },
+    //{ srcName: "AMC.png", name: "AMC" },
     { srcName: "Walls.png", name: "Walls" },
     { srcName: "Amber.png", name: "Amberstar" },
     { srcName: "LSL6.png", name: "LSL6" },
@@ -429,7 +437,7 @@ LoadSprites = [
     { srcName: "ManicMiner2.png", name: "ManicMiner2" },
     { srcName: "ManicMiner3.png", name: "ManicMiner3" },
     { srcName: "Infiltrator2.png", name: "Infiltrator2" },
-    { srcName: "1942_2.png", name: "1942_2" },
+    //{ srcName: "1942_2.png", name: "1942_2" },
     { srcName: "Arnie1.png", name: "Arnie1" },
     { srcName: "BTF1.png", name: "BTF1" },
     { srcName: "BlueThunder1.png", name: "BlueThunder1" },

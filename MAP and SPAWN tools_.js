@@ -27,6 +27,7 @@ const MAP_TOOLS = {
         }
         this.MAP[level].map.decals = JSON.parse(this.MAP[level].decals) || null;
         this.MAP[level].map.lights = JSON.parse(this.MAP[level].lights) || null;
+        this.MAP[level].map.gates = JSON.parse(this.MAP[level].gates) || null;
     }
 };
 const SPAWN_TOOLS = {
@@ -36,29 +37,50 @@ const SPAWN_TOOLS = {
         const GA = map.GA;
         this.decals(map, GA);
         this.lights(map, GA);
+        this.externalGates(map, GA);
     },
     decals(map, GA) {
-        console.log("spawning decals");
         for (const D of map.decals) {
             const grid = GA.indexToGrid(D[0]);
             const face = DirectionToFace(Vector.fromInt(D[1]));
             const picture = D[2];
             const type = D[3];
-            console.log("Decal", D, "grid", grid, "face", face, "picture", picture, "type", type);
+            //console.log("Decal", D, "grid", grid, "face", face, "picture", picture, "type", type);
             DECAL3D.add(new StaticDecal(grid, face, SPRITE[picture], type, picture));
         }
     },
     lights(map, GA) {
-        console.log("spawning lights");
         for (const L of map.lights) {
             const grid = GA.indexToGrid(L[0]);
             const face = DirectionToFace(Vector.fromInt(L[1]));
             const picture = L[2];
             const type = L[3];
-            console.log("Light", L, "grid", grid, "face", face, "picture", picture, "type", type);
+            //console.log("Light", L, "grid", grid, "face", face, "picture", picture, "type", type);
             LIGHTS3D.add(new LightDecal(grid, face, SPRITE[picture], "light", picture, LIGHT_COLORS[type]));
         }
     },
+    externalGates(map, GA) {
+        for (const G of map.gates) {
+            console.log("G", G);
+            const color = G[4];
+            const grid = GA.indexToGrid(G[0]);
+            const dir = Vector.fromInt(G[1]);
+            const pointer = new Pointer(grid, dir);
+            map[G[2]] = pointer;
+            const face = DirectionToFace(dir);
+            const picture = `DungeonDoor_${color}`;
+            const destination = new Destination(G[3], G[3].split(".")[0]);
+            let opEn = false;
+            if (color === "Open") opEn = true;
+            let locked = true;
+            if (["Open", "Closed"].includes(color)) locked = false;
+            const externalGate = new ExternalGate(grid, face, SPRITE[picture], "portal", picture, color, opEn, locked, destination, GAME.useStaircase);
+            //console.log(".externalGate", externalGate);
+            INTERACTIVE_BUMP3D.add(externalGate);
+        }
+        console.log("INTERACTIVE_BUMP3D", INTERACTIVE_BUMP3D.POOL);
+
+    }
 };
 
 /** defaults */

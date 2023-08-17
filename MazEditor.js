@@ -23,6 +23,7 @@ const MAP = {
     MAP.map.decals = [];
     MAP.map.lights = [];
     MAP.map.start = [];
+    MAP.map.gates = [];
   }
 };
 const INI = {
@@ -34,7 +35,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.09",
+  VERSION: "0.06.10",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -140,6 +141,21 @@ const GAME = {
         break;
       case "gate":
         console.log("gate");
+        switch (currentValue) {
+          case MAPDICT.WALL:
+            break;
+          default:
+            $("#error_message").html(`Gate placement not supported on value: ${currentValue}`);
+            return;
+        }
+        //
+        let dirs = GA.getDirections(grid, MAPDICT.EMPTY);
+        if (dirs.length > 1) {
+          alert(`bad gate position, posible exits ${dirs.length}`);
+          break;
+        }
+        dirIndex = dirs[0].toInt();
+        MAP.map.gates.push(Array(gridIndex, dirIndex, $("#sgateID")[0].value, $("#tgateID")[0].value, $("#gatetype")[0].value));
         break;
       case "decal":
         switch (currentValue) {
@@ -186,7 +202,7 @@ const GAME = {
         }
         break;
       case "cleargrid":
-        for (let arrType of [MAP.map.decals, MAP.map.lights]) {
+        for (let arrType of [MAP.map.decals, MAP.map.lights, MAP.map.gates]) {
           let iElementToRemove = [];
           for (let [index, element] of arrType.entries()) {
             if (element[0] === gridIndex) {
@@ -384,6 +400,28 @@ const GAME = {
       console.error('Failed to copy text: ', err);
     }
   },
+  getResolution(texture) {
+    return [texture.width, texture.height];
+  },
+  updateTextures() {
+    const wallTexture = TEXTURE[$("#walltexture")[0].value];
+    const floorTexture = TEXTURE[$("#floortexture")[0].value];
+    const ceilTexure = TEXTURE[$("#ceiltexture")[0].value];
+    ENGINE.fill(LAYER.wallcanvas, wallTexture);
+    ENGINE.fill(LAYER.floorcanvas, floorTexture);
+    ENGINE.fill(LAYER.ceilcanvas, ceilTexure);
+    const ids = ["wall_resolution", "floor_resolution", "ceil_resolution"];
+    for (const [i, pTexture] of [wallTexture, floorTexture, ceilTexure].entries()) {
+      let res = GAME.getResolution(pTexture);
+      $(`#${ids[i]}`).html(`width: ${res[0]}, height: ${res[1]}`);
+    }
+  },
+  repaintTextures() {
+    GAME.updateTextures();
+    if ($("#selector input[name=renderer]:checked").val() === "texture") {
+      GAME.texture();
+    }
+  },
   setup() {
     console.log("GAME SETUP started");
     GAME.updateWH();
@@ -409,27 +447,10 @@ const GAME = {
     LAYER.ceilcanvas = $("#ceilcanvas")[0].getContext("2d");
     $("#floortexture").val("RockFloor");
     $("#ceiltexture").val("Pavement");
-    ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
-    ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
-    ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
-
-    $("#walltexture").change(function () {
-      ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
-      //repaint
-      if ($("#selector input[name=renderer]:checked").val() === "texture") {
-        GAME.texture();
-      }
-    });
-    $("#floortexture").change(function () {
-      ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
-      //repaint
-      if ($("#selector input[name=renderer]:checked").val() === "texture") {
-        GAME.texture();
-      }
-    });
-    $("#ceiltexture").change(function () {
-      ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
-    });
+    GAME.updateTextures();
+    $("#walltexture").change(GAME.repaintTextures);
+    $("#floortexture").change(GAME.repaintTextures);
+    $("#ceiltexture").change(GAME.repaintTextures);
 
     for (const pic of DECAL_PAINTINGS) {
       $("#picture_decal").append(`<option value="${pic}">${pic}</option>`);
@@ -471,6 +492,15 @@ const GAME = {
     }
     GAME.printMaterialDetails();
     $("#materialtype").change(GAME.printMaterialDetails);
+
+    for (const gateType of GATE_TYPES) {
+      $("#gatetype").append(`<option value="${gateType}">${gateType}</option>`);
+    }
+    ENGINE.drawToId("gatecanvas", 0, 0, SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`]);
+
+    $("#gatetype").change(function () {
+      ENGINE.drawToId("gatecanvas", 0, 0, SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`]);
+    });
   },
   texture() {
     GAME.textureGrid();
@@ -487,6 +517,7 @@ const GAME = {
       start: '${JSON.stringify(MAP.map.start)}',
       decals: '${JSON.stringify(MAP.map.decals)}',
       lights: '${JSON.stringify(MAP.map.lights)}',
+      gates: '${JSON.stringify(MAP.map.gates)}'
     }`;
     $("#exp").val(roomExport);
   },
@@ -501,19 +532,19 @@ const GAME = {
     const decals = ImportText.extractGroup(/decals:\s\'(.*)\'/);
     const lights = ImportText.extractGroup(/lights:\s\'(.*)\'/);
     const start = ImportText.extractGroup(/start:\s\'(.*)\'/);
+    const gates = ImportText.extractGroup(/gates:\s\'(.*)\'/);
     $("#walltexture").val(wall);
     $("#floortexture").val(floor);
     $("#ceiltexture").val(ceil);
     $("#roomid").val(roomId);
-    ENGINE.fill(LAYER.wallcanvas, TEXTURE[$("#walltexture")[0].value]);
-    ENGINE.fill(LAYER.floorcanvas, TEXTURE[$("#floortexture")[0].value]);
-    ENGINE.fill(LAYER.ceilcanvas, TEXTURE[$("#ceiltexture")[0].value]);
+    GAME.updateTextures();
 
     MAP.map = FREE_MAP.import(Import);
     MAP.init();
     MAP.map.decals = JSON.parse(decals);
     MAP.map.lights = JSON.parse(lights);
     MAP.map.start = JSON.parse(start);
+    MAP.map.gates = JSON.parse(gates);
     console.log(MAP.map);
     MAP.width = Import.width;
     MAP.height = Import.height;

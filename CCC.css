@@ -2,7 +2,7 @@
 
 @charset "utf-8";
 
-
+/*
 @font-face {
     font-family: 'Kristen';
     src: url("/Fonts/Kristen.ttf");
@@ -50,6 +50,7 @@
     src: url("/Fonts/C64_Pro-STYLE.ttf");
     font-display: swap;
 }
+*/
 
 
 /* Overrriding Bootstrap */

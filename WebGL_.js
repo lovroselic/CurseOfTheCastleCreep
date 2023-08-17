@@ -90,7 +90,7 @@ const WebGL = {
     frameBuffer: null,
     playerList: [],
     staticDecalList: [DECAL3D, LIGHTS3D, BUMP3D],
-    interactiveDecalList: [INTERACTIVE_DECAL3D],
+    interactiveDecalList: [INTERACTIVE_DECAL3D, INTERACTIVE_BUMP3D],
     dynamicDecalList: [GATE3D, ITEM3D],
     dynamicLightSources: [MISSILE3D, EXPLOSION3D],
     models: [$3D_MODEL],
@@ -162,6 +162,7 @@ const WebGL = {
         ITEM3D.init(map);
         MISSILE3D.init(map, hero);
         INTERACTIVE_DECAL3D.init(map);
+        INTERACTIVE_BUMP3D.init(map);
         BUMP3D.init(map);
         ENTITY3D.init(map, hero);
         INTERFACE3D.init(map);
@@ -1437,6 +1438,24 @@ class Portal extends Decal {
     }
     interact() {
         this.call(this.destination);
+    }
+}
+
+class ExternalGate extends Portal {
+    constructor(grid, face, texture, category, name, color, open, locked, destination, call) {
+        super(grid, face, texture, category, name, destination, call);
+        this.type = "Portal";
+        this.interactive = true;
+        this.color = color;
+        this.open = open;
+        this.locked = locked;
+    }
+    interact(GA, inventory) {
+        if (this.open) return;
+        if (this.locked) {
+
+        }
+        console.info("interacting with external gate", this);
     }
 }
 

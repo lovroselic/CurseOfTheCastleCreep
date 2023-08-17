@@ -67,9 +67,15 @@ const GRID = {
     actor.x = coord.x + half;
     actor.y = coord.y + ENGINE.INI.GRIDPIX;
   },
+  gridToBottomCenterPX(grid) {
+    const half = ENGINE.INI.GRIDPIX >>> 1;
+    let x = grid.x * ENGINE.INI.GRIDPIX + half;
+    let y = (grid.y + 1) * ENGINE.INI.GRIDPIX;
+    return new Point(x, y);
+  },
   gridToCoord(grid) {
-    var x = grid.x * ENGINE.INI.GRIDPIX;
-    var y = grid.y * ENGINE.INI.GRIDPIX;
+    let x = grid.x * ENGINE.INI.GRIDPIX;
+    let y = grid.y * ENGINE.INI.GRIDPIX;
     return new Point(x, y);
   },
   coordToGrid(x, y) {

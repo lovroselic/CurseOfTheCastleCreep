@@ -2308,7 +2308,7 @@ const ENGINE = {
       }
       //cont here
       ENGINE.BLOCKGRID.decalDraw(maze, CTX);
-      if (ENGINE.verbose) console.log(`%cBLOCKGRID draw ${performance.now() - t0} ms`, ENGINE.CSS);
+      //if (ENGINE.verbose) console.log(`%cBLOCKGRID draw ${performance.now() - t0} ms`, ENGINE.CSS);
     },
     decalDraw(maze, CTX) {
       const decalWidth = 3;
@@ -2342,6 +2342,60 @@ const ENGINE = {
         let mid = GRID.gridToCenterPX(grid);
         let start = mid.translate(dir, W);
         ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
+      }
+      for (const gate of maze.gates) {
+        let grid = GA.indexToGrid(gate[0]);
+        let bottomMid = GRID.gridToBottomCenterPX(grid);
+        let point = bottomMid;
+        CTX.strokeStyle = "#966F33";
+        CTX.fillStyle = "#966F33";
+        if (maze[3] === "Open") {
+          CTX.strokeStyle = "#000";
+          CTX.fillStyle = "#000";
+        }
+        CTX.lineWidth = 1;
+        CTX.beginPath();
+        CTX.moveTo(point.x, point.y);
+        point = point.translate(LEFT, W / 2);
+        CTX.lineTo(point.x, point.y);
+        point = point.translate(UP, W);
+        CTX.lineTo(point.x, point.y);
+        point = point.translate(RIGHT, W / 2);
+        CTX.arc(point.x, point.y, W / 2, Math.PI, 0);
+        point = point.translate(RIGHT, W / 2);
+        CTX.moveTo(point.x, point.y);
+        point = point.translate(DOWN, W);
+        CTX.lineTo(point.x, point.y);
+        CTX.lineTo(bottomMid.x, bottomMid.y);
+        CTX.closePath();
+        CTX.stroke();
+        CTX.fill();
+        let mid = GRID.gridToCenterPX(grid);
+        let color = "#966F33";
+        switch (gate[4]) {
+          case "Open":
+            color = "#000";
+            break;
+          case "Closed":
+            color = "#966F33";
+            break;
+          case "Gold":
+            color = "gold";
+            break;
+          case "Silver":
+            color = "silver";
+            break;
+          case "Red":
+            color = "#F00";
+            break;
+          case "Blue":
+            color = "blue";
+            break;
+        }
+        ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
+        let dir = Vector.fromInt(gate[1]);
+        let start = mid.translate(dir, W);
+        ENGINE.drawCircle(CTX, start, decalWidth * 2, "#A000A0");
       }
     },
     wall(x, y, CTX, value) {

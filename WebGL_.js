@@ -57,7 +57,7 @@ const WebGL = {
         EXPLOSION_DURATION_MS: 2000,
         BLOOD_DURATION_MS: 2500,
         SMUDGE_DURATION_MS: 500,
-        MIN_R: 0.25
+        MIN_R: 0.25,
     },
     CONFIG: {
         firstperson: true,
@@ -1255,10 +1255,11 @@ class $3D_player {
                 continue;
             } else {
                 if (this.GA.isWall(futureGrid) && this.GA.isStair(futureGrid)) {
-                    const IA = this.map.decalIA3D;
+                    const IA = this.map.decalIA3D || this.map.interactive_bump3d; 
                     const bump = IA.unroll(futureGrid)[0] - 1;
                     if (isNaN(bump)) return null;
-                    return BUMP3D.POOL[bump];
+                    if (BUMP3D.POOL.length > 0) return BUMP3D.POOL[bump];
+                    return INTERACTIVE_BUMP3D.POOL[bump];
                 }
             }
         }
@@ -1449,13 +1450,28 @@ class ExternalGate extends Portal {
         this.color = color;
         this.open = open;
         this.locked = locked;
+        if (this.open) this.interactive = false;
+    }
+    openGate() {
+        console.warn("opening door", this);
+        this.open = true;
+        this.interactive = false;
+        this.color = "Open";
+        this.texture = WebGL.createTexture(SPRITE.DungeonDoor_Open);
+
     }
     interact(GA, inventory) {
-        if (this.open) return;
+        if (this.open) {
+            console.warn("bumping in ", this);
+            this.call(this.destination); //untested
+            return;
+        }
         if (this.locked) {
-
+            console.warn("locked:", this);
+            return;
         }
         console.info("interacting with external gate", this);
+        this.openGate();
     }
 }
 
@@ -1673,7 +1689,7 @@ class FloorItem3D extends Drawable_object {
         this.value = value;
     }
     setTexture() {
-        this.texture = WebGL.createTexture(this.texture);//
+        this.texture = WebGL.createTexture(this.texture);
     }
     interact() {
         this.active = false;

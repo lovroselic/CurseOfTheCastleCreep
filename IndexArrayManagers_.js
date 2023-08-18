@@ -21,6 +21,7 @@ class IAM {
     constructor() {
         this.POOL = null;
         this.map = null;
+        this.IA = null; //
     }
     draw() {
         for (let obj of this.POOL) {
@@ -86,6 +87,11 @@ class IAM {
     }
     associateHero(hero) {
         this.hero = hero;
+    }
+    setup() {
+        let map = this.map;
+        map[this.IA] = new IndexArray(map.width, map.height, 2, 1); //1 bank, 16bit
+        this.poolToIA(map[this.IA]);
     }
 }
 
@@ -558,9 +564,9 @@ class Decal_IA_3D extends IAM {
 }
 
 class Decal3D extends IAM {
-    constructor(len = null) {
+    constructor(len = null, IA = null) {
         super();
-        this.IA = null;
+        this.IA = IA;
         this.id_offset = null;
         this.len = len;
         if (this.len) {
@@ -582,7 +588,7 @@ class Decal3D extends IAM {
         return null;
     }
     manage(lapsedTime) {
-        this.reIndex(); //
+        this.reIndex();
         for (const item of this.POOL) {
             if (item) {
                 item.manage(lapsedTime);
@@ -920,7 +926,7 @@ const GATE3D = new Decal3D(256);
 const ITEM3D = new Decal3D(1024);
 const EXPLOSION3D = new ParticleEmmission3D();
 const INTERACTIVE_DECAL3D = new Decal3D(1024);
-const INTERACTIVE_BUMP3D = new Decal3D(256);
+const INTERACTIVE_BUMP3D = new Decal3D(256, "interactive_bump3d");
 const BUMP3D = new Decal_IA_3D();
 const ENTITY3D = new Animated_3d_entity();
 const MISSILE3D = new Missile3D("enemyIA", ENTITY3D);

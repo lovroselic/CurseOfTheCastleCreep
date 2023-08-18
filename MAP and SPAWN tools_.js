@@ -45,7 +45,6 @@ const SPAWN_TOOLS = {
             const face = DirectionToFace(Vector.fromInt(D[1]));
             const picture = D[2];
             const type = D[3];
-            //console.log("Decal", D, "grid", grid, "face", face, "picture", picture, "type", type);
             DECAL3D.add(new StaticDecal(grid, face, SPRITE[picture], type, picture));
         }
     },
@@ -55,7 +54,6 @@ const SPAWN_TOOLS = {
             const face = DirectionToFace(Vector.fromInt(L[1]));
             const picture = L[2];
             const type = L[3];
-            //console.log("Light", L, "grid", grid, "face", face, "picture", picture, "type", type);
             LIGHTS3D.add(new LightDecal(grid, face, SPRITE[picture], "light", picture, LIGHT_COLORS[type]));
         }
     },
@@ -64,6 +62,7 @@ const SPAWN_TOOLS = {
             console.log("G", G);
             const color = G[4];
             const grid = GA.indexToGrid(G[0]);
+            GA.addStair(grid);
             const dir = Vector.fromInt(G[1]);
             const pointer = new Pointer(grid, dir);
             map[G[2]] = pointer;
@@ -75,11 +74,10 @@ const SPAWN_TOOLS = {
             let locked = true;
             if (["Open", "Closed"].includes(color)) locked = false;
             const externalGate = new ExternalGate(grid, face, SPRITE[picture], "portal", picture, color, opEn, locked, destination, GAME.useStaircase);
-            //console.log(".externalGate", externalGate);
             INTERACTIVE_BUMP3D.add(externalGate);
         }
-        console.log("INTERACTIVE_BUMP3D", INTERACTIVE_BUMP3D.POOL);
-
+        INTERACTIVE_BUMP3D.setup();
+        console.log("INTERACTIVE_BUMP3D", INTERACTIVE_BUMP3D);
     }
 };
 

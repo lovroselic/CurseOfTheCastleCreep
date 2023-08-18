@@ -26,134 +26,9 @@ const DEBUG = {
     LOAD: false,
     STUDY: false,
     keys: true,
-    study() {
-        console.info("######## FIXED DUNGEON - STUDY MODE ########");
-        GAME.level = 999;
-        GAME.upperLimit = GAME.level;
-    },
     goto(grid) {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
-    depth2() {
-        GAME.level = 2;
-        GAME.upperLimit = GAME.level;
-        GAME.gold = 270;
-        HERO.maxHealth = 31;
-        HERO.maxMana = 52;
-        HERO.health = 19;
-        HERO.mana = 28;
-        HERO.defense = 8;
-        HERO.reference_defense = HERO.defense;
-        HERO.attack = 10;
-        HERO.reference_attack = HERO.attack;
-        HERO.magic = 10;
-        HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 56;
-        HERO.defenseExp = 32;
-        HERO.magicExp = 88;
-        HERO.attackExpGoal = 225;
-        HERO.defenseExpGoal = 100;
-        HERO.magicExpGoal = 338;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 4;
-        let scrolls = ["Map", "BoostWeapon", "BoostArmor"];
-        for (let scr of scrolls) {
-            let scroll = new Scroll(scr);
-            HERO.inventory.scroll.add(scroll);
-        }
-        TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
-        TITLE.scrolls();
-    },
-    depth3() {
-        GAME.level = 3;
-        GAME.upperLimit = GAME.level;
-        GAME.gold = 892;
-        HERO.maxHealth = 55;
-        HERO.maxMana = 62;
-        HERO.health = 50;
-        HERO.mana = 4;
-        HERO.defense = 12;
-        HERO.reference_defense = HERO.defense;
-        HERO.attack = 14;
-        HERO.reference_attack = HERO.attack;
-        HERO.magic = 13;
-        HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 231;
-        HERO.defenseExp = 16;
-        HERO.magicExp = 380;
-        HERO.attackExpGoal = 507;
-        HERO.defenseExpGoal = 150;
-        HERO.magicExpGoal = 507;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["MagicBoost", "Cripple", "DrainMana"];
-        for (let scr of scrolls) {
-            let scroll = new Scroll(scr);
-            HERO.inventory.scroll.add(scroll);
-        }
-        TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
-        TITLE.scrolls();
-    },
-    depth4() {
-        GAME.level = 4;
-        GAME.upperLimit = GAME.level;
-        GAME.gold = 429;
-        HERO.maxHealth = 71;
-        HERO.maxMana = 81;
-        HERO.health = 71;
-        HERO.mana = 9;
-        HERO.defense = 14;
-        HERO.reference_defense = HERO.defense;
-        HERO.attack = 21;
-        HERO.reference_attack = HERO.attack;
-        HERO.magic = 16;
-        HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 297;
-        HERO.defenseExp = 111;
-        HERO.magicExp = 521;
-        HERO.attackExpGoal = 1713;
-        HERO.defenseExpGoal = 225;
-        HERO.magicExpGoal = 761;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Petrify", "Petrify", "Petrify", "Petrify", "Petrify", "Petrify", "Petrify", "Petrify", "Petrify", "Petrify", "Petrify"];
-        for (let scr of scrolls) {
-            let scroll = new Scroll(scr);
-            HERO.inventory.scroll.add(scroll);
-        }
-        TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
-        TITLE.scrolls();
-    },
-    depth5() {
-        GAME.level = 5;
-        GAME.upperLimit = GAME.level;
-        GAME.gold = 2238;
-        HERO.maxHealth = 87;
-        HERO.maxMana = 92;
-        HERO.health = 87;
-        HERO.mana = 92;
-        HERO.defense = 18;
-        HERO.reference_defense = HERO.defense;
-        HERO.attack = 24;
-        HERO.reference_attack = HERO.attack;
-        HERO.magic = 19;
-        HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 2184;
-        HERO.defenseExp = 228;
-        HERO.magicExp = 281;
-        HERO.attackExpGoal = 2570;
-        HERO.defenseExpGoal = 338;
-        HERO.magicExpGoal = 1142;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["MagicBoost", "MagicBoost", "DestroyWeapon", "BoostArmor", "Petrify", "Petrify", "Petrify", "Petrify", "Petrify"];
-        for (let scr of scrolls) {
-            let scroll = new Scroll(scr);
-            HERO.inventory.scroll.add(scroll);
-        }
-        TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
-        TITLE.scrolls();
-    }
 };
 const INI = {
     MIMIMAP_HEIGHT: 200,
@@ -178,7 +53,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.02.01",
+    VERSION: "0.02.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -709,7 +584,7 @@ const GAME = {
         GAME.level = 1;
         GAME.gold = 0;
 
-        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "BUMP3D", "ENTITY3D"];
+        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
         GAME.STORE = new Store(storeList);
 
         HERO.construct();
@@ -717,35 +592,6 @@ const GAME = {
         GAME.fps = new FPS_short_term_measurement(300);
         GAME.prepareForRestart();
         GAME.time = new Timer("Main");
-
-        //SAVE GAME
-        SAVE_GAME.pointers = [...HERO.attributesForSaveGame, 'GAME.level', 'GAME.gold'];
-        SAVE_GAME.lists = ["HERO.inventory.scroll"];
-        SAVE_GAME.timers = ["Main"];
-        //end SAVE GAME
-
-        if (GAME.fromCheckpoint) {
-            console.log(`%c ... Loading from checkpoint ...`, GAME.CSS);
-            HERO.inventory.scroll.clear();
-            SAVE_GAME.load();
-            GAME.upperLimit = GAME.level;
-            GAME.fromCheckpoint = false;
-            //skill timers are not saved!! so resetting skills!
-            HERO.defense = HERO.reference_defense;
-            HERO.attack = HERO.reference_attack;
-            HERO.magic = HERO.reference_magic;
-        }
-
-        if (DEBUG.LOAD) {
-            console.log("########################");
-            console.log("FORCE LOAD FROM DEBUG!!");
-            console.log("########################");
-            HERO.inventory.scroll.clear();
-            DEBUG.depth5();
-            //DEBUG.depth4();
-        }
-        if (DEBUG.STUDY) DEBUG.study();
-
         GAME.levelStart();
     },
     checkpoint() {
@@ -822,13 +668,11 @@ const GAME = {
         ENTITY3D.resetTime();
     },
     useStaircase(destination) {
+        console.info("useStaircase", destination);
         GAME.STORE.storeIAM(MAP[GAME.level].map);
         GAME.level = destination.level;
-        if (GAME.level === GAME.WIN_LEVEL) return GAME.won();
         const level = GAME.level;
         if (!MAP[GAME.level].map) {
-            SAVE_GAME.save();
-            TURN.display("GAME SAVED", "#FFF");
             GAME.STORE.clearPools();
             GAME.newDungeon(level);
             GAME.buildWorld(level);
@@ -841,7 +685,7 @@ const GAME = {
         }
 
         HERO.player.setMap(MAP[level].map);
-        BUMP3D.update();
+        INTERACTIVE_BUMP3D.setup();
         INTERFACE3D.linkMap(MAP[level].map);
         INTERFACE3D.associateExternal_IAM("enemy", ENTITY3D);
 
@@ -1854,5 +1698,4 @@ $(function () {
     PRG.setup();
     ENGINE.LOAD.preload();
     UNIFORM.setup();
-    SAVE_GAME.setKey(PRG.SG);
 });

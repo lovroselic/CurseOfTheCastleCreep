@@ -1558,7 +1558,9 @@ const ENGINE = {
         if (ENGINE.LOAD.HMFonts) appendCanvas("Fonts");
         try {
           const fontPromises = fonts.map(font => loadFont(font));
+          console.debug("fontPromises", fontPromises);
           const loadedFonts = await Promise.all(fontPromises);
+          console.debug("loadedFonts", loadedFonts);
           loadedFonts.forEach(font => document.fonts.add(font));
         } catch (error) {
           console.error(`Error loading fonts: ${error}`);
@@ -1959,6 +1961,7 @@ const ENGINE = {
           //const font = await temp.load();                       //firefox has issue with this             
           ENGINE.LOAD.Fonts++;
           ENGINE.drawLoadingGraph("Fonts");
+          console.debug("loading font", "fontSource", fontSource, "url", url, "temp", temp);
           //return font;
           return temp.load();                                     //ff fix, but not really waiting for font
         } catch (error) {

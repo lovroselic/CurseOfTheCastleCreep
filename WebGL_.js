@@ -76,6 +76,7 @@ const WebGL = {
         }
 
     },
+    programs_compiled: false,
     program: null,
     pickProgram: null,
     buffer: null,
@@ -135,24 +136,29 @@ const WebGL = {
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
         this.initPrograms(gl);
-        this.initBuffers(gl, world);
+        this.initAllBuffers(gl, world);
         this.setTexture(textureData);
         if (!decalsAreSet) this.setDecalTextures();
         this.aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
         this.setCamera(camera);
-        this.setPickBuffers(gl);
-        this.setModelBuffers(gl);
 
         if (this.VERBOSE) {
             console.log(`%cWorld:`, this.CSS, this.world);
             console.log(`%cWebGL:`, this.CSS, this);
         }
     },
+    initAllBuffers(gl, world) {
+        this.initBuffers(gl, world);
+        this.setPickBuffers(gl);
+        this.setModelBuffers(gl);
+    },
     initPrograms(gl) {
+        if (this.programs_compiled) return;
         this.initShaderProgram(gl);
         this.initPickProgram(gl);
         this.initParticlePrograms(gl);
         this.initModelPrograms(gl);
+        this.programs_compiled = true;
     },
     init_required_IAM(map, hero) {
         DECAL3D.init(map);
@@ -737,7 +743,12 @@ const WebGL = {
                     }
                     let distance = PPos2d.EuclidianDistance(itemGrid);
                     if (distance < WebGL.INI.INTERACT_DISTANCE) {
-                        return obj.interact(hero.player.GA, hero.inventory);
+                        /** 
+                         * GA
+                         * inventory
+                         * mouseClick
+                         */
+                        return obj.interact(hero.player.GA, hero.inventory, true);
                     }
                 }
             }
@@ -1255,7 +1266,7 @@ class $3D_player {
                 continue;
             } else {
                 if (this.GA.isWall(futureGrid) && this.GA.isStair(futureGrid)) {
-                    const IA = this.map.decalIA3D || this.map.interactive_bump3d; 
+                    const IA = this.map.decalIA3D || this.map.interactive_bump3d;
                     const bump = IA.unroll(futureGrid)[0] - 1;
                     if (isNaN(bump)) return null;
                     if (BUMP3D.POOL.length > 0) return BUMP3D.POOL[bump];
@@ -1460,18 +1471,21 @@ class ExternalGate extends Portal {
         this.texture = WebGL.createTexture(SPRITE.DungeonDoor_Open);
 
     }
-    interact(GA, inventory) {
-        if (this.open) {
+    interact(GA = null, inventory = null, mouseClick = false) {
+        console.warn("interact, mouseClick", mouseClick);
+        if (this.open && !mouseClick) {
             console.warn("bumping in ", this);
-            this.call(this.destination); //untested
+            this.call(this.destination);
             return;
         }
-        if (this.locked) {
-            console.warn("locked:", this);
-            return;
+        if (mouseClick) {
+            if (this.locked) {
+                console.warn("locked:", this);
+                return;
+            }
+            console.info("interacting with external gate", this);
+            this.openGate();
         }
-        console.info("interacting with external gate", this);
-        this.openGate();
     }
 }
 

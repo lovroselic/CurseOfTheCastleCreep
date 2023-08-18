@@ -53,7 +53,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.02.02",
+    VERSION: "0.02.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -571,7 +571,7 @@ const GAME = {
         $("#pause").prop("disabled", false);
         $("#pause").off();
         GAME.paused = true;
-        $("#p1").prop("disabled", false);
+        //$("#p1").prop("disabled", false);
 
         let GameRD = new RenderData("Moria", 50, "#f6602d", "text", "#F22", 2, 2, 2);
         ENGINE.TEXT.setRD(GameRD);
@@ -614,6 +614,7 @@ const GAME = {
     },
     setWorld(level, decalsAreSet = false) {
         console.log("setting world");
+        console.time("setWorld");
         const textureData = {
             wall: TEXTURE[MAP[level].wall],
             floor: TEXTURE[MAP[level].floor],
@@ -629,6 +630,7 @@ const GAME = {
         }
 
         MINIMAP.init(MAP[level].map, INI.MIMIMAP_WIDTH, INI.MIMIMAP_HEIGHT, HERO.player);
+        console.timeEnd("setWorld");
     },
     initLevel(level) {
         this.newDungeon(level);
@@ -637,12 +639,13 @@ const GAME = {
         let start_grid = MAP[level].map.startPosition.grid;
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
 
-        //WebGL.CONFIG.set("first_person");
-        WebGL.CONFIG.set("third_person");
+        WebGL.CONFIG.set("first_person");
+        //WebGL.CONFIG.set("third_person");
 
         if (WebGL.CONFIG.firstperson) {
             //first person
             HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map);
+            //HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
         } else {
             //third person
             HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.GhostFace);
@@ -669,6 +672,7 @@ const GAME = {
     },
     useStaircase(destination) {
         console.info("useStaircase", destination);
+        console.time("usingStaircase");
         GAME.STORE.storeIAM(MAP[GAME.level].map);
         GAME.level = destination.level;
         const level = GAME.level;
@@ -694,6 +698,8 @@ const GAME = {
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
         HERO.player.setPos(start_grid);
         HERO.player.setDir(Vector3.from_2D_dir(start_dir));
+        console.timeEnd("usingStaircase");
+
         if (DEBUG._2D_display) {
             ENGINE.BLOCKGRID.draw(MAP[GAME.level].map);
             GRID.grid();

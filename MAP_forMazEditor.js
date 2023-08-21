@@ -7,7 +7,6 @@
 
 /** Decals */
 const DECAL_PAINTINGS = [
-    "AA1", "AA2", "AA5", "AA7", "AA8", "AA9", "Amberstar", "Apshai", "Arena",
     "Bagitman", "Barbarian5", "BeachHead", "BoogaBoo1", "BoogaBoo3",
     "C64", "CH1", "CSB1", "CW1", "CW6", "Castle", "Commando2",
     "CrystalCastles", "CyberPunk1", "DDID2", "DK", "DK2", "DM1", "DM12", "DM4", "DM5", "DM6",
@@ -26,7 +25,7 @@ const DECAL_PAINTINGS = [
     "Witcher1", "Spelunker", "ShamusCase2", "Ishar2", "Pitfall5", "PharaohCurse2", "Frontier", "LSL8",
     "SVS24", "KQ10", "Shamus20", "Pitfall21", "Apshai6", "Apshai5", "PacClose", "PacGhost", "Pitfall20", "SVS22", "SVS21",
     "Apshai4", "Apshai3", "Paperboy", "RobinOfTheWood2", "Pyjamarama", "ThePawn", "KokotoniWilf", "Cauldron1",
-    "Zeppelin2", "Hero30", "SVS30", "AirWolf", "AA41", "AA40", "SeaWolf", "GIJoe10",
+    "Zeppelin2", "Hero30", "SVS30", "SeaWolf", "GIJoe10",
     "Hobbit3", "Ghostbusters2", "Commando3", "Hobbit6", "Hobbit7", "Hobbit8", "Hobbit9", "AticAtac1", "Infiltrator1", "ManicMiner2",
     "ManicMiner3", "Infiltrator2", "Arnie1", "BTF1", "BlueThunder1", "BrianBloodaxe1", "BrideOfFrakenstein1",
     "BruceLee1", "Captive", "Fred3", "Fred4", "JSW4", "ManiacMansion2", "PQ1", "Pengo", "Pirates", "PolePosition", "Silkworm1", "SirFred1",

@@ -16,11 +16,11 @@ const MAP = {
         floor: "GreenDungeonWall",
         ceil: "GreyDungeonFloor",
         start: '[24,7]',
-        decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"]]',
+        decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"],[131,5,"AA100","picture"],[153,5,"AMC3","picture"]]',
         lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"]]',
-        gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"]]'
+        gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]'
     },
-    2 : {
+    2: {
         data: '{"width":"8","height":"8","map":"BB4AA5BAA5BABB3AA11BB10ABABAA4BABB11AB$"}',
         wall: "Wall8",
         floor: "StoneFloor3",
@@ -29,7 +29,37 @@ const MAP = {
         decals: '[[35,7,"AMC2","picture"],[24,5,"ActecChallenge2","picture"],[39,3,"AirWolf31","picture"],[28,1,"AlleyKat","picture"]]',
         lights: '[[3,7,"WallLamp","standard"]]',
         gates: '[[59,1,"2.1","1.1","Open"]]'
-      }
+    },
+    3: {
+        data: '{"width":"16","height":"16","map":"BB2AA6BB39$BB208A"}',
+        wall: "DungeonWall",
+        floor: "GreenDungeonWall",
+        ceil: "GreyDungeonFloor",
+        start: '[23,7]',
+        decals: '[]',
+        lights: '[]',
+        gates: '[[7,7,"3.1","1.2","Open"]]'
+    },
+    4: {
+        data: '{"width":"8","height":"8","map":"BB6AA18BAA2BB2AA6BB6AA2BB3AA5BB12A$"}',
+        wall: "RockWall100",
+        floor: "MarbleFloor1",
+        ceil: "MossyWall3",
+        start: '[22,5]',
+        decals: '[[42,5,"ArabianNights1","picture"],[8,5,"Apshai6","picture"],[44,5,"Apshai10","picture"],[44,3,"AppleLisa","picture"],[39,3,"Amberstar","picture"],[4,7,"Arnie1","picture"],[58,1,"AticAtac1","picture"]]',
+        lights: '[[40,5,"WallLamp","standard"],[60,1,"WallLamp3","fire"]]',
+        gates: '[[23,3,"4.1","1.3","Open"]]'
+    },
+    5: {
+        data: '{"width":"16","height":"16","map":"BB4AA8BB2AA4BB4AA20BB82AA2BB23ABABB5ABAA3BB18ABB75$"}',
+        wall: "BeautifullWall1",
+        floor: "BrickTiles",
+        ceil: "BlurryScarlet",
+        start: '[113,1]',
+        decals: '[[243,1,"Barbarian130","picture"],[247,1,"Barbarian13","picture"],[145,5,"Barbarian110","picture"],[209,5,"Barbarian100","picture"]]',
+        lights: '[[97,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[245,1,"WallTorch","fire"]]',
+        gates: '[[112,5,"5.1","1.4","Open"]]'
+    }
 };
 
 

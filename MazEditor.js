@@ -35,7 +35,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.10",
+  VERSION: "0.06.11",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -436,11 +436,16 @@ const GAME = {
 
     $("#gridsize").on("change", GAME.render);
 
+    const TextureList = [];
     for (const prop in TEXTURE) {
+      TextureList.push(prop);
+    }
+    TextureList.sort();
+
+    for (const prop of TextureList) {
       $("#walltexture").append(`<option value="${prop}">${prop}</option>`);
       $("#floortexture").append(`<option value="${prop}">${prop}</option>`);
       $("#ceiltexture").append(`<option value="${prop}">${prop}</option>`);
-
     }
     LAYER.wallcanvas = $("#wallcanvas")[0].getContext("2d");
     LAYER.floorcanvas = $("#floorcanvas")[0].getContext("2d");

@@ -7,7 +7,6 @@
 
 /** Decals */
 const DECAL_PAINTINGS = [
-    "Bagitman", "Barbarian5", "BeachHead", "BoogaBoo1", "BoogaBoo3",
     "C64", "CH1", "CSB1", "CW1", "CW6", "Castle", "Commando2",
     "CrystalCastles", "CyberPunk1", "DDID2", "DK", "DK2", "DM1", "DM12", "DM4", "DM5", "DM6",
     "Drelbs", "EOB1", "EOB2", "EOB3", "EOB4", "Eric", "FA3", "FF2",
@@ -26,10 +25,10 @@ const DECAL_PAINTINGS = [
     "SVS24", "KQ10", "Shamus20", "Pitfall21", "Apshai6", "Apshai5", "PacClose", "PacGhost", "Pitfall20", "SVS22", "SVS21",
     "Apshai4", "Apshai3", "Paperboy", "RobinOfTheWood2", "Pyjamarama", "ThePawn", "KokotoniWilf", "Cauldron1",
     "Zeppelin2", "Hero30", "SVS30", "SeaWolf", "GIJoe10",
-    "Hobbit3", "Ghostbusters2", "Commando3", "Hobbit6", "Hobbit7", "Hobbit8", "Hobbit9", "AticAtac1", "Infiltrator1", "ManicMiner2",
-    "ManicMiner3", "Infiltrator2", "Arnie1", "BTF1", "BlueThunder1", "BrianBloodaxe1", "BrideOfFrakenstein1",
-    "BruceLee1", "Captive", "Fred3", "Fred4", "JSW4", "ManiacMansion2", "PQ1", "Pengo", "Pirates", "PolePosition", "Silkworm1", "SirFred1",
-    "SirFred2", "SirFred3", "Unknown1", "BattleThroughTime", "BOF3", "Chopper2", "Cliffhanger", "F1", "IM10", "MoonPatrol", "SummerGames10",
+    "Hobbit3", "Ghostbusters2", "Commando3", "Hobbit6", "Hobbit7", "Hobbit8", "Hobbit9", "Infiltrator1", "ManicMiner2",
+    "ManicMiner3", "Infiltrator2",
+    "Captive", "Fred3", "Fred4", "JSW4", "ManiacMansion2", "PQ1", "Pengo", "Pirates", "PolePosition", "Silkworm1", "SirFred1",
+    "SirFred2", "SirFred3", "Unknown1", "Chopper2", "Cliffhanger", "F1", "IM10", "MoonPatrol", "SummerGames10",
     "FF5", "LaraCroft1", "LaraCroft2", "IM13", "FF101", "FF100", "AA100", "UW10", "KL10", "SVS100", "SVS101", "SP4", "JSW10", "Vixen3", "WOW10", "ESB",
     "Galaxians10", "BC10",
     "ActecChallenge2", "AlleyKat", "BeachHead100", "Blackwyche2", "Hero100", "Invaders2", "KL102", "Karn1", "LastNinja10", "MoonBuggy", "PQ3",
@@ -114,5 +113,6 @@ const BOTTOM_CRESTS = ["Grate1_128"];
 const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond"];
 const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4"];
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue"];
+const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue"];
 
 console.log("%cMAP for MazEditor loaded.", "color: #888");

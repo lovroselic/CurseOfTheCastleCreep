@@ -126,6 +126,8 @@
                             <input type="radio" name="painter" value="decal"> Decal <br />
                             <input type="radio" name="painter" value="light"> Light <br />
                             <hr>
+                            <input type="radio" name="painter" value="key"> Key <br />
+                            <hr>
                             <input type="radio" name="painter" value="start"> Start position <br />
                             <hr>
                             <input type="radio" name="painter" value="cleargrid"> Clear grid <br />
@@ -152,6 +154,16 @@
                                 </div>
                                 <div>
                                     <canvas id="lightcanvas" width="256" height="256"></canvas>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Keys
+                            </legend>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <select id="key_type"> </select>
                                 </div>
                             </div>
                         </fieldset>
@@ -268,7 +280,8 @@
     start: '[24,7]',
     decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"],[131,5,"AA100","picture"],[153,5,"AMC3","picture"]]',
     lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"]]',
-    gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]'
+    gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]',
+    keys: '[[102,0],[103,1],[104,2],[105,2],[106,3],[120,4]]'
     }
                         </textarea>
 

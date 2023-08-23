@@ -18,8 +18,10 @@ const MAP = {
         start: '[24,7]',
         decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"],[131,5,"AA100","picture"],[153,5,"AMC3","picture"]]',
         lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"]]',
-        gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]'
-    },
+        gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]',
+        keys: '[[102,0],[103,1],[104,2],[105,2],[106,3],[120,4]]'
+    }
+    ,
     2: {
         data: '{"width":"8","height":"8","map":"BB4AA5BAA5BABB3AA11BB10ABABAA4BABB11AB$"}',
         wall: "Wall8",
@@ -28,7 +30,8 @@ const MAP = {
         start: '[51,1]',
         decals: '[[35,7,"AMC2","picture"],[24,5,"ActecChallenge2","picture"],[39,3,"AirWolf31","picture"],[28,1,"AlleyKat","picture"]]',
         lights: '[[3,7,"WallLamp","standard"]]',
-        gates: '[[59,1,"2.1","1.1","Open"]]'
+        gates: '[[59,1,"2.1","1.1","Open"]]',
+        keys: '[]'
     },
     3: {
         data: '{"width":"16","height":"16","map":"BB2AA6BB39$BB208A"}',
@@ -38,7 +41,8 @@ const MAP = {
         start: '[23,7]',
         decals: '[]',
         lights: '[]',
-        gates: '[[7,7,"3.1","1.2","Open"]]'
+        gates: '[[7,7,"3.1","1.2","Open"]]',
+        keys: '[]'
     },
     4: {
         data: '{"width":"8","height":"8","map":"BB6AA18BAA2BB2AA6BB6AA2BB3AA5BB12A$"}',
@@ -48,7 +52,8 @@ const MAP = {
         start: '[22,5]',
         decals: '[[42,5,"ArabianNights1","picture"],[8,5,"Apshai6","picture"],[44,5,"Apshai10","picture"],[44,3,"AppleLisa","picture"],[39,3,"Amberstar","picture"],[4,7,"Arnie1","picture"],[58,1,"AticAtac1","picture"]]',
         lights: '[[40,5,"WallLamp","standard"],[60,1,"WallLamp3","fire"]]',
-        gates: '[[23,3,"4.1","1.3","Open"]]'
+        gates: '[[23,3,"4.1","1.3","Open"]]',
+        keys: '[]'
     },
     5: {
         data: '{"width":"16","height":"16","map":"BB4AA8BB2AA4BB4AA20BB82AA2BB23ABABB5ABAA3BB18ABB75$"}',
@@ -58,7 +63,8 @@ const MAP = {
         start: '[113,1]',
         decals: '[[243,1,"Barbarian130","picture"],[247,1,"Barbarian13","picture"],[145,5,"Barbarian110","picture"],[209,5,"Barbarian100","picture"]]',
         lights: '[[97,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[245,1,"WallTorch","fire"]]',
-        gates: '[[112,5,"5.1","1.4","Open"]]'
+        gates: '[[112,5,"5.1","1.4","Open"]]',
+        keys: '[]'
     }
 };
 
@@ -1378,7 +1384,7 @@ const MONSTER_TYPE = {
     },
 };
 
-const SHRINE_TYPE = {
+/*const SHRINE_TYPE = {
     AttackShrine: {
         name: "AttackShrine",
         sprite: "AttackShrine",
@@ -1403,9 +1409,9 @@ const SHRINE_TYPE = {
         interactionCategory: 'shrine',
         inventorySprite: "MagicSkill",
     },
-};
+};*/
 
-const GATE_TYPE = {
+/*const GATE_TYPE = {
     Common: {
         name: "Common",
         color: null,
@@ -1438,7 +1444,7 @@ const GATE_TYPE = {
         element: "CUBE_SM",
         material: MATERIAL.standardShine,
     },
-};
+};*/
 
 const COMMON_ITEM_TYPE = {
     Chest: {
@@ -1652,7 +1658,16 @@ const COMMON_ITEM_TYPE = {
     }
 };
 
-const SCROLL_TYPE = {
+const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue"];
+const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal"];
+const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine"];
+const KEY_TYPE = {};
+for (let [index, key] of KEY_TYPES.entries()) {
+    KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
+}
+console.info("KEY_TYPE", KEY_TYPE);
+
+/*const SCROLL_TYPE = {
     Light: 130,
     Invisibility: 100,
     Map: 100,
@@ -1667,7 +1682,7 @@ const SCROLL_TYPE = {
     TeleportTemple: 100,
     Luck: 100,
     HalfLife: 50
-};
+};*/
 
 const HERO_TYPE = {
     GhostFace: {

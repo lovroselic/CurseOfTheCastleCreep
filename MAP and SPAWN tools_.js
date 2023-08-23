@@ -28,6 +28,7 @@ const MAP_TOOLS = {
         this.MAP[level].map.decals = JSON.parse(this.MAP[level].decals) || null;
         this.MAP[level].map.lights = JSON.parse(this.MAP[level].lights) || null;
         this.MAP[level].map.gates = JSON.parse(this.MAP[level].gates) || null;
+        this.MAP[level].map.keys = JSON.parse(this.MAP[level].keys) || null;
     }
 };
 const SPAWN_TOOLS = {
@@ -38,6 +39,7 @@ const SPAWN_TOOLS = {
         this.decals(map, GA);
         this.lights(map, GA);
         this.externalGates(map, GA);
+        this.keys(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -59,7 +61,6 @@ const SPAWN_TOOLS = {
     },
     externalGates(map, GA) {
         for (const G of map.gates) {
-            console.log("G", G);
             const color = G[4];
             const grid = GA.indexToGrid(G[0]);
             GA.addStair(grid);
@@ -77,13 +78,18 @@ const SPAWN_TOOLS = {
             INTERACTIVE_BUMP3D.add(externalGate);
         }
         INTERACTIVE_BUMP3D.setup();
-        console.log("INTERACTIVE_BUMP3D", INTERACTIVE_BUMP3D);
-    }
+    },
+    keys(map, GA) {
+        for (const K of map.keys) {
+            const grid = Grid.toCenter(GA.indexToGrid(K[0]));
+            const key = KEY_TYPE[KEY_TYPES[K[1]]];
+            ITEM3D.add(new FloorItem3D(grid, key));
+        }
+    },
 };
 
 /** defaults */
 MAP_TOOLS.initialize(MAP);
-
 
 /** END */
 console.log(`%cMAP and SPAWN tools ${MAP_TOOLS.VERSION} loaded.`, MAP_TOOLS.CSS);

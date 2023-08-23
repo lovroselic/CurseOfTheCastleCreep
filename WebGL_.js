@@ -1480,11 +1480,24 @@ class ExternalGate extends Portal {
         }
         if (mouseClick) {
             if (this.locked) {
-                console.warn("locked:", this);
-                return;
+                const checkKey = (key, value) => inventory.key.some((o) => o[key] === value);
+                if (checkKey("color", this.color)) {
+                    this.locked = false;
+                    for (let [i, el] of inventory.key.entries()) {
+                        if (el.color === this.color) {
+                            inventory.key.splice(i, 1);
+                            break;
+                        }
+                    }
+                }
             }
-            console.info("interacting with external gate", this);
-            this.openGate();
+            if (!this.locked) {
+                console.info("interacting with external gate", this);
+                this.openGate();
+                AUDIO.OpenGate.play();
+                return { category: "title", section: "keys" };
+            }
+            AUDIO.ClosedDoor.play();
         }
     }
 }
@@ -1797,6 +1810,26 @@ class BoundingBox {
         if (scale) this.max = this.max.scaleVec3(scale);
         this.min = Vector3.from_array(min);
         if (scale) this.min = this.min.scaleVec3(scale);
+    }
+}
+
+class ItemTypeDefinition {
+    constructor(name, category, element, scale, glueToFloor, texture, material) {
+        this.name = name;
+        this.category = category;
+        this.element = element;
+        this.scale = scale;
+        this.glueToFloor = glueToFloor;
+        this.texture = texture;
+        this.material = material;
+    }
+}
+
+class KeyTypeDefinition extends ItemTypeDefinition {
+    constructor(name, inventorySprite, color, texture, material) {
+        super(name, "key", "KEY", 1 / 2 ** 3, true, texture, material);
+        this.inventorySprite = inventorySprite;
+        this.color = color;
     }
 }
 

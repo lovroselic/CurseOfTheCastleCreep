@@ -2400,6 +2400,16 @@ const ENGINE = {
         let start = mid.translate(dir, W);
         ENGINE.drawCircle(CTX, start, decalWidth * 2, "#A000A0");
       }
+      for (const key of maze.keys) {
+        const KEY_COLORS = ["gold", "silver", "red", "green", "blue"];
+        const color = KEY_COLORS[key[1]];
+        let grid = GA.indexToGrid(key[0]);
+        let mid = GRID.gridToCenterPX(grid).translate(LEFT, W / 2);
+        ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
+        let pEnd = mid.translate(RIGHT, W);
+        ENGINE.drawLine(CTX, mid, pEnd, color, decalWidth);
+        ENGINE.drawLine(CTX, pEnd, pEnd.translate(UP, 5), color, decalWidth);
+      }
     },
     wall(x, y, CTX, value) {
       let FS;

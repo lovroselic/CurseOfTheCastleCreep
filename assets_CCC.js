@@ -159,7 +159,8 @@ LoadTextures = [
     { srcName: "AstroRed.jpg", name: "AstroRed" },
 
     //new
-    { srcName: "GreenMetal.jpg", name: "GreenMetal" },
+    { srcName: "GreenMetal.jpg", name: "GreenMetal" }, 
+    { srcName: "BlueMetal.jpg", name: "BlueMetal" },
 
     //decal-gates
     { srcName: "GoldGate1_256.png", name: "GoldGate1" },
@@ -176,7 +177,7 @@ LoadAudio = [
     { srcName: "Laughing Skull.mp3", name: "Title" },
     { srcName: "UseScroll.mp3", name: "PickBox" },
     { srcName: "Scream.mp3", name: "Scream" },
-    { srcName: "OpenGate.mp3", name: "OpenGate" },
+    { srcName: "SqueekyDoorOpen.mp3", name: "OpenGate" },
     { srcName: "ClosedDoor.mp3", name: "ClosedDoor" },
     { srcName: "Keys.mp3", name: "Keys" },
     { srcName: "Swallow.mp3", name: "Swallow" },
@@ -209,6 +210,7 @@ LoadAudio = [
     { srcName: "DeathPain1.mp3", name: "DeathPain1" },
     { srcName: "HumanAttack1.mp3", name: "HumanAttack1" },
     { srcName: "Ow.mp3", name: "Ow" },
+    { srcName: "MonsterRoar.mp3", name: "MonsterRoar" },
 
 ];
 LoadFonts = [
@@ -292,11 +294,14 @@ LoadSprites = [
     //title sprites
     { srcName: "divLineB_200.png", name: "LineBottom" },
     { srcName: "divLineT_200.png", name: "LineTop" },
-    { srcName: "RedKey.png", name: "RedKeyBig" },
-    { srcName: "GoldKey.png", name: "GoldKeyBig" },
-    { srcName: "SilverKey.png", name: "SilverKeyBig" },
+    { srcName: "RedKey.png", name: "RedKey" },
+    { srcName: "GoldKey.png", name: "GoldKey" },
+    { srcName: "SilverKey.png", name: "SilverKey" },
     { srcName: "bluePotion24.png", name: "BluePotion24" },
     { srcName: "RedPotion24.png", name: "RedPotion24" },
+    { srcName: "GreenKey.png", name: "GreenKey" },
+    { srcName: "BlueKey.png", name: "BlueKey" },
+    
 
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },
@@ -346,7 +351,7 @@ LoadSprites = [
     { srcName: "Hero2.png", name: "Hero2" },
     { srcName: "HERO3.png", name: "Hero3" },
     { srcName: "HeroPicture.png", name: "Hero1" },
-    { srcName: "Bagitman.png", name: "Bagitman" },
+
     { srcName: "Walls.png", name: "Walls" },
     { srcName: "LSL6.png", name: "LSL6" },
     { srcName: "Prince2.png", name: "Prince2" },
@@ -389,12 +394,11 @@ LoadSprites = [
     { srcName: "JSW.png", name: "JSW" },
     { srcName: "Frogger.png", name: "Frogger" },
     { srcName: "Knightlore.png", name: "Knightlore" },
-    { srcName: "BoogaBoo3.png", name: "BoogaBoo3" },
-    { srcName: "BoogaBoo1.png", name: "BoogaBoo1" },
+
     { srcName: "CrystalCastles.png", name: "CrystalCastles" },
     { srcName: "SVS10.png", name: "SVS10" },
     { srcName: "ZimSalaBim.png", name: "ZimSalaBim" },
-    { srcName: "BeachHead.png", name: "BeachHead" },
+
     { srcName: "Drelbs.png", name: "Drelbs" },
     { srcName: "Wolf1.png", name: "Wolf1" },
     { srcName: "Zaxxon.png", name: "Zaxxon" },
@@ -420,7 +424,7 @@ LoadSprites = [
     { srcName: "KQ1.png", name: "KQ1" },
     { srcName: "Wally.png", name: "Wally" },
     { srcName: "JSW3.png", name: "JSW3" },
-    { srcName: "Barbarian5.png", name: "Barbarian5" },
+
     { srcName: "HoraceSki2.png", name: "HoraceSki" },
     { srcName: "Iceman.png", name: "Iceman" },
     { srcName: "CSB1.png", name: "CSB1" },
@@ -501,17 +505,12 @@ LoadSprites = [
     { srcName: "Hobbit7.png", name: "Hobbit7" },
     { srcName: "Hobbit8.png", name: "Hobbit8" },
     { srcName: "Hobbit9.png", name: "Hobbit9" },
-    { srcName: "AticAtac1.png", name: "AticAtac1" },
+ 
     { srcName: "Infiltrator1.png", name: "Infiltrator1" },
     { srcName: "ManicMiner2.png", name: "ManicMiner2" },
     { srcName: "ManicMiner3.png", name: "ManicMiner3" },
     { srcName: "Infiltrator2.png", name: "Infiltrator2" },
-    { srcName: "Arnie1.png", name: "Arnie1" },
-    { srcName: "BTF1.png", name: "BTF1" },
-    { srcName: "BlueThunder1.png", name: "BlueThunder1" },
-    { srcName: "BrianBloodaxe1.png", name: "BrianBloodaxe1" },
-    { srcName: "BrideOfFrakenstein1.png", name: "BrideOfFrakenstein1" },
-    { srcName: "BruceLee1.png", name: "BruceLee1" },
+
     { srcName: "Captive.png", name: "Captive" },
     { srcName: "Fred3.png", name: "Fred3" },
     { srcName: "Fred4.png", name: "Fred4" },
@@ -526,8 +525,7 @@ LoadSprites = [
     { srcName: "SirFred2.png", name: "SirFred2" },
     { srcName: "SirFred3.png", name: "SirFred3" },
     { srcName: "Unknown1.png", name: "Unknown1" },
-    { srcName: "BattleThroughTime.png", name: "BattleThroughTime" },
-    { srcName: "BOF3.png", name: "BOF3" },
+
     { srcName: "Chopper2.png", name: "Chopper2" },
     { srcName: "Cliffhanger.png", name: "Cliffhanger" },
     { srcName: "F1.png", name: "F1" },

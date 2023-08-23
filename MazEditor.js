@@ -24,6 +24,7 @@ const MAP = {
     MAP.map.lights = [];
     MAP.map.start = [];
     MAP.map.gates = [];
+    MAP.map.keys = [];
   }
 };
 const INI = {
@@ -35,7 +36,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.11",
+  VERSION: "0.06.12",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -200,9 +201,10 @@ const GAME = {
             $("#error_message").html(`Light placement not supported on value: ${currentValue}`);
             return;
         }
+        $("#error_message").html("All is fine");
         break;
       case "cleargrid":
-        for (let arrType of [MAP.map.decals, MAP.map.lights, MAP.map.gates]) {
+        for (let arrType of [MAP.map.decals, MAP.map.lights, MAP.map.gates, MAP.map.keys]) {
           let iElementToRemove = [];
           for (let [index, element] of arrType.entries()) {
             if (element[0] === gridIndex) {
@@ -214,7 +216,7 @@ const GAME = {
         $("#error_message").html("All is fine: grid cleared");
         break;
       case "start":
-        console.log("start, value", currentValue, "grid", grid);
+        //console.log("start, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             dir = GAME.getSelectedDir();
@@ -230,6 +232,22 @@ const GAME = {
             $("#error_message").html(`Start placement not supported on value: ${currentValue}`);
             return;
         }
+        $("#error_message").html("All is fine");
+        break;
+      case "key":
+        //console.log("key, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            let keyValue = $("#key_type")[0].value;
+            let keyTypeIndex = KEY_TYPES.indexOf(keyValue);
+            console.log("key", gridIndex, keyValue, keyTypeIndex);
+            MAP.map.keys.push(Array(gridIndex, keyTypeIndex));
+            break;
+          default:
+            $("#error_message").html(`Key placement not supported on value: ${currentValue}`);
+            return;
+        }
+        $("#error_message").html("All is fine");
         break;
     }
 
@@ -506,6 +524,10 @@ const GAME = {
     $("#gatetype").change(function () {
       ENGINE.drawToId("gatecanvas", 0, 0, SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`]);
     });
+
+    for (const keyType of KEY_TYPES) {
+      $("#key_type").append(`<option value="${keyType}">${keyType}</option>`);
+    }
   },
   texture() {
     GAME.textureGrid();
@@ -522,7 +544,8 @@ const GAME = {
       start: '${JSON.stringify(MAP.map.start)}',
       decals: '${JSON.stringify(MAP.map.decals)}',
       lights: '${JSON.stringify(MAP.map.lights)}',
-      gates: '${JSON.stringify(MAP.map.gates)}'
+      gates: '${JSON.stringify(MAP.map.gates)}',
+      keys: '${JSON.stringify(MAP.map.keys)}'
     }`;
     $("#exp").val(roomExport);
   },
@@ -538,6 +561,7 @@ const GAME = {
     const lights = ImportText.extractGroup(/lights:\s\'(.*)\'/);
     const start = ImportText.extractGroup(/start:\s\'(.*)\'/);
     const gates = ImportText.extractGroup(/gates:\s\'(.*)\'/);
+    const keys = ImportText.extractGroup(/keys:\s\'(.*)\'/);
     $("#walltexture").val(wall);
     $("#floortexture").val(floor);
     $("#ceiltexture").val(ceil);
@@ -550,6 +574,7 @@ const GAME = {
     MAP.map.lights = JSON.parse(lights);
     MAP.map.start = JSON.parse(start);
     MAP.map.gates = JSON.parse(gates);
+    MAP.map.keys = JSON.parse(keys);
     console.log(MAP.map);
     MAP.width = Import.width;
     MAP.height = Import.height;

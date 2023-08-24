@@ -53,7 +53,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.02.05",
+    VERSION: "0.03.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -1142,7 +1142,7 @@ const TITLE = {
         delta3: 48,
         keyDelta: 56,
         minimapX: 20,
-        minimapY: 262,
+        minimapY: 262 + 120,
         p1: null,
         p2: null,
         PY: null,
@@ -1152,6 +1152,7 @@ const TITLE = {
         statusY: null,
         YL4: 180,
         YL5: 400,
+        YL2: 192
     },
     firstFrame() {
         TITLE.clearAllLayers();
@@ -1199,8 +1200,8 @@ const TITLE = {
         //2nd tier
         y += TITLE.stack.delta2;
         ENGINE.draw("Lsideback", x, y, SPRITE.LineBottom);
-        ENGINE.draw("sideback", x, y, SPRITE.LineBottom);
-        TITLE.stack.SY = (y + TITLE.stack.delta3 / 2) | 0;
+        ENGINE.draw("sideback", x, TITLE.stack.YL2, SPRITE.LineBottom);
+        TITLE.stack.SY = (TITLE.stack.YL2 + TITLE.stack.delta3 / 2) | 0;
 
         //3rd tier left
         y += TITLE.stack.delta3;
@@ -1286,11 +1287,13 @@ const TITLE = {
         ENGINE.clearLayer("keys");
         let y = (SPRITE.LineTop.height / 2 + TITLE.stack.delta2 / 2) | 0;
         let list = [...HERO.inventory.key, ...HERO.inventory.status];
-        const NUM = list.length;
+        let NUM = list.length;
+        NUM = Math.min(4, NUM);
         let spread = ENGINE.spreadAroundCenter(NUM, ENGINE.sideWIDTH / 2, TITLE.stack.keyDelta);
-        for (const item of list) {
-            let x = spread.shift();
-            ENGINE.spriteDraw("keys", x, y, SPRITE[item.spriteClass]);
+        for (const [i, item] of list.entries()) {
+            let x = spread[i % NUM];
+            let dy = Math.floor(i / NUM);
+            ENGINE.spriteDraw("keys", x, y + (dy * TITLE.stack.delta2), SPRITE[item.spriteClass]);
         }
     },
     gold() {

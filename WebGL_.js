@@ -1472,9 +1472,7 @@ class ExternalGate extends Portal {
 
     }
     interact(GA = null, inventory = null, mouseClick = false) {
-        console.warn("interact, mouseClick", mouseClick);
         if (this.open && !mouseClick) {
-            console.warn("bumping in ", this);
             this.call(this.destination);
             return;
         }
@@ -1492,7 +1490,6 @@ class ExternalGate extends Portal {
                 }
             }
             if (!this.locked) {
-                console.info("interacting with external gate", this);
                 this.openGate();
                 AUDIO.OpenGate.play();
                 return { category: "title", section: "keys" };

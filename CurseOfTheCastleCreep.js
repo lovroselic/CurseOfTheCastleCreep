@@ -53,7 +53,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.03.00",
+    VERSION: "0.03.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -571,7 +571,7 @@ const GAME = {
         $("#pause").prop("disabled", false);
         $("#pause").off();
         GAME.paused = true;
-        //$("#p1").prop("disabled", false);
+        $("#p1").prop("disabled", false);
 
         let GameRD = new RenderData("Moria", 50, "#f6602d", "text", "#F22", 2, 2, 2);
         ENGINE.TEXT.setRD(GameRD);
@@ -602,6 +602,7 @@ const GAME = {
         console.log("starting level", GAME.level);
         GAME.levelFinished = false;
         GAME.initLevel(GAME.level);
+        GAME.setFirstPerson();                      //my preference
         GAME.continueLevel(GAME.level);
     },
     newDungeon(level) {
@@ -639,8 +640,8 @@ const GAME = {
         let start_grid = MAP[level].map.startPosition.grid;
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
 
-        WebGL.CONFIG.set("first_person");
-        //WebGL.CONFIG.set("third_person");
+        //WebGL.CONFIG.set("first_person");
+        WebGL.CONFIG.set("third_person");
 
         if (WebGL.CONFIG.firstperson) {
             //first person
@@ -648,7 +649,7 @@ const GAME = {
             //HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
         } else {
             //third person
-            HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.GhostFace);
+            HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
             HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
             HERO.player.associateExternalCamera(HERO.topCamera);
         }
@@ -660,13 +661,6 @@ const GAME = {
 
         this.buildWorld(level);
         this.setWorld(level);
-
-        //set POV
-        INTERFACE3D.associateIA("enemy", "enemyIA");
-        INTERFACE3D.associateExternal_IAM("enemy", ENTITY3D);
-        INTERFACE3D.associateHero(HERO);
-        INTERFACE3D.add(new $POV(COMMON_ITEM_TYPE.POV, HERO.player));
-        window.SWORD = INTERFACE3D.POOL[0];
 
         ENTITY3D.resetTime();
     },
@@ -690,8 +684,6 @@ const GAME = {
 
         HERO.player.setMap(MAP[level].map);
         INTERACTIVE_BUMP3D.setup();
-        INTERFACE3D.linkMap(MAP[level].map);
-        INTERFACE3D.associateExternal_IAM("enemy", ENTITY3D);
 
         const start_dir = MAP[level].map[this.destination.waypoint].vector;
         let start_grid = Grid.toClass(MAP[level].map[this.destination.waypoint].grid).add(start_dir);
@@ -722,7 +714,6 @@ const GAME = {
         const date = Date.now();
         VANISHING3D.manage(lapsedTime);
         MISSILE3D.manage(lapsedTime);
-        INTERFACE3D.manage(lapsedTime);
         EXPLOSION3D.manage(date);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
         GAME.respond(lapsedTime);
@@ -903,7 +894,6 @@ const GAME = {
         $("#p3").on("click", GAME.setThirdPerson);
     },
     setFirstPerson() {
-        //console.info("#### Setting FIRST person view ####");
         $("#p1").prop("disabled", true);
         $("#p3").prop("disabled", false);
         WebGL.CONFIG.set("first_person");
@@ -983,6 +973,14 @@ const GAME = {
         if (HERO.dead) return;
         HERO.player.respond(lapsedTime);
         const map = ENGINE.GAME.keymap;
+        if (map[ENGINE.KEY.map["1"]]){
+            GAME.setFirstPerson();
+            return;
+        }
+        if (map[ENGINE.KEY.map["3"]]){
+            GAME.setThirdPerson();
+            return;
+        }
 
         if (map[ENGINE.KEY.map.F4]) {
             $("#pause").trigger("click");
@@ -1059,7 +1057,7 @@ const GAME = {
         if (map[ENGINE.KEY.map.up]) { }
         if (map[ENGINE.KEY.map.down]) { }
         if (map[ENGINE.KEY.map.space]) {
-            SWORD.stab();
+            //SWORD.stab();
             ENGINE.GAME.keymap[ENGINE.KEY.map.space] = false; //NO repeat
         }
         return;
@@ -1116,7 +1114,6 @@ const GAME = {
         }
         const date = Date.now();
         EXPLOSION3D.manage(date);
-        INTERFACE3D.manage(lapsedTime);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
         GAME.gameOverFrameDraw(lapsedTime);
     },

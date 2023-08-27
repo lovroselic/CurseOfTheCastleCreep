@@ -7,8 +7,7 @@
 
 /** Decals */
 const DECAL_PAINTINGS = [
-    "C64", "CH1", "CSB1", "CW1", "CW6", "Castle", "Commando2",
-    "CrystalCastles", "CyberPunk1", "DDID2", "DK", "DK2", "DM1", "DM12", "DM4", "DM5", "DM6",
+    "C64",  "DM1", "DM12", "DM4", "DM5", "DM6",
     "Drelbs", "EOB1", "EOB2", "EOB3", "EOB4", "Eric", "FA3", "FF2",
     "Fred1", "Fred2", "Frogger", "Galaxian3", "Ghostbusters", "Goonies", "GreenBeret", "HL1", "HL2", "HL3",
     "HL4", "HL5", "HOB11", "HOB2", "Hero1", "Hero10", "Hero2", "Hero3", "HoraceSki",
@@ -23,12 +22,12 @@ const DECAL_PAINTINGS = [
     "zx1", "Witcher5", "LSL9", "Shamus1", "PharaohCurse3", "Witcher4", "Witcher3", "TempleOfApshai", "Witcher2", "KnightLore2",
     "Witcher1", "Spelunker", "ShamusCase2", "Ishar2", "Pitfall5", "PharaohCurse2", "Frontier", "LSL8",
     "SVS24", "KQ10", "Shamus20", "Pitfall21", "Apshai6", "Apshai5", "PacClose", "PacGhost", "Pitfall20", "SVS22", "SVS21",
-    "Apshai4", "Apshai3", "Paperboy", "RobinOfTheWood2", "Pyjamarama", "ThePawn", "KokotoniWilf", "Cauldron1",
+    "Apshai4", "Apshai3", "Paperboy", "RobinOfTheWood2", "Pyjamarama", "ThePawn", "KokotoniWilf",
     "Zeppelin2", "Hero30", "SVS30", "SeaWolf", "GIJoe10",
-    "Hobbit3", "Ghostbusters2", "Commando3", "Hobbit6", "Hobbit7", "Hobbit8", "Hobbit9", "Infiltrator1", "ManicMiner2",
+    "Hobbit3", "Ghostbusters2", "Hobbit6", "Hobbit7", "Hobbit8", "Hobbit9", "Infiltrator1", "ManicMiner2",
     "ManicMiner3", "Infiltrator2",
-    "Captive", "Fred3", "Fred4", "JSW4", "ManiacMansion2", "PQ1", "Pengo", "Pirates", "PolePosition", "Silkworm1", "SirFred1",
-    "SirFred2", "SirFred3", "Unknown1", "Chopper2", "Cliffhanger", "F1", "IM10", "MoonPatrol", "SummerGames10",
+    "Fred3", "Fred4", "JSW4", "ManiacMansion2", "PQ1", "Pengo", "Pirates", "PolePosition", "Silkworm1", "SirFred1",
+    "SirFred2", "SirFred3", "Unknown1", "Cliffhanger", "F1", "IM10", "MoonPatrol", "SummerGames10",
     "FF5", "LaraCroft1", "LaraCroft2", "IM13", "FF101", "FF100", "AA100", "UW10", "KL10", "SVS100", "SVS101", "SP4", "JSW10", "Vixen3", "WOW10", "ESB",
     "Galaxians10", "BC10",
     "ActecChallenge2", "AlleyKat", "BeachHead100", "Blackwyche2", "Hero100", "Invaders2", "KL102", "Karn1", "LastNinja10", "MoonBuggy", "PQ3",

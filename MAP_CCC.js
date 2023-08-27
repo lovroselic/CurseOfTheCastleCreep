@@ -1685,9 +1685,9 @@ console.info("KEY_TYPE", KEY_TYPE);
 };*/
 
 const HERO_TYPE = {
-    GhostFace: {
-        name: "GhostFace",
-        model: "GhostFace",
+    ThePrincess: {
+        name: "ThePrincess",
+        model: "Princess",
         scale: 1.82 / 2 ** 2,
         rotateToNorth: Math.PI,
         material: MATERIAL.standard,

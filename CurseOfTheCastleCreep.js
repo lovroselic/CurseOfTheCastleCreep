@@ -53,7 +53,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.03.01",
+    VERSION: "0.03.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -1700,6 +1700,7 @@ const TITLE = {
 
 // -- main --
 $(function () {
+    SPEECH.init();
     PRG.INIT();
     PRG.setup();
     ENGINE.LOAD.preload();

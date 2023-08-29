@@ -36,7 +36,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.12",
+  VERSION: "0.06.13",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -528,6 +528,18 @@ const GAME = {
     for (const keyType of KEY_TYPES) {
       $("#key_type").append(`<option value="${keyType}">${keyType}</option>`);
     }
+    $("#randpic").click(GAME.randomPic);
+    $("#randcrest").click(GAME.randomCrest);
+  },
+  randomPic() {
+    const pic = DECAL_PAINTINGS.chooseRandom();
+    $("#picture_decal").val(pic).change();
+    ENGINE.drawToId("picturecanvas", 0, 0, SPRITE[$("#picture_decal")[0].value]);
+  },
+  randomCrest() {
+    const pic = [...DECAL_CRESTS, ...BOTTOM_CRESTS, ...TOP_CRESTS].chooseRandom();
+    $("#crest_decal").val(pic).change();
+    ENGINE.drawToId("crestcanvas", 0, 0, SPRITE[$("#crest_decal")[0].value]);
   },
   texture() {
     GAME.textureGrid();

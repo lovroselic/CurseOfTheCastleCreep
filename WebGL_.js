@@ -1125,6 +1125,8 @@ class $3D_player {
             WebGL.playerList.push(this);
         };
         this.setMode("idle");
+        this.actionModes = ["attacking"];
+        this.actionCallback = null;
     }
     setMode(mode) {
         /**
@@ -1132,15 +1134,19 @@ class $3D_player {
          * walking          : animation 0
          * attacking        : animation 1
          */
+        if (this.mode === 'idle' && mode === 'idle') this.resetBirth();
         this.mode = mode;
         if (this.actor) {
             switch (this.mode) {
                 case "idle":
                 case "walking":
                     this.actor.animationIndex = 0;
+                    this.actionCallback = null;
                     break;
                 case "attacking":
                     this.actor.animationIndex = 1;
+                    this.actionCallback = this.attackPerformed;
+                    this.resetBirth();
                     break;
                 default:
                     throw Error(`3D played mode error: ${this.mode}`);
@@ -1159,6 +1165,18 @@ class $3D_player {
         const avgDim = (dZ + dX) / 2;
         const maxDim = Math.max(dZ, dX);
         this.r = Math.max((avgDim + maxDim) / 2, WebGL.INI.MIN_R);
+    }
+    animateAction() {
+        if (this.actionModes.includes(this.mode)) {
+            this.actor.animate(Date.now());
+        }
+    }
+    attack() {
+        this.setMode("attacking");
+        //this.resetBirth();
+    }
+    attackPerformed() {
+        console.warn("attack performed, evaluation of consequences");
     }
     associateExternalCamera(camera) {
         this.camera = camera;
@@ -1189,12 +1207,14 @@ class $3D_player {
         this.setSwordTip();
         if (this.camera) this.camera.update();
         if (this.camera || (this.model && WebGL.CONFIG.dual)) {
-            //this.camera.update();
             this.matrixUpdate();
             this.actor.animate(Date.now());
         }
-        if (this.mode === "idle") this.birth = Date.now();
+        //if (this.mode === "idle") this.resetBirth();
         this.setMode('walking');
+    }
+    resetBirth() {
+        this.actor.birth = Date.now();
     }
     setSwordTip() {
         this.swordTipPosition = this.pos.translate(this.dir, this.r);
@@ -1306,7 +1326,9 @@ class $3D_player {
         return distance < touchDistance;
     }
     respond(lapsedTime) {
-        var map = ENGINE.GAME.keymap;
+        if (this.actionModes.includes(this.mode)) return;               //action must not be interrupted
+
+        const map = ENGINE.GAME.keymap;
         if (map[ENGINE.KEY.map.Q]) {
             this.rotate(-1, lapsedTime);
             return;
@@ -1337,7 +1359,7 @@ class $3D_player {
         }
     }
     draw(gl) {
-        //console.warn("mode:", this.mode);
+        //console.warn("mode:", this.mode, "animation index", this.actor.animationIndex);
         const program = WebGL.model_program.program;
         //uniforms
         //material

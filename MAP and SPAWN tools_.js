@@ -9,6 +9,9 @@
 const MAP_TOOLS = {
     VERSION: "0.1",
     CSS: "color: #F9A",
+    INI: {
+        FOG: true,
+    },
     initialize(pMapObject) {
         this.MAP = pMapObject;
         if (ENGINE.verbose) console.log(`MAP TOOLS associated`, this.MAP);
@@ -20,6 +23,9 @@ const MAP_TOOLS = {
         this.MAP[level].pw = this.MAP[level].map.width * ENGINE.INI.GRIDPIX;
         this.MAP[level].ph = this.MAP[level].map.height * ENGINE.INI.GRIDPIX;
         this.MAP[level].map.level = level;
+        if (this.INI.FOG) {
+            GA.massSet(MAPDICT.FOG);
+        }
         const start = JSON.parse(this.MAP[level].start) || null;
         if (start) {
             this.MAP[level].map.startPosition = new Pointer(GA.indexToGrid(start[0]), Vector.fromInt(start[1]));

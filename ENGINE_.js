@@ -2914,16 +2914,25 @@ class _3D_ACTOR {
 class $3D_ACTOR {
   constructor(parent, animations, skin, jointMatrix) {
     this.parent = parent;
-    this.animationIndex = 0; //develop
-    //this.animationIndex = 1; //develop
+    this.animationIndex = 0;
     this.animations = animations;
     this.birth = parent.birth;
-    this.skin = skin; //limited to 0th skin
+    this.skin = skin;                       //limited to 0th skin
     this.jointMatrix = jointMatrix;
   }
   animate(date) {
     const A = this.animations[this.animationIndex];
-    const delta = ((date - this.birth) / 1000) % A.nodes[0].max;
+    const rawDelta = (date - this.birth) / 1000;
+
+    if (rawDelta > A.nodes[0].max) {
+      if (this.parent.actionModes.includes(this.parent.mode)) {
+        this.parent.actionCallback();
+        this.parent.setMode("idle");
+        return;
+      }
+    }
+
+    const delta = (rawDelta) % A.nodes[0].max;
     let keyFrameIndex = -1;
     let KFL = null;
     let keyFrameTime = 0;

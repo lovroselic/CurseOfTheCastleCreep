@@ -53,7 +53,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.03.03",
+    VERSION: "0.04.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -540,7 +540,10 @@ const HERO = {
         }
     },
     concludeAction() {
-        this.player.setMode("idle");
+        // actions are concluded in the animation
+        if (!this.player.actionModes.includes(this.player.mode)) {
+            this.player.setMode("idle");
+        }
     }
 };
 
@@ -639,7 +642,6 @@ const GAME = {
 
         const start_dir = MAP[level].map.startPosition.vector;
         let start_grid = MAP[level].map.startPosition.grid;
-        //start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
 
         //WebGL.CONFIG.set("first_person", true);
@@ -647,14 +649,7 @@ const GAME = {
 
         if (WebGL.CONFIG.firstperson) {
             //first person
-            //HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map);
             HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
-            /*
-            if (WebGL.CONFIG.dual) {
-                HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
-            }
-            */
-            //HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
         } else {
             //third person
             HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
@@ -720,6 +715,7 @@ const GAME = {
     run(lapsedTime) {
         if (ENGINE.GAME.stopAnimation) return;
         const date = Date.now();
+        HERO.player.animateAction();
         VANISHING3D.manage(lapsedTime);
         MISSILE3D.manage(lapsedTime);
         EXPLOSION3D.manage(date);
@@ -1065,7 +1061,7 @@ const GAME = {
         if (map[ENGINE.KEY.map.up]) { }
         if (map[ENGINE.KEY.map.down]) { }
         if (map[ENGINE.KEY.map.space]) {
-            //SWORD.stab();
+            HERO.player.attack();
             ENGINE.GAME.keymap[ENGINE.KEY.map.space] = false; //NO repeat
         }
         return;

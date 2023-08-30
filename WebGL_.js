@@ -1238,7 +1238,7 @@ class $3D_player {
     rotate(rotDirection, lapsedTime) {
         let angle = Math.round(lapsedTime / ENGINE.INI.ANIMATION_INTERVAL) * rotDirection * ((2 * Math.PI) / this.rotationResolution);
         this.setDir(Vector3.from_2D_dir(this.dir.rotate2D(angle), this.dir.y));
-        if (WebGL.CONFIG.dual) this.setRotation();   //
+        if (WebGL.CONFIG.dual && WebGL.CONFIG.firstperson) this.setRotation();   //
     }
     bumpEnemy(nextPos) {
         let checkGrids = this.GA.gridsAroundEntity(nextPos, Vector3.to_FP_Vector(this.dir), this.r); //grid check is 2D projection!

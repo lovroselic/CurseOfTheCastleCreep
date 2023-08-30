@@ -1628,7 +1628,8 @@ const ENGINE = {
               /** animations */
               let animations = new Array(model.animations.length);
               for (let [index, animation] of model.animations.entries()) {
-                const skinJoints = model.skins[index].joints;
+                //const skinJoints = model.skins[index].joints;
+                const skinJoints = model.skins[0].joints;                       //only single skin supported
                 const paths = {};
                 for (let channel of animation.channels) {
                   if (channel.target.node === undefined) {
@@ -2914,6 +2915,7 @@ class $3D_ACTOR {
   constructor(parent, animations, skin, jointMatrix) {
     this.parent = parent;
     this.animationIndex = 0; //develop
+    //this.animationIndex = 1; //develop
     this.animations = animations;
     this.birth = parent.birth;
     this.skin = skin; //limited to 0th skin

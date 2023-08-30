@@ -53,7 +53,7 @@ const INI = {
     FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.03.02",
+    VERSION: "0.03.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -339,6 +339,7 @@ class Scroll {
 
 const HERO = {
     construct() {
+        this.height = 0.6;
         this.resetVision();
         this.visible();
         this.unlucky();
@@ -638,14 +639,21 @@ const GAME = {
 
         const start_dir = MAP[level].map.startPosition.vector;
         let start_grid = MAP[level].map.startPosition.grid;
-        start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
+        //start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
+        start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
 
-        //WebGL.CONFIG.set("first_person");
-        WebGL.CONFIG.set("third_person");
+        //WebGL.CONFIG.set("first_person", true);
+        WebGL.CONFIG.set("third_person", true);
 
         if (WebGL.CONFIG.firstperson) {
             //first person
-            HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map);
+            //HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map);
+            HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
+            /*
+            if (WebGL.CONFIG.dual) {
+                HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
+            }
+            */
             //HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
         } else {
             //third person
@@ -687,7 +695,7 @@ const GAME = {
 
         const start_dir = MAP[level].map[this.destination.waypoint].vector;
         let start_grid = Grid.toClass(MAP[level].map[this.destination.waypoint].grid).add(start_dir);
-        start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.5);
+        start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
         HERO.player.setPos(start_grid);
         HERO.player.setDir(Vector3.from_2D_dir(start_dir));
         console.timeEnd("usingStaircase");
@@ -896,7 +904,7 @@ const GAME = {
     setFirstPerson() {
         $("#p1").prop("disabled", true);
         $("#p3").prop("disabled", false);
-        WebGL.CONFIG.set("first_person");
+        WebGL.CONFIG.set("first_person", true);
         HERO.player.clearCamera();
         HERO.player.moveSpeed = 4.0;
         WebGL.setCamera(HERO.player);
@@ -905,7 +913,7 @@ const GAME = {
         //console.info("#### Setting THIRD person view ####");
         $("#p1").prop("disabled", false);
         $("#p3").prop("disabled", true);
-        WebGL.CONFIG.set("third_person");
+        WebGL.CONFIG.set("third_person", true);
         HERO.player.associateExternalCamera(HERO.topCamera);
         HERO.player.moveSpeed = 2.0;
         WebGL.setCamera(HERO.topCamera);
@@ -973,11 +981,11 @@ const GAME = {
         if (HERO.dead) return;
         HERO.player.respond(lapsedTime);
         const map = ENGINE.GAME.keymap;
-        if (map[ENGINE.KEY.map["1"]]){
+        if (map[ENGINE.KEY.map["1"]]) {
             GAME.setFirstPerson();
             return;
         }
-        if (map[ENGINE.KEY.map["3"]]){
+        if (map[ENGINE.KEY.map["3"]]) {
             GAME.setThirdPerson();
             return;
         }

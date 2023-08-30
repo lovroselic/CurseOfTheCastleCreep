@@ -61,7 +61,9 @@ const WebGL = {
     },
     CONFIG: {
         firstperson: true,
-        set(type) {
+        dual: false,
+        set(type, dual = false) {
+            this.dual = dual;
             switch (type) {
                 case "first_person":
                     this.firstperson = true;
@@ -72,7 +74,7 @@ const WebGL = {
                 default:
                     throw `WebGL CONFIG type error: ${type}`;
             }
-            if (WebGL.VERBOSE) console.info(`%cWebGL set to ${type}.`, WebGL.CSS);
+            if (WebGL.VERBOSE) console.info(`%cWebGL set to type: ${type}, dual mode: ${dual}`, WebGL.CSS);
         }
 
     },
@@ -692,7 +694,8 @@ const WebGL = {
             }
         }
         //and HERO
-        if (!this.CONFIG.firstperson) {
+        if (!this.CONFIG.firstperson || this.CONFIG.dual) {
+            //if (true) {
             for (const player of this.playerList) {
                 player.draw(gl);
             }
@@ -1101,6 +1104,8 @@ class $3D_Camera {
 
 class $3D_player {
     constructor(position, dir, map = null, type = null, size = 0.5) {
+        this.camera = null;
+        this.model = null;
         this.setDir(dir);
         this.setPos(position);
         this.setMap(map);
@@ -1108,8 +1113,6 @@ class $3D_player {
         this.setFov();
         this.rotationResolution = 64;
         this.setSpeed(4.0);
-        this.camera = null;
-        this.model = null;
         this.type = type;
         if (this.type) {
             for (const prop in type) {
@@ -1125,10 +1128,24 @@ class $3D_player {
     }
     setMode(mode) {
         /**
-         * idle
-         * walking
+         * idle             : draws skin
+         * walking          : animation 0
+         * attacking        : animation 1
          */
         this.mode = mode;
+        if (this.actor) {
+            switch (this.mode) {
+                case "idle":
+                case "walking":
+                    this.actor.animationIndex = 0;
+                    break;
+                case "attacking":
+                    this.actor.animationIndex = 1;
+                    break;
+                default:
+                    throw Error(`3D played mode error: ${this.mode}`);
+            }
+        }
     }
     setModel() {
         this.model = $3D_MODEL[this.model];
@@ -1170,8 +1187,9 @@ class $3D_player {
     setPos(position) {
         this.pos = position;
         this.setSwordTip();
-        if (this.camera) {
-            this.camera.update();
+        if (this.camera) this.camera.update();
+        if (this.camera || (this.model && WebGL.CONFIG.dual)) {
+            //this.camera.update();
             this.matrixUpdate();
             this.actor.animate(Date.now());
         }
@@ -1200,6 +1218,7 @@ class $3D_player {
     rotate(rotDirection, lapsedTime) {
         let angle = Math.round(lapsedTime / ENGINE.INI.ANIMATION_INTERVAL) * rotDirection * ((2 * Math.PI) / this.rotationResolution);
         this.setDir(Vector3.from_2D_dir(this.dir.rotate2D(angle), this.dir.y));
+        if (WebGL.CONFIG.dual) this.setRotation();   //
     }
     bumpEnemy(nextPos) {
         let checkGrids = this.GA.gridsAroundEntity(nextPos, Vector3.to_FP_Vector(this.dir), this.r); //grid check is 2D projection!
@@ -1348,6 +1367,7 @@ class $3D_player {
                 gl.uniformMatrix4fv(uJointMat, false, this.restPose);
                 break;
             case "walking":
+            case "attacking":
                 gl.uniformMatrix4fv(uJointMat, false, this.jointMatrix);
                 break;
             default:
@@ -1397,7 +1417,6 @@ class $3D_player {
                 } else {
                     gl.bindTexture(gl.TEXTURE_2D, this.model.textures[index]);
                 }
-
 
                 gl.drawElements(gl.TRIANGLES, primitive.indices.count, gl[primitive.indices.type], 0);
             }

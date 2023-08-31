@@ -2323,97 +2323,104 @@ const ENGINE = {
       const W = (ENGINE.INI.GRIDPIX / 2) - decalWidth;
       const GA = maze.GA;
       //start
-      {
+      if (maze.start) {
         let grid = GA.indexToGrid(maze.start[0]);
         let mid = GRID.gridToCenterPX(grid);
         ENGINE.drawCircle(CTX, mid, decalWidth * 2, "#000000");
       }
-
-      for (const decal of maze.decals) {
-        let grid = GA.indexToGrid(decal[0]);
-        let dir = Vector.fromInt(decal[1]);
-        let mid = GRID.gridToCenterPX(grid);
-        let start = mid.translate(dir, W);
-        let pDirs = dir.getPerpendicularDirs();
-        let pStart = start.translate(pDirs[0], W);
-        let pEnd = start.translate(pDirs[1], W);
-        if (pDirs[0].same(NOWAY)) {
-          ENGINE.drawCircle(CTX, pStart, decalWidth * 2, "#0000FF");
-        } else {
-          ENGINE.drawLine(CTX, pStart, pEnd, "#0000FF", decalWidth);
+      if (maze.decals) {
+        for (const decal of maze.decals) {
+          let grid = GA.indexToGrid(decal[0]);
+          let dir = Vector.fromInt(decal[1]);
+          let mid = GRID.gridToCenterPX(grid);
+          let start = mid.translate(dir, W);
+          let pDirs = dir.getPerpendicularDirs();
+          let pStart = start.translate(pDirs[0], W);
+          let pEnd = start.translate(pDirs[1], W);
+          if (pDirs[0].same(NOWAY)) {
+            ENGINE.drawCircle(CTX, pStart, decalWidth * 2, "#0000FF");
+          } else {
+            ENGINE.drawLine(CTX, pStart, pEnd, "#0000FF", decalWidth);
+          }
         }
       }
-      for (const light of maze.lights) {
-        let grid = GA.indexToGrid(light[0]);
-        let dir = Vector.fromInt(light[1]);
-        let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
-        let mid = GRID.gridToCenterPX(grid);
-        let start = mid.translate(dir, W);
-        ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
-      }
-      for (const gate of maze.gates) {
-        let grid = GA.indexToGrid(gate[0]);
-        let bottomMid = GRID.gridToBottomCenterPX(grid);
-        let point = bottomMid;
-        CTX.strokeStyle = "#966F33";
-        CTX.fillStyle = "#966F33";
-        if (maze[3] === "Open") {
-          CTX.strokeStyle = "#000";
-          CTX.fillStyle = "#000";
+      if (maze.lights) {
+        for (const light of maze.lights) {
+          let grid = GA.indexToGrid(light[0]);
+          let dir = Vector.fromInt(light[1]);
+          let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
+          let mid = GRID.gridToCenterPX(grid);
+          let start = mid.translate(dir, W);
+          ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
         }
-        CTX.lineWidth = 1;
-        CTX.beginPath();
-        CTX.moveTo(point.x, point.y);
-        point = point.translate(LEFT, W / 2);
-        CTX.lineTo(point.x, point.y);
-        point = point.translate(UP, W);
-        CTX.lineTo(point.x, point.y);
-        point = point.translate(RIGHT, W / 2);
-        CTX.arc(point.x, point.y, W / 2, Math.PI, 0);
-        point = point.translate(RIGHT, W / 2);
-        CTX.moveTo(point.x, point.y);
-        point = point.translate(DOWN, W);
-        CTX.lineTo(point.x, point.y);
-        CTX.lineTo(bottomMid.x, bottomMid.y);
-        CTX.closePath();
-        CTX.stroke();
-        CTX.fill();
-        let mid = GRID.gridToCenterPX(grid);
-        let color = "#966F33";
-        switch (gate[4]) {
-          case "Open":
-            color = "#000";
-            break;
-          case "Closed":
-            color = "#966F33";
-            break;
-          case "Gold":
-            color = "gold";
-            break;
-          case "Silver":
-            color = "silver";
-            break;
-          case "Red":
-            color = "#F00";
-            break;
-          case "Blue":
-            color = "blue";
-            break;
-        }
-        ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
-        let dir = Vector.fromInt(gate[1]);
-        let start = mid.translate(dir, W);
-        ENGINE.drawCircle(CTX, start, decalWidth * 2, "#A000A0");
       }
-      for (const key of maze.keys) {
-        const KEY_COLORS = ["gold", "silver", "red", "green", "blue"];
-        const color = KEY_COLORS[key[1]];
-        let grid = GA.indexToGrid(key[0]);
-        let mid = GRID.gridToCenterPX(grid).translate(LEFT, W / 2);
-        ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
-        let pEnd = mid.translate(RIGHT, W);
-        ENGINE.drawLine(CTX, mid, pEnd, color, decalWidth);
-        ENGINE.drawLine(CTX, pEnd, pEnd.translate(UP, 5), color, decalWidth);
+      if (maze.gates) {
+        for (const gate of maze.gates) {
+          let grid = GA.indexToGrid(gate[0]);
+          let bottomMid = GRID.gridToBottomCenterPX(grid);
+          let point = bottomMid;
+          CTX.strokeStyle = "#966F33";
+          CTX.fillStyle = "#966F33";
+          if (maze[3] === "Open") {
+            CTX.strokeStyle = "#000";
+            CTX.fillStyle = "#000";
+          }
+          CTX.lineWidth = 1;
+          CTX.beginPath();
+          CTX.moveTo(point.x, point.y);
+          point = point.translate(LEFT, W / 2);
+          CTX.lineTo(point.x, point.y);
+          point = point.translate(UP, W);
+          CTX.lineTo(point.x, point.y);
+          point = point.translate(RIGHT, W / 2);
+          CTX.arc(point.x, point.y, W / 2, Math.PI, 0);
+          point = point.translate(RIGHT, W / 2);
+          CTX.moveTo(point.x, point.y);
+          point = point.translate(DOWN, W);
+          CTX.lineTo(point.x, point.y);
+          CTX.lineTo(bottomMid.x, bottomMid.y);
+          CTX.closePath();
+          CTX.stroke();
+          CTX.fill();
+          let mid = GRID.gridToCenterPX(grid);
+          let color = "#966F33";
+          switch (gate[4]) {
+            case "Open":
+              color = "#000";
+              break;
+            case "Closed":
+              color = "#966F33";
+              break;
+            case "Gold":
+              color = "gold";
+              break;
+            case "Silver":
+              color = "silver";
+              break;
+            case "Red":
+              color = "#F00";
+              break;
+            case "Blue":
+              color = "blue";
+              break;
+          }
+          ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
+          let dir = Vector.fromInt(gate[1]);
+          let start = mid.translate(dir, W);
+          ENGINE.drawCircle(CTX, start, decalWidth * 2, "#A000A0");
+        }
+      }
+      if (maze.keys) {
+        for (const key of maze.keys) {
+          const KEY_COLORS = ["gold", "silver", "red", "green", "blue"];
+          const color = KEY_COLORS[key[1]];
+          let grid = GA.indexToGrid(key[0]);
+          let mid = GRID.gridToCenterPX(grid).translate(LEFT, W / 2);
+          ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
+          let pEnd = mid.translate(RIGHT, W);
+          ENGINE.drawLine(CTX, mid, pEnd, color, decalWidth);
+          ENGINE.drawLine(CTX, pEnd, pEnd.translate(UP, 5), color, decalWidth);
+        }
       }
     },
     wall(x, y, CTX, value) {

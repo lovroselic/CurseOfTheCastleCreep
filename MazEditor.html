@@ -128,6 +128,8 @@
                             <hr>
                             <input type="radio" name="painter" value="key"> Key <br />
                             <hr>
+                            <input type="radio" name="painter" value="monster"> Monster <br />
+                            <hr>
                             <input type="radio" name="painter" value="start"> Start position <br />
                             <hr>
                             <input type="radio" name="painter" value="cleargrid"> Clear grid <br />
@@ -164,6 +166,16 @@
                             <div>
                                 <div class="d-flex justify-content-center">
                                     <select id="key_type"> </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Monsters
+                            </legend>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <select id="monster_type"> </select>
                                 </div>
                             </div>
                         </fieldset>
@@ -285,6 +297,7 @@
     lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"]]',
     gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]',
     keys: '[[102,0],[103,1],[104,2],[105,2],[106,3],[120,4]]'
+    monsters: '[]'
     }
                         </textarea>
 
@@ -325,6 +338,7 @@
     <script src="./Lights_and_materials_1_00.js" type="text/javascript"></script>
     <script src="./assets_MazEditor.js" type="text/javascript"></script>
     <script src="./MAP_forMazEditor.js" type="text/javascript"></script>
+    <script src="./Monsters_CCC.js" type="text/javascript"></script>
     <script src="./MazEditor.js" type="text/javascript"></script>
 
 </body>

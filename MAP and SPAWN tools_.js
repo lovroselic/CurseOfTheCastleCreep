@@ -7,7 +7,7 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "0.1",
+    VERSION: "0.2",
     CSS: "color: #F9A",
     INI: {
         FOG: true,
@@ -31,10 +31,15 @@ const MAP_TOOLS = {
             this.MAP[level].map.startPosition = new Pointer(GA.indexToGrid(start[0]), Vector.fromInt(start[1]));
             this.MAP[level].map.start = start;
         }
-        this.MAP[level].map.decals = JSON.parse(this.MAP[level].decals) || null;
-        this.MAP[level].map.lights = JSON.parse(this.MAP[level].lights) || null;
-        this.MAP[level].map.gates = JSON.parse(this.MAP[level].gates) || null;
-        this.MAP[level].map.keys = JSON.parse(this.MAP[level].keys) || null;
+        const properties = ['decals', 'lights', 'gates', 'keys', 'monsters'];
+        for (const prop of properties) {
+            if (this.MAP[level][prop] !== undefined) {
+                this.MAP[level].map[prop] = JSON.parse(this.MAP[level][prop]);
+            } else {
+                this.MAP[level].map[prop] = [];
+            }
+        }
+
     }
 };
 const SPAWN_TOOLS = {

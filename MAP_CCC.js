@@ -6,7 +6,7 @@
 "use strict";
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue"];
 
-console.log("%cMAP for CrawlMaster2 loaded.", "color: #888");
+console.log("%cMAP for CCC loaded.", "color: #888");
 
 /** Map definitions */
 const MAP = {
@@ -742,7 +742,7 @@ const SPAWN = {
     }
 };
 
-const MONSTER_TYPE = {
+/*const MONSTER_TYPE = {
     Spider: {
         name: "Spider",
         model: "Spider",
@@ -1383,6 +1383,7 @@ const MONSTER_TYPE = {
         material: MATERIAL.standardShine,
     },
 };
+*/
 
 /*const SHRINE_TYPE = {
     AttackShrine: {

@@ -25,6 +25,7 @@ const MAP = {
     MAP.map.start = [];
     MAP.map.gates = [];
     MAP.map.keys = [];
+    MAP.map.monsters = [];
   }
 };
 const INI = {
@@ -36,7 +37,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.13",
+  VERSION: "0.06.14",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -248,6 +249,18 @@ const GAME = {
             return;
         }
         $("#error_message").html("All is fine");
+        break;
+      case "monster":
+        console.log("monster, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            let monsterValue = $("#monster_type")[0].value;
+            MAP.map.monsters.push(Array(gridIndex, monsterValue));
+            break;
+          default:
+            $("#error_message").html(`Monster placement not supported on value: ${currentValue}`);
+            return;
+        }
         break;
     }
 
@@ -530,6 +543,10 @@ const GAME = {
     }
     $("#randpic").click(GAME.randomPic);
     $("#randcrest").click(GAME.randomCrest);
+
+    for (const monsterType in MONSTER_TYPE) {
+      $("#monster_type").append(`<option value="${monsterType}">${monsterType} A: ${MONSTER_TYPE[monsterType].attack} D: ${MONSTER_TYPE[monsterType].defense} M: ${MONSTER_TYPE[monsterType].magic}</option>`);
+    }
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();
@@ -549,49 +566,50 @@ const GAME = {
     let Export = { width: MAP.width, height: MAP.height, map: rle };
     let RoomID = $("#roomid")[0].value;
     let roomExport = `${RoomID} : {
-      data: '${JSON.stringify(Export)}',
-      wall: "${$("#walltexture")[0].value}",
-      floor: "${$("#floortexture")[0].value}",
-      ceil: "${$("#ceiltexture")[0].value}",
-      start: '${JSON.stringify(MAP.map.start)}',
-      decals: '${JSON.stringify(MAP.map.decals)}',
-      lights: '${JSON.stringify(MAP.map.lights)}',
-      gates: '${JSON.stringify(MAP.map.gates)}',
-      keys: '${JSON.stringify(MAP.map.keys)}'
-    }`;
+data: '${JSON.stringify(Export)}',
+wall: "${$("#walltexture")[0].value}",
+floor: "${$("#floortexture")[0].value}",
+ceil: "${$("#ceiltexture")[0].value}",\n`;
+    const descriptors = ['start', 'decals', 'lights', 'gates', 'keys', 'monsters'];
+    for (let desc of descriptors) {
+      if (MAP.map[desc].length > 0) {
+        roomExport += `${desc}: '${JSON.stringify(MAP.map[desc])}',\n`;
+      }
+    }
+    roomExport += `}`;
     $("#exp").val(roomExport);
   },
   import() {
     const ImportText = $("#exp").val();
     console.info("ImportText", ImportText);
     const Import = JSON.parse(ImportText.extractGroup(/data:\s\'(.*)\'/));
-    const wall = ImportText.extractGroup(/wall:\s\"(.*)\"/);
-    const floor = ImportText.extractGroup(/floor:\s\"(.*)\"/);
-    const ceil = ImportText.extractGroup(/ceil:\s\"(.*)\"/);
     const roomId = ImportText.extract(/^\w*/);
-    const decals = ImportText.extractGroup(/decals:\s\'(.*)\'/);
-    const lights = ImportText.extractGroup(/lights:\s\'(.*)\'/);
-    const start = ImportText.extractGroup(/start:\s\'(.*)\'/);
-    const gates = ImportText.extractGroup(/gates:\s\'(.*)\'/);
-    const keys = ImportText.extractGroup(/keys:\s\'(.*)\'/);
-    $("#walltexture").val(wall);
-    $("#floortexture").val(floor);
-    $("#ceiltexture").val(ceil);
     $("#roomid").val(roomId);
-    GAME.updateTextures();
 
+    const Textures = ["wall", "floor", "ceil"];
+    for (const prop of Textures) {
+      const pattern = new RegExp(`${prop}:\\s"(.*)"`);
+      $(`#${prop}texture`).val(ImportText.extractGroup(pattern));
+    }
+
+    GAME.updateTextures();
     MAP.map = FREE_MAP.import(Import);
     MAP.init();
-    MAP.map.decals = JSON.parse(decals);
-    MAP.map.lights = JSON.parse(lights);
-    MAP.map.start = JSON.parse(start);
-    MAP.map.gates = JSON.parse(gates);
-    MAP.map.keys = JSON.parse(keys);
-    console.log(MAP.map);
+
+    const properties = ['decals', 'lights', 'start', 'gates', 'keys', 'monsters'];
+    for (const prop of properties) {
+      const pattern = new RegExp(`${prop}:\\s'(.*)'`);
+      let value = ImportText.extractGroup(pattern);
+      MAP.map[prop] = JSON.parse(value) || [];
+    }
+
+    console.log("map", MAP.map);
     MAP.width = Import.width;
     MAP.height = Import.height;
     $("#horizontalGrid").val(Import.width);
     $("#verticalGrid").val(Import.height);
+    $("#horizontalGrid").trigger("change");
+    $("#verticalGrid").trigger("change");
     GAME.updateWH();
     ENGINE.resizeBOX("ROOM");
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);

@@ -425,11 +425,15 @@ String.prototype.splitOnLastDot = function () {
 };
 String.prototype.extract = function (regexString) {
   let regex = new RegExp(regexString);
-  return this.match(regex)[0];
+  let match = this.match(regex);
+  if (match) return match[0];
+  return null;
 };
 String.prototype.extractGroup = function (regexString) {
   let regex = new RegExp(regexString);
-  return regex.exec(this)[1];
+  let exec = regex.exec(this);
+  if (exec) return exec[1];
+  return null;
 };
 Set.prototype.moveFrom = function (s) {
   s.forEach(e => {

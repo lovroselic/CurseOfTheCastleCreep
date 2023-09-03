@@ -19,13 +19,11 @@ const MAP = {
   map: {
 
   },
+  properties:['decals', 'lights', 'start', 'gates', 'keys', 'monsters'],
   init() {
-    MAP.map.decals = [];
-    MAP.map.lights = [];
-    MAP.map.start = [];
-    MAP.map.gates = [];
-    MAP.map.keys = [];
-    MAP.map.monsters = [];
+    for (const prop of this.properties){
+      this.map[prop] = [];
+    }
   }
 };
 const INI = {
@@ -37,7 +35,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.14",
+  VERSION: "0.06.15",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -236,7 +234,6 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "key":
-        //console.log("key, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let keyValue = $("#key_type")[0].value;
@@ -251,7 +248,7 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "monster":
-        console.log("monster, value", currentValue, "grid", grid);
+        //console.log("monster, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let monsterValue = $("#monster_type")[0].value;
@@ -596,8 +593,7 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     MAP.map = FREE_MAP.import(Import);
     MAP.init();
 
-    const properties = ['decals', 'lights', 'start', 'gates', 'keys', 'monsters'];
-    for (const prop of properties) {
+    for (const prop of MAP.properties) {
       const pattern = new RegExp(`${prop}:\\s'(.*)'`);
       let value = ImportText.extractGroup(pattern);
       MAP.map[prop] = JSON.parse(value) || [];

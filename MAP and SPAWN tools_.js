@@ -17,7 +17,6 @@ const MAP_TOOLS = {
         if (ENGINE.verbose) console.log(`MAP TOOLS associated`, this.MAP);
     },
     unpack(level) {
-        console.log("unpacking MAP level", level);
         this.MAP[level].map = FREE_MAP.import(JSON.parse(this.MAP[level].data));
         const GA = this.MAP[level].map.GA;
         this.MAP[level].pw = this.MAP[level].map.width * ENGINE.INI.GRIDPIX;
@@ -39,7 +38,7 @@ const MAP_TOOLS = {
                 this.MAP[level].map[prop] = [];
             }
         }
-
+        if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
     }
 };
 const SPAWN_TOOLS = {
@@ -51,6 +50,7 @@ const SPAWN_TOOLS = {
         this.lights(map, GA);
         this.externalGates(map, GA);
         this.keys(map, GA);
+        this.monsters(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -97,6 +97,15 @@ const SPAWN_TOOLS = {
             ITEM3D.add(new FloorItem3D(grid, key));
         }
     },
+    monsters(map, GA) {
+        console.log("spawning monsters");
+        for (const M of map.monsters) {
+            console.log(".monster", M);
+            const grid = Grid.toCenter(GA.indexToGrid(M[0]));
+            const type = MONSTER_TYPE[M[1]];
+            ENTITY3D.add(new $3D_Entity(grid, type, UP));
+        }
+    }
 };
 
 /** defaults */

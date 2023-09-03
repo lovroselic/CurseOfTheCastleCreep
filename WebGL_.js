@@ -126,6 +126,7 @@ const WebGL = {
         }
     },
     update_shaders_forLightSources: ['fShader'],
+    hero: null,
     setContext(layer) {
         this.CTX = LAYER[layer];
         if (this.VERBOSE) console.log(`%cContext:`, this.CSS, this.CTX);
@@ -174,6 +175,7 @@ const WebGL = {
         BUMP3D.init(map);
         ENTITY3D.init(map, hero);
         INTERFACE3D.init(map);
+        this.hero = hero;
     },
     setCamera(camera) {
         this.camera = camera;
@@ -1173,10 +1175,66 @@ class $3D_player {
     }
     attack() {
         this.setMode("attacking");
-        //this.resetBirth();
     }
     attackPerformed() {
-        console.warn("attack performed, evaluation of consequences");
+        const hit = this.hit();
+        if (!hit) return;
+        let damage = TURN.damage(WebGL.hero, hit);
+        const luckAddiction = Math.min(1, (damage * 0.1) >>> 0);
+        damage += WebGL.hero.luck * luckAddiction;
+
+        if (damage <= 0) {
+            damage = "MISSED";
+            TURN.display(damage);
+            this.miss();
+            return;
+        }
+
+        TURN.display(damage);
+        AUDIO.SwordHit.play();
+        WebGL.hero.incExp(Math.min(damage, hit.health), "attack");
+        hit.health -= damage;
+        AUDIO[hit.hurtSound].play();
+        EXPLOSION3D.add(new BloodSmudge(hit.moveState.pos.translate(DIR_UP, hit.midHeight)));
+        if (hit.health <= 0) hit.die("attack");
+    }
+    miss() {
+        AUDIO.SwordMiss.play();
+    }
+    hit() {
+        const attackLength = 0.5;
+        const refPoint = this.pos.translate(this.dir, attackLength);
+        const refGrid = Vector3.toGrid(refPoint);
+        const playerGrid = Vector3.toGrid(this.pos);
+        const IA = this.map.enemyIA;
+        const POOL = ENTITY3D.POOL;
+        const enemies = IA.unrollArray([refGrid, playerGrid]);
+
+        console.log("..enemies", enemies);
+        if (enemies.size === 0) return this.miss();
+        let attackedEnemy = null;
+        if (enemies.size === 1) {
+            attackedEnemy = POOL[enemies.first() - 1];
+        } else if (enemies.size > 1) {
+            let distance = Infinity;
+            for (let e of enemies) {
+                const entity = POOL[e - 1];
+                if (!entity.swordTipDistance) {
+                    entity.swordTipDistance = this.swordTipPosition.EuclidianDistance(entity.moveState.pos);
+                }
+                if (entity.swordTipDistance < distance) {
+                    distance = entity.swordTipDistance;
+                    attackedEnemy = entity;
+                }
+            }
+        }
+        if (ENGINE.verbose) console.info("selected attackedEnemy", `${attackedEnemy.name} - ${attackedEnemy.id}`);
+        let hit = ENGINE.lineIntersectsCircle(Vector3.to_FP_Grid(this.pos),
+            Vector3.to_FP_Grid(refPoint),
+            Vector3.to_FP_Grid(attackedEnemy.moveState.pos),
+            attackedEnemy.r);
+        if (hit) return attackedEnemy;
+        return null;
     }
     associateExternalCamera(camera) {
         this.camera = camera;
@@ -1210,7 +1268,6 @@ class $3D_player {
             this.matrixUpdate();
             this.actor.animate(Date.now());
         }
-        //if (this.mode === "idle") this.resetBirth();
         this.setMode('walking');
     }
     resetBirth() {
@@ -1228,6 +1285,7 @@ class $3D_player {
     setMap(map) {
         this.map = map;
         this.GA = this.map.GA;
+        this.enemyIA = this.map.enemyIA;
     }
     setR(r) {
         this.r = r;
@@ -2217,6 +2275,7 @@ class $3D_Entity {
         this.petrified = false;
         this.behaviour = new Behaviour(...this.behaviourArguments);
         this.guardPosition = null;
+        this.actionModes = [];
     }
     setView(lookAt) {
         this.moveState.setView(lookAt);

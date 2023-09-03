@@ -2422,6 +2422,17 @@ const ENGINE = {
           ENGINE.drawLine(CTX, pEnd, pEnd.translate(UP, 5), color, decalWidth);
         }
       }
+      if (maze.monsters) {
+        for (const monster of maze.monsters) {
+          let grid = GA.indexToGrid(monster[0]);
+          let mid = GRID.gridToCenterPX(grid);
+          CTX.fillStyle = "black";
+          CTX.font = "10px Arial";
+          CTX.textAlign = "center";
+          CTX.textBaseLine = "middle";
+          CTX.fillText(monster[1], mid.x, mid.y);
+        }
+      }
     },
     wall(x, y, CTX, value) {
       let FS;

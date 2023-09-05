@@ -89,7 +89,6 @@ LoadTextures = [
     { srcName: "StoneBlockPavement.jpg", name: "StoneBlockPavement" },
     { srcName: "TinyBricks.jpg", name: "TinyBricks" },
 
-
     { srcName: "BlackBrickWall128.jpg", name: "BlackBrickWall" },
     { srcName: "CastleWall.jpg", name: "CastleWall" },
     { srcName: "RockFloor.jpg", name: "RockFloor" },
@@ -135,6 +134,22 @@ LoadSheetSequences = [
 ];
 
 LoadSprites = [
+    //scrolls
+    { srcName: "Invisibility.png", name: "SCR_Invisibility" },
+    { srcName: "DestroyArmor.png", name: "SCR_DestroyArmor" },
+    { srcName: "DestroyWeapon.png", name: "SCR_DestroyWeapon" },
+    { srcName: "BoostArmor.png", name: "SCR_BoostArmor" },
+    { srcName: "BoostWeapon.png", name: "SCR_BoostWeapon" },
+    { srcName: "Map.png", name: "SCR_Map" },
+    { srcName: "TeleportTemple.png", name: "SCR_TeleportTemple" },
+    { srcName: "HalfLife.png", name: "SCR_HalfLife" },
+    { srcName: "Cripple.png", name: "SCR_Cripple" },
+    { srcName: "Light.png", name: "SCR_Light" },
+    { srcName: "MagicBoost.png", name: "SCR_MagicBoost" },
+    { srcName: "Luck.png", name: "SCR_Luck" },
+    { srcName: "DrainMana.png", name: "SCR_DrainMana" },
+    { srcName: "Petrify.png", name: "SCR_Petrify" },
+
     //lights
     { srcName: "WallLamp256.png", name: "WallLamp" },
     { srcName: "WallLamp2.png", name: "WallLamp2" },

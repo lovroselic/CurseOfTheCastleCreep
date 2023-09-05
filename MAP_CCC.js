@@ -10,18 +10,19 @@ console.log("%cMAP for CCC loaded.", "color: #888");
 
 /** Map definitions */
 const MAP = {
-    1 : {
+    1: {
         data: '{"width":"16","height":"16","map":"BB2ABAA7BABABAA2BB2ABB2ABABAA2BAA5BAA7BABAA2BAA3BAA4BB3AA2BAA15BAA7BABABAA3BAA5BAA3BAA3BB6ABB2ABB2ABB3AA2BB2AA2BB11ABB6ABB5AA2BB3AA2BB9AA3BB2AA2BB4AA2BB2ABB2ABB11ABB9ABB4AA3BB19ABB16AB$"}',
         wall: "DungeonWall",
         floor: "GreenDungeonWall",
         ceil: "GreyDungeonFloor",
-        start: '[24,7]',
         decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"],[131,5,"AA100","picture"],[153,5,"AMC3","picture"]]',
         lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"]]',
+        start: '[24,7]',
         gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]',
         keys: '[[102,0],[103,1],[104,2],[105,2],[106,3],[120,4]]',
         monsters: '[[72,"Bat"],[118,"RedGoldBat"],[166,"SkeletonDemo"]]',
-        }
+        scrolls: '[[132,0],[149,1],[164,8]]',
+    }
     ,
     2: {
         data: '{"width":"8","height":"8","map":"BB4AA5BAA5BABB3AA11BB10ABABAA4BABB11AB$"}',
@@ -45,7 +46,7 @@ const MAP = {
         gates: '[[7,7,"3.1","1.2","Open"]]',
         keys: '[]'
     },
-    4 : {
+    4: {
         data: '{"width":"8","height":"8","map":"BB6AA18BAA2BB2AA6BB6AA2BB3AA5BB12A$"}',
         wall: "RockWall100",
         floor: "MarbleFloor1",
@@ -55,7 +56,7 @@ const MAP = {
         lights: '[[40,5,"WallLamp","standard"],[60,1,"WallLamp3","fire"]]',
         gates: '[[23,3,"4.1","1.3","Open"]]',
         keys: '[]'
-      },
+    },
     5: {
         data: '{"width":"16","height":"16","map":"BB4AA8BB2AA4BB4AA20BB82AA2BB23ABABB5ABAA3BB18ABB75$"}',
         wall: "BeautifullWall1",
@@ -1448,217 +1449,7 @@ const SPAWN = {
     },
 };*/
 
-const COMMON_ITEM_TYPE = {
-    Chest: {
-        name: "Chest",
-        category: "chest",
-        element: "CHEST",
-        scale: 1 / 2 ** 3,
-        glueToFloor: true,
-        texture: "Wood1",
-        material: MATERIAL.standard,
-    },
-    TreasureChest: {
-        name: "TreasureChest",
-        category: "treasure_chest",
-        element: "TREASURE_CHEST",
-        scale: 1.5 / 2 ** 3,
-        glueToFloor: true,
-        texture: "TreasureChest",
-        material: MATERIAL.standard,
-    },
-    Sword: {
-        name: "Sword",
-        category: "skill",
-        which: "attack",
-        element: "SWORD",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Sword",
-        inventorySprite: "SwordSkill",
-        material: MATERIAL.silver,
-    },
-    Shield: {
-        name: "Shield",
-        category: "skill",
-        which: "defense",
-        element: "SHIELD",
-        scale: 1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "ScrapedMetal",
-        inventorySprite: "ShieldSkill",
-        material: MATERIAL.silver,
-    },
-    Magic: {
-        name: "Magic",
-        category: "skill",
-        which: "magic",
-        element: "PENTAGRAM",
-        scale: 1 / 2 ** 1,
-        glueToFloor: true,
-        texture: "Red2",
-        inventorySprite: "MagicSkill",
-        material: MATERIAL.redShine,
-    },
-    Heart: {
-        name: "Heart",
-        category: "status",
-        which: "health",
-        element: "HEART",
-        scale: 1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "Red",
-        inventorySprite: "Health",
-        material: MATERIAL.redShine,
-    },
-    Mana: {
-        name: "ManaSkill",
-        category: "status",
-        which: "mana",
-        element: "BALL",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Magic",
-        inventorySprite: "Mana",
-        material: MATERIAL.standard,
-    },
-    Fireball: {
-        name: "Fireball",
-        category: 'missile',
-        element: "BALL",
-        scale: 1 / 2 ** 4,
-        texture: "FireballTexture",
-        moveSpeed: 8.0,
-        lightColor: "#FF7700",
-        material: MATERIAL.fire,
-    },
-    Scroll: {
-        name: "Scroll",
-        category: "scroll",
-        element: "SCROLL",
-        scale: 1.5 / 2 ** 4,
-        glueToFloor: true,
-        texture: "ScrollTexture",
-        material: MATERIAL.paper,
-    },
-    RedPotion: {
-        name: "RedPotion",
-        category: "potion",
-        color: "red",
-        element: "FLASK",
-        scale: 1.1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "RedLiquid",
-        inventorySprite: "RedPotion24",
-        material: MATERIAL.redShine,
-    },
-    BluePotion: {
-        name: "BluePotion",
-        category: "potion",
-        color: "blue",
-        element: "FLASK",
-        scale: 1.1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "BlueLiquid",
-        inventorySprite: "BluePotion24",
-        material: MATERIAL.blueShine,
-    },
-    GoldKey: {
-        name: "GoldKey",
-        inventorySprite: "GoldKeyBig",
-        category: "key",
-        color: "Gold",
-        element: "KEY",
-        scale: 1 / 2 ** 3,
-        glueToFloor: true,
-        texture: "Gold",
-        material: MATERIAL.gold,
-    },
-    SilverKey: {
-        name: "SilverKey",
-        inventorySprite: "SilverKeyBig",
-        category: "key",
-        color: "Silver",
-        element: "KEY",
-        scale: 1 / 2 ** 3,
-        glueToFloor: true,
-        texture: "Silver",
-        material: MATERIAL.silver,
-    },
-    RedKey: {
-        name: "RedKey",
-        inventorySprite: "RedKeyBig",
-        category: "key",
-        color: "Red",
-        element: "KEY",
-        scale: 1 / 2 ** 3,
-        glueToFloor: true,
-        texture: "RedMetal",
-        material: MATERIAL.redShine,
-    },
-    GoldBar: {
-        name: "GoldBar",
-        category: "gold",
-        element: "BAR",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Gold",
-        minVal: 50,
-        maxVal: 100,
-        material: MATERIAL.gold,
-    },
-    SilverBar: {
-        name: "SilverBar",
-        category: "gold",
-        element: "BAR",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Silver",
-        minVal: 25,
-        maxVal: 50,
-        material: MATERIAL.silver,
-    },
-    GoldCube: {
-        name: "GoldCube",
-        category: "gold",
-        element: "CUBE_CENTERED",
-        scale: 1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "Gold",
-        minVal: 10,
-        maxVal: 25,
-        material: MATERIAL.gold,
-    },
-    Coins: {
-        name: "Coins",
-        category: "gold",
-        element: "COINS",
-        scale: 1.5 / 2 ** 0,
-        glueToFloor: true,
-        texture: "Coins",
-        minVal: 10,
-        maxVal: 25,
-        material: MATERIAL.gold,
-    },
-    Sting: {
-        name: "Sting",
-        category: "skill",
-        which: "attack",
-        element: "STING",
-        scale: 1 / 2 ** 1,
-        glueToFloor: true,
-        texture: "Sting",
-        inventorySprite: "SwordSkill",
-        material: MATERIAL.silver,
-    },
-    POV: {
-        name: "POV",
-        element: "STING",
-        scale: 1 / 2 ** 1,
-        texture: "Sting",
-        material: MATERIAL.silver,
-    }
-};
+
 
 const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue"];
 const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal"];
@@ -1668,23 +1459,6 @@ for (let [index, key] of KEY_TYPES.entries()) {
     KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
 }
 console.info("KEY_TYPE", KEY_TYPE);
-
-/*const SCROLL_TYPE = {
-    Light: 130,
-    Invisibility: 100,
-    Map: 100,
-    DrainMana: 90,
-    Cripple: 60,
-    BoostWeapon: 100,
-    BoostArmor: 100,
-    DestroyArmor: 80,
-    DestroyWeapon: 80,
-    Petrify: 20,
-    MagicBoost: 100,
-    TeleportTemple: 100,
-    Luck: 100,
-    HalfLife: 50
-};*/
 
 const HERO_TYPE = {
     ThePrincess: {

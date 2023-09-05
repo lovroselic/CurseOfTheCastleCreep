@@ -19,9 +19,9 @@ const MAP = {
   map: {
 
   },
-  properties:['decals', 'lights', 'start', 'gates', 'keys', 'monsters'],
+  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls'],
   init() {
-    for (const prop of this.properties){
+    for (const prop of this.properties) {
       this.map[prop] = [];
     }
   }
@@ -35,7 +35,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.15",
+  VERSION: "0.06.16",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -140,7 +140,6 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "gate":
-        console.log("gate");
         switch (currentValue) {
           case MAPDICT.WALL:
             break;
@@ -203,7 +202,7 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "cleargrid":
-        for (let arrType of [MAP.map.decals, MAP.map.lights, MAP.map.gates, MAP.map.keys]) {
+        for (let arrType of [MAP.map.decals, MAP.map.lights, MAP.map.gates, MAP.map.keys, MAP.map.monsters, MAP.map.scrolls]) {
           let iElementToRemove = [];
           for (let [index, element] of arrType.entries()) {
             if (element[0] === gridIndex) {
@@ -256,6 +255,20 @@ const GAME = {
             break;
           default:
             $("#error_message").html(`Monster placement not supported on value: ${currentValue}`);
+            return;
+        }
+        break;
+      case "scroll":
+        console.log("scroll, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            let scrollValue = $("#scroll_type")[0].value;
+            let scrollTypeIndex = SCROLL_TYPE.indexOf(scrollValue);
+            MAP.map.scrolls.push(Array(gridIndex, scrollTypeIndex));
+            console.log(MAP.map.scrolls);
+            break;
+          default:
+            $("#error_message").html(`Scroll placement not supported on value: ${currentValue}`);
             return;
         }
         break;
@@ -544,6 +557,14 @@ const GAME = {
     for (const monsterType in MONSTER_TYPE) {
       $("#monster_type").append(`<option value="${monsterType}">${monsterType} A: ${MONSTER_TYPE[monsterType].attack} D: ${MONSTER_TYPE[monsterType].defense} M: ${MONSTER_TYPE[monsterType].magic}</option>`);
     }
+
+    for (const scrollType of SCROLL_TYPE) {
+      $("#scroll_type").append(`<option value="${scrollType}">${scrollType}`);
+    }
+    ENGINE.drawToId("scrollcanvas", 0, 0, SPRITE[`SCR_${$("#scroll_type")[0].value}`]);
+    $("#scroll_type").change(function () {
+      ENGINE.drawToId("scrollcanvas", 0, 0, SPRITE[`SCR_${$("#scroll_type")[0].value}`]);[]
+    });
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();
@@ -567,8 +588,8 @@ data: '${JSON.stringify(Export)}',
 wall: "${$("#walltexture")[0].value}",
 floor: "${$("#floortexture")[0].value}",
 ceil: "${$("#ceiltexture")[0].value}",\n`;
-    const descriptors = ['start', 'decals', 'lights', 'gates', 'keys', 'monsters'];
-    for (let desc of descriptors) {
+    //const descriptors = ['start', 'decals', 'lights', 'gates', 'keys', 'monsters'];
+    for (let desc of MAP.properties) {
       if (MAP.map[desc].length > 0) {
         roomExport += `${desc}: '${JSON.stringify(MAP.map[desc])}',\n`;
       }

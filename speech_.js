@@ -1,6 +1,6 @@
 //////////////////speech.js/////////////////////////
 //                                                //
-//       SPEECH version 1.02  by LS               //
+//       SPEECH version 1.03  by LS               //
 //                                                //
 ////////////////////////////////////////////////////
 /*  
@@ -9,7 +9,6 @@ TODO:
     
 */
 ////////////////////////////////////////////////////
-
 
 const SPEECH = {
   VERSION: "1.03",
@@ -48,6 +47,10 @@ const SPEECH = {
       console.log(`%cSPEECH not ready ....`, "color: #A00");
       return;
     }
+    if (speechSynthesis.pending) {
+      console.log(`%cSPEECH is already speaking. Skipping new text.`, "color: #A00");
+      return;
+    }
 
     let msg = new SpeechSynthesisUtterance();
     msg.text = txt;
@@ -55,6 +58,7 @@ const SPEECH = {
     msg.rate = SPEECH.settings.rate;
     msg.volume = SPEECH.settings.volume;
     msg.voice = SPEECH.voice;
+ 
     speechSynthesis.speak(msg);
   },
   getVoices() {
@@ -104,6 +108,10 @@ const VOICE = {
   'GlaDOS': {
     voice: 1,
     setting: new VoiceSetting(0.5, 0.9, 1.0)
+  },
+  'Princess': {
+    voice: 6,
+    setting: new VoiceSetting(1.2, 2.5, 1.0)
   },
 };
 console.log(`%cSPEECH ${SPEECH.VERSION} loaded.`, SPEECH.CSS);

@@ -753,6 +753,12 @@ const WebGL = {
                          * inventory
                          * mouseClick
                          */
+                        if (hero.inventory.totalSize() >= hero.inventoryLimit) {
+                            return {
+                                category: "error",
+                                which: "inventory_full"
+                            };
+                        }
                         return obj.interact(hero.player.GA, hero.inventory, true);
                     }
                 }
@@ -1210,7 +1216,6 @@ class $3D_player {
         const POOL = ENTITY3D.POOL;
         const enemies = IA.unrollArray([refGrid, playerGrid]);
 
-        console.log("..enemies", enemies);
         if (enemies.size === 0) return this.miss();
         let attackedEnemy = null;
         if (enemies.size === 1) {
@@ -1764,11 +1769,12 @@ class LiftingGate {
 }
 
 class FloorItem3D extends Drawable_object {
-    constructor(grid, type, h = 0) {
+    constructor(grid, type, instanceIdentification = null) {
         super();
         this.grid = grid;
         this.type = type;
-        this.h = h;
+        this.instanceIdentification = instanceIdentification;
+        //this.h = h;
         this.interactive = true;
         this.active = true;
         for (const prop in type) {
@@ -1789,7 +1795,7 @@ class FloorItem3D extends Drawable_object {
             heightTranslate[1] -= max * this.scale[1];
             heightTranslate[1] += WebGL.INI.ITEM_UP;
         }
-        let translate = new Vector3(grid.x, h, grid.y);
+        let translate = new Vector3(grid.x, 0, grid.y);
         translate = translate.add(Vector3.from_array(heightTranslate));
         this.translate = translate.array;
 
@@ -1823,6 +1829,7 @@ class FloorItem3D extends Drawable_object {
             inventorySprite: this.inventorySprite,
             which: this.which,
             pos: this.translate,
+            instanceIdentification: this.instanceIdentification
         };
     }
 }

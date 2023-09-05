@@ -49,11 +49,12 @@ const INI = {
     SCROLL_RANGE: 3,
     CRIPPLE_SPEED: 0.1,
     BOOST_TIME: 59,
-    MM_reveal_radius: 4,
-    FINAL_LEVEL: 5,
+    INVENTORY_HARD_LIMIT: 20,
+    //MM_reveal_radius: 4,
+    //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.04.04",
+    VERSION: "0.04.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -362,6 +363,7 @@ const HERO = {
         this.magicExpGoal = INI.INI_BASE_EXP_FONT;
         this.canShoot = true;
         this.inventory.clear();
+        this.inventoryLimit = INI.INVENTORY_HARD_LIMIT;
         const propsToSave = ["health", "maxHealth", "mana", "maxMana", "defense", "reference_defense", "attack",
             "reference_attack", "magic", "reference_magic", "attackExp", "defenseExp", "magicExp", "attackExpGoal", "defenseExpGoal", "magicExpGoal",
             "inventory.potion.red", "inventory.potion.blue"];
@@ -533,11 +535,15 @@ const HERO = {
     inventory: {
         clear() {
             this.key = [];
+            this.item = [];
             this.status = [];
             this.potion = {};
             this.potion.red = 0;
             this.potion.blue = 0;
             this.scroll = new Inventory();
+        },
+        totalSize() {
+            return this.key.length + this.item.length;
         }
     },
     concludeAction() {
@@ -545,6 +551,10 @@ const HERO = {
         if (!this.player.actionModes.includes(this.player.mode)) {
             this.player.setMode("idle");
         }
+    },
+    speak(txt) {
+        SPEECH.use("Princess");
+        SPEECH.speak(txt);
     }
 };
 
@@ -735,6 +745,16 @@ const GAME = {
     processInteraction(interaction) {
         let choices, choice, value, interatcionObj;
         switch (interaction.category) {
+            case 'error':
+                switch (interaction.which) {
+                    case "inventory_full":
+                        const variants = ["I can't carry any more", "My bag is full.", "My bag is breaking at the seams."];
+                        HERO.speak(variants.chooseRandom());
+                        break;
+                    default:
+                        console.error("Usupported interaction error:", interaction.which);
+                }
+                break;
             case 'title':
                 TITLE[interaction.section]();
                 break;
@@ -759,10 +779,7 @@ const GAME = {
                 AUDIO.Potion.play();
                 break;
             case 'scroll':
-                let type = weightedRnd(SCROLL_TYPE);
-                if (GAME.level === INI.FINAL_LEVEL && type === 'TeleportTemple') {
-                    type = 'HalfLife';
-                }
+                let type = SCROLL_TYPE[interaction.instanceIdentification];
                 let scroll = new Scroll(type);
                 scroll.display();
                 HERO.inventory.scroll.add(scroll);
@@ -1154,7 +1171,8 @@ const TITLE = {
         statusY: null,
         YL4: 180,
         YL5: 400,
-        YL2: 192
+        YL2: 256 + 36,
+        DYR: 12,
     },
     firstFrame() {
         TITLE.clearAllLayers();
@@ -1197,7 +1215,10 @@ const TITLE = {
         let x = ((ENGINE.sideWIDTH - SPRITE.LineTop.width) / 2) | 0;
         let y = 0;
         ENGINE.draw("Lsideback", x, y, SPRITE.LineTop);
-        ENGINE.draw("sideback", x, y, SPRITE.LineTop);
+        //ENGINE.draw("sideback", x, y, SPRITE.LineTop);
+        ENGINE.draw("sideback", x, TITLE.stack.DYR, SPRITE.wavyL);
+        ENGINE.draw("sideback", x + SPRITE.LineTop.width - SPRITE.wavyR.width, TITLE.stack.DYR, SPRITE.wavyR);
+        ENGINE.spriteDraw("sideback", ENGINE.sideWIDTH / 2, TITLE.stack.DYR + SPRITE.Bag.height / 4, SPRITE.Bag);
 
         //2nd tier
         y += TITLE.stack.delta2;
@@ -1287,12 +1308,13 @@ const TITLE = {
     },
     keys() {
         ENGINE.clearLayer("keys");
-        let y = (SPRITE.LineTop.height / 2 + TITLE.stack.delta2 / 2) | 0;
-        let list = [...HERO.inventory.key, ...HERO.inventory.status];
+        let y = ((SPRITE.LineTop.height / 2 + TITLE.stack.delta2 / 2) | 0) + 3 * TITLE.stack.DYR;
+        let list = [...HERO.inventory.key, ...HERO.inventory.status, ...HERO.inventory.item];
         let NUM = list.length;
         NUM = Math.min(4, NUM);
         let spread = ENGINE.spreadAroundCenter(NUM, ENGINE.sideWIDTH / 2, TITLE.stack.keyDelta);
         for (const [i, item] of list.entries()) {
+            if (i >= INI.INVENTORY_HARD_LIMIT) break;
             let x = spread[i % NUM];
             let dy = Math.floor(i / NUM);
             ENGINE.spriteDraw("keys", x, y + (dy * TITLE.stack.delta2), SPRITE[item.spriteClass]);

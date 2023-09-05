@@ -30,7 +30,7 @@ const MAP_TOOLS = {
             this.MAP[level].map.startPosition = new Pointer(GA.indexToGrid(start[0]), Vector.fromInt(start[1]));
             this.MAP[level].map.start = start;
         }
-        const properties = ['decals', 'lights', 'gates', 'keys', 'monsters'];
+        const properties = ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls'];
         for (const prop of properties) {
             if (this.MAP[level][prop] !== undefined) {
                 this.MAP[level].map[prop] = JSON.parse(this.MAP[level][prop]);
@@ -51,6 +51,7 @@ const SPAWN_TOOLS = {
         this.externalGates(map, GA);
         this.keys(map, GA);
         this.monsters(map, GA);
+        this.scrolls(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -98,12 +99,17 @@ const SPAWN_TOOLS = {
         }
     },
     monsters(map, GA) {
-        console.log("spawning monsters");
         for (const M of map.monsters) {
-            console.log(".monster", M);
             const grid = Grid.toCenter(GA.indexToGrid(M[0]));
             const type = MONSTER_TYPE[M[1]];
             ENTITY3D.add(new $3D_Entity(grid, type, UP));
+        }
+    },
+    scrolls(map, GA) {
+        console.log("spawning scrolls");
+        for (const S of map.scrolls) {
+            const grid = Grid.toCenter(GA.indexToGrid(S[0]));
+            ITEM3D.add(new FloorItem3D(grid, COMMON_ITEM_TYPE.Scroll, S[1]));
         }
     }
 };

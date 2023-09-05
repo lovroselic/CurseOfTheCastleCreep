@@ -234,6 +234,11 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 ];
 
 LoadSprites = [
+    //inv
+    { srcName: "bag.png", name: "Bag" },
+    { srcName: "wavyL.png", name: "wavyL" },
+    { srcName: "wavyR.png", name: "wavyR" },
+
     //gates
     { srcName: "DungeonDoor.png", name: "DungeonDoor_Closed" },
     { srcName: "dungeondoor_blue.png", name: "DungeonDoor_Blue" },

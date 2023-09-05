@@ -2408,6 +2408,12 @@ const ENGINE = {
           let dir = Vector.fromInt(gate[1]);
           let start = mid.translate(dir, W);
           ENGINE.drawCircle(CTX, start, decalWidth * 2, "#A000A0");
+
+          CTX.font = "8px Arial";
+          CTX.textAlign = "center";
+          CTX.textBaseLine = "middle";
+          CTX.fillStyle = "white"
+          CTX.fillText(gate[3], mid.x, mid.y);
         }
       }
       if (maze.keys) {
@@ -2431,6 +2437,22 @@ const ENGINE = {
           CTX.textAlign = "center";
           CTX.textBaseLine = "middle";
           CTX.fillText(monster[1], mid.x, mid.y);
+        }
+      }
+      if (maze.scrolls) {
+        for (const scroll of maze.scrolls) {
+          let grid = GA.indexToGrid(scroll[0]);
+          let mid = GRID.gridToCenterPX(grid).translate(UpLeft, W / 2);
+          CTX.fillStyle = "yellow";
+          CTX.fillRect(mid.x, mid.y, W, W);
+          CTX.fillStyle = "black";
+          if (SCROLL_TYPE) {
+            mid = mid.translate(RIGHT, W / 2);
+            CTX.font = "10px Arial";
+            CTX.textAlign = "center";
+            CTX.textBaseLine = "middle";
+            CTX.fillText(SCROLL_TYPE[scroll[1]], mid.x, mid.y);
+          }
         }
       }
     },

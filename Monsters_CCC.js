@@ -3,6 +3,12 @@
 /*jshint -W117 */
 /*jshint -W061 */
 
+/**
+ * definition of:
+ *      monsters
+ *      scrolls
+ */
+
 "use strict";
 console.log("%cMonsters for CCC loaded.", "color: #888");
 
@@ -71,3 +77,180 @@ const MONSTER_TYPE = {
         material: MATERIAL.standardShine,
     },
 };
+
+const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
+    "Petrify", "MagicBoost", "Luck", "HalfLife"];
+
+    const COMMON_ITEM_TYPE = {
+        Chest: {
+            name: "Chest",
+            category: "chest",
+            element: "CHEST",
+            scale: 1 / 2 ** 3,
+            glueToFloor: true,
+            texture: "Wood1",
+            material: MATERIAL.standard,
+        },
+        TreasureChest: {
+            name: "TreasureChest",
+            category: "treasure_chest",
+            element: "TREASURE_CHEST",
+            scale: 1.5 / 2 ** 3,
+            glueToFloor: true,
+            texture: "TreasureChest",
+            material: MATERIAL.standard,
+        },
+        Sword: {
+            name: "Sword",
+            category: "skill",
+            which: "attack",
+            element: "SWORD",
+            scale: 1 / 2 ** 4,
+            glueToFloor: true,
+            texture: "Sword",
+            inventorySprite: "SwordSkill",
+            material: MATERIAL.silver,
+        },
+        Shield: {
+            name: "Shield",
+            category: "skill",
+            which: "defense",
+            element: "SHIELD",
+            scale: 1 / 2 ** 5,
+            glueToFloor: true,
+            texture: "ScrapedMetal",
+            inventorySprite: "ShieldSkill",
+            material: MATERIAL.silver,
+        },
+        Magic: {
+            name: "Magic",
+            category: "skill",
+            which: "magic",
+            element: "PENTAGRAM",
+            scale: 1 / 2 ** 1,
+            glueToFloor: true,
+            texture: "Red2",
+            inventorySprite: "MagicSkill",
+            material: MATERIAL.redShine,
+        },
+        Heart: {
+            name: "Heart",
+            category: "status",
+            which: "health",
+            element: "HEART",
+            scale: 1 / 2 ** 5,
+            glueToFloor: true,
+            texture: "Red",
+            inventorySprite: "Health",
+            material: MATERIAL.redShine,
+        },
+        Mana: {
+            name: "ManaSkill",
+            category: "status",
+            which: "mana",
+            element: "BALL",
+            scale: 1 / 2 ** 4,
+            glueToFloor: true,
+            texture: "Magic",
+            inventorySprite: "Mana",
+            material: MATERIAL.standard,
+        },
+        Fireball: {
+            name: "Fireball",
+            category: 'missile',
+            element: "BALL",
+            scale: 1 / 2 ** 4,
+            texture: "FireballTexture",
+            moveSpeed: 8.0,
+            lightColor: "#FF7700",
+            material: MATERIAL.fire,
+        },
+        Scroll: {
+            name: "Scroll",
+            category: "scroll",
+            element: "SCROLL",
+            scale: 1.5 / 2 ** 4,
+            glueToFloor: true,
+            texture: "ScrollTexture",
+            material: MATERIAL.paper,
+        },
+        RedPotion: {
+            name: "RedPotion",
+            category: "potion",
+            color: "red",
+            element: "FLASK",
+            scale: 1.1 / 2 ** 5,
+            glueToFloor: true,
+            texture: "RedLiquid",
+            inventorySprite: "RedPotion24",
+            material: MATERIAL.redShine,
+        },
+        BluePotion: {
+            name: "BluePotion",
+            category: "potion",
+            color: "blue",
+            element: "FLASK",
+            scale: 1.1 / 2 ** 5,
+            glueToFloor: true,
+            texture: "BlueLiquid",
+            inventorySprite: "BluePotion24",
+            material: MATERIAL.blueShine,
+        },
+    
+        GoldBar: {
+            name: "GoldBar",
+            category: "gold",
+            element: "BAR",
+            scale: 1 / 2 ** 4,
+            glueToFloor: true,
+            texture: "Gold",
+            minVal: 50,
+            maxVal: 100,
+            material: MATERIAL.gold,
+        },
+        SilverBar: {
+            name: "SilverBar",
+            category: "gold",
+            element: "BAR",
+            scale: 1 / 2 ** 4,
+            glueToFloor: true,
+            texture: "Silver",
+            minVal: 25,
+            maxVal: 50,
+            material: MATERIAL.silver,
+        },
+        GoldCube: {
+            name: "GoldCube",
+            category: "gold",
+            element: "CUBE_CENTERED",
+            scale: 1 / 2 ** 5,
+            glueToFloor: true,
+            texture: "Gold",
+            minVal: 10,
+            maxVal: 25,
+            material: MATERIAL.gold,
+        },
+        Coins: {
+            name: "Coins",
+            category: "gold",
+            element: "COINS",
+            scale: 1.5 / 2 ** 0,
+            glueToFloor: true,
+            texture: "Coins",
+            minVal: 10,
+            maxVal: 25,
+            material: MATERIAL.gold,
+        },
+        Sting: {
+            name: "Sting",
+            category: "skill",
+            which: "attack",
+            element: "STING",
+            scale: 1 / 2 ** 1,
+            glueToFloor: true,
+            texture: "Sting",
+            inventorySprite: "SwordSkill",
+            material: MATERIAL.silver,
+        },
+      
+    };

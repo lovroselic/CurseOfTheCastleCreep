@@ -1,6 +1,6 @@
 //////////////////speech.js/////////////////////////
 //                                                //
-//       SPEECH version 1.03  by LS               //
+//       SPEECH version 1.04  by LS               //
 //                                                //
 ////////////////////////////////////////////////////
 /*  
@@ -11,8 +11,9 @@ TODO:
 ////////////////////////////////////////////////////
 
 const SPEECH = {
-  VERSION: "1.03",
+  VERSION: "1.04",
   CSS: "color: #0A0",
+  VERBOSE: true,
   browserSupport: true,
   voices: null,
   voice: null,
@@ -48,7 +49,7 @@ const SPEECH = {
       return;
     }
     if (speechSynthesis.pending) {
-      console.log(`%cSPEECH is already speaking. Skipping new text.`, "color: #A00");
+      if (SPEECH.VERBOSE) console.log(`%cSPEECH is already speaking. Skipping new text.`, "color: #A00");
       return;
     }
 
@@ -58,8 +59,82 @@ const SPEECH = {
     msg.rate = SPEECH.settings.rate;
     msg.volume = SPEECH.settings.volume;
     msg.voice = SPEECH.voice;
- 
+
     speechSynthesis.speak(msg);
+  },
+  speakWithArticulation(txt) {
+    if (!SPEECH.ready) {
+      console.log(`%cSPEECH not ready ....`, "color: #A00");
+      return;
+    }
+    if (speechSynthesis.pending) {
+      if (SPEECH.VERBOSE) console.log(`%cSPEECH is already speaking. Skipping new text.`, "color: #A00");
+      return;
+    }
+
+    const articulations = ".!?<>+-";
+    let sentences = txt.split(new RegExp(`([${articulations}])`, "g"));
+    let i = 0;
+    speakSentence();
+
+    function speakSentence() {
+      if (i >= sentences.length) {
+        return;
+      }
+
+      let sentence = sentences[i];
+      let punctuation = sentences[i + 1];
+      const descriptor = punctuation;
+
+      let msg = new SpeechSynthesisUtterance();
+      if (!["!", "?", "."].includes(punctuation)) punctuation = ".";
+
+      msg.text = sentence + (punctuation || '');
+      msg.voice = SPEECH.voice;
+      msg.volume = SPEECH.settings.volume;
+
+      switch (descriptor) {
+        case "?":
+          msg.rate = SPEECH.settings.rate * 0.8;
+          msg.pitch = SPEECH.settings.pitch * 1.5;
+          break;
+        case "!":
+          msg.rate = SPEECH.settings.rate * 1.2;
+          msg.pitch = SPEECH.settings.pitch * 0.8;
+          break;
+        case "<":
+          SPEECH.settings.rate *= 0.667;
+          msg.rate = SPEECH.settings.rate;
+          msg.pitch = SPEECH.settings.pitch;
+          break;
+        case ">":
+          SPEECH.settings.rate *= 1.5;
+          msg.rate = SPEECH.settings.rate;
+          msg.pitch = SPEECH.settings.pitch;
+          break;
+        case "-":
+          SPEECH.settings.pitch *= 0.667;
+          msg.rate = SPEECH.settings.rate;
+          msg.pitch = SPEECH.settings.pitch;
+          break;
+        case "#":
+          SPEECH.settings.pitch *= 1.5;
+          msg.rate = SPEECH.settings.rate;
+          msg.pitch = SPEECH.settings.pitch;
+          break;
+        default:
+          msg.rate = SPEECH.settings.rate;
+          msg.pitch = SPEECH.settings.pitch;
+          break;
+      }
+
+      msg.onend = () => {
+        i += 2;
+        speakSentence();
+      };
+
+      speechSynthesis.speak(msg);
+    }
   },
   getVoices() {
     if (navigator.userAgent.includes("Firefox")) {

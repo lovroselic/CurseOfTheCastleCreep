@@ -54,7 +54,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.04.05",
+    VERSION: "0.04.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -554,7 +554,7 @@ const HERO = {
     },
     speak(txt) {
         SPEECH.use("Princess");
-        SPEECH.speak(txt);
+        SPEECH.speakWithArticulation(txt);
     }
 };
 
@@ -618,6 +618,7 @@ const GAME = {
         GAME.levelFinished = false;
         GAME.initLevel(GAME.level);
         GAME.setFirstPerson();                      //my preference
+        HERO.speak("Are you ready to feel my heels? Ghostface? Here comes Princess!");
         GAME.continueLevel(GAME.level);
     },
     newDungeon(level) {
@@ -748,7 +749,12 @@ const GAME = {
             case 'error':
                 switch (interaction.which) {
                     case "inventory_full":
-                        const variants = ["I can't carry any more", "My bag is full.", "My bag is breaking at the seams."];
+                        const variants = ["I can't carry any more.",
+                            "My bag is full.",
+                            "My bag is breaking at the seams.",
+                            "Don't you see my bag is already full, fool?",
+                            "Put where? There is no space left."
+                        ];
                         HERO.speak(variants.chooseRandom());
                         break;
                     default:

@@ -9,7 +9,7 @@
 const MAP_TOOLS = {
     VERSION: "0.2",
     CSS: "color: #F9A",
-    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions'],
+    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold'],
     INI: {
         FOG: true,
     },
@@ -53,6 +53,7 @@ const SPAWN_TOOLS = {
         this.monsters(map, GA);
         this.scrolls(map, GA);
         this.potions(map, GA);
+        this.gold(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -114,10 +115,15 @@ const SPAWN_TOOLS = {
     },
     potions(map, GA) {
         for (const P of map.potions) {
-            console.log("P", P);
             const grid = Grid.toCenter(GA.indexToGrid(P[0]));
             const potion = POTION_TYPE[POTION_TYPES[P[1]]];
             ITEM3D.add(new FloorItem3D(grid, potion));
+        }
+    },
+    gold(map, GA) {
+        for (const G of map.gold) {
+            const grid = Grid.toCenter(GA.indexToGrid(G[0]));
+            ITEM3D.add(new FloorItem3D(grid, GOLD_ITEM_TYPE[G[1]]));
         }
     }
 };

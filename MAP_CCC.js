@@ -23,6 +23,7 @@ const MAP = {
         monsters: '[[72,"Bat"],[118,"RedGoldBat"],[166,"SkeletonDemo"]]',
         scrolls: '[[132,0],[149,1],[164,8]]',
         potions: '[[199,0],[202,1]]',
+        gold: '[[37,"GoldBar"],[36,"SilverBar"],[35,"GoldCube"],[34,"Coins"]]',
     }
     ,
     2: {

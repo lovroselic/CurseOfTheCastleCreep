@@ -2464,6 +2464,19 @@ const ENGINE = {
           ENGINE.drawLine(CTX, mid, mid.translate(UP, W / 2), color, decalWidth);
         }
       }
+      if (maze.gold) {
+        for (const gold of maze.gold) {
+          let grid = GA.indexToGrid(gold[0]);
+          let mid = GRID.gridToCenterPX(grid).translate(UpLeft, W / 2);
+          CTX.fillStyle = "gold";
+          CTX.fillRect(mid.x, mid.y, W, W / 2);
+          mid = mid.translate(RIGHT, W / 2);
+          CTX.font = "10px Arial";
+          CTX.textAlign = "center";
+          CTX.textBaseLine = "middle";
+          CTX.fillText(gold[1], mid.x, mid.y);
+        }
+      }
     },
     wall(x, y, CTX, value) {
       let FS;

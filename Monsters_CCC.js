@@ -74,6 +74,16 @@ const COMMON_ITEM_TYPE = {
         texture: "ScrollTexture",
         material: MATERIAL.paper,
     },
+    Fireball: {
+        name: "Fireball",
+        category: 'missile',
+        element: "BALL",
+        scale: 1 / 2 ** 4,
+        texture: "FireballTexture",
+        moveSpeed: 8.0,
+        lightColor: "#FF7700",
+        material: MATERIAL.fire,
+    },
 
 
 
@@ -152,63 +162,9 @@ const COMMON_ITEM_TYPE = {
         inventorySprite: "Mana",
         material: MATERIAL.standard,
     },
-    Fireball: {
-        name: "Fireball",
-        category: 'missile',
-        element: "BALL",
-        scale: 1 / 2 ** 4,
-        texture: "FireballTexture",
-        moveSpeed: 8.0,
-        lightColor: "#FF7700",
-        material: MATERIAL.fire,
-    },
 
-    /*
-    GoldBar: {
-        name: "GoldBar",
-        category: "gold",
-        element: "BAR",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Gold",
-        minVal: 50,
-        maxVal: 100,
-        material: MATERIAL.gold,
-    },
-    SilverBar: {
-        name: "SilverBar",
-        category: "gold",
-        element: "BAR",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Silver",
-        minVal: 25,
-        maxVal: 50,
-        material: MATERIAL.silver,
-    },
-    GoldCube: {
-        name: "GoldCube",
-        category: "gold",
-        element: "CUBE_CENTERED",
-        scale: 1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "Gold",
-        minVal: 10,
-        maxVal: 25,
-        material: MATERIAL.gold,
-    },
-    Coins: {
-        name: "Coins",
-        category: "gold",
-        element: "COINS",
-        scale: 1.5 / 2 ** 0,
-        glueToFloor: true,
-        texture: "Coins",
-        minVal: 10,
-        maxVal: 25,
-        material: MATERIAL.gold,
-    },
-    */
+
+
 
     Sting: {
         name: "Sting",

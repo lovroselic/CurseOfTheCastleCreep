@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////
 const $MAP = {
   map: {},
-  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions'],
+  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold'],
   combined: [],
   init() {
     for (const prop of this.properties) {
@@ -40,7 +40,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.17",
+  VERSION: "0.06.18",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -277,16 +277,28 @@ const GAME = {
         }
         break;
       case "potion":
-        console.log("potion, value", currentValue, "grid", grid);
+
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let potionValue = $("#potion_type")[0].value;
             let potionTypeIndex = POTION_TYPES.indexOf(potionValue);
             $MAP.map.potions.push(Array(gridIndex, potionTypeIndex));
-            console.log($MAP.map.potions);
             break;
           default:
             $("#error_message").html(`Potion placement not supported on value: ${currentValue}`);
+            return;
+        }
+        break;
+      case 'gold':
+        console.log("gold, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            let goldValue = $("#gold_type")[0].value;
+            $MAP.map.gold.push(Array(gridIndex, goldValue));
+            console.log("$MAP.map.gold", $MAP.map.gold);
+            break;
+          default:
+            $("#error_message").html(`Gold placement not supported on value: ${currentValue}`);
             return;
         }
         break;
@@ -598,6 +610,11 @@ const GAME = {
       $("#potion_selection").css("background-color", selectedOption.toLowerCase());
     });
     $("#potion_type").trigger("change");
+
+    for (const goldType in GOLD_ITEM_TYPE) {
+      $("#gold_type").append(`<option value="${goldType}">${goldType}</option>`);
+    }
+
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();

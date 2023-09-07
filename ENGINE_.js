@@ -2455,6 +2455,15 @@ const ENGINE = {
           }
         }
       }
+      if (maze.potions) {
+        for (const potion of maze.potions) {
+          let grid = GA.indexToGrid(potion[0]);
+          let mid = GRID.gridToCenterPX(grid);
+          let color = POTION_TYPES[potion[1]].toLowerCase();
+          ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
+          ENGINE.drawLine(CTX, mid, mid.translate(UP, W / 2), color, decalWidth);
+        }
+      }
     },
     wall(x, y, CTX, value) {
       let FS;

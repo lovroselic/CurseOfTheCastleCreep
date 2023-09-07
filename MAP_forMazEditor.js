@@ -88,5 +88,6 @@ const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "Flat
 const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4"];
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue"];
 const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue"];
+const POTION_TYPES = ["Red", "Blue"];
 
 console.log("%cMAP for MazEditor loaded.", "color: #888");

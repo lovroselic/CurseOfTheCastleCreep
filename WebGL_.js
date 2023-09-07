@@ -1936,6 +1936,14 @@ class KeyTypeDefinition extends ItemTypeDefinition {
     }
 }
 
+class PotionTypeDefinition extends ItemTypeDefinition {
+    constructor(name, inventorySprite, color, texture, material) {
+        super(name, "potion", "FLASK", 1.1 / 2 ** 5, true, texture, material);
+        this.inventorySprite = inventorySprite;
+        this.color = color;
+    }
+}
+
 /** Particle classes */
 
 class ParticleEmmiter {
@@ -2426,7 +2434,7 @@ class $3D_Entity {
     }
     dropInventory() {
         if (!this.inventory) return;
-        const item = new FloorItem3D(this.moveState.grid, COMMON_ITEM_TYPE[this.inventory]);
+        const item = new FloorItem3D(this.moveState.grid, this.inventory);
         if (item.category === 'gold') item.setValue(this.gold);
         item.setTexture();
         ITEM3D.add(item);

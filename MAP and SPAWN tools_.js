@@ -9,6 +9,7 @@
 const MAP_TOOLS = {
     VERSION: "0.2",
     CSS: "color: #F9A",
+    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions'],
     INI: {
         FOG: true,
     },
@@ -30,8 +31,7 @@ const MAP_TOOLS = {
             this.MAP[level].map.startPosition = new Pointer(GA.indexToGrid(start[0]), Vector.fromInt(start[1]));
             this.MAP[level].map.start = start;
         }
-        const properties = ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls'];
-        for (const prop of properties) {
+        for (const prop of this.properties) {
             if (this.MAP[level][prop] !== undefined) {
                 this.MAP[level].map[prop] = JSON.parse(this.MAP[level][prop]);
             } else {
@@ -52,6 +52,7 @@ const SPAWN_TOOLS = {
         this.keys(map, GA);
         this.monsters(map, GA);
         this.scrolls(map, GA);
+        this.potions(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -106,10 +107,17 @@ const SPAWN_TOOLS = {
         }
     },
     scrolls(map, GA) {
-        console.log("spawning scrolls");
         for (const S of map.scrolls) {
             const grid = Grid.toCenter(GA.indexToGrid(S[0]));
             ITEM3D.add(new FloorItem3D(grid, COMMON_ITEM_TYPE.Scroll, S[1]));
+        }
+    },
+    potions(map, GA) {
+        for (const P of map.potions) {
+            console.log("P", P);
+            const grid = Grid.toCenter(GA.indexToGrid(P[0]));
+            const potion = POTION_TYPE[POTION_TYPES[P[1]]];
+            ITEM3D.add(new FloorItem3D(grid, potion));
         }
     }
 };

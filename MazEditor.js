@@ -15,14 +15,19 @@
 
  */
 ////////////////////////////////////////////////////
-const MAP = {
-  map: {
-
-  },
-  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls'],
+const $MAP = {
+  map: {},
+  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions'],
+  combined: [],
   init() {
     for (const prop of this.properties) {
       this.map[prop] = [];
+    }
+  },
+  combine() {
+    this.combined = [];
+    for (const prop of this.properties) {
+      this.combined.push(this.map[prop]);
     }
   }
 };
@@ -35,7 +40,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.16",
+  VERSION: "0.06.17",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -101,11 +106,11 @@ const GAME = {
   },
   mouseClick(event) {
     ENGINE.readMouse(event);
-    let x = Math.floor(ENGINE.mouseX / ENGINE.gameWIDTH * MAP.width);
-    let y = Math.floor(ENGINE.mouseY / ENGINE.gameHEIGHT * MAP.height);
+    let x = Math.floor(ENGINE.mouseX / ENGINE.gameWIDTH * $MAP.width);
+    let y = Math.floor(ENGINE.mouseY / ENGINE.gameHEIGHT * $MAP.height);
     let grid = new Grid(x, y);
     var radio = $("#paint input[name=painter]:checked").val();
-    let GA = MAP.map.GA;
+    let GA = $MAP.map.GA;
     let dir, nameId, type, dirIndex;
     let currentValue = GA.getValue(grid);
     let gridIndex = GA.gridToIndex(grid);
@@ -154,7 +159,7 @@ const GAME = {
           break;
         }
         dirIndex = dirs[0].toInt();
-        MAP.map.gates.push(Array(gridIndex, dirIndex, $("#sgateID")[0].value, $("#tgateID")[0].value, $("#gatetype")[0].value));
+        $MAP.map.gates.push(Array(gridIndex, dirIndex, $("#sgateID")[0].value, $("#tgateID")[0].value, $("#gatetype")[0].value));
         break;
       case "decal":
         switch (currentValue) {
@@ -177,8 +182,8 @@ const GAME = {
 
         dirIndex = dir.toInt();
         $("#error_message").html("All is fine");
-        GAME.assertUniqueDecalPosition(gridIndex, dirIndex, MAP.map.decals);
-        MAP.map.decals.push(Array(gridIndex, dirIndex, nameId, type));
+        GAME.assertUniqueDecalPosition(gridIndex, dirIndex, $MAP.map.decals);
+        $MAP.map.decals.push(Array(gridIndex, dirIndex, nameId, type));
         break;
       case "light":
         console.log("light, value", currentValue, "grid", grid);
@@ -193,7 +198,7 @@ const GAME = {
             dirIndex = dir.toInt();
             nameId = $("#light_decal")[0].value;
             type = $("#lighttype")[0].value;
-            MAP.map.lights.push(Array(gridIndex, dirIndex, nameId, type));
+            $MAP.map.lights.push(Array(gridIndex, dirIndex, nameId, type));
             break;
           default:
             $("#error_message").html(`Light placement not supported on value: ${currentValue}`);
@@ -202,7 +207,8 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "cleargrid":
-        for (let arrType of [MAP.map.decals, MAP.map.lights, MAP.map.gates, MAP.map.keys, MAP.map.monsters, MAP.map.scrolls]) {
+        $MAP.combine();
+        for (let arrType of $MAP.combined) {
           let iElementToRemove = [];
           for (let [index, element] of arrType.entries()) {
             if (element[0] === gridIndex) {
@@ -224,7 +230,7 @@ const GAME = {
               return;
             }
             dirIndex = dir.toInt();
-            MAP.map.start = [gridIndex, dirIndex];
+            $MAP.map.start = [gridIndex, dirIndex];
             break;
           default:
             $("#error_message").html(`Start placement not supported on value: ${currentValue}`);
@@ -238,7 +244,7 @@ const GAME = {
             let keyValue = $("#key_type")[0].value;
             let keyTypeIndex = KEY_TYPES.indexOf(keyValue);
             console.log("key", gridIndex, keyValue, keyTypeIndex);
-            MAP.map.keys.push(Array(gridIndex, keyTypeIndex));
+            $MAP.map.keys.push(Array(gridIndex, keyTypeIndex));
             break;
           default:
             $("#error_message").html(`Key placement not supported on value: ${currentValue}`);
@@ -251,7 +257,7 @@ const GAME = {
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let monsterValue = $("#monster_type")[0].value;
-            MAP.map.monsters.push(Array(gridIndex, monsterValue));
+            $MAP.map.monsters.push(Array(gridIndex, monsterValue));
             break;
           default:
             $("#error_message").html(`Monster placement not supported on value: ${currentValue}`);
@@ -259,16 +265,28 @@ const GAME = {
         }
         break;
       case "scroll":
-        console.log("scroll, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let scrollValue = $("#scroll_type")[0].value;
             let scrollTypeIndex = SCROLL_TYPE.indexOf(scrollValue);
-            MAP.map.scrolls.push(Array(gridIndex, scrollTypeIndex));
-            console.log(MAP.map.scrolls);
+            $MAP.map.scrolls.push(Array(gridIndex, scrollTypeIndex));
             break;
           default:
             $("#error_message").html(`Scroll placement not supported on value: ${currentValue}`);
+            return;
+        }
+        break;
+      case "potion":
+        console.log("potion, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            let potionValue = $("#potion_type")[0].value;
+            let potionTypeIndex = POTION_TYPES.indexOf(potionValue);
+            $MAP.map.potions.push(Array(gridIndex, potionTypeIndex));
+            console.log($MAP.map.potions);
+            break;
+          default:
+            $("#error_message").html(`Potion placement not supported on value: ${currentValue}`);
             return;
         }
         break;
@@ -329,7 +347,7 @@ const GAME = {
     let corr = $("input[name='corr']")[0].checked;
     ENGINE.resizeBOX("ROOM");
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
-    let pac = PacGrid.gridToPacGrid(MAP.map);
+    let pac = PacGrid.gridToPacGrid($MAP.map);
     let lw = Math.round(ENGINE.INI.GRIDPIX / 12);
     ENGINE.PACGRID.configure(lw, "pacgrid", "#FFF", "#000", "#666");
     ENGINE.PACGRID.draw(pac, corr);
@@ -339,14 +357,14 @@ const GAME = {
     ENGINE.resizeBOX("ROOM");
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
     ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
-    ENGINE.BLOCKGRID.draw(MAP.map, corr);
+    ENGINE.BLOCKGRID.draw($MAP.map, corr);
   },
   textureGrid() {
     let corr = $("input[name='corr']")[0].checked;
     ENGINE.resizeBOX("ROOM");
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
     ENGINE.TEXTUREGRID.configure("pacgrid", "wall", $("#floortexture")[0].value, $("#walltexture")[0].value);
-    ENGINE.TEXTUREGRID.draw(MAP.map, corr);
+    ENGINE.TEXTUREGRID.draw($MAP.map, corr);
   },
   tileGrid() {
     let corr = $("input[name='corr']")[0].checked;
@@ -355,11 +373,11 @@ const GAME = {
     ENGINE.TEXTUREGRID.configure("pacgrid", "wall", 'BackgroundTile', 'WallTile');
     ENGINE.TEXTUREGRID.dynamicAssets = { door: "VerticalWall", trapdoor: "HorizontalWall", blockwall: "BlockWall" };
     ENGINE.TEXTUREGRID.set3D('D3');
-    ENGINE.TEXTUREGRID.drawTiles(MAP.map, corr);
+    ENGINE.TEXTUREGRID.drawTiles($MAP.map, corr);
   },
   resize() {
-    MAP.width = $("#horizontalGrid").val();
-    MAP.height = $("#verticalGrid").val();
+    $MAP.width = $("#horizontalGrid").val();
+    $MAP.height = $("#verticalGrid").val();
   },
   render() {
     const radio = $("#selector input[name=renderer]:checked").val();
@@ -382,7 +400,7 @@ const GAME = {
     }
 
     if ($("input[name='grid']")[0].checked) GRID.grid();
-    if ($("input[name='coord']")[0].checked) GRID.paintCoord("coord", MAP.map);
+    if ($("input[name='coord']")[0].checked) GRID.paintCoord("coord", $MAP.map);
   },
   init() {
     let OK = true;
@@ -390,11 +408,11 @@ const GAME = {
       OK = confirm("Sure?");
     }
     if (OK) {
-      MAP.width = $("#horizontalGrid").val();
-      MAP.height = $("#verticalGrid").val();
-      MAP.map = FREE_MAP.create(MAP.width, MAP.height);
-      MAP.init();
-      console.log("map:", MAP.map);
+      $MAP.width = $("#horizontalGrid").val();
+      $MAP.height = $("#verticalGrid").val();
+      $MAP.map = FREE_MAP.create($MAP.width, $MAP.height);
+      $MAP.init();
+      console.log("map:", $MAP.map);
       GAME.render();
     }
   },
@@ -549,8 +567,14 @@ const GAME = {
     });
 
     for (const keyType of KEY_TYPES) {
-      $("#key_type").append(`<option value="${keyType}">${keyType}</option>`);
+      $("#key_type").append(`<option value="${keyType}" style="background-color: ${keyType.toLowerCase()}">${keyType}</option>`);
     }
+    $("#key_type").change(function () {
+      const selectedOption = $("#key_type").val();
+      $("#key_selection").css("background-color", selectedOption.toLowerCase());
+    });
+    $("#key_type").trigger("change");
+
     $("#randpic").click(GAME.randomPic);
     $("#randcrest").click(GAME.randomCrest);
 
@@ -565,6 +589,15 @@ const GAME = {
     $("#scroll_type").change(function () {
       ENGINE.drawToId("scrollcanvas", 0, 0, SPRITE[`SCR_${$("#scroll_type")[0].value}`]);[]
     });
+
+    for (const potionType of POTION_TYPES) {
+      $("#potion_type").append(`<option value="${potionType}" style="background-color: ${potionType.toLowerCase()}">${potionType}</option>`);
+    }
+    $("#potion_type").change(function () {
+      const selectedOption = $("#potion_type").val();
+      $("#potion_selection").css("background-color", selectedOption.toLowerCase());
+    });
+    $("#potion_type").trigger("change");
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();
@@ -580,18 +613,17 @@ const GAME = {
     GAME.textureGrid();
   },
   export() {
-    let rle = MAP.map.GA.exportMap();
-    let Export = { width: MAP.width, height: MAP.height, map: rle };
+    let rle = $MAP.map.GA.exportMap();
+    let Export = { width: $MAP.width, height: $MAP.height, map: rle };
     let RoomID = $("#roomid")[0].value;
     let roomExport = `${RoomID} : {
 data: '${JSON.stringify(Export)}',
 wall: "${$("#walltexture")[0].value}",
 floor: "${$("#floortexture")[0].value}",
 ceil: "${$("#ceiltexture")[0].value}",\n`;
-    //const descriptors = ['start', 'decals', 'lights', 'gates', 'keys', 'monsters'];
-    for (let desc of MAP.properties) {
-      if (MAP.map[desc].length > 0) {
-        roomExport += `${desc}: '${JSON.stringify(MAP.map[desc])}',\n`;
+    for (let desc of $MAP.properties) {
+      if ($MAP.map[desc].length > 0) {
+        roomExport += `${desc}: '${JSON.stringify($MAP.map[desc])}',\n`;
       }
     }
     roomExport += `}`;
@@ -611,18 +643,18 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     }
 
     GAME.updateTextures();
-    MAP.map = FREE_MAP.import(Import);
-    MAP.init();
+    $MAP.map = FREE_MAP.import(Import);
+    $MAP.init();
 
-    for (const prop of MAP.properties) {
+    for (const prop of $MAP.properties) {
       const pattern = new RegExp(`${prop}:\\s'(.*)'`);
       let value = ImportText.extractGroup(pattern);
-      MAP.map[prop] = JSON.parse(value) || [];
+      $MAP.map[prop] = JSON.parse(value) || [];
     }
 
-    console.log("map", MAP.map);
-    MAP.width = Import.width;
-    MAP.height = Import.height;
+    console.log("map", $MAP.map);
+    $MAP.width = Import.width;
+    $MAP.height = Import.height;
     $("#horizontalGrid").val(Import.width);
     $("#verticalGrid").val(Import.height);
     $("#horizontalGrid").trigger("change");

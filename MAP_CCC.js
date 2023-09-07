@@ -22,6 +22,7 @@ const MAP = {
         keys: '[[102,0],[103,1],[104,2],[105,2],[106,3],[120,4]]',
         monsters: '[[72,"Bat"],[118,"RedGoldBat"],[166,"SkeletonDemo"]]',
         scrolls: '[[132,0],[149,1],[164,8]]',
+        potions: '[[199,0],[202,1]]',
     }
     ,
     2: {
@@ -1423,30 +1424,7 @@ const SPAWN = {
         element: "CUBE_SM",
         material: MATERIAL.standardShine,
     },
-    Red: {
-        name: "Red",
-        color: "Red",
-        locked: true,
-        texture: "RedGate1",
-        element: "CUBE_SM",
-        material: MATERIAL.standardShine,
-    },
-    Silver: {
-        name: "Silver",
-        color: "Silver",
-        locked: true,
-        texture: "SilverGate1",
-        element: "CUBE_SM",
-        material: MATERIAL.standardShine,
-    },
-    Gold: {
-        name: "Gold",
-        color: "Gold",
-        locked: true,
-        texture: "GoldGate1",
-        element: "CUBE_SM",
-        material: MATERIAL.standardShine,
-    },
+ 
 };*/
 
 
@@ -1458,7 +1436,15 @@ const KEY_TYPE = {};
 for (let [index, key] of KEY_TYPES.entries()) {
     KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
 }
-console.info("KEY_TYPE", KEY_TYPE);
+//console.info("KEY_TYPE", KEY_TYPE);
+const POTION_TYPES = ["Red", "Blue"];
+const POTION_TEXTURES = ["RedLiquid", "BlueLiquid"];
+const POTION_MATERIAL = ["redShine", "blueShine"];
+const POTION_TYPE = {};
+for (let [index, potion] of POTION_TYPES.entries()) {
+    POTION_TYPE[potion] = new PotionTypeDefinition(`${potion}Potion`, `${potion}Potion24`, potion.toLowerCase(), POTION_TEXTURES[index], MATERIAL[POTION_MATERIAL[index]]);
+}
+//console.info("POTION_TYPE", POTION_TYPE);
 
 const HERO_TYPE = {
     ThePrincess: {

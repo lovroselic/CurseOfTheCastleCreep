@@ -27,6 +27,7 @@ changelog:
 3.12: float bin search, 
 3.13: splitByN corrected, Array.create2DArray
 3.14: string regex prototipes
+      stringify object variable, eval object string
 */
 
 (function () {
@@ -127,6 +128,28 @@ changelog:
     }
     return low;
   }
+  function stringifyObjectList(selection) {
+    const list = [];
+    for (const name in selection) {
+      const obj = selection[name];
+      for (const key in obj) {
+        list.push(`${name}.${key}`);
+      }
+    }
+    return list;
+  }
+  function evalObjectString(root, path) {
+    let obj = root;
+    const parts = path.split(".");
+    for (const part of parts) {
+      if (obj && Object.hasOwnProperty.call(obj, part)) {
+        obj = obj[part];
+      } else {
+        return undefined;
+      }
+    }
+    return obj;
+  }
 
   window.RND = RND;
   window.RNDF = RNDF;
@@ -145,6 +168,8 @@ changelog:
   window.colorVectorToRGB_Vector = colorVectorToRGB_Vector;
   window.RGB_vectorToRGB_string = RGB_vectorToRGB_string;
   window.colorVectorToRGB_String = colorVectorToRGB_String;
+  window.stringifyObjectList = stringifyObjectList;
+  window.evalObjectString = evalObjectString;
 })();
 
 /** Date prototypes */

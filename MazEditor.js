@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////
 const $MAP = {
   map: {},
-  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold'],
+  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers'],
   combined: [],
   init() {
     for (const prop of this.properties) {
@@ -40,7 +40,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.18",
+  VERSION: "0.06.19",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -290,7 +290,6 @@ const GAME = {
         }
         break;
       case 'gold':
-        console.log("gold, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let goldValue = $("#gold_type")[0].value;
@@ -299,6 +298,32 @@ const GAME = {
             break;
           default:
             $("#error_message").html(`Gold placement not supported on value: ${currentValue}`);
+            return;
+        }
+        break;
+      case 'skill':
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            let skillValue = $("#skill_type")[0].value;
+            $MAP.map.skills.push(Array(gridIndex, skillValue));
+            console.log("$MAP.map.skill", $MAP.map.skills);
+            break;
+          default:
+            $("#error_message").html(`Gold placement not supported on value: ${currentValue}`);
+            return;
+        }
+        break;
+      case 'container':
+        console.log("container, value", currentValue, "grid", grid);
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            let containerValue = $("#container_type")[0].value;
+            let itemValue = $("#content_type")[0].value;
+            $MAP.map.containers.push(Array(gridIndex, containerValue, itemValue));
+            console.log("$MAP.map.containers", $MAP.map.containers);
+            break;
+          default:
+            $("#error_message").html(`Container placement not supported on value: ${currentValue}`);
             return;
         }
         break;
@@ -613,6 +638,18 @@ const GAME = {
 
     for (const goldType in GOLD_ITEM_TYPE) {
       $("#gold_type").append(`<option value="${goldType}">${goldType}</option>`);
+    }
+
+    for (const skillType in SKILL_ITEM_TYPE) {
+      $("#skill_type").append(`<option value="${skillType}">${skillType}</option>`);
+    }
+
+    for (const containerType in CONTAINER_ITEM_TYPE) {
+      $("#container_type").append(`<option value="${containerType}">${containerType}</option>`);
+    }
+
+    for (const contentType of CONTAINER_CONTENT_LIST) {
+      $("#content_type").append(`<option value="${contentType}">${contentType}</option>`);
     }
 
   },

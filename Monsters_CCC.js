@@ -28,6 +28,7 @@ const GOLD_ITEM_TYPE = {
         texture: "Gold",
         minVal: 50,
         maxVal: 100,
+        value: 100,
         material: MATERIAL.gold,
     },
     SilverBar: {
@@ -39,6 +40,7 @@ const GOLD_ITEM_TYPE = {
         texture: "Silver",
         minVal: 25,
         maxVal: 50,
+        value: 50,
         material: MATERIAL.silver,
     },
     GoldCube: {
@@ -50,6 +52,7 @@ const GOLD_ITEM_TYPE = {
         texture: "Gold",
         minVal: 10,
         maxVal: 25,
+        value: 25,
         material: MATERIAL.gold,
     },
     Coins: {
@@ -61,52 +64,12 @@ const GOLD_ITEM_TYPE = {
         texture: "Coins",
         minVal: 10,
         maxVal: 25,
+        value: 10,
         material: MATERIAL.gold,
     },
 };
-const COMMON_ITEM_TYPE = {
-    Scroll: {
-        name: "Scroll",
-        category: "scroll",
-        element: "SCROLL",
-        scale: 1.5 / 2 ** 4,
-        glueToFloor: true,
-        texture: "ScrollTexture",
-        material: MATERIAL.paper,
-    },
-    Fireball: {
-        name: "Fireball",
-        category: 'missile',
-        element: "BALL",
-        scale: 1 / 2 ** 4,
-        texture: "FireballTexture",
-        moveSpeed: 8.0,
-        lightColor: "#FF7700",
-        material: MATERIAL.fire,
-    },
 
-
-
-
-    //old
-    Chest: {
-        name: "Chest",
-        category: "chest",
-        element: "CHEST",
-        scale: 1 / 2 ** 3,
-        glueToFloor: true,
-        texture: "Wood1",
-        material: MATERIAL.standard,
-    },
-    TreasureChest: {
-        name: "TreasureChest",
-        category: "treasure_chest",
-        element: "TREASURE_CHEST",
-        scale: 1.5 / 2 ** 3,
-        glueToFloor: true,
-        texture: "TreasureChest",
-        material: MATERIAL.standard,
-    },
+const SKILL_ITEM_TYPE = {
     Sword: {
         name: "Sword",
         category: "skill",
@@ -162,10 +125,6 @@ const COMMON_ITEM_TYPE = {
         inventorySprite: "Mana",
         material: MATERIAL.standard,
     },
-
-
-
-
     Sting: {
         name: "Sting",
         category: "skill",
@@ -177,7 +136,48 @@ const COMMON_ITEM_TYPE = {
         inventorySprite: "SwordSkill",
         material: MATERIAL.silver,
     },
+};
 
+const CONTAINER_ITEM_TYPE = {
+    Chest: {
+        name: "Chest",
+        category: "chest",
+        element: "CHEST",
+        scale: 1 / 2 ** 3,
+        glueToFloor: true,
+        texture: "Wood1",
+        material: MATERIAL.standard,
+    },
+    TreasureChest: {
+        name: "TreasureChest",
+        category: "chest",
+        element: "TREASURE_CHEST",
+        scale: 1.5 / 2 ** 3,
+        glueToFloor: true,
+        texture: "TreasureChest",
+        material: MATERIAL.standard,
+    },
+};
+const COMMON_ITEM_TYPE = {
+    Scroll: {
+        name: "Scroll",
+        category: "scroll",
+        element: "SCROLL",
+        scale: 1.5 / 2 ** 4,
+        glueToFloor: true,
+        texture: "ScrollTexture",
+        material: MATERIAL.paper,
+    },
+    Fireball: {
+        name: "Fireball",
+        category: 'missile',
+        element: "BALL",
+        scale: 1 / 2 ** 4,
+        texture: "FireballTexture",
+        moveSpeed: 8.0,
+        lightColor: "#FF7700",
+        material: MATERIAL.fire,
+    },
 };
 
 const MONSTER_TYPE = {
@@ -245,3 +245,8 @@ const MONSTER_TYPE = {
         material: MATERIAL.standardShine,
     },
 };
+
+//container content
+const CONTAINER_CONTENT_TYPES = { GOLD_ITEM_TYPE, SKILL_ITEM_TYPE };
+const CONTAINER_CONTENT_LIST = stringifyObjectList(CONTAINER_CONTENT_TYPES);
+console.info("CONTAINER_CONTENT_LIST", CONTAINER_CONTENT_LIST);

@@ -54,7 +54,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.04.08",
+    VERSION: "0.05.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -744,7 +744,7 @@ const GAME = {
         if (HERO.dead) GAME.checkIfProcessesComplete();
     },
     processInteraction(interaction) {
-        let choices, choice, value, interatcionObj;
+        let choices, choice, value, interactionObj;
         switch (interaction.category) {
             case 'error':
                 switch (interaction.which) {
@@ -813,50 +813,7 @@ const GAME = {
             case 'chest':
                 AUDIO.OpenChest.play();
                 EXPLOSION3D.add(new WoodExplosion(Vector3.from_array(interaction.pos)));
-                choices = {
-                    RedPotion: 100,
-                    BluePotion: 100,
-                    Scroll: 100,
-                    GoldBar: 50,
-                    Sword: 10,
-                    Shield: 10,
-                    Magic: 10,
-                    Heart: 20,
-                    Mana: 20
-                };
-                choice = weightedRnd(choices);
-                if (choice === "GoldBar") {
-                    value = 250;
-                } else {
-                    value = 0;
-                }
-                interatcionObj = $.extend(true, {}, COMMON_ITEM_TYPE[choice]);
-                interatcionObj.value = value;
-                return this.processInteraction(interatcionObj);
-            case 'treasure_chest':
-                AUDIO.OpenChest.play();
-                EXPLOSION3D.add(new WoodExplosion(Vector3.from_array(interaction.pos)));
-                choices = {
-                    RedPotion: 20,
-                    BluePotion: 20,
-                    Scroll: 75,
-                    GoldBar: 100,
-                    Sword: 25,
-                    Shield: 25,
-                    Magic: 25,
-                    Heart: 50,
-                    Mana: 50
-                };
-                choice = weightedRnd(choices);
-                if (choice === "GoldBar") {
-                    value = 500;
-                } else {
-                    value = 0;
-                }
-                interatcionObj = $.extend(true, {}, COMMON_ITEM_TYPE[choice]);
-                interatcionObj.value = value;
-                return this.processInteraction(interatcionObj);
-
+                return this.processInteraction(evalObjectString(CONTAINER_CONTENT_TYPES, interaction.instanceIdentification));
             default:
                 console.error("interaction category error", interaction);
         }

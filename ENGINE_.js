@@ -2477,6 +2477,36 @@ const ENGINE = {
           CTX.fillText(gold[1], mid.x, mid.y);
         }
       }
+      if (maze.skills) {
+        for (const skill of maze.skills) {
+          let grid = GA.indexToGrid(skill[0]);
+          let mid = GRID.gridToCenterPX(grid);
+          CTX.font = "10px Arial";
+          CTX.textAlign = "center";
+          CTX.textBaseLine = "middle";
+          const color = "red"
+          CTX.fillStyle = color;
+          CTX.fillText(`* ${skill[1]} *`, mid.x, mid.y);
+          ENGINE.drawLine(CTX, mid.translate(UpLeft, W / 2), mid.translate(UpLeft, W / 2).translate(RIGHT, W), color, 3);
+          ENGINE.drawLine(CTX, mid.translate(DownLeft, W / 2), mid.translate(DownLeft, W / 2).translate(RIGHT, W), color, 5);
+        }
+      }
+      if (maze.containers) {
+        for (const container of maze.containers) {
+          let grid = GA.indexToGrid(container[0]);
+          let mid = GRID.gridToCenterPX(grid);
+          let start = mid.translate(LEFT, W / 2);
+          CTX.fillStyle = "brown";
+          CTX.fillRect(start.x, start.y, W, W);
+          CTX.font = "10px Arial";
+          CTX.textAlign = "center";
+          CTX.textBaseLine = "middle";
+          CTX.fillStyle = 'black';
+          let up = mid.translate(UP, W / 2);
+          CTX.fillText(container[2].split(".")[1], mid.x, mid.y);
+          CTX.fillText(container[1], up.x, up.y);
+        }
+      }
     },
     wall(x, y, CTX, value) {
       let FS;

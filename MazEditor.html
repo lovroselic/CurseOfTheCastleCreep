@@ -130,6 +130,9 @@
                             <input type="radio" name="painter" value="scroll"> Scroll <br />
                             <input type="radio" name="painter" value="potion"> Potion <br />
                             <input type="radio" name="painter" value="gold"> Gold <br />
+                            <input type="radio" name="painter" value="skill"> Skill <br />
+                            <hr>
+                            <input type="radio" name="painter" value="container"> Container <br />
                             <hr>
                             <input type="radio" name="painter" value="monster"> Monster <br />
                             <hr>
@@ -242,8 +245,31 @@
                                 Gold
                             </legend>
                             <div>
-                                <div class="d-flex justify-content-center rounded-1 border border-1 border-primary">
+                                <div class="d-flex justify-content-center">
                                     <select id="gold_type"> </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Skill
+                            </legend>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <select id="skill_type"> </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Container
+                            </legend>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <p>Container type: <select id="container_type"> </select></p>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <p>Contained item: <select id="content_type"> </select></p>
                                 </div>
                             </div>
                         </fieldset>
@@ -335,6 +361,8 @@
     scrolls: '[[132,0],[149,1],[164,8]]',
     potions: '[[199,0],[202,1]]',
     gold: '[[37,"GoldBar"],[36,"SilverBar"],[35,"GoldCube"],[34,"Coins"]]',
+    skills: '[[194,"Sword"],[195,"Sting"],[210,"Shield"],[211,"Magic"],[226,"Heart"],[227,"Mana"]]',
+    containers: '[[67,"Chest","GOLD_ITEM_TYPE.GoldBar"],[84,"TreasureChest","SKILL_ITEM_TYPE.Sword"]]',
     }
                         </textarea>
 

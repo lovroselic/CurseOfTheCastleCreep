@@ -11,12 +11,12 @@ console.log("%cMAP for CCC loaded.", "color: #888");
 /** Map definitions */
 const MAP = {
     1: {
-        data: '{"width":"16","height":"16","map":"BB2ABAA7BABABAA2BB2ABB2ABABAA2BAA5BAA7BABAA2BAA3BAA4BB3AA2BAA15BAA7BABABAA3BAA5BAA3BAA3BB6ABB2ABB2ABB3AA2BB2AA2BB11ABB6ABB5AA2BB3AA2BB9AA3BB2AA2BB4AA2BB2ABB2ABB11ABB9ABB4AA3BB19ABB16AB$"}',
+        data: '{"width":"16","height":"16","map":"BB2ABAA7BABABAA2BB2ABB2ABB2ABAA2BB2AA5BB2AA8BAA3BABAA4BAA4BB2ABAA2BAA2BAA23BABB2AA3BAA2BABAA6BAA5BB6AA2BABABB7AA2BB2AA2BB12ABB2ABB3AA2BB4ABAA2BB3ABABB7ABAA3BB2AA2BABB2AA3BB2ABB6ABB2ABB4AA2BB31AB$"}',
         wall: "DungeonWall",
         floor: "GreenDungeonWall",
         ceil: "GreyDungeonFloor",
-        decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"],[131,5,"AA100","picture"],[153,5,"AMC3","picture"]]',
-        lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"]]',
+        decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"],[131,5,"AA100","picture"],[153,5,"AMC3","picture"],[178,7,"MonkeyIsland143","picture"],[180,7,"DungeonMaster96","picture"],[241,1,"OReillyMine50","picture"],[243,1,"Scramble7","picture"]]',
+        lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"],[244,1,"WallTorch","fire"],[177,7,"WallTorch","fire"]]',
         start: '[24,7]',
         gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]',
         keys: '[[102,0],[103,1],[104,2],[105,2],[106,3],[120,4]]',
@@ -24,6 +24,8 @@ const MAP = {
         scrolls: '[[132,0],[149,1],[164,8]]',
         potions: '[[199,0],[202,1]]',
         gold: '[[37,"GoldBar"],[36,"SilverBar"],[35,"GoldCube"],[34,"Coins"]]',
+        skills: '[[194,"Sword"],[195,"Sting"],[210,"Shield"],[211,"Magic"],[226,"Heart"],[227,"Mana"]]',
+        containers: '[[67,"Chest","GOLD_ITEM_TYPE.GoldBar"],[84,"TreasureChest","SKILL_ITEM_TYPE.Sword"]]',
     }
     ,
     2: {

@@ -40,7 +40,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.19",
+  VERSION: "0.06.20",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -88,11 +88,11 @@ const PRG = {
   start() {
     console.log(PRG.NAME + " started.");
     $("#startGame").addClass("hidden");
-    $(document).keypress(function (event) {
+    /*$(document).keypress(function (event) {
       if (event.which === 32 || event.which === 13) {
         event.preventDefault();
       }
-    });
+    });*/
     GAME.start();
   }
 };
@@ -670,7 +670,9 @@ const GAME = {
     let rle = $MAP.map.GA.exportMap();
     let Export = { width: $MAP.width, height: $MAP.height, map: rle };
     let RoomID = $("#roomid")[0].value;
+    let RoomName = $("#roomname")[0].value;
     let roomExport = `${RoomID} : {
+name: "${RoomName}",
 data: '${JSON.stringify(Export)}',
 wall: "${$("#walltexture")[0].value}",
 floor: "${$("#floortexture")[0].value}",
@@ -689,6 +691,8 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     const Import = JSON.parse(ImportText.extractGroup(/data:\s\'(.*)\'/));
     const roomId = ImportText.extract(/^\w*/);
     $("#roomid").val(roomId);
+    const roomName = ImportText.extractGroup(new RegExp(`name:\\s"(.*)"`));
+    $("#roomname").val(roomName);
 
     const Textures = ["wall", "floor", "ceil"];
     for (const prop of Textures) {

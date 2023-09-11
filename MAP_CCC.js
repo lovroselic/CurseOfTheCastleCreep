@@ -11,6 +11,7 @@ console.log("%cMAP for CCC loaded.", "color: #888");
 /** Map definitions */
 const MAP = {
     1: {
+        name: "Entrance",
         data: '{"width":"16","height":"16","map":"BB2ABAA7BABABAA2BB2ABB2ABB2ABAA2BB2AA5BB2AA8BAA3BABAA4BAA4BB2ABAA2BAA2BAA23BABB2AA3BAA2BABAA6BAA5BB6AA2BABABB7AA2BB2AA2BB12ABB2ABB3AA2BB4ABAA2BB3ABABB7ABAA3BB2AA2BABB2AA3BB2ABB6ABB2ABB4AA2BB31AB$"}',
         wall: "DungeonWall",
         floor: "GreenDungeonWall",
@@ -29,27 +30,29 @@ const MAP = {
     }
     ,
     2: {
+        name: "Small",
         data: '{"width":"8","height":"8","map":"BB4AA5BAA5BABB3AA11BB10ABABAA4BABB11AB$"}',
         wall: "Wall8",
         floor: "StoneFloor3",
         ceil: "GreyDungeonFloor",
-        start: '[51,1]',
         decals: '[[35,7,"AMC2","picture"],[24,5,"ActecChallenge2","picture"],[39,3,"AirWolf31","picture"],[28,1,"AlleyKat","picture"]]',
         lights: '[[3,7,"WallLamp","standard"]]',
+        start: '[51,1]',
         gates: '[[59,1,"2.1","1.1","Open"]]',
-        keys: '[]'
-    },
-    3: {
-        data: '{"width":"16","height":"16","map":"BB2AA6BB39$BB208A"}',
-        wall: "DungeonWall",
-        floor: "GreenDungeonWall",
-        ceil: "GreyDungeonFloor",
+    }
+    ,
+    3 : {
+        name: "Shrines",
+        data: '{"width":"16","height":"16","map":"BB2AA9BB2AA9BB4ABAA2BB8AA3BABB27ABB33AA3BB2ABB9$BB136A"}',
+        wall: "DarkBricks",
+        floor: "BrickTiles",
+        ceil: "IntricateCeiling4",
+        decals: '[[4,7,"MonkeyIsland112","picture"],[10,7,"TombRaider109","picture"],[64,5,"Predator50","picture"],[66,5,"Killerwat50","picture"],[70,3,"DefenderOfTheCrown110","picture"],[68,3,"JupiterLander70","picture"]]',
+        lights: '[[1,7,"WallLamp","standard"],[34,7,"WallLamp","standard"],[14,7,"WallLamp3","white"]]',
         start: '[23,7]',
-        decals: '[]',
-        lights: '[]',
         gates: '[[7,7,"3.1","1.2","Open"]]',
-        keys: '[]'
-    },
+        }
+    ,
     4: {
         data: '{"width":"8","height":"8","map":"BB6AA18BAA2BB2AA6BB6AA2BB3AA5BB12A$"}',
         wall: "RockWall100",

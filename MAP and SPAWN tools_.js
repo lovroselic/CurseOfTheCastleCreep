@@ -38,6 +38,9 @@ const MAP_TOOLS = {
                 this.MAP[level].map[prop] = [];
             }
         }
+        if (!this.MAP[level].name) {
+            this.MAP[level].name = `Room - ${level}`;
+        }
         if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
     }
 };

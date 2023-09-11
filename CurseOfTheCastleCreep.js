@@ -54,7 +54,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.00",
+    VERSION: "0.05.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -1122,6 +1122,7 @@ const TITLE = {
     stack: {
         delta2: 48,
         delta3: 48,
+        delta_time: 24,
         keyDelta: 56,
         minimapX: 20,
         minimapY: 262 + 120,
@@ -1132,8 +1133,8 @@ const TITLE = {
         scrollInRow: 3,
         scrollDelta: 72,
         statusY: null,
-        YL4: 180,
-        YL5: 400,
+        YL4: 180 + 24,
+        YL5: 400 + 24,
         YL2: 256 + 36,
         DYR: 12,
     },
@@ -1178,13 +1179,13 @@ const TITLE = {
         let x = ((ENGINE.sideWIDTH - SPRITE.LineTop.width) / 2) | 0;
         let y = 0;
         ENGINE.draw("Lsideback", x, y, SPRITE.LineTop);
-        //ENGINE.draw("sideback", x, y, SPRITE.LineTop);
         ENGINE.draw("sideback", x, TITLE.stack.DYR, SPRITE.wavyL);
         ENGINE.draw("sideback", x + SPRITE.LineTop.width - SPRITE.wavyR.width, TITLE.stack.DYR, SPRITE.wavyR);
         ENGINE.spriteDraw("sideback", ENGINE.sideWIDTH / 2, TITLE.stack.DYR + SPRITE.Bag.height / 4, SPRITE.Bag);
 
         //2nd tier
-        y += TITLE.stack.delta2;
+        y += TITLE.stack.delta2 + TITLE.stack.delta_time;
+        //y += 2 * TITLE.stack.delta2;
         ENGINE.draw("Lsideback", x, y, SPRITE.LineBottom);
         ENGINE.draw("sideback", x, TITLE.stack.YL2, SPRITE.LineBottom);
         TITLE.stack.SY = (TITLE.stack.YL2 + TITLE.stack.delta3 / 2) | 0;
@@ -1541,16 +1542,15 @@ const TITLE = {
     time() {
         let fs = 14;
         let y = ((TITLE.stack.delta2 + SPRITE.LineTop.height) / 2 + fs / 4) | 0;
-        let x = ((ENGINE.sideWIDTH - SPRITE.LineTop.width) / 2) | 0;
+        let x = ((ENGINE.sideWIDTH) / 2) | 0;
         const CTX = LAYER.time;
         ENGINE.clearLayer("time");
         CTX.font = fs + "px Consolas";
         CTX.fillStyle = "#0D0";
-        CTX.fillText(`Depth: ${GAME.level.toString().padStart(2, "0")}`, x, y);
+        CTX.textAlign = "center";
+        CTX.fillText(MAP[GAME.level].name, x, y);
         let time = `Time: ${GAME.time.timeString()}`;
-        let timeMeasure = CTX.measureText(time);
-        x = (ENGINE.sideWIDTH - x - timeMeasure.width) | 0;
-        CTX.fillText(time, x, y);
+        CTX.fillText(time, x, y + 24);
     },
     _grad(CTX, txt, fs, x, y) {
         let txtm = CTX.measureText(txt);

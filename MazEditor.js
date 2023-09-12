@@ -15,6 +15,18 @@
 
  */
 ////////////////////////////////////////////////////
+const MAP = {
+  Demo: {
+    name: "Demo",
+    data: '{"width":"8","height":"8","map":"BB4AA9BB2AA3BB2AA2BB2AA2BB2ABB4AA2BB2ABABB3AA4BABB5ABB8A$"}',
+    wall: "DarkBricks",
+    floor: "BrickTiles",
+    ceil: "IntricateCeiling4",
+    lights: '[[1,7,"WallLamp","standard"],[6,7,"WallLamp","standard"],[57,1,"WallLamp","standard"],[62,1,"WallLamp","standard"]]',
+    start: '[11,7]',
+  },
+};
+
 const $MAP = {
   map: {},
   properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers'],
@@ -40,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.20",
+  VERSION: "0.06.21",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -88,11 +100,6 @@ const PRG = {
   start() {
     console.log(PRG.NAME + " started.");
     $("#startGame").addClass("hidden");
-    /*$(document).keypress(function (event) {
-      if (event.which === 32 || event.which === 13) {
-        event.preventDefault();
-      }
-    });*/
     GAME.start();
   }
 };
@@ -103,6 +110,46 @@ const GAME = {
     $(ENGINE.topCanvas).on("click", { layer: ENGINE.topCanvas }, GAME.mouseClick);
     GAME.init();
     GAME.started = true;
+    GAME.level = "Demo";
+    GAME.levelStart();
+  },
+  levelStart() {
+    console.log("starting level", GAME.level);
+    GAME.initLevel(GAME.level);
+    //GAME.setFirstPerson();                      //my preference
+    //GAME.continueLevel(GAME.level);
+  },
+  newDungeon(level) {
+    MAP_TOOLS.unpack(level);
+  },
+  initLevel(level) {
+    this.newDungeon(level);
+
+    //you're here
+
+    //const start_dir = MAP[level].map.startPosition.vector;
+    //let start_grid = MAP[level].map.startPosition.grid;
+    //start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
+
+    //WebGL.CONFIG.set("first_person", true);
+    //WebGL.CONFIG.set("third_person", true);
+
+
+    /*if (WebGL.CONFIG.firstperson) {
+        HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
+    } else {
+        HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
+        HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
+        HERO.player.associateExternalCamera(HERO.topCamera);
+    }*/
+
+    //WebGL.init_required_IAM(MAP[level].map, HERO);
+    //WebGL.MOUSE.initialize("ROOM");
+    //WebGL.setContext('webgl');
+
+    //this.buildWorld(level);
+    //this.setWorld(level);
+
   },
   mouseClick(event) {
     ENGINE.readMouse(event);
@@ -524,6 +571,8 @@ const GAME = {
 
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
     ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["pacgrid", "wall", "grid", "coord", "click"], null);
+    //webgl
+    ENGINE.addBOX("WEBGL", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["3d_webgl"], null);
 
     $("#buttons").append("<input type='button' id='new' value='New'>");
     $("#buttons").append("<input type='button' id='export' value='Export'>");

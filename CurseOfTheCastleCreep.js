@@ -594,9 +594,9 @@ const GAME = {
         MINIMAP.setOffset(TITLE.stack.minimapX, TITLE.stack.minimapY);
         AI.immobileWander = false;
         GAME.completed = false;
-        GAME.upperLimit = 1;
         GAME.level = 1;
-        GAME.gold = 0;
+        //GAME.level = 3;               //shrines
+        GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
         GAME.STORE = new Store(storeList);

@@ -38,5 +38,5 @@ const MATERIAL = {
     fire: new Material(LIGHT_COLORS.fire, LIGHT_COLORS.fire, LIGHT_COLORS.fire, 0.5),
     greenShine: new Material(LIGHT_COLORS.green, LIGHT_COLORS.green, LIGHT_COLORS.green, 0.90),
 };
-console.log(`%cMATERIAL v${MATERIAL.VERSION} for CrawlMaster2 loaded.`, "color: #888");
+console.log(`%cMATERIAL v${MATERIAL.VERSION} loaded.`, "color: #888");
 if (ENGINE.verbose) console.table(MATERIAL);

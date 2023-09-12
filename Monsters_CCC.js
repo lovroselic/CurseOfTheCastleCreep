@@ -17,6 +17,32 @@ console.log("%cMonsters for CCC loaded.", "color: #888");
 const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
     "Petrify", "MagicBoost", "Luck", "HalfLife"];
 
+const SHRINE_TYPE = {
+    AttackShrine: {
+        name: "AttackShrine",
+        sprite: "AttackShrine",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+    },
+    DefenseShrine: {
+        name: "DefenseShrine",
+        sprite: "DefenseShrine",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ShieldSkill",
+    },
+    MagicShrine: {
+        name: "MagicShrine",
+        sprite: "MagicShrine",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "MagicSkill",
+    },
+};
 
 const GOLD_ITEM_TYPE = {
     GoldBar: {
@@ -158,6 +184,7 @@ const CONTAINER_ITEM_TYPE = {
         material: MATERIAL.standard,
     },
 };
+
 const COMMON_ITEM_TYPE = {
     Scroll: {
         name: "Scroll",
@@ -244,6 +271,17 @@ const MONSTER_TYPE = {
         moveSpeed: 1.01,
         material: MATERIAL.standardShine,
     },
+};
+
+const HERO_TYPE = {
+    ThePrincess: {
+        name: "ThePrincess",
+        model: "Princess",
+        scale: 1.82 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        material: MATERIAL.standard,
+        moveSpeed: 2.0
+    }
 };
 
 //container content

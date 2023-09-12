@@ -9,7 +9,7 @@
 const MAP_TOOLS = {
     VERSION: "0.2",
     CSS: "color: #F9A",
-    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers'],
+    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines'],
     INI: {
         FOG: true,
     },
@@ -51,6 +51,7 @@ const SPAWN_TOOLS = {
         const GA = map.GA;
         this.decals(map, GA);
         this.lights(map, GA);
+        this.shrines(map, GA);
         this.externalGates(map, GA);
         this.keys(map, GA);
         this.monsters(map, GA);
@@ -141,6 +142,14 @@ const SPAWN_TOOLS = {
         for (const C of map.containers) {
             const grid = Grid.toCenter(GA.indexToGrid(C[0]));
             ITEM3D.add(new FloorItem3D(grid, CONTAINER_ITEM_TYPE[C[1]], C[2]));
+        }
+    },
+    shrines(map, GA) {
+        for (const S of map.shrines) {
+            const grid = GA.indexToGrid(S[0]);
+            GA.addShrine(grid);
+            const face = DirectionToFace(Vector.fromInt(S[1]));
+            INTERACTIVE_DECAL3D.add(new Shrine(grid, face, SHRINE_TYPE[S[2]]));
         }
     }
 };

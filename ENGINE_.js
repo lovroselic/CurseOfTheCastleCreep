@@ -2354,6 +2354,24 @@ const ENGINE = {
           ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
         }
       }
+      if (maze.shrines) {
+        for (const shrine of maze.shrines) {
+          let grid = GA.indexToGrid(shrine[0]);
+          let mid = GRID.gridToCenterPX(grid);
+          let dir = Vector.fromInt(shrine[1]);
+          let start = mid.translate(dir, W);
+          let color = "green";
+          ENGINE.drawCircle(CTX, start, decalWidth * 3, color);
+          start = start.translate(LEFT, W / 2);
+          let pEnd = start.translate(RIGHT, W)
+          ENGINE.drawLine(CTX, start, pEnd, color, decalWidth);
+          CTX.fillStyle = "black";
+          CTX.font = "10px Arial";
+          CTX.textAlign = "center";
+          CTX.textBaseLine = "middle";
+          CTX.fillText(shrine[2], mid.x, mid.y);
+        }
+      }
       if (maze.gates) {
         for (const gate of maze.gates) {
           let grid = GA.indexToGrid(gate[0]);

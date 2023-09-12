@@ -263,11 +263,13 @@ LoadSprites = [
     { srcName: "MagicShrine256.png", name: "MagicShrine" },
 
     //stairs
+    /*
     { srcName: "StairsUp.jpg", name: "StairsUp" },
     { srcName: "StairsDown.jpg", name: "StairsDown" },
+    */
 
     //entrance_gate
-    { srcName: "DungeonDoor.png", name: "EntranceGate" },
+    //{ srcName: "DungeonDoor.png", name: "EntranceGate" },
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },
     { srcName: "DestroyArmor.png", name: "SCR_DestroyArmor" },

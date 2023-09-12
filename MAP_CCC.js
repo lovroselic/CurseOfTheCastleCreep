@@ -41,17 +41,18 @@ const MAP = {
         gates: '[[59,1,"2.1","1.1","Open"]]',
     }
     ,
-    3 : {
+    3: {
         name: "Shrines",
-        data: '{"width":"16","height":"16","map":"BB2AA9BB2AA9BB4ABAA2BB8AA3BABB27ABB33AA3BB2ABB9$BB136A"}',
+        data: '{"width":"16","height":"16","map":"BB2AA9BB2AA9BB5ABB2AA2BB7AA2BB2AA2BB7ABB20ABB20ABB10AA3BB11$BB136A"}',
         wall: "DarkBricks",
         floor: "BrickTiles",
-        ceil: "IntricateCeiling4",
-        decals: '[[4,7,"MonkeyIsland112","picture"],[10,7,"TombRaider109","picture"],[64,5,"Predator50","picture"],[66,5,"Killerwat50","picture"],[70,3,"DefenderOfTheCrown110","picture"],[68,3,"JupiterLander70","picture"]]',
+        ceil: "SpideryWall",
+        decals: '[[4,7,"MonkeyIsland112","picture"],[10,7,"TombRaider109","picture"],[64,5,"Predator50","picture"],[66,5,"Killerwat50","picture"],[70,3,"DefenderOfTheCrown110","picture"],[68,3,"JupiterLander70","picture"],[55,1,"Oblivion110","picture"]]',
         lights: '[[1,7,"WallLamp","standard"],[34,7,"WallLamp","standard"],[14,7,"WallLamp3","white"]]',
         start: '[23,7]',
         gates: '[[7,7,"3.1","1.2","Open"]]',
-        }
+        shrines: '[[113,1,"AttackShrine"],[115,1,"DefenseShrine"],[117,1,"MagicShrine"]]',
+    }
     ,
     4: {
         data: '{"width":"8","height":"8","map":"BB6AA18BAA2BB2AA6BB6AA2BB3AA5BB12A$"}',
@@ -1394,32 +1395,7 @@ const SPAWN = {
 };
 */
 
-/*const SHRINE_TYPE = {
-    AttackShrine: {
-        name: "AttackShrine",
-        sprite: "AttackShrine",
-        which: "attack",
-        category: 'crest',
-        interactionCategory: 'shrine',
-        inventorySprite: "SwordSkill",
-    },
-    DefenseShrine: {
-        name: "DefenseShrine",
-        sprite: "DefenseShrine",
-        which: "defense",
-        category: 'crest',
-        interactionCategory: 'shrine',
-        inventorySprite: "ShieldSkill",
-    },
-    MagicShrine: {
-        name: "MagicShrine",
-        sprite: "MagicShrine",
-        which: "magic",
-        category: 'crest',
-        interactionCategory: 'shrine',
-        inventorySprite: "MagicSkill",
-    },
-};*/
+
 
 /*const GATE_TYPE = {
     Common: {
@@ -1451,14 +1427,3 @@ for (let [index, potion] of POTION_TYPES.entries()) {
     POTION_TYPE[potion] = new PotionTypeDefinition(`${potion}Potion`, `${potion}Potion24`, potion.toLowerCase(), POTION_TEXTURES[index], MATERIAL[POTION_MATERIAL[index]]);
 }
 //console.info("POTION_TYPE", POTION_TYPE);
-
-const HERO_TYPE = {
-    ThePrincess: {
-        name: "ThePrincess",
-        model: "Princess",
-        scale: 1.82 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        material: MATERIAL.standard,
-        moveSpeed: 2.0
-    }
-};

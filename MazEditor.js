@@ -29,7 +29,7 @@ const MAP = {
 
 const $MAP = {
   map: {},
-  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers'],
+  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines'],
   combined: [],
   init() {
     for (const prop of this.properties) {
@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.06.21",
+  VERSION: "0.07.00",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -103,6 +103,11 @@ const PRG = {
     GAME.start();
   }
 };
+/**
+ * most of HERo is redundant - clean!
+ */
+const HERO = {};
+
 const GAME = {
   start() {
     $("#bottom")[0].scrollIntoView();
@@ -116,39 +121,55 @@ const GAME = {
   levelStart() {
     console.log("starting level", GAME.level);
     GAME.initLevel(GAME.level);
-    //GAME.setFirstPerson();                      //my preference
-    //GAME.continueLevel(GAME.level);
+    GAME.setFirstPerson();
+    WebGL.renderScene();
+  },
+  setFirstPerson() {
+    WebGL.CONFIG.set("first_person", false);
+    HERO.player.clearCamera();
+    HERO.player.moveSpeed = 4.0;
+    WebGL.setCamera(HERO.player);
   },
   newDungeon(level) {
     MAP_TOOLS.unpack(level);
   },
+  buildWorld(level) {
+    console.warn("building world, level", level);
+    SPAWN_TOOLS.spawn(level);
+    MAP[level].world = WORLD.build(MAP[level].map);
+  },
+  setWorld(level, decalsAreSet = false) {
+    console.log("setting world");
+    console.time("setWorld");
+
+    const textureData = {
+      wall: TEXTURE[$("#walltexture")[0].value],
+      floor: TEXTURE[$("#floortexture")[0].value],
+      ceil: TEXTURE[$("#ceiltexture")[0].value]
+    };
+
+    WebGL.updateShaders();
+    WebGL.init('webgl', MAP[level].world, textureData, HERO.player, decalsAreSet);
+    console.timeEnd("setWorld");
+  },
   initLevel(level) {
     this.newDungeon(level);
+    const start_dir = MAP[level].map.startPosition.vector;
+    let start_grid = MAP[level].map.startPosition.grid;
+    start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), 0.6);
 
-    //you're here
+    WebGL.CONFIG.set("first_person", false);
 
-    //const start_dir = MAP[level].map.startPosition.vector;
-    //let start_grid = MAP[level].map.startPosition.grid;
-    //start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
+    if (WebGL.CONFIG.firstperson) {
+      HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, null);
+    }
 
-    //WebGL.CONFIG.set("first_person", true);
-    //WebGL.CONFIG.set("third_person", true);
-
-
-    /*if (WebGL.CONFIG.firstperson) {
-        HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
-    } else {
-        HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
-        HERO.topCamera = new $3D_Camera(HERO.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
-        HERO.player.associateExternalCamera(HERO.topCamera);
-    }*/
-
-    //WebGL.init_required_IAM(MAP[level].map, HERO);
+    WebGL.init_required_IAM(MAP[level].map, HERO);
     //WebGL.MOUSE.initialize("ROOM");
-    //WebGL.setContext('webgl');
+    WebGL.setContext('webgl');
 
-    //this.buildWorld(level);
-    //this.setWorld(level);
+    this.buildWorld(level);
+    this.setWorld(level);
 
   },
   mouseClick(event) {
@@ -158,7 +179,7 @@ const GAME = {
     let grid = new Grid(x, y);
     var radio = $("#paint input[name=painter]:checked").val();
     let GA = $MAP.map.GA;
-    let dir, nameId, type, dirIndex;
+    let dir, nameId, type, dirIndex, dirs;
     let currentValue = GA.getValue(grid);
     let gridIndex = GA.gridToIndex(grid);
 
@@ -200,7 +221,7 @@ const GAME = {
             return;
         }
         //
-        let dirs = GA.getDirections(grid, MAPDICT.EMPTY);
+        dirs = GA.getDirections(grid, MAPDICT.EMPTY);
         if (dirs.length > 1) {
           alert(`bad gate position, posible exits ${dirs.length}`);
           break;
@@ -373,6 +394,22 @@ const GAME = {
             $("#error_message").html(`Container placement not supported on value: ${currentValue}`);
             return;
         }
+        break;
+      case "shrine":
+        switch (currentValue) {
+          case MAPDICT.WALL:
+            break;
+          default:
+            $("#error_message").html(`Shrine placement not supported on value: ${currentValue}`);
+            return;
+        }
+        dirs = GA.getDirections(grid, MAPDICT.EMPTY);
+        if (dirs.length > 1) {
+          alert(`bad gate position, posible exits ${dirs.length}`);
+          break;
+        }
+        dirIndex = dirs[0].toInt();
+        $MAP.map.shrines.push(Array(gridIndex, dirIndex, $("#shrine_type")[0].value));
         break;
     }
 
@@ -558,6 +595,7 @@ const GAME = {
       let res = GAME.getResolution(pTexture);
       $(`#${ids[i]}`).html(`width: ${res[0]}, height: ${res[1]}`);
     }
+    if (GAME.started) GAME.levelStart(); //
   },
   repaintTextures() {
     GAME.updateTextures();
@@ -572,7 +610,7 @@ const GAME = {
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
     ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["pacgrid", "wall", "grid", "coord", "click"], null);
     //webgl
-    ENGINE.addBOX("WEBGL", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["3d_webgl"], null);
+    ENGINE.addBOX("WEBGL", 800, 600, ["3d_webgl"], null);
 
     $("#buttons").append("<input type='button' id='new' value='New'>");
     $("#buttons").append("<input type='button' id='export' value='Export'>");
@@ -699,6 +737,10 @@ const GAME = {
 
     for (const contentType of CONTAINER_CONTENT_LIST) {
       $("#content_type").append(`<option value="${contentType}">${contentType}</option>`);
+    }
+
+    for (const shrineType in SHRINE_TYPE) {
+      $("#shrine_type").append(`<option value="${shrineType}">${shrineType}</option>`);
     }
 
   },

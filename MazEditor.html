@@ -106,7 +106,12 @@
                             <input type="radio" name="directions" value="LEFT"> LEFT <br />
                             <input type="radio" name="directions" value="RIGHT"> RIGHT <br />
                             <input type="radio" name="directions" value="NOWAY" checked="checked"> NOWAY <br />
-
+                        </fieldset>
+                        <fieldset>
+                            <legend>Shrines</legend>
+                            <div class="d-flex justify-content-center">
+                                <select id="shrine_type"> </select>
+                            </div>
                         </fieldset>
                     </div>
                 </div>
@@ -128,6 +133,7 @@
                             <input type="radio" name="painter" value="gate"> Gate <br />
                             <input type="radio" name="painter" value="decal"> Decal <br />
                             <input type="radio" name="painter" value="light"> Light <br />
+                            <input type="radio" name="painter" value="shrine"> Shrine <br />
                             <hr>
                             <input type="radio" name="painter" value="key"> Key <br />
                             <input type="radio" name="painter" value="scroll"> Scroll <br />
@@ -352,14 +358,15 @@
                         <textarea id="exp" style="width: 1200px; height: 256px;">
 3 : {
     name: "Shrines",
-    data: '{"width":"16","height":"16","map":"BB2AA9BB2AA9BB4ABAA2BB8AA3BABB27ABB33AA3BB2ABB9$BB136A"}',
+    data: '{"width":"16","height":"16","map":"BB2AA9BB2AA9BB5ABB2AA2BB7AA2BB2AA2BB7ABB20ABB20ABB10AA3BB11$BB136A"}',
     wall: "DarkBricks",
     floor: "BrickTiles",
-    ceil: "IntricateCeiling4",
-    decals: '[[4,7,"MonkeyIsland112","picture"],[10,7,"TombRaider109","picture"],[64,5,"Predator50","picture"],[66,5,"Killerwat50","picture"],[70,3,"DefenderOfTheCrown110","picture"],[68,3,"JupiterLander70","picture"]]',
+    ceil: "SpideryWall",
+    decals: '[[4,7,"MonkeyIsland112","picture"],[10,7,"TombRaider109","picture"],[64,5,"Predator50","picture"],[66,5,"Killerwat50","picture"],[70,3,"DefenderOfTheCrown110","picture"],[68,3,"JupiterLander70","picture"],[55,1,"Oblivion110","picture"]]',
     lights: '[[1,7,"WallLamp","standard"],[34,7,"WallLamp","standard"],[14,7,"WallLamp3","white"]]',
     start: '[23,7]',
     gates: '[[7,7,"3.1","1.2","Open"]]',
+    shrines: '[[113,1,"AttackShrine"],[115,1,"DefenseShrine"],[117,1,"MagicShrine"]]',
     }
                         </textarea>
 
@@ -390,7 +397,9 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
         </script>
 
+    <script src="./gl-matrix-min.js" type="text/javascript"></script>
     <script src="./Prototype_.js" type="text/javascript"></script>
+    <script src="./LS_Matrix_1_00.js" type="text/javascript"></script>
     <script src="./ENGINE_.js" type="text/javascript"></script>
     <script src="./GRID_.js" type="text/javascript"></script>
     <script src="./MAZE_4_00.js" type="text/javascript"></script>

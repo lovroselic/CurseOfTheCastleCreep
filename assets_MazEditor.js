@@ -910,3 +910,9 @@ LoadSprites = [
     { srcName: "Underwurlde140.png", name: "Underwurlde140" },
     { srcName: "Underwurlde141.png", name: "Underwurlde141" },
 ];
+
+LoadShaders = [
+    'vShader.glsl', 'fShader.glsl', 'pick_vShader.glsl', 'pick_fShader.glsl',
+    'particle_render_fShader.glsl', 'particle_render_vShader.glsl', 'particle_transform_fShader.glsl', 'particle_transform_vShader.glsl',
+    'model_vShader.glsl',
+];

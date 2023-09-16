@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.02",
+    VERSION: "0.05.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -520,6 +520,26 @@ const HERO = {
         setTimeout(() => (HERO.canShoot = true), INI.HERO_SHOOT_TIMEOUT);
         return;
     },
+    shootBouncy() {
+        HERO.player.matrixUpdate();
+        let cost = BouncingMissile.calcMana(HERO.reference_magic);
+        console.log("cost", cost);
+        if (DEBUG.FREE_MAGIC) cost = 0;
+        if (cost > HERO.mana) {
+            AUDIO.MagicFail.play();
+            return;
+        }
+        if (!HERO.canShoot) return;
+        HERO.canShoot = false;
+        HERO.mana -= cost;
+        const exp = (HERO.magic / 2) | 0;
+        HERO.incExp(exp, "magic");
+        TITLE.status();
+        const position = HERO.player.pos.translate(HERO.player.dir, HERO.player.r);
+        const missile = new BouncingMissile(position, HERO.player.dir, COMMON_ITEM_TYPE.Bounceball, HERO.magic);
+        MISSILE3D.add(missile);
+        setTimeout(() => (HERO.canShoot = true), INI.HERO_SHOOT_TIMEOUT * 2.5);
+    },
     die() {
         if (DEBUG.INVINCIBLE) return;
         this.dead = true;
@@ -596,6 +616,7 @@ const GAME = {
         GAME.completed = false;
         GAME.level = 1;
         //GAME.level = 3;               //shrines
+        //GAME.level = 4;                 //small room
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
@@ -964,6 +985,15 @@ const GAME = {
         if (map[ENGINE.KEY.map["3"]]) {
             GAME.setThirdPerson();
             return;
+        }
+        if (map[ENGINE.KEY.map.shift]) {
+            if (map[ENGINE.KEY.map.ctrl]) {
+                ENGINE.GAME.keymap[ENGINE.KEY.map.ctrl] = false;
+                HERO.shootBouncy();
+
+                console.log("Shift-CTRL");
+                return;
+            }
         }
 
         if (map[ENGINE.KEY.map.F4]) {

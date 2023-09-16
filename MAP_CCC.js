@@ -55,16 +55,17 @@ const MAP = {
     }
     ,
     4: {
+        name: "Small room",
         data: '{"width":"8","height":"8","map":"BB6AA18BAA2BB2AA6BB6AA2BB3AA5BB12A$"}',
         wall: "RockWall100",
-        floor: "MarbleFloor1",
+        floor: "ScarletFloor1",
         ceil: "MossyWall3",
-        start: '[22,5]',
         decals: '[[42,5,"ArabianNights1","picture"],[8,5,"Apshai6","picture"],[44,5,"Apshai10","picture"],[44,3,"AppleLisa","picture"],[39,3,"BeachHeadReplace","picture"],[4,7,"AtariFalcon","picture"],[58,1,"AticAtac131","picture"]]',
         lights: '[[40,5,"WallLamp","standard"],[60,1,"WallLamp3","fire"]]',
+        start: '[22,5]',
         gates: '[[23,3,"4.1","1.3","Open"]]',
-        keys: '[]'
-    },
+    }
+    ,
     5: {
         data: '{"width":"16","height":"16","map":"BB4AA8BB2AA4BB4AA20BB82AA2BB23ABABB5ABAA3BB18ABB75$"}',
         wall: "BeautifullWall1",

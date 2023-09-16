@@ -1842,7 +1842,7 @@ class Missile extends Drawable_object {
         this.pos = position;
         this.dir = direction;
         this.magic = magic;
-        this.casterId = casterId;
+        this.casterId = casterId;                   //legacy - obsolete
         this.distance = null;
         for (const prop in type) {
             this[prop] = type[prop];
@@ -1892,6 +1892,32 @@ class Missile extends Drawable_object {
         let damage = this.power - part1 - RND(0, part2);
         return damage;
     }
+    hitWall(IAM) {
+        this.explode(IAM);
+        /*IAM.remove(this.id);
+        EXPLOSION3D.add(new ParticleExplosion(this.pos));
+        AUDIO.Explosion.volume = RAY.volume(this.distance);
+        AUDIO.Explosion.play();*/
+    }
+    explode(IAM){
+        IAM.remove(this.id);
+        EXPLOSION3D.add(new ParticleExplosion(this.pos));
+        AUDIO.Explosion.volume = RAY.volume(this.distance);
+        AUDIO.Explosion.play();
+    }
+}
+
+class BouncingMissile extends Missile {
+    constructor(position, direction, type, magic) {
+        super(position, direction, type, magic);
+        this.name = "BouncingMissile";
+    }
+    static calcMana(magic) {
+        return (2 * (magic ** 1.25)) | 0;
+    }
+    /*hitWall(IAM) {
+        console.error("bounce wall hit", this, "IAM", IAM);
+    }*/
 }
 
 class WallFeature3D {

@@ -38,7 +38,7 @@
  */
 
 const WebGL = {
-    VERSION: "1.01",
+    VERSION: "1.02",
     CSS: "color: gold",
     CTX: null,
     VERBOSE: true,
@@ -1894,12 +1894,8 @@ class Missile extends Drawable_object {
     }
     hitWall(IAM) {
         this.explode(IAM);
-        /*IAM.remove(this.id);
-        EXPLOSION3D.add(new ParticleExplosion(this.pos));
-        AUDIO.Explosion.volume = RAY.volume(this.distance);
-        AUDIO.Explosion.play();*/
     }
-    explode(IAM){
+    explode(IAM) {
         IAM.remove(this.id);
         EXPLOSION3D.add(new ParticleExplosion(this.pos));
         AUDIO.Explosion.volume = RAY.volume(this.distance);
@@ -1915,9 +1911,15 @@ class BouncingMissile extends Missile {
     static calcMana(magic) {
         return (2 * (magic ** 1.25)) | 0;
     }
-    /*hitWall(IAM) {
-        console.error("bounce wall hit", this, "IAM", IAM);
-    }*/
+    hitWall(IAM, point) {
+        console.info("bounce wall hit, missile:", this);
+        console.log(".pos:", this.pos);
+        console.log(".innerPoint", point);
+
+
+        //
+        this.explode(IAM);
+    }
 }
 
 class WallFeature3D {
@@ -2479,11 +2481,7 @@ class $3D_Entity {
         let exp = Math.min(this.health, damage);
         this.health -= damage;
         if (this.health <= 0) this.die('magic', exp);
-        //missile explosion
-        EXPLOSION3D.add(new ParticleExplosion(missile.pos));
-        MISSILE3D.remove(missile.id);
-        AUDIO.Explosion.volume = RAY.volume(missile.distance);
-        AUDIO.Explosion.play();
+        missile.explode(MISSILE3D);
     }
     shoot() {
         const dir = Vector3.from_2D_dir(this.moveState.lookDir);

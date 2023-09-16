@@ -627,9 +627,9 @@ class Missile3D extends IAM {
             if (obj) {
                 obj.move(lapsedTime);
                 const pos = Vector3.to_FP_Grid(obj.pos);
-                let wallHit = !this.map.GA.entityNotInWall(pos, Vector3.to_FP_Vector(obj.dir), obj.r);
+                let [wallHit, point] = this.map.GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r);
                 if (wallHit) {
-                    obj.hitWall(this);
+                    obj.hitWall(this, point);
                     continue;
                 }
 

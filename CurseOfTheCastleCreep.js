@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.03",
+    VERSION: "0.05.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -487,10 +487,7 @@ const HERO = {
         const damage = Math.max(missile.calcDamage(HERO.magic), 1) - HERO.luck;
         const exp = Math.max((damage ** 0.9) | 0, 1);
         HERO.applyDamage(damage);
-        EXPLOSION3D.add(new ParticleExplosion(missile.pos));
-        MISSILE3D.remove(missile.id);
-        AUDIO.Explosion.volume = RAY.volume(missile.distance);
-        AUDIO.Explosion.play();
+        missile.explode(MISSILE3D);
         HERO.incExp(exp, "magic");
     },
     applyDamage(damage) {
@@ -523,7 +520,7 @@ const HERO = {
     shootBouncy() {
         HERO.player.matrixUpdate();
         let cost = BouncingMissile.calcMana(HERO.reference_magic);
-        console.log("cost", cost);
+        //console.log("cost", cost);
         if (DEBUG.FREE_MAGIC) cost = 0;
         if (cost > HERO.mana) {
             AUDIO.MagicFail.play();
@@ -538,7 +535,7 @@ const HERO = {
         const position = HERO.player.pos.translate(HERO.player.dir, HERO.player.r);
         const missile = new BouncingMissile(position, HERO.player.dir, COMMON_ITEM_TYPE.Bounceball, HERO.magic);
         MISSILE3D.add(missile);
-        setTimeout(() => (HERO.canShoot = true), INI.HERO_SHOOT_TIMEOUT * 2.5);
+        setTimeout(() => (HERO.canShoot = true), 0.01 * INI.HERO_SHOOT_TIMEOUT * 2.5);
     },
     die() {
         if (DEBUG.INVINCIBLE) return;
@@ -990,8 +987,6 @@ const GAME = {
             if (map[ENGINE.KEY.map.ctrl]) {
                 ENGINE.GAME.keymap[ENGINE.KEY.map.ctrl] = false;
                 HERO.shootBouncy();
-
-                console.log("Shift-CTRL");
                 return;
             }
         }

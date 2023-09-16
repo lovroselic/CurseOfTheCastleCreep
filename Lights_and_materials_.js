@@ -10,6 +10,7 @@ const LIGHT_COLORS = {
     standard: new Float32Array([0.90, 0.90, 0.81]),
     fire: new Float32Array([0.94, 0.50, 0.07]),
     red: new Float32Array([0.95, 0.70, 0.70]),
+    lightRed: new Float32Array([0.5, 0.1, 0.1]),
     yellowgreen: new Float32Array([0.90, 0.90, 0.50]),
     white: new Float32Array([1.0, 1.0, 1.0]),
     blue: new Float32Array([0.0, 0.0, 1.0]),
@@ -17,6 +18,7 @@ const LIGHT_COLORS = {
     gold: new Float32Array([0.831372, 0.686274, 0.21568627]),
     silver: new Float32Array([0.752941176, 0.752941176, 0.752941176]),
     green: new Float32Array([0.0, 1.0, 0.0]),
+    lightGreen: new Float32Array([0.0, 0.5, 0.0]),
     gray: new Float32Array([0.5, 0.5, 0.5]),
     darkgray: new Float32Array([0.25, 0.25, 0.25]),
     lightgray: new Float32Array([0.75, 0.75, 0.75]),
@@ -37,7 +39,8 @@ const MATERIAL = {
     blueShine: new Material(LIGHT_COLORS.blue, LIGHT_COLORS.blue, LIGHT_COLORS.blue, 0.5),
     fire: new Material(LIGHT_COLORS.fire, LIGHT_COLORS.fire, LIGHT_COLORS.fire, 0.5),
     greenShine: new Material(LIGHT_COLORS.green, LIGHT_COLORS.green, LIGHT_COLORS.green, 0.90),
-    green: new Material(LIGHT_COLORS.green, LIGHT_COLORS.green, LIGHT_COLORS.green, 0.20),
+    greenFluence: new Material(LIGHT_COLORS.green, LIGHT_COLORS.lightGreen, LIGHT_COLORS.green, 0.05),
+    redFluence: new Material(LIGHT_COLORS.fullRed, LIGHT_COLORS.lightRed, LIGHT_COLORS.fullRed, 0.05),
 };
 console.log(`%cMATERIAL v${MATERIAL.VERSION} loaded.`, "color: #888");
 if (ENGINE.verbose) console.table(MATERIAL);

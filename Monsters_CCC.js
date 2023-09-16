@@ -211,11 +211,9 @@ const COMMON_ITEM_TYPE = {
         element: "BALL",
         scale: 1.5 / 2 ** 4,
         texture: "GreenMetal",
-        //texture: "RedMetal",
-        //texture: "Red2",
         moveSpeed: 8.0,
-        lightColor: "#008800",
-        material: MATERIAL.green,
+        lightColor: "#006600",
+        material: MATERIAL.greenFluence,
     },
 };
 

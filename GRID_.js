@@ -5,7 +5,7 @@
 "use strict";
 
 //////////////////////////////////////
-// GRID v 3.04       by LS          //
+// GRID              by LS          //
 //////////////////////////////////////
 
 /*
@@ -1129,6 +1129,14 @@ class GridArray extends ArrayBasedDataStructure {
       if (!notWall) return false;
     }
     return true;
+  }
+  entityInWallPoint(pos, dir, r, resolution = 8) {
+    let checks = this.pointsAroundEntity(pos, dir, r, resolution);
+    for (const point of checks) {
+      let isWall = !this.positionIsNotWall(point);
+      if (isWall) return [true, point];
+    }
+    return [false, null];
   }
   pointsAroundEntity(pos, dir, r, resolution = 4) {
     let checks = [];

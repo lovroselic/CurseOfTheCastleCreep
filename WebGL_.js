@@ -1911,15 +1911,25 @@ class BouncingMissile extends Missile {
     static calcMana(magic) {
         return (2 * (magic ** 1.25)) | 0;
     }
+    rebound(point) {
+        console.info("bounce wall hit, missile:", this, "dir",);
+        const pos2D = Vector3.to_FP_Grid(this.pos);
+        console.log(".pos:", pos2D, ".innerPoint", point);
+        const dir2D = Vector3.to_FP_Vector(this.dir);
+        const reboundDir = point.getReboundDir(pos2D, dir2D);
+        console.log('.reboundDir', reboundDir);
+        const new3D_dir = Vector3.from_2D_dir(reboundDir);
+        console.log("new3D_dir", new3D_dir);
+        this.dir = new3D_dir;
+
+    }
     hitWall(IAM, point) {
-        console.info("bounce wall hit, missile:", this);
-        console.log(".pos:", this.pos);
-        console.log(".innerPoint", point);
-        const reboundDir = point.getReboundDir(Vector3.to_FP_Grid(this.pos), Vector3.to_FP_Vector(this.dir));
+        this.rebound(point);
+
 
 
         //
-        this.explode(IAM);
+        //this.explode(IAM);
     }
 }
 

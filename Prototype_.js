@@ -588,14 +588,35 @@ class FP_Grid {
     console.info("...getReboundDir", this, outerGrid, dir);
     const inner = Grid.toClass(this);
     const outer = Grid.toClass(outerGrid);
-    //let orthogonal = inner.sub(outer);
     let faceNormal = outer.sub(inner);
     console.log("...faceNormal", faceNormal);
-    const angle = (FP_Vector.toClass(faceNormal).radAngleBetweenVectors(dir) + Math.PI) % (2 * Math.PI);
+    let angle;
+
+
+
+
+    //
+    if (!Vector.toClass(faceNormal).isOrto()) {
+      console.error("abnormal face normal, trying with 45°");
+      angle = Math.PI / 2;
+    } else if (GRID.same(faceNormal, NOWAY)) {
+      console.error("captured in wall", faceNormal, NOWAY);
+      angle = 0;
+    } else {
+      angle = (FP_Vector.toClass(faceNormal).radAngleBetweenVectors(dir) + Math.PI) % (2 * Math.PI); //fuckup!!!!!!!!!!!!!
+      //angle = FP_Vector.toClass(faceNormal).radAngleBetweenVectors(dir)
+    }
+    //
+
+
+
+
     console.log("...angle", angle, "deg:", Math.degrees(angle));
 
 
     console.log("----------");
+    throw "DEBUG";
+    //return dir.rotate(angle);
 
   }
 }

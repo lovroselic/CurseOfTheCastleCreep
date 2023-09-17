@@ -5,7 +5,7 @@
 "use strict";
 console.clear();
 
-var LIB = {
+const LIB = {
   VERSION: "3.14",
   CSS: "color: #EFE",
   log: function () {
@@ -498,6 +498,9 @@ class Grid {
   add(vector, mul = 1) {
     return new Grid(this.x + vector.x * mul, this.y + vector.y * mul);
   }
+  sub(vector, mul = 1) {
+    return new Grid(this.x - vector.x * mul, this.y - vector.y * mul);
+  }
   isInAt(dirArray) {
     return dirArray.findIndex(dir => dir.x === this.x && dir.y === this.y);
   }
@@ -580,6 +583,21 @@ class FP_Grid {
   sub(vector, factor = 1.0) {
     return new FP_Grid(this.x - vector.x * factor, this.y - vector.y * factor);
   }
+  getReboundDir(outerGrid, dir) {
+    console.log("----------");
+    console.info("...getReboundDir", this, outerGrid, dir);
+    const inner = Grid.toClass(this);
+    const outer = Grid.toClass(outerGrid);
+    //let orthogonal = inner.sub(outer);
+    let faceNormal = outer.sub(inner);
+    console.log("...faceNormal", faceNormal);
+    const angle = (FP_Vector.toClass(faceNormal).radAngleBetweenVectors(dir) + Math.PI) % (2 * Math.PI);
+    console.log("...angle", angle, "deg:", Math.degrees(angle));
+
+
+    console.log("----------");
+
+  }
 }
 class FP_Vector {
   constructor(x = 0, y = 0) {
@@ -640,6 +658,8 @@ class FP_Vector {
     return angle;
   }
 }
+
+
 class Vector {
   static W = 3;
   constructor(x = 0, y = 0) {

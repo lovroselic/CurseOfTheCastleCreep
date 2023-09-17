@@ -1915,6 +1915,7 @@ class BouncingMissile extends Missile {
         console.info("bounce wall hit, missile:", this);
         console.log(".pos:", this.pos);
         console.log(".innerPoint", point);
+        const reboundDir = point.getReboundDir(Vector3.to_FP_Grid(this.pos), Vector3.to_FP_Vector(this.dir));
 
 
         //

@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.04",
+    VERSION: "0.05.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

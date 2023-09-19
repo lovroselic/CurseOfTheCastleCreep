@@ -55,6 +55,7 @@ const WebGL = {
         DYNAMIC_LIGHTS_RESERVATION: 32,
         EXPLOSION_N_PARTICLES: 25000,
         EXPLOSION_DURATION_MS: 2000,
+        POISON_DURATION_MS: 3000,
         BLOOD_DURATION_MS: 2500,
         SMUDGE_DURATION_MS: 500,
         MIN_R: 0.25,
@@ -1907,29 +1908,35 @@ class BouncingMissile extends Missile {
     constructor(position, direction, type, magic) {
         super(position, direction, type, magic);
         this.name = "BouncingMissile";
+        this.bounceCount = 0;
     }
     static calcMana(magic) {
         return (2 * (magic ** 1.25)) | 0;
     }
-    rebound(point) {
-        console.info("bounce wall hit, missile:", this, "dir",);
+    rebound(innerPoint, GA, IAM) {
         const pos2D = Vector3.to_FP_Grid(this.pos);
-        console.log(".pos:", pos2D, ".innerPoint", point);
         const dir2D = Vector3.to_FP_Vector(this.dir);
-        const reboundDir = point.getReboundDir(pos2D, dir2D);
-        console.log('.reboundDir', reboundDir);
+        console.log(`%c###:`, "color: #00F", ".outerPoint:", pos2D, `innerPoint:`, innerPoint);
+        const reboundDir = GRID.getReboundDir(innerPoint, pos2D, dir2D, GA);
+        if (!reboundDir) return this.explode(IAM);
         const new3D_dir = Vector3.from_2D_dir(reboundDir);
-        console.log("new3D_dir", new3D_dir);
         this.dir = new3D_dir;
-
+        this.bounceCount++;
     }
-    hitWall(IAM, point) {
-        this.rebound(point);
+    hitWall(IAM, point, GA) {
+        console.info("HIT WALL", "power", this.power, "this.bounceCount", this.bounceCount);
+        this.rebound(point, GA, IAM);
 
 
 
         //
         //this.explode(IAM);
+    }
+    explode(IAM) {
+        IAM.remove(this.id);
+        EXPLOSION3D.add(new GreenMetalExplosion(this.pos));
+        AUDIO.Explosion.volume = RAY.volume(this.distance);
+        AUDIO.Explosion.play();
     }
 }
 
@@ -2224,6 +2231,20 @@ class ParticleExplosion extends ParticleEmmiter {
         this.scale = 0.5;
         this.gravity = new Float32Array([0, 0.0075, 0]);
         this.velocity = 0.03;
+        this.rounded = 1;
+    }
+}
+
+class GreenMetalExplosion extends ParticleEmmiter {
+    constructor(position, duration = WebGL.INI.POISON_DURATION_MS, texture = TEXTURE.GreenMetal, number = WebGL.INI.EXPLOSION_N_PARTICLES) {
+        super(position, texture);
+        this.number = number;
+        this.duration = duration;
+        this.build(number);
+        this.lightColor = LIGHT_COLORS.lightGreen;
+        this.scale = 0.2;
+        this.gravity = new Float32Array([0, 0.005, -0.005]);
+        this.velocity = 0.01;
         this.rounded = 1;
     }
 }

@@ -368,6 +368,40 @@ const GRID = {
       }
     }
     return directions;
+  },
+  getReboundDir(innerPoint, outerPoint, dir, GA) {
+    const inner = Grid.toClass(innerPoint);
+    const outer = Grid.toClass(outerPoint);
+    if (GA.isWall(outer)) {
+      console.error("Missile position in wall. This should never happened", outer, GA.isWall(outer));
+      return null;
+    }
+    let faceNormal = outer.sub(inner);
+    let newDir;
+    let reverseDir = dir.mirror();
+    faceNormal = Vector.toClass(faceNormal);
+
+    if (!faceNormal.isOrto()) {
+      faceNormal = GRID.resolveCornerBlock(faceNormal, inner, GA);
+    }
+
+    if (!faceNormal.isOrto()) {
+      newDir = FP_Vector.toClass(faceNormal).normalize();
+    } else if (GRID.same(faceNormal, NOWAY)) {
+      newDir = outerPoint.direction(innerPoint);
+    } else {
+      let angle = FP_Vector.toClass(faceNormal).radAngleBetweenVectorsSharp(reverseDir);
+      newDir = faceNormal.rotate(-angle);
+    }
+
+    return newDir;
+  },
+  resolveCornerBlock(faceNormal, innerGrid, GA) {
+    const clone = faceNormal.clone();
+    if (GA.isWall(innerGrid.add(new Vector(faceNormal.x, 0)))) faceNormal.x = 0;
+    if (GA.isWall(innerGrid.add(new Vector(0, faceNormal.y)))) faceNormal.y = 0;
+    if (faceNormal.isNull()) return clone;
+    return faceNormal;
   }
 };
 

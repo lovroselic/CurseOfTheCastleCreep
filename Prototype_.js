@@ -6,7 +6,7 @@
 console.clear();
 
 const LIB = {
-  VERSION: "3.14",
+  VERSION: "4.00",
   CSS: "color: #EFE",
   log: function () {
     console.log(`%cPrototype LIB ${LIB.VERSION} loaded`, LIB.CSS);
@@ -18,16 +18,8 @@ Prototype and helpful functions library
 as used by LS
 
 changelog:
-3.00: new fresh version
-3.04: updates for Invasion
-3.05: RNDF, updates for RUN, Set prototypes, substr -> substring updates;
-3.06: 3d vectors
-3.10: optimized, binarySearch
-3.11: date prototypes - used by CoolWeb!
-3.12: float bin search, 
-3.13: splitByN corrected, Array.create2DArray
-3.14: string regex prototipes
-      stringify object variable, eval object string
+4.00: new fresh version
+
 */
 
 (function () {
@@ -583,59 +575,42 @@ class FP_Grid {
   sub(vector, factor = 1.0) {
     return new FP_Grid(this.x - vector.x * factor, this.y - vector.y * factor);
   }
-  getReboundDir(outerGrid, dir) {
-    console.log("----------");
-    console.info("...getReboundDir", this, outerGrid, dir);
-    const inner = Grid.toClass(this);
-    const outer = Grid.toClass(outerGrid);
-    let faceNormal = outer.sub(inner);
-    console.log("...faceNormal", faceNormal);
-    let angle;
-
-
-
-
-    //
-    if (!Vector.toClass(faceNormal).isOrto()) {
-      console.error("abnormal face normal, trying with 45°");
-      angle = Math.PI / 2;
-    } else if (GRID.same(faceNormal, NOWAY)) {
-      console.error("captured in wall", faceNormal, NOWAY);
-      angle = 0;
-    } else {
-      angle = (FP_Vector.toClass(faceNormal).radAngleBetweenVectors(dir) + Math.PI) % (2 * Math.PI); //fuckup!!!!!!!!!!!!!
-      //angle = FP_Vector.toClass(faceNormal).radAngleBetweenVectors(dir)
-    }
-    //
-
-
-
-
-    console.log("...angle", angle, "deg:", Math.degrees(angle));
-
-
-    console.log("----------");
-    throw "DEBUG";
-    //return dir.rotate(angle);
-
-  }
 }
-class FP_Vector {
-  constructor(x = 0, y = 0) {
-    this.x = parseFloat(x);
-    this.y = parseFloat(y);
-  }
-  static toClass(vector) {
-    return new FP_Vector(vector.x, vector.y);
+
+class MasterVectorClass {
+  constructor() { }
+  magnitude() {
+    return Math.sqrt(this.x ** 2 + this.y ** 2);
   }
   normalize() {
-    return new Vector(this.x / Math.abs(this.x), this.y / Math.abs(this.y));
+    const mag = this.magnitude();
+    if (mag === 0) throw new Error("Cannot normalize a zero vector");
+    return new FP_Vector(this.x / mag, this.y / mag);
   }
   rotate(rad) {
     let COS = Math.cos(rad);
     let SIN = Math.sin(rad);
     let x = this.x * COS - this.y * SIN;
     let y = this.x * SIN + this.y * COS;
+    return new FP_Vector(x, y);
+  }
+}
+
+class FP_Vector extends MasterVectorClass {
+  constructor(x = 0, y = 0) {
+    super();
+    this.x = parseFloat(x);
+    this.y = parseFloat(y);
+  }
+  static toClass(vector) {
+    return new FP_Vector(vector.x, vector.y);
+  }
+  clone() {
+    return new FP_Vector(this.x, this.y);
+  }
+  signVector() {
+    const x = this.x === 0 ? 0 : this.x / Math.abs(this.x);
+    const y = this.y === 0 ? 0 : this.y / Math.abs(this.y);
     return new FP_Vector(x, y);
   }
   scale(factor) {
@@ -648,16 +623,10 @@ class FP_Vector {
     return this.reverse();
   }
   add(vector, factor = 1.0) {
-    return new FP_Vector(
-      this.x + vector.x * factor,
-      this.y + vector.y * factor
-    );
+    return new FP_Vector(this.x + vector.x * factor, this.y + vector.y * factor);
   }
   sub(vector, factor = 1.0) {
-    return new FP_Vector(
-      this.x - vector.x * factor,
-      this.y - vector.y * factor
-    );
+    return new FP_Vector(this.x - vector.x * factor, this.y - vector.y * factor);
   }
   mul(vector, num = 1) {
     return new FP_Vector(this.x + num * vector.x, this.y + num * vector.y);
@@ -678,20 +647,34 @@ class FP_Vector {
     if (this.x * vector.y - this.y * vector.x < 0) angle = 2 * Math.PI - angle;
     return angle;
   }
+  radAngleBetweenVectorsSharp(vector) {
+    let angle = this.radAngleBetweenVectors(vector);
+    angle = angle % Math.PI;
+    if (angle > Math.PI / 2) {
+      angle -= Math.PI;
+    }
+    return angle;
+    //return Math.max(-Math.PI / 2, Math.min(angle, Math.PI / 2));
+  }
 }
 
-
-class Vector {
+class Vector extends MasterVectorClass {
   static W = 3;
   constructor(x = 0, y = 0) {
+    super();
     this.x = parseInt(x, 10);
     this.y = parseInt(y, 10);
   }
   static toClass(vector) {
     return new Vector(vector.x, vector.y);
   }
-  normalize() {
-    return new Vector(this.x / Math.abs(this.x), this.y / Math.abs(this.y));
+  clone() {
+    return new Vector(this.x, this.y);
+  }
+  signVector() {
+    const x = this.x === 0 ? 0 : this.x / Math.abs(this.x);
+    const y = this.y === 0 ? 0 : this.y / Math.abs(this.y);
+    return new Vector(x, y);
   }
   isInAt(dirArray) {
     for (let q = 0; q < dirArray.length; q++) {
@@ -866,13 +849,6 @@ class Vector {
     let Angle2 = vector.toRad();
     let Angle1 = this.toRad();
     return Angle2 - Angle1;
-  }
-  rotate(rad) {
-    let COS = Math.cos(rad);
-    let SIN = Math.sin(rad);
-    let x = this.x * COS - this.y * SIN;
-    let y = this.x * SIN + this.y * COS;
-    return new FP_Vector(x, y);
   }
   static sumVectors(arr) {
     let sum = arr.pop();

@@ -1909,14 +1909,19 @@ class BouncingMissile extends Missile {
         super(position, direction, type, magic);
         this.name = "BouncingMissile";
         this.bounceCount = 0;
+        this.maxPower = this.power;
+        this.minPower = (this.power * 0.2) >>> 0;
+        this.originalScale = new Float32Array(this.scale);
     }
     static calcMana(magic) {
         return (2 * (magic ** 1.25)) | 0;
     }
+    calcPower(magic) {
+        return (3 * magic) + RND(-3, 3);
+    }
     rebound(innerPoint, GA, IAM) {
         const pos2D = Vector3.to_FP_Grid(this.pos);
         const dir2D = Vector3.to_FP_Vector(this.dir);
-        console.log(`%c###:`, "color: #00F", ".outerPoint:", pos2D, `innerPoint:`, innerPoint);
         const reboundDir = GRID.getReboundDir(innerPoint, pos2D, dir2D, GA);
         if (!reboundDir) return this.explode(IAM);
         const new3D_dir = Vector3.from_2D_dir(reboundDir);
@@ -1924,13 +1929,17 @@ class BouncingMissile extends Missile {
         this.bounceCount++;
     }
     hitWall(IAM, point, GA) {
-        console.info("HIT WALL", "power", this.power, "this.bounceCount", this.bounceCount);
-        this.rebound(point, GA, IAM);
+        if (this.power >= this.minPower) {
+            this.rebound(point, GA, IAM);
+            this.power--;
+            const scaleFactor = this.power / this.maxPower;
+            glMatrix.vec3.scale(this.scale, this.originalScale, scaleFactor);
+            const mScaleMatrix = glMatrix.mat4.create();
+            glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
+            this.mScaleMatrix = mScaleMatrix;
 
+        } else this.explode(IAM);
 
-
-        //
-        //this.explode(IAM);
     }
     explode(IAM) {
         IAM.remove(this.id);

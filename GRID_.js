@@ -1173,6 +1173,7 @@ class GridArray extends ArrayBasedDataStructure {
     }
     return [start, lastDir];
   }
+
   positionIsNotWall(pos) {
     let grid = Grid.toClass(pos);
     let check = this.check(grid, MAPDICT.WALL);
@@ -1186,6 +1187,26 @@ class GridArray extends ArrayBasedDataStructure {
     }
     return true;
   }
+
+  /**
+ * @param {FP_Grid} pos - position of entity
+ * @param {number} exlusion - binary constant from MAP_DICT, @default MAPDICT.WALL
+ * @returns {boolean} - true if position is not in wall or other exluded type
+ */
+  positionIsNotExcluded(pos, exclusion = [MAPDICT.WALL, MAPDICT.HOLE]) {
+    let grid = Grid.toClass(pos);
+    let check = this.check(grid, exclusion.sum());
+    return !check;
+  }
+  entityNotInExcusion(pos, dir, r, exclusion = [MAPDICT.WALL, MAPDICT.HOLE], resolution = 8) {
+    let checks = this.pointsAroundEntity(pos, dir, r, resolution);
+    for (const point of checks) {
+      let notExcluded = this.positionIsNotExcluded(point, exclusion);
+      if (!notExcluded) return false;
+    }
+    return true;
+  }
+
   entityInWallPoint(pos, dir, r, resolution = 8) {
     let checks = this.pointsAroundEntity(pos, dir, r, resolution);
     for (const point of checks) {

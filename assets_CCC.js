@@ -196,6 +196,7 @@ LoadAudio = [
     { srcName: "OpenChest.mp3", name: "OpenChest" },
     { srcName: "SwordHit.mp3", name: "SwordHit" },
     { srcName: "SwordMiss2.mp3", name: "SwordMiss" },
+    { srcName: "short-buzz.mp3", name: "Buzz" },
 
     //monstersounds
     { srcName: "MonsterDeath.mp3", name: "MonsterDeath" },

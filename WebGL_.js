@@ -1336,7 +1336,8 @@ class $3D_player {
         }
 
         if (this.bumpEnemy(nextPos)) return;
-        let check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        //let check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        const check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
 
         if (check) {
             this.setPos(nextPos3);
@@ -1354,7 +1355,8 @@ class $3D_player {
         }
 
         if (this.bumpEnemy(nextPos)) return;
-        let check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        //let check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        const check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
         if (check) {
             this.setPos(nextPos3);
         }
@@ -1935,6 +1937,8 @@ class BouncingMissile extends Missile {
     hitWall(IAM, point, GA) {
         if (this.power >= this.minPower) {
             this.rebound(point, GA, IAM);
+            AUDIO.Buzz.volume = RAY.volume(this.distance);
+            AUDIO.Buzz.play();
             this.power--;
             const scaleFactor = this.power / this.maxPower;
             glMatrix.vec3.scale(this.scale, this.originalScale, scaleFactor);

@@ -26,7 +26,7 @@ knownBugs:
 /////////////////////////////////////////
 
 const AI = {
-  VERSION: "2.00",
+  VERSION: "2.01",
   CSS: "color: silver",
   VERBOSE: false,
   INI: {

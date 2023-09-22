@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.00",
+  VERSION: "0.07.01",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -84,6 +84,7 @@ const PRG = {
     $("#grid").click(GAME.render);
 
     $("#buttons").on("click", "#new", GAME.init);
+    $("#buttons").on("click", "#arena", GAME.arena);
     $("#buttons").on("click", "#export", GAME.export);
     $("#buttons").on("click", "#import", GAME.import);
     $("#buttons").on("click", "#copy", GAME.copyToClipboard);
@@ -172,6 +173,13 @@ const GAME = {
     this.setWorld(level);
 
   },
+  arena() {
+    GAME.init();
+    let GA = $MAP.map.GA;
+    GA.massClear();
+    GA.border(parseInt($("#arenawidth").val(), 10));
+    GAME.render();
+  },
   mouseClick(event) {
     ENGINE.readMouse(event);
     let x = Math.floor(ENGINE.mouseX / ENGINE.gameWIDTH * $MAP.width);
@@ -198,6 +206,11 @@ const GAME = {
         break;
       case "wall":
         GA.toWall(grid);
+        $("#error_message").html("All is fine");
+        break;
+      case "hole":
+        GAME.clearGrid(gridIndex);
+        GA.toHole(grid);
         $("#error_message").html("All is fine");
         break;
       case "door":
@@ -275,16 +288,7 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "cleargrid":
-        $MAP.combine();
-        for (let arrType of $MAP.combined) {
-          let iElementToRemove = [];
-          for (let [index, element] of arrType.entries()) {
-            if (element[0] === gridIndex) {
-              iElementToRemove.push(index);
-            }
-          }
-          arrType.removeIfIndexInArray(iElementToRemove);
-        }
+        GAME.clearGrid(gridIndex);
         $("#error_message").html("All is fine: grid cleared");
         break;
       case "start":
@@ -415,6 +419,18 @@ const GAME = {
 
     GAME.render();
   },
+  clearGrid(gridIndex) {
+    $MAP.combine();
+    for (let arrType of $MAP.combined) {
+      let iElementToRemove = [];
+      for (let [index, element] of arrType.entries()) {
+        if (element[0] === gridIndex) {
+          iElementToRemove.push(index);
+        }
+      }
+      arrType.removeIfIndexInArray(iElementToRemove);
+    }
+  },
   assertUniqueDecalPosition(gridIndex, dirIndex, array) {
     for (let [index, element] of array.entries()) {
       if (element[0] === gridIndex) {
@@ -531,7 +547,7 @@ const GAME = {
     if (OK) {
       $MAP.width = $("#horizontalGrid").val();
       $MAP.height = $("#verticalGrid").val();
-      $MAP.map = FREE_MAP.create($MAP.width, $MAP.height);
+      $MAP.map = FREE_MAP.create($MAP.width, $MAP.height, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
       $MAP.init();
       console.log("map:", $MAP.map);
       GAME.render();
@@ -613,6 +629,7 @@ const GAME = {
     ENGINE.addBOX("WEBGL", 800, 600, ["3d_webgl"], null);
 
     $("#buttons").append("<input type='button' id='new' value='New'>");
+    $("#buttons").append("<input type='button' id='arena' value='Arena'>");
     $("#buttons").append("<input type='button' id='export' value='Export'>");
     $("#buttons").append("<input type='button' id='import' value='Import'>");
     $("#buttons").append("<input type='button' id='copy' value='Copy to Clipboard'>");
@@ -780,7 +797,7 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     const ImportText = $("#exp").val();
     console.info("ImportText", ImportText);
     const Import = JSON.parse(ImportText.extractGroup(/data:\s\'(.*)\'/));
-    const roomId = ImportText.extract(/^\w*/);
+    const roomId = ImportText.extractGroup(/^\s*(\w*)/);
     $("#roomid").val(roomId);
     const roomName = ImportText.extractGroup(new RegExp(`name:\\s"(.*)"`));
     $("#roomname").val(roomName);
@@ -792,7 +809,7 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     }
 
     GAME.updateTextures();
-    $MAP.map = FREE_MAP.import(Import);
+    $MAP.map = FREE_MAP.import(Import, MAP_TOOLS.INI.GA_BYTE_SIZE);
     $MAP.init();
 
     for (const prop of $MAP.properties) {

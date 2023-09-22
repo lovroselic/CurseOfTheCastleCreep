@@ -18,7 +18,7 @@ Prototype and helpful functions library
 as used by LS
 
 changelog:
-4.00: new fresh version
+4.00: new fresh version, master grid and vector classes
 
 */
 
@@ -86,12 +86,10 @@ changelog:
     }
     return rgb;
   }
-
   function RGB_vectorToRGB_string(rgb) {
     if (rgb.length !== 3) throw new Error(`Invalid length of rgb vector: ${rbg.length}`);
     return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
   }
-
   function colorVectorToRGB_String(vector) {
     return RGB_vectorToRGB_string(colorVectorToRGB_Vector(vector));
   }
@@ -182,17 +180,54 @@ Date.prototype.stringify = function () {
 };
 
 
-// Converts from degrees to radians.
+/** Math */
+
+/**
+ * Converts an angle from degrees to radians.
+ *
+ * @param {number} degrees - The angle in degrees.
+ * @returns {number} - The angle in radians.
+ */
 Math.radians = function (degrees) {
+  if (typeof degrees !== 'number') {
+    throw new Error('The argument should be a number.');
+  }
+
   return (degrees * Math.PI) / 180;
 };
-// Converts from radians to degrees.
+
+/**
+ * Converts an angle from radians to degrees.
+ *
+ * @param {number} radians - The angle in radians.
+ * @returns {number} - The angle in degrees.
+ */
 Math.degrees = function (radians) {
+  if (typeof radians !== 'number') {
+    throw new Error('The argument should be a number.');
+  }
+
   return (radians * 180) / Math.PI;
 };
-Math.roundFloat = function (number, precision) {
-  number = (number * 10 ** precision) * (1 + Number.EPSILON);
-  return Math.round(number) / 10 ** precision;
+
+
+/**
+ * Rounds a floating-point number to the specified precision.
+ * Uses the Number.EPSILON to handle floating-point errors.
+ *
+ * @param {number} num - The number to be rounded.
+ * @param {number} decimalPlaces - The number of decimal places to round to.
+ * @returns {number} - The rounded number.
+ */
+Math.roundFloat = function (num, decimalPlaces) {
+  if (typeof num !== 'number' || typeof decimalPlaces !== 'number') {
+    throw new Error('Both arguments should be numbers.');
+  }
+
+  const factor = 10 ** decimalPlaces;
+  const epsilonCorrectedValue = num * factor * (1 + Number.EPSILON);
+
+  return Math.round(epsilonCorrectedValue) / factor;
 };
 
 CanvasRenderingContext2D.prototype.pixelAt = function (x, y, size = 1) {
@@ -304,7 +339,6 @@ Array.prototype.removeValues = function (values) {
   //remove if value, new array
   return this.filter((el, _) => !values.includes(el));
 }
-
 Array.prototype.remove = function (value) {
   const LN = this.length;
   for (var x = LN - 1; x >= 0; x--) {
@@ -475,9 +509,16 @@ Set.prototype.intersect = function (x) {
   return new Set([...this].filter(el => x.has(el)));
 };
 
+class MasterGridClass {
+  constructor() { }
+  EuclidianDistance(grid) {
+    return Math.hypot(this.x - grid.x, this.y - grid.y);
+  }
+}
 
-class Grid {
+class Grid extends MasterGridClass {
   constructor(x = 0, y = 0) {
+    super();
     this.x = parseInt(x, 10);
     this.y = parseInt(y, 10);
   }
@@ -523,8 +564,8 @@ class Grid {
     let split = dir.ortoSplit();
     solutions.push(new Direction(split[0], Math.abs(absDir.x)));
     solutions.push(new Direction(split[1], Math.abs(absDir.y)));
-    //SORT!!
-    if (solutions[0].len < solutions[1].len) solutions.swap(0, 1); //check
+   
+    if (solutions[0].len < solutions[1].len) solutions.swap(0, 1); 
     return solutions;
   }
   reflect(C) {
@@ -538,12 +579,11 @@ class Grid {
     } else y = this.y;
     return new Grid(x, y);
   }
-  EuclidianDistance(grid) {
-    return Math.hypot(this.x - grid.x, this.y - grid.y);
-  }
 }
-class FP_Grid {
+
+class FP_Grid extends MasterGridClass {
   constructor(x = 0, y = 0) {
+    super();
     this.x = parseFloat(x);
     this.y = parseFloat(y);
   }
@@ -560,9 +600,7 @@ class FP_Grid {
     let y = this.y + vector.y * length;
     return new FP_Grid(x, y);
   }
-  EuclidianDistance(grid) {
-    return Math.hypot(this.x - grid.x, this.y - grid.y);
-  }
+
   direction(grid) {
     let dx = grid.x - this.x;
     let dy = grid.y - this.y;

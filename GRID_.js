@@ -373,7 +373,7 @@ const GRID = {
     const inner = Grid.toClass(innerPoint);
     const outer = Grid.toClass(outerPoint);
     if (GA.isWall(outer)) {
-      console.error("Missile position in wall. This should never happened", outer, GA.isWall(outer));
+      console.error("Missile position in wall. This should never have happened! But it is handled.", outer, GA.isWall(outer));
       return null;
     }
     let faceNormal = outer.sub(inner);
@@ -561,25 +561,38 @@ class NodeQ {
 }
 
 const MAPDICT = {
-  EMPTY: 0, //0
-  WALL: 2 ** 0, //1
-  ROOM: 2 ** 1, //2
-  DOOR: 2 ** 2, //4 - inner door!
+  EMPTY: 0,                               //0
+  WALL: 2 ** 0,                           //1
+  ROOM: 2 ** 1,                           //2
+  DOOR: 2 ** 2,                           //4 - inner door!
+
   //original - for random maps
-  RESERVED: 2 ** 3, //8
-  START_POSITION: 2 ** 4, //16
-  STAIR: 2 ** 5, //32
-  SHRINE: 2 ** 6, // 64
-  FOG: 2 ** 7, //128 - fog should remain largest!
+  //RESERVED: 2 ** 3,                     //8 - remapped to 16 bit space
+  //START_POSITION: 2 ** 4,               //16 - - remapped to 16 bit space
+  VACANT_PLACEHODLER1: 2 ** 3,            //8
+  VACANT_PLACEHODLER2: 2 ** 4,            //16
+  STAIR: 2 ** 5,                          //32
+  SHRINE: 2 ** 6,                         //64
+
   //alternative1 - RUN scpecific
-  TRAP_DOOR: 2 ** 3, //8
-  BLOCKWALL: 2 ** 4, //16
-  VACANT_PLACEHODLER: 2 ** 5, //32
-  DEAD_END: 2 ** 6, //64
-  WATER: 2 ** 7, //128 - fog,water should remain largest!
+  TRAP_DOOR: 2 ** 3,                      //8
+  BLOCKWALL: 2 ** 4,                      //16
+  VACANT_PLACEHODLER3: 2 ** 5,            //32
+  DEAD_END: 2 ** 6,                       //64
+
+
   //alternative2 - CCC generation
-  HOLE: 2 ** 3, //8
-  GATE: 2 ** 5, //32 - STAIR alias -> route to another dungeon
+  GATE: 2 ** 5,                           //32 - STAIR alias -> route to another dungeon
+  HOLE: 2 ** 7,                           //128
+
+  //16 bit extension
+
+
+  //special
+  FOG: 2 ** 15,                            //32768 - fog should remain largest
+  WATER: 2 ** 15,                          //32768 - fog,water should remain largest!
+  RESERVED: 2 ** 14,                       //16384
+  START_POSITION: 2 ** 13,                 //8192
 };
 
 class ArrayBasedDataStructure {
@@ -683,14 +696,23 @@ class GridArray extends ArrayBasedDataStructure {
   toWall(grid) {
     this.setValue(grid, MAPDICT.WALL);
   }
+  toHole(grid) {
+    this.setValue(grid, MAPDICT.HOLE);
+  }
   carveDot(grid) {
     this.setValue(grid, MAPDICT.EMPTY);
   }
   isWall(grid) {
     return this.check(grid, MAPDICT.WALL) === MAPDICT.WALL;
   }
+  isHole(grid) {
+    return this.check(grid, MAPDICT.HOLE) === MAPDICT.HOLE;
+  }
   notWall(grid) {
     return !this.isWall(grid);
+  }
+  notHole(grid) {
+    return !this.isHole(grid);
   }
   isMazeWall(grid) {
     if (this.isOutOfBounds(grid)) return false;
@@ -1379,13 +1401,14 @@ const MINIMAP = {
     FOG: "#BBB",
     BORDER: "#FFF",
     EMPTY: "#000",
-    ROOM: "#222",
-    DOOR: "#111",
+    ROOM: "#111",
+    DOOR: "#333",
     STAIR: "#008000",
     WALL: "#8b4513", //brown
     LOCKED_DOOR: "#826644",
     HERO: "#FFF",
     SHRINE: "#FF00FF",
+    HOLE: "#444",
   },
   DATA: {
     PIX_SIZE: 4,
@@ -1453,6 +1476,9 @@ const MINIMAP = {
             break;
           case MAPDICT.DOOR:
             CTX.fillStyle = MINIMAP.LEGEND.DOOR;
+            break;
+          case MAPDICT.HOLE:
+            CTX.fillStyle = MINIMAP.LEGEND.HOLE;
             break;
           default:
             console.log("ALERT default empty", index, value, clenValue);

@@ -7,18 +7,27 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "0.2",
+    VERSION: "0.3",
     CSS: "color: #F9A",
     properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines'],
     INI: {
         FOG: true,
+        GA_BYTE_SIZE: 2
     },
     initialize(pMapObject) {
         this.MAP = pMapObject;
         if (ENGINE.verbose) console.log(`MAP TOOLS associated`, this.MAP);
     },
+    setByteSize(byte) {
+        if (![1, 2, 4].includes(byte)) {
+            console.error("MAP_TOOLS set up with wrong size. Reset to default 8 bit!");
+            byte = 1;
+        }
+        MAP_TOOLS.INI.GA_BYTE_SIZE = byte;
+        if (ENGINE.verbose) console.log(`MAP TOOLS GA bytesize`, MAP_TOOLS.INI.GA_BYTE_SIZE);
+    },
     unpack(level) {
-        this.MAP[level].map = FREE_MAP.import(JSON.parse(this.MAP[level].data));
+        this.MAP[level].map = FREE_MAP.import(JSON.parse(this.MAP[level].data), MAP_TOOLS.INI.GA_BYTE_SIZE);
         const GA = this.MAP[level].map.GA;
         this.MAP[level].pw = this.MAP[level].map.width * ENGINE.INI.GRIDPIX;
         this.MAP[level].ph = this.MAP[level].map.height * ENGINE.INI.GRIDPIX;
@@ -156,6 +165,7 @@ const SPAWN_TOOLS = {
 
 /** defaults */
 MAP_TOOLS.initialize(MAP);
+MAP_TOOLS.setByteSize(2);
 
 /** END */
 console.log(`%cMAP and SPAWN tools ${MAP_TOOLS.VERSION} loaded.`, MAP_TOOLS.CSS);

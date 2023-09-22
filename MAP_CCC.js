@@ -61,9 +61,9 @@ const MAP = {
         floor: "ScarletFloor1",
         ceil: "MossyWall3",
         decals: '[[42,5,"ArabianNights1","picture"],[8,5,"Apshai6","picture"],[44,5,"Apshai10","picture"],[44,3,"AppleLisa","picture"],[39,3,"BeachHeadReplace","picture"],[4,7,"AtariFalcon","picture"],[58,1,"AticAtac131","picture"]]',
-        lights: '[[40,5,"WallLamp","standard"],[60,1,"WallLamp3","fire"]]',
-        start: '[22,5]',
-        gates: '[[23,3,"4.1","1.3","Open"]]',
+        lights: '[[40,5,"WallLamp","standard"],[60,1,"WallLamp3","fire"],[3,7,"WallLamp","standard"]]',
+        start: '[22,3]',
+        gates: '[[23,3,"4.1","1.3","Open"],[24,5,"4.2","6.1","Open"]]',
     }
     ,
     5: {
@@ -77,6 +77,18 @@ const MAP = {
         gates: '[[112,5,"5.1","1.4","Open"]]',
         keys: '[]'
     }
+    ,
+    6 : {
+        name: "Chasm",
+        data: '{"width":"12","height":"12","map":"BÁBB8AÁÁ7AA40BB23ABB4AA3BAA3BB42A$AA8"}',
+        wall: "MossyWallExcellent",
+        floor: "ScarletRocks",
+        ceil: "DullMoss",
+        decals: '[[124,1,"Jetpac3","picture"],[127,1,"BC103","picture"],[16,7,"Pitstop3","picture"],[19,7,"Morrowind140","picture"],[37,5,"TombRaider102","picture"],[97,5,"GatewayToApshai110","picture"],[46,3,"CongoBongo2","picture"],[106,3,"BoogaBoo90","picture"],[68,4,"Grate1_128","crest"],[67,4,"Grate1_128","crest"]]',
+        lights: '[[14,7,"WallLamp","standard"],[21,7,"WallLamp","standard"],[122,1,"WallLamp3","lightRed"],[129,1,"WallLamp3","red"]]',
+        start: '[70,3]',
+        gates: '[[71,3,"6.1","4.2","Open"]]',
+        }
 };
 
 

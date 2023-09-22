@@ -1015,6 +1015,10 @@ const WORLD = {
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
                     this.addCube(Y, grid, "wall");
+                    this.addCube(Y - 1, grid, "wall");                  //support for holes
+                    break;
+                case MAPDICT.HOLE:
+                    this.addCube(Y + 1, grid, "ceil");
                     break;
                 default:
                     console.error("world building GA value error", value);

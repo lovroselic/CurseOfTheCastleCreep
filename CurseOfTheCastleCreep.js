@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.08",
+    VERSION: "0.05.09",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -535,7 +535,7 @@ const HERO = {
         const position = HERO.player.pos.translate(HERO.player.dir, HERO.player.r);
         const missile = new BouncingMissile(position, HERO.player.dir, COMMON_ITEM_TYPE.Bounceball, HERO.magic);
         MISSILE3D.add(missile);
-        setTimeout(() => (HERO.canShoot = true), 0.01 * INI.HERO_SHOOT_TIMEOUT * 2.5);
+        setTimeout(() => (HERO.canShoot = true), INI.HERO_SHOOT_TIMEOUT * 2.5);
     },
     die() {
         if (DEBUG.INVINCIBLE) return;
@@ -611,9 +611,10 @@ const GAME = {
         MINIMAP.setOffset(TITLE.stack.minimapX, TITLE.stack.minimapY);
         AI.immobileWander = false;
         GAME.completed = false;
-        GAME.level = 1;
+        //GAME.level = 1;                 //start
         //GAME.level = 3;               //shrines
         //GAME.level = 4;                 //small room
+        GAME.level = 6;                 //chasm
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
@@ -643,6 +644,7 @@ const GAME = {
     },
     buildWorld(level) {
         console.warn("building world, level", level);
+        WebGL.init_required_IAM(MAP[level].map, HERO);
         SPAWN_TOOLS.spawn(level);
         MAP[level].world = WORLD.build(MAP[level].map);
     },
@@ -687,7 +689,6 @@ const GAME = {
         }
 
         AI.initialize(HERO.player, "3D");
-        WebGL.init_required_IAM(MAP[level].map, HERO);
         WebGL.MOUSE.initialize("ROOM");
         WebGL.setContext('webgl');
 

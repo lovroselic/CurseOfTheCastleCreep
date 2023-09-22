@@ -102,7 +102,7 @@ class Bias {
     }
 }
 class MasterDungeon {
-    constructor(sizeX, sizeY, arraySize = 1) {
+    constructor(sizeX, sizeY, byte = 1) {
         this.width = parseInt(sizeX, 10);
         this.height = parseInt(sizeY, 10);
         this.maxX = sizeX - 2;
@@ -118,7 +118,7 @@ class MasterDungeon {
         this.rooms = [];
         this.lockedRooms = {};
         this.keys = {};
-        this.GA = new GridArray(sizeX, sizeY, arraySize, 1);
+        this.GA = new GridArray(sizeX, sizeY, byte, 1);
     }
     connectRooms(N, off = 1) {
         const conn = ["common", "temple"];
@@ -1134,7 +1134,7 @@ class MasterDungeon {
                 const topCenter = new Grid(x, y - 1);
                 const topRight = new Grid(x + 1, y - 1);
                 const left = new Grid(x - 1, y);
-       
+
                 for (let [index, adjacent] of [topLeft, topCenter, topRight, left].entries()) {
                     if (this.GA.isOutOfBounds(adjacent)) continue;
                     proximities[index] = matrix[adjacent.x][adjacent.y];
@@ -1169,7 +1169,7 @@ class MasterDungeon {
         for (const G of selected) {
             this.GA.reserve(G.grid);
         }
- 
+
         return selected;
     }
     freeDeadEnds(N) {
@@ -1697,8 +1697,8 @@ class RatArena extends MasterDungeon {
     }
 }
 class FreeMap extends MasterDungeon {
-    constructor(sizeX, sizeY, GA = null) {
-        super(sizeX, sizeY);
+    constructor(sizeX, sizeY, GA = null, byte = 1) {
+        super(sizeX, sizeY, byte);
         this.type = "FREE-MAP";
         if (GA !== null) this.GA = GA;
     }
@@ -1772,17 +1772,17 @@ const ARENA = {
     }
 };
 const FREE_MAP = {
-    create(sizeX, sizeY, GA = null) {
-        return new FreeMap(sizeX, sizeY, GA);
+    create(sizeX, sizeY, GA = null, byte = 1) {
+        return new FreeMap(sizeX, sizeY, GA, byte);
     },
-    import(data) {
+    import(data, byte = 1) {
         data.map = GridArray.importMap(data.map);
-        data.map = GridArray.fromString(data.width, data.height, data.map);
+        data.map = GridArray.fromString(data.width, data.height, data.map, byte);
         return FREE_MAP.create(parseInt(data.width, 10), parseInt(data.height, 10), data.map);
     }
 };
 const DUNGEON = {
-    VERSION: "4.00",
+    VERSION: "4.01",
     CSS: "color: #f4ee42",
     REFUSE_CONNECTION_TO_ROOM: true,
     LIMIT_ROOMS: false,

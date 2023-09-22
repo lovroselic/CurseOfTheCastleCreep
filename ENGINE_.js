@@ -2550,6 +2550,9 @@ const ENGINE = {
     corr(x, y, CTX, value, corr) {
       let FS;
       switch (value) {
+        case MAPDICT.HOLE:
+          FS = "#000";
+          break;
         case MAPDICT.ROOM:
           FS = "#DDD";
           break;

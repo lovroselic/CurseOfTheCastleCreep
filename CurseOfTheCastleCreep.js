@@ -8,7 +8,7 @@
 /*
       
 TODO:
-
+    * missiles should die after exiting room?
 known bugs: 
 
  */
@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.11",
+    VERSION: "0.05.12",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -612,10 +612,10 @@ const GAME = {
         AI.immobileWander = true;
         //AI.VERBOSE = true;
         GAME.completed = false;
-        //GAME.level = 1;                 //start
+        GAME.level = 1;                 //start
         //GAME.level = 3;               //shrines
         //GAME.level = 4;                 //small room
-        GAME.level = 6;                 //chasm
+        //GAME.level = 6;                 //chasm
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
@@ -644,7 +644,7 @@ const GAME = {
         MAP_TOOLS.unpack(level);
     },
     buildWorld(level) {
-        console.warn("building world, level", level);
+        console.info("building world, room/dungeon/level:", level);
         WebGL.init_required_IAM(MAP[level].map, HERO);
         SPAWN_TOOLS.spawn(level);
         MAP[level].world = WORLD.build(MAP[level].map);
@@ -928,8 +928,8 @@ const GAME = {
             }, a game by Lovro Selič, ${"\u00A9"} C00LSch00L ${PRG.YEAR
             }. 
              
-            Music: 'Laughing Skull' written and performed by LaughingSkull, ${"\u00A9"
-            } 2006 Lovro Selič. `;
+            Music: 'Time Heals Nothing' written and performed by LaughingSkull, ${"\u00A9"
+            } 2015 Lovro Selič. `;
         text += "     ENGINE, SPEECH, GRID, MAZE, Burrows-Wheeler RLE Compression, WebGL and GAME code by Lovro Selič using JavaScript and GLSL. ";
         text += "     glMatrix library by Brandon Jones and Colin MacKenzie IV. Thanks. ";
         text = text.split("").join(String.fromCharCode(8202));

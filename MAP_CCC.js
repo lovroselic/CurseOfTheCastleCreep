@@ -12,7 +12,7 @@ console.log("%cMAP for CCC loaded.", "color: #888");
 const MAP = {
     1: {
         name: "Entrance",
-        data: '{"width":"16","height":"16","map":"BB2ABAA7BABABAA2BB2ABB2ABB2ABAA2BB2AA5BB2AA8BAA3BABAA4BAA4BB2ABAA2BAA2BAA23BABB2AA3BAA2BABAA6BAA5BB6AA2BABABB7AA2BB2AA2BB12ABB2ABB3AA2BB4ABAA2BB3ABABB7ABAA3BB2AA2BABB2AA3BB2ABB6ABB2ABB4AA2BB31AB$"}',
+        data: '{"width":"16","height":"16","map":"BB2ABAA7BABAA3BABB2ABB4AA2BB2AA4BB2AA4BAA4BAA3BAA4BAA2BAA2BAA2BABB2AA3BAA22BAA2BAA3BABAA8EABAA4BB5AA2BB2ABB6ABABB2AA3BB9ABB4EBAA2BB4ABAA2BB10EBAA3BAA2BABB2AA2EBB2ABB7ABB4AA2BB31AB$ABB3AA2BB3ABB3"}',
         wall: "DungeonWall",
         floor: "GreenDungeonWall",
         ceil: "GreyDungeonFloor",
@@ -27,6 +27,7 @@ const MAP = {
         gold: '[[37,"GoldBar"],[36,"SilverBar"],[35,"GoldCube"],[34,"Coins"]]',
         skills: '[[194,"Sword"],[195,"Sting"],[210,"Shield"],[211,"Magic"],[226,"Heart"],[227,"Mana"]]',
         containers: '[[67,"Chest","GOLD_ITEM_TYPE.GoldBar"],[84,"TreasureChest","SKILL_ITEM_TYPE.Sword"]]',
+        doors: '[49,93,189,179]',
     }
     ,
     2: {
@@ -1411,17 +1412,6 @@ const SPAWN = {
 
 
 
-/*const GATE_TYPE = {
-    Common: {
-        name: "Common",
-        color: null,
-        locked: false,
-        texture: "WoodenGate1",
-        element: "CUBE_SM",
-        material: MATERIAL.standardShine,
-    },
- 
-};*/
 
 
 

@@ -29,7 +29,7 @@ const MAP = {
 
 const $MAP = {
   map: {},
-  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines'],
+  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors'],
   combined: [],
   init() {
     for (const prop of this.properties) {
@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.01",
+  VERSION: "0.07.02",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -214,8 +214,14 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "door":
-        GA.toDoor(grid);
-        $("#error_message").html("All is fine");
+        if (GA.notWall(grid)) {
+          GAME.clearGrid(gridIndex);
+          GA.toDoor(grid);
+          $MAP.map.doors.push(gridIndex);
+          $("#error_message").html("All is fine");
+        } else {
+          $("#error_message").html("You can't make door in the wall!");
+        }
         break;
       case "trapdoor":
         GA.addTrapDoor(grid);

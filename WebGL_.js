@@ -63,8 +63,10 @@ const WebGL = {
     CONFIG: {
         firstperson: true,
         dual: false,
-        set(type, dual = false) {
+        prevent_movement_in_exlusion_grids: true,
+        set(type, dual = false, prevent = true) {
             this.dual = dual;
+            this.prevent_movement_in_exlusion_grids = prevent;
             switch (type) {
                 case "first_person":
                     this.firstperson = true;
@@ -75,9 +77,8 @@ const WebGL = {
                 default:
                     throw `WebGL CONFIG type error: ${type}`;
             }
-            if (WebGL.VERBOSE) console.info(`%cWebGL set to type: ${type}, dual mode: ${dual}`, WebGL.CSS);
+            if (WebGL.VERBOSE) console.info(`%cWebGL set to type: ${type}, dual mode: ${dual}, prevent_movement_in_exlusion_grids: ${prevent}`, WebGL.CSS);
         }
-
     },
     programs_compiled: false,
     program: null,
@@ -1336,9 +1337,12 @@ class $3D_player {
         }
 
         if (this.bumpEnemy(nextPos)) return;
-        //let const = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
-        const check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
-
+        let check;
+        if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
+            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        } else {
+            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        }
         if (check) {
             this.setPos(nextPos3);
         }
@@ -1355,8 +1359,12 @@ class $3D_player {
         }
 
         if (this.bumpEnemy(nextPos)) return;
-        //const check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
-        const check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        let check;
+        if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
+            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        } else {
+            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        }
         if (check) {
             this.setPos(nextPos3);
         }
@@ -1743,7 +1751,7 @@ class Gate extends Drawable_object {
             this.interactive = false;
             this.lift();
             GA.openDoor(this.grid);
-            AUDIO.OpenGate.play();
+            AUDIO.LiftGate.play();
             return { category: "title", section: "keys" };
         } else {
             AUDIO.ClosedDoor.play();
@@ -2978,9 +2986,9 @@ const ELEMENT = {
             // Back
             0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0,
             // Top
-            0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0,
+            0.0, 0.0, 0.05, 0.0, 0.05, 0.05, 0.0, 0.05,
             // Bottom
-            0.0, 0.0, 0.1, 0.0, 0.1, 0.1, 0.0, 0.1,
+            0.0, 0.0, 0.05, 0.0, 0.5, 0.05, 0.0, 0.05,
             // Right
             0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0,
             // Left

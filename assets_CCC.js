@@ -174,10 +174,11 @@ LoadTextures = [
 
 ];
 LoadAudio = [
-    { srcName: "Laughing Skull.mp3", name: "Title" },
+    { srcName: "Time Heals Nothing - LaughingSkull.mp3", name: "Title" },
     { srcName: "UseScroll.mp3", name: "PickBox" },
     { srcName: "Scream.mp3", name: "Scream" },
     { srcName: "SqueekyDoorOpen.mp3", name: "OpenGate" },
+    { srcName: "OpenGate.mp3", name: "LiftGate" },
     { srcName: "ClosedDoor.mp3", name: "ClosedDoor" },
     { srcName: "Keys.mp3", name: "Keys" },
     { srcName: "Swallow.mp3", name: "Swallow" },

@@ -9,7 +9,7 @@
 const MAP_TOOLS = {
     VERSION: "0.3",
     CSS: "color: #F9A",
-    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines'],
+    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
@@ -55,7 +55,7 @@ const MAP_TOOLS = {
 };
 const SPAWN_TOOLS = {
     spawn(level) {
-        console.info("spawning level", level);
+        //console.info("spawning level", level);
         const map = MAP_TOOLS.MAP[level].map;
         const GA = map.GA;
         this.decals(map, GA);
@@ -69,6 +69,7 @@ const SPAWN_TOOLS = {
         this.gold(map, GA);
         this.skills(map, GA);
         this.containers(map, GA);
+        this.doors(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -159,6 +160,13 @@ const SPAWN_TOOLS = {
             GA.addShrine(grid);
             const face = DirectionToFace(Vector.fromInt(S[1]));
             INTERACTIVE_DECAL3D.add(new Shrine(grid, face, SHRINE_TYPE[S[2]]));
+        }
+    },
+    doors(map, GA){
+        for (const door of map.doors){
+            const grid = GA.indexToGrid(door);
+            GA.closeDoor(grid);
+            GATE3D.add(new Gate(grid, DOOR_TYPE.Common));
         }
     }
 };

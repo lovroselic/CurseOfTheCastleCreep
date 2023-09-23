@@ -185,6 +185,19 @@ const CONTAINER_ITEM_TYPE = {
     },
 };
 
+
+const DOOR_TYPE = {
+    Common: {
+        name: "Common",
+        color: null,
+        locked: false,
+        texture: "WoodenGate1",
+        element: "CUBE_SM",
+        material: MATERIAL.standardShine,
+    },
+
+};
+
 const COMMON_ITEM_TYPE = {
     Scroll: {
         name: "Scroll",

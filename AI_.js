@@ -45,8 +45,17 @@ const AI = {
       case "3D": return Vector3.toGrid(enemy.moveState.pos);
     }
   },
+  getGridValue(enemy) {
+    const gridValue = [MAPDICT.WALL];
+    if (!enemy.fly) {
+      gridValue.push(...[MAPDICT.HOLE]);
+    }
+    return gridValue;
+  },
   wanderer(enemy) {
-    let directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), MAPDICT.WALL, enemy.moveState.dir.mirror());
+    let gridValue = this.getGridValue(enemy);
+    gridValue = gridValue.sum();
+    const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.moveState.dir.mirror());
     if (directions.length) {
       return [directions.chooseRandom()];
     } else {
@@ -96,7 +105,8 @@ const AI = {
       return this.hunt(enemy, exactPosition);
     }
 
-    let Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, [MAPDICT.WALL], "exclude", block);
+    const gridValue = this.getGridValue(enemy);
+    const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude", block);
     if (this.VERBOSE) console.log(`.. ${enemy.name} ${enemy.id} Astar`, Astar);
     if (Astar === null) {
       return this.immobile(enemy);
@@ -129,8 +139,9 @@ const AI = {
     return [directions[distances.indexOf(maxDistance)]];
   },
   goto(enemy) {
-    let goal = enemy.guardPosition; // should be set in SPAWN!
-    let Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, [MAPDICT.WALL], "exclude");
+    const gridValue = this.getGridValue(enemy);
+    const goal = enemy.guardPosition; // should be set in SPAWN!
+    const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude");
 
     if (Astar === null) {
       return this.immobile(enemy);
@@ -214,11 +225,10 @@ const AI = {
     } else return this.immobile(enemy);
   },
   shadower(enemy, ARG) {
-    let directions = enemy.parent.map.GA.getDirectionsIfNot(
-      this.getPosition(enemy),
-      MAPDICT.WALL,
-      enemy.moveState.dir.mirror()
-    );
+    let gridValue = this.getGridValue(enemy);
+
+    //let directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), MAPDICT.WALL, enemy.moveState.dir.mirror());
+    const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.moveState.dir.mirror());
     if (directions.length === 1) return [directions[0]];
     if (enemy.moveState.goingAway(ARG.MS) || enemy.moveState.towards(ARG.MS, enemy.tolerance)) {
       //if going away or not coming towards, take HERo's dir if possible
@@ -258,8 +268,9 @@ const AI = {
     }
     let distances = [];
     let paths = [];
+    let gridValue = this.getGridValue(enemy);
     for (let cross of crossroads) {
-      let Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), cross, [MAPDICT.WALL], "exclude", ARG.block);
+      const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), cross, gridValue, "exclude", ARG.block);
 
       if (Astar === null) {
         return this.immobile(enemy);

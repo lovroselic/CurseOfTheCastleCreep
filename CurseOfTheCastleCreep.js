@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.10",
+    VERSION: "0.05.11",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -609,7 +609,8 @@ const GAME = {
         ENGINE.watchVisibility(GAME.lostFocus);
         ENGINE.GAME.start(16);
         MINIMAP.setOffset(TITLE.stack.minimapX, TITLE.stack.minimapY);
-        AI.immobileWander = false;
+        AI.immobileWander = true;
+        //AI.VERBOSE = true;
         GAME.completed = false;
         //GAME.level = 1;                 //start
         //GAME.level = 3;               //shrines

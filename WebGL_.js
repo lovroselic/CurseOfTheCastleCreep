@@ -1336,7 +1336,7 @@ class $3D_player {
         }
 
         if (this.bumpEnemy(nextPos)) return;
-        //let check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        //let const = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
         const check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
 
         if (check) {
@@ -1355,7 +1355,7 @@ class $3D_player {
         }
 
         if (this.bumpEnemy(nextPos)) return;
-        //let check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+        //const check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
         const check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
         if (check) {
             this.setPos(nextPos3);

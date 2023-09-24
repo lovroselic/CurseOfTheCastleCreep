@@ -702,9 +702,6 @@ class GridArray extends ArrayBasedDataStructure {
   carveDot(grid) {
     this.setValue(grid, MAPDICT.EMPTY);
   }
-  toEmpty(grid) {
-    return this.carveDot(grid);
-  }
   isWall(grid) {
     return this.check(grid, MAPDICT.WALL) === MAPDICT.WALL;
   }

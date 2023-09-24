@@ -176,8 +176,10 @@ const SPAWN_TOOLS = {
             const grid = GA.indexToGrid(T[0]);
             const face = DirectionToFace(Vector.fromInt(T[1]));
             const picture = T[2];
-            console.info(".debug", grid, face, picture);
-            const trigger = new Trigger(grid, face, picture);
+            const action = TRIGGER_ACTIONS[T[3]];
+            const targetGrid = GA.indexToGrid(T[4]);
+            console.info(".debug", grid, face, picture, action, targetGrid);
+            const trigger = new Trigger(grid, face, picture, action, targetGrid, GA);
             console.log("..trigger", trigger);
             INTERACTIVE_DECAL3D.add(trigger);
         }

@@ -134,14 +134,18 @@ const WebGL = {
         if (this.VERBOSE) console.log(`%cContext:`, this.CSS, this.CTX);
         if (!this.CTX) console.error("Unable to initialize WebGL. Your browser or machine may not support it.");
     },
-    init(layer, world, textureData, camera, decalsAreSet) {
+    setWorld(world) {
+        const gl = this.CTX;
         this.world = world;
+        this.initAllBuffers(gl, world);
+    },
+    init(layer, world, textureData, camera, decalsAreSet) {
         this.setContext(layer);
         const gl = this.CTX;
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
         this.initPrograms(gl);
-        this.initAllBuffers(gl, world);
+        this.setWorld(world);
         this.setTexture(textureData);
         if (!decalsAreSet) this.setDecalTextures();
         this.aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
@@ -844,9 +848,8 @@ const WORLD = {
         if (decal.category === "crest" && decal.expand) {
             resolution = this.divineResolution(decal.texture);
         }
-        const [leftX, rightX, topY, bottomY] = this.getBoundaries(decal.category, decal.texture.width, decal.texture.height, resolution);
+        const [leftX, rightX, topY, bottomY] = this.getBoundaries(decal.category, decal.width, decal.height, resolution);
         const E = ELEMENT[`${decal.face}_FACE`];
-
         let positions = E.positions.slice();
         let indices = E.indices.slice();
         let textureCoordinates = E.textureCoordinates.slice();
@@ -1531,6 +1534,8 @@ class Decal {
         this.texture = texture;
         this.category = category;
         this.name = name;
+        this.width = this.texture.width;
+        this.height = this.texture.height;
     }
 }
 
@@ -1975,25 +1980,29 @@ class WallFeature3D {
             this[prop] = type[prop];
         }
         this.texture = SPRITE[this.sprite];
+        this.width = this.texture.width;
+        this.height = this.texture.height;
     }
 }
 
 class Trigger extends WallFeature3D {
-    constructor(grid, face, sprite) {
+    constructor(grid, face, sprite, action, targetGrid, GA) {
         const type = {
             name: "trigger",
             category: 'crest',
             sprite: sprite
         };
         super(grid, face, type);
+        this.action = action.split("->")[1];
+        this.targetGrid = targetGrid;
+        this.GA = GA;
     }
     interact() {
-        console.log("trigger interaction");
         this.interactive = false;
-
-
-
-
+        this.GA[this.action](this.targetGrid);
+        return {
+            category: "rebuild",
+        };
     }
 }
 

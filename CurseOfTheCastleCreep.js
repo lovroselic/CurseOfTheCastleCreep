@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.13",
+    VERSION: "0.05.14",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -732,6 +732,12 @@ const GAME = {
             GRID.paintCoord("coord", MAP[level].map);
         }
     },
+    rebuild(level) {
+        console.time("rebuildingWorld");
+        MAP[level].world = WORLD.build(MAP[level].map);
+        WebGL.setWorld(MAP[level].world);
+        console.timeEnd("rebuildingWorld");
+    },
     continueLevel(level) {
         GAME.levelExecute();
     },
@@ -833,6 +839,9 @@ const GAME = {
                 AUDIO.OpenChest.play();
                 EXPLOSION3D.add(new WoodExplosion(Vector3.from_array(interaction.pos)));
                 return this.processInteraction(evalObjectString(CONTAINER_CONTENT_TYPES, interaction.instanceIdentification));
+            case "rebuild":
+                GAME.rebuild(GAME.level);
+                break;
             default:
                 console.error("interaction category error", interaction);
         }

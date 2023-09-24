@@ -29,8 +29,7 @@ const MAP = {
 
 const $MAP = {
   map: {},
-  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines',
-    'doors', 'triggers'],
+  properties: null,
   combined: [],
   init() {
     for (const prop of this.properties) {
@@ -53,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.03",
+  VERSION: "0.07.04",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -112,6 +111,8 @@ const HERO = {};
 
 const GAME = {
   start() {
+    $MAP.properties = MAP_TOOLS.properties;
+    console.warn("$MAP.properties", $MAP.properties);
     $("#bottom")[0].scrollIntoView();
     ENGINE.topCanvas = ENGINE.getCanvasName("ROOM");
     $(ENGINE.topCanvas).on("click", { layer: ENGINE.topCanvas }, GAME.mouseClick);

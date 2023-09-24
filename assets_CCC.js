@@ -124,13 +124,12 @@ LoadTextures = [
     { srcName: "Wall9.jpg", name: "Wall9" },
     { srcName: "Wall8.jpg", name: "Wall8" },
     { srcName: "GreyWall.jpg", name: "GreyWall" },
-
     { srcName: "MossyTiles.jpg", name: "MossyTiles" },
     { srcName: "SmallTiles1.jpg", name: "SmallTiles1" },
     { srcName: "BrokenTile1.jpg", name: "BrokenTile1" },
     { srcName: "Broken1.jpg", name: "Broken1" },
     { srcName: "OrderedTiles.jpg", name: "OrderedTiles" },
-
+    
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -159,7 +158,7 @@ LoadTextures = [
     { srcName: "AstroRed.jpg", name: "AstroRed" },
 
     //new
-    { srcName: "GreenMetal.jpg", name: "GreenMetal" }, 
+    { srcName: "GreenMetal.jpg", name: "GreenMetal" },
     { srcName: "BlueMetal.jpg", name: "BlueMetal" },
 
     //decal-gates
@@ -236,6 +235,10 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 ];
 
 LoadSprites = [
+    //triggers
+    { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },
+    { srcName: "MarbleTriggerButton.png", name: "MarbleTriggerButton" },
+
     //inv
     { srcName: "bag.png", name: "Bag" },
     { srcName: "wavyL.png", name: "wavyL" },
@@ -249,6 +252,7 @@ LoadSprites = [
     { srcName: "dungeondoor_open.png", name: "DungeonDoor_Open" },
     { srcName: "dungeondoor_red.png", name: "DungeonDoor_Red" },
     { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
+
     //lights
     { srcName: "WallLamp256.png", name: "WallLamp" },
     { srcName: "WallLamp2.png", name: "WallLamp2" },
@@ -310,7 +314,7 @@ LoadSprites = [
     { srcName: "RedPotion24.png", name: "RedPotion24" },
     { srcName: "GreenKey.png", name: "GreenKey" },
     { srcName: "BlueKey.png", name: "BlueKey" },
-    
+
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },
     { srcName: "Drain64.png", name: "Drain64" },

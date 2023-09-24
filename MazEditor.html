@@ -152,6 +152,11 @@
                             <input type="radio" name="painter" value="start"> Start position <br />
                             <hr>
                             <input type="radio" name="painter" value="cleargrid"> Clear grid <br />
+                            <hr>
+                            <input type="radio" name="painter" value="trigger"> Trigger <br />
+                            <div class="d-flex justify-content-center">
+                                <select id="trigger_actions"> </select>
+                            </div>
 
                         </fieldset>
 
@@ -213,7 +218,7 @@
                                 <div class="d-flex justify-content-center">
                                     <select id="picture_decal"> </select>
                                 </div>
-                                <div>
+                                <div class="d-flex justify-content-center">
                                     <canvas id="picturecanvas" width="256" height="256"></canvas>
                                 </div>
                             </div>
@@ -228,9 +233,22 @@
                                 <div class="d-flex justify-content-center">
                                     <select id="crest_decal"> </select>
                                 </div>
-                                <div>
+                                <div class="d-flex justify-content-center">
                                     <canvas id="crestcanvas" width="256" height="256"></canvas>
                                 </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Trigger decals
+                            </legend>
+                            <input type="button" id="randtriggerdecal" value="Random" />
+                            <br />
+                            <div class="d-flex justify-content-center">
+                                <select id="trigger_decal"> </select>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <canvas id="triggercanvas" width="48" height="48"></canvas>
                             </div>
                         </fieldset>
                         <fieldset>
@@ -360,24 +378,18 @@
                             Export:
                         </legend>
                         <textarea id="exp" style="width: 1200px; height: 256px;">
-1 : {
-    name: "Entrance",
-    data: '{"width":"16","height":"16","map":"BB2ABAA7BABAA3BABB2ABB4AA2BB2AA4BB2AA4BAA4BAA3BAA4BAA2BAA2BAA2BABB2AA3BAA22BAA2BAA3BABAA8EABAA4BB5AA2BB2ABB6ABABB2AA3BB9ABB4EBAA2BB4ABAA2BB10EBAA3BAA2BABB2AA2EBB2ABB7ABB4AA2BB31AB$ABB3AA2BB3ABB3"}',
-    wall: "DungeonWall",
-    floor: "GreenDungeonWall",
-    ceil: "GreyDungeonFloor",
-    decals: '[[88,5,"AticAtac112","picture"],[88,3,"AticAtac111","picture"],[88,1,"AticAtac110","picture"],[56,4,"RoundGrille96","crest"],[136,1,"LS","crest"],[23,7,"Zaxxon89","picture"],[25,7,"BlueMax20","picture"],[99,7,"ActecChallenge2","picture"],[75,7,"AntAttack2","picture"],[107,7,"Arena2","picture"],[131,5,"AA100","picture"],[153,5,"AMC3","picture"],[178,7,"MonkeyIsland143","picture"],[180,7,"DungeonMaster96","picture"],[241,1,"OReillyMine50","picture"],[243,1,"Scramble7","picture"]]',
-    lights: '[[88,7,"WallLamp","standard"],[32,5,"WallLamp","red"],[131,3,"WallLamp","standard"],[14,7,"Lamp4","yellowgreen"],[141,7,"WallTorch","fire"],[214,5,"WallLamp3","red"],[244,1,"WallTorch","fire"],[177,7,"WallTorch","fire"]]',
-    start: '[24,7]',
-    gates: '[[8,7,"1.1","2.1","Closed"],[248,1,"1.2","3.1","Red"],[128,5,"1.3","4.1","Open"],[207,3,"1.4","5.1","Open"]]',
-    keys: '[[102,0],[103,1],[104,2],[105,2],[106,3],[120,4]]',
-    monsters: '[[72,"Bat"],[118,"RedGoldBat"],[166,"SkeletonDemo"]]',
-    scrolls: '[[132,0],[149,1],[164,8]]',
-    potions: '[[199,0],[202,1]]',
-    gold: '[[37,"GoldBar"],[36,"SilverBar"],[35,"GoldCube"],[34,"Coins"]]',
-    skills: '[[194,"Sword"],[195,"Sting"],[210,"Shield"],[211,"Magic"],[226,"Heart"],[227,"Mana"]]',
-    containers: '[[67,"Chest","GOLD_ITEM_TYPE.GoldBar"],[84,"TreasureChest","SKILL_ITEM_TYPE.Sword"]]',
-    doors: '[49,93,189,179]',
+6 : {
+    name: "Chasm",
+    data: '{"width":"12","height":"12","map":"BÁBB8AÁÁ7AA40BB23ABB4AA3BAA3BB42A$AA8"}',
+    wall: "MossyWallExcellent",
+    floor: "ScarletRocks",
+    ceil: "DullMoss",
+    decals: '[[124,1,"Jetpac3","picture"],[127,1,"BC103","picture"],[16,7,"Pitstop3","picture"],[19,7,"Morrowind140","picture"],[37,5,"TombRaider102","picture"],[97,5,"GatewayToApshai110","picture"],[46,3,"CongoBongo2","picture"],[106,3,"BoogaBoo90","picture"],[68,4,"Grate1_128","crest"],[67,4,"Grate1_128","crest"]]',
+    lights: '[[14,7,"WallLamp","standard"],[21,7,"WallLamp","standard"],[122,1,"WallLamp3","lightRed"],[129,1,"WallLamp3","red"],[126,1,"WallLamp","standard"],[18,7,"WallLamp","standard"]]',
+    start: '[70,3]',
+    gates: '[[71,3,"6.1","4.2","Open"]]',
+    monsters: '[[26,"RedGoldBat"],[110,"MissGalaxyDemo"]]',
+    triggers: '[[44,4,"PurpleTriggerButton",0,42],[82,3,"MarbleTriggerButton",0,78]]',
     }
                         </textarea>
 

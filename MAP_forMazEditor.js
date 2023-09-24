@@ -89,5 +89,6 @@ const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4"
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue"];
 const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue"];
 const POTION_TYPES = ["Red", "Blue"];
+const TRIGGER_DECALS = ["PurpleTriggerButton", "MarbleTriggerButton"];
 
 console.log("%cMAP for MazEditor loaded.", "color: #888");

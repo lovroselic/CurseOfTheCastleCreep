@@ -2328,20 +2328,24 @@ const ENGINE = {
         let mid = GRID.gridToCenterPX(grid);
         ENGINE.drawCircle(CTX, mid, decalWidth * 2, "#000000");
       }
+      if (maze.triggers) {
+        for (const trigger of maze.triggers) {
+          let grid = GA.indexToGrid(trigger[0]);
+          let dir = Vector.fromInt(trigger[1]);
+          let pStart = dotOrLine(grid, dir, "#00FF00");
+          let mid2 = GRID.gridToCenterPX(GA.indexToGrid(trigger[4]));
+          CTX.save();
+          CTX.setLineDash([2, 3]);
+          ENGINE.drawLine(CTX, pStart, mid2, "#666", 1);
+          CTX.restore();
+          ENGINE.drawCircle(CTX, mid2, decalWidth * 1.5, "#CC0000");
+        }
+      }
       if (maze.decals) {
         for (const decal of maze.decals) {
           let grid = GA.indexToGrid(decal[0]);
           let dir = Vector.fromInt(decal[1]);
-          let mid = GRID.gridToCenterPX(grid);
-          let start = mid.translate(dir, W);
-          let pDirs = dir.getPerpendicularDirs();
-          let pStart = start.translate(pDirs[0], W);
-          let pEnd = start.translate(pDirs[1], W);
-          if (pDirs[0].same(NOWAY)) {
-            ENGINE.drawCircle(CTX, pStart, decalWidth * 2, "#0000FF");
-          } else {
-            ENGINE.drawLine(CTX, pStart, pEnd, "#0000FF", decalWidth);
-          }
+          dotOrLine(grid, dir, "#0000FF");
         }
       }
       if (maze.lights) {
@@ -2524,6 +2528,20 @@ const ENGINE = {
           CTX.fillText(container[2].split(".")[1], mid.x, mid.y);
           CTX.fillText(container[1], up.x, up.y);
         }
+      }
+
+      function dotOrLine(grid, dir, color) {
+        let mid = GRID.gridToCenterPX(grid);
+        let start = mid.translate(dir, W);
+        let pDirs = dir.getPerpendicularDirs();
+        let pStart = start.translate(pDirs[0], W);
+        let pEnd = start.translate(pDirs[1], W);
+        if (pDirs[0].same(NOWAY)) {
+          ENGINE.drawCircle(CTX, pStart, decalWidth * 2, color);
+        } else {
+          ENGINE.drawLine(CTX, pStart, pEnd, color, decalWidth);
+        }
+        return start;
       }
     },
     wall(x, y, CTX, value) {

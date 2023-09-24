@@ -1978,6 +1978,25 @@ class WallFeature3D {
     }
 }
 
+class Trigger extends WallFeature3D {
+    constructor(grid, face, sprite) {
+        const type = {
+            name: "trigger",
+            category: 'crest',
+            sprite: sprite
+        };
+        super(grid, face, type);
+    }
+    interact() {
+        console.log("trigger interaction");
+        this.interactive = false;
+
+
+
+
+    }
+}
+
 class BoundingBox {
     constructor(max, min, scale = null) {
         this.max = Vector3.from_array(max);

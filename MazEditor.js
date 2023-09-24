@@ -29,7 +29,8 @@ const MAP = {
 
 const $MAP = {
   map: {},
-  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors'],
+  properties: ['decals', 'lights', 'start', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines',
+    'doors', 'triggers'],
   combined: [],
   init() {
     for (const prop of this.properties) {
@@ -52,7 +53,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.02",
+  VERSION: "0.07.03",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -421,9 +422,75 @@ const GAME = {
         dirIndex = dirs[0].toInt();
         $MAP.map.shrines.push(Array(gridIndex, dirIndex, $("#shrine_type")[0].value));
         break;
+      case "trigger":
+
+        if (GAME.stack.previousRadio === radio) {
+          GAME.stack.triggerCount++;
+        } else GAME.stack.triggerCount = 1;
+
+        if (GAME.stack.triggerCount > 2) {
+          GAME.stack.triggerCount = 1;
+          GAME.stack.elementBuilt = null;
+        }
+
+        switch (GAME.stack.triggerCount) {
+          case 1:
+            switch (currentValue) {
+              case MAPDICT.EMPTY:
+                dir = NOWAY;
+                break;
+              case MAPDICT.WALL:
+                dir = GAME.getSelectedDir();
+                if (dir.same(NOWAY)) {
+                  GAME.stack.triggerCount = 0;
+                  $("#error_message").html("Wall trigger decal needs direction");
+                  return;
+                }
+                break;
+
+              default:
+                $("#error_message").html(`Trigger decal placement not supported on value: ${currentValue}`);
+                return;
+            }
+            GAME.stack.elementBuilt = Array(
+              gridIndex,
+              dir.toInt(),
+              $("#trigger_decal")[0].value,
+              TRIGGER_ACTIONS.indexOf($("#trigger_actions")[0].value)
+            );
+            console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.triggerCount", GAME.stack.triggerCount);
+            $("#error_message").html(`Trigger part 1 OK`);
+            break;
+
+          case 2:
+            const expectedValue = MAPDICT[$("#trigger_actions")[0].value.split("->")[0]];
+            console.log(".expectedValue", expectedValue, "currentValue", currentValue);
+            if (currentValue !== expectedValue) {
+              $("#error_message").html(`Trigger target doesn't match selected grid value!!`);
+              GAME.stack.triggerCount--;
+              return;
+            }
+
+            //success
+            GAME.stack.elementBuilt.push(gridIndex);
+            console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.triggerCount", GAME.stack.triggerCount);
+            $MAP.map.triggers.push(GAME.stack.elementBuilt.clone());
+            GAME.stack.elementBuilt = null;
+            $("#error_message").html(`Trigger part 2 OK`);
+            break;
+        }
+
+        break;
+
     }
+    GAME.stack.previousRadio = radio;
 
     GAME.render();
+  },
+  stack: {
+    previousRadio: null,
+    triggerCount: 0,
+    elementBuilt: null,
   },
   clearGrid(gridIndex) {
     $MAP.combine();
@@ -724,6 +791,7 @@ const GAME = {
 
     $("#randpic").click(GAME.randomPic);
     $("#randcrest").click(GAME.randomCrest);
+    $("#randtriggerdecal").click(GAME.randomTrigger);
 
     for (const monsterType in MONSTER_TYPE) {
       $("#monster_type").append(`<option value="${monsterType}">${monsterType} A: ${MONSTER_TYPE[monsterType].attack} D: ${MONSTER_TYPE[monsterType].defense} M: ${MONSTER_TYPE[monsterType].magic}</option>`);
@@ -766,6 +834,17 @@ const GAME = {
       $("#shrine_type").append(`<option value="${shrineType}">${shrineType}</option>`);
     }
 
+    for (const triggerDecal of TRIGGER_DECALS) {
+      $("#trigger_decal").append(`<option value="${triggerDecal}">${triggerDecal}</option>`);
+    }
+    $("#trigger_decal").change(function () {
+      ENGINE.drawToId("triggercanvas", 0, 0, SPRITE[$("#trigger_decal")[0].value]);
+    });
+    $("#trigger_decal").trigger("change");
+
+    for (const action of TRIGGER_ACTIONS) {
+      $("#trigger_actions").append(`<option value="${action}">${action}</option>`);
+    }
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();
@@ -776,6 +855,11 @@ const GAME = {
     const pic = [...DECAL_CRESTS, ...BOTTOM_CRESTS, ...TOP_CRESTS].chooseRandom();
     $("#crest_decal").val(pic).change();
     ENGINE.drawToId("crestcanvas", 0, 0, SPRITE[$("#crest_decal")[0].value]);
+  },
+  randomTrigger() {
+    const pic = TRIGGER_DECALS.chooseRandom();
+    $("#trigger_decal").val(pic).change();
+    ENGINE.drawToId("triggercanvas", 0, 0, SPRITE[$("#trigger_decal")[0].value]);
   },
   texture() {
     GAME.textureGrid();

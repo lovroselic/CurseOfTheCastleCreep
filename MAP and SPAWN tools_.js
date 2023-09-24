@@ -9,7 +9,7 @@
 const MAP_TOOLS = {
     VERSION: "0.3",
     CSS: "color: #F9A",
-    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors'],
+    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors', 'triggers'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
@@ -70,6 +70,7 @@ const SPAWN_TOOLS = {
         this.skills(map, GA);
         this.containers(map, GA);
         this.doors(map, GA);
+        this.triggers(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -162,13 +163,26 @@ const SPAWN_TOOLS = {
             INTERACTIVE_DECAL3D.add(new Shrine(grid, face, SHRINE_TYPE[S[2]]));
         }
     },
-    doors(map, GA){
-        for (const door of map.doors){
+    doors(map, GA) {
+        for (const door of map.doors) {
             const grid = GA.indexToGrid(door);
             GA.closeDoor(grid);
             GATE3D.add(new Gate(grid, DOOR_TYPE.Common));
         }
+    },
+    triggers(map, GA) {
+        for (const T of map.triggers) {
+            console.log("Trigger", T);
+            const grid = GA.indexToGrid(T[0]);
+            const face = DirectionToFace(Vector.fromInt(T[1]));
+            const picture = T[2];
+            console.info(".debug", grid, face, picture);
+            const trigger = new Trigger(grid, face, picture);
+            console.log("..trigger", trigger);
+            INTERACTIVE_DECAL3D.add(trigger);
+        }
     }
+
 };
 
 /** defaults */

@@ -307,7 +307,7 @@ const MONSTER_TYPE = {
         attack: 1,
         defense: 0,
         magic: 0,
-        health: 1,
+        health: 10,
         xp: 6,
         gold: 10,
         attackSound: "HumanAttack1",

@@ -197,6 +197,7 @@ LoadAudio = [
     { srcName: "SwordHit.mp3", name: "SwordHit" },
     { srcName: "SwordMiss2.mp3", name: "SwordMiss" },
     { srcName: "short-buzz.mp3", name: "Buzz" },
+    { srcName: "thud.mp3", name: "Thud" },
 
     //monstersounds
     { srcName: "MonsterDeath.mp3", name: "MonsterDeath" },

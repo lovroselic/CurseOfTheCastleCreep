@@ -53,7 +53,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.05.14",
+    VERSION: "0.06.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -615,7 +615,8 @@ const GAME = {
         //GAME.level = 1;                 //start
         //GAME.level = 3;               //shrines
         //GAME.level = 4;                 //small room
-        GAME.level = 6;                 //chasm
+        //GAME.level = 6;                 //chasm
+        GAME.level = 7;                 //interaction
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
@@ -841,6 +842,7 @@ const GAME = {
                 return this.processInteraction(evalObjectString(CONTAINER_CONTENT_TYPES, interaction.instanceIdentification));
             case "rebuild":
                 GAME.rebuild(GAME.level);
+                AUDIO.Thud.play();
                 break;
             default:
                 console.error("interaction category error", interaction);

@@ -641,19 +641,21 @@ const WebGL = {
         //interactive decals
         for (const iam of WebGL.interactiveDecalList) {
             for (const decal of iam.POOL) {
-                gl.bindTexture(gl.TEXTURE_2D, decal.texture);
-                gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, (this.world.offset.decal_start + decalCount * 6) * 2);
+                if (decal.active) {
+                    gl.bindTexture(gl.TEXTURE_2D, decal.texture);
+                    gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, (this.world.offset.decal_start + decalCount * 6) * 2);
 
-                //to texture
-                let id_vec = this.idToVec(decal.global_id);
-                gl.useProgram(this.pickProgram.program);
-                gl.bindFramebuffer(gl.FRAMEBUFFER, this.frameBuffer);
-                gl.uniform4fv(this.pickProgram.uniformLocations.id, new Float32Array(id_vec));
-                gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, (this.world.offset.decal_start + decalCount * 6) * 2);
+                    //to texture
+                    let id_vec = this.idToVec(decal.global_id);
+                    gl.useProgram(this.pickProgram.program);
+                    gl.bindFramebuffer(gl.FRAMEBUFFER, this.frameBuffer);
+                    gl.uniform4fv(this.pickProgram.uniformLocations.id, new Float32Array(id_vec));
+                    gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, (this.world.offset.decal_start + decalCount * 6) * 2);
 
-                //back to canvas
-                gl.useProgram(this.program.program);
-                gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+                    //back to canvas
+                    gl.useProgram(this.program.program);
+                    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+                }
                 //end
                 decalCount++;
             }
@@ -1536,6 +1538,7 @@ class Decal {
         this.name = name;
         this.width = this.texture.width;
         this.height = this.texture.height;
+        this.active = true;
     }
 }
 
@@ -1998,7 +2001,10 @@ class Trigger extends WallFeature3D {
         this.GA = GA;
     }
     interact() {
+        const pos = Vector3.from_Grid(Grid.toCenter(this.targetGrid));
+        EXPLOSION3D.add(new FloorDust(pos));
         this.interactive = false;
+        this.active = false;
         this.GA[this.action](this.targetGrid);
         return {
             category: "rebuild",
@@ -2354,6 +2360,20 @@ class WoodExplosion extends ParticleEmmiter {
         this.scale = 0.1;
         this.gravity = new Float32Array([0, 0.0005, 0]);
         this.velocity = 0.0025;
+        this.rounded = 0;
+    }
+}
+
+class FloorDust extends ParticleEmmiter {
+    constructor(position, duration = WebGL.INI.EXPLOSION_DURATION_MS * 1.5, texture = TEXTURE.Tile, number = WebGL.INI.EXPLOSION_N_PARTICLES) {
+        super(position, texture);
+        this.number = number;
+        this.duration = duration;
+        this.build(number);
+        this.lightColor = colorStringToVector("#111111");
+        this.scale = 0.1;
+        this.gravity = new Float32Array([0, -0.05, 0]);
+        this.velocity = 0.01;
         this.rounded = 0;
     }
 }

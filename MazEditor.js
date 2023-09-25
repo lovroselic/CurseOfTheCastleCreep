@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.04",
+  VERSION: "0.07.05",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",

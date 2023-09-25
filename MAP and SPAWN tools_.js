@@ -9,7 +9,7 @@
 const MAP_TOOLS = {
     VERSION: "0.3",
     CSS: "color: #F9A",
-    properties: ['decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors', 'triggers'],
+    properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors', 'triggers'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2

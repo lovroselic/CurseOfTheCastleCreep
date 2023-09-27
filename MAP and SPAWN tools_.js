@@ -9,7 +9,8 @@
 const MAP_TOOLS = {
     VERSION: "0.3",
     CSS: "color: #F9A",
-    properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers', 'shrines', 'doors', 'triggers'],
+    properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
+        'shrines', 'doors', 'triggers', 'entities'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
@@ -71,6 +72,7 @@ const SPAWN_TOOLS = {
         this.containers(map, GA);
         this.doors(map, GA);
         this.triggers(map, GA);
+        this.entities(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -172,16 +174,22 @@ const SPAWN_TOOLS = {
     },
     triggers(map, GA) {
         for (const T of map.triggers) {
-            console.log("Trigger", T);
             const grid = GA.indexToGrid(T[0]);
             const face = DirectionToFace(Vector.fromInt(T[1]));
             const picture = T[2];
             const action = TRIGGER_ACTIONS[T[3]];
             const targetGrid = GA.indexToGrid(T[4]);
-            console.info(".debug", grid, face, picture, action, targetGrid);
             const trigger = new Trigger(grid, face, picture, action, targetGrid, GA);
-            console.log("..trigger", trigger);
             INTERACTIVE_DECAL3D.add(trigger);
+        }
+    },
+    entities(map, GA) {
+        for (const E of map.entities) {
+            const grid = GA.indexToGrid(E[0]);
+            const face = DirectionToFace(Vector.fromInt(E[1]));
+            const type = INTERACTION_ENTITY[E[2]];
+            const entity = new InteractionEntity(grid, face, type);
+            INTERACTIVE_DECAL3D.add(entity);
         }
     }
 

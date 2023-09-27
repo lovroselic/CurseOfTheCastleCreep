@@ -180,6 +180,10 @@ const VOICE = {
     voice: 1,
     setting: new VoiceSetting(0.75, 1.0, 1.0)
   },
+  'FemHighQuick': {
+    voice: 1,
+    setting: new VoiceSetting(1.3, 1.99, 1.0)
+  },
   'GlaDOS': {
     voice: 1,
     setting: new VoiceSetting(0.5, 0.9, 1.0)

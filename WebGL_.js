@@ -59,6 +59,7 @@ const WebGL = {
         BLOOD_DURATION_MS: 2500,
         SMUDGE_DURATION_MS: 500,
         MIN_R: 0.25,
+        INTERACTION_TIMEOUT: 2500,
     },
     CONFIG: {
         firstperson: true,
@@ -1985,6 +1986,73 @@ class WallFeature3D {
         this.texture = SPRITE[this.sprite];
         this.width = this.texture.width;
         this.height = this.texture.height;
+    }
+}
+
+class InteractionEntity extends WallFeature3D {
+    constructor(grid, face, type) {
+        super(grid, face, type);
+        this.wantCount = this.wants.length;
+        this.reset();
+        this.mode = "intro";
+        this.virgin = true;
+    }
+    setMode(mode) {
+        this.mode = mode;
+    }
+    reset() {
+        this.ready = true;
+    }
+    block() {
+        this.ready = false;
+    }
+    speak(text) {
+        SPEECH.use(this.voice);
+        SPEECH.speakWithArticulation(text);
+    }
+    checkWants(items) {
+        for (const [index, item] of items.entries()) {
+            const name = item.name;
+            if (this.wants.includes(name)) {
+                items.splice(index, 1);
+                this.wants.splice(this.wants.indexOf(name), 1);
+                return;
+            }
+        }
+        return;
+    }
+    interact(GA, inventory) {
+        if (!this.ready) return;
+        this.block();
+        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
+
+        let inventorySprite = null;
+        let name = null;
+        let category = "entity_interaction";
+        if (!this.virgin) {
+            this.checkWants(inventory.item);
+            if (this.wants.length === 0) {
+                this.setMode("conclusion");
+                this.interactive = false;
+                name = this.gives;
+                inventorySprite = INTERACTION_ITEM[name].inventorySprite
+                category = "interaction_item";
+
+            } else if (this.wants.length < this.wantCount) {
+                this.setMode("progress");
+            }
+        }
+
+        this.virgin = false;
+        let text = this.text[this.mode];
+        this.speak(text);
+
+        return {
+            category: category,
+            inventorySprite: inventorySprite,
+            text: text,
+            name: name
+        };
     }
 }
 

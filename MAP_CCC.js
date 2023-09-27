@@ -94,17 +94,19 @@ const MAP = {
         triggers: '[[44,4,"PurpleTriggerButton",0,42],[82,3,"MarbleTriggerButton",0,78]]',
     }
     ,
-    7: {
-        name: "InteractionStudy",
-        data: '{"width":"16","height":"16","map":"BB7AA24BB2AA14BB2AA12BB2ÁAA17ÁAÁÁ2AA34BABAA2BB13AA2BB24ABB2ÁABAA7ÁBB58A$ÁÁ12AA4ÁÁ2AA2"}',
-        wall: "MossWall12",
-        floor: "ScarletTIles3",
-        ceil: "StoneBlockPavement",
-        start: '[126,3]',
-        decals: '[[29,7,"LeisureSuitLarry88","picture"],[237,1,"LeisureSuitLarry61","picture"],[124,4,"FlatPond","crest"]]',
-        lights: '[[86,5,"WallLamp","standard"],[134,5,"WallLamp","standard"],[62,3,"WallLamp","standard"],[174,3,"WallLamp","standard"],[232,1,"WallTorch","fire"],[24,7,"WallTorch","fire"]]',
-        gates: '[[127,3,"7.1","6.2","Open"]]',
-        triggers: '[[94,3,"MarbleTriggerButton",0,122],[110,3,"MarbleTriggerButton",0,121],[142,3,"MarbleTriggerButton",0,120]]',
+7 : {
+    name: "InteractionStudy",
+    data: '{"width":"16","height":"16","map":"BB5AA11BB2AA7BAA13BB2AA10BB3ÁAA16ÁÁ3AA7BB2AA31BABAA2BB5AA2BB8AA2BB22ABB4ÁAA6BÁBABB7ABB53A$ÁÁ12AA4ÁÁ2AA2"}',
+    wall: "MossWall12",
+    floor: "ScarletTIles3",
+    ceil: "StoneBlockPavement",
+    start: '[186,5]',
+    decals: '[[29,7,"LeisureSuitLarry88","picture"],[237,1,"LeisureSuitLarry61","picture"],[124,4,"FlatPond","crest"]]',
+    lights: '[[86,5,"WallLamp","standard"],[134,5,"WallLamp","standard"],[62,3,"WallLamp","standard"],[174,3,"WallLamp","standard"],[232,1,"WallTorch","fire"],[24,7,"WallTorch","fire"]]',
+    gates: '[[127,3,"7.1","6.2","Open"]]',
+    containers: '[[189,"TreasureChest","INTERACTION_ITEM.Fly"],[205,"TreasureChest","INTERACTION_ITEM.Fly"]]',
+    triggers: '[[94,3,"MarbleTriggerButton",0,122],[110,3,"MarbleTriggerButton",0,121],[142,3,"MarbleTriggerButton",0,120],[38,4,"PurpleTriggerButton",1,36]]',
+    entities: '[[234,1,"BlackWidow"]]',
     }
 };
 

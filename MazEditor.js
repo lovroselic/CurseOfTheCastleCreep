@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.05",
+  VERSION: "0.07.06",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -459,7 +459,7 @@ const GAME = {
               $("#trigger_decal")[0].value,
               TRIGGER_ACTIONS.indexOf($("#trigger_actions")[0].value)
             );
-            console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.triggerCount", GAME.stack.triggerCount);
+            //console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.triggerCount", GAME.stack.triggerCount);
             $("#error_message").html(`Trigger part 1 OK`);
             break;
 
@@ -482,7 +482,24 @@ const GAME = {
         }
 
         break;
+      case "entity":
+        switch (currentValue) {
+          case MAPDICT.WALL:
+            dir = GAME.getSelectedDir();
+            if (dir.same(NOWAY)) {
+              $("#error_message").html(`Entity decal placement requires face/direction`);
+              return;
+            }
+            $MAP.map.entities.push(Array(gridIndex, dir.toInt(), $("#entity_type")[0].value));
+            console.log($MAP.map.entities);
+            break;
 
+          default:
+            $("#error_message").html(`Entity decal placement not supported on value: ${currentValue}`);
+            return;
+        }
+
+        break;
     }
     GAME.stack.previousRadio = radio;
 
@@ -845,6 +862,10 @@ const GAME = {
 
     for (const action of TRIGGER_ACTIONS) {
       $("#trigger_actions").append(`<option value="${action}">${action}</option>`);
+    }
+
+    for (const entity in INTERACTION_ENTITY) {
+      $("#entity_type").append(`<option value="${entity}">${entity}</option>`);
     }
   },
   randomPic() {

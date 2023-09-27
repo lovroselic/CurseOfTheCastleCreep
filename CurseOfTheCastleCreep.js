@@ -34,6 +34,8 @@ const INI = {
     MIMIMAP_WIDTH: 200,
     INFO_TIMER_ID: "info",
     INFO_TIMER: 3,
+    SUB_TIMER_ID: "subtitle",
+    SUB_TIMER: 5,
     LAMP_PERSISTENCE: 99,
     INVISIBILITY_TIME: 60,
     LUCKY_TIME: 60,
@@ -53,7 +55,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.06.00",
+    VERSION: "0.06.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -111,7 +113,7 @@ const PRG = {
         $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 2 * ENGINE.sideWIDTH + 4);
         ENGINE.addBOX("TITLE", ENGINE.titleWIDTH, ENGINE.titleHEIGHT, ["title", "compassRose", "compassNeedle"], null);
         ENGINE.addBOX("LSIDE", ENGINE.sideWIDTH, ENGINE.gameHEIGHT, ["Lsideback", "potion", "time", "statusBars", "stat", "gold"], "side");
-        ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["background", "3d_webgl", "info", "text", "FPS", "button", "click"], "side");
+        ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["background", "3d_webgl", "info", "subtitle", "text", "FPS", "button", "click"], "side");
         ENGINE.addBOX("SIDE", ENGINE.sideWIDTH, ENGINE.gameHEIGHT, ["sideback", "keys", "minimap", "scrolls"], "fside");
         ENGINE.addBOX("DOWN", ENGINE.bottomWIDTH, ENGINE.bottomHEIGHT, ["bottom", "bottomText"], null);
 
@@ -165,6 +167,12 @@ class Key {
         this.category = "Key";
         this.type = "Key";
         this.color = color;
+        this.spriteClass = spriteClass;
+    }
+}
+class NamedInventoryItem {
+    constructor(name, spriteClass) {
+        this.name = name;
         this.spriteClass = spriteClass;
     }
 }
@@ -571,6 +579,7 @@ const HERO = {
     speak(txt) {
         SPEECH.use("Princess");
         SPEECH.speakWithArticulation(txt);
+        TURN.subtitle(txt);
     }
 };
 
@@ -579,6 +588,9 @@ const GAME = {
     clearInfo() {
         ENGINE.clearLayer("info");
     },
+    clearSubtitle() {
+        ENGINE.clearLayer("subtitle");
+    },
     infoTimer() {
         let T;
         if (ENGINE.TIMERS.exists(INI.INFO_TIMER_ID)) {
@@ -586,6 +598,15 @@ const GAME = {
             T.set(INI.INFO_TIMER);
         } else {
             T = new CountDown(INI.INFO_TIMER_ID, INI.INFO_TIMER, GAME.clearInfo);
+        }
+    },
+    subTimer() {
+        let T;
+        if (ENGINE.TIMERS.exists(INI.SUB_TIMER_ID)) {
+            T = ENGINE.TIMERS.access(INI.SUB_TIMER_ID);
+            T.extend(INI.SUB_TIMER);
+        } else {
+            T = new CountDown(INI.SUB_TIMER_ID, INI.SUB_TIMER, GAME.clearSubtitle);
         }
     },
     start() {
@@ -638,7 +659,6 @@ const GAME = {
         GAME.levelFinished = false;
         GAME.initLevel(GAME.level);
         GAME.setFirstPerson();                      //my preference
-        HERO.speak("Are you ready to feel my heels? Ghostface? Here comes Princess!");
         GAME.continueLevel(GAME.level);
     },
     newDungeon(level) {
@@ -745,6 +765,7 @@ const GAME = {
     levelExecute() {
         GAME.drawFirstFrame(GAME.level);
         GAME.resume();
+        HERO.speak("Are you ready to feel my heels? Ghostface? Here comes Princess!");
     },
     drawPlayer() {
         ENGINE.clearLayer(ENGINE.VECTOR2D.layerString);
@@ -770,7 +791,7 @@ const GAME = {
         if (HERO.dead) GAME.checkIfProcessesComplete();
     },
     processInteraction(interaction) {
-        let choices, choice, value, interactionObj;
+        //let choices, choice, value, interactionObj;
         switch (interaction.category) {
             case 'error':
                 switch (interaction.which) {
@@ -843,6 +864,19 @@ const GAME = {
             case "rebuild":
                 GAME.rebuild(GAME.level);
                 AUDIO.Thud.play();
+                break;
+            case "interaction_item":
+                //console.log("interaction_item", interaction);
+                const item = new NamedInventoryItem(interaction.name, interaction.inventorySprite);
+                HERO.inventory.item.push(item);
+                if (interaction.text) TURN.subtitle(interaction.text);
+                TITLE.keys();
+                display(interaction.inventorySprite);
+                break;
+            case "entity_interaction":
+                //console.log("entity_interaction", interaction);
+                if (interaction.text) TURN.subtitle(interaction.text);
+                TITLE.keys()
                 break;
             default:
                 console.error("interaction category error", interaction);

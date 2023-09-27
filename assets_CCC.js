@@ -129,7 +129,7 @@ LoadTextures = [
     { srcName: "BrokenTile1.jpg", name: "BrokenTile1" },
     { srcName: "Broken1.jpg", name: "Broken1" },
     { srcName: "OrderedTiles.jpg", name: "OrderedTiles" },
-    
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -236,6 +236,13 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 ];
 
 LoadSprites = [
+    // frescoes - entities
+    { srcName: "BlackWidow.png", name: "BlackWidow" },
+
+    //action items
+    { srcName: "fly.png", name: "Fly" },
+    { srcName: "hat.png", name: "Hat" },
+
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },
     { srcName: "MarbleTriggerButton.png", name: "MarbleTriggerButton" },

@@ -2328,6 +2328,15 @@ const ENGINE = {
         let mid = GRID.gridToCenterPX(grid);
         ENGINE.drawCircle(CTX, mid, decalWidth * 2, "#000000");
       }
+      if (maze.entities) {
+        for (const entity of maze.entities) {
+          let grid = GA.indexToGrid(entity[0]);
+          let dir = Vector.fromInt(entity[1]);
+          dotOrLine(grid, dir, "#FF0000");
+          let mid = GRID.gridToCenterPX(grid);
+          write(mid, entity[2]);
+        }
+      }
       if (maze.triggers) {
         for (const trigger of maze.triggers) {
           let grid = GA.indexToGrid(trigger[0]);
@@ -2369,11 +2378,7 @@ const ENGINE = {
           start = start.translate(LEFT, W / 2);
           let pEnd = start.translate(RIGHT, W)
           ENGINE.drawLine(CTX, start, pEnd, color, decalWidth);
-          CTX.fillStyle = "black";
-          CTX.font = "10px Arial";
-          CTX.textAlign = "center";
-          CTX.textBaseLine = "middle";
-          CTX.fillText(shrine[2], mid.x, mid.y);
+          write(mid, shrine[2]);
         }
       }
       if (maze.gates) {
@@ -2454,11 +2459,7 @@ const ENGINE = {
         for (const monster of maze.monsters) {
           let grid = GA.indexToGrid(monster[0]);
           let mid = GRID.gridToCenterPX(grid);
-          CTX.fillStyle = "black";
-          CTX.font = "10px Arial";
-          CTX.textAlign = "center";
-          CTX.textBaseLine = "middle";
-          CTX.fillText(monster[1], mid.x, mid.y);
+          write(mid, monster[1]);
         }
       }
       if (maze.scrolls) {
@@ -2470,10 +2471,7 @@ const ENGINE = {
           CTX.fillStyle = "black";
           if (SCROLL_TYPE) {
             mid = mid.translate(RIGHT, W / 2);
-            CTX.font = "10px Arial";
-            CTX.textAlign = "center";
-            CTX.textBaseLine = "middle";
-            CTX.fillText(SCROLL_TYPE[scroll[1]], mid.x, mid.y);
+            write(mid, SCROLL_TYPE[scroll[1]]);
           }
         }
       }
@@ -2493,10 +2491,7 @@ const ENGINE = {
           CTX.fillStyle = "gold";
           CTX.fillRect(mid.x, mid.y, W, W / 2);
           mid = mid.translate(RIGHT, W / 2);
-          CTX.font = "10px Arial";
-          CTX.textAlign = "center";
-          CTX.textBaseLine = "middle";
-          CTX.fillText(gold[1], mid.x, mid.y);
+          write(mid, gold[1]);
         }
       }
       if (maze.skills) {
@@ -2528,6 +2523,15 @@ const ENGINE = {
           CTX.fillText(container[2].split(".")[1], mid.x, mid.y);
           CTX.fillText(container[1], up.x, up.y);
         }
+      }
+
+
+      function write(point, text) {
+        CTX.fillStyle = "black";
+        CTX.font = "10px Arial";
+        CTX.textAlign = "center";
+        CTX.textBaseLine = "middle";
+        CTX.fillText(text, point.x, point.y);
       }
 
       function dotOrLine(grid, dir, color) {

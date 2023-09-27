@@ -184,7 +184,6 @@ const CONTAINER_ITEM_TYPE = {
     },
 };
 
-
 const DOOR_TYPE = {
     Common: {
         name: "Common",
@@ -771,9 +770,44 @@ const HERO_TYPE = {
     }
 };
 
-//container content
-const CONTAINER_CONTENT_TYPES = { GOLD_ITEM_TYPE, SKILL_ITEM_TYPE };
-const CONTAINER_CONTENT_LIST = stringifyObjectList(CONTAINER_CONTENT_TYPES);
-//console.info("CONTAINER_CONTENT_LIST", CONTAINER_CONTENT_LIST);
+/**
+ * interaction entities, items and objects
+ */
 
+const INTERACTION_OBJECT = {};
+
+const INTERACTION_ITEM = {
+    Fly: {
+        name: "Fly",
+        category: "interaction_item",
+        inventorySprite: "Fly",
+    },
+    Hat: {
+        name: "Hat",
+        category: "interaction_item",
+        inventorySprite: "Hat",
+    },
+};
+
+
+const INTERACTION_ENTITY = {
+    BlackWidow: {
+        name: "BlackWidow",
+        sprite: "BlackWidow",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Fly", "Fly"],
+        gives: "Hat",
+        text: {
+            intro: "Ah, Princess, you're fierce and fey! Got something to sate my hunger today?",
+            progress: "One fly down, you're catching on! Just one more and the prize is won.",
+            conclusion: "Flies delivered, the deal's now through! Here's a silky hat just for you."
+        }
+    }
+};
+
+//container content
+const CONTAINER_CONTENT_TYPES = { GOLD_ITEM_TYPE, SKILL_ITEM_TYPE, INTERACTION_ITEM };
+const CONTAINER_CONTENT_LIST = stringifyObjectList(CONTAINER_CONTENT_TYPES);
 const TRIGGER_ACTIONS = ["HOLE->toEmpty", "WALL->toEmpty"];
+

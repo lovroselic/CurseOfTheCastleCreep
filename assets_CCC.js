@@ -161,6 +161,9 @@ LoadTextures = [
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
     { srcName: "BlueMetal.jpg", name: "BlueMetal" },
 
+    { srcName: "Pear_baseColor.jpg", name: "Pear_baseColor" },
+    { srcName: "Apple_BaseColor.jpg", name: "Apple_BaseColor" },
+
     //decal-gates
     { srcName: "GoldGate1_256.png", name: "GoldGate1" },
     { srcName: "RedGate1_256.png", name: "RedGate1" },
@@ -227,7 +230,7 @@ LoadShaders = [
 ];
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
-    "treasure_chest.obj", "coins.obj", "sting.obj"
+    "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj"
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
@@ -242,6 +245,8 @@ LoadSprites = [
     //action items
     { srcName: "fly.png", name: "Fly" },
     { srcName: "hat.png", name: "Hat" },
+    { srcName: "apple2.png", name: "Apple" },
+    { srcName: "pear2.png", name: "Pear" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

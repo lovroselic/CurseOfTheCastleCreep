@@ -94,19 +94,20 @@ const MAP = {
         triggers: '[[44,4,"PurpleTriggerButton",0,42],[82,3,"MarbleTriggerButton",0,78]]',
     }
     ,
-7 : {
-    name: "InteractionStudy",
-    data: '{"width":"16","height":"16","map":"BB5AA11BB2AA7BAA13BB2AA10BB3ÁAA16ÁÁ3AA7BB2AA31BABAA2BB5AA2BB8AA2BB22ABB4ÁAA6BÁBABB7ABB53A$ÁÁ12AA4ÁÁ2AA2"}',
-    wall: "MossWall12",
-    floor: "ScarletTIles3",
-    ceil: "StoneBlockPavement",
-    start: '[186,5]',
-    decals: '[[29,7,"LeisureSuitLarry88","picture"],[237,1,"LeisureSuitLarry61","picture"],[124,4,"FlatPond","crest"]]',
-    lights: '[[86,5,"WallLamp","standard"],[134,5,"WallLamp","standard"],[62,3,"WallLamp","standard"],[174,3,"WallLamp","standard"],[232,1,"WallTorch","fire"],[24,7,"WallTorch","fire"]]',
-    gates: '[[127,3,"7.1","6.2","Open"]]',
-    containers: '[[189,"TreasureChest","INTERACTION_ITEM.Fly"],[205,"TreasureChest","INTERACTION_ITEM.Fly"]]',
-    triggers: '[[94,3,"MarbleTriggerButton",0,122],[110,3,"MarbleTriggerButton",0,121],[142,3,"MarbleTriggerButton",0,120],[38,4,"PurpleTriggerButton",1,36]]',
-    entities: '[[234,1,"BlackWidow"]]',
+    7: {
+        name: "InteractionStudy",
+        data: '{"width":"16","height":"16","map":"BB5AA11BABB2AA20BB2AA10BB3ÁAA12ÁAA4ÁÁ2AA7BB2AA30BABABAA2BB5AA2BB9AA2BB19ABB3ABB5ÁAA5BÁBABB8ABABB39ABB7$ÁÁ12AA4ÁÁ2AA2"}',
+        wall: "MossWall12",
+        floor: "ScarletTIles3",
+        ceil: "StoneBlockPavement",
+        start: '[186,5]',
+        decals: '[[29,7,"LeisureSuitLarry88","picture"],[237,1,"LeisureSuitLarry61","picture"],[124,4,"FlatPond","crest"],[21,7,"RiverRaid70","picture"],[86,7,"FalconPatrol99","picture"],[134,7,"EricTheViking10","picture"],[68,7,"Cuthbert90","picture"],[230,1,"PWE","picture"],[86,1,"KokotoniWilf70","picture"],[134,1,"DefenderOfTheCrown","picture"],[86,3,"ReturnToCastleWolfenstein14","picture"],[134,3,"ArticShipwreck7","picture"],[113,5,"Rambo3","picture"],[193,5,"Blackwyche2","picture"]]',
+        lights: '[[86,5,"WallLamp","standard"],[134,5,"WallLamp","standard"],[62,3,"WallLamp","standard"],[174,3,"WallLamp","standard"],[232,1,"WallTorch","fire"],[24,7,"WallTorch","fire"],[33,5,"WallLamp","standard"],[66,7,"WallLamp","standard"]]',
+        gates: '[[127,3,"7.1","6.2","Open"],[144,5,"7.2","8.1","Closed"],[244,1,"7.3","9.1","Closed"]]',
+        containers: '[[189,"TreasureChest","INTERACTION_ITEM.Fly"],[205,"TreasureChest","INTERACTION_ITEM.Fly"],[172,"Chest","GOLD_ITEM_TYPE.GoldBar"]]',
+        triggers: '[[94,3,"MarbleTriggerButton",0,122],[110,3,"MarbleTriggerButton",0,121],[142,3,"MarbleTriggerButton",0,120],[38,4,"PurpleTriggerButton",1,36]]',
+        entities: '[[234,1,"BlackWidow"]]',
+        objects: '[[50,"Apple"],[51,"Pear"]]',
     }
 };
 

@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.06",
+  VERSION: "0.07.07",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -500,6 +500,17 @@ const GAME = {
         }
 
         break;
+
+      case "object":
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            $MAP.map.objects.push(Array(gridIndex, $("#interaction_object_type")[0].value));
+            break;
+          default:
+            $("#error_message").html(`interactive OBJECT placement not supported on value: ${currentValue}`);
+            return;
+        }
+        break;
     }
     GAME.stack.previousRadio = radio;
 
@@ -867,6 +878,15 @@ const GAME = {
     for (const entity in INTERACTION_ENTITY) {
       $("#entity_type").append(`<option value="${entity}">${entity}</option>`);
     }
+
+    for (const obj in INTERACTION_OBJECT) {
+      $("#interaction_object_type").append(`<option value="${obj}">${obj}</option>`);
+    }
+
+    $("#interaction_object_type").change(function () {
+      ENGINE.drawToId("object_canvas", 0, 0, SPRITE[INTERACTION_OBJECT[$("#interaction_object_type")[0].value].inventorySprite]);
+    });
+    $("#interaction_object_type").trigger("change");
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();

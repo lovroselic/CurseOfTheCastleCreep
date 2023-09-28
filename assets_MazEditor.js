@@ -134,10 +134,15 @@ LoadSheetSequences = [
 ];
 
 LoadSprites = [
+    //action items
+    { srcName: "fly.png", name: "Fly" },
+    { srcName: "hat.png", name: "Hat" },
+    { srcName: "apple2.png", name: "Apple" },
+    { srcName: "pear2.png", name: "Pear" },
+
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },
     { srcName: "MarbleTriggerButton.png", name: "MarbleTriggerButton" },
-
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

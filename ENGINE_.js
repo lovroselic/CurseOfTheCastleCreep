@@ -2494,16 +2494,20 @@ const ENGINE = {
           write(mid, gold[1]);
         }
       }
+      if (maze.objects) {
+        for (const obj of maze.objects) {
+          let grid = GA.indexToGrid(obj[0]);
+          let mid = GRID.gridToCenterPX(grid);
+          let text = `-${obj[1]}-`;
+          write(mid, text, "#00F");
+        }
+      }
       if (maze.skills) {
         for (const skill of maze.skills) {
           let grid = GA.indexToGrid(skill[0]);
           let mid = GRID.gridToCenterPX(grid);
-          CTX.font = "10px Arial";
-          CTX.textAlign = "center";
-          CTX.textBaseLine = "middle";
-          const color = "red"
-          CTX.fillStyle = color;
-          CTX.fillText(`* ${skill[1]} *`, mid.x, mid.y);
+          const color = "red";
+          write(mid,`* ${skill[1]} *`, color);
           ENGINE.drawLine(CTX, mid.translate(UpLeft, W / 2), mid.translate(UpLeft, W / 2).translate(RIGHT, W), color, 3);
           ENGINE.drawLine(CTX, mid.translate(DownLeft, W / 2), mid.translate(DownLeft, W / 2).translate(RIGHT, W), color, 5);
         }
@@ -2515,19 +2519,14 @@ const ENGINE = {
           let start = mid.translate(LEFT, W / 2);
           CTX.fillStyle = "brown";
           CTX.fillRect(start.x, start.y, W, W);
-          CTX.font = "10px Arial";
-          CTX.textAlign = "center";
-          CTX.textBaseLine = "middle";
-          CTX.fillStyle = 'black';
           let up = mid.translate(UP, W / 2);
-          CTX.fillText(container[2].split(".")[1], mid.x, mid.y);
-          CTX.fillText(container[1], up.x, up.y);
+          write(mid, container[2].split(".")[1]);
+          write(up, container[1]);
         }
       }
 
-
-      function write(point, text) {
-        CTX.fillStyle = "black";
+      function write(point, text, color = "#000") {
+        CTX.fillStyle = color;
         CTX.font = "10px Arial";
         CTX.textAlign = "center";
         CTX.textBaseLine = "middle";

@@ -10,14 +10,13 @@ const MAP_TOOLS = {
     VERSION: "0.3",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
-        'shrines', 'doors', 'triggers', 'entities'],
+        'shrines', 'doors', 'triggers', 'entities', 'objects'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
     },
     initialize(pMapObject) {
         this.MAP = pMapObject;
-        if (ENGINE.verbose) console.log(`MAP TOOLS associated`, this.MAP);
     },
     setByteSize(byte) {
         if (![1, 2, 4].includes(byte)) {
@@ -73,6 +72,7 @@ const SPAWN_TOOLS = {
         this.doors(map, GA);
         this.triggers(map, GA);
         this.entities(map, GA);
+        this.objects(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -190,6 +190,13 @@ const SPAWN_TOOLS = {
             const type = INTERACTION_ENTITY[E[2]];
             const entity = new InteractionEntity(grid, face, type);
             INTERACTIVE_DECAL3D.add(entity);
+        }
+    },
+    objects(map, GA) {
+        for (const O of map.objects) {
+            const grid = Grid.toCenter(GA.indexToGrid(O[0]));
+            const type = INTERACTION_OBJECT[O[1]];
+            ITEM3D.add(new FloorItem3D(grid, type));
         }
     }
 

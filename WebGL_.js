@@ -59,7 +59,7 @@ const WebGL = {
         BLOOD_DURATION_MS: 2500,
         SMUDGE_DURATION_MS: 500,
         MIN_R: 0.25,
-        INTERACTION_TIMEOUT: 2500,
+        INTERACTION_TIMEOUT: 4000,
     },
     CONFIG: {
         firstperson: true,
@@ -761,6 +761,7 @@ const WebGL = {
                          * GA
                          * inventory
                          * mouseClick
+                         * hero
                          */
                         if (hero.inventory.totalSize() >= hero.inventoryLimit) {
                             return {
@@ -768,7 +769,7 @@ const WebGL = {
                                 which: "inventory_full"
                             };
                         }
-                        return obj.interact(hero.player.GA, hero.inventory, true);
+                        return obj.interact(hero.player.GA, hero.inventory, true, hero);
                     }
                 }
             }
@@ -1844,8 +1845,15 @@ class FloorItem3D extends Drawable_object {
     setTexture() {
         this.texture = WebGL.createTexture(this.texture);
     }
-    interact() {
+    interact(GA, inventory, click, hero) {
         this.active = false;
+        if (this.instanceIdentification) {
+            if (["INTERACTION_ITEM"].includes(this.instanceIdentification.split(".")[0])) {
+                const type = eval(this.instanceIdentification);
+                this.text = type.text;
+            }
+        }
+        if (this.text) hero.speak(this.text);
         return {
             category: this.category,
             value: this.value,
@@ -1853,7 +1861,8 @@ class FloorItem3D extends Drawable_object {
             inventorySprite: this.inventorySprite,
             which: this.which,
             pos: this.translate,
-            instanceIdentification: this.instanceIdentification
+            instanceIdentification: this.instanceIdentification,
+            name: this.name,
         };
     }
 }

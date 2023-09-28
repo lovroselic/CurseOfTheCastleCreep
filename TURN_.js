@@ -35,6 +35,7 @@ const TURN = {
         GAME.infoTimer();
     },
     subtitle(text, color = "#FFF") {
+        text = text.replace(/[<>#-]/g, '');
         ENGINE.clearLayer("subtitle");
         let CTX = LAYER.subtitle;
         let fs = 16;

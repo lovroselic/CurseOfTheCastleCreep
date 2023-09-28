@@ -55,7 +55,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.06.01",
+    VERSION: "0.06.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -866,7 +866,7 @@ const GAME = {
                 AUDIO.Thud.play();
                 break;
             case "interaction_item":
-                //console.log("interaction_item", interaction);
+                console.log("interaction_item", interaction);
                 const item = new NamedInventoryItem(interaction.name, interaction.inventorySprite);
                 HERO.inventory.item.push(item);
                 if (interaction.text) TURN.subtitle(interaction.text);

@@ -774,13 +774,37 @@ const HERO_TYPE = {
  * interaction entities, items and objects
  */
 
-const INTERACTION_OBJECT = {};
+const INTERACTION_OBJECT = {
+    Apple: {
+        name: "Apple",
+        category: "interaction_item",
+        element: "APPLE",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Apple_BaseColor",
+        material: MATERIAL.standard,
+        inventorySprite: "Apple",
+        text: "Oh, it's an apple."
+    },
+    Pear: {
+        name: "Pear",
+        category: "interaction_item",
+        element: "PEAR",
+        scale: 1 / 2 ** 7,
+        glueToFloor: true,
+        texture: "Pear_baseColor",
+        material: MATERIAL.standard,
+        inventorySprite: "Pear",
+        text: "Juicy pear? How nice."
+    }
+};
 
 const INTERACTION_ITEM = {
     Fly: {
         name: "Fly",
         category: "interaction_item",
         inventorySprite: "Fly",
+        text: "Ugly fly? Who would want that?"
     },
     Hat: {
         name: "Hat",
@@ -788,7 +812,6 @@ const INTERACTION_ITEM = {
         inventorySprite: "Hat",
     },
 };
-
 
 const INTERACTION_ENTITY = {
     BlackWidow: {

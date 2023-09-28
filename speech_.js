@@ -41,7 +41,9 @@ const SPEECH = {
   use(voice) {
     voice = VOICE[voice];
     SPEECH.voice = SPEECH.voices[voice.voice];
-    SPEECH.settings = voice.setting;
+    for (const setting in voice.setting) {
+      SPEECH.settings[setting] = voice.setting[setting];
+    }
   },
   speak(txt) {
     if (!SPEECH.ready) {
@@ -132,7 +134,6 @@ const SPEECH = {
         i += 2;
         speakSentence();
       };
-
       speechSynthesis.speak(msg);
     }
   },

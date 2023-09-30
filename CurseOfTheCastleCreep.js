@@ -10,6 +10,7 @@
 TODO:
     * missiles should die after exiting room?
 known bugs: 
+    * picking items from chests does not assert max inventory limit
 
  */
 ////////////////////////////////////////////////////
@@ -55,7 +56,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.06.02",
+    VERSION: "0.06.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

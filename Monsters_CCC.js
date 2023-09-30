@@ -796,6 +796,39 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         inventorySprite: "Pear",
         text: "Juicy pear? How nice."
+    },
+    RedGem: {
+        name: "RedGem",
+        category: "interaction_item",
+        element: "GEM",
+        scale: 1.1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Red",
+        material: MATERIAL.standard,
+        inventorySprite: "RedGem",
+        text: "Nice? Shiny? I'll keep that."
+    },
+    BlueGem: {
+        name: "BlueGem",
+        category: "interaction_item",
+        element: "GEM",
+        scale: 1.1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "BlueMetal",
+        material: MATERIAL.standard,
+        inventorySprite: "BlueGem",
+        text: "Nice? Shiny? I'll keep that."
+    },
+    GreenGem: {
+        name: "GreenGem",
+        category: "interaction_item",
+        element: "GEM",
+        scale: 1.1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "GreenMetal",
+        material: MATERIAL.standard,
+        inventorySprite: "GreenGem",
+        text: "Nice? Shiny? I'll keep that."
     }
 };
 
@@ -811,9 +844,23 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Hat",
     },
+    Mirror: {
+        name: "Mirror",
+        category: "interaction_item",
+        inventorySprite: "Mirror",
+    },
+    Acorn: {
+        name: "Acorn",
+        category: "interaction_item",
+        inventorySprite: "Acorn",
+    },
 };
 
 const INTERACTION_ENTITY = {
+    /**
+     * Flies are stored in chest
+     * Hat is required by a PrettyBunny
+     */
     BlackWidow: {
         name: "BlackWidow",
         sprite: "BlackWidow",
@@ -825,6 +872,41 @@ const INTERACTION_ENTITY = {
             intro: "Ah, Princess, you're fierce and fey! Got something to sate my hunger today?",
             progress: "One fly down, you're catching on! Just one more and the prize is won.",
             conclusion: "Flies delivered, the deal's now through! Here's a silky hat just for you."
+        }
+    },
+    /**
+     * Apple, Pear are floor items
+     * what does hedgehot gives? Mirror. Required by PrettyBunny
+     */
+    HedgeHog: {
+        name: "HedgeHog",
+        sprite: "HedgeHog",
+        category: 'crest',
+        voice: "MaleLowSlow",
+        wants: ["Apple", "Pear"],
+        gives: "Mirror",
+        text: {
+            intro: "Hey, Princess, in your quest so grand, could you spare some fruit for the hedgehog of this land?",
+            progress: "Ah, one gift landed, but I'm not done! Let's make this gifting twice the fun.",
+            conclusion: "An apple and pear, oh you're so fine! Here's a mirror to see your royal shine."
+        }
+    },
+    /**
+     * wants mirror and hat
+     * gives one gem from collection?
+     * who needs gem:
+     */
+    PrettyBunny: {
+        name: "PrettyBunny",
+        sprite: "PrettyBunny",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Mirror", "Hat"],
+        gives: "Acorn",
+        text: {
+            intro: "Hello, Princess, you're quite the sight, but help me be the beauty of the night!",
+            progress: "One gift is good, but I need two. A reflection check, then I'll outshine you!",
+            conclusion: "Mirror and hat, now I'm divine! Take this acorn, I'm too gorgeous for such grime."
         }
     }
 };

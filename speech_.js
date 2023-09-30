@@ -181,9 +181,13 @@ const VOICE = {
     voice: 1,
     setting: new VoiceSetting(0.75, 1.0, 1.0)
   },
+  'MaleLowSlow': {
+    voice: 0,
+    setting: new VoiceSetting(0.75, 0.6, 1.0)
+  },
   'FemHighQuick': {
     voice: 1,
-    setting: new VoiceSetting(1.3, 1.99, 1.0)
+    setting: new VoiceSetting(1.4, 2.1, 1.0)
   },
   'GlaDOS': {
     voice: 1,

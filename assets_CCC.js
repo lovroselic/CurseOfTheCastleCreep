@@ -230,7 +230,7 @@ LoadShaders = [
 ];
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
-    "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj"
+    "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj"
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
@@ -241,12 +241,19 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 LoadSprites = [
     // frescoes - entities
     { srcName: "BlackWidow.png", name: "BlackWidow" },
+    { srcName: "HedgeHog.png", name: "HedgeHog" },
+    { srcName: "bunny.png", name: "PrettyBunny" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
     { srcName: "hat.png", name: "Hat" },
     { srcName: "apple2.png", name: "Apple" },
     { srcName: "pear2.png", name: "Pear" },
+    { srcName: "mirror.png", name: "Mirror" },
+    { srcName: "RedGem1.png", name: "RedGem" },
+    { srcName: "BlueGem1.png", name: "BlueGem" },
+    { srcName: "GreenGem1.png", name: "GreenGem" },
+    { srcName: "acorn.png", name: "Acorn" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

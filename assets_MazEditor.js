@@ -139,6 +139,9 @@ LoadSprites = [
     { srcName: "hat.png", name: "Hat" },
     { srcName: "apple2.png", name: "Apple" },
     { srcName: "pear2.png", name: "Pear" },
+    { srcName: "RedGem1.png", name: "RedGem" },
+    { srcName: "BlueGem1.png", name: "BlueGem" },
+    { srcName: "GreenGem1.png", name: "GreenGem" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

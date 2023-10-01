@@ -178,6 +178,8 @@ LoadSprites = [
     { srcName: "dungeondoor_open.png", name: "DungeonDoor_Open" },
     { srcName: "dungeondoor_red.png", name: "DungeonDoor_Red" },
     { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
+    { srcName: "DoorUp2.png", name: "DungeonDoor_Up" },
+    { srcName: "DoorDown2.png", name: "DungeonDoor_Down" },
 
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },

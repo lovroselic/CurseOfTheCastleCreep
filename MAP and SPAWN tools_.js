@@ -104,9 +104,10 @@ const SPAWN_TOOLS = {
             const picture = `DungeonDoor_${color}`;
             const destination = new Destination(G[3], G[3].split(".")[0]);
             let opEn = false;
-            if (color === "Open") opEn = true;
+            //if (color === "Open") opEn = true;
+            if (["Open", "Up", "Down"].includes(color)) opEn = true;
             let locked = true;
-            if (["Open", "Closed"].includes(color)) locked = false;
+            if (["Open", "Closed", "Up", "Down"].includes(color)) locked = false;
             const externalGate = new ExternalGate(grid, face, SPRITE[picture], "portal", picture, color, opEn, locked, destination, GAME.useStaircase);
             INTERACTIVE_BUMP3D.add(externalGate);
         }

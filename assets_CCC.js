@@ -273,6 +273,9 @@ LoadSprites = [
     { srcName: "dungeondoor_red.png", name: "DungeonDoor_Red" },
     { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
 
+    { srcName: "DoorUp2.png", name: "DungeonDoor_Up" },
+    { srcName: "DoorDown2.png", name: "DungeonDoor_Down" },
+
     //lights
     { srcName: "WallLamp256.png", name: "WallLamp" },
     { srcName: "WallLamp2.png", name: "WallLamp2" },

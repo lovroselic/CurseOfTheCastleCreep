@@ -12,6 +12,7 @@
 
 "use strict";
 console.log("%cMonsters for CCC loaded.", "color: #888");
+const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down"];
 
 const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
     "Petrify", "MagicBoost", "Luck", "HalfLife"];
@@ -893,8 +894,8 @@ const INTERACTION_ENTITY = {
     },
     /**
      * wants mirror and hat
-     * gives one gem from collection?
-     * who needs gem:
+     * gives acorn
+     * who needs gem: Squirell
      */
     PrettyBunny: {
         name: "PrettyBunny",

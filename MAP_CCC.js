@@ -4,7 +4,7 @@
 /*jshint -W061 */
 
 "use strict";
-const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue"];
+//const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down"];
 
 console.log("%cMAP for CCC loaded.", "color: #888");
 
@@ -108,6 +108,48 @@ const MAP = {
         triggers: '[[94,3,"MarbleTriggerButton",0,122],[110,3,"MarbleTriggerButton",0,121],[142,3,"MarbleTriggerButton",0,120],[38,4,"PurpleTriggerButton",1,36]]',
         entities: '[[234,1,"BlackWidow"],[26,7,"HedgeHog"],[97,5,"PrettyBunny"]]',
         objects: '[[50,"Apple"],[51,"Pear"],[184,"RedGem"],[200,"BlueGem"],[182,"GreenGem"]]',
+    }
+    ,
+    8: {
+        name: "Staircase",
+        data: '{"width":"8","height":"8","map":"BB2AA3BB3ABB5AA7BAA2BB8AA3BB5ABB3AA2BAA3BABB11$A"}',
+        wall: "SpideryWall",
+        floor: "ScarletStoneFloor1",
+        ceil: "Wall7",
+        start: '[30,3]',
+        decals: '[[35,5,"FortApocalypse41","picture"]]',
+        lights: '[[12,7,"WallLamp2","standard"]]',
+        gates: '[[31,3,"8.1","7.2","Open"],[5,7,"8.2","10.1","Up"],[61,1,"8.3","11.1","Down"]]',
+    }
+    ,
+    9: {
+        name: "Generic room name",
+        data: '{"width":"16","height":"16","map":"BB3AA3BABB50ABB2ABB20$BB173A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[24,7]',
+        gates: '[[8,7,"9.1","7.3","Open"]]',
+    }
+    ,
+    10: {
+        name: "Upstairs",
+        data: '{"width":"16","height":"16","map":"BB3AA4BB51ABB3ABB18ABB174$"}',
+        wall: "DarkBricks",
+        floor: "BrokenTiles3",
+        ceil: "OldFloor",
+        start: '[231,1]',
+        gates: '[[247,1,"10.1","8.2","Down"]]',
+    }
+    ,
+    11: {
+        name: "Downstairs",
+        data: '{"width":"16","height":"16","map":"BB3AA3BABB50ABB2ABB18$BB175A"}',
+        wall: "BlurryMossy",
+        floor: "BrownishMarble",
+        ceil: "TlakFloor3",
+        start: '[23,7]',
+        gates: '[[7,7,"11.1","8.3","Up"]]',
     }
 };
 

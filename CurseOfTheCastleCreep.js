@@ -52,11 +52,12 @@ const INI = {
     CRIPPLE_SPEED: 0.1,
     BOOST_TIME: 59,
     INVENTORY_HARD_LIMIT: 20,
+    COMPLAIN_TIMEOUT: 400,
     //MM_reveal_radius: 4,
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.06.04",
+    VERSION: "0.06.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -370,6 +371,7 @@ const HERO = {
         this.defenseExpGoal = INI.INI_BASE_EXP_FONT;
         this.magicExpGoal = INI.INI_BASE_EXP_FONT;
         this.canShoot = true;
+        this.canComplain = true;
         this.inventory.clear();
         this.inventoryLimit = INI.INVENTORY_HARD_LIMIT;
         const propsToSave = ["health", "maxHealth", "mana", "maxMana", "defense", "reference_defense", "attack",
@@ -639,13 +641,26 @@ const GAME = {
         //GAME.level = 4;                 //small room
         //GAME.level = 6;                 //chasm
         GAME.level = 7;                 //interaction
-        GAME.level = 8;                 //staircase
+        //GAME.level = 8;                 //staircase
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
         GAME.STORE = new Store(storeList);
 
         HERO.construct();
+        /**
+         * debug
+         */
+
+        /*
+        for (let i = 0; i < 18; i++) {
+            HERO.inventory.item.push(new NamedInventoryItem("Hat", "Hat"));
+        }
+        */
+
+        /** debug end */
+
+
         ENGINE.VECTOR2D.configure("player");
         GAME.fps = new FPS_short_term_measurement(300);
         GAME.prepareForRestart();
@@ -798,6 +813,7 @@ const GAME = {
             case 'error':
                 switch (interaction.which) {
                     case "inventory_full":
+                        if (!HERO.canComplain) break;
                         const variants = ["I can't carry any more.",
                             "My bag is full.",
                             "My bag is breaking at the seams.",
@@ -805,6 +821,8 @@ const GAME = {
                             "Put where? There is no space left."
                         ];
                         HERO.speak(variants.chooseRandom());
+                        HERO.canComplain = false;
+                        setTimeout(() => HERO.canComplain = true, INI.COMPLAIN_TIMEOUT);
                         break;
                     default:
                         console.error("Usupported interaction error:", interaction.which);
@@ -868,7 +886,7 @@ const GAME = {
                 AUDIO.Thud.play();
                 break;
             case "interaction_item":
-                console.log("interaction_item", interaction);
+                //console.log("interaction_item", interaction);
                 const item = new NamedInventoryItem(interaction.name, interaction.inventorySprite);
                 HERO.inventory.item.push(item);
                 if (interaction.text) TURN.subtitle(interaction.text);

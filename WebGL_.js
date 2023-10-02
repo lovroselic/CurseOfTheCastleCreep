@@ -763,11 +763,14 @@ const WebGL = {
                          * mouseClick
                          * hero
                          */
-                        if (hero.inventory.totalSize() >= hero.inventoryLimit) {
-                            return {
-                                category: "error",
-                                which: "inventory_full"
-                            };
+                        //console.info("OBJ interaction candidate", obj, obj.excludeFromInventory);
+                        if (!obj.excludeFromInventory) {
+                            if (hero.inventory.totalSize() >= hero.inventoryLimit) {
+                                return {
+                                    category: "error",
+                                    which: "inventory_full"
+                                };
+                            }
                         }
                         return obj.interact(hero.player.GA, hero.inventory, true, hero);
                     }
@@ -1590,6 +1593,7 @@ class ExternalGate extends Portal {
         this.color = color;
         this.open = open;
         this.locked = locked;
+        this.excludeFromInventory = true;
         if (this.open) this.interactive = false;
     }
     openGate() {
@@ -1730,6 +1734,7 @@ class Gate extends Drawable_object {
         this.pos = Vector3.from_Grid(grid);
         this.type = type;
         this.interactive = true;
+        this.excludeFromInventory = true;
         for (const prop in type) {
             this[prop] = type[prop];
         }
@@ -1799,6 +1804,7 @@ class FloorItem3D extends Drawable_object {
         this.grid = grid;
         this.type = type;
         this.instanceIdentification = instanceIdentification;
+        this.excludeFromInventory = false;
         //this.h = h;
         this.interactive = true;
         this.active = true;
@@ -2005,6 +2011,7 @@ class InteractionEntity extends WallFeature3D {
         this.reset();
         this.mode = "intro";
         this.virgin = true;
+        this.excludeFromInventory = true;
     }
     setMode(mode) {
         this.mode = mode;
@@ -2076,6 +2083,7 @@ class Trigger extends WallFeature3D {
         this.action = action.split("->")[1];
         this.targetGrid = targetGrid;
         this.GA = GA;
+        this.excludeFromInventory = true;
     }
     interact() {
         const pos = Vector3.from_Grid(Grid.toCenter(this.targetGrid));

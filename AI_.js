@@ -77,7 +77,11 @@ const AI = {
     return [goto];
   },
   hunt_FP(enemy, exactPosition) {
-    if (this.VERBOSE) console.log("hunt_FP: exactPosition", exactPosition);
+    if (this.VERBOSE) console.log("..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance);
+    if (!enemy.distance) {
+      if (this.VERBOSE) console.warn("..terminating hunt - null distance");
+      return this.immobile(enemy);
+    }
     const pPos = Vector3.to_FP_Grid(exactPosition);
     const ePos = Vector3.to_FP_Grid(enemy.moveState.pos);
     const direction = ePos.direction(pPos);
@@ -178,6 +182,7 @@ const AI = {
     return directions;
   },
   shoot(enemy, ARG) {
+    if (this.VERBOSE) console.warn(`..${enemy.name} ${enemy.id} tries to shoot.`);
     if (enemy.caster) {
       if (enemy.mana >= Missile.calcMana(enemy.magic)) {
         const GA = enemy.parent.map.GA;
@@ -186,7 +191,11 @@ const AI = {
           GRID.freedom(this.getPosition(enemy), Grid.toClass(ARG.playerPosition), IA)) {
           enemy.canShoot = true;
         }
-        return this.hunt(enemy, ARG.exactPlayerPosition);
+        
+        if (enemy.distance) {
+          return this.hunt(enemy, ARG.exactPlayerPosition);
+        } else return this.immobile(enemy);
+        
       } else {
         this.caster = false;
         if (enemy.weak()) {

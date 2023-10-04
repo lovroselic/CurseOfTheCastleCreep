@@ -2677,10 +2677,10 @@ class $3D_Entity {
         const dir = Vector3.from_2D_dir(this.moveState.lookDir);
         this.canShoot = false;
         this.caster = false;
-        this.mana -= Missile.calcMana(this.magic);
+        this.mana -= this.missile.calcMana(this.magic);
         let position = this.moveState.pos.translate(dir, this.r);
         position.set_y(0.5);
-        const missile = new Missile(position, dir, COMMON_ITEM_TYPE.Fireball, this.magic);
+        const missile = new this.missile(position, dir, this.missileType, this.magic);
         MISSILE3D.add(missile);
         setTimeout(this.resetShooting.bind(this), INI.MONSTER_SHOOT_TIMEOUT);
     }

@@ -100,7 +100,7 @@ const MAP = {
         wall: "MossWall12",
         floor: "ScarletTIles3",
         ceil: "StoneBlockPavement",
-        start: '[186,5]',
+        start: '[126,3]',
         decals: '[[29,7,"LeisureSuitLarry88","picture"],[237,1,"LeisureSuitLarry61","picture"],[124,4,"FlatPond","crest"],[21,7,"RiverRaid70","picture"],[86,7,"FalconPatrol99","picture"],[134,7,"EricTheViking10","picture"],[68,7,"Cuthbert90","picture"],[230,1,"PWE","picture"],[86,1,"KokotoniWilf70","picture"],[134,1,"DefenderOfTheCrown","picture"],[86,3,"ReturnToCastleWolfenstein14","picture"],[134,3,"ArticShipwreck7","picture"],[113,5,"Rambo3","picture"],[193,5,"Blackwyche2","picture"]]',
         lights: '[[86,5,"WallLamp","standard"],[134,5,"WallLamp","standard"],[62,3,"WallLamp","standard"],[174,3,"WallLamp","standard"],[232,1,"WallTorch","fire"],[24,7,"WallTorch","fire"],[33,5,"WallLamp","standard"],[66,7,"WallLamp","standard"]]',
         gates: '[[127,3,"7.1","6.2","Open"],[144,5,"7.2","8.1","Closed"],[244,1,"7.3","9.1","Closed"]]',
@@ -134,12 +134,15 @@ const MAP = {
     ,
     10: {
         name: "Upstairs",
-        data: '{"width":"16","height":"16","map":"BB3AA4BB51ABB3ABB18ABB174$"}',
+        data: '{"width":"16","height":"16","map":"BB8AA35BAA15BB2AA18BB2AA3BB4AA3BAA4BAA9BAA7BABB29AA3BB5AA2BABB12AA2BB3AA4BAA4ÁABB18ABB24ABB11$AÁÁ2BB7ÁÁ3BB3"}',
         wall: "DarkBricks",
         floor: "BrokenTiles3",
         ceil: "OldFloor",
-        start: '[231,1]',
-        gates: '[[247,1,"10.1","8.2","Down"]]',
+        start: '[232,1]',
+        lights: '[[23,7,"WallLamp","standard"],[235,1,"WallLamp","standard"],[229,1,"WallLamp","standard"],[100,1,"WallLamp","standard"],[107,1,"WallLamp","standard"]]',
+        gates: '[[248,1,"10.1","8.2","Down"]]',
+        monsters: '[[37,"MissWhite"],[42,"MissGreen"]]',
+        triggers: '[[118,5,"MarbleTriggerButton",0,103],[121,3,"MarbleTriggerButton",0,104]]',
     }
     ,
     11: {

@@ -9,8 +9,11 @@
       
 TODO:
     * missiles should die after exiting room?
+    * trigger with missile trap
+    * monsters shooting bouncies?
+    * exploding walls with explosive??
 known bugs: 
-    * picking items from chests does not assert max inventory limit
+    
 
  */
 ////////////////////////////////////////////////////
@@ -57,7 +60,7 @@ const INI = {
     //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.06.05",
+    VERSION: "0.06.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -640,8 +643,9 @@ const GAME = {
         //GAME.level = 3;               //shrines
         //GAME.level = 4;                 //small room
         //GAME.level = 6;                 //chasm
-        GAME.level = 7;                 //interaction
+        //GAME.level = 7;                 //interaction
         //GAME.level = 8;                 //staircase
+        GAME.level = 10;                 //upstairs
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];

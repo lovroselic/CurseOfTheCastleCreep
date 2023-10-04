@@ -544,7 +544,7 @@ class MasterDungeon {
         this.obstacles = [...arguments].flat().filter((el) => el !== null);
     }
     setNodeMap() {
-        return this.GA.setNodeMap("nodeMap", [MAPDICT.WALL], "exclude", this.obstacles);
+        return this.GA.setNodeMap("nodeMap", [MAPDICT.WALL, MAPDICT.HOLE], "exclude", this.obstacles);
     }
     gridDistance(grid) {
         if (!this.nodeMap) return -1;

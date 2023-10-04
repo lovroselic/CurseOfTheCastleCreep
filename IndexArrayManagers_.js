@@ -734,7 +734,7 @@ class Animated_3d_entity extends IAM {
 
                 //check distance
                 entity.setDistanceFromNodeMap(map.GA.nodeMap);
-                if (entity.distance === null) continue;
+                //if (entity.distance === null) continue;           
                 if (entity.petrified) continue;
 
                 //enemy/enemy collision resolution

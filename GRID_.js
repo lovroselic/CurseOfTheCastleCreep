@@ -374,6 +374,7 @@ const GRID = {
     const outer = Grid.toClass(outerPoint);
     if (GA.isWall(outer)) {
       console.error("Missile position in wall. This should never have happened! But it is handled.", outer, GA.isWall(outer));
+      console.info("innerPoint", innerPoint, "outerPoint", outerPoint);
       return null;
     }
     let faceNormal = outer.sub(inner);

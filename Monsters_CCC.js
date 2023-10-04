@@ -532,6 +532,8 @@ const MONSTER_TYPE = {
         shootDistance: 6,
         stalkDistance: 3,
         material: MATERIAL.standard,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.Fireball
     },
     MissGreen: {
         name: "MissGreen",
@@ -557,6 +559,8 @@ const MONSTER_TYPE = {
         shootDistance: 6,
         stalkDistance: 3,
         material: MATERIAL.standard,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball
     },
     GhostFace: {
         name: "GhostFace",

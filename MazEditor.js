@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.07",
+  VERSION: "0.07.08",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -526,7 +526,9 @@ const GAME = {
     for (let arrType of $MAP.combined) {
       let iElementToRemove = [];
       for (let [index, element] of arrType.entries()) {
-        if (element[0] === gridIndex) {
+        if (element === gridIndex) {
+          iElementToRemove.push(index);
+        } else if (element[0] === gridIndex) {
           iElementToRemove.push(index);
         }
       }

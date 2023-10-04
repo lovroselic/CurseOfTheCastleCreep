@@ -762,6 +762,7 @@ const WebGL = {
                          * inventory
                          * mouseClick
                          * hero
+                         * (GA, inventory, mouseClick, hero)
                          */
                         //console.info("OBJ interaction candidate", obj, obj.excludeFromInventory);
                         if (!obj.excludeFromInventory) {
@@ -1881,7 +1882,7 @@ class Missile extends Drawable_object {
         this.pos = position;
         this.dir = direction;
         this.magic = magic;
-        this.casterId = casterId;                   //legacy - obsolete
+        //this.casterId = casterId;                   //legacy - obsolete
         this.distance = null;
         for (const prop in type) {
             this[prop] = type[prop];
@@ -2094,6 +2095,38 @@ class Trigger extends WallFeature3D {
         return {
             category: "rebuild",
         };
+    }
+}
+
+class Trap extends WallFeature3D {
+    constructor(grid, face, sprite, action, prototype, targetGrid) {
+        const type = {
+            name: "trigger",
+            category: 'crest',
+            sprite: sprite
+        };
+        super(grid, face, type);
+        this.action = action;
+        this.targetGrid = targetGrid;
+        this.prototype = prototype;
+        this.excludeFromInventory = true;
+    }
+    interact(GA, inventory, mouseClick, hero) {
+        console.log("trap - interact");
+        this.interactive = false;
+        this.active = false;
+        return this[this.action](hero);
+    }
+    Spawn() {
+        ENTITY3D.add(new $3D_Entity(Grid.toCenter(this.targetGrid), this.prototype, UP));
+    }
+    Missile(hero) {
+        const position = Grid.toCenter(this.targetGrid);
+        const target = Grid.toCenter(this.grid);
+        const direction2D = position.direction(target);
+        const dir = Vector3.from_2D_dir(direction2D);
+        const missile = new this.prototype.construct(Vector3.from_Grid(position, 0.5), dir, this.prototype, hero.magic);
+        MISSILE3D.add(missile);
     }
 }
 

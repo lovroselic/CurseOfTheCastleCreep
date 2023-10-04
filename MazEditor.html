@@ -168,6 +168,15 @@
                                 <select id="trigger_actions"> </select>
                             </div>
                             <hr>
+                            <input type="radio" name="painter" value="trap"> Trap <br />
+                            <div>
+                                What: <select id="trap_type"> </select>
+                            </div>
+                            <div>
+                                Which: <select id="trap_entity"> </select>
+                            </div>
+
+                            <hr>
                             <input type="radio" name="painter" value="entity"> Entity <br />
                             <hr>
                             <input type="radio" name="painter" value="object"> Interaction object <br />
@@ -264,7 +273,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>
-                                Trigger decals
+                                Trigger & trap decals
                             </legend>
                             <input type="button" id="randtriggerdecal" value="Random" />
                             <br />
@@ -413,6 +422,7 @@
     gates: '[[248,1,"10.1","8.2","Down"]]',
     monsters: '[[37,"MissWhite"],[42,"MissGreen"]]',
     triggers: '[[118,5,"MarbleTriggerButton",0,103],[121,3,"MarbleTriggerButton",0,104]]',
+    traps: '[[136,4,"MarbleTriggerButton",0,"Fireball",141],[133,4,"MarbleTriggerButton",0,"Bounceball",218],[52,5,"PurpleTriggerButton",1,"MissGalaxyDemo",56]]',
     }
                         </textarea>
 

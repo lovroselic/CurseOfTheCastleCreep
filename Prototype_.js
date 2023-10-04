@@ -118,6 +118,13 @@ changelog:
     }
     return low;
   }
+  function listObjectKeys(obj) {
+    const list = [];
+    for (const key in obj) {
+      list.push(key);
+    }
+    return list;
+  }
   function stringifyObjectList(selection) {
     const list = [];
     for (const name in selection) {
@@ -158,6 +165,7 @@ changelog:
   window.colorVectorToRGB_Vector = colorVectorToRGB_Vector;
   window.RGB_vectorToRGB_string = RGB_vectorToRGB_string;
   window.colorVectorToRGB_String = colorVectorToRGB_String;
+  window.listObjectKeys = listObjectKeys;
   window.stringifyObjectList = stringifyObjectList;
   window.evalObjectString = evalObjectString;
 })();
@@ -564,8 +572,8 @@ class Grid extends MasterGridClass {
     let split = dir.ortoSplit();
     solutions.push(new Direction(split[0], Math.abs(absDir.x)));
     solutions.push(new Direction(split[1], Math.abs(absDir.y)));
-   
-    if (solutions[0].len < solutions[1].len) solutions.swap(0, 1); 
+
+    if (solutions[0].len < solutions[1].len) solutions.swap(0, 1);
     return solutions;
   }
   reflect(C) {

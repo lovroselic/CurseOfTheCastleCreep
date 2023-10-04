@@ -216,6 +216,7 @@ const COMMON_ITEM_TYPE = {
         moveSpeed: 8.0,
         lightColor: "#FF7700",
         material: MATERIAL.fire,
+        construct: Missile,
     },
     Bounceball: {
         name: "Bounceball",
@@ -226,6 +227,7 @@ const COMMON_ITEM_TYPE = {
         moveSpeed: 8.0,
         lightColor: "#006600",
         material: MATERIAL.greenFluence,
+        construct: BouncingMissile,
     },
 };
 
@@ -920,4 +922,8 @@ const INTERACTION_ENTITY = {
 const CONTAINER_CONTENT_TYPES = { GOLD_ITEM_TYPE, SKILL_ITEM_TYPE, INTERACTION_ITEM };
 const CONTAINER_CONTENT_LIST = stringifyObjectList(CONTAINER_CONTENT_TYPES);
 const TRIGGER_ACTIONS = ["HOLE->toEmpty", "WALL->toEmpty"];
-
+const TRAP_ACTIONS = {
+    Missile: ["Fireball", "Bounceball"],
+    Spawn: listObjectKeys(MONSTER_TYPE)
+};
+const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);

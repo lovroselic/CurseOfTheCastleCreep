@@ -9,8 +9,6 @@
       
 TODO:
     * missiles should die after exiting room?
-    * trigger with missile trap
-    * monsters shooting bouncies?
     * exploding walls with explosive??
 known bugs: 
     
@@ -56,11 +54,9 @@ const INI = {
     BOOST_TIME: 59,
     INVENTORY_HARD_LIMIT: 20,
     COMPLAIN_TIMEOUT: 400,
-    //MM_reveal_radius: 4,
-    //FINAL_LEVEL: 5,
 };
 const PRG = {
-    VERSION: "0.06.06",
+    VERSION: "0.06.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

@@ -143,6 +143,7 @@ const MAP = {
         gates: '[[248,1,"10.1","8.2","Down"]]',
         monsters: '[[37,"MissWhite"],[42,"MissGreen"]]',
         triggers: '[[118,5,"MarbleTriggerButton",0,103],[121,3,"MarbleTriggerButton",0,104]]',
+        traps: '[[136,4,"MarbleTriggerButton",0,"Fireball",141],[133,4,"MarbleTriggerButton",0,"Bounceball",218],[52,5,"PurpleTriggerButton",1,"MissGalaxyDemo",56]]',
     }
     ,
     11: {

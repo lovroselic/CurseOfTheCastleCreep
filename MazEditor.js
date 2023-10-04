@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.08",
+  VERSION: "0.07.09",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -459,7 +459,6 @@ const GAME = {
               $("#trigger_decal")[0].value,
               TRIGGER_ACTIONS.indexOf($("#trigger_actions")[0].value)
             );
-            //console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.triggerCount", GAME.stack.triggerCount);
             $("#error_message").html(`Trigger part 1 OK`);
             break;
 
@@ -500,7 +499,6 @@ const GAME = {
         }
 
         break;
-
       case "object":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -511,6 +509,65 @@ const GAME = {
             return;
         }
         break;
+      case "trap":
+
+        if (GAME.stack.previousRadio === radio) {
+          GAME.stack.trapCount++;
+        } else GAME.stack.trapCount = 1;
+
+        if (GAME.stack.trapCount > 2) {
+          GAME.stack.trapCount = 1;
+          GAME.stack.elementBuilt = null;
+        }
+
+        switch (GAME.stack.trapCount) {
+          case 1:
+            switch (currentValue) {
+              case MAPDICT.EMPTY:
+                dir = NOWAY;
+                break;
+              case MAPDICT.WALL:
+                dir = GAME.getSelectedDir();
+                if (dir.same(NOWAY)) {
+                  GAME.stack.trapCount = 0;
+                  $("#error_message").html("Wall trap decal needs direction");
+                  return;
+                }
+                break;
+
+              default:
+                $("#error_message").html(`Trap decal placement not supported on value: ${currentValue}`);
+                return;
+            }
+            GAME.stack.elementBuilt = Array(
+              gridIndex,
+              dir.toInt(),
+              $("#trigger_decal")[0].value,
+              TRAP_ACTION_LIST.indexOf($("#trap_type")[0].value),
+              $("#trap_entity")[0].value
+            );
+            $("#error_message").html(`Trap part 1 OK`);
+            break;
+
+          case 2:
+            const expectedValue = MAPDICT.EMPTY;
+            console.log(".expectedValue", expectedValue, "currentValue", currentValue);
+            if (currentValue !== expectedValue) {
+              $("#error_message").html(`Trap target doesn't match selected grid value!!`);
+              GAME.stack.triggerCount--;
+              return;
+            }
+
+            //success
+            GAME.stack.elementBuilt.push(gridIndex);
+            console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.trapCount", GAME.stack.trapCount);
+            $MAP.map.traps.push(GAME.stack.elementBuilt.clone());
+            GAME.stack.elementBuilt = null;
+            $("#error_message").html(`Trap part 2 OK`);
+            break;
+        }
+
+        break;
     }
     GAME.stack.previousRadio = radio;
 
@@ -519,6 +576,7 @@ const GAME = {
   stack: {
     previousRadio: null,
     triggerCount: 0,
+    trapCount: 0,
     elementBuilt: null,
   },
   clearGrid(gridIndex) {
@@ -889,6 +947,17 @@ const GAME = {
       ENGINE.drawToId("object_canvas", 0, 0, SPRITE[INTERACTION_OBJECT[$("#interaction_object_type")[0].value].inventorySprite]);
     });
     $("#interaction_object_type").trigger("change");
+
+    for (const action of TRAP_ACTION_LIST) {
+      $("#trap_type").append(`<option value="${action}">${action}</option>`);
+    }
+    $("#trap_type").change(() => {
+      $("#trap_entity").html("");
+      for (const val of TRAP_ACTIONS[$("#trap_type")[0].value]) {
+        $("#trap_entity").append(`<option value="${val}">${val}</option>`);
+      }
+    });
+    $("#trap_type").trigger("change");
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();

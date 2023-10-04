@@ -7,10 +7,10 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "0.3",
+    VERSION: "0.4",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
-        'shrines', 'doors', 'triggers', 'entities', 'objects'],
+        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
@@ -73,6 +73,7 @@ const SPAWN_TOOLS = {
         this.triggers(map, GA);
         this.entities(map, GA);
         this.objects(map, GA);
+        this.traps(map, GA);
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -199,6 +200,28 @@ const SPAWN_TOOLS = {
             const type = INTERACTION_OBJECT[O[1]];
             ITEM3D.add(new FloorItem3D(grid, type));
         }
+    },
+    traps(map, GA) {
+        for (const T of map.traps) {
+            const grid = GA.indexToGrid(T[0]);
+            const face = DirectionToFace(Vector.fromInt(T[1]));
+            const picture = T[2];
+            const action = TRAP_ACTION_LIST[T[3]];
+            let prototype;
+            switch (action) {
+                case "Missile":
+                    prototype = COMMON_ITEM_TYPE[T[4]];
+                    break;
+                case "Spawn":
+                    prototype = MONSTER_TYPE[T[4]];
+                    break;
+                default:
+                    throw new Error(`trap action error. ${action} not defined.`);
+            }
+            const targetGrid = GA.indexToGrid(T[5]);
+            const trap = new Trap(grid, face, picture, action, prototype, targetGrid);
+            INTERACTIVE_DECAL3D.add(trap);
+        }
     }
 
 };
@@ -208,4 +231,4 @@ MAP_TOOLS.initialize(MAP);
 MAP_TOOLS.setByteSize(2);
 
 /** END */
-console.log(`%cMAP and SPAWN tools ${MAP_TOOLS.VERSION} loaded.`, MAP_TOOLS.CSS);
+console.log(`% cMAP and SPAWN tools ${MAP_TOOLS.VERSION} loaded.`, MAP_TOOLS.CSS);

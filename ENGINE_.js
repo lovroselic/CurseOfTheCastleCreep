@@ -2350,6 +2350,20 @@ const ENGINE = {
           ENGINE.drawCircle(CTX, mid2, decalWidth * 1.5, "#CC0000");
         }
       }
+      if (maze.traps) {
+        for (const trigger of maze.traps) {
+          let grid = GA.indexToGrid(trigger[0]);
+          let dir = Vector.fromInt(trigger[1]);
+          let pStart = dotOrLine(grid, dir, "#00FF00");
+          let mid2 = GRID.gridToCenterPX(GA.indexToGrid(trigger[5]));
+          CTX.save();
+          CTX.setLineDash([2, 3]);
+          ENGINE.drawLine(CTX, pStart, mid2, "#666", 1);
+          CTX.restore();
+          ENGINE.drawCircle(CTX, mid2, decalWidth * 1.5, "#EE0033");
+          write(mid2, trigger[4])
+        }
+      }
       if (maze.decals) {
         for (const decal of maze.decals) {
           let grid = GA.indexToGrid(decal[0]);
@@ -2507,7 +2521,7 @@ const ENGINE = {
           let grid = GA.indexToGrid(skill[0]);
           let mid = GRID.gridToCenterPX(grid);
           const color = "red";
-          write(mid,`* ${skill[1]} *`, color);
+          write(mid, `* ${skill[1]} *`, color);
           ENGINE.drawLine(CTX, mid.translate(UpLeft, W / 2), mid.translate(UpLeft, W / 2).translate(RIGHT, W), color, 3);
           ENGINE.drawLine(CTX, mid.translate(DownLeft, W / 2), mid.translate(DownLeft, W / 2).translate(RIGHT, W), color, 5);
         }

@@ -4,8 +4,6 @@
 /*jshint -W061 */
 
 "use strict";
-//const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down"];
-
 console.log("%cMAP for CCC loaded.", "color: #888");
 
 /** Map definitions */
@@ -139,6 +137,7 @@ const MAP = {
         floor: "BrokenTiles3",
         ceil: "OldFloor",
         start: '[232,1]',
+        decals: '[[181,7,"Wolfenstein70","picture"],[187,7,"Barbarian100","picture"],[122,7,"TombRaider110","picture"],[25,7,"Infiltrator70","picture"],[60,7,"ReturnToCastleWolfenstein12","picture"],[51,7,"ReturnToCastleWolfenstein11","picture"],[116,7,"KokotoniWilf2","picture"],[142,3,"AztecChallenge100","picture"],[62,3,"Pitfall91","picture"],[161,5,"EnigmaForce2","picture"],[33,5,"GoldenAxe2","picture"],[227,1,"SkoolDaze61","picture"],[237,1,"Ishar99","picture"],[101,1,"Wolf10","picture"],[105,1,"Popeye2","picture"],[59,1,"Skyrim3","picture"],[164,1,"Goonies70","picture"],[170,1,"Elvira2","picture"]]',
         lights: '[[23,7,"WallLamp","standard"],[235,1,"WallLamp","standard"],[229,1,"WallLamp","standard"],[100,1,"WallLamp","standard"],[107,1,"WallLamp","standard"]]',
         gates: '[[248,1,"10.1","8.2","Down"]]',
         monsters: '[[37,"MissWhite"],[42,"MissGreen"]]',
@@ -156,19 +155,3 @@ const MAP = {
         gates: '[[7,7,"11.1","8.3","Up"]]',
     }
 };
-
-const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue"];
-const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal"];
-const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine"];
-const KEY_TYPE = {};
-for (let [index, key] of KEY_TYPES.entries()) {
-    KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
-}
-
-const POTION_TYPES = ["Red", "Blue"];
-const POTION_TEXTURES = ["RedLiquid", "BlueLiquid"];
-const POTION_MATERIAL = ["redShine", "blueShine"];
-const POTION_TYPE = {};
-for (let [index, potion] of POTION_TYPES.entries()) {
-    POTION_TYPE[potion] = new PotionTypeDefinition(`${potion}Potion`, `${potion}Potion24`, potion.toLowerCase(), POTION_TEXTURES[index], MATERIAL[POTION_MATERIAL[index]]);
-}

@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.07.09",
+  VERSION: "0.08.00",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -323,7 +323,6 @@ const GAME = {
           case MAPDICT.EMPTY:
             let keyValue = $("#key_type")[0].value;
             let keyTypeIndex = KEY_TYPES.indexOf(keyValue);
-            console.log("key", gridIndex, keyValue, keyTypeIndex);
             $MAP.map.keys.push(Array(gridIndex, keyTypeIndex));
             break;
           default:

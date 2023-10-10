@@ -968,6 +968,9 @@ const WORLD = {
     addCube(Y, grid, type) {
         return this.addElement(ELEMENT.CUBE, Y, grid, type);
     },
+    addBlockWall(Y, grid, type) {
+        return this.addElement(ELEMENT.BLOCKWALL, Y, grid, type);
+    },
     addElement(E, Y, grid, type, scale = null) {
         let positions = E.positions.slice();
         let indices = E.indices.slice();
@@ -1030,6 +1033,11 @@ const WORLD = {
                     this.addCube(Y - 1, grid, "wall");                  //support for holes
                     break;
                 case MAPDICT.HOLE:
+                    this.addCube(Y + 1, grid, "ceil");
+                    break;
+                case MAPDICT.BLOCKWALL:
+                    this.addBlockWall(Y, grid, "wall");
+                    this.addCube(Y - 1, grid, "floor");
                     this.addCube(Y + 1, grid, "ceil");
                     break;
                 default:
@@ -2576,12 +2584,16 @@ class $3D_Entity {
     }
     setDistanceFromNodeMap(nodemap) {
         let gridPosition = Vector3.toGrid(this.moveState.pos);
-        //debug
         if (!nodemap[gridPosition.x][gridPosition.y]) {
+            if (this.fly) {
+                this.distance = null;
+                return;
+            }
+            //debug
             console.error(this.name, this.id, "has issue with gridPosition", gridPosition);
             console.warn("details:", this);
         }
-        //
+
         let distance = nodemap[gridPosition.x][gridPosition.y].distance;
         if (distance < Infinity) {
             this.distance = distance;

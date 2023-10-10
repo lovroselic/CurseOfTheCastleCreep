@@ -20,7 +20,7 @@ const GRID = {
   CSS: "color: #0AA",
   SETTING: {
     ALLOW_CROSS: false,
-    EPSILON: 0.05
+    EPSILON: 0.05,
   },
   circleCollision(entity1, entity2) {
     let distance = entity1.moveState.pos.EuclidianDistance(entity2.moveState.pos);
@@ -295,13 +295,6 @@ const GRID = {
     } while (!GRID.same(node, endGrid));
     return path;
   },
-  pathClear(path) {
-    if (path.length === 0) return true;
-    for (let q = 0; q < path.length; q++) {
-      if (GRID.gridIsBlock(path[q])) return false;
-    }
-    return true;
-  },
   calcDistancesBFS_BH(start, dungeon) {
     dungeon.setNodeMap();
     let BH = new BinHeap("distance");
@@ -568,19 +561,15 @@ const MAPDICT = {
   DOOR: 2 ** 2,                           //4 - inner door!
 
   //original - for random maps
-  //RESERVED: 2 ** 3,                     //8 - remapped to 16 bit space
-  //START_POSITION: 2 ** 4,               //16 - - remapped to 16 bit space
-  VACANT_PLACEHODLER1: 2 ** 3,            //8
-  VACANT_PLACEHODLER2: 2 ** 4,            //16
+  VACANT_PLACEHOLDER1: 2 ** 3,            //8
+  BLOCKWALL: 2 ** 4,                      //16 - wall that is removable
   STAIR: 2 ** 5,                          //32
   SHRINE: 2 ** 6,                         //64
 
   //alternative1 - RUN scpecific
   TRAP_DOOR: 2 ** 3,                      //8
-  BLOCKWALL: 2 ** 4,                      //16
-  VACANT_PLACEHODLER3: 2 ** 5,            //32
+  VACANT_PLACEHOLDER3: 2 ** 5,            //32
   DEAD_END: 2 ** 6,                       //64
-
 
   //alternative2 - CCC generation
   GATE: 2 ** 5,                           //32 - STAIR alias -> route to another dungeon
@@ -595,6 +584,9 @@ const MAPDICT = {
   RESERVED: 2 ** 14,                       //16384
   START_POSITION: 2 ** 13,                 //8192
 };
+
+const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL];
+const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL];
 
 class ArrayBasedDataStructure {
   constructor() { }
@@ -795,6 +787,9 @@ class GridArray extends ArrayBasedDataStructure {
   }
   notTrapDoor(grid) {
     return !this.isTrapDoor(grid);
+  }
+  toBlockWall(grid) {
+    this.setValue(grid, MAPDICT.BLOCKWALL);
   }
   addBlockWall(grid) {
     this.set(grid, MAPDICT.BLOCKWALL);
@@ -1176,8 +1171,8 @@ class GridArray extends ArrayBasedDataStructure {
   }
 
   positionIsNotWall(pos) {
-    let grid = Grid.toClass(pos);
-    let check = this.check(grid, MAPDICT.WALL);
+    const grid = Grid.toClass(pos);
+    const check = this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum());
     return !check;
   }
   entityNotInWall(pos, dir, r, resolution = 8) {
@@ -1191,15 +1186,15 @@ class GridArray extends ArrayBasedDataStructure {
 
   /**
  * @param {FP_Grid} pos - position of entity
- * @param {number} exlusion - binary constant from MAP_DICT, @default MAPDICT.WALL
+ * @param {number} exlusion - binary constant array of MAP_DICT values, @default GROUND_MOVE_GRID_EXCLUSION
  * @returns {boolean} - true if position is not in wall or other exluded type
  */
-  positionIsNotExcluded(pos, exclusion = [MAPDICT.WALL, MAPDICT.HOLE]) {
-    let grid = Grid.toClass(pos);
-    let check = this.check(grid, exclusion.sum());
+  positionIsNotExcluded(pos, exclusion = GROUND_MOVE_GRID_EXCLUSION) {
+    const grid = Grid.toClass(pos);
+    const check = this.check(grid, exclusion.sum());
     return !check;
   }
-  entityNotInExcusion(pos, dir, r, exclusion = [MAPDICT.WALL, MAPDICT.HOLE], resolution = 8) {
+  entityNotInExcusion(pos, dir, r, exclusion = GROUND_MOVE_GRID_EXCLUSION, resolution = 8) {
     let checks = this.pointsAroundEntity(pos, dir, r, resolution);
     for (const point of checks) {
       let notExcluded = this.positionIsNotExcluded(point, exclusion);
@@ -1231,7 +1226,7 @@ class GridArray extends ArrayBasedDataStructure {
   }
   pathClear(path) {
     for (const grid of path) {
-      if (this.isWall(grid)) return false;
+      if (this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum())) return false;
     }
     return true;
   }
@@ -1431,6 +1426,7 @@ const MINIMAP = {
     HERO: "#FFF",
     SHRINE: "#FF00FF",
     HOLE: "#444",
+    BLOCKWALL: "#d2691e"
   },
   DATA: {
     PIX_SIZE: 4,
@@ -1501,6 +1497,9 @@ const MINIMAP = {
             break;
           case MAPDICT.HOLE:
             CTX.fillStyle = MINIMAP.LEGEND.HOLE;
+            break;
+          case MAPDICT.BLOCKWALL:
+            CTX.fillStyle = MINIMAP.LEGEND.BLOCKWALL;
             break;
           default:
             console.log("ALERT default empty", index, value, clenValue);

@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.08.00",
+  VERSION: "0.08.01",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -230,7 +230,7 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "blockwall":
-        GA.addBlockWall(grid);
+        GA.toBlockWall(grid);
         $("#error_message").html("All is fine");
         break;
       case "gate":

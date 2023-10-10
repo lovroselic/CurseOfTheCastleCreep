@@ -66,15 +66,16 @@ const MAP = {
     }
     ,
     5: {
-        data: '{"width":"16","height":"16","map":"BB4AA8BB2AA4BB4AA20BB82AA2BB23ABABB5ABAA3BB18ABB75$"}',
-        wall: "BeautifullWall1",
+        name: "BlockWall Test",
+        data: '{"width":"16","height":"16","map":"BB2AA2BB3ÁÁ2AÁAA3BAA3BAA5BB5AA2BB2ABB3ABABB2AA47BB14AA3BB15AA2BABB18AA2BB53AA2BABB3QBAA2BABQBB8ABB3ABB8$AA2BB6AQBB5QQ2BB2AA3"}',
+        wall: "DarkBricks",
         floor: "BrickTiles",
         ceil: "BlurryScarlet",
-        start: '[113,1]',
-        decals: '[[243,1,"Barbarian130","picture"],[247,1,"Barbarian13","picture"],[145,5,"Barbarian110","picture"],[209,5,"Barbarian100","picture"]]',
-        lights: '[[97,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[245,1,"WallTorch","fire"]]',
+        start: '[113,5]',
+        decals: '[[243,1,"Barbarian130","picture"],[247,1,"Barbarian13","picture"],[145,5,"Barbarian110","picture"],[209,5,"Barbarian100","picture"],[3,7,"Witcher112","picture"],[1,7,"CodenameIceman2","picture"],[7,7,"Geos","picture"],[167,1,"RobinOfTheWood50","picture"]]',
+        lights: '[[97,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[245,1,"WallTorch","fire"],[2,7,"WallLamp","standard"],[6,7,"WallLamp","standard"],[121,3,"WallLamp","standard"]]',
         gates: '[[112,5,"5.1","1.4","Open"]]',
-        keys: '[]'
+        monsters: '[[34,"MissGalaxyGreen"],[39,"RedGoldBat"],[135,"MissGreen"],[205,"Bat"],[235,"MissGreen"]]',
     }
     ,
     6: {

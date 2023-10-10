@@ -139,9 +139,9 @@
                             <input type="radio" name="painter" value="wall"> Wall <br />
                             <input type="radio" name="painter" value="space"> Space <br />
                             <input type="radio" name="painter" value="door"> Door <br />
-                            <input type="radio" name="painter" value="trapdoor"> TrapDoor <br />
-                            <input type="radio" name="painter" value="blockwall" disabled> BlockWall (CCC
+                            <input type="radio" name="painter" value="trapdoor" disabled> TrapDoor (CCC
                             disabled)<br />
+                            <input type="radio" name="painter" value="blockwall"> BlockWall<br />
                             <input type="radio" name="painter" value="hole"> Hole <br />
                             <hr>
                             <input type="radio" name="painter" value="gate"> Gate <br />
@@ -411,19 +411,17 @@
                             Export:
                         </legend>
                         <textarea id="exp" style="width: 1200px; height: 256px;">
-10 : {
-    name: "Upstairs",
-    data: '{"width":"16","height":"16","map":"BB8AA35BAA15BB2AA18BB2AA3BB4AA3BAA4BAA9BAA7BABB29AA3BB5AA2BABB12AA2BB3AA4BAA4ÁABB18ABB24ABB11$AÁÁ2BB7ÁÁ3BB3"}',
+5 : {
+    name: "BlockWall Test",
+    data: '{"width":"16","height":"16","map":"BB2AA2BB3ÁÁ2AÁAA3BAA3BAA5BB5AA2BB2ABB3ABABB2AA47BB14AA3BB15AA2BABB18AA2BB53AA2BABB3QBAA2BABQBB8ABB3ABB8$AA2BB6AQBB5QQ2BB2AA3"}',
     wall: "DarkBricks",
-    floor: "BrokenTiles3",
-    ceil: "OldFloor",
-    start: '[232,1]',
-    decals: '[[181,7,"Wolfenstein70","picture"],[187,7,"Barbarian100","picture"],[122,7,"TombRaider110","picture"],[25,7,"Infiltrator70","picture"],[60,7,"ReturnToCastleWolfenstein12","picture"],[51,7,"ReturnToCastleWolfenstein11","picture"],[116,7,"KokotoniWilf2","picture"],[142,3,"AztecChallenge100","picture"],[62,3,"Pitfall91","picture"],[161,5,"EnigmaForce2","picture"],[33,5,"GoldenAxe2","picture"],[227,1,"SkoolDaze61","picture"],[237,1,"Ishar99","picture"],[101,1,"Wolf10","picture"],[105,1,"Popeye2","picture"],[59,1,"Skyrim3","picture"],[164,1,"Goonies70","picture"],[170,1,"Elvira2","picture"]]',
-    lights: '[[23,7,"WallLamp","standard"],[235,1,"WallLamp","standard"],[229,1,"WallLamp","standard"],[100,1,"WallLamp","standard"],[107,1,"WallLamp","standard"]]',
-    gates: '[[248,1,"10.1","8.2","Down"]]',
-    monsters: '[[37,"MissWhite"],[42,"MissGreen"]]',
-    triggers: '[[118,5,"MarbleTriggerButton",0,103],[121,3,"MarbleTriggerButton",0,104]]',
-    traps: '[[136,4,"MarbleTriggerButton",0,"Fireball",141],[133,4,"MarbleTriggerButton",0,"Bounceball",218],[52,5,"PurpleTriggerButton",1,"MissGalaxyDemo",56]]',
+    floor: "BrickTiles",
+    ceil: "BlurryScarlet",
+    start: '[113,5]',
+    decals: '[[243,1,"Barbarian130","picture"],[247,1,"Barbarian13","picture"],[145,5,"Barbarian110","picture"],[209,5,"Barbarian100","picture"],[3,7,"Witcher112","picture"],[1,7,"CodenameIceman2","picture"],[7,7,"Geos","picture"],[167,1,"RobinOfTheWood50","picture"]]',
+    lights: '[[97,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[245,1,"WallTorch","fire"],[2,7,"WallLamp","standard"],[6,7,"WallLamp","standard"],[121,3,"WallLamp","standard"]]',
+    gates: '[[112,5,"5.1","1.4","Open"]]',
+    monsters: '[[34,"MissGalaxyGreen"],[39,"RedGoldBat"],[135,"MissGreen"],[205,"Bat"],[235,"MissGreen"]]',
     }
                         </textarea>
 

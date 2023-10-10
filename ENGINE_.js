@@ -2294,7 +2294,10 @@ const ENGINE = {
           let grid = new Grid(x, y);
           let value = maze.GA.getValue(grid);
           value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.FOG - MAPDICT.RESERVED;
-          if (maze.GA.isMazeWall(grid)) {
+          if (maze.GA.isBlockWall(grid)) {
+            ENGINE.BLOCKGRID.wall(x, y, CTX, value);
+          }
+          else if (maze.GA.isMazeWall(grid)) {
             value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.WALL;
 
             if (value & MAPDICT.STAIR) {
@@ -2564,6 +2567,9 @@ const ENGINE = {
     wall(x, y, CTX, value) {
       let FS;
       switch (value) {
+        case MAPDICT.BLOCKWALL:
+          FS = "#BBB";
+          break;
         case MAPDICT.DOOR:
           FS = "brown";
           break;

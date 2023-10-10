@@ -28,7 +28,7 @@ knownBugs:
 const AI = {
   VERSION: "2.01",
   CSS: "color: silver",
-  VERBOSE: false,
+  VERBOSE: true,
   INI: {
     CHANGE_ADVANCER_TO_HUNT_MIN_DISTANCE: 3,
   },
@@ -46,9 +46,9 @@ const AI = {
     }
   },
   getGridValue(enemy) {
-    const gridValue = [MAPDICT.WALL];
-    if (!enemy.fly) {
-      gridValue.push(...[MAPDICT.HOLE]);
+    let gridValue = GROUND_MOVE_GRID_EXCLUSION;
+    if (enemy.fly) {
+      gridValue = AIR_MOVE_GRID_EXCLUSION;
     }
     return gridValue;
   },
@@ -63,7 +63,7 @@ const AI = {
     }
   },
   immobile(enemy) {
-    if (this.VERBOSE) console.warn("IMMOBILE");
+    if (this.VERBOSE) console.warn(`${enemy.name}-${enemy.id} IMMOBILE`);
     if (AI.immobileWander) return this.wanderer(enemy);
     return [NOWAY];
   },
@@ -72,7 +72,7 @@ const AI = {
     let nodeMap = enemy.parent.map.GA.nodeMap;
     let grid = this.getPosition(enemy);
     let goto = nodeMap[grid.x][grid.y].goto || NOWAY;
-    if (this.VERBOSE) console.info(`...${enemy.name} ${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
+    if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
     if (GRID.same(goto, NOWAY) && this.setting === "3D") return this.hunt_FP(enemy, exactPosition);
     return [goto];
   },
@@ -87,15 +87,15 @@ const AI = {
     const direction = ePos.direction(pPos);
     if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction);
     const orto = direction.ortoAlign();
-    if (this.VERBOSE) console.info(`${enemy.name} ${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
+    if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
     return [orto];
   },
   crossroader(enemy, playerPosition, dir, block, exactPosition) {
     if (this.VERBOSE) console.log("------------------------------");
-    if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name} ${enemy.id}`);
+    if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name}-${enemy.id}`);
     let goal, _;
     [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir);
-    if (this.VERBOSE) console.log(`.. ${enemy.name} ${enemy.id} goal`, goal, "strategy", enemy.behaviour.strategy);
+    if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} goal`, goal, "strategy", enemy.behaviour.strategy);
 
     if (goal === null) {
       return this.hunt(enemy, exactPosition);
@@ -103,7 +103,7 @@ const AI = {
 
     /** what if goal takes you further away - advancer! */
     const new_distance = enemy.parent.map.GA.nodeMap[goal.x][goal.y].distance;
-    if (this.VERBOSE) console.log(`.. ${enemy.name} ${enemy.id} new_distance  from goal`, new_distance, "current distance", enemy.distance);
+    if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} new_distance  from goal`, new_distance, "current distance", enemy.distance);
     if (enemy.distance < this.INI.CHANGE_ADVANCER_TO_HUNT_MIN_DISTANCE && new_distance > enemy.distance) {
       if (this.VERBOSE) console.warn("... overriding behavior -> hunt");
       return this.hunt(enemy, exactPosition);
@@ -111,7 +111,7 @@ const AI = {
 
     const gridValue = this.getGridValue(enemy);
     const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude", block);
-    if (this.VERBOSE) console.log(`.. ${enemy.name} ${enemy.id} Astar`, Astar);
+    if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} Astar`, Astar);
     if (Astar === null) {
       return this.immobile(enemy);
     }
@@ -182,7 +182,7 @@ const AI = {
     return directions;
   },
   shoot(enemy, ARG) {
-    if (this.VERBOSE) console.warn(`..${enemy.name} ${enemy.id} tries to shoot.`);
+    if (this.VERBOSE) console.warn(`..${enemy.name}-${enemy.id} tries to shoot.`);
     if (enemy.caster) {
       if (enemy.mana >= Missile.calcMana(enemy.magic)) {
         const GA = enemy.parent.map.GA;
@@ -191,11 +191,12 @@ const AI = {
           GRID.freedom(this.getPosition(enemy), Grid.toClass(ARG.playerPosition), IA)) {
           enemy.canShoot = true;
         }
-        
+        if (this.VERBOSE) console.info(`..${enemy.name}-${enemy.id} can shoot: ${enemy.canShoot}`);
+
         if (enemy.distance) {
           return this.hunt(enemy, ARG.exactPlayerPosition);
         } else return this.immobile(enemy);
-        
+
       } else {
         this.caster = false;
         if (enemy.weak()) {

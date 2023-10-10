@@ -15,7 +15,7 @@ console.log("%cMonsters for CCC loaded.", "color: #888");
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down"];
 
 const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
-    "Petrify", "MagicBoost", "Luck", "HalfLife"];
+    "Petrify", "MagicBoost", "Luck", "HalfLife", "Explode"];
 
 const SHRINE_TYPE = {
     AttackShrine: {

@@ -655,7 +655,6 @@ class Missile3D extends IAM {
                     this.hero.hitByMissile(obj);
                     continue;
                 }
-                //obj.move(lapsedTime);
             }
         }
     }
@@ -673,6 +672,7 @@ class ParticleEmmission3D extends IAM {
             if (item) {
                 item.update(date);
                 if (item.normalized_age > 1) {
+                    if (item.callback) item.callback()
                     this.remove(item.id);
                 }
             }

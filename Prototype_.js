@@ -516,6 +516,10 @@ Set.prototype.removeArray = function (arr) {
 Set.prototype.intersect = function (x) {
   return new Set([...this].filter(el => x.has(el)));
 };
+Audio.prototype.stop = function () {
+  this.pause();
+  this.currentTime = 0;
+};
 
 class MasterGridClass {
   constructor() { }

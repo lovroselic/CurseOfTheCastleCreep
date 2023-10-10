@@ -146,6 +146,7 @@ LoadTextures = [
     { srcName: "Magic4.jpg", name: "Magic" },
     { srcName: "Wood2.jpg", name: "Wood1" },
     { srcName: "Explosion1.jpg", name: "Explosion" },
+    { srcName: "Explosion256.jpg", name: "Explosion2" },
     { srcName: "treasure_chest.JPG", name: "TreasureChest" },
     { srcName: "CoinColor.jpg", name: "Coins" },
     { srcName: "Sting_Base_Color.png", name: "Sting" },
@@ -201,6 +202,7 @@ LoadAudio = [
     { srcName: "SwordMiss2.mp3", name: "SwordMiss" },
     { srcName: "short-buzz.mp3", name: "Buzz" },
     { srcName: "thud.mp3", name: "Thud" },
+    { srcName: "Fuse.mp3", name: "Fuse" },
 
     //monstersounds
     { srcName: "MonsterDeath.mp3", name: "MonsterDeath" },
@@ -291,14 +293,7 @@ LoadSprites = [
     { srcName: "DefenseShrine256.png", name: "DefenseShrine" },
     { srcName: "MagicShrine256.png", name: "MagicShrine" },
 
-    //stairs
-    /*
-    { srcName: "StairsUp.jpg", name: "StairsUp" },
-    { srcName: "StairsDown.jpg", name: "StairsDown" },
-    */
 
-    //entrance_gate
-    //{ srcName: "DungeonDoor.png", name: "EntranceGate" },
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },
     { srcName: "DestroyArmor.png", name: "SCR_DestroyArmor" },
@@ -314,6 +309,7 @@ LoadSprites = [
     { srcName: "Luck.png", name: "SCR_Luck" },
     { srcName: "DrainMana.png", name: "SCR_DrainMana" },
     { srcName: "Petrify.png", name: "SCR_Petrify" },
+    { srcName: "Scroll_Bomb.png", name: "SCR_Explode" },
 
     //status
     { srcName: "Invisible24.png", name: "Invisible" },

@@ -162,6 +162,7 @@ LoadSprites = [
     { srcName: "Luck.png", name: "SCR_Luck" },
     { srcName: "DrainMana.png", name: "SCR_DrainMana" },
     { srcName: "Petrify.png", name: "SCR_Petrify" },
+    { srcName: "Scroll_Bomb.png", name: "SCR_Explode" },
 
     //lights
     { srcName: "WallLamp256.png", name: "WallLamp" },

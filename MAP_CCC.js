@@ -76,6 +76,8 @@ const MAP = {
         lights: '[[97,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[245,1,"WallTorch","fire"],[2,7,"WallLamp","standard"],[6,7,"WallLamp","standard"],[121,3,"WallLamp","standard"]]',
         gates: '[[112,5,"5.1","1.4","Open"]]',
         monsters: '[[34,"MissGalaxyGreen"],[39,"RedGoldBat"],[135,"MissGreen"],[205,"Bat"],[235,"MissGreen"]]',
+        scrolls: '[[100,12],[116,12],[132,12],[148,12],[99,0],[115,0],[131,1],[147,1]]',
+        objects: '[[98,"RedGem"]]',
     }
     ,
     6: {

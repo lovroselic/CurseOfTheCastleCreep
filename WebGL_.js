@@ -55,6 +55,7 @@ const WebGL = {
         DYNAMIC_LIGHTS_RESERVATION: 32,
         EXPLOSION_N_PARTICLES: 25000,
         EXPLOSION_DURATION_MS: 2000,
+        BOMB_DURATION_MS: 4000,
         POISON_DURATION_MS: 3000,
         BLOOD_DURATION_MS: 2500,
         SMUDGE_DURATION_MS: 500,
@@ -1862,7 +1863,7 @@ class FloorItem3D extends Drawable_object {
     }
     interact(GA, inventory, click, hero) {
         this.active = false;
-        if (this.instanceIdentification) {
+        if (this.instanceIdentification && typeof (this.instanceIdentification) === "string") {
             if (["INTERACTION_ITEM"].includes(this.instanceIdentification.split(".")[0])) {
                 const type = eval(this.instanceIdentification);
                 this.text = type.text;
@@ -2186,6 +2187,7 @@ class ParticleEmmiter {
         this.duration = null;
         this.currentIndex = 0;
         this.texture = WebGL.createTexture(texture);
+        this.callback = null;
     }
     update(date) {
         this.normalized_age = (date - this.birth) / this.duration;
@@ -2502,6 +2504,41 @@ class FloorDust extends ParticleEmmiter {
         this.velocity = 0.01;
         this.rounded = 0;
     }
+}
+
+class BigFireExplosion extends ParticleEmmiter {
+    constructor(position, duration = WebGL.INI.EXPLOSION_DURATION_MS, texture = TEXTURE.Explosion2, number = UNIFORM.INI.MAX_N_PARTICLES) {
+        super(position, texture);
+        this.number = number;
+        this.duration = duration;
+        this.build(number);
+        this.lightColor = colorStringToVector("#FF3300");
+        this.scale = 0.25;
+        this.gravity = new Float32Array([0, 0.0075, 0]);
+        this.velocity = 0.1;
+        this.rounded = 1;
+    }
+}
+class StaticParticleBomb extends ParticleEmmiter {
+    constructor(position, duration = WebGL.INI.BOMB_DURATION_MS, texture = TEXTURE.Explosion2, number = UNIFORM.INI.MAX_N_PARTICLES) {
+        super(position, texture);
+        this.number = number;
+        this.duration = duration;
+        this.build(number);
+        this.lightColor = colorStringToVector("#000000");
+        this.scale = 0.6;
+        this.gravity = new Float32Array([0, 0.005, 0]);
+        this.velocity = 0.01;
+        this.rounded = 1;
+        this.callback = this.explode;
+    }
+    explode() {
+        console.log("this StaticParticleBomb EXPLODES");
+        AUDIO.Fuse.stop();
+        EXPLOSION3D.add(new BigFireExplosion(this.pos));
+        AUDIO.Explosion.volume = RAY.volume(0);
+        AUDIO.Explosion.play();
+        }
 }
 
 class $3D_Entity {

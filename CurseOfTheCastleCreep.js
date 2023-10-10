@@ -56,7 +56,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.07.01",
+    VERSION: "0.07.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -318,6 +318,13 @@ class Scroll {
                         enemy.health = Math.max(1, Math.floor(enemy.health / 2));
                     }
                 }
+                break;
+            case "Explode":
+                console.warn("creating explosion");
+                EXPLOSION3D.add(new StaticParticleBomb(HERO.player.pos));
+                AUDIO.Fuse.volume = RAY.volume(0);
+                AUDIO.Fuse.loop = true;
+                AUDIO.Fuse.play();
                 break;
             default:
                 console.error("ERROR scroll action", this);

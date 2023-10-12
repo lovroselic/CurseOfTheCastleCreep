@@ -64,9 +64,10 @@ class IAM {
             obj.id = index + 1;
         }
     }
-    init(map) {
+    init(map, hero) {
         this.POOL = [];
         this.linkMap(map);
+        this.hero = hero || null;
     }
     isGridFree(grid) {
         return this.map[this.IA].empty(grid);
@@ -92,6 +93,9 @@ class IAM {
         let map = this.map;
         map[this.IA] = new IndexArray(map.width, map.height, 2, 1); //1 bank, 16bit
         this.poolToIA(map[this.IA]);
+    }
+    clean() {
+        for (const obj of this.POOL) obj.clean();
     }
 }
 
@@ -611,11 +615,6 @@ class Missile3D extends IAM {
         this.enemyIA = enemyIA;
         this.entity_IAM = entity_IAM;
     }
-    init(map, hero) {
-        this.POOL = [];
-        this.linkMap(map);
-        this.hero = hero;
-    }
     draw() {
         for (let obj of this.POOL) {
             if (obj) obj.draw(this.map);
@@ -685,11 +684,6 @@ class Animated_3d_entity extends IAM {
         super();
         this.POOL = [];
         this.IA = "enemyIA";
-    }
-    init(map, hero) {
-        this.POOL = [];
-        this.linkMap(map);
-        this.hero = hero;
     }
     resetTime() {
         for (const enemy of this.POOL) {

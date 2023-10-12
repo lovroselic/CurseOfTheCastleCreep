@@ -318,7 +318,6 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.standard,
     },
-    //----------------
     Spider: {
         name: "Spider",
         model: "Spider",

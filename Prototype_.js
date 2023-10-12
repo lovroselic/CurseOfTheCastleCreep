@@ -1007,7 +1007,7 @@ class DefaultDict {
 
 }
 
-var float64ToInt64Binary = (function () {
+const float64ToInt64Binary = (function () {
   //https://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript
   var flt64 = new Float64Array(1);
   var uint16 = new Uint16Array(flt64.buffer);

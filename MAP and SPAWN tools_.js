@@ -51,6 +51,14 @@ const MAP_TOOLS = {
             this.MAP[level].name = `Room - ${level}`;
         }
         if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
+    },
+    /**
+     * direct accesses WebGL
+     * @param {*} level - leved/dungeon/room id
+     */
+    rebuild_3D_world(level) {
+        this.MAP[level].world = WORLD.build(this.MAP[level].map);
+        WebGL.setWorld(this.MAP[level].world);
     }
 };
 const SPAWN_TOOLS = {

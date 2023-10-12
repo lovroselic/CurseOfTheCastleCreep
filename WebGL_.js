@@ -61,6 +61,8 @@ const WebGL = {
         SMUDGE_DURATION_MS: 500,
         MIN_R: 0.25,
         INTERACTION_TIMEOUT: 4000,
+        BLAST_RADIUS: 1.495,
+        BLAST_DAMAGE: 100,
     },
     CONFIG: {
         firstperson: true,
@@ -183,6 +185,7 @@ const WebGL = {
         BUMP3D.init(map);
         ENTITY3D.init(map, hero);
         INTERFACE3D.init(map);
+        EXPLOSION3D.init(map, hero)
         this.hero = hero;
     },
     setCamera(camera) {
@@ -1950,6 +1953,9 @@ class Missile extends Drawable_object {
         AUDIO.Explosion.volume = RAY.volume(this.distance);
         AUDIO.Explosion.play();
     }
+    clean() {
+        this.IAM.remove(this.id);
+    }
 }
 
 class BouncingMissile extends Missile {
@@ -2406,6 +2412,9 @@ class ParticleEmmiter {
         gl.bindVertexArray(null);
         this.currentIndex = nextIndex;
     }
+    clean() {
+        this.IAM.remove(this.id);
+    }
 }
 
 class ParticleExplosion extends ParticleEmmiter {
@@ -2533,12 +2542,51 @@ class StaticParticleBomb extends ParticleEmmiter {
         this.callback = this.explode;
     }
     explode() {
-        console.log("this StaticParticleBomb EXPLODES");
+        console.log("StaticParticleBomb EXPLODES", this);
         AUDIO.Fuse.stop();
         EXPLOSION3D.add(new BigFireExplosion(this.pos));
         AUDIO.Explosion.volume = RAY.volume(0);
         AUDIO.Explosion.play();
+        this.blast();
+    }
+    blast() {
+        const GA = this.IAM.map.GA;
+        const position = Vector3.to_FP_Grid(this.pos);
+        const playerHit = GRID.circleCollision2D(Vector3.to_FP_Grid(this.IAM.hero.player.pos), position, this.IAM.hero.player.r + WebGL.INI.BLAST_RADIUS);
+        if (playerHit) this.IAM.hero.applyDamage(WebGL.INI.BLAST_DAMAGE);
+
+        const blastVector = new FP_Vector(WebGL.INI.BLAST_RADIUS, WebGL.INI.BLAST_RADIUS);
+        const TL = Grid.toClass(position.sub(blastVector));
+        const BR = Grid.toClass(position.add(blastVector));
+
+        let modified_grid = false;
+        let monsters_than_can_be_affected = [];
+        let IA = this.IAM.map.enemyIA;
+        for (let x = TL.x; x <= BR.x; x++) {
+            for (let y = TL.y; y <= BR.y; y++) {
+                const grid = new Grid(x, y);
+                const check = GA.check(grid, EXPLOADABLES.sum());
+                if (check) {
+                    modified_grid = true;
+                    GA.toEmpty(grid);
+                    EXPLOSION3D.add(new FloorDust(Vector3.from_Grid(Grid.toCenter(grid))));
+                }
+                if (!IA.empty(grid)) monsters_than_can_be_affected.push(...IA.unroll(grid));
+            }
         }
+        monsters_than_can_be_affected = monsters_than_can_be_affected.unique();
+        for (const monster_id of monsters_than_can_be_affected) {
+            const monster = ENTITY3D.POOL[monster_id - 1];
+            monster.damage(WebGL.INI.BLAST_DAMAGE);
+        }
+        if (modified_grid) {
+            MAP_TOOLS.rebuild_3D_world(this.IAM.map.level);
+        }
+    }
+    clean() {
+        this.explode();
+        this.IAM.remove(this.id);
+    }
 }
 
 class $3D_Entity {
@@ -2748,11 +2796,18 @@ class $3D_Entity {
         AUDIO.MonsterDeath.volume = RAY.volume(this.distance);
         AUDIO.MonsterDeath.play();
     }
+    applyDamage(damage, exp){
+        this.health -= damage;
+        if (this.health <= 0) this.die('magic', exp);
+    }
+    damage(damage) {
+        let exp = this.health;
+        this.applyDamage(damage,exp);
+    }
     hitByMissile(missile) {
         const damage = Math.max(missile.calcDamage(this.magic), 1);
         let exp = Math.min(this.health, damage);
-        this.health -= damage;
-        if (this.health <= 0) this.die('magic', exp);
+        this.applyDamage(damage,exp);
         missile.explode(MISSILE3D);
     }
     shoot() {

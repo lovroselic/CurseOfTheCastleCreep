@@ -56,7 +56,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.07.02",
+    VERSION: "0.08.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -320,11 +320,16 @@ class Scroll {
                 }
                 break;
             case "Explode":
-                console.warn("creating explosion");
                 EXPLOSION3D.add(new StaticParticleBomb(HERO.player.pos));
                 AUDIO.Fuse.volume = RAY.volume(0);
                 AUDIO.Fuse.loop = true;
                 AUDIO.Fuse.play();
+                const escapeTexts = ["I better run away.",
+                    "This thing is going to explode.",
+                    "I should move.",
+                    "Run, you fool."
+                ];
+                HERO.speak(escapeTexts.chooseRandom());
                 break;
             default:
                 console.error("ERROR scroll action", this);
@@ -652,7 +657,7 @@ const GAME = {
         //GAME.level = 10;                 //upstairs
         GAME.gold = 10000;
 
-        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D"];
+        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D"];
         GAME.STORE = new Store(storeList);
 
         HERO.construct();
@@ -747,6 +752,12 @@ const GAME = {
     useStaircase(destination) {
         console.info("useStaircase", destination);
         console.time("usingStaircase");
+
+        const IAMtoClean = [EXPLOSION3D, MISSILE3D];                //clean IAM
+        for (const iam of IAMtoClean) {
+            iam.clean();
+        }
+
         GAME.STORE.storeIAM(MAP[GAME.level].map);
         GAME.level = destination.level;
         const level = GAME.level;
@@ -777,12 +788,6 @@ const GAME = {
             GRID.grid();
             GRID.paintCoord("coord", MAP[level].map);
         }
-    },
-    rebuild(level) {
-        console.time("rebuildingWorld");
-        MAP[level].world = WORLD.build(MAP[level].map);
-        WebGL.setWorld(MAP[level].world);
-        console.timeEnd("rebuildingWorld");
     },
     continueLevel(level) {
         GAME.levelExecute();
@@ -816,7 +821,6 @@ const GAME = {
         if (HERO.dead) GAME.checkIfProcessesComplete();
     },
     processInteraction(interaction) {
-        //let choices, choice, value, interactionObj;
         switch (interaction.category) {
             case 'error':
                 switch (interaction.which) {
@@ -890,7 +894,7 @@ const GAME = {
                 EXPLOSION3D.add(new WoodExplosion(Vector3.from_array(interaction.pos)));
                 return this.processInteraction(evalObjectString(CONTAINER_CONTENT_TYPES, interaction.instanceIdentification));
             case "rebuild":
-                GAME.rebuild(GAME.level);
+                MAP_TOOLS.rebuild_3D_world(GAME.level);
                 AUDIO.Thud.play();
                 break;
             case "interaction_item":

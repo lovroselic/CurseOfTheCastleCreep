@@ -164,7 +164,21 @@ const SPAWN_TOOLS = {
     containers(map, GA) {
         for (const C of map.containers) {
             const grid = Grid.toCenter(GA.indexToGrid(C[0]));
-            ITEM3D.add(new FloorItem3D(grid, CONTAINER_ITEM_TYPE[C[1]], C[2]));
+            const type = CONTAINER_ITEM_TYPE[C[1]]
+            let rotation = null;
+            if (C.length > 3 && C[3]) {
+                let dir = Vector.fromInt(C[3]);
+                if (dir.same(NOWAY)) {
+                    rotation = null;
+                } else {
+                    rotation = UP.radAngleBetweenVectors(dir) + type.rotateToNorth;
+                    const element = ELEMENT[type.element]
+                    const SP = ELEMENT.getSurfaceProjection(element, type.scale);
+                    grid.y = (grid.y >>> 0) + ((1 - dir.y) / 2) + (dir.y * SP.H / 2);
+                    grid.x = (grid.x >>> 0) + ((1 - dir.x) / 2) + (dir.x * SP.H / 2);
+                };
+            }
+            ITEM3D.add(new FloorItem3D(grid, type, C[2], rotation));
         }
     },
     shrines(map, GA) {

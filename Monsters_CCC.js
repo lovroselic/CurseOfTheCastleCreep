@@ -173,6 +173,7 @@ const CONTAINER_ITEM_TYPE = {
         glueToFloor: true,
         texture: "Wood1",
         material: MATERIAL.standard,
+        rotateToNorth: Math.PI / 2,
     },
     TreasureChest: {
         name: "TreasureChest",
@@ -182,6 +183,17 @@ const CONTAINER_ITEM_TYPE = {
         glueToFloor: true,
         texture: "TreasureChest",
         material: MATERIAL.standard,
+        rotateToNorth: 0,
+    },
+    Wardrobe: {
+        name: "Wardrobe",
+        category: "chest",
+        element: "WARDROBE",
+        scale: 1.23 / 2 ** 2,
+        glueToFloor: true,
+        texture: "Wardrobe",
+        material: MATERIAL.standard,
+        rotateToNorth: Math.PI,
     },
 };
 

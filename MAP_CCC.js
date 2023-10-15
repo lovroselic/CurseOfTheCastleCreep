@@ -159,9 +159,9 @@ const MAP = {
         gates: '[[7,7,"11.1","8.3","Up"]]',
     }
     ,
-    12 : {
+    12: {
         name: "TitleRoom",
-        data: '{"width":"16","height":"16","map":"BB3AA2BB3AA2BABAA16BB82ABB3ABB4AA2BB3AA2BB120ABB8$"}',
+        data: '{"width":"16","height":"16","map":"BB3AA10BB3AA2BABAA16BB50ABB3ABB28AA2BB3AA2BB120ABB8$"}',
         wall: "SpideryWall2",
         floor: "GoldMarbleFloor",
         ceil: "SpideryWall",
@@ -169,9 +169,30 @@ const MAP = {
         decals: '[[117,3,"Skeleton11","crest"],[149,3,"Crack3","crest"],[133,3,"AticAtac130","picture"]]',
         lights: '[[145,5,"WallLamp","standard"],[70,7,"WallLamp","standard"],[66,7,"WallTorch","fire"],[196,1,"WallTorch","fire"]]',
         gates: '[[128,5,"12.1","5.2","Open"],[69,7,"12.2","13.1","Closed"],[182,3,"12.3","14.1","Gold"]]',
+        keys: '[[99,0]]',
         monsters: '[[101,"SkeletonDemo"]]',
         skills: '[[147,"Shield"],[131,"Sting"]]',
-        containers: '[[132,"TreasureChest","GOLD_ITEM_TYPE.GoldBar"]]',
+        containers: '[[83,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[132,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",3],[162,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5],[102,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[165,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",4],[88,"Wardrobe","SKILL_ITEM_TYPE.Heart",7],[89,"Chest","SKILL_ITEM_TYPE.Magic",7],[90,"Chest","SKILL_ITEM_TYPE.Magic",null]]',
         objects: '[[116,"RedGem"]]',
-        }
+    }
+    ,
+    13: {
+        name: "13",
+        data: '{"width":"16","height":"16","map":"BB13AA132BB45AA11BB15ABB28ABB10$"}',
+        wall: "SpideryWall2",
+        floor: "GoldMarbleFloor",
+        ceil: "SpideryWall",
+        start: '[231,1]',
+        gates: '[[247,1,"13.1","12.2","Open"]]',
+    }
+    ,
+    14: {
+        name: "Generic room name",
+        data: '{"width":"16","height":"16","map":"BB8ABB5AA132BB27ABB12AA5BAA5BB58A$"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[129,5]',
+        gates: '[[128,5,"14.1","12.3","Open"]]',
+    }
 };

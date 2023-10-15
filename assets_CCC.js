@@ -157,6 +157,7 @@ LoadTextures = [
     { srcName: "GhostFaceGreen.jpg", name: "GhostFaceGreen" },
     { srcName: "SpiderGreen.jpg", name: "SpiderGreen" },
     { srcName: "AstroRed.jpg", name: "AstroRed" },
+    { srcName: "wardrobe_BaseColor.jpg", name: "Wardrobe" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -232,7 +233,7 @@ LoadShaders = [
 ];
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
-    "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj"
+    "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj", "wardrobe.obj",
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',

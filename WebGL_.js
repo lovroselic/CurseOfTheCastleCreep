@@ -707,7 +707,7 @@ const WebGL = {
                 entity.drawSkin(gl);
             }
         }
-        
+
         //and HERO
         if (!this.CONFIG.firstperson || this.CONFIG.dual) {
             //if (true) {
@@ -770,7 +770,7 @@ const WebGL = {
                          * hero
                          * (GA, inventory, mouseClick, hero)
                          */
-   
+
                         if (!obj.excludeFromInventory) {
                             if (hero.inventory.totalSize() >= hero.inventoryLimit) {
                                 return {
@@ -1814,13 +1814,12 @@ class LiftingGate {
 }
 
 class FloorItem3D extends Drawable_object {
-    constructor(grid, type, instanceIdentification = null) {
+    constructor(grid, type, instanceIdentification = null, rotation = null) {
         super();
         this.grid = grid;
         this.type = type;
         this.instanceIdentification = instanceIdentification;
         this.excludeFromInventory = false;
-        //this.h = h;
         this.interactive = true;
         this.active = true;
         for (const prop in type) {
@@ -1849,9 +1848,9 @@ class FloorItem3D extends Drawable_object {
             this.value = RND(this.minVal, this.maxVal);
         }
 
-        const randomRotation = Math.radians(RND(0, 359));
+        if (rotation === null) rotation = Math.radians(RND(0, 359));;
         let identity = glMatrix.mat4.create();
-        glMatrix.mat4.rotate(identity, identity, randomRotation, [0, 1, 0]);
+        glMatrix.mat4.rotate(identity, identity, rotation, [0, 1, 0]);
         this.mRotationMatrix = identity;
         const mScaleMatrix = glMatrix.mat4.create();
         glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
@@ -3139,6 +3138,62 @@ const ELEMENT = {
             }
         }
         return minY;
+    },
+    getExtremity(element, dim, type) {
+        let offset = null;
+        let sign = null;
+        switch (dim) {
+            case "x":
+                offset = 0;
+                break;
+            case "y":
+                offset = 1;
+                break;
+            case "z":
+                offset = 2;
+                break;
+            default:
+                throw new Error(`Wrong dimension ${dim}. x, y,z allowed.`);
+        }
+        switch (type) {
+            case "min":
+                sign = 1;
+                break;
+            case "max":
+                sign = -1;
+                break;
+            default:
+                throw new Error(`Wrong type ${type}. min, max allowed.`);
+        }
+        let extremity = sign * Infinity;
+        for (let i = 0; i < element.positions.length; i += 3) {
+            if (element.positions[i + offset] * sign < extremity) {
+                extremity = element.positions[i + offset];
+            }
+        }
+        return extremity;
+    },
+    getBoundingBox(element) {
+        const max = Array(-Infinity, -Infinity, -Infinity);
+        const min = Array(Infinity, Infinity, Infinity);
+        for (let i = 0; i < element.positions.length; i += 3) {
+            for (let j = 0; j < 3; j++) {
+                if (element.positions[i + j] < min[j]) {
+                    min[j] = element.positions[i + j];
+                }
+                if (element.positions[i + j] > max[j]) {
+                    max[j] = element.positions[i + j];
+                }
+            }
+        }
+        return new BoundingBox(max, min);
+    },
+    getSurfaceProjection(element, scale) {
+        if (!element.boundingBox) element.boundingBox = this.getBoundingBox(element);
+        const BB = element.boundingBox;
+        const W = (BB.max.x - BB.min.x) * scale;
+        const H = (BB.max.z - BB.min.z) * scale;
+        return { W: W, H: H };
     },
     FRONT_FACE: {
         positions: [0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0],

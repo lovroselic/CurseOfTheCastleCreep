@@ -2531,6 +2531,7 @@ const ENGINE = {
       }
       if (maze.containers) {
         for (const container of maze.containers) {
+          console.log("debug cont draw", container);
           let grid = GA.indexToGrid(container[0]);
           let mid = GRID.gridToCenterPX(grid);
           let start = mid.translate(LEFT, W / 2);
@@ -2539,6 +2540,11 @@ const ENGINE = {
           let up = mid.translate(UP, W / 2);
           write(mid, container[2].split(".")[1]);
           write(up, container[1]);
+
+          if (container.length > 3 && container[3]) {
+            let dir = Vector.fromInt(container[3]).mirror();
+            dotOrLine(grid, dir, "#444");
+          }
         }
       }
 

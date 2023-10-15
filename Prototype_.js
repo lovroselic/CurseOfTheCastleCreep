@@ -526,6 +526,9 @@ class MasterGridClass {
   EuclidianDistance(grid) {
     return Math.hypot(this.x - grid.x, this.y - grid.y);
   }
+  same(grid) {
+    return (grid.x === this.x) && (grid.y === this.y);
+  }
 }
 
 class Grid extends MasterGridClass {
@@ -643,6 +646,9 @@ class MasterVectorClass {
     let x = this.x * COS - this.y * SIN;
     let y = this.x * SIN + this.y * COS;
     return new FP_Vector(x, y);
+  }
+  same(vec) {
+    return (vec.x === this.x) && (vec.y === this.y);
   }
 }
 

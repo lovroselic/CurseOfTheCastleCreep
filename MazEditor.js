@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.08.02",
+  VERSION: "0.08.03",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -186,8 +186,8 @@ const GAME = {
     ENGINE.readMouse(event);
     let x = Math.floor(ENGINE.mouseX / ENGINE.gameWIDTH * $MAP.width);
     let y = Math.floor(ENGINE.mouseY / ENGINE.gameHEIGHT * $MAP.height);
-    let grid = new Grid(x, y);
-    var radio = $("#paint input[name=painter]:checked").val();
+    const grid = new Grid(x, y);
+    const radio = $("#paint input[name=painter]:checked").val();
     let GA = $MAP.map.GA;
     let dir, nameId, type, dirIndex, dirs;
     let currentValue = GA.getValue(grid);
@@ -398,7 +398,13 @@ const GAME = {
           case MAPDICT.EMPTY:
             let containerValue = $("#container_type")[0].value;
             let itemValue = $("#content_type")[0].value;
-            $MAP.map.containers.push(Array(gridIndex, containerValue, itemValue));
+            let orientationType = $("input[name=orientation]:checked").val();
+            console.log("orientationType", orientationType);
+            if (orientationType === "FIXED") {
+              dir = GAME.getSelectedDir();
+              dirIndex = dir.toInt();
+            } else dirIndex = null;
+            $MAP.map.containers.push(Array(gridIndex, containerValue, itemValue, dirIndex));
             console.log("$MAP.map.containers", $MAP.map.containers);
             break;
           default:

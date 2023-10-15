@@ -67,14 +67,14 @@ const MAP = {
     ,
     5: {
         name: "BlockWall Test",
-        data: '{"width":"16","height":"16","map":"BB2AA2BB3ÁÁ2AÁAA3BAA3BAA5BB5AA2BB2ABB3ABABB2AA47BB14AA3BB15AA2BABB18AA2BB53AA2BABB3QBAA2BABQBB8ABB3ABB8$AA2BB6AQBB5QQ2BB2AA3"}',
+        data: '{"width":"16","height":"16","map":"BB2AÁABB3AÁAÁAA3BAA3BAA5BB5AA2BB2ABB3ABABB2AA47BB14AA3BB15AA2BABB5ABB11ABB54AA2BABB3QBAA2BABQBB8ABB3ABB8$AA2BB6AQBB5QQ2BB2AA3"}',
         wall: "DarkBricks",
         floor: "BrickTiles",
         ceil: "BlurryScarlet",
         start: '[113,5]',
-        decals: '[[243,1,"Barbarian130","picture"],[247,1,"Barbarian13","picture"],[145,5,"Barbarian110","picture"],[209,5,"Barbarian100","picture"],[3,7,"Witcher112","picture"],[1,7,"CodenameIceman2","picture"],[7,7,"Geos","picture"],[167,1,"RobinOfTheWood50","picture"]]',
+        decals: '[[243,1,"Barbarian130","picture"],[247,1,"Barbarian13","picture"],[145,5,"Barbarian110","picture"],[209,5,"Barbarian100","picture"],[3,7,"Witcher112","picture"],[1,7,"CodenameIceman2","picture"],[7,7,"Geos","picture"],[167,1,"RobinOfTheWood50","picture"],[212,4,"FlatPond2","crest"],[214,4,"FlatPond3","crest"],[117,5,"C64","picture"],[117,3,"ZimSalaBim201","picture"],[182,3,"Athanor200","picture"]]',
         lights: '[[97,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[245,1,"WallTorch","fire"],[2,7,"WallLamp","standard"],[6,7,"WallLamp","standard"],[121,3,"WallLamp","standard"]]',
-        gates: '[[112,5,"5.1","1.4","Open"]]',
+        gates: '[[112,5,"5.1","1.4","Open"],[223,3,"5.2","12.1","Open"]]',
         monsters: '[[34,"MissGalaxyGreen"],[39,"RedGoldBat"],[135,"MissGreen"],[205,"Bat"],[235,"MissGreen"]]',
         scrolls: '[[100,12],[116,12],[132,12],[148,12],[99,0],[115,0],[131,1],[147,1]]',
         triggers: '[[183,7,"PurpleTriggerButton",0,200]]',
@@ -158,4 +158,20 @@ const MAP = {
         start: '[23,7]',
         gates: '[[7,7,"11.1","8.3","Up"]]',
     }
+    ,
+    12 : {
+        name: "TitleRoom",
+        data: '{"width":"16","height":"16","map":"BB3AA2BB3AA2BABAA16BB82ABB3ABB4AA2BB3AA2BB120ABB8$"}',
+        wall: "SpideryWall2",
+        floor: "GoldMarbleFloor",
+        ceil: "SpideryWall",
+        start: '[129,5]',
+        decals: '[[117,3,"Skeleton11","crest"],[149,3,"Crack3","crest"],[133,3,"AticAtac130","picture"]]',
+        lights: '[[145,5,"WallLamp","standard"],[70,7,"WallLamp","standard"],[66,7,"WallTorch","fire"],[196,1,"WallTorch","fire"]]',
+        gates: '[[128,5,"12.1","5.2","Open"],[69,7,"12.2","13.1","Closed"],[182,3,"12.3","14.1","Gold"]]',
+        monsters: '[[101,"SkeletonDemo"]]',
+        skills: '[[147,"Shield"],[131,"Sting"]]',
+        containers: '[[132,"TreasureChest","GOLD_ITEM_TYPE.GoldBar"]]',
+        objects: '[[116,"RedGem"]]',
+        }
 };

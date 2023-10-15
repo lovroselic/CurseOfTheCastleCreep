@@ -41,7 +41,7 @@ const WebGL = {
     VERSION: "1.02",
     CSS: "color: gold",
     CTX: null,
-    VERBOSE: true,
+    VERBOSE: false,
     INI: {
         PIC_WIDTH: 0.5,
         PIC_TOP: 0.2,
@@ -609,7 +609,6 @@ const WebGL = {
         gl.enableVertexAttribArray(this.pickProgram.attribLocations.vertexPosition);
     },
     renderDungeon() {
-        //console.info("render dungeon");
         const gl = this.CTX;
         gl.useProgram(this.program.program);
         this.enableAttributes(gl);
@@ -708,6 +707,7 @@ const WebGL = {
                 entity.drawSkin(gl);
             }
         }
+        
         //and HERO
         if (!this.CONFIG.firstperson || this.CONFIG.dual) {
             //if (true) {
@@ -738,7 +738,7 @@ const WebGL = {
             WebGL.DATA.layer = ENGINE.getCanvasName(id);
             ENGINE.topCanvas = WebGL.DATA.layer;
             $(WebGL.DATA.layer).on("mousemove", { layer: WebGL.DATA.layer }, ENGINE.readMouse);
-            console.log(`%cWebGL.MOUSE -> window ${WebGL.DATA.window}, layer: ${WebGL.DATA.layer}`, WebGL.CSS);
+            if (WebGL.VERBOSE) console.log(`%cWebGL.MOUSE -> window ${WebGL.DATA.window}, layer: ${WebGL.DATA.layer}`, WebGL.CSS);
         },
         click(hero) {
             if (ENGINE.mouseOverId(WebGL.DATA.window)) {
@@ -754,12 +754,14 @@ const WebGL = {
                     const obj = GLOBAL_ID_MANAGER.getObject(id);
                     if (!obj) return;
                     if (!obj.interactive) return;
+                    if (WebGL.VERBOSE) console.info("Object clicked:", obj, "globalID", id);
                     let PPos2d = Vector3.to_FP_Grid(hero.player.pos);
                     let itemGrid = obj.grid;
                     if (obj.grid.constructor.name === "Grid") {
                         itemGrid = Grid.toCenter(obj.grid);
                     }
                     let distance = PPos2d.EuclidianDistance(itemGrid);
+                    if (WebGL.VERBOSE) console.info("Object distance:", distance);
                     if (distance < WebGL.INI.INTERACT_DISTANCE) {
                         /** 
                          * GA
@@ -768,7 +770,7 @@ const WebGL = {
                          * hero
                          * (GA, inventory, mouseClick, hero)
                          */
-                        //console.info("OBJ interaction candidate", obj, obj.excludeFromInventory);
+   
                         if (!obj.excludeFromInventory) {
                             if (hero.inventory.totalSize() >= hero.inventoryLimit) {
                                 return {
@@ -2796,18 +2798,18 @@ class $3D_Entity {
         AUDIO.MonsterDeath.volume = RAY.volume(this.distance);
         AUDIO.MonsterDeath.play();
     }
-    applyDamage(damage, exp){
+    applyDamage(damage, exp) {
         this.health -= damage;
         if (this.health <= 0) this.die('magic', exp);
     }
     damage(damage) {
         let exp = this.health;
-        this.applyDamage(damage,exp);
+        this.applyDamage(damage, exp);
     }
     hitByMissile(missile) {
         const damage = Math.max(missile.calcDamage(this.magic), 1);
         let exp = Math.min(this.health, damage);
-        this.applyDamage(damage,exp);
+        this.applyDamage(damage, exp);
         missile.explode(MISSILE3D);
     }
     shoot() {
@@ -2843,7 +2845,6 @@ class $3D_Entity {
         this.xp = 1;
         this.changeTexture(TEXTURE.Marble);
         this.material = MATERIAL.marble;
-        //console.log(`${this.name} - ${this.id} petrified`);       //debug
     }
     changeTexture(texture) {
         const gl = WebGL.CTX;
@@ -3408,7 +3409,7 @@ const UNIFORM = {
     },
     setup() {
         this.spherical_distributed(this.INI.MAX_N_PARTICLES, this.INI.SPHERE_R);
-        console.log(`%cUNIFORM created ${this.INI.MAX_N_PARTICLES} spherical particles.`, WebGL.CSS);
+        if (WebGL.VERBOSE) console.log(`%cUNIFORM created ${this.INI.MAX_N_PARTICLES} spherical particles.`, WebGL.CSS);
     },
     spherical_distributed(N, R) {
         console.time("particles");

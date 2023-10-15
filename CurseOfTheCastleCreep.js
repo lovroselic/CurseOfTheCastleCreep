@@ -56,7 +56,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.08.00",
+    VERSION: "0.08.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -650,11 +650,12 @@ const GAME = {
         //GAME.level = 1;                 //start
         //GAME.level = 3;               //shrines
         //GAME.level = 4;                 //small room
-        GAME.level = 5;                 //block wall room
+        // GAME.level = 5;                 //block wall room
         //GAME.level = 6;                 //chasm
         //GAME.level = 7;                 //interaction
         //GAME.level = 8;                 //staircase
         //GAME.level = 10;                 //upstairs
+        GAME.level = 12;                 //title
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D"];
@@ -701,7 +702,6 @@ const GAME = {
         MAP[level].world = WORLD.build(MAP[level].map);
     },
     setWorld(level, decalsAreSet = false) {
-        console.log("setting world");
         console.time("setWorld");
         const textureData = {
             wall: TEXTURE[MAP[level].wall],
@@ -1616,7 +1616,7 @@ const TITLE = {
         ENGINE.clearLayer("button");
         FORM.BUTTON.POOL.clear();
         let x = 36;
-        let y = 440;
+        let y = 560;
         const w = 166;
         const h = 24;
         let startBA = new Area(x, y, w, h);

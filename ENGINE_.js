@@ -63,7 +63,7 @@ const ENGINE = {
     MOUSE_IDLE: 3000,
     OVERLAP_TOLERANCE: 4
   },
-  verbose: true,
+  verbose: false,
   setGridSize(size = 48) {
     ENGINE.INI.GRIDPIX = size;
   },
@@ -3885,7 +3885,7 @@ class FPS_short_term_measurement extends FPS_measurement {
     this.average = this.total / this.count;
   }
 }
-var FILTER = {
+const FILTER = {
   DarkShift(imageData, arg) {
     let rigthShift = arg.shift;
     let DATA = imageData.data;

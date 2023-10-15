@@ -76,15 +76,22 @@ const DECAL_PAINTINGS = [
     "CrawlMaster133", "EyeOfTheBeholder130", "Fred130", "GatewayToApshai130", "ImpossibleMission130", "LastNinja130", "LastNinja131", "Morrowind130",
     "PharaohCurse130", "Portal130", "Portal131", "Portal132", "SVS130", "SVS131", "SVS132", "TombRaider130", "Underwurlde130", "Underwurlde131", "Witcher130",
     "AticAtac140", "EyeOfTheBeholder140", "GatewayToApshai140", "ImpossibleMission140", "LastNinja140", "MonkeyIsland140", "MonkeyIsland141", "MonkeyIsland142",
-    "MonkeyIsland143", "Morrowind140", "Oblivion140", "Oblivion141", "PharaohCurse140", "Portal140", "Tombraider140", "Tombraider141", "Underwurlde140", "Underwurlde141"
-];
-if (ENGINE.verbose) console.log("DECAL_PAINTINGS", DECAL_PAINTINGS.length, DECAL_PAINTINGS.sort());
+    "MonkeyIsland143", "Morrowind140", "Oblivion140", "Oblivion141", "PharaohCurse140", "Portal140", "Tombraider140", "Tombraider141", "Underwurlde140", "Underwurlde141",
+    "1942_200", "1942_201", "1943_200", "AirWolf200", "AirWolf201", "AlienKong", "AmberMoon200", "AmberStar200", "AmberStar201", "AmberStar202", "AmberStar203",
+    "AntAttack200", "Arena200", "Arena201", "Arnie200", "Arnie201", "Arnie202", "Athanor200", "Athanor201", "AticAtac200", "AticAtac201", "AticAtac202", "AticAtac203",
+    "AticAtac204", "AticAtac205", "AticAtac206", "BackToFuture200", "BackToFuture201", "Breakout200", "BrideOfFrankenstein200", "BruceLee200", "Captive199", "Captive200",
+    "Captive201", "CastleHaunt200", "Commando200", "Commando201", "CrystalCastles200", "CyberPunk200", "CyberPunk201", "Decathlon200", "DonkeyKong200",
+    "DungeonMaster200", "DungeonMaster201", "DungeonMaster202", "DungeonMaster203", "DungeonMaster204", "DungeonMaster205", "DungeonMaster206", "Elite",
+    "Elite201", "Ghostbusters200", "Ghostbusters201", "IK200", "Karateka200", "LeisureSuitLarry200", "Montezuma200", "Pacman200", "Pacman201", "Pirates200",
+    "Pitstop200", "Scarab200", "Silkworm200", "SpaceQuest200", "SpectrumGame1", "SwordOfFargoal200", "SwordOfFargoal201", "TurboEsprit200", "ZimSalaBim200",
+    "ZimSalaBim201"
+].sort();
 /** Crests */
 
 const DECAL_CRESTS = ["LS", "Skull4", "Skull3", "Skull2", "Skull1", "Crack4", "Crack3", "Skeleton11", "Skeleton12", "Crack20", "Crack21", "DancingSkeletons2",
     "PrayingSkeleton10", "SittingSkeleton2", "Skeleton21", "Skull10", "Skull11", "WOWc1", "WOWc2", "Reaper", "AticAtacCrest1"];
 const BOTTOM_CRESTS = ["Grate1_128"];
-const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond"];
+const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond", "FlatPond2", "FlatPond3"];
 const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4"];
 const TRIGGER_DECALS = ["PurpleTriggerButton", "MarbleTriggerButton"];
 console.log("%cMAP for MazEditor loaded.", "color: #888");

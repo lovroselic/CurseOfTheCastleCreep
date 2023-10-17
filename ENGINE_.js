@@ -2531,7 +2531,6 @@ const ENGINE = {
       }
       if (maze.containers) {
         for (const container of maze.containers) {
-          console.log("debug cont draw", container);
           let grid = GA.indexToGrid(container[0]);
           let mid = GRID.gridToCenterPX(grid);
           let start = mid.translate(LEFT, W / 2);

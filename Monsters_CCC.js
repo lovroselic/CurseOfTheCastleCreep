@@ -195,6 +195,26 @@ const CONTAINER_ITEM_TYPE = {
         material: MATERIAL.standard,
         rotateToNorth: Math.PI,
     },
+    Barrel: {
+        name: "Barrel",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.15 / 2 ** 1,
+        glueToFloor: true,
+        texture: "Barrel",
+        material: MATERIAL.standard,
+        rotateToNorth: 0,
+    },
+    Crate: {
+        name: "Crate",
+        category: "chest",
+        element: "CRATE",
+        scale: 1.25 / 2 ** 3,
+        glueToFloor: true,
+        texture: "Crate",
+        material: MATERIAL.standard,
+        rotateToNorth: 0,
+    },
 };
 
 const DOOR_TYPE = {

@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.08.03",
+  VERSION: "0.08.04",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -987,8 +987,12 @@ const GAME = {
     let Export = { width: $MAP.width, height: $MAP.height, map: rle };
     let RoomID = $("#roomid")[0].value;
     let RoomName = $("#roomname")[0].value;
+    let SG = $("input[name='checkpoint']")[0].checked;
+    SG = SG === true ? 1 : 0;
+    console.log("SG", SG);
     let roomExport = `${RoomID} : {
 name: "${RoomName}",
+sg: ${SG},
 data: '${JSON.stringify(Export)}',
 wall: "${$("#walltexture")[0].value}",
 floor: "${$("#floortexture")[0].value}",
@@ -1009,6 +1013,12 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     $("#roomid").val(roomId);
     const roomName = ImportText.extractGroup(new RegExp(`name:\\s"(.*)"`));
     $("#roomname").val(roomName);
+    const SG = ImportText.extractGroup(/sg:\s(\d{1})/);
+    if (!SG || SG == 0) {
+      $("input[name='checkpoint']").prop("checked", false);
+    } else {
+      $("input[name='checkpoint']").prop("checked", true);
+    }
 
     const Textures = ["wall", "floor", "ceil"];
     for (const prop of Textures) {

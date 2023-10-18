@@ -161,6 +161,7 @@ const MAP = {
     ,
     12: {
         name: "TitleRoom",
+        sg: 0,
         data: '{"width":"16","height":"16","map":"BB3AA18BB3AA2BABAA2BAA15BB19AA2BB3ABB52AA2BB3AA2BB121ABB3$"}',
         wall: "SpideryWall2",
         floor: "GoldMarbleFloor",
@@ -169,11 +170,12 @@ const MAP = {
         decals: '[[117,3,"Skeleton11","crest"],[149,3,"Crack3","crest"],[133,3,"AticAtac130","picture"]]',
         lights: '[[145,5,"WallLamp","standard"],[70,7,"WallLamp","standard"],[66,7,"WallTorch","fire"],[196,1,"WallTorch","fire"],[95,3,"WallLamp","standard"],[123,1,"WallLamp2","standard"]]',
         gates: '[[128,5,"12.1","5.2","Open"],[69,7,"12.2","13.1","Closed"],[182,3,"12.3","14.1","Gold"]]',
-        keys: '[[99,0]]',
+        keys: '[[99,0],[179,1]]',
         monsters: '[[101,"SkeletonDemo"]]',
+        scrolls: '[[164,0],[114,4]]',
         skills: '[[147,"Shield"],[131,"Sting"]]',
         containers: '[[83,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[132,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",3],[162,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5],[102,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[165,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",4],[88,"Wardrobe","SKILL_ITEM_TYPE.Heart",7],[89,"Chest","SKILL_ITEM_TYPE.Magic",7],[90,"Chest","SKILL_ITEM_TYPE.Magic",null],[110,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[77,"Crate","GOLD_ITEM_TYPE.GoldBar",7]]',
-        objects: '[[116,"RedGem"]]',
+        objects: '[[116,"RedGem"],[178,"Apple"],[87,"GreenGem"]]',
     }
     ,
     13: {
@@ -187,12 +189,15 @@ const MAP = {
     }
     ,
     14: {
-        name: "Generic room name",
-        data: '{"width":"16","height":"16","map":"BB8ABB5AA132BB27ABB12AA5BAA5BB58A$"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
+        name: "Unlocking",
+        sg: 1,
+        data: '{"width":"16","height":"16","map":"BB12AA39BAA41BAA51BB12ABB26ABAA5BAA5BB58A$"}',
+        wall: "MossyWall7",
+        floor: "DarkMarble2",
+        ceil: "BlurryMossy",
         start: '[129,5]',
+        decals: '[[133,3,"AticAtacCrest1","crest"]]',
+        lights: '[[113,5,"WallLamp","standard"],[177,5,"WallLamp","standard"],[65,5,"WallLamp","standard"]]',
         gates: '[[128,5,"14.1","12.3","Open"]]',
     }
 };

@@ -1612,12 +1612,22 @@ class ExternalGate extends Portal {
         if (this.open) this.interactive = false;
     }
     openGate() {
-        console.warn("opening door", this);
+        //console.warn("opening door", this);
         this.open = true;
         this.interactive = false;
         this.color = "Open";
         this.texture = WebGL.createTexture(SPRITE.DungeonDoor_Open);
 
+    }
+    block() {
+        //console.warn("WebGL::blocking door", this);
+        this.open = false;
+        this.interactive = false;
+        this.color = "Blocked";
+        /**
+         * as this is always done before WebGL world building it must not be WebGL texture but SPRITE
+         */
+        this.texture = SPRITE.DungeonDoor_Blocked;
     }
     interact(GA = null, inventory = null, mouseClick = false) {
         if (this.open && !mouseClick) {
@@ -1648,9 +1658,10 @@ class ExternalGate extends Portal {
 }
 
 class Destination {
-    constructor(waypoint, level) {
+    constructor(waypoint, level, origin = null) {
         this.waypoint = waypoint;
         this.level = level;
+        this.origin = origin;
     }
 }
 

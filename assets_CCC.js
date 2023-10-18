@@ -170,9 +170,9 @@ LoadTextures = [
     { srcName: "Apple_BaseColor.jpg", name: "Apple_BaseColor" },
 
     //decal-gates
-    { srcName: "GoldGate1_256.png", name: "GoldGate1" },
-    { srcName: "RedGate1_256.png", name: "RedGate1" },
-    { srcName: "SilverGate1_256.png", name: "SilverGate1" },
+    //{ srcName: "GoldGate1_256.png", name: "GoldGate1" },
+    //{ srcName: "RedGate1_256.png", name: "RedGate1" },
+    //{ srcName: "SilverGate1_256.png", name: "SilverGate1" },
     { srcName: "WoodeGate1_256.png", name: "WoodenGate1" },
 
     //title
@@ -279,6 +279,7 @@ LoadSprites = [
     { srcName: "dungeondoor_open.png", name: "DungeonDoor_Open" },
     { srcName: "dungeondoor_red.png", name: "DungeonDoor_Red" },
     { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
+    { srcName: "Blocked door.png", name: "DungeonDoor_Blocked" },
 
     { srcName: "DoorUp2.png", name: "DungeonDoor_Up" },
     { srcName: "DoorDown2.png", name: "DungeonDoor_Down" },

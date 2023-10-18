@@ -56,7 +56,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.08.03",
+    VERSION: "0.08.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -599,6 +599,8 @@ const HERO = {
 
 const GAME = {
     upperLimit: null,
+    loadWayPoint: null,
+    blockDoorFlag: null,
     clearInfo() {
         ENGINE.clearLayer("info");
     },
@@ -656,6 +658,7 @@ const GAME = {
         //GAME.level = 8;                 //staircase
         //GAME.level = 10;                 //upstairs
         GAME.level = 12;                 //title
+        //GAME.level = 14;                 //auto unlocking
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D"];
@@ -679,6 +682,32 @@ const GAME = {
         GAME.fps = new FPS_short_term_measurement(300);
         GAME.prepareForRestart();
         GAME.time = new Timer("Main");
+
+        //SAVE GAME
+        SAVE_GAME.pointers = [...HERO.attributesForSaveGame,
+            'GAME.level', 'GAME.gold',
+            "HERO.inventory.item", "HERO.inventory.key",
+            "GAME.loadWayPoint",
+        ];
+        SAVE_GAME.lists = ["HERO.inventory.scroll"];
+        SAVE_GAME.timers = ["Main"];
+        //end SAVE GAME
+
+        if (GAME.fromCheckpoint) {
+            console.log(`%c ... Loading from checkpoint ...`, GAME.CSS);
+            HERO.inventory.scroll.clear();
+            HERO.inventory.item.clear();
+            SAVE_GAME.load();
+            GAME.fromCheckpoint = false;
+
+            //skill timers are not saved!! so resetting skills!
+            HERO.defense = HERO.reference_defense;
+            HERO.attack = HERO.reference_attack;
+            HERO.magic = HERO.reference_magic;
+
+            GAME.blockDoorFlag = true;
+        }
+
         GAME.levelStart();
     },
     checkpoint() {
@@ -699,6 +728,9 @@ const GAME = {
         console.info("building world, room/dungeon/level:", level);
         WebGL.init_required_IAM(MAP[level].map, HERO);
         SPAWN_TOOLS.spawn(level);
+        if (GAME.blockDoorFlag) {
+            GAME.blockDoor(GAME.loadWayPoint);
+        }
         MAP[level].world = WORLD.build(MAP[level].map);
     },
     setWorld(level, decalsAreSet = false) {
@@ -722,6 +754,7 @@ const GAME = {
     },
     initLevel(level) {
         this.newDungeon(level);
+
 
         const start_dir = MAP[level].map.startPosition.vector;
         let start_grid = MAP[level].map.startPosition.grid;
@@ -749,6 +782,23 @@ const GAME = {
 
         ENTITY3D.resetTime();
     },
+    blockDoor(waypoint) {
+        GAME.blockDoorFlag = false;
+        for (const gate of INTERACTIVE_BUMP3D.POOL) {
+            if (gate.destination.origin === waypoint) {
+                gate.block();
+                return;
+            }
+        }
+    },
+    forceOpenDoor(waypoint) {
+        for (const gate of INTERACTIVE_BUMP3D.POOL) {
+            if (gate.destination.origin === waypoint) {
+                gate.openGate();
+                return;
+            }
+        }
+    },
     useStaircase(destination) {
         console.info("useStaircase", destination);
         console.time("usingStaircase");
@@ -773,6 +823,7 @@ const GAME = {
             GAME.setWorld(level, true);
         }
 
+        GAME.forceOpenDoor(destination.waypoint);
         HERO.player.setMap(MAP[level].map);
         INTERACTIVE_BUMP3D.setup();
 
@@ -781,6 +832,16 @@ const GAME = {
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
         HERO.player.setPos(start_grid);
         HERO.player.setDir(Vector3.from_2D_dir(start_dir));
+
+        //save game and close door
+        if (MAP[level].map.sg) {
+            console.warn("SAVING GAME");
+            GAME.loadWayPoint = destination.waypoint;
+            MAP[level].map.sg = false;
+            SAVE_GAME.save();
+            TURN.display("GAME SAVED", "#FFF");
+        }
+        //
         console.timeEnd("usingStaircase");
 
         if (DEBUG._2D_display) {
@@ -1798,4 +1859,5 @@ $(function () {
     PRG.setup();
     ENGINE.LOAD.preload();
     UNIFORM.setup();
+    SAVE_GAME.setKey(PRG.SG);
 });

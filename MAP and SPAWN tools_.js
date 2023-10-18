@@ -50,8 +50,11 @@ const MAP_TOOLS = {
         if (!this.MAP[level].name) {
             this.MAP[level].name = `Room - ${level}`;
         }
+        const SG = this.MAP[level].sg || null;
+        this.MAP[level].map.sg = SG == 1 ? true : false;
         if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
     },
+    
     /**
      * direct accesses WebGL
      * @param {*} level - leved/dungeon/room id
@@ -111,9 +114,8 @@ const SPAWN_TOOLS = {
             map[G[2]] = pointer;
             const face = DirectionToFace(dir);
             const picture = `DungeonDoor_${color}`;
-            const destination = new Destination(G[3], G[3].split(".")[0]);
+            const destination = new Destination(G[3], G[3].split(".")[0], G[2]);
             let opEn = false;
-            //if (color === "Open") opEn = true;
             if (["Open", "Up", "Down"].includes(color)) opEn = true;
             let locked = true;
             if (["Open", "Closed", "Up", "Down"].includes(color)) locked = false;

@@ -307,7 +307,7 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.redShine,
     },
-    SkeletonDemo: {
+    /*SkeletonDemo: {
         name: "WhiteSkeletonDemo",
         model: "Skeleton",
         scale: 1.8 / 2 ** 3,
@@ -327,8 +327,8 @@ const MONSTER_TYPE = {
         behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
         moveSpeed: 1.01,
         material: MATERIAL.standardShine,
-    },
-    MissGalaxyDemo: {
+    },*/
+    /*MissGalaxyDemo: {
         name: "MissGalaxyDemo",
         texture: "MissGalaxyGreen",
         model: "MissGalaxy",
@@ -349,7 +349,7 @@ const MONSTER_TYPE = {
         behaviourArguments: [5, ["wanderer"], 3, ["advancer"]],
         moveSpeed: 1.0,
         material: MATERIAL.standard,
-    },
+    },*/
     Spider: {
         name: "Spider",
         model: "Spider",
@@ -357,7 +357,7 @@ const MONSTER_TYPE = {
         rotateToNorth: Math.PI,
         midHeight: 0.3,
         deathType: "BloodExplosion",
-        inventory: "Coins",
+        inventory: GOLD_ITEM_TYPE.Coins,
         attack: 7,
         defense: 3,
         magic: 0,
@@ -896,7 +896,7 @@ const INTERACTION_ITEM = {
 
 const INTERACTION_ENTITY = {
     /**
-     * Flies are stored in chest
+     * Flies are stored in chests
      * Hat is required by a PrettyBunny
      */
     BlackWidow: {
@@ -932,7 +932,7 @@ const INTERACTION_ENTITY = {
     /**
      * wants mirror and hat
      * gives acorn
-     * who needs gem: Squirell
+     * who needs Acorn: Squirell
      */
     PrettyBunny: {
         name: "PrettyBunny",

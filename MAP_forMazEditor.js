@@ -84,12 +84,13 @@ const DECAL_PAINTINGS = [
     "DungeonMaster200", "DungeonMaster201", "DungeonMaster202", "DungeonMaster203", "DungeonMaster204", "DungeonMaster205", "DungeonMaster206", "Elite",
     "Elite201", "Ghostbusters200", "Ghostbusters201", "IK200", "Karateka200", "LeisureSuitLarry200", "Montezuma200", "Pacman200", "Pacman201", "Pirates200",
     "Pitstop200", "Scarab200", "Silkworm200", "SpaceQuest200", "SpectrumGame1", "SwordOfFargoal200", "SwordOfFargoal201", "TurboEsprit200", "ZimSalaBim200",
-    "ZimSalaBim201"
+    "ZimSalaBim201",
+    "CCC1"
 ].sort();
 /** Crests */
 
 const DECAL_CRESTS = ["LS", "Skull4", "Skull3", "Skull2", "Skull1", "Crack4", "Crack3", "Skeleton11", "Skeleton12", "Crack20", "Crack21", "DancingSkeletons2",
-    "PrayingSkeleton10", "SittingSkeleton2", "Skeleton21", "Skull10", "Skull11", "WOWc1", "WOWc2", "Reaper", "AticAtacCrest1"];
+    "PrayingSkeleton10", "SittingSkeleton2", "Skeleton21", "Skull10", "Skull11", "WOWc1", "WOWc2", "Reaper", "AticAtacCrest1", "DungeonWall","Forest"];
 const BOTTOM_CRESTS = ["Grate1_128"];
 const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond", "FlatPond2", "FlatPond3"];
 const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4"];

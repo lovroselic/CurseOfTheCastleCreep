@@ -89,6 +89,11 @@ LoadTextures = [
     { srcName: "StoneBlockPavement.jpg", name: "StoneBlockPavement" },
     { srcName: "TinyBricks.jpg", name: "TinyBricks" },
 
+    { srcName: "Grass10.jpg", name: "Grass1" },
+    { srcName: "Grass20.jpg", name: "Grass2" },
+    { srcName: "Sky1.jpg", name: "Sky1" },
+    { srcName: "Forest1.jpg", name: "Forest" },
+
 
     //{ srcName: "BrickWall2_128.jpg", name: "BrickWall2" },
     { srcName: "BlackBrickWall128.jpg", name: "BlackBrickWall" },
@@ -371,6 +376,11 @@ LoadSprites = [
     { srcName: "AticAtacCrest1.png", name: "AticAtacCrest1" },
     { srcName: "FlatPond2.png", name: "FlatPond2" },
     { srcName: "FlatPond3.png", name: "FlatPond3" },
+    { srcName: "BrownWall256.jpg", name: "DungeonWall" },
+    { srcName: "Forest_sprite.jpg", name: "Forest" },
+
+    //messages
+    { srcName: "CCC1.png", name: "CCC1" },
 
     //decal-pics
     { srcName: "TR8.png", name: "TR8" },

@@ -56,7 +56,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.08.04",
+    VERSION: "0.09.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -650,6 +650,7 @@ const GAME = {
         //AI.VERBOSE = true;
         GAME.completed = false;
         //GAME.level = 1;                 //start
+        GAME.level = 2;                 //entrance
         //GAME.level = 3;               //shrines
         //GAME.level = 4;                 //small room
         // GAME.level = 5;                 //block wall room
@@ -657,8 +658,9 @@ const GAME = {
         //GAME.level = 7;                 //interaction
         //GAME.level = 8;                 //staircase
         //GAME.level = 10;                 //upstairs
-        GAME.level = 12;                 //title
+        //GAME.level = 12;                 //title
         //GAME.level = 14;                 //auto unlocking
+        //GAME.level = 13;                 //entrence studz
         GAME.gold = 10000;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D"];

@@ -23,13 +23,48 @@ const DEBUG = {
     VERBOSE: true,
     _2D_display: true,
     INVINCIBLE: true,
-    FREE_MAGIC: true,
+    FREE_MAGIC: false,
     LOAD: false,
     STUDY: false,
     keys: true,
     goto(grid) {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
+    checkpoint1() {
+        GAME.level = 3;
+        GAME.gold = 308;
+        HERO.maxHealth = 15;
+        HERO.maxMana = 18;
+        HERO.health = 13;
+        HERO.mana = 12;
+        HERO.defense = 6;
+        HERO.reference_defense = HERO.defense;
+        HERO.attack = 6;
+        HERO.reference_attack = HERO.attack;
+        HERO.magic = 5;
+        HERO.reference_magic = HERO.magic;
+        HERO.attackExp = 30;
+        HERO.defenseExp = 2;
+        HERO.magicExp = 19;
+        HERO.attackExpGoal = 100;
+        HERO.defenseExpGoal = 100;
+        HERO.magicExpGoal = 100;
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = [];
+        for (let scr of scrolls) {
+            let scroll = new Scroll(scr);
+            HERO.inventory.scroll.add(scroll);
+        }
+        TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
+        TITLE.scrolls();
+        let invItems = ["Fly"];
+        for (let itm of invItems) {
+            const item = new NamedInventoryItem(itm, itm);
+            HERO.inventory.item.push(item);
+        }
+        TITLE.keys();
+    }
 };
 const INI = {
     MIMIMAP_HEIGHT: 200,
@@ -56,7 +91,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.09.00",
+    VERSION: "0.09.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -649,19 +684,12 @@ const GAME = {
         AI.immobileWander = true;
         //AI.VERBOSE = true;
         GAME.completed = false;
-        //GAME.level = 1;                 //start
-        GAME.level = 2;                 //entrance
-        //GAME.level = 3;               //shrines
-        //GAME.level = 4;                 //small room
-        // GAME.level = 5;                 //block wall room
-        //GAME.level = 6;                 //chasm
-        //GAME.level = 7;                 //interaction
-        //GAME.level = 8;                 //staircase
-        //GAME.level = 10;                 //upstairs
-        //GAME.level = 12;                 //title
-        //GAME.level = 14;                 //auto unlocking
-        //GAME.level = 13;                 //entrence studz
-        GAME.gold = 10000;
+        GAME.level = 1;                 //start
+        //GAME.level = 2;                 //entrance
+        //GAME.level = 3;               //which way
+
+        //GAME.gold = 10000;
+        GAME.gold = 0;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D"];
         GAME.STORE = new Store(storeList);
@@ -676,6 +704,8 @@ const GAME = {
             HERO.inventory.item.push(new NamedInventoryItem("Hat", "Hat"));
         }
         */
+
+        DEBUG.checkpoint1();
 
         /** debug end */
 

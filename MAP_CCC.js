@@ -22,7 +22,7 @@ const MAP = {
         keys: '[[21,0]]',
     }
     ,
-    2 : {
+    2: {
         name: "Entrance Hall",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB2AA4BB3ABB2ABB4AA3BB2ABB3AA12BB2ABAEABABB3AA10BB3ABAA2EAA6BEBAA4BAA5BAA8BB2ABAA2BAA2BAA6BB2AA2BAA7BB3ABAA3BB10ABAA2BABAA2BAA5BABABB3ABABABAA2BABAA2BB2ABABB2ABABB4AA2BB3ABB2EBB2AA2BB8AA2BB3ABB29ABB2$ABAA3B"}',
@@ -37,7 +37,56 @@ const MAP = {
         potions: '[[28,0],[60,1]]',
         gold: '[[233,"SilverBar"],[161,"GoldBar"],[219,"GoldCube"]]',
         skills: '[[225,"Sword"],[140,"Shield"]]',
-        containers: '[[84,"Wardrobe","INTERACTION_ITEM.Fly",7],[132,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1]]',
+        containers: '[[84,"Wardrobe","INTERACTION_ITEM.Fly",7],[132,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[164,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[142,"Barrel","GOLD_ITEM_TYPE.GoldCube",7]]',
         doors: '[92,49,187,197]',
+    }
+    ,
+    3 : {
+        name: "Which Way",
+        sg: 0,
+        data: '{"width":"13","height":"9","map":"BB5AA12BB2AA27BABB7ABB13ABABB3ABABB15ABABB20A$"}',
+        wall: "Wall10",
+        floor: "GreenDungeonWall",
+        ceil: "RockCeiling",
+        start: '[19,7]',
+        decals: '[[58,1,"SwordOfFargoal200","picture"],[18,7,"CastleHaunt","picture"],[20,7,"CastleHaunt200","picture"],[96,1,"Wolfenstein70","picture"],[98,1,"Wolfenstein31","picture"],[50,3,"Vixen3","picture"],[76,3,"Vixen70","picture"],[40,5,"Tombraider140","picture"],[66,5,"TombRaider130","picture"]]',
+        lights: '[[58,7,"WallLamp","standard"],[27,5,"WallLamp","standard"]]',
+        gates: '[[6,7,"3.1","2.2","Open"],[52,5,"3.2","4.1","Blue"],[64,3,"3.3","5.1","Blue"],[110,1,"3.4","6.1","Red"]]',
+        keys: '[[45,4]]',
+        monsters: '[[71,"Spider"],[54,"Bat"],[62,"RedGoldBat"]]',
+        containers: '[[36,"Crate","GOLD_ITEM_TYPE.GoldBar",7]]',
+        }
+    ,
+    4 : {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"4.1","3.2","Open"]]',
+        }
+    ,
+    5: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"5.1","3.3","Open"]]',
+    }
+    ,
+    6 : {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"6.1","3.4","Open"]]',
         }
 };

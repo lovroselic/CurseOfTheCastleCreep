@@ -5,6 +5,15 @@
 
 "use strict";
 console.log("%cMAP for CCC loaded.", "color: #888");
+/**
+ * entry texts
+ */
+
+const MAP_TEXT = {
+    2: "I should leave no stone unturned.",
+    3: "Hmm? Which way to go first?",
+    4: "I wonder if you are smart enough to lead me over Ghosty's traps?",
+};
 
 /** Map definitions */
 const MAP = {
@@ -41,7 +50,7 @@ const MAP = {
         doors: '[92,49,187,197]',
     }
     ,
-    3 : {
+    3: {
         name: "Which Way",
         sg: 0,
         data: '{"width":"13","height":"9","map":"BB5AA12BB2AA27BABB7ABB13ABABB3ABABB15ABABB20A$"}',
@@ -55,18 +64,23 @@ const MAP = {
         keys: '[[45,4]]',
         monsters: '[[71,"Spider"],[54,"Bat"],[62,"RedGoldBat"]]',
         containers: '[[36,"Crate","GOLD_ITEM_TYPE.GoldBar",7]]',
-        }
+    }
     ,
-    4 : {
-        name: "placeholder",
+    4: {
+        name: "West Staircase Up",
         sg: 0,
-        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
-        start: '[11,7]',
-        gates: '[[3,7,"4.1","3.2","Open"]]',
-        }
+        data: '{"width":"8","height":"8","map":"BB4AA3BAA8BB2AA3BAA2BB7ABB3ABB10ABABB3ABB6ABB3A$"}',
+        wall: "DarkBricks",
+        floor: "BrickTiles",
+        ceil: "BrokenRuin",
+        start: '[54,3]',
+        decals: '[[10,7,"DungeonMaster201","picture"],[12,7,"DungeonMaster97","picture"],[50,1,"DungeonMaster91","picture"],[61,1,"DungeonMaster70","picture"],[25,5,"DungeonMaster204","picture"],[38,3,"DungeonMaster200","picture"],[35,4,"FlatPond2","crest"],[19,4,"Crack4","crest"]]',
+        lights: '[[51,1,"WallLamp2","standard"]]',
+        gates: '[[55,3,"4.1","3.2","Open"],[3,7,"4.2","7.1","Up"]]',
+        monsters: '[[11,"MissGalaxyGreen"]]',
+        scrolls: '[[9,0],[21,6]]',
+        containers: '[[33,"Barrel","GOLD_ITEM_TYPE.GoldBar",5],[30,"Barrel","INTERACTION_ITEM.Fly",3]]',
+    }
     ,
     5: {
         name: "placeholder",
@@ -79,7 +93,7 @@ const MAP = {
         gates: '[[3,7,"5.1","3.3","Open"]]',
     }
     ,
-    6 : {
+    6: {
         name: "placeholder",
         sg: 0,
         data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
@@ -88,5 +102,45 @@ const MAP = {
         ceil: "Pavement",
         start: '[11,7]',
         gates: '[[3,7,"6.1","3.4","Open"]]',
+    }
+    ,
+    7: {
+        name: "West Tower",
+        sg: 0,
+        data: '{"width":"20","height":"20","map":"BB3AA8EAA5BB4AEÁÁ2AA32BAA8BB5AA2BB2AQBEBB2ABB2ÁÁ3AA2BÁABAA2BB2AA2BB2AA16BAA6EABAA4BAA2BAA8BAA9BAA7BAA8BAA2BAA12BB4AA2BABB3ABABB2ABB2ÁBB6AA2BAA2BABB4AA2EABB2ABB3ABABB7ABB3ABAA2BB10ABB2AA2BABB2ABB4EBB7ABB7ABB4ABB12EBB15$AA2BB10ABB2ABB12ABB6AA4BB3AA3ÁAA2ÁÁ22BÁÁ2AA2"}',
+        wall: "BrownishWall",
+        floor: "BrownishMarble",
+        ceil: "BlurryScarlet",
+        start: '[377,1]',
+        decals: '[[296,7,"DancingSkeletons2","crest"],[298,7,"DancingSkeletons2","crest"],[339,3,"CrawlMaster110","picture"],[306,7,"CrawlMaster111","picture"],[311,7,"CrawlMaster112","picture"],[261,7,"CrawlMaster113","picture"],[105,7,"CrawlMaster114","picture"],[112,7,"CrawlMaster115","picture"],[383,1,"CrawlMaster130","picture"],[348,1,"CrawlMaster131","picture"],[391,1,"CrawlMaster132","picture"],[386,1,"CrawlMaster133","picture"],[320,5,"SittingSkeleton2","crest"],[344,5,"PrayingSkeleton10","crest"],[200,5,"Skeleton12","crest"],[121,5,"Daggerfall4","picture"],[349,5,"SpectrumGame1","picture"],[173,3,"AztecChallenge112","picture"],[353,3,"Skullkeep","picture"],[304,3,"Imhotep2","picture"],[217,3,"Defender110","picture"],[257,3,"Invaders2","picture"],[136,3,"Soccer3","picture"],[164,5,"TombRaider111","picture"],[262,1,"SeaWolf60","picture"],[388,1,"AticAtacCrest1","crest"],[355,5,"Barbarian112","picture"],[48,7,"ImpossibleMsission112","picture"],[10,7,"JetSetWilly88","picture"],[13,7,"LeisureSuitLarry74","picture"],[7,7,"Fred102","picture"],[3,7,"ReturnToCastleWolfenstein11","picture"],[82,1,"ReturnToCastleWolfenstein12","picture"],[107,1,"ReturnToCastleWolfenstein13","picture"],[85,1,"ReturnToCastleWolfenstein14","picture"],[91,1,"RickDangerous11","picture"],[94,1,"F1-1","picture"],[38,3,"ManicMiner61","picture"],[78,3,"MontyMole100","picture"],[35,3,"DM107","picture"],[48,3,"Choplifter11","picture"],[75,5,"AticAtac201","picture"],[44,5,"GIJoe71","picture"],[52,5,"CrystalCastles90","picture"],[46,4,"Grate1_128","crest"],[50,4,"Grate1_128","crest"],[68,4,"Drain2_96","crest"],[148,4,"RoundGrille96","crest"],[146,4,"RoundGrille96","crest"],[150,4,"RoundGrille96","crest"]]',
+        lights: '[[297,7,"WallLamp","standard"],[306,1,"WallLamp","standard"],[311,1,"WallLamp","standard"],[382,1,"WallTorch","fire"],[262,7,"WallTorch","fire"],[373,3,"WallLamp","standard"],[364,5,"WallLamp","standard"],[359,3,"WallLamp","standard"],[106,7,"WallLamp","standard"],[110,7,"WallLamp","standard"],[44,3,"WallLamp","standard"],[48,5,"WallLamp","standard"],[52,3,"WallLamp","standard"],[16,7,"WallLamp","standard"]]',
+        gates: '[[397,1,"7.1","4.2","Down"],[59,3,"7.2","8.1","Up"]]',
+        monsters: '[[317,"Bat"],[321,"Spider"],[286,"MissGalaxyGreen"],[291,"MissGalaxyGreen"],[203,"MissGreen"],[214,"MissGreen"],[147,"MissGreen"],[150,"MissGalaxyGreen"],[57,"Bat"],[42,"MissGalaxyGreen"],[53,"MissGalaxyGreen"],[28,"MissGreen"]]',
+        scrolls: '[[89,12],[292,2],[181,4],[236,11]]',
+        potions: '[[318,0],[365,1],[372,1],[328,1],[329,1]]',
+        gold: '[[241,"GoldCube"],[196,"GoldCube"],[274,"GoldCube"],[368,"GoldCube"],[307,"GoldCube"],[122,"SilverBar"],[135,"SilverBar"],[165,"SilverBar"]]',
+        skills: '[[281,"Heart"],[361,"Mana"],[276,"Magic"]]',
+        containers: '[[283,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[363,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[22,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[29,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[61,"Barrel","SKILL_ITEM_TYPE.Magic",1],[74,"Crate","GOLD_ITEM_TYPE.SilverBar",1]]',
+        doors: '[335,324,124,162,175,133,108]',
+        triggers: '[[313,3,"MarbleTriggerButton",0,268],[304,5,"MarbleTriggerButton",0,248],[232,4,"MarbleTriggerButton",0,188]]',
+        entities: '[[40,5,"BlackWidow"]]',
+    }
+    ,
+    8 : {
+        name: "West Top",
+        sg: 0,
+        data: '{"width":"10","height":"10","map":"BB3AA2BABAA12BB4ABAA2BAA2BAA3BAA4BAA2BB7AA2BABB3ABB2ABB8ABB2AA3BB2ABB2AA2BB4ABB11$BA"}',
+        wall: "GreenDungeonWall",
+        floor: "ScarletFloor1",
+        ceil: "MossyWall3",
+        start: '[61,5]',
+        decals: '[[63,3,"WOWc1","crest"],[66,3,"Underwurlde131","picture"],[38,3,"Shamus4","picture"],[78,3,"RickDangerous70","picture"],[33,5,"SVS112","picture"],[20,5,"HalfLife60","picture"],[71,5,"KnightLore111","picture"],[13,7,"Oblivion110","picture"],[8,7,"BeachHeadReplace","picture"],[36,7,"WhoDaresWins71","picture"],[33,7,"Barbarian3","picture"],[63,1,"Witcher103","picture"],[66,1,"Neptunes daughters","picture"],[93,1,"LCP","picture"],[57,4,"Grate1_128","crest"],[63,7,"MonkeyIsland112","picture"],[66,7,"ZakMcKraken89","picture"],[33,3,"KingsQuest52","picture"],[36,3,"KokotoniWilf70","picture"],[36,5,"WinterGames79","picture"],[66,5,"LeisureSuitLarry71","picture"],[63,5,"LastNinja110","picture"],[33,1,"Fred100","picture"],[36,1,"TimeTunnel60","picture"],[2,7,"BlueMax11","picture"],[29,3,"Silkworm200","picture"]]',
+        lights: '[[84,1,"WallLamp","dim"],[15,7,"WallLamp","dim"],[58,3,"WallLamp","dim"],[41,5,"WallLamp","dim"]]',
+        gates: '[[60,5,"8.1","7.2","Down"]]',
+        monsters: '[[18,"SpiderGreen"],[21,"MissWhite"],[86,"MissGalaxyGreen"]]',
+        containers: '[[83,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[17,"Wardrobe","GOLD_ITEM_TYPE.GoldCube",7]]',
+        shrines: '[[49,3,"AttackShrine"],[69,3,"DefenseShrine"],[96,1,"MagicShrine"]]',
+        objects: '[[11,"RedGem"]]',
         }
+
 };

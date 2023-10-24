@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.08.04",
+  VERSION: "0.08.05",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -659,6 +659,7 @@ const GAME = {
   blockGrid() {
     let corr = $("input[name='corr']")[0].checked;
     ENGINE.resizeBOX("ROOM");
+
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
     ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
     ENGINE.BLOCKGRID.draw($MAP.map, corr);
@@ -705,6 +706,7 @@ const GAME = {
 
     if ($("input[name='grid']")[0].checked) GRID.grid();
     if ($("input[name='coord']")[0].checked) GRID.paintCoord("coord", $MAP.map);
+    GAME.resizeGL_window();
   },
   init() {
     let OK = true;
@@ -1045,8 +1047,13 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     $("#verticalGrid").trigger("change");
     GAME.updateWH();
     ENGINE.resizeBOX("ROOM");
+    GAME.resizeGL_window();
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
+
     GAME.render();
+  },
+  resizeGL_window() {
+    $("#WEBGL_canvas_0").css("top", `${ENGINE.gameHEIGHT + 16}px`)
   },
 };
 $(function () {

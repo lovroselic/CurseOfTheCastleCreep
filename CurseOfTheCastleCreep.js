@@ -31,37 +31,45 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkpoint1() {
-        GAME.level = 3;
-        GAME.gold = 308;
-        HERO.maxHealth = 15;
-        HERO.maxMana = 18;
-        HERO.health = 13;
-        HERO.mana = 12;
+        /**
+         * left blue branch current
+         */
+        GAME.level = 8;
+        GAME.gold = 1309;
+        HERO.maxHealth = 23;
+        HERO.maxMana = 31;
+        HERO.health = 23;
+        HERO.mana = 7;
         HERO.defense = 6;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 6;
+        HERO.attack = 7;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 5;
+        HERO.magic = 8;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 30;
-        HERO.defenseExp = 2;
-        HERO.magicExp = 19;
-        HERO.attackExpGoal = 100;
+        HERO.attackExp = 1;
+        HERO.defenseExp = 24;
+        HERO.magicExp = 104;
+        HERO.attackExpGoal = 150;
         HERO.defenseExpGoal = 100;
-        HERO.magicExpGoal = 100;
+        HERO.magicExpGoal = 150;
         HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 1;
-        let scrolls = [];
+        let scrolls = ["DrainMana", "DestroyArmor", "BoostWeapon", "HalfLife"];
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
             HERO.inventory.scroll.add(scroll);
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Fly"];
+        let invItems = ["Hat"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
+        }
+        let keys = [];
+        for (let key of keys) {
+            const K = new Key(key, `${key}Key`);
+            HERO.inventory.key.push(K);
         }
         TITLE.keys();
     }
@@ -91,7 +99,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.09.01",
+    VERSION: "0.09.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -874,6 +882,12 @@ const GAME = {
             TURN.display("GAME SAVED", "#FFF");
         }
         //
+
+        //observe
+        if (MAP_TEXT[GAME.level]) {
+            HERO.speak(MAP_TEXT[GAME.level]);
+            MAP_TEXT[GAME.level] = null;
+        }
         console.timeEnd("usingStaircase");
 
         if (DEBUG._2D_display) {

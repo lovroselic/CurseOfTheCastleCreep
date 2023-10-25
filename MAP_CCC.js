@@ -82,16 +82,21 @@ const MAP = {
         containers: '[[33,"Barrel","GOLD_ITEM_TYPE.GoldBar",5],[30,"Barrel","INTERACTION_ITEM.Fly",3]]',
     }
     ,
-    5: {
-        name: "placeholder",
+    5 : {
+        name: "East Staircase up",
         sg: 0,
-        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
-        start: '[11,7]',
-        gates: '[[3,7,"5.1","3.3","Open"]]',
-    }
+        data: '{"width":"8","height":"8","map":"BB3ABB2AA6BAA4BAA2BAA4BB15ABAA2BB5AA2BB7ABB4A$"}',
+        wall: "Wall8",
+        floor: "TinyBricks",
+        ceil: "MossyWall",
+        start: '[41,5]',
+        decals: '[[11,7,"DM107","picture"],[1,7,"Hero60","picture"],[38,7,"CrawlMaster112","picture"],[51,1,"Galaga70","picture"],[61,1,"Scramble60","picture"],[25,1,"Sorcery31","picture"],[8,5,"AirWolf31","picture"],[30,3,"SVS1011","picture"]]',
+        lights: '[[12,7,"WallLamp2","gray"],[33,5,"WallLamp2","gray"]]',
+        gates: '[[40,5,"5.1","3.3","Open"],[5,7,"5.2","9.1","Up"]]',
+        monsters: '[[27,"Spider"]]',
+        potions: '[[19,1]]',
+        containers: '[[10,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[54,"Crate","GOLD_ITEM_TYPE.GoldBar",3]]',
+        }
     ,
     6: {
         name: "placeholder",
@@ -108,7 +113,7 @@ const MAP = {
         name: "West Tower",
         sg: 0,
         data: '{"width":"20","height":"20","map":"BB3AA8EAA5BB4AEÁÁ2AA32BAA8BB5AA2BB2AQBEBB2ABB2ÁÁ3AA2BÁABAA2BB2AA2BB2AA16BAA6EABAA4BAA2BAA8BAA9BAA7BAA8BAA2BAA12BB4AA2BABB3ABABB2ABB2ÁBB6AA2BAA2BABB4AA2EABB2ABB3ABABB7ABB3ABAA2BB10ABB2AA2BABB2ABB4EBB7ABB7ABB4ABB12EBB15$AA2BB10ABB2ABB12ABB6AA4BB3AA3ÁAA2ÁÁ22BÁÁ2AA2"}',
-        wall: "BrownishWall",
+        wall: "SpideryWall2",
         floor: "BrownishMarble",
         ceil: "BlurryScarlet",
         start: '[377,1]',
@@ -126,7 +131,7 @@ const MAP = {
         entities: '[[40,5,"BlackWidow"]]',
     }
     ,
-    8 : {
+    8: {
         name: "West Top",
         sg: 0,
         data: '{"width":"10","height":"10","map":"BB3AA2BABAA12BB5ABAA4BAA4BB2AA4BABB7ABABABABABB2ABB5ABB2ABB2AA3BABB2ABB4ABB11$BA"}',
@@ -143,6 +148,17 @@ const MAP = {
         containers: '[[83,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[17,"Wardrobe","GOLD_ITEM_TYPE.GoldCube",7]]',
         shrines: '[[49,3,"AttackShrine"],[69,3,"DefenseShrine"],[96,1,"MagicShrine"]]',
         objects: '[[11,"RedGem"]]',
-        }
+    }
+    ,
+    9: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"9.1","5.2","Open"]]',
+    }
 
 };

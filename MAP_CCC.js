@@ -82,7 +82,7 @@ const MAP = {
         containers: '[[33,"Barrel","GOLD_ITEM_TYPE.GoldBar",5],[30,"Barrel","INTERACTION_ITEM.Fly",3]]',
     }
     ,
-    5 : {
+    5: {
         name: "East Staircase up",
         sg: 0,
         data: '{"width":"8","height":"8","map":"BB3ABB2AA6BAA4BAA2BAA4BB15ABAA2BB5AA2BB7ABB4A$"}',
@@ -96,7 +96,7 @@ const MAP = {
         monsters: '[[27,"Spider"]]',
         potions: '[[19,1]]',
         containers: '[[10,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[54,"Crate","GOLD_ITEM_TYPE.GoldBar",3]]',
-        }
+    }
     ,
     6: {
         name: "placeholder",
@@ -150,7 +150,48 @@ const MAP = {
         objects: '[[11,"RedGem"]]',
     }
     ,
-    9: {
+    9 : {
+        name: "East Tower",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB3AA3BABAA8BB3AA5BABABB3AA5BAA20BAA6BB39AA3BABABABB3AA2BB2ABB4AA2BB10ABB9ABB6ABB13$A"}',
+        wall: "BrownishWall",
+        floor: "MarbleFloor5",
+        ceil: "MossyCeiling",
+        start: '[149,1]',
+        decals: '[[32,4,"FlatPond","crest"],[68,4,"FlatPond2","crest"],[74,4,"FlatPond3","crest"],[110,4,"RoundGrille96","crest"],[58,1,"Reaper","crest"],[70,3,"DancingSkeletons2","crest"],[72,5,"PrayingSkeleton10","crest"],[5,7,"WOW104","picture"],[7,7,"WOW10","picture"],[28,7,"Fred110","picture"],[21,7,"Fred102","picture"],[148,1,"Arena200","picture"],[150,1,"Arena2","picture"],[138,1,"TombRaider113","picture"],[114,1,"LSL102","picture"],[106,1,"CastleOfTerror4","picture"],[120,1,"Sorcery88","picture"],[53,5,"AticAtac204","picture"],[79,5,"AticAtac203","picture"],[63,3,"SasbreWulf60","picture"],[89,3,"SabreWulf99","picture"],[36,7,"SP111","picture"],[17,7,"WhoDaresWins88","picture"],[40,5,"LadyTut102","picture"],[92,5,"JetSetWilly60","picture"],[106,5,"Sentinel2","picture"],[134,5,"CodenameIceman98","picture"],[102,3,"Witcher100","picture"],[126,3,"RobinHood3","picture"]]',
+        lights: '[[16,7,"Lamp4","dim"],[36,3,"Lamp4","dim"],[126,1,"Lamp4","dim"],[120,5,"Lamp4","dim"]]',
+        gates: '[[162,1,"9.1","5.2","Down"],[65,5,"9.2","10.1","Closed"],[77,3,"9.3","11.1","Closed"],[6,7,"9.4","12.1","Up"]]',
+        monsters: '[[97,"RedGoldBat"],[66,"MissGalaxyGreen"],[75,"Spider"],[45,"SpiderGreen"]]',
+        scrolls: '[[41,1],[101,3],[62,0]]',
+        potions: '[[107,0],[49,1]]',
+        skills: '[[24,"Sting"]]',
+        containers: '[[35,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[29,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[121,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[113,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[44,"Chest","GOLD_ITEM_TYPE.SilverBar",1]]',
+        triggers: '[[59,5,"PurpleTriggerButton",1,50],[85,5,"PurpleTriggerButton",1,37]]',
+        entities: '[[84,7,"HedgeHog"]]',
+        }
+    ,
+    10 : {
+        name: "Fruit Quest",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB3AA14BB16ABB2AA13BB4AA29BABB2AA2BB10AA12BAA3BB6ABB2AA5BÁABB5QABABABB18A$AA2BB6"}',
+        wall: "DarkWall1",
+        floor: "DarkMarble2",
+        ceil: "BeautifullWall1",
+        start: '[89,3]',
+        decals: '[[26,5,"MrRobot60","picture"],[130,5,"Barbarian111","picture"],[30,5,"Portal132","picture"],[34,5,"LastNinja10","picture"],[87,5,"JSW113","picture"],[134,5,"TombRaider110","picture"],[138,5,"BrideOfFrankenstein","picture"],[142,3,"ImpossibleMsission112","picture"],[38,3,"Underwurlde100","picture"],[138,3,"Vixen70","picture"],[34,3,"JetSetWilly60","picture"],[134,3,"LadyTut10","picture"],[81,3,"SVS110","picture"],[84,3,"Scramble23","picture"],[55,1,"SabreWulf87","picture"],[57,1,"Paratroopers3","picture"],[63,1,"ManicMiner52","picture"],[114,1,"Elvira1","picture"],[109,1,"OlympicSkier","picture"],[107,1,"Valhalla2","picture"],[56,7,"TheHobbit16","picture"],[60,7,"TombRaider95","picture"],[63,7,"Imhotep2","picture"],[105,7,"LadyTut60","picture"],[111,7,"Nebulus90","picture"],[114,7,"ImpossibleMission140","picture"]]',
+        lights: '[[10,7,"WallLamp","standard"],[6,7,"WallLamp","standard"],[2,7,"WallLamp","standard"],[158,1,"WallLamp","standard"],[162,1,"WallLamp","standard"],[166,1,"WallLamp","standard"],[78,5,"WallTorch","fire"],[81,5,"WallTorch","fire"],[84,5,"WallTorch","fire"]]',
+        gates: '[[90,3,"10.1","9.2","Open"]]',
+        monsters: '[[36,"SpiderGreen"],[144,"SpiderGreen"],[14,"MissGreen"],[154,"MissGreen"],[86,"Spider"],[80,"MissGalaxyGreen"]]',
+        scrolls: '[[49,0],[122,12],[40,7]]',
+        gold: '[[128,"GoldCube"],[152,"GoldCube"],[68,"GoldCube"],[99,"GoldCube"]]',
+        skills: '[[32,"Shield"]]',
+        containers: '[[22,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[118,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[150,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[92,"Chest","GOLD_ITEM_TYPE.SilverBar",1],[66,"Chest","GOLD_ITEM_TYPE.GoldBar",5],[18,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",5],[16,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3]]',
+        triggers: '[[107,7,"MarbleTriggerButton",0,58]]',
+        objects: '[[132,"Apple"]]',
+        traps: '[[84,1,"MarbleTriggerButton",0,"Bounceball",19]]',
+        }
+    ,
+    11: {
         name: "placeholder",
         sg: 0,
         data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
@@ -158,7 +199,17 @@ const MAP = {
         floor: "RockFloor",
         ceil: "Pavement",
         start: '[11,7]',
-        gates: '[[3,7,"9.1","5.2","Open"]]',
+        gates: '[[3,7,"11.1","9.3","Open"]]',
     }
-
+    ,
+    12: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"12.1","9.4","Open"]]',
+    }
 };

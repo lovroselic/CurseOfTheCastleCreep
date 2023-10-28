@@ -34,34 +34,34 @@ const DEBUG = {
         /**
          * left blue branch current
          */
-        GAME.level = 11; 
-        GAME.gold = 1969;
+        GAME.level = 12; 
+        GAME.gold = 2447;
         HERO.maxHealth = 27;
         HERO.maxMana = 41;
-        HERO.health = 27;
-        HERO.mana = 13;
-        HERO.defense = 7;
+        HERO.health = 13;
+        HERO.mana = 1;
+        HERO.defense = 8;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 10;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 9;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 8;
-        HERO.defenseExp = 64;
-        HERO.magicExp = 122;
+        HERO.attackExp = 156;
+        HERO.defenseExp = 73;
+        HERO.magicExp = 216;
         HERO.attackExpGoal = 225;
         HERO.defenseExpGoal = 100;
         HERO.magicExpGoal = 225;
         HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Invisibility", "Light", "DestroyWeapon"];
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Invisibility", "Light", "DestroyWeapon", "MagicBoost", "DestroyArmor"];
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
             HERO.inventory.scroll.add(scroll);
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Hat", "RedGem", "Apple"];
+        let invItems = ["Hat", "RedGem", "Apple", "Pear"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -99,7 +99,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.09.05",
+    VERSION: "0.09.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

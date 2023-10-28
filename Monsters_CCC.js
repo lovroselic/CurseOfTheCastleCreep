@@ -396,6 +396,26 @@ const MONSTER_TYPE = {
         moveSpeed: 1.1,
         material: MATERIAL.standard,
     },
+    MissGalaxy: {
+        name: "MissGalaxy",
+        model: "MissGalaxy",
+        scale: 0.9 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 12,
+        defense: 5,
+        magic: 3,
+        health: 15,
+        xp: 20,
+        gold: 15,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [7, ["wanderer"], 5, ["advancer"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standardShine,
+    },
     MissWhite: {
         name: "MissWhite",
         model: "MissWhite",
@@ -580,7 +600,7 @@ const INTERACTION_ENTITY = {
 //container content
 const CONTAINER_CONTENT_TYPES = { GOLD_ITEM_TYPE, SKILL_ITEM_TYPE, INTERACTION_ITEM };
 const CONTAINER_CONTENT_LIST = stringifyObjectList(CONTAINER_CONTENT_TYPES);
-const TRIGGER_ACTIONS = ["HOLE->toEmpty", "WALL->toEmpty"];
+const TRIGGER_ACTIONS = ["HOLE->toEmpty", "WALL->toEmpty", "EMPTY->toWall"];
 const TRAP_ACTIONS = {
     Missile: ["Fireball", "Bounceball"],
     Spawn: listObjectKeys(MONSTER_TYPE)

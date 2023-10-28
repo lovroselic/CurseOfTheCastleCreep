@@ -8,8 +8,9 @@
 /** Lights */
 const LIGHT_COLORS = {
     standard: new Float32Array([0.90, 0.90, 0.81]),
-    dim: new Float32Array([0.45, 0.45, 0.40]),
     standardRedish: new Float32Array([0.95, 0.88, 0.80]),
+    dim: new Float32Array([0.45, 0.45, 0.40]),
+    dimRed: new Float32Array([0.50, 0.225, 0.035]),
     fire: new Float32Array([0.94, 0.50, 0.07]),
     red: new Float32Array([0.95, 0.70, 0.70]),
     lightRed: new Float32Array([0.5, 0.1, 0.1]),

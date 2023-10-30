@@ -442,6 +442,27 @@ const MONSTER_TYPE = {
         missile: Missile,
         missileType: COMMON_ITEM_TYPE.Fireball,
     },
+    MissGalaxyGold: {
+        name: "MissGalaxyGold",
+        texture: "MissGalaxyGold",
+        model: "MissGalaxy",
+        scale: 1.1 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 16,
+        defense: 8,
+        magic: 4,
+        health: 20,
+        xp: 30,
+        gold: 30,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [7, ["wanderer"], 4, ["advancer"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.gold,
+    },
 
 };
 

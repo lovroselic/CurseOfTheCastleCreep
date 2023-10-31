@@ -6,7 +6,7 @@
 
 ///////////////SaveGame.js/////////////
 //                                  //
-//  version 1.03 by LS              //
+//  version 1.04 by LS              //
 //                                  //
 //////////////////////////////////////
 
@@ -17,7 +17,7 @@ TODO:
 */
 
 const SAVE_GAME = {
-  VERSION: "1.03",
+  VERSION: "1.04",
   LISTABR: "_LST",
   TIMEABR: "_TMR",
   OBJABR: "_OBJ",
@@ -176,6 +176,12 @@ const SAVE_GAME = {
   delete(sg) {
     localStorage.removeItem(sg);
     console.log(`%cDeleted ....: ${sg}`, SAVE_GAME.CSS);
+  }
+};
+
+const SAVE_MAP_IAM = {
+  save_map(MAP_REFERENCE) {
+    console.info("saving IAM for ", MAP_REFERENCE);
   }
 };
 

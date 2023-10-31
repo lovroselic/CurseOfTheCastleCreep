@@ -21,7 +21,11 @@ class IAM {
     constructor() {
         this.POOL = null;
         this.map = null;
-        this.IA = null; //
+        this.IA = null;
+        this.reIndexRequired = false;
+    }
+    setReindex() {
+        this.reIndexRequired = true;
     }
     draw() {
         for (let obj of this.POOL) {
@@ -58,6 +62,7 @@ class IAM {
         }
     }
     reIndex() {
+        if (!this.reIndexRequired) return;
         if (this.POOL.length === 0) return;
         this.POOL = this.POOL.filter((el) => el !== null);
         for (const [index, obj] of this.POOL.entries()) {

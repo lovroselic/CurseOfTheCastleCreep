@@ -52,9 +52,12 @@ const MAP_TOOLS = {
         }
         const SG = this.MAP[level].sg || null;
         this.MAP[level].map.sg = SG == 1 ? true : false;
-        if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
+        this.MAP[level].map.rebuilt = false;
+        this.MAP[level].map.storage = new IAM_Storage();
+        //if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
+        console.info("Unpacked MAP level", level, "map", this.MAP[level].map);      //debug
     },
-    
+
     /**
      * direct accesses WebGL
      * @param {*} level - leved/dungeon/room id
@@ -62,6 +65,7 @@ const MAP_TOOLS = {
     rebuild_3D_world(level) {
         this.MAP[level].world = WORLD.build(this.MAP[level].map);
         WebGL.setWorld(this.MAP[level].world);
+        this.MAP[level].rebuilt = true;
     }
 };
 const SPAWN_TOOLS = {
@@ -250,9 +254,23 @@ const SPAWN_TOOLS = {
 
 };
 
+class IAM_Storage {
+    constructor() {
+        this.action_list = [];
+    }
+}
+
+class IAM_Storage_item {
+    constructor(IAM, id, action) {
+        this.IAM = IAM;
+        this.id = id;
+        this.action = action;
+    }
+}
+
 /** defaults */
 MAP_TOOLS.initialize(MAP);
 MAP_TOOLS.setByteSize(2);
 
 /** END */
-console.log(`% cMAP and SPAWN tools ${MAP_TOOLS.VERSION} loaded.`, MAP_TOOLS.CSS);
+console.log(`%cMAP and SPAWN tools ${MAP_TOOLS.VERSION} loaded.`, MAP_TOOLS.CSS);

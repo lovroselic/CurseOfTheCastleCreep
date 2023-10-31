@@ -1612,12 +1612,10 @@ class ExternalGate extends Portal {
         if (this.open) this.interactive = false;
     }
     openGate() {
-        //console.warn("opening door", this);
         this.open = true;
         this.interactive = false;
         this.color = "Open";
         this.texture = WebGL.createTexture(SPRITE.DungeonDoor_Open);
-
     }
     block() {
         //console.warn("WebGL::blocking door", this);
@@ -1752,6 +1750,10 @@ class Drawable_object {
         gl.bindFramebuffer(gl.FRAMEBUFFER, frameBuffer);
         gl.drawElements(gl.TRIANGLES, this.indices, gl.UNSIGNED_SHORT, 0);
     }
+    deactivate() {
+        this.active = false;
+        this.interactive = false;
+    }
 }
 class Gate extends Drawable_object {
     constructor(grid, type) {
@@ -1789,7 +1791,8 @@ class Gate extends Drawable_object {
         }
 
         if (!this.locked) {
-            this.interactive = false;
+            //this.interactive = false;
+            this.deactivate();
             this.lift();
             GA.openDoor(this.grid);
             AUDIO.LiftGate.play();
@@ -1877,7 +1880,8 @@ class FloorItem3D extends Drawable_object {
         this.texture = WebGL.createTexture(this.texture);
     }
     interact(GA, inventory, click, hero) {
-        this.active = false;
+        //this.active = false;
+        this.deactivate();
         if (this.instanceIdentification && typeof (this.instanceIdentification) === "string") {
             if (["INTERACTION_ITEM"].includes(this.instanceIdentification.split(".")[0])) {
                 const type = eval(this.instanceIdentification);
@@ -2030,6 +2034,10 @@ class WallFeature3D {
         this.width = this.texture.width;
         this.height = this.texture.height;
     }
+    deactivate() {
+        this.active = false;
+        this.interactive = false;
+    }
 }
 
 class InteractionEntity extends WallFeature3D {
@@ -2098,6 +2106,7 @@ class InteractionEntity extends WallFeature3D {
             name: name
         };
     }
+
 }
 
 class Trigger extends WallFeature3D {
@@ -2116,8 +2125,9 @@ class Trigger extends WallFeature3D {
     interact() {
         const pos = Vector3.from_Grid(Grid.toCenter(this.targetGrid));
         EXPLOSION3D.add(new FloorDust(pos));
-        this.interactive = false;
-        this.active = false;
+        this.deactivate();
+        /*this.interactive = false;
+        this.active = false;*/
         this.GA[this.action](this.targetGrid);
         return {
             category: "rebuild",
@@ -2140,8 +2150,9 @@ class Trap extends WallFeature3D {
     }
     interact(GA, inventory, mouseClick, hero) {
         console.log("trap - interact");
-        this.interactive = false;
-        this.active = false;
+        /*this.interactive = false;
+        this.active = false;*/
+        this.deactivate();
         return this[this.action](hero);
     }
     Spawn() {
@@ -2861,6 +2872,10 @@ class $3D_Entity {
         gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
         this.texture = texture;
         this.texture = WebGL.createTexture(this.texture);
+    }
+    // untested
+    remove() {
+        this.parent.remove(this.id);
     }
 }
 

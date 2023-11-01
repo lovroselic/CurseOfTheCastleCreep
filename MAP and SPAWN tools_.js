@@ -7,7 +7,7 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "0.4",
+    VERSION: "0.5",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
         'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps'],
@@ -66,6 +66,14 @@ const MAP_TOOLS = {
         this.MAP[level].world = WORLD.build(this.MAP[level].map);
         WebGL.setWorld(this.MAP[level].world);
         this.MAP[level].rebuilt = true;
+    },
+    applyStorageActions(level) {
+        if (!this.MAP[level].unused_storage) return;
+        if (!this.MAP[level].map.storage.empty()) return;
+        console.info("Applying actions for level", level);
+        this.MAP[level].unused_storage.apply();
+        this.MAP[level].map.storage.addStorage(this.MAP[level].unused_storage);
+        console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
     }
 };
 const SPAWN_TOOLS = {
@@ -255,8 +263,27 @@ const SPAWN_TOOLS = {
 };
 
 class IAM_Storage {
-    constructor() {
-        this.action_list = [];
+    constructor(arr = []) {
+        this.action_list = arr;
+    }
+    empty() {
+        return this.action_list.length === 0;
+    }
+    apply() {
+        for (const action of this.action_list) {
+            //console.log("... action", action);
+            const IAM = eval(action.IAM);
+            const obj = IAM.POOL[action.id - 1];
+            //console.log(".... trying", obj, action.action);
+            obj[action.action]();
+            //console.log("........ OK", obj, action.action);
+        }
+    }
+    add(item) {
+        this.action_list.push(item);
+    }
+    addStorage(storage) {
+        this.action_list.push(...storage.action_list);
     }
 }
 

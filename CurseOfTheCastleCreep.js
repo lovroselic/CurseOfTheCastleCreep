@@ -34,7 +34,7 @@ const DEBUG = {
         /**
          * left blue branch current
          */
-        GAME.level = 2;     //6
+        GAME.level = 5;     //6
         GAME.gold = 37;
         HERO.maxHealth = 35;
         HERO.maxMana = 47;
@@ -99,7 +99,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.09.08",
+    VERSION: "0.09.09",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -189,7 +189,9 @@ class Shrine extends WallFeature3D {
     }
     interact() {
         if (GAME.gold >= 1000) {
-            this.interactive = false;
+            //this.interactive = false;
+            this.storageLog();
+            this.deactivate();
             GAME.gold -= 1000;
             TITLE.gold();
 
@@ -202,6 +204,12 @@ class Shrine extends WallFeature3D {
             AUDIO.MagicFail.play();
             return null;
         }
+    }
+    deactivate() {
+        this.interactive = false;
+    }
+    storageLog() {
+        this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
     }
 }
 /** ******************************** */
@@ -733,24 +741,27 @@ const GAME = {
         SAVE_GAME.timers = ["Main"];
         //end SAVE GAME
 
-
         if (GAME.fromCheckpoint) {
-            console.log(`%c ... Loading from checkpoint ...`, GAME.CSS);
-            HERO.inventory.scroll.clear();
-            HERO.inventory.item.clear();
-            SAVE_GAME.load();
-            //GAME.fromCheckpoint = false;
-
-            //skill timers are not saved!! so resetting skills!
-            HERO.defense = HERO.reference_defense;
-            HERO.attack = HERO.reference_attack;
-            HERO.magic = HERO.reference_magic;
-
-            //GAME.blockDoorFlag = true;
+            console.log(`%c ... Loading part 1...`, GAME.CSS);
+            GAME.load();
         }
 
-
         GAME.levelStart();
+    },
+    load() {
+        console.time("load");
+        HERO.inventory.scroll.clear();
+        HERO.inventory.item.clear();
+        SAVE_GAME.load();
+        //GAME.fromCheckpoint = false;
+
+        //skill timers are not saved!! so resetting skills!
+        HERO.defense = HERO.reference_defense;
+        HERO.attack = HERO.reference_attack;
+        HERO.magic = HERO.reference_magic;
+
+        //GAME.blockDoorFlag = true;
+        console.timeEnd("load");
     },
     checkpoint() {
         GAME.fromCheckpoint = true;
@@ -758,7 +769,6 @@ const GAME = {
     },
     levelStart() {
         console.log("starting level", GAME.level);
-        GAME.levelFinished = false;
         GAME.initLevel(GAME.level);
         GAME.setFirstPerson();                      //my preference
         GAME.continueLevel(GAME.level);
@@ -770,16 +780,11 @@ const GAME = {
         console.info("building world, room/dungeon/level:", level);
         WebGL.init_required_IAM(MAP[level].map, HERO);
         SPAWN_TOOLS.spawn(level);
-        /*
-        if (GAME.blockDoorFlag) {
-            GAME.blockDoor(GAME.loadWayPoint);
-        }
-        */
         if (GAME.fromCheckpoint) {
-            console.log(`%c ... affecting MAP and SPAWN from checkpoint ...`, GAME.CSS);
+            console.log(`%c ... loading part 3: affecting MAP and SPAWN from checkpoint ...`, GAME.CSS);
+            SAVE_MAP_IAM.load_map(MAP);
             GAME.fromCheckpoint = false;
-            //cont here
-
+            MAP_TOOLS.applyStorageActions(level);
         }
         MAP[level].world = WORLD.build(MAP[level].map);
     },
@@ -804,7 +809,6 @@ const GAME = {
     },
     initLevel(level) {
         this.newDungeon(level);
-
 
         const start_dir = MAP[level].map.startPosition.vector;
         let start_grid = MAP[level].map.startPosition.grid;
@@ -844,7 +848,10 @@ const GAME = {
     forceOpenDoor(waypoint) {
         for (const gate of INTERACTIVE_BUMP3D.POOL) {
             if (gate.destination.origin === waypoint) {
-                gate.openGate();
+                if (gate.locked) {
+                    gate.openGate();
+                    gate.storageLog();
+                }
                 return;
             }
         }
@@ -873,6 +880,7 @@ const GAME = {
             GAME.setWorld(level, true);
         }
 
+        MAP_TOOLS.applyStorageActions(level);           //test
         GAME.forceOpenDoor(destination.waypoint);
         HERO.player.setMap(MAP[level].map);
         INTERACTIVE_BUMP3D.setup();
@@ -882,18 +890,6 @@ const GAME = {
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
         HERO.player.setPos(start_grid);
         HERO.player.setDir(Vector3.from_2D_dir(start_dir));
-
-        //save game and close door
-        /*
-        if (MAP[level].map.sg) {
-            console.warn("SAVING GAME");
-            GAME.loadWayPoint = destination.waypoint;
-            MAP[level].map.sg = false;
-            SAVE_GAME.save();
-            TURN.display("GAME SAVED", "#FFF");
-        }
-        */
-        //
 
         /** SAVE GAME each time */
         GAME.save(destination);

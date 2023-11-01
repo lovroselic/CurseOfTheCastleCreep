@@ -195,7 +195,9 @@ const WebGL = {
         this.projectionMatrix = projectionMatrix;
     },
     createTexture(T, S = null) {
+        if (T instanceof WebGLTexture) return T;
         const gl = this.CTX;
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);           //debug - works OK
         const texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, texture);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, T);
@@ -1647,11 +1649,15 @@ class ExternalGate extends Portal {
             }
             if (!this.locked) {
                 this.openGate();
+                this.storageLog();
                 AUDIO.OpenGate.play();
                 return { category: "title", section: "keys" };
             }
             AUDIO.ClosedDoor.play();
         }
+    }
+    storageLog() {
+        this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_BUMP3D", this.id, "openGate"));
     }
 }
 
@@ -1791,7 +1797,7 @@ class Gate extends Drawable_object {
         }
 
         if (!this.locked) {
-            //this.interactive = false;
+            this.storageLog();
             this.deactivate();
             this.lift();
             GA.openDoor(this.grid);
@@ -1800,6 +1806,9 @@ class Gate extends Drawable_object {
         } else {
             AUDIO.ClosedDoor.play();
         }
+    }
+    storageLog() {
+        this.IAM.map.storage.add(new IAM_Storage_item("GATE3D", this.id, "deactivate"));
     }
 }
 class LiftingGate {
@@ -1836,6 +1845,7 @@ class FloorItem3D extends Drawable_object {
         this.excludeFromInventory = false;
         this.interactive = true;
         this.active = true;
+        this.dropped = false;
         for (const prop in type) {
             this[prop] = type[prop];
         }
@@ -1880,7 +1890,7 @@ class FloorItem3D extends Drawable_object {
         this.texture = WebGL.createTexture(this.texture);
     }
     interact(GA, inventory, click, hero) {
-        //this.active = false;
+        this.storageLog();
         this.deactivate();
         if (this.instanceIdentification && typeof (this.instanceIdentification) === "string") {
             if (["INTERACTION_ITEM"].includes(this.instanceIdentification.split(".")[0])) {
@@ -1899,6 +1909,10 @@ class FloorItem3D extends Drawable_object {
             instanceIdentification: this.instanceIdentification,
             name: this.name,
         };
+    }
+    storageLog() {
+        if (this.dropped) return;
+        this.IAM.map.storage.add(new IAM_Storage_item("ITEM3D", this.id, "deactivate"));
     }
 }
 
@@ -2038,6 +2052,9 @@ class WallFeature3D {
         this.active = false;
         this.interactive = false;
     }
+    storageLog() {
+        this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
+    }
 }
 
 class InteractionEntity extends WallFeature3D {
@@ -2085,7 +2102,9 @@ class InteractionEntity extends WallFeature3D {
             this.checkWants(inventory.item);
             if (this.wants.length === 0) {
                 this.setMode("conclusion");
-                this.interactive = false;
+                //this.interactive = false;
+                this.deactivate();
+                this.storageLog();[]
                 name = this.gives;
                 inventorySprite = INTERACTION_ITEM[name].inventorySprite
                 category = "interaction_item";
@@ -2105,6 +2124,9 @@ class InteractionEntity extends WallFeature3D {
             text: text,
             name: name
         };
+    }
+    deactivate() {
+        this.interactive = false;
     }
 
 }
@@ -2126,8 +2148,7 @@ class Trigger extends WallFeature3D {
         const pos = Vector3.from_Grid(Grid.toCenter(this.targetGrid));
         EXPLOSION3D.add(new FloorDust(pos));
         this.deactivate();
-        /*this.interactive = false;
-        this.active = false;*/
+        this.storageLog();
         this.GA[this.action](this.targetGrid);
         return {
             category: "rebuild",
@@ -2150,9 +2171,8 @@ class Trap extends WallFeature3D {
     }
     interact(GA, inventory, mouseClick, hero) {
         console.log("trap - interact");
-        /*this.interactive = false;
-        this.active = false;*/
         this.deactivate();
+        this.storageLog();
         return this[this.action](hero);
     }
     Spawn() {
@@ -2808,11 +2828,14 @@ class $3D_Entity {
         const item = new FloorItem3D(this.moveState.grid, this.inventory);
         if (item.category === 'gold') item.setValue(this.gold);
         item.setTexture();
+        item.dropped = true;
         ITEM3D.add(item);
     }
     die(expType, exp = 0) {
+        this.storageLog();
         exp += this.xp;
-        this.IAM.remove(this.id);
+        //this.IAM.remove(this.id);
+        this.remove();
         this.dropInventory();
         EXPLOSION3D.add(new (eval(this.deathType))(this.moveState.pos.translate(DIR_UP, this.midHeight)));
         this.IAM.hero.incExp(exp, expType);
@@ -2873,9 +2896,11 @@ class $3D_Entity {
         this.texture = texture;
         this.texture = WebGL.createTexture(this.texture);
     }
-    // untested
+    storageLog() {
+        this.IAM.map.storage.add(new IAM_Storage_item("ENTITY3D", this.id, "remove"));
+    }
     remove() {
-        this.parent.remove(this.id);
+        this.IAM.remove(this.id);
     }
 }
 

@@ -100,7 +100,9 @@ class IAM {
         this.poolToIA(map[this.IA]);
     }
     clean() {
-        for (const obj of this.POOL) obj.clean();
+        for (const obj of this.POOL) {
+            if (obj) obj.clean();
+        }
     }
 }
 

@@ -21,6 +21,7 @@ const SAVE_GAME = {
   LISTABR: "_LST",
   TIMEABR: "_TMR",
   OBJABR: "_OBJ",
+  IAMABR: "_IAM",
   CSS: "color: orange",
   that: window,
   ready() {
@@ -180,8 +181,25 @@ const SAVE_GAME = {
 };
 
 const SAVE_MAP_IAM = {
-  save_map(MAP_REFERENCE) {
-    console.info("saving IAM for ", MAP_REFERENCE);
+  save_map(MAP_REFERENCE = MAP) {
+    const map_iam = {};
+    for (const level in MAP_REFERENCE) {
+      const storage = MAP_REFERENCE[level]?.map?.storage;
+      if (storage && !storage.empty()) {
+        console.log("adding storage", level, storage,);
+        map_iam[level] = storage;
+      }
+    }
+    console.warn("save map_iam", map_iam);
+    const map_iam_string = JSON.stringify(map_iam);
+    localStorage.setItem(SAVE_GAME.key + SAVE_GAME.IAMABR, SAVE_GAME.code(map_iam_string));
+  },
+  load_map(MAP_REFERENCE = MAP) {
+    const map_iam = JSON.parse(SAVE_GAME.decode(localStorage[SAVE_GAME.key + SAVE_GAME.IAMABR]));
+    console.log("loaded map_iam", map_iam);
+    for (const level in map_iam) {
+      MAP_REFERENCE[level].unused_storage = new IAM_Storage(map_iam[level].action_list);
+    }
   }
 };
 

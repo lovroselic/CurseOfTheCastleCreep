@@ -61,7 +61,8 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Hat", "RedGem", "Mirror", "BlueGem"];
+        //let invItems = ["Hat", "RedGem", "Mirror", "BlueGem"];
+        let invItems = ["Apple", "Pear"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -99,7 +100,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.09.09",
+    VERSION: "0.09.10",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -902,9 +903,12 @@ const GAME = {
         console.timeEnd("usingStaircase");
 
         if (DEBUG._2D_display) {
+            ENGINE.resizeBOX("LEVEL", MAP[level].pw, MAP[level].ph);
+            ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
             ENGINE.BLOCKGRID.draw(MAP[GAME.level].map);
             GRID.grid();
             GRID.paintCoord("coord", MAP[level].map);
+
         }
     },
     save(destination) {

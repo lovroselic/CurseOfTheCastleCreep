@@ -2079,12 +2079,19 @@ class InteractionEntity extends WallFeature3D {
         SPEECH.use(this.voice);
         SPEECH.speakWithArticulation(text);
     }
+    storageLogWantRemoval(name) {
+        this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "removeWant", name));
+    }
+    removeWant(name) {
+        this.wants.splice(this.wants.indexOf(name), 1);
+    }
     checkWants(items) {
         for (const [index, item] of items.entries()) {
             const name = item.name;
             if (this.wants.includes(name)) {
                 items.splice(index, 1);
-                this.wants.splice(this.wants.indexOf(name), 1);
+                this.storageLogWantRemoval(name);
+                this.removeWant(name);
                 return;
             }
         }
@@ -2102,9 +2109,8 @@ class InteractionEntity extends WallFeature3D {
             this.checkWants(inventory.item);
             if (this.wants.length === 0) {
                 this.setMode("conclusion");
-                //this.interactive = false;
                 this.deactivate();
-                this.storageLog();[]
+                this.storageLog();
                 name = this.gives;
                 inventorySprite = INTERACTION_ITEM[name].inventorySprite
                 category = "interaction_item";
@@ -2127,6 +2133,9 @@ class InteractionEntity extends WallFeature3D {
     }
     deactivate() {
         this.interactive = false;
+    }
+    storageLog() {
+        this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
     }
 
 }

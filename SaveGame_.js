@@ -22,6 +22,7 @@ const SAVE_GAME = {
   TIMEABR: "_TMR",
   OBJABR: "_OBJ",
   IAMABR: "_IAM",
+  GAABR: "_GA",
   CSS: "color: orange",
   that: window,
   ready() {
@@ -199,6 +200,29 @@ const SAVE_MAP_IAM = {
     console.log("loaded map_iam", map_iam);
     for (const level in map_iam) {
       MAP_REFERENCE[level].unused_storage = new IAM_Storage(map_iam[level].action_list);
+    }
+  },
+  save_GA(MAP_REFERENCE = MAP) {
+    const map_GA = {};
+    for (const level in MAP_REFERENCE) {
+      const rebuilt = MAP_REFERENCE[level]?.map?.rebuilt;
+      //console.log("rebuilt", level, rebuilt, "has ad", MAP_REFERENCE[level].adapted_data);
+      if (rebuilt) {
+        const GA = MAP_REFERENCE[level].map.GA;
+        map_GA[level] = GA.exportMap();
+      } else if (MAP_REFERENCE[level].adapted_data) {
+        map_GA[level] = MAP_REFERENCE[level].adapted_data;
+      }
+    }
+    console.warn("map_GA", map_GA);
+    const map_GA_string = JSON.stringify(map_GA);
+    localStorage.setItem(SAVE_GAME.key + SAVE_GAME.GAABR, map_GA_string);
+  },
+  load_GA(MAP_REFERENCE = MAP) {
+    const map_GA = JSON.parse(localStorage[SAVE_GAME.key + SAVE_GAME.GAABR]);
+    console.log("loaded map_GA", map_GA);
+    for (const level in map_GA) {
+      MAP_REFERENCE[level].adapted_data = map_GA[level];
     }
   }
 };

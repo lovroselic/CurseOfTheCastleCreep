@@ -34,7 +34,7 @@ const DEBUG = {
         /**
          * left blue branch current
          */
-        GAME.level = 5;     //6
+        GAME.level = 6;     //6
         GAME.gold = 37;
         HERO.maxHealth = 35;
         HERO.maxMana = 47;
@@ -61,8 +61,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        //let invItems = ["Hat", "RedGem", "Mirror", "BlueGem"];
-        let invItems = ["Apple", "Pear"];
+        let invItems = ["Hat", "RedGem", "Mirror", "BlueGem"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -100,7 +99,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.09.10",
+    VERSION: "0.10.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -190,7 +189,6 @@ class Shrine extends WallFeature3D {
     }
     interact() {
         if (GAME.gold >= 1000) {
-            //this.interactive = false;
             this.storageLog();
             this.deactivate();
             GAME.gold -= 1000;
@@ -762,6 +760,7 @@ const GAME = {
         HERO.magic = HERO.reference_magic;
 
         //GAME.blockDoorFlag = true;
+        SAVE_MAP_IAM.load_GA();
         console.timeEnd("load");
     },
     checkpoint() {
@@ -881,7 +880,7 @@ const GAME = {
             GAME.setWorld(level, true);
         }
 
-        MAP_TOOLS.applyStorageActions(level);           //test
+        MAP_TOOLS.applyStorageActions(level);
         GAME.forceOpenDoor(destination.waypoint);
         HERO.player.setMap(MAP[level].map);
         INTERACTIVE_BUMP3D.setup();
@@ -917,6 +916,7 @@ const GAME = {
         GAME.loadWayPoint = destination.waypoint;
         SAVE_GAME.save();
         SAVE_MAP_IAM.save_map(MAP);
+        SAVE_MAP_IAM.save_GA(MAP);
         TURN.display("GAME SAVED", "#FFF");
         console.timeEnd("save");
     },

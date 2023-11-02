@@ -641,6 +641,11 @@ class GridArray extends ArrayBasedDataStructure {
       this.map[i] |= bin;
     }
   }
+  massReset(bin) {
+    for (let i = 0; i < this.map.length; i++) {
+      this.map[i] &= (2 ** this.gridSizeBit - 1 - bin);
+    }
+  }
   massClear() {
     for (let i = 0; i < this.map.length; i++) {
       this.map[i] = 0;
@@ -1238,10 +1243,13 @@ class GridArray extends ArrayBasedDataStructure {
     } while (!startGrid.same(lookGrid));
     return true;
   }
-  toString() {
+  toString(clear = null) {
     const offset = 65;
     let str = "";
     for (let byte of this.map) {
+      if (clear) {
+        byte &= (2 ** this.gridSizeBit - 1 - clear);
+      }
       str += String.fromCharCode(byte + offset);
     }
     return str;

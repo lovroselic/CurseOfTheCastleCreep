@@ -27,12 +27,23 @@ const MAP_TOOLS = {
         if (ENGINE.verbose) console.log(`MAP TOOLS GA bytesize`, MAP_TOOLS.INI.GA_BYTE_SIZE);
     },
     unpack(level) {
-        this.MAP[level].map = FREE_MAP.import(JSON.parse(this.MAP[level].data), MAP_TOOLS.INI.GA_BYTE_SIZE);
+        if (this.MAP[level].adapted_data) {
+            const adapted_data = JSON.parse(this.MAP[level].data);
+            adapted_data.map = this.MAP[level].adapted_data;
+            console.warn("loading adapted data", adapted_data);
+            this.MAP[level].map = FREE_MAP.import(adapted_data, MAP_TOOLS.INI.GA_BYTE_SIZE);
+            this.MAP[level].map.rebuilt = true;
+        } else {
+            this.MAP[level].map = FREE_MAP.import(JSON.parse(this.MAP[level].data), MAP_TOOLS.INI.GA_BYTE_SIZE);
+            this.MAP[level].map.rebuilt = false;
+        }
+
         const GA = this.MAP[level].map.GA;
         this.MAP[level].pw = this.MAP[level].map.width * ENGINE.INI.GRIDPIX;
         this.MAP[level].ph = this.MAP[level].map.height * ENGINE.INI.GRIDPIX;
         this.MAP[level].map.level = level;
-        if (this.INI.FOG) {
+
+        if (this.INI.FOG && !this.MAP[level].map.rebuilt) {
             GA.massSet(MAPDICT.FOG);
         }
         const start = JSON.parse(this.MAP[level].start) || null;
@@ -52,10 +63,9 @@ const MAP_TOOLS = {
         }
         const SG = this.MAP[level].sg || null;
         this.MAP[level].map.sg = SG == 1 ? true : false;
-        this.MAP[level].map.rebuilt = false;
         this.MAP[level].map.storage = new IAM_Storage();
-        //if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
-        console.info("Unpacked MAP level", level, "map", this.MAP[level].map);      //debug
+        if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
+        //console.info("Unpacked MAP level", level, "map", this.MAP[level].map);      //debug
     },
 
     /**
@@ -65,15 +75,15 @@ const MAP_TOOLS = {
     rebuild_3D_world(level) {
         this.MAP[level].world = WORLD.build(this.MAP[level].map);
         WebGL.setWorld(this.MAP[level].world);
-        this.MAP[level].rebuilt = true;
+        this.MAP[level].map.rebuilt = true;
     },
     applyStorageActions(level) {
         if (!this.MAP[level].unused_storage) return;
         if (!this.MAP[level].map.storage.empty()) return;
-        console.info("Applying actions for level", level);
+        //console.info("Applying actions for level", level);
         this.MAP[level].unused_storage.apply();
         this.MAP[level].map.storage.addStorage(this.MAP[level].unused_storage);
-        console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
+        //console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
     }
 };
 const SPAWN_TOOLS = {
@@ -97,6 +107,7 @@ const SPAWN_TOOLS = {
         this.entities(map, GA);
         this.objects(map, GA);
         this.traps(map, GA);
+        //console.info("GA after spawning level", level, "->", GA.exportMap());
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -271,12 +282,12 @@ class IAM_Storage {
     }
     apply() {
         for (const action of this.action_list) {
-            console.log(". action", action);
+            //console.log(". action", action);
             const IAM = eval(action.IAM);
             const obj = IAM.POOL[action.id - 1];
-            console.log(".... trying", obj, action.action, action.arg);
+            //console.log(".... trying", obj, action.action, action.arg);
             obj[action.action](action.arg);
-            console.log("........ OK", obj, action.action, action.arg);
+            //console.log("........ OK", obj, action.action, action.arg);
         }
     }
     add(item) {
@@ -288,6 +299,13 @@ class IAM_Storage {
 }
 
 class IAM_Storage_item {
+    /**
+     * Creates an instance of IAM_Storage_item.
+     * @param {string} IAM - string representation of corresponding IAM
+     * @param {integer} id - id of object
+     * @param {string} action - object method label
+     * @param {*} [arg=null] - argument
+     */
     constructor(IAM, id, action, arg = null) {
         this.IAM = IAM;
         this.id = id;

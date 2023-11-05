@@ -32,29 +32,31 @@ const DEBUG = {
     },
     checkpoint1() {
         /**
-         * left blue branch current
+         * current
          */
-        GAME.level = 6;     //6
-        GAME.gold = 37;
+        GAME.level = 14;     //14
+        GAME.gold = 970;
         HERO.maxHealth = 35;
-        HERO.maxMana = 47;
-        HERO.health = 35;
-        HERO.mana = 47;
+        HERO.maxMana = 56;
+        HERO.health = 20;
+        HERO.mana = 56;
         HERO.defense = 10;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 12;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 11;
+        HERO.magic = 12;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 6;
-        HERO.defenseExp = 5;
-        HERO.magicExp = 179;
+        HERO.attackExp = 161;
+        HERO.defenseExp = 20;
+        HERO.magicExp = 25;
         HERO.attackExpGoal = 338;
         HERO.defenseExpGoal = 150;
-        HERO.magicExpGoal = 338;
+        HERO.magicExpGoal = 507;
         HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 2;
-        let scrolls = ["Invisibility", "Light", "DestroyWeapon", "MagicBoost", "DestroyArmor", "Luck",];
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Invisibility"];
+        //debug
+        //let scrolls = ["DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife"];
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
             HERO.inventory.scroll.add(scroll);
@@ -66,7 +68,7 @@ const DEBUG = {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Blue"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -99,7 +101,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.00",
+    VERSION: "0.10.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -783,8 +785,10 @@ const GAME = {
         if (GAME.fromCheckpoint) {
             console.log(`%c ... loading part 3: affecting MAP and SPAWN from checkpoint ...`, GAME.CSS);
             SAVE_MAP_IAM.load_map(MAP);
-            GAME.fromCheckpoint = false;
+            //GAME.fromCheckpoint = false;
+            WebGL.CTX.pixelStorei(WebGL.CTX.UNPACK_FLIP_Y_WEBGL, true);
             MAP_TOOLS.applyStorageActions(level);
+            WebGL.CTX.pixelStorei(WebGL.CTX.UNPACK_FLIP_Y_WEBGL, false);
         }
         MAP[level].world = WORLD.build(MAP[level].map);
     },
@@ -809,9 +813,20 @@ const GAME = {
     },
     initLevel(level) {
         this.newDungeon(level);
+        AI.initialize(HERO.player, "3D");
+        WebGL.MOUSE.initialize("ROOM");
+        WebGL.setContext('webgl');
+        this.buildWorld(level); //??
+        let start_dir, start_grid;
 
-        const start_dir = MAP[level].map.startPosition.vector;
-        let start_grid = MAP[level].map.startPosition.grid;
+        if (GAME.fromCheckpoint) {
+            start_dir = MAP[level].map[GAME.loadWayPoint].vector;
+            start_grid = Grid.toClass(MAP[level].map[GAME.loadWayPoint].grid).add(start_dir);
+            GAME.fromCheckpoint = false;
+        } else {
+            start_dir = MAP[level].map.startPosition.vector;
+            start_grid = MAP[level].map.startPosition.grid;
+        }
         start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
 
         //WebGL.CONFIG.set("first_person", true);
@@ -827,11 +842,11 @@ const GAME = {
             HERO.player.associateExternalCamera(HERO.topCamera);
         }
 
-        AI.initialize(HERO.player, "3D");
+        /*AI.initialize(HERO.player, "3D");
         WebGL.MOUSE.initialize("ROOM");
-        WebGL.setContext('webgl');
+        WebGL.setContext('webgl');*/
 
-        this.buildWorld(level);
+        //this.buildWorld(level);
         this.setWorld(level);
 
         ENTITY3D.resetTime();

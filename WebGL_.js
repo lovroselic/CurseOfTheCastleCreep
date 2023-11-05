@@ -197,7 +197,6 @@ const WebGL = {
     createTexture(T, S = null) {
         if (T instanceof WebGLTexture) return T;
         const gl = this.CTX;
-        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);           //debug - works OK
         const texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, texture);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, T);
@@ -2185,7 +2184,9 @@ class Trap extends WallFeature3D {
         return this[this.action](hero);
     }
     Spawn() {
-        ENTITY3D.add(new $3D_Entity(Grid.toCenter(this.targetGrid), this.prototype, UP));
+        const entity = new $3D_Entity(Grid.toCenter(this.targetGrid), this.prototype, UP);
+        entity.dropped = true;
+        ENTITY3D.add(entity);
     }
     Missile(hero) {
         const position = Grid.toCenter(this.targetGrid);
@@ -2648,6 +2649,7 @@ class $3D_Entity {
         this.swordTipDistance = null;                                       //attack priority resolution
         this.dirStack = [];
         this.final_boss = false;
+        this.dropped = false;                                               //spawned as a trap
         this.texture = null;                                                //model is the texture source, until change is forced
         this.resetTime();
         this.grid = grid;
@@ -2906,6 +2908,7 @@ class $3D_Entity {
         this.texture = WebGL.createTexture(this.texture);
     }
     storageLog() {
+        if (this.dropped) return;
         this.IAM.map.storage.add(new IAM_Storage_item("ENTITY3D", this.id, "remove"));
     }
     remove() {

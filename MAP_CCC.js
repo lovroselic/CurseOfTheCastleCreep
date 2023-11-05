@@ -98,7 +98,7 @@ const MAP = {
         containers: '[[10,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[54,"Crate","GOLD_ITEM_TYPE.GoldBar",3]]',
     }
     ,
-    6 : {
+    6: {
         name: "Hall",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB3AA3BABB3AA24BB2AA4BB2AA4BB2AA2BAA10BAA5BB2AA4BAA10BB2AA7BB9AA2BAA2BB8ABB9ABB4ABB2AA2BB2AA2BAA3BAA4BB19A$"}',
@@ -106,9 +106,14 @@ const MAP = {
         floor: "Wall11",
         ceil: "Wall11",
         start: '[19,7]',
+        decals: '[[148,1,"Skull2","crest"],[150,1,"Skull4","crest"],[17,7,"AticAtac204","picture"],[11,7,"SpaceQuest103","picture"],[1,7,"ForgottenForest1","picture"],[21,7,"Hero100","picture"],[58,7,"EyeOfTheBeholder90","picture"],[128,7,"KnightLore111","picture"],[118,7,"RiverRaid70","picture"],[147,1,"Jumpman70","picture"],[151,1,"Galaga71","picture"],[110,1,"Ishar80","picture"],[40,1,"BeachHead100","picture"],[50,1,"Grog1","picture"],[53,5,"MontyMole52","picture"],[105,5,"Morrowind140","picture"],[82,5,"DM106","picture"],[13,5,"Pitfall72","picture"],[26,5,"PharaohCurse112","picture"],[130,5,"SirFred4","picture"],[143,5,"MassEffect1","picture"],[22,5,"Witcher113","picture"],[152,5,"DonkeyKong99","picture"],[25,3,"BrianBloodaxe11","picture"],[38,3,"ZimSalaBim201","picture"],[63,3,"ManicMiner63","picture"],[115,3,"TempleOfApshai89","picture"],[142,3,"TheHobbit16","picture"],[155,3,"TheHobbit15","picture"],[86,3,"MonkeyIsland102","picture"],[2,7,"Goonies5","picture"],[10,7,"Paratroopers2","picture"],[157,1,"AticAtac111","picture"],[158,1,"HalfLife14","picture"],[166,1,"DM90","picture"],[167,1,"ForbiddenForest110","picture"],[82,1,"ForbiddenForest99","picture"],[86,1,"ForbiddenForest90","picture"],[58,3,"PharaohCurse140","picture"],[110,3,"SirFred88","picture"],[110,5,"Elite","picture"],[58,5,"BC103","picture"],[82,7,"Oblivion140","picture"],[86,7,"KQ100","picture"],[16,3,"BrianBloodaxe71","picture"],[146,3,"Valhalla88","picture"]]',
         lights: '[[58,1,"Lamp4","dim"],[110,7,"Lamp4","dim"],[82,3,"Lamp4","dim"],[86,5,"Lamp4","dim"]]',
         gates: '[[6,7,"6.1","3.4","Open"],[162,1,"6.2","13.1","Blue"]]',
-        }
+        monsters: '[[84,"MissGalaxyGold"],[140,"MissWhite"],[132,"MissGalaxy"],[36,"Bat"],[28,"MissWhite"]]',
+        scrolls: '[[84,4]]',
+        gold: '[[70,"GoldCube"],[72,"GoldCube"],[98,"GoldCube"],[96,"GoldCube"]]',
+        containers: '[[144,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[154,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[14,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[24,"Barrel","GOLD_ITEM_TYPE.GoldBar",7]]',
+    }
     ,
     7: {
         name: "West Tower",
@@ -237,7 +242,25 @@ const MAP = {
         objects: '[[32,"BlueGem"]]',
     }
     ,
-    13: {
+    13 : {
+        name: "Strange Corridor",
+        sg: 0,
+        data: '{"width":"11","height":"11","map":"BB2AA7BB3ABB22AA2BB4ABB5ABB9AA2BAA2BB13ABB28ABB2AA2BB3AA2BB3$BB3A"}',
+        wall: "Wall8",
+        floor: "MarbleTiles4",
+        ceil: "ThatchFloor",
+        start: '[16,7]',
+        decals: '[[22,5,"ManicMiner11","picture"],[59,5,"LeisureSuitLarry74","picture"],[92,5,"LadyTut102","picture"],[72,3,"Pipeline50","picture"],[94,3,"AlleyKat","picture"],[32,3,"Ishar15","picture"],[35,1,"Sorcery70","picture"],[39,1,"1942_201","picture"],[41,1,"RickDangerous11","picture"],[94,1,"Fred102","picture"],[39,7,"Wolf10","picture"]]',
+        lights: '[[14,7,"WallLamp3","dimRed"],[18,7,"WallLamp3","dimRed"]]',
+        gates: '[[5,7,"13.1","6.2","Open"],[115,1,"13.2","14.1","Down"]]',
+        monsters: '[[71,"Viking"],[93,"MissGalaxyGold"],[38,"RedGoldBat"]]',
+        gold: '[[83,"SilverBar"]]',
+        containers: '[[48,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",5],[81,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",5],[50,"Barrel","GOLD_ITEM_TYPE.SilverBar",3]]',
+        triggers: '[[45,1,"MarbleTriggerButton",1,49],[53,1,"MarbleTriggerButton",1,82]]',
+        traps: '[[1,7,"MarbleTriggerButton",1,"MissGreen",27],[9,7,"MarbleTriggerButton",1,"MissGalaxyGreen",42]]',
+        }
+    ,
+    14: {
         name: "placeholder",
         sg: 0,
         data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
@@ -245,6 +268,6 @@ const MAP = {
         floor: "RockFloor",
         ceil: "Pavement",
         start: '[11,7]',
-        gates: '[[3,7,"13.1","6.2","Open"]]',
+        gates: '[[3,7,"14.1","13.2","Up"]]',
     }
 };

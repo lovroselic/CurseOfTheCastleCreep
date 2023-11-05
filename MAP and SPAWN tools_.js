@@ -282,12 +282,12 @@ class IAM_Storage {
     }
     apply() {
         for (const action of this.action_list) {
-            //console.log(". action", action);
+            console.log(". action", action);
             const IAM = eval(action.IAM);
             const obj = IAM.POOL[action.id - 1];
-            //console.log(".... trying", obj, action.action, action.arg);
+            console.log(".... trying", obj, action.action, action.arg);
             obj[action.action](action.arg);
-            //console.log("........ OK", obj, action.action, action.arg);
+            console.log("........ OK", obj, action.action, action.arg);
         }
     }
     add(item) {

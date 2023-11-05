@@ -463,6 +463,26 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.gold,
     },
+    Viking: {
+        name: "Viking",
+        model: "Viking",
+        scale: 0.9 / 2 ** 8,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 20,
+        defense: 10,
+        magic: 5,
+        health: 25,
+        xp: 30,
+        gold: 30,
+        attackSound: "HumanAttack1",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [7, ["wanderer"], 4, ["advancer"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standard,
+    },
 
 };
 

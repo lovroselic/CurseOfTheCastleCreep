@@ -222,13 +222,14 @@ const WebGL = {
     },
     setTexture(textureData) {
         const gl = this.CTX;
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);                   //changed, keep
         this.texture = {};
 
         for (let T in textureData) {
             this.texture[T] = this.createTexture(textureData[T]);
         }
 
-        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        //gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
     },
     setDecalTextures() {
         for (const iam of [...WebGL.staticDecalList, ...WebGL.dynamicDecalList, ...WebGL.interactiveDecalList]) {

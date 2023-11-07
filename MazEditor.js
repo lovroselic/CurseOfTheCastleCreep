@@ -45,14 +45,14 @@ const $MAP = {
 };
 const INI = {
   MAXINT: 96,
-  MININT: 8,
+  MININT: 5,
   MAX_GRID: 64,
-  MIN_GRID: 8,
+  MIN_GRID: 5,
   SPACE_X: 2048,
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.08.06",
+  VERSION: "0.08.07",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",

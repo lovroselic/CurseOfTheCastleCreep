@@ -34,27 +34,27 @@ const DEBUG = {
         /**
          * current
          */
-        GAME.level = 14;     //14
-        GAME.gold = 970;
+        GAME.level = 15;     //15
+        GAME.gold = 480;
         HERO.maxHealth = 35;
         HERO.maxMana = 56;
-        HERO.health = 20;
+        HERO.health = 35;
         HERO.mana = 56;
         HERO.defense = 10;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 12;
+        HERO.attack = 13;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 12;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 161;
-        HERO.defenseExp = 20;
-        HERO.magicExp = 25;
+        HERO.attackExp = 225;
+        HERO.defenseExp = 44;
+        HERO.magicExp = 135;
         HERO.attackExpGoal = 338;
         HERO.defenseExpGoal = 150;
         HERO.magicExpGoal = 507;
         HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Invisibility"];
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["Invisibility", "Cripple"];
         //debug
         //let scrolls = ["DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife"];
         for (let scr of scrolls) {
@@ -63,7 +63,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Hat", "RedGem", "Mirror", "BlueGem"];
+        let invItems = ["Hat", "Acorn", "Mirror", "Pearl"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -101,7 +101,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.01",
+    VERSION: "0.10.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

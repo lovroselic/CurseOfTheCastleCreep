@@ -148,10 +148,13 @@ LoadSprites = [
     { srcName: "RedGem1.png", name: "RedGem" },
     { srcName: "BlueGem1.png", name: "BlueGem" },
     { srcName: "GreenGem1.png", name: "GreenGem" },
+    { srcName: "acorn.png", name: "Acorn" },
+    { srcName: "Pearl.png", name: "Pearl" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },
     { srcName: "MarbleTriggerButton.png", name: "MarbleTriggerButton" },
+    { srcName: "RockButton.png", name: "RockTriggerButton" },
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

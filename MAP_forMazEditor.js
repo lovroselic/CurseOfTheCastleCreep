@@ -94,5 +94,5 @@ const DECAL_CRESTS = ["LS", "Skull4", "Skull3", "Skull2", "Skull1", "Crack4", "C
 const BOTTOM_CRESTS = ["Grate1_128"];
 const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond", "FlatPond2", "FlatPond3"];
 const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4"];
-const TRIGGER_DECALS = ["PurpleTriggerButton", "MarbleTriggerButton"];
+const TRIGGER_DECALS = ["PurpleTriggerButton", "MarbleTriggerButton", "RockTriggerButton"];
 console.log("%cMAP for MazEditor loaded.", "color: #888");

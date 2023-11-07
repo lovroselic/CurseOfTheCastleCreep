@@ -581,6 +581,11 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Acorn",
     },
+    Pearl: {
+        name: "Pearl",
+        category: "interaction_item",
+        inventorySprite: "Pearl",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -634,6 +639,24 @@ const INTERACTION_ENTITY = {
             intro: "Hello, Princess, you're quite the sight, but help me be the beauty of the night!",
             progress: "One gift is good, but I need two. A reflection check, then I'll outshine you!",
             conclusion: "Mirror and hat, now I'm divine! Take this acorn, I'm too gorgeous for such grime."
+        }
+    },
+    /**
+     * want all thre geems
+     * gives; acorn
+     * who needs that: Squirell
+     */
+    DemonGirl: {
+        name: "DemonGirl",
+        sprite: "DemonGirl",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["RedGem", "BlueGem", "GreenGem"],
+        gives: "Acorn",
+        text: {
+            intro: "Hey Princess, a girl needs friends. Bring me gems, that makes sense.",
+            progress: "You are going in the right direction? Bring me more and you'll reach perfection.",
+            conclusion: "Gems are cool when you're in hell, here's an acorn, use it well."
         }
     }
 };

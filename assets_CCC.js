@@ -255,6 +255,7 @@ LoadSprites = [
     { srcName: "BlackWidow.png", name: "BlackWidow" },
     { srcName: "HedgeHog.png", name: "HedgeHog" },
     { srcName: "bunny.png", name: "PrettyBunny" },
+    { srcName: "DemonGirl.png", name: "DemonGirl" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -266,10 +267,12 @@ LoadSprites = [
     { srcName: "BlueGem1.png", name: "BlueGem" },
     { srcName: "GreenGem1.png", name: "GreenGem" },
     { srcName: "acorn.png", name: "Acorn" },
+    { srcName: "Pearl.png", name: "Pearl" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },
     { srcName: "MarbleTriggerButton.png", name: "MarbleTriggerButton" },
+    { srcName: "RockButton.png", name: "RockTriggerButton" },
 
     //inv
     { srcName: "bag.png", name: "Bag" },

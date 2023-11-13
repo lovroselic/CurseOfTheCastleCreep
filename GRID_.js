@@ -1163,15 +1163,21 @@ class GridArray extends ArrayBasedDataStructure {
     }
     return goodNodes;
   }
-  findNextCrossroad(start, dir) {
-    let directions = this.getDirectionsIfNot(start, MAPDICT.WALL, dir.mirror());
+  findNextCrossroad(start, dir, fly) {
+    let exlusion = GROUND_MOVE_GRID_EXCLUSION.sum();
+    if (fly) {
+      exlusion = AIR_MOVE_GRID_EXCLUSION.sum();
+    }
+    //let directions = this.getDirectionsIfNot(start, MAPDICT.WALL, dir.mirror());
+    let directions = this.getDirectionsIfNot(start, exlusion, dir.mirror());
     //console.log("....findNextCrossroad", start, dir, directions);
     let lastDir = dir;
     while (directions.length <= 1) {
       if (directions.length === 0) return [null, null]; //dead end!
       start = start.add(directions[0]);
       lastDir = directions[0];
-      directions = this.getDirectionsIfNot(start, MAPDICT.WALL, directions[0].mirror());
+      //directions = this.getDirectionsIfNot(start, MAPDICT.WALL, directions[0].mirror());
+      directions = this.getDirectionsIfNot(start, exlusion, directions[0].mirror());
     }
     return [start, lastDir];
   }

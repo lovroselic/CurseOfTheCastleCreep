@@ -94,7 +94,7 @@ const AI = {
     if (this.VERBOSE) console.log("------------------------------");
     if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name}-${enemy.id}`);
     let goal, _;
-    [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir);
+    [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir, enemy.fly);
     if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} goal`, goal, "strategy", enemy.behaviour.strategy);
 
     if (goal === null) {
@@ -268,12 +268,12 @@ const AI = {
   },
   prophet(enemy, ARG) {
     let firstCR, lastDir;
-    [firstCR, lastDir] = enemy.parent.map.GA.findNextCrossroad(ARG.playerPosition, ARG.currentPlayerDir);
+    [firstCR, lastDir] = enemy.parent.map.GA.findNextCrossroad(ARG.playerPosition, ARG.currentPlayerDir, enemy.fly);
     let directions = enemy.parent.map.GA.getDirectionsIfNot(firstCR, MAPDICT.WALL, lastDir.mirror());
     let crossroads = [];
     let secondCR, _;
     for (let dir of directions) {
-      [secondCR, _] = enemy.parent.map.GA.findNextCrossroad(firstCR.add(dir), dir);
+      [secondCR, _] = enemy.parent.map.GA.findNextCrossroad(firstCR.add(dir), dir, enemy.fly);
       crossroads.push(secondCR);
     }
     let distances = [];

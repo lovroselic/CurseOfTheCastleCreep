@@ -34,27 +34,27 @@ const DEBUG = {
         /**
          * current
          */
-        GAME.level = 15;     //15
-        GAME.gold = 480;
-        HERO.maxHealth = 35;
-        HERO.maxMana = 56;
-        HERO.health = 35;
-        HERO.mana = 56;
-        HERO.defense = 10;
+        GAME.level = 18;
+        GAME.gold = 691;
+        HERO.maxHealth = 39;
+        HERO.maxMana = 66;
+        HERO.health = 32;
+        HERO.mana = 16;
+        HERO.defense = 12;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 13;
+        HERO.attack = 14;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 12;
+        HERO.magic = 14;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 225;
-        HERO.defenseExp = 44;
-        HERO.magicExp = 135;
+        HERO.attackExp = 312;
+        HERO.defenseExp = 59;
+        HERO.magicExp = 194;
         HERO.attackExpGoal = 338;
         HERO.defenseExpGoal = 150;
-        HERO.magicExpGoal = 507;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Invisibility", "Cripple"];
+        HERO.magicExpGoal = 761;
+        HERO.inventory.potion.red = 3;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Invisibility", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "DestroyArmor"];
         //debug
         //let scrolls = ["DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife"];
         for (let scr of scrolls) {
@@ -63,7 +63,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Hat", "Acorn", "Mirror", "Pearl"];
+        let invItems = ["Acorn", "Acorn", "Pearl"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -101,7 +101,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.02",
+    VERSION: "0.10.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -300,6 +300,7 @@ class Scroll {
                     if (enemy.distance === null) continue;
                     if (enemy.distance <= INI.SCROLL_RANGE) {
                         enemy.moveSpeed = INI.CRIPPLE_SPEED;
+                        console.warn("crippled", enemy);
                     }
                 }
                 break;

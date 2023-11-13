@@ -483,6 +483,32 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.standard,
     },
+    GhostMinion: {
+        name: "GhostMinion",
+        model: "GhostFace",
+        scale: 1.82 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 20,
+        defense: 10,
+        magic: 15,
+        health: 30,
+        xp: 50,
+        gold: 50,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        moveSpeed: 1.0,
+        mana: 3,
+        caster: true,
+        shootDistance: 7,
+        stalkDistance: 5,
+        material: MATERIAL.standard,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.Fireball,
+    },
 
 };
 
@@ -658,7 +684,25 @@ const INTERACTION_ENTITY = {
             progress: "You are going in the right direction? Bring me more and you'll reach perfection.",
             conclusion: "Gems are cool when you're in hell, here's an acorn, use it well."
         }
-    }
+    },
+    /**
+     * wants 2 acorns
+     * giver a pearl
+     * Devilla wants pearls
+     */
+    Squirell: {
+        name: "Squirell",
+        sprite: "Squirell",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Acorn", "Acorn"],
+        gives: "Pearl",
+        text: {
+            intro: "I Seek seed that from oak trees fall. In return, a shiny orb, prized by all.",
+            progress: "One seed found, another dost hide. Grant both, and gain the ocean's pride.",
+            conclusion: "Seeds twice given, my quest now ends. Take this gem the sea god sends.",
+        }
+    },
 };
 
 //container content

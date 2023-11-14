@@ -34,27 +34,27 @@ const DEBUG = {
         /**
          * current
          */
-        GAME.level = 18;
-        GAME.gold = 691;
-        HERO.maxHealth = 39;
-        HERO.maxMana = 66;
-        HERO.health = 32;
-        HERO.mana = 16;
-        HERO.defense = 12;
+        GAME.level = 19;
+        GAME.gold = 1530;
+        HERO.maxHealth = 51;
+        HERO.maxMana = 71;
+        HERO.health = 22;
+        HERO.mana = 71;
+        HERO.defense = 13;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 14;
+        HERO.attack = 15;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 14;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 312;
-        HERO.defenseExp = 59;
+        HERO.attackExp = 364;
+        HERO.defenseExp = 23;
         HERO.magicExp = 194;
-        HERO.attackExpGoal = 338;
-        HERO.defenseExpGoal = 150;
+        HERO.attackExpGoal = 507;
+        HERO.defenseExpGoal = 225;
         HERO.magicExpGoal = 761;
-        HERO.inventory.potion.red = 3;
+        HERO.inventory.potion.red = 2;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["Invisibility", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "DestroyArmor"];
+        let scrolls = ["Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
         //debug
         //let scrolls = ["DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife"];
         for (let scr of scrolls) {
@@ -63,12 +63,12 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Acorn", "Acorn", "Pearl"];
+        let invItems = ["Pearl", "Pearl"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = [];
+        let keys = ["Green"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -101,7 +101,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.03",
+    VERSION: "0.10.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

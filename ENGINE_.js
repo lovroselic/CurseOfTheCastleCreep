@@ -2447,6 +2447,9 @@ const ENGINE = {
             case "Blue":
               color = "blue";
               break;
+            case "Green":
+              color = "green";
+              break;
           }
           ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
           let dir = Vector.fromInt(gate[1]);

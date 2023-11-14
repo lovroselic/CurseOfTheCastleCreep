@@ -108,7 +108,7 @@ const MAP = {
         start: '[19,7]',
         decals: '[[148,1,"Skull2","crest"],[150,1,"Skull4","crest"],[17,7,"AticAtac204","picture"],[11,7,"SpaceQuest103","picture"],[1,7,"ForgottenForest1","picture"],[21,7,"Hero100","picture"],[58,7,"EyeOfTheBeholder90","picture"],[128,7,"KnightLore111","picture"],[118,7,"RiverRaid70","picture"],[147,1,"Jumpman70","picture"],[151,1,"Galaga71","picture"],[110,1,"Ishar80","picture"],[40,1,"BeachHead100","picture"],[50,1,"Grog1","picture"],[53,5,"MontyMole52","picture"],[105,5,"Morrowind140","picture"],[82,5,"DM106","picture"],[13,5,"Pitfall72","picture"],[26,5,"PharaohCurse112","picture"],[130,5,"SirFred4","picture"],[143,5,"MassEffect1","picture"],[22,5,"Witcher113","picture"],[152,5,"DonkeyKong99","picture"],[25,3,"BrianBloodaxe11","picture"],[38,3,"ZimSalaBim201","picture"],[63,3,"ManicMiner63","picture"],[115,3,"TempleOfApshai89","picture"],[142,3,"TheHobbit16","picture"],[155,3,"TheHobbit15","picture"],[86,3,"MonkeyIsland102","picture"],[2,7,"Goonies5","picture"],[10,7,"Paratroopers2","picture"],[157,1,"AticAtac111","picture"],[158,1,"HalfLife14","picture"],[166,1,"DM90","picture"],[167,1,"ForbiddenForest110","picture"],[82,1,"ForbiddenForest99","picture"],[86,1,"ForbiddenForest90","picture"],[58,3,"PharaohCurse140","picture"],[110,3,"SirFred88","picture"],[110,5,"Elite","picture"],[58,5,"BC103","picture"],[82,7,"Oblivion140","picture"],[86,7,"KQ100","picture"],[16,3,"BrianBloodaxe71","picture"],[146,3,"Valhalla88","picture"]]',
         lights: '[[58,1,"Lamp4","dim"],[110,7,"Lamp4","dim"],[82,3,"Lamp4","dim"],[86,5,"Lamp4","dim"]]',
-        gates: '[[6,7,"6.1","3.4","Open"],[162,1,"6.2","13.1","Blue"],[78,5,"6.3","15.1","Closed"]]',
+        gates: '[[6,7,"6.1","3.4","Open"],[162,1,"6.2","13.1","Blue"],[78,5,"6.3","15.1","Closed"],[90,3,"6.4","19.1","Green"]]',
         monsters: '[[84,"MissGalaxyGold"],[140,"MissWhite"],[132,"MissGalaxy"],[36,"Bat"],[28,"MissWhite"]]',
         scrolls: '[[84,4]]',
         gold: '[[70,"GoldCube"],[72,"GoldCube"],[98,"GoldCube"],[96,"GoldCube"]]',
@@ -279,7 +279,7 @@ const MAP = {
         objects: '[[104,"GreenGem"]]',
     }
     ,
-    15 : {
+    15: {
         name: "Pathways",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB2AA6BB3ABB2ABB8AEBB7ABAA6BAA15BABB2AA3BABB2AA2BAA2BABABAA3BAA2BB2AA2BB8ABAA3BABABB4ABB2AA2BB4AA4BB4AA3BABABB4AA2BAA4BB2ABB2AA2BABAA2BB13ABEBB4AA2BB2EABB2AA2BB2ABEAA3BAA3BB5ABB8AA2BABB5AA2BB18AB$AA2BB7AA2BB3"}',
@@ -297,7 +297,7 @@ const MAP = {
         containers: '[[19,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[74,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[226,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[236,"Crate","GOLD_ITEM_TYPE.SilverBar",1]]',
         doors: '[43,56,67,179]',
         triggers: '[[141,4,"RockTriggerButton",1,77],[216,4,"RockTriggerButton",1,219]]',
-        }
+    }
     ,
     16: {
         name: "A Chapel",
@@ -317,7 +317,7 @@ const MAP = {
         shrines: '[[2,7,"AttackShrine"],[5,7,"DefenseShrine"],[8,7,"MagicShrine"]]',
     }
     ,
-    17 : {
+    17: {
         name: "Pretty Bunnys",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB3EAA2BAA2BB2ABAA2BB2ABB5AA6BABAA14ÁAA11BABÁBB2AA5BAA7BAA12ÁAA3ÁAA2BB4AÁAA8EBB12AA4BB5ABB13ABB7ABAA2BABB2ABB2AA3BB2AA3BB8EBABB2ABB5QBB3ABB6EABB17$AA2BB2AA2BB3AA4BB3ÁAA2ÁÁ5AÁÁ6BB2"}',
@@ -338,9 +338,9 @@ const MAP = {
         triggers: '[[13,7,"RockTriggerButton",0,74],[105,5,"RockTriggerButton",0,72],[78,3,"RockTriggerButton",0,73],[119,1,"RockTriggerButton",0,87],[197,1,"RockTriggerButton",0,55]]',
         entities: '[[3,7,"PrettyBunny"]]',
         traps: '[[75,4,"RockTriggerButton",0,"Fireball",77]]',
-        }
+    }
     ,
-    18 : {
+    18: {
         name: "Squirells",
         sg: 0,
         data: '{"width":"19","height":"19","map":"BÁAA2ÁÁ2BB6EBB3EÁÁ2BB2ABAA22BB2AA5BAÁÁ5AA6ÁÁ5AA9ÁAA23ÁAA2ÁAA5ÁÁ4BAA23BAÁAÁBB12ABB4ABB2AA2BB2ÁABAÁÁ2ABB12ABB2AÁÁ2BB15ÁBB34ÁAB$ABEAA2ÁÁ2AA2BABABB3ABAA4BB2AA2BAA9ÁÁ4BB2AEBAÁAÁÁ2BB3ÁBÁABÁÁ7AÁÁ5BB2ÁÁ2AA2ÁÁ5AÁÁ9BÁBB2ÁÁ6AÁÁ7BÁÁ2A"}',
@@ -348,10 +348,28 @@ const MAP = {
         floor: "MarbleFloor1",
         ceil: "MossyWall3",
         start: '[21,7]',
+        decals: '[[22,7,"RobinOfTheWood50","picture"],[6,7,"Fred113","picture"],[8,7,"AticAtac131","picture"],[13,7,"LadyTut60","picture"],[55,7,"Infiltrator60","picture"],[248,7,"TimeTunnel50","picture"],[250,7,"ScubaDive60","picture"],[235,7,"Ghostbusters201","picture"],[239,7,"HalfLife11","picture"],[241,7,"BrianBloodaxe11","picture"],[250,1,"Triss","picture"],[252,1,"Goonies90","picture"],[236,1,"F2","picture"],[241,1,"WinterGames11","picture"],[239,1,"AztecChallenge110","picture"],[327,1,"KQ102","picture"],[355,1,"FireAnt21","picture"],[206,1,"Barbarian131","picture"],[349,1,"Pyjamarama50","picture"],[353,1,"Miranda1","picture"],[209,5,"Trashman2","picture"],[42,5,"GIJoe71","picture"],[45,5,"Hero51","picture"],[70,5,"KQ101","picture"],[285,5,"HalfLife72","picture"],[272,5,"Cuthbert90","picture"],[310,5,"LSL102","picture"],[278,5,"Serpentine50","picture"],[316,5,"MonkeyIsland141","picture"],[96,1,"Skull11","crest"],[70,3,"Gods70","picture"],[94,3,"ManicMiner14","picture"],[132,3,"SasbreWulf60","picture"],[80,3,"ManicMiner52","picture"],[80,5,"WOW10","picture"],[278,3,"LastNinja140","picture"],[316,3,"EveryoneIsAWally70","picture"],[281,3,"TheHobbit89","picture"],[319,3,"TombRaider103","picture"]]',
         lights: '[[57,5,"WallTorch","dimRed"],[243,7,"WallTorch","dimRed"],[237,7,"WallLamp","standard"],[45,7,"WallLamp3","dim"],[70,7,"WallLamp3","dim"],[325,1,"WallLamp","standard"],[171,5,"Lamp4","dim"],[189,3,"Lamp4","dim"]]',
         gates: '[[2,7,"18.2","17.2","Open"],[301,3,"18.1","15.4","Up"]]',
+        keys: '[[334,3]]',
+        monsters: '[[179,"GhostMinion"],[184,"GhostMinion"],[51,"MissGalaxyGold"],[46,"MissGalaxyGold"],[192,"MissGalaxyGold"],[287,"Viking"],[275,"Viking"]]',
+        scrolls: '[[83,0],[221,5]]',
+        gold: '[[213,"GoldCube"],[112,"GoldCube"],[101,"GoldCube"],[330,"GoldBar"],[147,"SilverBar"]]',
+        skills: '[[270,"Heart"],[258,"Mana"]]',
+        containers: '[[79,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[305,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[255,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[140,"Crate","GOLD_ITEM_TYPE.SilverBar",null],[163,"Crate","GOLD_ITEM_TYPE.SilverBar",null]]',
         doors: '[61,97,297,291]',
         triggers: '[[45,3,"MarbleTriggerButton",0,135],[190,5,"MarbleTriggerButton",0,67],[70,1,"MarbleTriggerButton",0,200],[243,1,"MarbleTriggerButton",0,196],[160,4,"MarbleTriggerButton",1,249],[294,4,"MarbleTriggerButton",0,298]]',
         entities: '[[351,1,"Squirell"]]',
+    }
+    ,
+    19 : {
+        name: "Green Room",
+        sg: 0,
+        data: '{"width":"16","height":"16","map":"BB3ABB10AA132BB27ABB13AA10BB58A$"}',
+        wall: "MossyBricks1",
+        floor: "RedBrickFloor1",
+        ceil: "DungeonFloor",
+        start: '[49,5]',
+        gates: '[[48,5,"19.1","6.4","Open"]]',
         }
 };

@@ -612,6 +612,11 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Pearl",
     },
+    Fish: {
+        name: "Fish",
+        category: "interaction_item",
+        inventorySprite: "Fish",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -701,6 +706,24 @@ const INTERACTION_ENTITY = {
             intro: "I Seek seed that from oak trees fall. In return, a shiny orb, prized by all.",
             progress: "One seed found, another dost hide. Grant both, and gain the ocean's pride.",
             conclusion: "Seeds twice given, my quest now ends. Take this gem the sea god sends.",
+        }
+    },
+    /**
+     * wants 2 pearls
+     * gives fish
+     * Witch wants fish
+     */
+    Mermaid: {
+        name: "Mermaid",
+        sprite: "Mermaid",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Pearl", "Pearl"],
+        gives: "Fish",
+        text: {
+            intro: "Seek moon's tears dropped in the sea, Bring me two, and a prize you'll see.",
+            progress: "One gem from tides, one yet waits, hasten, for fish swims near the gates.",
+            conclusion: "Moon's pair found, from depths they came, For your prize—fish, claimed in fame."
         }
     },
 };

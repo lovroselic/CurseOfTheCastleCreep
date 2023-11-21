@@ -2065,6 +2065,7 @@ class InteractionEntity extends WallFeature3D {
         this.mode = "intro";
         this.virgin = true;
         this.excludeFromInventory = true;
+        this.expand = true;
     }
     setMode(mode) {
         this.mode = mode;

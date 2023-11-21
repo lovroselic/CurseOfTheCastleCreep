@@ -34,13 +34,13 @@ const DEBUG = {
         /**
          * current
          */
-        GAME.level = 19;
-        GAME.gold = 1530;
+        GAME.level = 19; //19  
+        GAME.gold = 530;
         HERO.maxHealth = 51;
         HERO.maxMana = 71;
         HERO.health = 22;
         HERO.mana = 71;
-        HERO.defense = 13;
+        HERO.defense = 14;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 15;
         HERO.reference_attack = HERO.attack;
@@ -68,7 +68,7 @@ const DEBUG = {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Green"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -101,7 +101,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.04",
+    VERSION: "0.10.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

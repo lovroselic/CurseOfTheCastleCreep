@@ -127,6 +127,9 @@ LoadTextures = [
     { srcName: "Grass20.jpg", name: "Grass2" },
     { srcName: "Sky1.jpg", name: "Sky1" },
     { srcName: "Forest1.jpg", name: "Forest" },
+
+    { srcName: "water1.jpg", name: "Water1" },
+    { srcName: "water2.jpg", name: "Water2" },
     
 ];
 

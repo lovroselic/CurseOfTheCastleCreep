@@ -116,7 +116,7 @@ const MAP = {
     }
     ,
     7: {
-        name: "West Tower",
+        name: "West Tower - Black Widow",
         sg: 0,
         data: '{"width":"20","height":"20","map":"BB3AA8EAA5BB4AEÁÁ2AA32BAA8BB5AA2BB2AQBEBB2ABB2ÁÁ3AA2BÁABAA2BB2AA2BB2AA16BAA6EABAA4BAA2BAA8BAA9BAA7BAA8BAA2BAA12BB4AA2BABB3ABABB2ABB2ÁBB6AA2BAA2BABB4AA2EABB2ABB3ABABB7ABB3ABAA2BB10ABB2AA2BABB2ABB4EBB7ABB7ABB4ABB12EBB15$AA2BB10ABB2ABB12ABB6AA4BB3AA3ÁAA2ÁÁ22BÁÁ2AA2"}',
         wall: "SpideryWall2",
@@ -157,7 +157,7 @@ const MAP = {
     }
     ,
     9: {
-        name: "East Tower",
+        name: "East Tower - Hedgehog",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB3AA3BABAA8BB3AA5BABABB3AA5BAA20BAA6BB39AA3BABABABB3AA2BB2ABB4AA2BB10ABB9ABB6ABB13$A"}',
         wall: "BrownishWall",
@@ -261,7 +261,7 @@ const MAP = {
     }
     ,
     14: {
-        name: "Dark Cave",
+        name: "Demon Girl",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB4AA11BAA5BB3ABB2AA3BAA3BAA2BAA4BABB2AA3BB2AA5BB2AA4BB5ABB2AA2BABB2AA2BB3ABAA3BB2AA2ÁAA3BB6ABABB14A$ABB2"}',
         wall: "MossyWallExcellent",
@@ -318,7 +318,7 @@ const MAP = {
     }
     ,
     17: {
-        name: "Pretty Bunnys",
+        name: "Pretty Bunny",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB3EAA2BAA2BB2ABAA2BB2ABB5AA6BABAA14ÁAA11BABÁBB2AA5BAA7BAA12ÁAA3ÁAA2BB4AÁAA8EBB12AA4BB5ABB13ABB7ABAA2BABB2ABB2AA3BB2AA3BB8EBABB2ABB5QBB3ABB6EABB17$AA2BB2AA2BB3AA4BB3ÁAA2ÁÁ5AÁÁ6BB2"}',
         wall: "MossWall14",
@@ -341,7 +341,7 @@ const MAP = {
     }
     ,
     18: {
-        name: "Squirells",
+        name: "Sassy Squirell",
         sg: 0,
         data: '{"width":"19","height":"19","map":"BÁAA2ÁÁ2BB6EBB3EÁÁ2BB2ABAA22BB2AA5BAÁÁ5AA6ÁÁ5AA9ÁAA23ÁAA2ÁAA5ÁÁ4BAA23BAÁAÁBB12ABB4ABB2AA2BB2ÁABAÁÁ2ABB12ABB2AÁÁ2BB15ÁBB34ÁAB$ABEAA2ÁÁ2AA2BABABB3ABAA4BB2AA2BAA9ÁÁ4BB2AEBAÁAÁÁ2BB3ÁBÁABÁÁ7AÁÁ5BB2ÁÁ2AA2ÁÁ5AÁÁ9BÁBB2ÁÁ6AÁÁ7BÁÁ2A"}',
         wall: "MossWall16",
@@ -362,14 +362,48 @@ const MAP = {
         entities: '[[351,1,"Squirell"]]',
     }
     ,
-    19 : {
+    19: {
         name: "Green Room",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB3ABB10AA132BB27ABB13AA10BB58A$"}',
+        data: '{"width":"16","height":"16","map":"BB3ABB2AA9BAA2BAA25BB4AA6BB5AA7BB6AA3BB2AA22BABAA24BB5AA6BB7AA4BB15EBB5ABB3ABB11AA6BAA3BB4ABB2ABB42ABB6$ABB3"}',
         wall: "MossyBricks1",
         floor: "RedBrickFloor1",
         ceil: "DungeonFloor",
         start: '[49,5]',
-        gates: '[[48,5,"19.1","6.4","Open"]]',
+        decals: '[[87,7,"DonkeyKong99","picture"],[89,7,"TheHobbit13","picture"],[138,3,"Arena201","picture"],[167,1,"DM107","picture"],[149,5,"Cauldron10","picture"]]',
+        lights: '[[24,7,"WallLamp","standard"],[232,1,"WallLamp","standard"],[97,5,"WallLamp","standard"],[110,3,"WallLamp","standard"],[133,5,"WallLamp3","dimRed"]]',
+        gates: '[[48,5,"19.1","6.4","Open"],[208,5,"19.2","20.1","Down"]]',
+        keys: '[[134,1]]',
+        monsters: '[[152,"GhostMinion"]]',
+        containers: '[[102,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[105,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[153,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1]]',
+        doors: '[88]',
+    }
+    ,
+    20 : {
+        name: "Down Down Down",
+        sg: 0,
+        data: '{"width":"7","height":"5","map":"BB2ABABAA6BB9ABABB10A$"}',
+        wall: "DarkMarble1",
+        floor: "DarkMarble3",
+        ceil: "DarkMarble2",
+        start: '[19,3]',
+        decals: '[[31,1,"TombRaider106","picture"],[16,4,"Drain2_96","crest"]]',
+        lights: '[[3,7,"WallLamp2","standard"]]',
+        gates: '[[20,3,"20.1","19.2","Up"],[14,5,"20.2","21.1","Down"]]',
+        }
+    ,
+    21 : {
+        name: "Mermaid",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB2ABABB9AA110BB25ABB5ABB5AA4BAA4BB54A$"}',
+        wall: "Moss",
+        floor: "Water1",
+        ceil: "Sky1",
+        start: '[118,3]',
+        decals: '[[76,5,"Neptunes daughters","picture"],[121,5,"SeaWolf60","picture"],[31,5,"Killerwat51","picture"],[181,5,"KokotoniWilf2","picture"],[58,3,"Defender110","picture"],[178,3,"ManicMiner61","picture"],[18,7,"TheHobbit73","picture"],[20,7,"HunchBack70","picture"],[24,7,"LadyTut102","picture"],[26,7,"KnightLore111","picture"],[198,1,"Nebulus2","picture"],[206,1,"TombRaider108","picture"],[204,1,"TombRaider111","picture"],[200,1,"Underwurlde100","picture"]]',
+        lights: '[[22,7,"WallLamp","standard"],[202,1,"WallLamp","standard"],[88,3,"WallLamp","standard"],[148,3,"WallLamp","standard"],[61,5,"WallLamp","standard"],[151,5,"WallLamp","standard"]]',
+        gates: '[[119,3,"21.1","20.2","Up"]]',
+        containers: '[[112,"Barrel","GOLD_ITEM_TYPE.GoldBar",4],[48,"Barrel","GOLD_ITEM_TYPE.GoldBar",4],[168,"Barrel","GOLD_ITEM_TYPE.GoldBar",4]]',
+        entities: '[[105,5,"Mermaid"]]',
         }
 };

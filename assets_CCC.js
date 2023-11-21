@@ -135,6 +135,10 @@ LoadTextures = [
     { srcName: "Broken1.jpg", name: "Broken1" },
     { srcName: "OrderedTiles.jpg", name: "OrderedTiles" },
 
+    { srcName: "water1.jpg", name: "Water1" },
+    { srcName: "water2.jpg", name: "Water2" },
+
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -252,11 +256,18 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 
 LoadSprites = [
     // frescoes - entities
-    { srcName: "BlackWidow.png", name: "BlackWidow" },
-    { srcName: "HedgeHog.png", name: "HedgeHog" },
-    { srcName: "bunny.png", name: "PrettyBunny" },
-    { srcName: "DemonGirl.png", name: "DemonGirl" },
-    { srcName: "Squirell.png", name: "Squirell" },
+    { srcName: "BlackWidow2.jpg", name: "BlackWidow" },
+    { srcName: "HedgeHog2.jpg", name: "HedgeHog" },
+    { srcName: "PrettyBunny2.jpg", name: "PrettyBunny" },
+    { srcName: "DemonGirl3.jpg", name: "DemonGirl" },
+    { srcName: "Squirell2.jpg", name: "Squirell" },
+    { srcName: "Devilla.jpg", name: "Devilla" },
+    { srcName: "FemaleKnight.jpg", name: "FemaleKnight" },
+    { srcName: "Puss.jpg", name: "PussInBoots" },
+    { srcName: "GhostGirl1.jpg", name: "GhostGirl1" },
+    { srcName: "GhostGirl2.jpg", name: "GhostGirl2" },
+    { srcName: "Mermaid.jpg", name: "Mermaid" },
+    { srcName: "Witch.jpg", name: "Witch" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -269,6 +280,10 @@ LoadSprites = [
     { srcName: "GreenGem1.png", name: "GreenGem" },
     { srcName: "acorn.png", name: "Acorn" },
     { srcName: "Pearl.png", name: "Pearl" },
+    { srcName: "SwordIcon.png", name: "SwordIcon" },
+    { srcName: "ShieldIcon.png", name: "ShieldIcon" },
+    { srcName: "Fish.png", name: "Fish" },
+
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

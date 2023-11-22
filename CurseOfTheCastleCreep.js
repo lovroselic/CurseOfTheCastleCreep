@@ -8,8 +8,7 @@
 /*
       
 TODO:
-    * missiles should die after exiting room?
-    * exploding walls with explosive??
+    * Entity fresco vanishes after rebuilding world!!
 known bugs: 
     
 
@@ -34,7 +33,7 @@ const DEBUG = {
         /**
          * current
          */
-        GAME.level = 19; //19  
+        GAME.level = 23; //19  //22
         GAME.gold = 530;
         HERO.maxHealth = 51;
         HERO.maxMana = 71;
@@ -63,7 +62,8 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Pearl", "Pearl"];
+        //let invItems = ["Pearl", "Pearl"];
+        let invItems = ["Mushroom", "Mushroom", "MagicWand", "CrystallBall"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -101,7 +101,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.05",
+    VERSION: "0.10.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

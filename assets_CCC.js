@@ -258,6 +258,7 @@ LoadSprites = [
     // frescoes - entities
     { srcName: "BlackWidow2.jpg", name: "BlackWidow" },
     { srcName: "HedgeHog2.jpg", name: "HedgeHog" },
+    //{ srcName: "HedgeHog.png", name: "HedgeHog" },
     { srcName: "PrettyBunny2.jpg", name: "PrettyBunny" },
     { srcName: "DemonGirl3.jpg", name: "DemonGirl" },
     { srcName: "Squirell2.jpg", name: "Squirell" },
@@ -268,6 +269,10 @@ LoadSprites = [
     { srcName: "GhostGirl2.jpg", name: "GhostGirl2" },
     { srcName: "Mermaid.jpg", name: "Mermaid" },
     { srcName: "Witch.jpg", name: "Witch" },
+    { srcName: "Fairy1.jpg", name: "Fairy1" },
+    { srcName: "Fairy2.jpg", name: "Fairy2" },
+
+    { srcName: "Blacksmithstress.jpg", name: "Blacksmithstress" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -280,9 +285,17 @@ LoadSprites = [
     { srcName: "GreenGem1.png", name: "GreenGem" },
     { srcName: "acorn.png", name: "Acorn" },
     { srcName: "Pearl.png", name: "Pearl" },
-    { srcName: "SwordIcon.png", name: "SwordIcon" },
-    { srcName: "ShieldIcon.png", name: "ShieldIcon" },
+    { srcName: "SwordIcon.png", name: "Sword" },
+    { srcName: "ShieldIcon.png", name: "Shield" },
     { srcName: "Fish.png", name: "Fish" },
+    { srcName: "Frog2.png", name: "Frog" },
+    { srcName: "LS_Crest.png", name: "Crest" },
+    { srcName: "Book3.png", name: "Book" },
+    { srcName: "Mushroom.png", name: "Mushroom" },
+    { srcName: "MagicWand.png", name: "MagicWand" },
+    { srcName: "CrystallBall.png", name: "CrystallBall" },
+    { srcName: "PurpleRose.png", name: "PurpleRose" },
+    { srcName: "RedRose.png", name: "RedRose" },
 
 
     //triggers

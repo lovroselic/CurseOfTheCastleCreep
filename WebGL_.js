@@ -861,8 +861,11 @@ const WORLD = {
     },
     addPic(Y, decal, type) {
         let resolution = WebGL.INI.DEFAULT_RESOLUTION;
-        if (decal.category === "crest" && decal.expand) {
+        if (decal.resolution) {
+            resolution = decal.resolution;
+        } else if (decal.category === "crest" && decal.expand) {
             resolution = this.divineResolution(decal.texture);
+            decal.resolution = resolution;
         }
         const [leftX, rightX, topY, bottomY] = this.getBoundaries(decal.category, decal.width, decal.height, resolution);
         const E = ELEMENT[`${decal.face}_FACE`];

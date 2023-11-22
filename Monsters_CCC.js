@@ -333,7 +333,7 @@ const MONSTER_TYPE = {
         model: "Spider",
         scale: 1.4 / 2 ** 6,
         rotateToNorth: Math.PI,
-        midHeight: 0.3,
+        midHeight: 0.35,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.Coins,
         attack: 7,
@@ -381,7 +381,7 @@ const MONSTER_TYPE = {
         model: "Spider",
         scale: 1.4 / 2 ** 6,
         rotateToNorth: Math.PI,
-        midHeight: 0.3,
+        midHeight: 0.35,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.Coins,
         attack: 10,
@@ -582,6 +582,28 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         inventorySprite: "GreenGem",
         text: "Nice? Shiny? I'll keep that."
+    },
+    Sword: {
+        name: "Sword",
+        category: "interaction_item",
+        element: "STING",
+        scale: 1 / 2 ** 1,
+        glueToFloor: true,
+        texture: "Sting",
+        material: MATERIAL.silver,
+        inventorySprite: "Sword",
+        text: "I'll put that sword in the bag."
+    },
+    CrystallBall: {
+        name: "CrystallBall",
+        category: "interaction_item",
+        element: "BALL",
+        scale: 0.65 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Marble",
+        material: MATERIAL.standardShine,
+        inventorySprite: "CrystallBall",
+        text: "Oh, crystall ball? I can see the future. Bad for Ghosty."
     }
 };
 
@@ -611,11 +633,38 @@ const INTERACTION_ITEM = {
         name: "Pearl",
         category: "interaction_item",
         inventorySprite: "Pearl",
+        text: "Pearl looks like moon0s tear."
     },
     Fish: {
         name: "Fish",
         category: "interaction_item",
         inventorySprite: "Fish",
+    },
+    Frog: {
+        name: "Frog",
+        category: "interaction_item",
+        inventorySprite: "Frog",
+    },
+    MagicWand: {
+        name: "MagicWand",
+        category: "interaction_item",
+        inventorySprite: "MagicWand",
+    },
+    Book: {
+        name: "Book",
+        category: "interaction_item",
+        inventorySprite: "Book",
+    },
+    PurpleRose: {
+        name: "PurpleRose",
+        category: "interaction_item",
+        inventorySprite: "PurpleRose",
+    },
+    RedRose: {
+        name: "RedRose",
+        category: "interaction_item",
+        inventorySprite: "RedRose",
+        text: "Beautiful red rose. Very helpful."
     },
 };
 
@@ -726,6 +775,84 @@ const INTERACTION_ENTITY = {
             conclusion: "Moon's pair found, from depths they came, For your prize—fish, claimed in fame."
         }
     },
+    /**
+     * Blacksmithstress
+     * wants sword, shield
+     * gives family crest
+     * femal knight wants crest
+     */
+
+    /**
+     * ShroomFairy
+     * wants mushroom, mushroom
+     * gives frog
+     * who wants frog: witch
+     */
+    ShroomFairy: {
+        name: "ShroomFairy",
+        sprite: "Fairy1",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Mushroom", "Mushroom"],
+        gives: "Frog",
+        text: {
+            intro: "Twinkle bright, fair and airy. I seek shrooms that are quite scary.",
+            progress: "Two I need, one is here. Find its twin, and I'll cheer.",
+            conclusion: "Mushrooms twain, now in my keep. Here's your frog, from the deep."
+        }
+    },
+    /**
+     * MagicFairy
+     * * wants MagicWand, CrystallBall
+     * gives PurpleRose
+     * who wants PurpleRose: GhostGirl
+     */
+    MagicFairy: {
+        name: "MagicFairy",
+        sprite: "Fairy2",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["MagicWand", "CrystallBall"],
+        gives: "PurpleRose",
+        text: {
+            intro: "To weave a spell, to charm the night, I seek a wand and orb of light.",
+            progress: "One item's here, yet magic waits, Bring the other to seal our fates.",
+            conclusion: "Both now claimed, my joy is close. For your deeds, a purple rose."
+        }
+    },
+
+    /**
+     * GhostGirl1
+     */
+
+    /**
+     * GhostGirl2
+     */
+
+    /**
+     * FemaleKnight
+     * wants family crest
+     * give goldKey
+     */
+
+    /**
+     * Devilla
+     * wants book
+     * gives goldKey
+     */
+
+
+    /**
+     * Witch
+     * wants fish, frog
+     * gives MagicWand
+     */
+
+    /**
+     * CatGirl 
+     * wants two mice (movable interavtion object)
+     * gives: goldKey 
+     */
 };
 
 //container content

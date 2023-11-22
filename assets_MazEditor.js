@@ -153,6 +153,17 @@ LoadSprites = [
     { srcName: "GreenGem1.png", name: "GreenGem" },
     { srcName: "acorn.png", name: "Acorn" },
     { srcName: "Pearl.png", name: "Pearl" },
+    { srcName: "SwordIcon.png", name: "Sword" },
+    { srcName: "ShieldIcon.png", name: "Shield" },
+    { srcName: "Fish.png", name: "Fish" },
+    { srcName: "Frog2.png", name: "Frog" },
+    { srcName: "LS_Crest.png", name: "Crest" },
+    { srcName: "Book3.png", name: "Book" },
+    { srcName: "Mushroom.png", name: "Mushroom" },
+    { srcName: "MagicWand.png", name: "MagicWand" },
+    { srcName: "CrystallBall.png", name: "CrystallBall" },
+    { srcName: "PurpleRose.png", name: "PurpleRose" },
+    { srcName: "RedRose.png", name: "RedRose" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

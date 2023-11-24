@@ -271,8 +271,8 @@ LoadSprites = [
     { srcName: "Witch.jpg", name: "Witch" },
     { srcName: "Fairy1.jpg", name: "Fairy1" },
     { srcName: "Fairy2.jpg", name: "Fairy2" },
-
     { srcName: "Blacksmithstress.jpg", name: "Blacksmithstress" },
+    { srcName: "TheFakePrincess.jpg", name: "FakePrincess" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -296,6 +296,7 @@ LoadSprites = [
     { srcName: "CrystallBall.png", name: "CrystallBall" },
     { srcName: "PurpleRose.png", name: "PurpleRose" },
     { srcName: "RedRose.png", name: "RedRose" },
+    { srcName: "Chip2.png", name: "Chip" },
 
 
     //triggers

@@ -26,6 +26,10 @@ const DEBUG = {
     LOAD: false,
     STUDY: false,
     keys: true,
+    kill() {
+        console.log("KILL all");
+        ENTITY3D.POOL.clear();
+    },
     goto(grid) {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
@@ -33,28 +37,30 @@ const DEBUG = {
         /**
          * current
          */
-        GAME.level = 23; //19  //22
-        GAME.gold = 530;
-        HERO.maxHealth = 51;
+        GAME.level = 19; //19  
+        GAME.gold = 2595;
+        HERO.maxHealth = 55;
         HERO.maxMana = 71;
-        HERO.health = 22;
-        HERO.mana = 71;
+        HERO.health = 13;
+        HERO.mana = 4;
         HERO.defense = 14;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 15;
+        HERO.attack = 17;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 14;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 364;
-        HERO.defenseExp = 23;
-        HERO.magicExp = 194;
-        HERO.attackExpGoal = 507;
+        HERO.attackExp = 398;
+        HERO.defenseExp = 158;
+        HERO.magicExp = 520;
+        HERO.attackExpGoal = 761;
         HERO.defenseExpGoal = 225;
         HERO.magicExpGoal = 761;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["DestroyWeapon"];
+
         //debug
+        //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
         //let scrolls = ["DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife"];
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -62,13 +68,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        //let invItems = ["Pearl", "Pearl"];
-        let invItems = ["Mushroom", "Mushroom", "MagicWand", "CrystallBall"];
+        let invItems = ["RedRose", "PurpleRose", "Sword", "Shield"];
+        //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = [];
+        let keys = ["Silver", "Blue"];
+        //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -101,7 +108,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.06",
+    VERSION: "0.10.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -817,7 +824,7 @@ const GAME = {
         AI.initialize(HERO.player, "3D");
         WebGL.MOUSE.initialize("ROOM");
         WebGL.setContext('webgl');
-        this.buildWorld(level); //??
+        this.buildWorld(level);
         let start_dir, start_grid;
 
         if (GAME.fromCheckpoint) {
@@ -843,13 +850,7 @@ const GAME = {
             HERO.player.associateExternalCamera(HERO.topCamera);
         }
 
-        /*AI.initialize(HERO.player, "3D");
-        WebGL.MOUSE.initialize("ROOM");
-        WebGL.setContext('webgl');*/
-
-        //this.buildWorld(level);
         this.setWorld(level);
-
         ENTITY3D.resetTime();
     },
     blockDoor(waypoint) {
@@ -1233,12 +1234,7 @@ const GAME = {
         }
         if (map[ENGINE.KEY.map.F8]) {
             if (!DEBUG.keys) return;
-            console.log("TELEPORT TO TEMPLE");
-            const M = MAP[GAME.level].map;
-            const temple = M.findRoom("temple");
-            const target = M.findMiddleSpaceUnreserved(temple.area);
-            HERO.player.pos = Vector3.from_Grid(Grid.toCenter(target), 0.5);
-            ENGINE.GAME.keymap[ENGINE.KEY.map.F8] = false;
+            DEBUG.kill();
         }
         if (map[ENGINE.KEY.map.F9]) {
             if (!DEBUG.keys) return;

@@ -10,9 +10,11 @@ console.log("%cMAP for CCC loaded.", "color: #888");
  */
 
 const MAP_TEXT = {
+    1: "Are you ready to feel my heels? Ghostface? Here comes Princess!",
     2: "I should leave no stone unturned.",
     3: "Hmm? Which way to go first?",
     4: "I wonder if you are smart enough to lead me over Ghosty's traps?",
+    23: "A Witch's lair. Maybe I can find some magical items here.",
 };
 
 /** Map definitions */
@@ -362,24 +364,26 @@ const MAP = {
         entities: '[[351,1,"Squirell"]]',
     }
     ,
-    19: {
+    19 : {
         name: "Which Way Is Away?",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB3ABB2AA9BAA2BAA25BB4AA6BB5AA7BB6AA3BB2AA22BB2ABAA25BB5AA6BB7AA4BB16EBB6ABB3ABB12AA6BAA3BB6ABB2ABB9ABB14ABB17$ABB3"}',
+        data: '{"width":"16","height":"16","map":"BB2ABABB2AA2BAA11BAA25BB4AA6BB5AA7BB6AA3BB2AA22BB2AA22BB2AA4BB6AA5BB7AA4BB18EBB7ABABB2ABB13ABAA4BAA3BB5ABB3ABAA2BB9ABB15ABB4$ABB3"}',
         wall: "MossyBricks1",
         floor: "RedBrickFloor1",
         ceil: "DungeonFloor",
         start: '[49,5]',
-        decals: '[[87,7,"DonkeyKong99","picture"],[89,7,"TheHobbit13","picture"],[138,3,"Arena201","picture"],[167,1,"DM107","picture"],[149,5,"Cauldron10","picture"]]',
+        decals: '[[87,7,"DonkeyKong99","picture"],[89,7,"TheHobbit13","picture"],[138,3,"Arena201","picture"],[167,1,"DM107","picture"],[149,5,"Cauldron10","picture"],[222,3,"AticAtacCrest1","crest"],[195,4,"FlatPond3","crest"],[211,4,"FlatPond2","crest"],[19,7,"SirFred60","picture"],[28,7,"Ishar13","picture"],[22,7,"MoonBuggy","picture"],[26,7,"EyeOfTheBeholder140","picture"],[165,7,"ManicMiner60","picture"],[170,7,"Wolfenstein50","picture"],[167,7,"Pitfall23","picture"],[194,7,"EyeOfTheBeholder130","picture"],[85,1,"Goonies90","picture"],[90,1,"LastNinja10","picture"],[230,1,"Morrowind130","picture"],[234,1,"LaraCroft102","picture"],[253,1,"ManicMiner51","picture"],[194,1,"TombRaider95","picture"],[236,1,"Wolfenstein31","picture"],[65,5,"Athanor200","picture"],[129,5,"Portal131","picture"],[161,5,"ReturnToCastleWolfenstein11","picture"],[106,5,"Gods99","picture"],[154,5,"TombRaider102","picture"],[101,3,"Trashman2","picture"],[149,3,"BrianBloodaxe70","picture"],[46,3,"DefenderOfTheCrown100","picture"],[78,3,"Montezumas revenge2","picture"],[158,3,"Witcher111","picture"]]',
         lights: '[[24,7,"WallLamp","standard"],[232,1,"WallLamp","standard"],[97,5,"WallLamp","standard"],[110,3,"WallLamp","standard"],[133,5,"WallLamp3","dimRed"]]',
-        gates: '[[48,5,"19.1","6.4","Open"],[208,5,"19.2","20.1","Down"],[239,3,"19.3","22.1","Down"]]',
+        gates: '[[48,5,"19.1","6.4","Open"],[208,5,"19.2","20.1","Down"],[239,3,"19.3","22.1","Down"],[5,7,"19.4","24.1","Blue"],[11,7,"19.5","25.1","Red"],[63,3,"19.6","26.1","Silver"]]',
         keys: '[[134,1]]',
-        monsters: '[[152,"GhostMinion"]]',
-        containers: '[[102,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[105,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[153,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1]]',
+        monsters: '[[152,"GhostMinion"],[56,"MissGalaxyGold"],[183,"MissGreen"],[184,"MissGreen"],[185,"MissGreen"]]',
+        scrolls: '[[108,10]]',
+        potions: '[[226,1]]',
+        containers: '[[102,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[105,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[153,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1],[227,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1],[219,"Chest","GOLD_ITEM_TYPE.SilverBar",1],[39,"Barrel","GOLD_ITEM_TYPE.SilverBar",7],[41,"Barrel","GOLD_ITEM_TYPE.SilverBar",7],[150,"Barrel","INTERACTION_ITEM.Mushroom",1]]',
         doors: '[88]',
-    }
+        }
     ,
-    20: {
+    20 : {
         name: "Down Down Down",
         sg: 0,
         data: '{"width":"7","height":"5","map":"BB2ABABAA6BB9ABABB10A$"}',
@@ -390,9 +394,10 @@ const MAP = {
         decals: '[[31,1,"TombRaider106","picture"],[16,4,"Drain2_96","crest"]]',
         lights: '[[3,7,"WallLamp2","standard"]]',
         gates: '[[20,3,"20.1","19.2","Up"],[14,5,"20.2","21.1","Down"]]',
-    }
+        potions: '[[23,0]]',
+        }
     ,
-    21: {
+    21 : {
         name: "Mermaid",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABABB9AA110BB25ABB5ABB5AA4BAA4BB54A$"}',
@@ -403,11 +408,12 @@ const MAP = {
         decals: '[[76,5,"Neptunes daughters","picture"],[121,5,"SeaWolf60","picture"],[31,5,"Killerwat51","picture"],[181,5,"KokotoniWilf2","picture"],[58,3,"Defender110","picture"],[178,3,"ManicMiner61","picture"],[18,7,"TheHobbit73","picture"],[20,7,"HunchBack70","picture"],[24,7,"LadyTut102","picture"],[26,7,"KnightLore111","picture"],[198,1,"Nebulus2","picture"],[206,1,"TombRaider108","picture"],[204,1,"TombRaider111","picture"],[200,1,"Underwurlde100","picture"]]',
         lights: '[[22,7,"WallLamp","standard"],[202,1,"WallLamp","standard"],[88,3,"WallLamp","standard"],[148,3,"WallLamp","standard"],[61,5,"WallLamp","standard"],[151,5,"WallLamp","standard"]]',
         gates: '[[119,3,"21.1","20.2","Up"]]',
+        monsters: '[[110,"Viking"]]',
         containers: '[[112,"Barrel","GOLD_ITEM_TYPE.GoldBar",4],[48,"Barrel","GOLD_ITEM_TYPE.GoldBar",4],[168,"Barrel","GOLD_ITEM_TYPE.GoldBar",4]]',
         entities: '[[105,5,"Mermaid"]]',
-    }
+        }
     ,
-    22: {
+    22 : {
         name: "Faerie Land",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB2AA4BAA6BB2ABAA2BABAA3BB3ABB3ABAA3BAA6BB5AA5BAA2BAA24BABB3AA14BB2AA4BB2AA3BAA2BB8AA3BB14ABB2AA2BB2ABB11ABB3AA3BB3AA5BB2ABB5ABB3AA5BAA2BB2ABABB2ABB3ABABB25ABABAA2BB16A$"}',
@@ -418,24 +424,71 @@ const MAP = {
         decals: '[[45,7,"Miranda1","picture"],[14,7,"Pirates200","picture"],[10,7,"MontyMole100","picture"],[2,7,"EyeOfTheBeholder70","picture"],[39,7,"Hero82","picture"],[172,7,"Jetpac3","picture"],[174,7,"UW10","picture"],[161,7,"RobinHood3","picture"],[163,7,"FortApocalypse41","picture"],[99,7,"BladeRunner7","picture"],[102,7,"Zeppelin88","picture"],[132,7,"DungeonMaster96","picture"],[138,7,"SpyVsSpy41","picture"],[59,7,"Ishar15","picture"],[99,1,"F50","picture"],[59,1,"HeavyOnTheMagick60","picture"],[105,1,"Silkworm200","picture"],[107,1,"CyberPunk201","picture"],[110,1,"ForbiddenForest91","picture"],[138,1,"ForbiddenForest90","picture"],[132,1,"BrideOfFrankenstein200","picture"],[171,1,"TombRaider99","picture"],[166,1,"BoogaBoo4","picture"],[65,5,"AticAtac117","picture"],[72,5,"IK2","picture"],[59,5,"Ishar98","picture"],[86,5,"Portal132","picture"],[144,5,"Elite","picture"],[192,5,"AntAttack4","picture"],[203,5,"TheHobbit99","picture"],[134,5,"Pssst","picture"],[38,3,"Skyrim3","picture"],[63,3,"ChuckieEgg2","picture"],[45,3,"Tombraider140","picture"],[59,3,"JupiterLander70","picture"],[120,3,"BC11","picture"],[218,3,"Tutankham104","picture"],[207,3,"Elvira1","picture"],[169,3,"CastleOFTerror11","picture"],[197,5,"Frogger111","picture"],[247,1,"AticAtac111","picture"]]',
         lights: '[[4,7,"WallLamp","standard"],[12,7,"WallLamp","standard"],[166,7,"WallLamp3","dim"],[169,7,"WallLamp3","dim"],[130,7,"WallLamp","dim"],[141,7,"WallLamp","dim"]]',
         gates: '[[32,5,"22.1","19.3","Up"],[112,5,"22.2","23.1","Down"]]',
-        scrolls: '[[201,0]]',
+        monsters: '[[53,"MissGalaxyGold"],[60,"Viking"],[215,"Viking"],[194,"GhostMinion"],[205,"GhostMinion"]]',
+        scrolls: '[[201,0],[145,12],[115,6]]',
+        potions: '[[89,0],[188,0],[82,1],[179,1]]',
         skills: '[[122,"Sword"]]',
         containers: '[[230,"TreasureChest","INTERACTION_ITEM.RedRose",1],[211,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[158,"Crate","GOLD_ITEM_TYPE.SilverBar",3],[25,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[85,"Chest","GOLD_ITEM_TYPE.GoldCube",1]]',
         triggers: '[[5,7,"RockTriggerButton",1,106],[213,5,"RockTriggerButton",1,109],[141,1,"RockTriggerButton",1,114]]',
         entities: '[[242,1,"ShroomFairy"],[253,1,"MagicFairy"]]',
         objects: '[[125,"Sword"]]',
-    }
+        }
     ,
     23 : {
         name: "The Witch",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB2AA6BABABB2AA13BB2AA16BB10ABB10AA2BABABB18ABB15$BB149A"}',
+        data: '{"width":"16","height":"16","map":"BB3ABABB2ABB3ABABAA5EBAA11EAA4BAA2BAA3BAA8BB3AA10BAA15BAA5BB2AA3BB2AA3BAA3BB2AA2BABAA3BB5ABB5AA2BB5QBB6AA2BABAA3BAA2BB4ABB3ABB12AA4BB6ABAA2BB4QBB4AA4BB33ABB2$AA2BB2ABB13AA2BB2"}',
         wall: "RedBricks1",
         floor: "DarkMarble1",
         ceil: "Rough",
         start: '[46,3]',
+        decals: '[[2,7,"LSL101","picture"],[7,7,"Skullkeep","picture"],[4,7,"Jumpman3","picture"],[11,7,"LadyTut10","picture"],[130,7,"JSW112","picture"],[92,7,"MatchPoint2","picture"],[180,7,"CastleOfTerror3","picture"],[134,7,"Hobbit101","picture"],[140,7,"Witcher110","picture"],[188,7,"Prince50","picture"],[167,7,"LeisureSuitLarry73","picture"],[194,7,"Ishar99","picture"],[136,7,"BoogaBoo41","picture"],[33,5,"PrayingSkeleton10","crest"],[65,5,"PrayingSkeleton10","crest"],[144,5,"CrystalsOfZong10","picture"],[208,5,"Ishar11","picture"],[194,5,"DungeonMaster205","picture"],[180,5,"Daggerfall4","picture"],[74,5,"Pipeline51","picture"],[153,5,"KnightLore111","picture"],[189,5,"RobinOfTheWood50","picture"],[118,5,"ReturnToCastleWolfenstein11","picture"],[100,1,"LS","crest"],[102,1,"LS","crest"],[243,1,"SasbreWulf60","picture"],[92,1,"LodeRunner10","picture"],[180,1,"WhoDaresWins1","picture"],[215,1,"LaraCroft1","picture"],[220,1,"RickDangerous70","picture"],[167,3,"HalfLife 89","picture"],[175,3,"TempleOfApshai89","picture"],[88,3,"FalconPatrol7","picture"],[62,3,"AticAtac202","picture"],[215,3,"Tutanham12","picture"],[185,3,"SpaceQuest200","picture"],[233,3,"MonkeyIsland143","picture"],[180,3,"Pacman200","picture"],[53,4,"Grate1_128","crest"],[223,3,"Underwurlde100","picture"],[254,1,"Tombraider141","picture"]]',
+        lights: '[[12,7,"WallLamp","standard"],[56,3,"WallLamp","standard"],[176,5,"WallLamp","standard"],[245,1,"WallLamp","standard"],[90,7,"WallLamp3","dimRed"],[207,3,"WallLamp3","dimRed"],[126,7,"WallLamp2","dim"]]',
         gates: '[[47,3,"23.1","22.2","Up"]]',
+        keys: '[[23,4]]',
+        monsters: '[[52,"Viking"],[147,"Viking"],[231,"GhostMinion"],[106,"GhostMinion"]]',
+        scrolls: '[[77,0],[151,5],[109,7]]',
+        potions: '[[75,1],[195,1],[222,1],[18,0],[193,0]]',
+        gold: '[[68,"SilverBar"],[27,"SilverBar"],[120,"SilverBar"],[179,"SilverBar"],[158,"SilverBar"]]',
+        containers: '[[87,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[145,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[232,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1],[238,"Barrel","INTERACTION_ITEM.Mushroom",1]]',
+        doors: '[41,202]',
+        triggers: '[[13,7,"MarbleTriggerButton",1,101],[125,1,"MarbleTriggerButton",1,93],[173,1,"MarbleTriggerButton",1,121]]',
+        entities: '[[48,5,"Witch"]]',
+        objects: '[[119,"CrystallBall"],[142,"Shield"]]',
         }
+    ,
+    24: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"24.1","19.4","Open"]]',
+    }
+    ,
+    25: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"25.1","19.5","Open"]]',
+    }
+    ,
+    26: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"26.1","19.5","Open"]]',
+    }
     ,
     99: {
         name: "Sandbox",

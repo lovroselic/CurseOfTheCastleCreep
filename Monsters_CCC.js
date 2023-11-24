@@ -604,7 +604,18 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standardShine,
         inventorySprite: "CrystallBall",
         text: "Oh, crystall ball? I can see the future. Bad for Ghosty."
-    }
+    },
+    Shield: {
+        name: "Shield",
+        category: "interaction_item",
+        element: "SHIELD",
+        scale: 1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "ScrapedMetal",
+        inventorySprite: "Shield",
+        material: MATERIAL.silver,
+        text: "I'll put that shield in the bag."
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -666,6 +677,18 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedRose",
         text: "Beautiful red rose. Very helpful."
     },
+    Chip: {
+        name: "Chip",
+        category: "interaction_item",
+        inventorySprite: "Chip",
+        text: "Chip. Chip. Chip."
+    },
+    Mushroom: {
+        name: "Mushroom",
+        category: "interaction_item",
+        inventorySprite: "Mushroom",
+        text: "Poisonous. Don't eat."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -722,7 +745,7 @@ const INTERACTION_ENTITY = {
         }
     },
     /**
-     * want all thre geems
+     * want all thre geems - flooritemss
      * gives; acorn
      * who needs that: Squirell
      */
@@ -741,8 +764,8 @@ const INTERACTION_ENTITY = {
     },
     /**
      * wants 2 acorns
-     * giver a pearl
-     * Devilla wants pearls
+     * givey a pearl
+     * Mermaid wants pearls
      */
     Squirell: {
         name: "Squirell",
@@ -758,7 +781,7 @@ const INTERACTION_ENTITY = {
         }
     },
     /**
-     * wants 2 pearls
+     * wants 2 pearls, one given, one floor
      * gives fish
      * Witch wants fish
      */
@@ -785,6 +808,7 @@ const INTERACTION_ENTITY = {
     /**
      * ShroomFairy
      * wants mushroom, mushroom
+     * mushroom are found in: 19, 23 barrel
      * gives frog
      * who wants frog: witch
      */
@@ -823,10 +847,14 @@ const INTERACTION_ENTITY = {
 
     /**
      * GhostGirl1
+     * wants PurpleRose, RedRose
+     * gives
      */
 
     /**
      * GhostGirl2
+     * wants
+     * gives
      */
 
     /**
@@ -847,11 +875,31 @@ const INTERACTION_ENTITY = {
      * wants fish, frog
      * gives MagicWand
      */
+    Witch: {
+        name: "Witch",
+        sprite: "Witch",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Frog", "Fish"],
+        gives: "MagicWand",
+        text: {
+            intro: "Brew of the deep, a potion's plan, needs silent swimmer and leaping clan.",
+            progress: "One creature stirs, another to seek, for underwater breath, both I bespeak.",
+            conclusion: "Frog and fish, in the pot they dance, Here's my wand, thanks for the chance!"
+        }
+    },
 
     /**
      * CatGirl 
      * wants two mice (movable interavtion object)
      * gives: goldKey 
+     */
+
+    /**
+     * FakePrincess
+     * wants
+     * gives
+     * who wants
      */
 };
 

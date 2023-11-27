@@ -88,14 +88,10 @@ LoadTextures = [
     { srcName: "MossyBricks1.jpg", name: "MossyBricks1" },
     { srcName: "StoneBlockPavement.jpg", name: "StoneBlockPavement" },
     { srcName: "TinyBricks.jpg", name: "TinyBricks" },
-
     { srcName: "Grass10.jpg", name: "Grass1" },
     { srcName: "Grass20.jpg", name: "Grass2" },
     { srcName: "Sky1.jpg", name: "Sky1" },
     { srcName: "Forest1.jpg", name: "Forest" },
-
-
-    //{ srcName: "BrickWall2_128.jpg", name: "BrickWall2" },
     { srcName: "BlackBrickWall128.jpg", name: "BlackBrickWall" },
     { srcName: "CastleWall.jpg", name: "CastleWall" },
     { srcName: "RockFloor.jpg", name: "RockFloor" },
@@ -134,10 +130,8 @@ LoadTextures = [
     { srcName: "BrokenTile1.jpg", name: "BrokenTile1" },
     { srcName: "Broken1.jpg", name: "Broken1" },
     { srcName: "OrderedTiles.jpg", name: "OrderedTiles" },
-
     { srcName: "water1.jpg", name: "Water1" },
     { srcName: "water2.jpg", name: "Water2" },
-
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
@@ -170,18 +164,14 @@ LoadTextures = [
     { srcName: "Barrel_baseColor.jpg", name: "Barrel" },
     { srcName: "WoodenCrate_BaseColor.jpg", name: "Crate" },
 
-
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
     { srcName: "BlueMetal.jpg", name: "BlueMetal" },
-
     { srcName: "Pear_baseColor.jpg", name: "Pear_baseColor" },
     { srcName: "Apple_BaseColor.jpg", name: "Apple_BaseColor" },
+    { srcName: "Skull_texture.jpg", name: "Skull_texture" },
 
     //decal-gates
-    //{ srcName: "GoldGate1_256.png", name: "GoldGate1" },
-    //{ srcName: "RedGate1_256.png", name: "RedGate1" },
-    //{ srcName: "SilverGate1_256.png", name: "SilverGate1" },
     { srcName: "WoodeGate1_256.png", name: "WoodenGate1" },
 
     //title
@@ -246,7 +236,7 @@ LoadShaders = [
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
     "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj", "wardrobe.obj",
-    "barrel.obj", "crate.obj",
+    "barrel.obj", "crate.obj", "skull.obj"
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
@@ -296,7 +286,10 @@ LoadSprites = [
     { srcName: "CrystallBall.png", name: "CrystallBall" },
     { srcName: "PurpleRose.png", name: "PurpleRose" },
     { srcName: "RedRose.png", name: "RedRose" },
+    { srcName: "BlueRose.png", name: "BlueRose" },
     { srcName: "Chip2.png", name: "Chip" },
+    { srcName: "Floppy.png", name: "Floppy" },
+    { srcName: "LS48.png", name: "Skull" },
 
 
     //triggers

@@ -616,6 +616,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.silver,
         text: "I'll put that shield in the bag."
     },
+    Skull: {
+        name: "Skull",
+        category: "interaction_item",
+        element: "SKULL",
+        scale: 1 / 2 ** 1,
+        glueToFloor: true,
+        texture: "Skull_texture",
+        inventorySprite: "Skull",
+        material: MATERIAL.standard,
+        text: "Creeepy?"
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -677,11 +688,16 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedRose",
         text: "Beautiful red rose. Very helpful."
     },
+    BlueRose: {
+        name: "BlueRose",
+        category: "interaction_item",
+        inventorySprite: "BlueRose",
+    },
     Chip: {
         name: "Chip",
         category: "interaction_item",
         inventorySprite: "Chip",
-        text: "Chip. Chip. Chip."
+        text: "An eight bit processor. Priceless."
     },
     Mushroom: {
         name: "Mushroom",
@@ -689,13 +705,20 @@ const INTERACTION_ITEM = {
         inventorySprite: "Mushroom",
         text: "Poisonous. Don't eat."
     },
+    Floppy: {
+        name: "Floppy",
+        category: "interaction_item",
+        inventorySprite: "Floppy",
+        text: "Floppy disk? I can store my memoirs on it."
+    },
+    Crest: {
+        name: "Crest",
+        category: "interaction_item",
+        inventorySprite: "Crest",
+    },
 };
 
 const INTERACTION_ENTITY = {
-    /**
-     * Flies are stored in chests
-     * Hat is required by a PrettyBunny
-     */
     BlackWidow: {
         name: "BlackWidow",
         sprite: "BlackWidow",
@@ -709,10 +732,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Flies delivered, the deal's now through! Here's a silky hat just for you."
         }
     },
-    /**
-     * Apple, Pear are floor items
-     * what does hedgehot gives? Mirror. Required by PrettyBunny
-     */
     HedgeHog: {
         name: "HedgeHog",
         sprite: "HedgeHog",
@@ -726,11 +745,6 @@ const INTERACTION_ENTITY = {
             conclusion: "An apple and pear, oh you're so fine! Here's a mirror to see your royal shine."
         }
     },
-    /**
-     * wants mirror and hat
-     * gives acorn
-     * who needs Acorn: Squirell
-     */
     PrettyBunny: {
         name: "PrettyBunny",
         sprite: "PrettyBunny",
@@ -744,11 +758,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Mirror and hat, now I'm divine! Take this acorn, I'm too gorgeous for such grime."
         }
     },
-    /**
-     * want all thre geems - flooritemss
-     * gives; acorn
-     * who needs that: Squirell
-     */
     DemonGirl: {
         name: "DemonGirl",
         sprite: "DemonGirl",
@@ -762,11 +771,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Gems are cool when you're in hell, here's an acorn, use it well."
         }
     },
-    /**
-     * wants 2 acorns
-     * givey a pearl
-     * Mermaid wants pearls
-     */
     Squirell: {
         name: "Squirell",
         sprite: "Squirell",
@@ -780,11 +784,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Seeds twice given, my quest now ends. Take this gem the sea god sends.",
         }
     },
-    /**
-     * wants 2 pearls, one given, one floor
-     * gives fish
-     * Witch wants fish
-     */
     Mermaid: {
         name: "Mermaid",
         sprite: "Mermaid",
@@ -798,20 +797,21 @@ const INTERACTION_ENTITY = {
             conclusion: "Moon's pair found, from depths they came, For your prize—fish, claimed in fame."
         }
     },
-    /**
-     * Blacksmithstress
-     * wants sword, shield
-     * gives family crest
-     * femal knight wants crest
-     */
+    Blacksmithstress: {
+        name: "Blacksmithstress",
+        sprite: "Blacksmithstress",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Sword", "Shield"],
+        gives: "Crest",
+        text: {
+            intro: "Steel and spark, Blacksmithstress dream. For a crest, bring two items supreme.",
+            progress: "One item's here, the forge is hot. Bring the next, show me what you've got.",
+            conclusion: "Both now forged, into one they blend. Here's your crest, warrior to the end."
+        }
+    },
 
-    /**
-     * ShroomFairy
-     * wants mushroom, mushroom
-     * mushroom are found in: 19, 23 barrel
-     * gives frog
-     * who wants frog: witch
-     */
+
     ShroomFairy: {
         name: "ShroomFairy",
         sprite: "Fairy1",
@@ -825,12 +825,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Mushrooms twain, now in my keep. Here's your frog, from the deep."
         }
     },
-    /**
-     * MagicFairy
-     * * wants MagicWand, CrystallBall
-     * gives PurpleRose
-     * who wants PurpleRose: GhostGirl
-     */
     MagicFairy: {
         name: "MagicFairy",
         sprite: "Fairy2",
@@ -844,18 +838,34 @@ const INTERACTION_ENTITY = {
             conclusion: "Both now claimed, my joy is close. For your deeds, a purple rose."
         }
     },
+    RoseGhostGirl: {
+        name: "RoseGhostGirl",
+        sprite: "GhostGirl2",
+        category: 'crest',
+        voice: "Female",
+        wants: ["PurpleRose", "RedRose", "BlueRose"],
+        gives: "Book",
+        text: {
+            intro: "Roses are purple, blue and red. Give them to someone who is dead.",
+            progress: "Beautiful. But insufficient.",
+            conclusion: "I feel alive again with this beautiful roses. Here. Some boring book."
+        }
+    },
+    SkullGhostGirl: {
+        name: "SkullGhostGirl",
+        sprite: "GhostGirl1",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Skull", "Skull", "Skull"], // one at fake Princess, 
+        gives: "Book",
+        text: {
+            intro: "Feeling headless, in a spooky swirl, help me out, bring some skulls.",
+            progress: "Got a skull, but  more to find,for a book that might just blow your mind.",
+            conclusion: "Three skulls for me, now I'm ahead! Here's your book, as exciting as... bread."
+        }
+    },
 
-    /**
-     * GhostGirl1
-     * wants PurpleRose, RedRose
-     * gives
-     */
 
-    /**
-     * GhostGirl2
-     * wants
-     * gives
-     */
 
     /**
      * FemaleKnight
@@ -865,16 +875,11 @@ const INTERACTION_ENTITY = {
 
     /**
      * Devilla
-     * wants book
+     * wants book?? and book
      * gives goldKey
      */
 
 
-    /**
-     * Witch
-     * wants fish, frog
-     * gives MagicWand
-     */
     Witch: {
         name: "Witch",
         sprite: "Witch",
@@ -895,12 +900,19 @@ const INTERACTION_ENTITY = {
      * gives: goldKey 
      */
 
-    /**
-     * FakePrincess
-     * wants
-     * gives
-     * who wants
-     */
+    FakePrincess: {
+        name: "FakePrincess",
+        sprite: "FakePrincess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Chip", "Floppy"],
+        gives: "BlueRose",
+        text: {
+            intro: "I want to escape Ghosty and become retro coder. I will build my own computer.",
+            progress: "Almost there. Just one more piece missing.",
+            conclusion: "I can now escape Ghosty's grasp and follow my coding passion. Here's a Blue Rose for you."
+        }
+    },
 };
 
 //container content

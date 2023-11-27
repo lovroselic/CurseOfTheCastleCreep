@@ -36,28 +36,29 @@ const DEBUG = {
     checkpoint1() {
         /**
          * current
+         * used shrines: all, owing magic!
          */
-        GAME.level = 19; //19  
-        GAME.gold = 2595;
+        GAME.level = 28; //24 //27 FP  //28 BM
+        GAME.gold = 250;
         HERO.maxHealth = 55;
         HERO.maxMana = 71;
-        HERO.health = 13;
-        HERO.mana = 4;
-        HERO.defense = 14;
+        HERO.health = 55;
+        HERO.mana = 71;
+        HERO.defense = 16;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 17;
+        HERO.attack = 18;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 14;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 398;
+        HERO.attackExp = 405;
         HERO.defenseExp = 158;
-        HERO.magicExp = 520;
+        HERO.magicExp = 683;
         HERO.attackExpGoal = 761;
         HERO.defenseExpGoal = 225;
         HERO.magicExpGoal = 761;
         HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 1;
-        let scrolls = ["DestroyWeapon"];
+        let scrolls = ["DestroyWeapon", "Cripple", "DrainMana", "invisibility"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -68,13 +69,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["RedRose", "PurpleRose", "Sword", "Shield"];
+        let invItems = ["RedRose", "PurpleRose", "Sword", "Shield", "BlueRose", "Skull"];
         //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Silver", "Blue"];
+        let keys = ["Silver"];
         //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -108,7 +109,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.07",
+    VERSION: "0.10.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

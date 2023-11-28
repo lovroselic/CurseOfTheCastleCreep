@@ -499,11 +499,11 @@ const MONSTER_TYPE = {
         gold: 50,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
-        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        behaviourArguments: [15, ["wanderer"], 12, ["shoot"]],
         moveSpeed: 1.0,
         mana: 3,
         caster: true,
-        shootDistance: 7,
+        shootDistance: 12,
         stalkDistance: 5,
         material: MATERIAL.standard,
         missile: Missile,
@@ -810,8 +810,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Both now forged, into one they blend. Here's your crest, warrior to the end."
         }
     },
-
-
     ShroomFairy: {
         name: "ShroomFairy",
         sprite: "Fairy1",
@@ -856,7 +854,7 @@ const INTERACTION_ENTITY = {
         sprite: "GhostGirl1",
         category: 'crest',
         voice: "Female",
-        wants: ["Skull", "Skull", "Skull"], // one at fake Princess, 
+        wants: ["Skull", "Skull", "Skull"], // one at fake Princess, one at blacksmistress
         gives: "Book",
         text: {
             intro: "Feeling headless, in a spooky swirl, help me out, bring some skulls.",

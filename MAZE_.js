@@ -543,8 +543,8 @@ class MasterDungeon {
         this.obstacles.clear();
         this.obstacles = [...arguments].flat().filter((el) => el !== null);
     }
-    setNodeMap() {
-        return this.GA.setNodeMap("nodeMap", GROUND_MOVE_GRID_EXCLUSION, "exclude", this.obstacles);
+    setNodeMap(mode = GROUND_MOVE_GRID_EXCLUSION, nodeMap = "nodeMap") {
+        return this.GA.setNodeMap(nodeMap, mode, "exclude", this.obstacles);
     }
     gridDistance(grid) {
         if (!this.nodeMap) return -1;

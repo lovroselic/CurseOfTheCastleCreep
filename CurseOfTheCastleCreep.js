@@ -38,27 +38,27 @@ const DEBUG = {
          * current
          * used shrines: all, owing magic!
          */
-        GAME.level = 28; //24 //27 FP  //28 BM
-        GAME.gold = 250;
+        GAME.level = 25;
+        GAME.gold = 760;
         HERO.maxHealth = 55;
-        HERO.maxMana = 71;
-        HERO.health = 55;
-        HERO.mana = 71;
+        HERO.maxMana = 76;
+        HERO.health = 42;
+        HERO.mana = 10;
         HERO.defense = 16;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 18;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 14;
+        HERO.magic = 15;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 405;
-        HERO.defenseExp = 158;
-        HERO.magicExp = 683;
+        HERO.attackExp = 458;
+        HERO.defenseExp = 167;
+        HERO.magicExp = 159;
         HERO.attackExpGoal = 761;
         HERO.defenseExpGoal = 225;
-        HERO.magicExpGoal = 761;
+        HERO.magicExpGoal = 1142;
         HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 1;
-        let scrolls = ["DestroyWeapon", "Cripple", "DrainMana", "invisibility"];
+        let scrolls = ["DestroyWeapon", "Cripple", "DrainMana", "Invisibility", "Petrify", "MagicBoost"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -69,7 +69,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["RedRose", "PurpleRose", "Sword", "Shield", "BlueRose", "Skull"];
+        let invItems = ["RedRose", "PurpleRose", "Crest", "BlueRose", "Skull", "Skull"];
         //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -109,7 +109,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.08",
+    VERSION: "0.10.09",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

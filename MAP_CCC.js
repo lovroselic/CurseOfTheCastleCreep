@@ -473,16 +473,17 @@ const MAP = {
         shrines: '[[5,7,"AttackShrine"],[33,5,"DefenseShrine"],[43,3,"DefenseShrine"]]',
     }
     ,
-    25: {
-        name: "placeholder",
+    25 : {
+        name: "Stairway To Hell",
         sg: 0,
-        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
-        start: '[11,7]',
-        gates: '[[3,7,"25.1","19.5","Open"]]',
-    }
+        data: '{"width":"9","height":"15","map":"BB4AA15BB24AA2BABB33AA26BB11ABABB14A$"}',
+        wall: "RedBricks3",
+        floor: "MarbleTiles2",
+        ceil: "Wall9",
+        start: '[121,1]',
+        lights: '[[118,1,"WallLamp","standard"],[124,1,"WallLamp","standard"],[11,7,"WallTorch","dimRed"],[15,7,"WallTorch","dimRed"]]',
+        gates: '[[130,1,"25.1","19.5","Open"],[4,7,"25.2","29.1","Down"]]',
+        }
     ,
     26: {
         name: "placeholder",
@@ -495,7 +496,7 @@ const MAP = {
         gates: '[[3,7,"26.1","19.6","Open"]]',
     }
     ,
-    27 : {
+    27: {
         name: "Fake Princess",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB5ABAA17BB2ABAA4BAA12BAA5BB2AA4BABAA4BABB6AA3BB4AA2BB2ABABB6ABB2AA3BAA2BB7ABB11A$"}',
@@ -512,27 +513,41 @@ const MAP = {
         containers: '[[13,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[52,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[102,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[85,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1]]',
         entities: '[[5,7,"FakePrincess"]]',
         objects: '[[49,"Skull"]]',
-        }
+    }
     ,
-    28 : {
+    28: {
         name: "Blacksmithstress",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB10AA16BAA9ÁAA8BAA3EAÁBB2AA4BAA11ÁABAA11BAÁÁ10AÁÁ11BB16ABÁÁ8ABAÁÁ2BB3AA2BB29ÁBB2$AÁEBB4AEABB4AA8BABABB3ÁÁ12BB11AA10ÁAA13ÁÁ3B"}',
+        data: '{"width":"16","height":"16","map":"BB10AA16BAA9ÁAA4BAA7EAÁÁ2BB2AA4BAA7ÁÁ2AA6BAA11BÁÁ4AA2ÁÁ2AÁÁ5AÁÁ8BB16ABÁÁ3AÁÁ4AÁAÁÁ2BB3ABB29ÁBB2$AÁEBB4AEABB3AA7BABABABB3ÁÁ2AA2BB2ÁÁ8BB9AA10ÁAA11ÁÁ3B"}',
         wall: "SpideryWall",
         floor: "ScarletFloor1",
         ceil: "Wall100",
         start: '[222,3]',
-        decals: '[[31,3,"SwordOfFargoal201","picture"],[206,3,"SVS102","picture"],[159,3,"Hero103","picture"],[111,3,"Zeppelin50","picture"],[24,5,"ZimSalaBim200","picture"],[152,5,"OlympicSkier6","picture"],[104,5,"SVS111","picture"],[200,5,"Pitfall90","picture"],[10,7,"Friday70","picture"],[13,7,"Shamus91","picture"],[251,1,"PQ3","picture"],[252,1,"Popeye2","picture"],[249,1,"KingsQuest60","picture"],[221,4,"Crack20","crest"],[218,4,"Crack21","crest"],[132,7,"BoogaBoo11","picture"],[18,7,"BlueMax20","picture"],[22,7,"EyeOfTheBeholder112","picture"],[113,7,"Goonies90","picture"],[119,7,"Cauldron8","picture"],[113,1,"AticAtac206","picture"],[119,1,"KingsQuest51","picture"],[246,1,"SabreWulf87","picture"],[241,1,"Soccer99","picture"],[80,5,"CastleOfTerror3","picture"],[144,5,"ManicMiner63","picture"],[208,5,"Scramble10","picture"],[180,5,"Zak50","picture"],[213,5,"CongoBongo2","picture"],[179,3,"1943_200","picture"],[213,3,"Tutamkham50","picture"],[152,3,"Pitfall2-100","picture"],[199,3,"PharaohCurse110","picture"]]',
+        decals: '[[31,3,"SwordOfFargoal201","picture"],[159,3,"Hero103","picture"],[111,3,"Zeppelin50","picture"],[24,5,"ZimSalaBim200","picture"],[152,5,"OlympicSkier6","picture"],[104,5,"SVS111","picture"],[200,5,"Pitfall90","picture"],[10,7,"Friday70","picture"],[13,7,"Shamus91","picture"],[251,1,"PQ3","picture"],[252,1,"Popeye2","picture"],[249,1,"KingsQuest60","picture"],[221,4,"Crack20","crest"],[218,4,"Crack21","crest"],[132,7,"BoogaBoo11","picture"],[18,7,"BlueMax20","picture"],[22,7,"EyeOfTheBeholder112","picture"],[113,7,"Goonies90","picture"],[119,7,"Cauldron8","picture"],[113,1,"AticAtac206","picture"],[119,1,"KingsQuest51","picture"],[246,1,"SabreWulf87","picture"],[241,1,"Soccer99","picture"],[80,5,"CastleOfTerror3","picture"],[144,5,"ManicMiner63","picture"],[208,5,"Scramble10","picture"],[180,5,"Zak50","picture"],[213,5,"CongoBongo2","picture"],[179,3,"1943_200","picture"],[213,3,"Tutamkham50","picture"],[152,3,"Pitfall2-100","picture"],[199,3,"PharaohCurse110","picture"],[238,1,"SeaWolf88","picture"],[142,4,"Drain2_96","crest"],[76,4,"Drain64","crest"],[188,4,"Grate1_128","crest"],[143,3,"Fred101","picture"]]',
         lights: '[[116,1,"WallLamp","standard"],[48,5,"WallTorch","fire"],[56,3,"WallTorch","fire"],[184,5,"WallLamp","standard"],[72,5,"WallLamp","standard"],[191,3,"WallLamp","standard"],[79,3,"WallLamp","standard"],[11,7,"WallTorch","dimRed"],[12,7,"WallTorch","dimRed"],[244,1,"WallLamp","standard"],[176,5,"WallLamp","standard"],[184,3,"WallLamp","standard"]]',
         gates: '[[223,3,"28.1","24.3","Up"]]',
         keys: '[[65,2]]',
-        monsters: '[[90,"GhostMinion"],[138,"GhostMinion"]]',
+        monsters: '[[90,"GhostMinion"],[138,"GhostMinion"],[163,"Viking"],[211,"Viking"],[52,"GhostMinion"]]',
+        scrolls: '[[225,8],[86,9]]',
+        potions: '[[76,1]]',
+        containers: '[[33,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[39,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[129,"Barrel","GOLD_ITEM_TYPE.SilverBar",7],[135,"Barrel","GOLD_ITEM_TYPE.SilverBar",7]]',
         doors: '[215,114,118]',
         triggers: '[[133,7,"PurpleTriggerButton",0,219],[242,1,"PurpleTriggerButton",0,220]]',
         entities: '[[4,7,"Blacksmithstress"]]',
         objects: '[[212,"Skull"]]',
         traps: '[[131,7,"PurpleTriggerButton",0,"Bounceball",182],[243,1,"PurpleTriggerButton",0,"Bounceball",177]]',
-        }
+    }
+    ,
+    29: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"29.1","25.2","Up"]]',
+    }
     ,
     99: {
         name: "Sandbox",

@@ -316,19 +316,19 @@ const GRID = {
       }
     }
   },
-  calcDistancesBFS_A(start, dungeon) {
-    dungeon.setNodeMap();
+  calcDistancesBFS_A(start, dungeon, mode = GROUND_MOVE_GRID_EXCLUSION, nodeMap = "nodeMap") {
+    dungeon.setNodeMap(mode, nodeMap);
     let Q = new NodeQ("distance");
-    dungeon.GA.nodeMap[start.x][start.y].distance = 0;
-    dungeon.GA.nodeMap[start.x][start.y].goto = new Vector(0, 0);
-    Q.queueSimple(dungeon.GA.nodeMap[start.x][start.y]);
+    dungeon.GA[nodeMap][start.x][start.y].distance = 0;
+    dungeon.GA[nodeMap][start.x][start.y].goto = new Vector(0, 0);
+    Q.queueSimple(dungeon.GA[nodeMap][start.x][start.y]);
     while (Q.size() > 0) {
       let node = Q.dequeue();
 
       for (let D = 0; D < ENGINE.directions.length; D++) {
         let x = (node.grid.x + ENGINE.directions[D].x + dungeon.width) % dungeon.width;
         let y = (node.grid.y + ENGINE.directions[D].y + dungeon.height) % dungeon.height;
-        let nextNode = dungeon.GA.nodeMap[x][y];
+        let nextNode = dungeon.GA[nodeMap][x][y];
 
         if (nextNode) {
           if (nextNode.distance > node.distance + 1) {

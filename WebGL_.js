@@ -2726,7 +2726,7 @@ class $3D_Entity {
     makeMove() {
         this.moveState.next(this.dirStack.shift());
     }
-    setDistanceFromNodeMap(nodemap) {
+    setDistanceFromNodeMap(nodemap, prop = "distance") {
         let gridPosition = Vector3.toGrid(this.moveState.pos);
         if (!nodemap[gridPosition.x][gridPosition.y]) {
             if (this.fly) {
@@ -2740,8 +2740,8 @@ class $3D_Entity {
 
         let distance = nodemap[gridPosition.x][gridPosition.y].distance;
         if (distance < Infinity) {
-            this.distance = distance;
-        } else this.distance = null;
+            this[prop] = distance;
+        } else this[prop] = null;
     }
     hasStack() {
         return this.dirStack.length > 0;

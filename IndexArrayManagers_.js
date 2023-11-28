@@ -728,14 +728,15 @@ class Animated_3d_entity extends IAM {
         map[this.IA] = new IndexArray(map.width, map.height, 4, 4);
         this.poolToIA(map[this.IA]);
         GRID.calcDistancesBFS_A(Vector3.toGrid(this.hero.player.pos), map);
+        GRID.calcDistancesBFS_A(Vector3.toGrid(this.hero.player.pos), map, AIR_MOVE_GRID_EXCLUSION, "airNodeMap");
 
         for (const entity of this.POOL) {
             if (entity) {
                 entity.reset();
 
-                //check distance
+                //set distance
                 entity.setDistanceFromNodeMap(map.GA.nodeMap);
-                //if (entity.distance === null) continue;           
+                entity.setDistanceFromNodeMap(map.GA.airNodeMap, "airDistance");
                 if (entity.petrified) continue;
 
                 //enemy/enemy collision resolution
@@ -805,13 +806,18 @@ class Animated_3d_entity extends IAM {
                     }
                     GRID.translatePosition3D(entity, lapsedTime);
                     entity.update(date);
-                    entity.proximityDistance = null;                                                    //this has definitely changed with translation!
+                    entity.proximityDistance = null;
                     continue;
                 }
 
                 //set behaviour and move
                 let passiveFlag = flagArray.includes(true);
-                entity.behaviour.manage(entity, entity.distance, passiveFlag);
+                let distance = entity.distance;
+                if (entity.caster) {
+                    distance = entity.airDistance;
+                }
+                //entity.behaviour.manage(entity, entity.distance, passiveFlag);
+                entity.behaviour.manage(entity, distance, passiveFlag);
                 if (!entity.hasStack()) {
                     let ARG = {
                         playerPosition: Vector3.toGrid(this.hero.player.pos),

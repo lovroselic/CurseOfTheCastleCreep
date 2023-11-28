@@ -473,7 +473,7 @@ const MAP = {
         shrines: '[[5,7,"AttackShrine"],[33,5,"DefenseShrine"],[43,3,"DefenseShrine"]]',
     }
     ,
-    25 : {
+    25: {
         name: "Stairway To Hell",
         sg: 0,
         data: '{"width":"9","height":"15","map":"BB4AA15BB24AA2BABB33AA26BB11ABABB14A$"}',
@@ -481,9 +481,11 @@ const MAP = {
         floor: "MarbleTiles2",
         ceil: "Wall9",
         start: '[121,1]',
+        decals: '[[18,5,"AticAtac203","picture"],[63,5,"TheHobbit89","picture"],[36,5,"GoldenAxe2","picture"],[108,5,"WinterGames10","picture"],[81,5,"Arnie201","picture"],[39,5,"Biggles2","picture"],[84,5,"AmberMoon200","picture"],[26,3,"LeisureSuitLarry89","picture"],[71,3,"DungeonMaster97","picture"],[53,3,"BeyondForbiddenForest110","picture"],[89,3,"Drelbs2","picture"],[116,3,"HalfLife14","picture"],[95,3,"Oblivion110","picture"],[47,3,"Daggerfall3","picture"],[92,3,"CodenameIceman2","picture"],[42,5,"Sentinel50","picture"],[96,5,"GatewayToApshai110","picture"],[120,1,"Platoon50","picture"],[122,1,"ManicMiner60","picture"],[12,7,"Ultima89","picture"],[14,7,"AztecChallenge130","picture"],[50,3,"MontyMole50","picture"]]',
         lights: '[[118,1,"WallLamp","standard"],[124,1,"WallLamp","standard"],[11,7,"WallTorch","dimRed"],[15,7,"WallTorch","dimRed"]]',
         gates: '[[130,1,"25.1","19.5","Open"],[4,7,"25.2","29.1","Down"]]',
-        }
+        monsters: '[[28,"GhostMinionGreen"],[34,"GhostMinion"]]',
+    }
     ,
     26: {
         name: "placeholder",
@@ -539,6 +541,22 @@ const MAP = {
     }
     ,
     29: {
+        name: "Ghost Sisters",
+        sg: 0,
+        data: '{"width":"20","height":"20","map":"BB2EBB8ABABB14AA7BABAA3BAA6BAA2BAA2BB2AA4BABAA6BB3ABAA11BABAA8BAA5BAA5BAA3EBEAA41BAA2BB3AA23BABAA2BAA5BB2ABB2AA4BABAA2BB7AA2BB2ABB4AA2BB12AA3BAA6BB5AA2BB5ABABAA4BB2AA4BB2AA3BB2ABAA3BAA6BB9ABAA4BB2ABB3ABABABB8ABB3ABB15EBB14EBB11ABB2$ABB4ABB10AA3BB2"}',
+        wall: "BoringBricks",
+        floor: "MarbleTiles1",
+        ceil: "SpideryWall2",
+        start: '[362,1]',
+        lights: '[[363,1,"WallLamp3","dim"],[123,1,"WallLamp","standard"],[136,1,"WallLamp","standard"],[129,1,"WallLamp","standard"],[123,7,"WallLamp","standard"],[245,1,"WallLamp","standard"],[300,5,"WallLamp3","dim"],[326,5,"WallLamp3","dim"],[333,5,"WallLamp3","dim"],[136,7,"WallLamp","standard"],[130,7,"WallLamp","standard"]]',
+        gates: '[[382,1,"29.1","25.2","Up"],[180,5,"29.2","30.1","Down"],[319,3,"29.3","31.1","Down"]]',
+        shrines: '[[9,7,"MagicShrine"]]',
+        doors: '[125,243,305,187,352]',
+        triggers: '[[62,7,"RockTriggerButton",1,131],[90,7,"RockTriggerButton",1,173],[275,7,"RockTriggerButton",1,237],[177,7,"RockTriggerButton",1,138],[95,7,"RockTriggerButton",1,72],[288,7,"RockTriggerButton",1,251],[90,1,"RockTriggerButton",1,66]]',
+        entities: '[[3,7,"RoseGhostGirl"],[16,7,"SkullGhostGirl"]]',
+    }
+    ,
+    30: {
         name: "placeholder",
         sg: 0,
         data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
@@ -546,7 +564,18 @@ const MAP = {
         floor: "RockFloor",
         ceil: "Pavement",
         start: '[11,7]',
-        gates: '[[3,7,"29.1","25.2","Up"]]',
+        gates: '[[3,7,"30.1","29.2","Up"]]',
+    }
+    ,
+    31: {
+        name: "placeholder",
+        sg: 0,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[11,7]',
+        gates: '[[3,7,"31.1","29.3","Up"]]',
     }
     ,
     99: {

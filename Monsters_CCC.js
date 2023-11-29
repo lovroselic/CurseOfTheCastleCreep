@@ -563,6 +563,26 @@ const MONSTER_TYPE = {
         missile: Missile,
         missileType: COMMON_ITEM_TYPE.Fireball,
     },
+    Wolf: {
+        name: "Wolf",
+        model: "Wolf",
+        scale: 1.7 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 22,
+        defense: 16,
+        magic: 12,
+        health: 30,
+        xp: 50,
+        gold: 50,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt3",
+        behaviourArguments: [10, ["wanderer"], 5, ["advancer"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standard,
+    },
 
 };
 

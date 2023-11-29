@@ -38,27 +38,27 @@ const DEBUG = {
          * current
          * used shrines: all, owing magic!
          */
-        GAME.level = 29;
-        GAME.gold = 810;
-        HERO.maxHealth = 59;
-        HERO.maxMana = 76;
-        HERO.health = 5;
-        HERO.mana = 18;
+        GAME.level = 31; //29
+        GAME.gold = 595;
+        HERO.maxHealth = 63;
+        HERO.maxMana = 81;
+        HERO.health = 63;
+        HERO.mana = 9;
         HERO.defense = 17;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 18;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 15;
+        HERO.magic = 16;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 480;
-        HERO.defenseExp = 50;
-        HERO.magicExp = 242;
+        HERO.attackExp = 644;
+        HERO.defenseExp = 93;
+        HERO.magicExp = 851;
         HERO.attackExpGoal = 761;
         HERO.defenseExpGoal = 338;
         HERO.magicExpGoal = 1142;
-        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.red = 4;
         HERO.inventory.potion.blue = 1;
-        let scrolls = ["DestroyWeapon", "Cripple", "DrainMana", "Invisibility", "MagicBoost"];
+        let scrolls = ["DestroyWeapon", "Invisibility", "BoostWeapon", "DestroyArmor"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -69,7 +69,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["RedRose", "PurpleRose", "Crest", "BlueRose", "Skull", "Skull"];
+        let invItems = ["Book", "Crest", "Skull", "Skull"];
         //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -109,7 +109,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.10",
+    VERSION: "0.10.11",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

@@ -563,26 +563,33 @@ const MAP = {
         entities: '[[3,7,"RoseGhostGirl"],[16,7,"SkullGhostGirl"]]',
         }
     ,
-    30: {
-        name: "placeholder",
+    30 : {
+        name: "Devilla",
         sg: 0,
-        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
-        start: '[11,7]',
-        gates: '[[3,7,"30.1","29.2","Up"]]',
-    }
+        data: '{"width":"15","height":"15","map":"BB3ABAA2BAA9BAA10BB3AA6BB2AA3BAA9BB4AA7BB4AA3BABAA3BAA9BAA21BAA3BB7AA2BB9AA2BB6ABB7ABABAA2BAA2BABB7AA2BB4ABB2ABB8ABB3ABB4ABB12ABB2AA2BABB13A$"}',
+        wall: "RoughWall1",
+        floor: "IrregularTiles1",
+        ceil: "DarkWall1",
+        start: '[43,3]',
+        lights: '[[122,7,"WallLamp3","dim"],[131,7,"WallLamp3","dim"],[77,1,"WallLamp3","dim"],[86,1,"WallLamp3","dim"],[82,1,"WallLamp3","dim"],[96,7,"WallLamp3","dim"]]',
+        gates: '[[44,3,"30.1","29.2","Up"]]',
+        }
     ,
     31 : {
-        name: "Knightress",
+        name: "Knightess",
         sg: 0,
-        data: '{"width":"13","height":"13","map":"BB2ABABB42ABABB111$BB7A"}',
+        data: '{"width":"13","height":"13","map":"BB3ABABB2ABABAA2BAA11BAA5BAA10BB4ABB2ABB2ABB2AA9BB3AA2BB3ABB17AA2BB18AA3BB5ABB9AA2BAA4BAA2BB5ABAA2BB2ABB15$BB2A"}',
         wall: "MossWall16",
-        floor: "MossyBricks1",
+        floor: "MarbleTiles3",
         ceil: "BrownishMarble",
         start: '[79,5]',
+        decals: '[[56,7,"DungeonMaster204","picture"],[20,7,"CodenameIceman98","picture"],[22,7,"Shamus91","picture"],[13,5,"KokotoniWilf2","picture"],[143,5,"WOW10","picture"],[136,5,"BoogaBoo4","picture"],[32,5,"WizardOfWor89","picture"],[53,5,"Zeppelin50","picture"],[105,5,"Witcher113","picture"],[150,1,"Goonies70","picture"],[152,1,"KQ100","picture"],[108,1,"BrianBloodaxe20","picture"],[84,1,"HalfLife70","picture"],[84,7,"TempleOfApshai89","picture"],[84,3,"Pitfall2-100","picture"],[63,3,"JSW10","picture"],[115,3,"AmberStar200","picture"],[133,3,"Witcher130","picture"],[42,3,"MoonZX","picture"]]',
+        lights: '[[84,5,"WallLamp","standard"],[44,7,"WallTorch","dimRed"],[122,1,"WallTorch","dimRed"],[158,1,"WallLamp2","dim"],[2,7,"WallLamp2","dim"]]',
         gates: '[[78,5,"31.1","29.3","Up"]]',
+        monsters: '[[15,"Wolf"],[145,"Wolf"],[34,"GhostMinionGreen2"],[138,"GhostMinionGreen2"]]',
+        containers: '[[21,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[151,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1],[144,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5]]',
+        entities: '[[90,3,"Knightess"]]',
+        objects: '[[14,"Skull"]]',
         }
     ,
     99: {

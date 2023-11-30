@@ -38,27 +38,27 @@ const DEBUG = {
          * current
          * used shrines: all, owing magic!
          */
-        GAME.level = 31; //29
-        GAME.gold = 595;
-        HERO.maxHealth = 63;
+        GAME.level = 30; //29
+        GAME.gold = 1095;
+        HERO.maxHealth = 67;
         HERO.maxMana = 81;
-        HERO.health = 63;
-        HERO.mana = 9;
+        HERO.health = 38;
+        HERO.mana = 17;
         HERO.defense = 17;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 18;
+        HERO.attack = 19;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 16;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 644;
-        HERO.defenseExp = 93;
-        HERO.magicExp = 851;
-        HERO.attackExpGoal = 761;
+        HERO.attackExp = 224;
+        HERO.defenseExp = 219;
+        HERO.magicExp = 875;
+        HERO.attackExpGoal = 1142;
         HERO.defenseExpGoal = 338;
         HERO.magicExpGoal = 1142;
-        HERO.inventory.potion.red = 4;
+        HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 1;
-        let scrolls = ["DestroyWeapon", "Invisibility", "BoostWeapon", "DestroyArmor"];
+        let scrolls = ["Invisibility"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -69,13 +69,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Book", "Crest", "Skull", "Skull"];
+        let invItems = ["Book", "Book"];
         //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Silver"];
+        let keys = ["Silver", "Gold"];
         //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -109,7 +109,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.11",
+    VERSION: "0.10.12",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -1005,6 +1005,7 @@ const GAME = {
                 AUDIO.Keys.play();
                 display(interaction.inventorySprite);
                 delete MAP[GAME.level].map.keys[interaction.color];
+                if (interaction.text) TURN.subtitle(interaction.text);
                 break;
             case 'potion':
                 HERO.inventory.potion[interaction.color]++;

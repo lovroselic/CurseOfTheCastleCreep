@@ -133,6 +133,10 @@ LoadTextures = [
     { srcName: "water1.jpg", name: "Water1" },
     { srcName: "water2.jpg", name: "Water2" },
 
+    { srcName: "BigRockWall1.jpg", name: "BigRockWall1" },
+    { srcName: "BigRockWall2.jpg", name: "BigRockWall2" },
+    { srcName: "BigRockWall3.jpg", name: "BigRockWall3" },
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -263,6 +267,7 @@ LoadSprites = [
     { srcName: "Fairy2.jpg", name: "Fairy2" },
     { srcName: "Blacksmithstress.jpg", name: "Blacksmithstress" },
     { srcName: "TheFakePrincess.jpg", name: "FakePrincess" },
+    { srcName: "AlienGoldie.jpg", name: "AlienGoldie" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },

@@ -2108,6 +2108,7 @@ class InteractionEntity extends WallFeature3D {
 
         let inventorySprite = null;
         let name = null;
+        let color = null;
         let category = "entity_interaction";
         if (!this.virgin) {
             this.checkWants(inventory.item);
@@ -2117,7 +2118,9 @@ class InteractionEntity extends WallFeature3D {
                 this.storageLog();
                 name = this.gives;
                 inventorySprite = INTERACTION_ITEM[name].inventorySprite
-                category = "interaction_item";
+                //category = "interaction_item";
+                category = INTERACTION_ITEM[name].category;
+                color = INTERACTION_ITEM[name].color;
 
             } else if (this.wants.length < this.wantCount) {
                 this.setMode("progress");
@@ -2132,7 +2135,8 @@ class InteractionEntity extends WallFeature3D {
             category: category,
             inventorySprite: inventorySprite,
             text: text,
-            name: name
+            name: name,
+            color: color
         };
     }
     deactivate() {

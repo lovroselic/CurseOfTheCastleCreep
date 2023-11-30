@@ -677,7 +677,7 @@ const INTERACTION_OBJECT = {
         texture: "Marble",
         material: MATERIAL.standardShine,
         inventorySprite: "CrystallBall",
-        text: "Oh, crystall ball? I can see the future. Bad for Ghosty."
+        text: "Oh, crystall ball? I can see the future. Bad for Ghostface."
     },
     Shield: {
         name: "Shield",
@@ -789,6 +789,12 @@ const INTERACTION_ITEM = {
         name: "Crest",
         category: "interaction_item",
         inventorySprite: "Crest",
+    },
+    GoldKey: {
+        name: "GoldKey",
+        category: "key",
+        inventorySprite: "GoldKey",
+        color: "Gold"
     },
 };
 
@@ -928,22 +934,27 @@ const INTERACTION_ENTITY = {
         sprite: "GhostGirl1",
         category: 'crest',
         voice: "Female",
-        wants: ["Skull", "Skull", "Skull"], // one at fake Princess, one at blacksmistress
+        wants: ["Skull", "Skull", "Skull"], // one at fake Princess, one at blacksmistress, one at knightess
         gives: "Book",
         text: {
             intro: "Feeling headless, in a spooky swirl, help me out, bring some skulls.",
-            progress: "Got a skull, but  more to find,for a book that might just blow your mind.",
+            progress: "Got a skull, but  more to find, for a book that might just blow your mind.",
             conclusion: "Three skulls for me, now I'm ahead! Here's your book, as exciting as... bread."
         }
     },
-
-
-
-    /**
-     * FemaleKnight
-     * wants family crest
-     * give goldKey
-     */
+    Knightess: {
+        name: "Knightess",
+        sprite: "FemaleKnight",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Crest",],
+        gives: "GoldKey",
+        text: {
+            intro: "Valiant I stand, a crest I seek, Made from sword and shield, for the brave, not meek.",
+            progress: null,
+            conclusion: "Crest received, honor's key. For you, golden access to Ghostface, from me."
+        }
+    },
 
     /**
      * Devilla
@@ -980,11 +991,14 @@ const INTERACTION_ENTITY = {
         wants: ["Chip", "Floppy"],
         gives: "BlueRose",
         text: {
-            intro: "I want to escape Ghosty and become retro coder. I will build my own computer.",
+            intro: "I want to escape Ghostface and become retro coder. I will build my own computer.",
             progress: "Almost there. Just one more piece missing.",
-            conclusion: "I can now escape Ghosty's grasp and follow my coding passion. Here's a Blue Rose for you."
+            conclusion: "I can now escape Ghostace's grasp and follow my coding passion. Here's a Blue Rose for you."
         }
     },
+    /**
+     * AlienGoldie
+     */
 };
 
 //container content

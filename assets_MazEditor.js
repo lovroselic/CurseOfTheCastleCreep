@@ -130,6 +130,10 @@ LoadTextures = [
 
     { srcName: "water1.jpg", name: "Water1" },
     { srcName: "water2.jpg", name: "Water2" },
+
+    { srcName: "BigRockWall1.jpg", name: "BigRockWall1" },
+    { srcName: "BigRockWall2.jpg", name: "BigRockWall2" },
+    { srcName: "BigRockWall3.jpg", name: "BigRockWall3" },
     
 ];
 

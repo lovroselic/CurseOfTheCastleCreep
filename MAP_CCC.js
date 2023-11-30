@@ -573,6 +573,7 @@ const MAP = {
         start: '[43,3]',
         lights: '[[122,7,"WallLamp3","dim"],[131,7,"WallLamp3","dim"],[77,1,"WallLamp3","dim"],[86,1,"WallLamp3","dim"],[82,1,"WallLamp3","dim"],[96,7,"WallLamp3","dim"]]',
         gates: '[[44,3,"30.1","29.2","Up"]]',
+        entities: '[[212,1,"Devilla"]]',
         }
     ,
     31 : {

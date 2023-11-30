@@ -947,7 +947,7 @@ const INTERACTION_ENTITY = {
         sprite: "FemaleKnight",
         category: 'crest',
         voice: "Female",
-        wants: ["Crest",],
+        wants: ["Crest"],
         gives: "GoldKey",
         text: {
             intro: "Valiant I stand, a crest I seek, Made from sword and shield, for the brave, not meek.",
@@ -955,14 +955,19 @@ const INTERACTION_ENTITY = {
             conclusion: "Crest received, honor's key. For you, golden access to Ghostface, from me."
         }
     },
-
-    /**
-     * Devilla
-     * wants book?? and book
-     * gives goldKey
-     */
-
-
+    Devilla: {
+        name: "Devilla",
+        sprite: "Devilla",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Book","Book"],
+        gives: "GoldKey",
+        text: {
+            intro: "Infernal boredom, a devil's bane. Bring me books to soothe my pain.",
+            progress: "One book read, one more to go. Hurry up, or time will slow.",
+            conclusion: "Two books to quell my fiery sighs. For you, a GoldKey, a hellish prize."
+        }
+    },
     Witch: {
         name: "Witch",
         sprite: "Witch",

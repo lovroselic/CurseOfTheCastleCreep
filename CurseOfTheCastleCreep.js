@@ -38,27 +38,27 @@ const DEBUG = {
          * current
          * used shrines: all, owing magic!
          */
-        GAME.level = 30; //29
-        GAME.gold = 1095;
-        HERO.maxHealth = 67;
-        HERO.maxMana = 81;
-        HERO.health = 38;
-        HERO.mana = 17;
+        GAME.level = 26; //29 //30 --> 32
+        GAME.gold = 2273;
+        HERO.maxHealth = 71;
+        HERO.maxMana = 86;
+        HERO.health = 51;
+        HERO.mana = 0;
         HERO.defense = 17;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 19;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 16;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 224;
-        HERO.defenseExp = 219;
-        HERO.magicExp = 875;
+        HERO.attackExp = 292;
+        HERO.defenseExp = 227;
+        HERO.magicExp = 1024;
         HERO.attackExpGoal = 1142;
         HERO.defenseExpGoal = 338;
         HERO.magicExpGoal = 1142;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Invisibility"];
+        HERO.inventory.potion.red = 0;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Light"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -69,13 +69,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Book", "Book"];
+        let invItems = ["GoldBar", "GoldBar"];
         //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Silver", "Gold"];
+        let keys = ["Silver", "Gold", "Gold"];
         //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -109,7 +109,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.13",
+    VERSION: "0.10.14",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

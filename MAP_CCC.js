@@ -15,6 +15,7 @@ const MAP_TEXT = {
     3: "Hmm? Which way to go first?",
     4: "I wonder if you are smart enough to lead me over Ghosty's traps?",
     23: "A Witch's lair. Maybe I can find some magical items here.",
+    32: "This is my gold! Pick up everything!"
 };
 
 /** Map definitions */
@@ -487,16 +488,17 @@ const MAP = {
         monsters: '[[28,"GhostMinionGreen"],[34,"GhostMinion"]]',
     }
     ,
-    26: {
-        name: "placeholder",
+    26 : {
+        name: "Bug Room",
         sg: 0,
-        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
-        start: '[11,7]',
-        gates: '[[3,7,"26.1","19.6","Open"]]',
-    }
+        data: '{"width":"15","height":"11","map":"BB2AA2BB2ABABAA36BB6AA3BAA2BAA6BB6AA2BABAA4BB8AA4BB18AA2BB2AA6BB5ABB5AA2BABAA2BB2ABABB20AB$"}',
+        wall: "PaleBrickWall1",
+        floor: "MArbleTiles5",
+        ceil: "IntricateCeiling5",
+        start: '[76,5]',
+        lights: '[[34,7,"WallLamp3","dimRed"],[37,7,"WallLamp3","dimRed"],[41,7,"WallLamp3","dimRed"],[124,1,"WallLamp3","dimRed"],[127,1,"WallLamp3","dimRed"],[131,1,"WallLamp3","dimRed"]]',
+        gates: '[[75,5,"26.1","19.6","Open"]]',
+        }
     ,
     27: {
         name: "Fake Princess",
@@ -566,13 +568,20 @@ const MAP = {
     30 : {
         name: "Devilla",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB3ABAA2BAA9BAA10BB3AA6BB2AA3BAA9BB4AA7BB4AA3BABAA3BAA9BAA21BAA3BB7AA2BB9AA2BB6ABB7ABABAA2BAA2BABB7AA2BB4ABB2ABB8ABB3ABB4ABB12ABB2AA2BABB13A$"}',
+        data: '{"width":"15","height":"15","map":"BB3ABAA2BAA9BAA10BB3AA6BB2AA3BAA9BB3AA6BABB4AA3BAA3BAA2BAA8BAA14BAA10BB7AA2BB9AA2BB6ABB10AA3BABB2ABB7AA2BB3ABAA2BB2ABB8ABB4ABB3ABB2ABB8ABB2ABABB13A$"}',
         wall: "RoughWall1",
         floor: "IrregularTiles1",
         ceil: "DarkWall1",
         start: '[43,3]',
+        decals: '[[196,1,"Skeleton11","crest"],[198,1,"SittingSkeleton2","crest"],[170,1,"PrayingSkeleton10","crest"],[173,1,"Reaper","crest"],[6,7,"Skeleton12","crest"],[7,7,"Skeleton21","crest"],[35,7,"Skull1","crest"],[151,7,"Skull10","crest"],[1,7,"Skull11","crest"],[147,7,"Skull2","crest"],[97,7,"Skull3","crest"],[11,7,"Skull4","crest"],[151,5,"WOWc1","crest"],[163,3,"WOWc2","crest"],[115,3,"LS","crest"],[3,7,"FalconPatrol8","picture"],[24,7,"DynaBlaster60","picture"],[38,7,"GatewayToApshai130","picture"],[108,7,"Pitfall72","picture"],[100,1,"Pitfall96","picture"],[93,1,"Invaders2","picture"],[222,1,"SVS1011","picture"],[216,1,"PharaohCurse140","picture"],[205,1,"Pssst","picture"],[30,5,"TheHobbit72","picture"],[93,5,"CastleOfTerror91","picture"],[97,5,"AlleyKat","picture"],[200,5,"PrinceMac","picture"],[58,3,"Ultima50","picture"],[194,3,"LadyTut10","picture"],[81,3,"Zeppelin88","picture"],[187,1,"LaraCroft123","picture"]]',
         lights: '[[122,7,"WallLamp3","dim"],[131,7,"WallLamp3","dim"],[77,1,"WallLamp3","dim"],[86,1,"WallLamp3","dim"],[82,1,"WallLamp3","dim"],[96,7,"WallLamp3","dim"]]',
-        gates: '[[44,3,"30.1","29.2","Up"]]',
+        gates: '[[44,3,"30.1","29.2","Up"],[203,3,"30.2","32.1","Green"]]',
+        keys: '[[18,3]]',
+        monsters: '[[32,"GhostMinion"],[192,"GhostMinionGreen2"],[182,"Wolf"]]',
+        scrolls: '[[16,0],[206,0],[34,4],[130,5]]',
+        skills: '[[208,"Heart"],[181,"Mana"]]',
+        containers: '[[46,"Barrel","GOLD_ITEM_TYPE.SilverBar",5],[166,"Barrel","GOLD_ITEM_TYPE.SilverBar",5],[21,"Crate","GOLD_ITEM_TYPE.GoldCube",7],[22,"Crate","GOLD_ITEM_TYPE.GoldCube",7],[172,"TreasureChest","GOLD_ITEM_TYPE.GoldCube",1]]',
+        triggers: '[[163,7,"RockTriggerButton",1,186]]',
         entities: '[[212,1,"Devilla"]]',
         }
     ,
@@ -588,11 +597,32 @@ const MAP = {
         lights: '[[84,5,"WallLamp","standard"],[44,7,"WallTorch","dimRed"],[122,1,"WallTorch","dimRed"],[158,1,"WallLamp2","dim"],[2,7,"WallLamp2","dim"]]',
         gates: '[[78,5,"31.1","29.3","Up"]]',
         monsters: '[[15,"Wolf"],[145,"Wolf"],[34,"GhostMinionGreen2"],[138,"GhostMinionGreen2"]]',
+        scrolls: '[[112,1]]',
+        potions: '[[45,0],[123,1]]',
         containers: '[[21,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[151,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",1],[144,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5]]',
         entities: '[[90,3,"Knightess"]]',
         objects: '[[14,"Skull"]]',
         }
     ,
+    32 : {
+        name: "Small Treasury",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB6ABB4AA72BB21ABB9AA3BAA4BB46A$"}',
+        wall: "BigRockWall2",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[79,5]',
+        decals: '[[50,3,"Underwurlde110","picture"],[63,3,"ForbiddenForest90","picture"],[128,3,"SVS100","picture"],[115,3,"AticAtac205","picture"],[27,5,"SkyrimElf","picture"],[131,5,"TombRaider130","picture"],[18,7,"Oblivion140","picture"],[23,7,"Witcher113","picture"],[16,7,"Pitstop200","picture"],[146,1,"ManicMiner63","picture"],[148,1,"Scramble7","picture"],[153,1,"Pitfall91","picture"],[85,4,"Drain64","crest"],[84,4,"Drain64","crest"],[83,4,"Drain64","crest"]]',
+        lights: '[[150,1,"WallLamp2","standard"],[20,7,"WallLamp2","standard"],[89,3,"WallLamp2","standard"],[105,5,"WallTorch","fire"],[53,5,"WallTorch","fire"]]',
+        gates: '[[78,5,"32.1","30.2","Open"]]',
+        monsters: '[[49,"GhostMinionGreen"]]',
+        scrolls: '[[86,2]]',
+        gold: '[[87,"GoldBar"],[35,"GoldBar"],[139,"GoldBar"],[47,"SilverBar"],[72,"SilverBar"],[98,"SilverBar"],[125,"SilverBar"],[45,"GoldCube"],[70,"GoldCube"],[96,"GoldCube"],[123,"GoldCube"],[81,"Coins"]]',
+        containers: '[[140,"Chest","GOLD_ITEM_TYPE.GoldCube",3],[36,"Chest","GOLD_ITEM_TYPE.GoldCube",3],[62,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",3],[114,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",3],[88,"Crate","GOLD_ITEM_TYPE.GoldCube",3],[33,"Barrel","GOLD_ITEM_TYPE.GoldCube",7],[31,"Barrel","GOLD_ITEM_TYPE.GoldCube",7],[28,"Barrel","GOLD_ITEM_TYPE.GoldCube",7],[132,"Barrel","GOLD_ITEM_TYPE.GoldCube",1],[135,"Barrel","GOLD_ITEM_TYPE.GoldCube",1],[137,"Barrel","GOLD_ITEM_TYPE.GoldCube",1]]',
+        objects: '[[61,"GoldBar"],[113,"GoldBar"]]',
+        traps: '[[17,7,"PurpleTriggerButton",1,"Viking",80],[147,1,"PurpleTriggerButton",1,"Viking",93]]',
+        }
+        ,
     99: {
         name: "Sandbox",
         sg: 0,

@@ -701,6 +701,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         text: "Creeepy?"
     },
+    GoldBar: {
+        name: "GoldBar",
+        category: "interaction_item",
+        element: "BAR",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Gold",
+        inventorySprite: "GoldBar",
+        material: MATERIAL.gold,
+        text: "I should store some gold in the bag. Who knows ..."
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -960,7 +971,7 @@ const INTERACTION_ENTITY = {
         sprite: "Devilla",
         category: 'crest',
         voice: "Female",
-        wants: ["Book","Book"],
+        wants: ["Book", "Book"],
         gives: "GoldKey",
         text: {
             intro: "Infernal boredom, a devil's bane. Bring me books to soothe my pain.",

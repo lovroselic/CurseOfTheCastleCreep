@@ -172,6 +172,7 @@ LoadSprites = [
     { srcName: "Chip2.png", name: "Chip" },
     { srcName: "Floppy.png", name: "Floppy" },
     { srcName: "LS48.png", name: "Skull" },
+    { srcName: "goldBar.png", name: "GoldBar" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

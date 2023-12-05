@@ -36,29 +36,31 @@ const DEBUG = {
     checkpoint1() {
         /**
          * current
-         * used shrines: all, owing magic!
+         * used shrines: 
+         * mana 1x
+         * attack 1x
          */
-        GAME.level = 26; //29 //30 --> 32
-        GAME.gold = 2273;
+        GAME.level = 34; //26 - bug rom //33-temple //34- goldie
+        GAME.gold = 473;
         HERO.maxHealth = 71;
         HERO.maxMana = 86;
-        HERO.health = 51;
-        HERO.mana = 0;
+        HERO.health = 71;
+        HERO.mana = 86;
         HERO.defense = 17;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 19;
+        HERO.attack = 20;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 16;
+        HERO.magic = 17;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 292;
-        HERO.defenseExp = 227;
-        HERO.magicExp = 1024;
+        HERO.attackExp = 359;
+        HERO.defenseExp = 263;
+        HERO.magicExp = 1101;
         HERO.attackExpGoal = 1142;
         HERO.defenseExpGoal = 338;
         HERO.magicExpGoal = 1142;
         HERO.inventory.potion.red = 0;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["Light"];
+        let scrolls = ["Light", "Invisibility", "BoostArmor", "DrainMana", "MagicBoost", "Luck", "Luck", "BoostWepon", "DestroyArmor"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -75,7 +77,7 @@ const DEBUG = {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Silver", "Gold", "Gold"];
+        let keys = ["Gold"];
         //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -109,7 +111,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.14",
+    VERSION: "0.10.15",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

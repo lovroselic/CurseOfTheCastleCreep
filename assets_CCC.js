@@ -268,6 +268,8 @@ LoadSprites = [
     { srcName: "Blacksmithstress.jpg", name: "Blacksmithstress" },
     { srcName: "TheFakePrincess.jpg", name: "FakePrincess" },
     { srcName: "AlienGoldie.jpg", name: "AlienGoldie" },
+    { srcName: "IceQueen.jpg", name: "IceQueen" },
+    { srcName: "DragonLady.jpg", name: "DragonLady" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },

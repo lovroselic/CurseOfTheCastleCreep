@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.08.07",
+  VERSION: "0.09.00",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -85,6 +85,7 @@ const PRG = {
 
     $("#buttons").on("click", "#new", GAME.init);
     $("#buttons").on("click", "#arena", GAME.arena);
+    $("#buttons").on("click", "#maze", GAME.maze);
     $("#buttons").on("click", "#export", GAME.export);
     $("#buttons").on("click", "#import", GAME.import);
     $("#buttons").on("click", "#copy", GAME.copyToClipboard);
@@ -168,7 +169,6 @@ const GAME = {
     }
 
     WebGL.init_required_IAM(MAP[level].map, HERO);
-    //WebGL.MOUSE.initialize("ROOM");
     WebGL.setContext('webgl');
 
     this.buildWorld(level);
@@ -181,6 +181,19 @@ const GAME = {
     GA.massClear();
     GA.border(parseInt($("#arenawidth").val(), 10));
     GAME.render();
+  },
+  maze() {
+    const GA = $MAP.map.GA;
+    const maze = $MAP.map;
+    if (!maze.start[0]) return;
+    console.log(maze.start[0]);
+    const start = GA.indexToGrid(maze.start[0]);
+   
+    console.warn("creating maze", start);
+    maze.carveMaze(start);
+    GAME.render();
+    //$MAP.map = MAZE.configure($MAP.map);
+
   },
   mouseClick(event) {
     ENGINE.readMouse(event);
@@ -799,6 +812,7 @@ const GAME = {
 
     $("#buttons").append("<input type='button' id='new' value='New'>");
     $("#buttons").append("<input type='button' id='arena' value='Arena'>");
+    $("#buttons").append("<input type='button' id='maze' value='Maze'>");
     $("#buttons").append("<input type='button' id='export' value='Export'>");
     $("#buttons").append("<input type='button' id='import' value='Import'>");
     $("#buttons").append("<input type='button' id='copy' value='Copy to Clipboard'>");

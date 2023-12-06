@@ -134,6 +134,20 @@ LoadTextures = [
     { srcName: "BigRockWall1.jpg", name: "BigRockWall1" },
     { srcName: "BigRockWall2.jpg", name: "BigRockWall2" },
     { srcName: "BigRockWall3.jpg", name: "BigRockWall3" },
+
+    { srcName: "IceWall1.jpg", name: "IceWall1" },
+    { srcName: "IceWall2.jpg", name: "IceWall2" },
+    { srcName: "IceWall3.jpg", name: "IceWall3" },
+    { srcName: "IceWall4.jpg", name: "IceWall4" },
+    { srcName: "IceWall5.jpg", name: "IceWall5" },
+    { srcName: "IceWall6.jpg", name: "IceWall6" },
+    { srcName: "IceWall7.jpg", name: "IceWall7" },
+    { srcName: "IceFloor1.jpg", name: "IceFloor1" },
+    { srcName: "IceFloor2.jpg", name: "IceFloor2" },
+    { srcName: "IceFloor3.jpg", name: "IceFloor3" },
+    { srcName: "IceFloor4.jpg", name: "IceFloor4" },
+    { srcName: "IceFloor5.jpg", name: "IceFloor5" },
+    { srcName: "IceFloor6.jpg", name: "IceFloor6" },
     
 ];
 
@@ -173,6 +187,8 @@ LoadSprites = [
     { srcName: "Floppy.png", name: "Floppy" },
     { srcName: "LS48.png", name: "Skull" },
     { srcName: "goldBar.png", name: "GoldBar" },
+    { srcName: "IceCube.png", name: "IceCube" },
+    { srcName: "RatIcon.png", name: "Rat" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

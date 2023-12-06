@@ -38,29 +38,29 @@ const DEBUG = {
          * current
          * used shrines: 
          * mana 1x
-         * attack 1x
+         * attack 2x
          */
-        GAME.level = 34; //26 - bug rom //33-temple //34- goldie
-        GAME.gold = 473;
-        HERO.maxHealth = 71;
-        HERO.maxMana = 86;
-        HERO.health = 71;
-        HERO.mana = 86;
-        HERO.defense = 17;
+        GAME.level = 99; //26 - bug rom //33-temple  //35 - Ice Queen
+        GAME.gold = 333;
+        HERO.maxHealth = 49;
+        HERO.maxMana = 96;
+        HERO.health = 45;
+        HERO.mana = 27;
+        HERO.defense = 19;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 20;
+        HERO.attack = 21;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 17;
+        HERO.magic = 19;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 359;
-        HERO.defenseExp = 263;
-        HERO.magicExp = 1101;
+        HERO.attackExp = 648;
+        HERO.defenseExp = 24;
+        HERO.magicExp = 414;
         HERO.attackExpGoal = 1142;
-        HERO.defenseExpGoal = 338;
-        HERO.magicExpGoal = 1142;
-        HERO.inventory.potion.red = 0;
+        HERO.defenseExpGoal = 507;
+        HERO.magicExpGoal = 1713;
+        HERO.inventory.potion.red = 3;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["Light", "Invisibility", "BoostArmor", "DrainMana", "MagicBoost", "Luck", "Luck", "BoostWepon", "DestroyArmor"];
+        let scrolls = ["Petrify", "MagicBoost"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -71,13 +71,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldBar", "GoldBar"];
+        let invItems = [];
         //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Gold"];
+        let keys = ["Gold", "Gold"];
         //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -111,7 +111,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.15",
+    VERSION: "0.10.16",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

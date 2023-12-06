@@ -137,6 +137,21 @@ LoadTextures = [
     { srcName: "BigRockWall2.jpg", name: "BigRockWall2" },
     { srcName: "BigRockWall3.jpg", name: "BigRockWall3" },
 
+    { srcName: "IceWall1.jpg", name: "IceWall1" },
+    { srcName: "IceWall2.jpg", name: "IceWall2" },
+    { srcName: "IceWall3.jpg", name: "IceWall3" },
+    { srcName: "IceWall4.jpg", name: "IceWall4" },
+    { srcName: "IceWall5.jpg", name: "IceWall5" },
+    { srcName: "IceWall6.jpg", name: "IceWall6" },
+    { srcName: "IceWall7.jpg", name: "IceWall7" },
+
+    { srcName: "IceFloor1.jpg", name: "IceFloor1" },
+    { srcName: "IceFloor2.jpg", name: "IceFloor2" },
+    { srcName: "IceFloor3.jpg", name: "IceFloor3" },
+    { srcName: "IceFloor4.jpg", name: "IceFloor4" },
+    { srcName: "IceFloor5.jpg", name: "IceFloor5" },
+    { srcName: "IceFloor6.jpg", name: "IceFloor6" },
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -167,6 +182,8 @@ LoadTextures = [
     { srcName: "wardrobe_BaseColor.jpg", name: "Wardrobe" },
     { srcName: "Barrel_baseColor.jpg", name: "Barrel" },
     { srcName: "WoodenCrate_BaseColor.jpg", name: "Crate" },
+    { srcName: "IceTexture.jpg", name: "IceTexture" },
+    { srcName: "Rat_color.jpg", name: "RatTexture" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -240,7 +257,7 @@ LoadShaders = [
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
     "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj", "wardrobe.obj",
-    "barrel.obj", "crate.obj", "skull.obj"
+    "barrel.obj", "crate.obj", "skull.obj", "rat.obj",
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
@@ -297,8 +314,9 @@ LoadSprites = [
     { srcName: "Chip2.png", name: "Chip" },
     { srcName: "Floppy.png", name: "Floppy" },
     { srcName: "LS48.png", name: "Skull" },
-
     { srcName: "goldBar.png", name: "GoldBar" },
+    { srcName: "IceCube.png", name: "IceCube" },
+    { srcName: "RatIcon.png", name: "Rat" },
 
 
     //triggers

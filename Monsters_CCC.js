@@ -765,6 +765,28 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "I should store some gold in the bag. Who knows ..."
     },
+    IceCube: {
+        name: "IceCube",
+        category: "interaction_item",
+        element: "CUBE_CENTERED",
+        scale: 1.99 / 2 ** 5,
+        glueToFloor: true,
+        texture: "IceTexture",
+        inventorySprite: "IceCube",
+        material: MATERIAL.standardShine,
+        text: "Ice cube. Cold?"
+    },
+    Rat: {
+        name: "Rat",
+        category: "interaction_item",
+        element: "RAT",
+        scale: 1/ 2 ** 3,
+        glueToFloor: true,
+        texture: "RatTexture",
+        inventorySprite: "Rat",
+        material: MATERIAL.standard,
+        text: "Rat? Maybe I'll be hungry later."
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -998,7 +1020,7 @@ const INTERACTION_ENTITY = {
         sprite: "GhostGirl1",
         category: 'crest',
         voice: "Female",
-        wants: ["Skull", "Skull", "Skull"], // one at fake Princess, one at blacksmistress, one at knightess
+        wants: ["Skull", "Skull", "Skull"], 
         gives: "Book",
         text: {
             intro: "Feeling headless, in a spooky swirl, help me out, bring some skulls.",
@@ -1045,13 +1067,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Frog and fish, in the pot they dance, Here's my wand, thanks for the chance!"
         }
     },
-
-    /**
-     * CatGirl 
-     * wants two mice (movable interavtion object)
-     * gives: goldKey 
-     */
-
     FakePrincess: {
         name: "FakePrincess",
         sprite: "FakePrincess",
@@ -1065,15 +1080,12 @@ const INTERACTION_ENTITY = {
             conclusion: "I can now escape Ghostace's grasp and follow my coding passion. Here's a Blue Rose for you."
         }
     },
-    /**
-     * AlienGoldie
-     */
     AlienGoldie: {
         name: "AlienGoldie",
         sprite: "AlienGoldie",
         category: 'crest',
         voice: "FemHighQuick",
-        wants: ["GoldBar", "GoldBar", "GoldBar"], //one is still not set
+        wants: ["GoldBar", "GoldBar", "GoldBar"], 
         gives: "GoldKey",
         text: {
             intro: "From stars afar in golden hue, gold bars I have to seek from you.",
@@ -1081,8 +1093,29 @@ const INTERACTION_ENTITY = {
             conclusion: "Gold thrice given, from Earth's own core, here's a GoldKey, opening new doors."
         }
     },
+    IceQueen: {
+        name: "IceQueen",
+        sprite: "IceQueen",
+        category: 'crest',
+        voice: "Female",
+        wants: ["IceCube", "IceCube", "IceCube"], 
+        gives: "GoldKey",
+        text: {
+            intro: "Queen of ice, yet feeling hot, three ice cubes is what I've sought.",
+            progress: "One cube's chill, but I need more, two to go, for the cool I adore.",
+            conclusion: "Cool at last, with cubes thrice. For you, a GoldKey, as cold as ice."
+        }
+    },
     /**
-     * Ice Queen
+     * CatGirl 
+     * wants  mice 
+     * gives: goldKey 
+     */
+    /**
+     * Vampyra
+     */
+    /**
+     * DragonLady
      */
 };
 

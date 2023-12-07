@@ -35,14 +35,18 @@ const DEBUG = {
     },
     checkpoint1() {
         /**
-         * current
+         * current temple
          * used shrines: 
          * mana 1x
          * attack 2x
+         * 
+         * 35 - Ice Queen - unfinished, unplayed (icecubes: 0)
+         * 36 rats played, 2 rats placed
+         * 37 - Cat Girl - unfinished, unplayed (rats2: missing 1)
          */
-        GAME.level = 99; //26 - bug rom //33-temple  //35 - Ice Queen
-        GAME.gold = 333;
-        HERO.maxHealth = 49;
+        GAME.level = 37; //26 - bug room
+        GAME.gold = 616;
+        HERO.maxHealth = 79;
         HERO.maxMana = 96;
         HERO.health = 45;
         HERO.mana = 27;
@@ -54,13 +58,13 @@ const DEBUG = {
         HERO.reference_magic = HERO.magic;
         HERO.attackExp = 648;
         HERO.defenseExp = 24;
-        HERO.magicExp = 414;
+        HERO.magicExp = 498;
         HERO.attackExpGoal = 1142;
         HERO.defenseExpGoal = 507;
         HERO.magicExpGoal = 1713;
         HERO.inventory.potion.red = 3;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["Petrify", "MagicBoost"];
+        let scrolls = ["Petrify", "MagicBoost", "Invisibility"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -71,7 +75,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [];
+        let invItems = ["Rat", "Rat"];
         //let invItems = ["PurpleRose", "RedRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -111,7 +115,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.16",
+    VERSION: "0.10.17",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

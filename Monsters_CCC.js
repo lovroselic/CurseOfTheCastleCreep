@@ -1106,9 +1106,22 @@ const INTERACTION_ENTITY = {
             conclusion: "Cool at last, with cubes thrice. For you, a GoldKey, as cold as ice."
         }
     },
+    CatGirl: {
+        name: "CatGirl",
+        sprite: "CatGirl",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Rat", "Rat", "Rat"], 
+        gives: "Lizard",//???
+        text: {
+            intro: "",
+            progress: "",
+            conclusion: ""
+        }
+    },
     /**
      * CatGirl 
-     * wants  mice 
+     * wants  rats 3, 1 missing 
      * gives: goldKey 
      */
     /**
@@ -1116,6 +1129,7 @@ const INTERACTION_ENTITY = {
      */
     /**
      * DragonLady
+     * wants lizzards - babies
      */
 };
 

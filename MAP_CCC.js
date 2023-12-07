@@ -498,7 +498,7 @@ const MAP = {
         start: '[76,5]',
         decals: '[[72,3,"DragonSkulle110","picture"],[102,3,"Pooyan3","picture"],[43,3,"DungeonMaster206","picture"],[133,3,"SabreWulf50","picture"],[46,5,"TheHobbit88","picture"],[106,5,"MrRobot70","picture"],[32,5,"ElvenWarrior1","picture"],[122,5,"ManicMiner61","picture"]]',
         lights: '[[34,7,"WallLamp3","dimRed"],[37,7,"WallLamp3","dimRed"],[41,7,"WallLamp3","dimRed"],[124,1,"WallLamp3","dimRed"],[127,1,"WallLamp3","dimRed"],[131,1,"WallLamp3","dimRed"]]',
-        gates: '[[75,5,"26.1","19.6","Open"],[9,7,"26.2","33.1","Closed"],[16,5,"26.3","34.1","Gold"],[136,5,"26.4","35.1","Gold"]]',
+        gates: '[[75,5,"26.1","19.6","Open"],[9,7,"26.2","33.1","Closed"],[16,5,"26.3","34.1","Gold"],[136,5,"26.4","35.1","Gold"],[6,7,"26.5","36.1","Closed"],[149,3,"26.6","37.1","Gold"]]',
         monsters: '[[68,"Wolf"],[98,"Wolf"]]',
         scrolls: '[[70,1],[94,2],[100,9],[65,5]]',
     }
@@ -664,7 +664,7 @@ const MAP = {
         objects: '[[124,"GoldBar"]]',
     }
     ,
-    35 : {
+    35: {
         name: "Ice Queen",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB4ABB2AA3BABB4ABAA11BAA3BAA2BABAA4BAA4ÁAA14BB2AA6BB2AA2BABB4ABB7ABB5ABAA2BB3AA2BB2ABB6AA6BB2AA3BAA2BB2ABABAA2BB2ABEAA8BB2ABABB4AA2EABABB2ABABB2ABAA2BB2ABB10AA3BB15ABB10AB$ABABB3A"}',
@@ -681,9 +681,46 @@ const MAP = {
         doors: '[103,191]',
         triggers: '[[184,7,"RockTriggerButton",1,83],[4,7,"RockTriggerButton",1,38]]',
         entities: '[[45,5,"IceQueen"]]',
+    }
+    ,
+    36: {
+        name: "Did you say rats?",
+        sg: 0,
+        data: '{"width":"11","height":"11","map":"BB2ABAA3BABB2ABB2AA7BB3AA2BB6AA2BB3ABB6AA2BB8AA5BAA2BB4ABB2ABABABAA2BAA4BAA2BAA2BABAA2BB2ABB2AA3BB6ABB12A$"}',
+        wall: "LumpyWetWall",
+        floor: "IceFloor4",
+        ceil: "MossyCeiling",
+        start: '[104,1]',
+        decals: '[[111,1,"WhoDaresWins1","picture"],[91,1,"CastleOfTerror91","picture"],[119,1,"Barbarian130","picture"],[29,7,"AztecChallenge110","picture"],[73,7,"Gauntlet","picture"],[17,5,"Killerwat51","picture"],[37,5,"Fred21","picture"],[44,5,"Defender110","picture"],[41,5,"ImpossibleMission11","picture"],[87,3,"RiverRaid2","picture"],[83,3,"Witcher47","picture"],[17,3,"Witcher101","picture"],[68,3,"HalfLife50","picture"],[48,3,"DungeonMaster100","picture"],[35,5,"DancingSkeletons2","crest"],[73,1,"OperationWolf50","picture"]]',
+        lights: '[[1,7,"WallLamp2","dim"],[3,7,"WallLamp2","dim"],[9,7,"WallLamp2","dim"],[49,7,"WallLamp2","dim"],[107,3,"WallTorch","dimRed"]]',
+        gates: '[[115,1,"36.1","26.5","Open"]]',
+        monsters: '[[15,"GhostMinionGreen"]]',
+        scrolls: '[[38,1]]',
+        potions: '[[89,1]]',
+        gold: '[[25,"Coins"],[78,"GoldCube"]]',
+        containers: '[[16,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[108,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1]]',
+        objects: '[[12,"Rat"],[18,"Rat"]]',
+    }
+    ,
+    37 : {
+        name: "Cat Girl",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB6EAA5BB2AA3BABAA12BAA2BB2AA5BB2ABB2AA2BAA3BB3AA9BB2AA5BAA2BAA4BB2ABB3AA3BAA3BAA3BABB2AA5BAA4BABAA2BB7ÁBB6AA3BB2AA3BB2AA3BAA3BB3AA2BAA2BB6AA2BB2ABB2QABB2AA2BB2AA3BB2AA2BB2ABB16ABB11AB$ABB2ABB2ABB2"}',
+        wall: "PaleBrickWall1",
+        floor: "IceFloor3",
+        ceil: "GreyMarble4",
+        start: '[31,5]',
+        decals: '[[22,7,"OlympicSkier6","picture"],[10,7,"DungeonMaster70","picture"],[13,7,"LastNinja130","picture"],[159,7,"Paratroopers2","picture"],[77,7,"Goonies5","picture"],[79,7,"Fred111","picture"],[138,7,"EyeOfTheBeholder111","picture"],[167,7,"SVS1011","picture"],[161,7,"AmberStar203","picture"],[169,7,"Pitfall90","picture"],[103,7,"SpectrumGame1","picture"],[97,7,"KokotoniWilf2","picture"],[213,1,"BattleThroughTime2","picture"],[77,1,"BlueMax20","picture"],[79,1,"BlueMax11","picture"],[82,1,"LeisureSuitLarry91","picture"],[70,1,"BrianBloodaxe71","picture"],[88,1,"SVS130","picture"],[223,1,"Sorcery88","picture"],[217,1,"Commando201","picture"],[46,5,"Tombraider140","picture"],[4,7,"LSL_Eve2","picture"],[141,5,"TheHobbit99","picture"],[120,5,"Barbarian131","picture"],[53,5,"Trashman2","picture"],[57,3,"SabreWulf89","picture"],[149,3,"Wally88","picture"],[50,3,"FF100","picture"],[126,3,"EricTheViking10","picture"]]',
+        lights: '[[70,7,"WallLamp3","dim"],[3,7,"WallLamp3","dim"],[220,1,"WallLamp3","dim"],[138,1,"Lamp4","dimRed"]]',
+        gates: '[[30,5,"37.1","26.6","Open"]]',
+        scrolls: '[[175,12],[17,10],[188,4],[198,11],[123,6]]',
+        doors: '[35]',
+        triggers: '[[219,1,"MarbleTriggerButton",1,78],[186,3,"MarbleTriggerButton",0,52],[180,5,"RockTriggerButton",1,27]]',
+        entities: '[[160,1,"CatGirl"]]',
+        traps: '[[221,1,"MarbleTriggerButton",0,"Bounceball",163]]',
         }
     ,
-    99 : {
+    99: {
         name: "Sandbox",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB13AA132BB41AA11BB58A$"}',
@@ -693,5 +730,5 @@ const MAP = {
         start: '[40,7]',
         lights: '[[24,7,"WallLamp","standard"],[232,1,"WallLamp","standard"],[126,3,"WallLamp","standard"],[129,5,"WallLamp","standard"]]',
         objects: '[[104,"CrystallBall"],[72,"CrystallBall"],[131,"CrystallBall"],[125,"CrystallBall"],[200,"CrystallBall"],[132,"IceCube"],[71,"IceCube"],[123,"IceCube"],[184,"IceCube"],[56,"Rat"],[115,"Rat"],[124,"Rat"],[199,"Rat"]]',
-        }
+    }
 };

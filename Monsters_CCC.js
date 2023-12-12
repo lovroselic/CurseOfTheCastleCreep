@@ -780,12 +780,34 @@ const INTERACTION_OBJECT = {
         name: "Rat",
         category: "interaction_item",
         element: "RAT",
-        scale: 1/ 2 ** 3,
+        scale: 1 / 2 ** 3,
         glueToFloor: true,
         texture: "RatTexture",
         inventorySprite: "Rat",
         material: MATERIAL.standard,
         text: "Rat? Maybe I'll be hungry later."
+    },
+    Lizard: {
+        name: "Lizard",
+        category: "interaction_item",
+        element: "LIZARD",
+        scale: 1 / 2 ** 6,
+        glueToFloor: true,
+        texture: "LizardTexture",
+        inventorySprite: "Lizard",
+        material: MATERIAL.greenFluence,
+        text: "Cute? Little dragon baby."
+    },
+    Scroll: {
+        name: "Scroll",
+        category: "interaction_item",
+        element: "SCROLL",
+        scale: 1.6 / 2 ** 4,
+        glueToFloor: true,
+        texture: "ScrollTexture",
+        material: MATERIAL.paper,
+        inventorySprite: "Scroll",
+        text: "It's empty? I should write a poem."
     },
 };
 
@@ -881,6 +903,11 @@ const INTERACTION_ITEM = {
         category: "key",
         inventorySprite: "GoldKey",
         color: "Gold"
+    },
+    Quill: {
+        name: "Quill",
+        category: "interaction_item",
+        inventorySprite: "Quill",
     },
 };
 
@@ -1020,7 +1047,7 @@ const INTERACTION_ENTITY = {
         sprite: "GhostGirl1",
         category: 'crest',
         voice: "Female",
-        wants: ["Skull", "Skull", "Skull"], 
+        wants: ["Skull", "Skull", "Skull"],
         gives: "Book",
         text: {
             intro: "Feeling headless, in a spooky swirl, help me out, bring some skulls.",
@@ -1085,7 +1112,7 @@ const INTERACTION_ENTITY = {
         sprite: "AlienGoldie",
         category: 'crest',
         voice: "FemHighQuick",
-        wants: ["GoldBar", "GoldBar", "GoldBar"], 
+        wants: ["GoldBar", "GoldBar", "GoldBar"],
         gives: "GoldKey",
         text: {
             intro: "From stars afar in golden hue, gold bars I have to seek from you.",
@@ -1098,7 +1125,7 @@ const INTERACTION_ENTITY = {
         sprite: "IceQueen",
         category: 'crest',
         voice: "Female",
-        wants: ["IceCube", "IceCube", "IceCube"], 
+        wants: ["IceCube", "IceCube", "IceCube"],
         gives: "GoldKey",
         text: {
             intro: "Queen of ice, yet feeling hot, three ice cubes is what I've sought.",
@@ -1111,26 +1138,45 @@ const INTERACTION_ENTITY = {
         sprite: "CatGirl",
         category: 'crest',
         voice: "Female",
-        wants: ["Rat", "Rat", "Rat"], 
-        gives: "Lizard",//???
+        wants: ["Rat", "Rat", "Rat"],
+        gives: "GoldKey",
         text: {
-            intro: "",
-            progress: "",
-            conclusion: ""
+            intro: "Meow, dear Princess, a cat's request, bring three rats, put my skills to the test.",
+            progress: "Nice rat caught, meow, what fun! But more to go, my job's not done.",
+            conclusion: "Three rats for me, meow, you're keen. Here's your key, shiny and clean."
         }
     },
-    /**
-     * CatGirl 
-     * wants  rats 3, 1 missing 
-     * gives: goldKey 
-     */
+    DragonLady: {
+        name: "DragonLady",
+        sprite: "DragonLady",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Lizard", "Lizard", "Lizard"],
+        gives: "GoldKey",
+        text: {
+            intro: "In fiery breath, a mother's plea, bring back my babies, three lizards to me.",
+            progress: "Another baby back in my nest. Find the rest, complete this quest.",
+            conclusion: "My babies three, now under my wing. For you, a Gold Key, from the dragon queen."
+        }
+    },
+    Librarian: {
+        name: "Librarian",
+        sprite: "Librarian",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Scroll", "Scroll", "Scroll"],
+        gives: "Quill",
+        text: {
+            intro: "In hushed halls, lined with lore, bring three scrolls, blank, I implore.",
+            progress: "A scroll to fill, a good start, more are needed, to impart.",
+            conclusion: "Scrolls thrice given, blank and fine, for you, quill and ink, to make words shine."
+        }
+    },
+
     /**
      * Vampyra
      */
-    /**
-     * DragonLady
-     * wants lizzards - babies
-     */
+
 };
 
 //container content

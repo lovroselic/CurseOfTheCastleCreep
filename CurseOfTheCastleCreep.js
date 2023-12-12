@@ -37,34 +37,35 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-         * mana 1x
+         * magic 1x
          * attack 2x
+         * defense 1x
          * 
-         * 35 - Ice Queen - unfinished, unplayed (icecubes: 0)
-         * 36 rats played, 2 rats placed
-         * 37 - Cat Girl - unfinished, unplayed (rats2: missing 1)
+         * 35 - Ice Queen - unfinished, unplayed (icecubes: 3, missing: 0)
+         * 37 - Cat Girl - unfinished, unplayed (rats3: missing 0)
+         * 38 - dragon lady - unfinishd, unplayed (lizards 3: missing 0), no scrolls placed, no gold placed
          */
-        GAME.level = 37; //26 - bug room
-        GAME.gold = 616;
+        GAME.level = 37; //26 - bug room 
+        GAME.gold = 164;
         HERO.maxHealth = 79;
         HERO.maxMana = 96;
-        HERO.health = 45;
-        HERO.mana = 27;
-        HERO.defense = 19;
+        HERO.health = 39;
+        HERO.mana = 18;
+        HERO.defense = 20;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 21;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 19;
+        HERO.magic = 20;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 648;
-        HERO.defenseExp = 24;
-        HERO.magicExp = 498;
+        HERO.attackExp = 218;
+        HERO.defenseExp = 86;
+        HERO.magicExp = 819;
         HERO.attackExpGoal = 1142;
         HERO.defenseExpGoal = 507;
         HERO.magicExpGoal = 1713;
-        HERO.inventory.potion.red = 3;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Petrify", "MagicBoost", "Invisibility"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["Petrify", "MagicBoost", "Invisibility", "Light", "Light", "Explode", "HalfLife", "HalfLife", "Cripple"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -75,8 +76,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Rat", "Rat"];
-        //let invItems = ["PurpleRose", "RedRose"];
+        let invItems = ["Rat", "Rat", "Lizard", "Lizard", "IceCube", "Quill"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -115,7 +115,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.17",
+    VERSION: "0.10.18",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

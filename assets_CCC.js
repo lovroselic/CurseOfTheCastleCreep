@@ -184,6 +184,7 @@ LoadTextures = [
     { srcName: "WoodenCrate_BaseColor.jpg", name: "Crate" },
     { srcName: "IceTexture.jpg", name: "IceTexture" },
     { srcName: "Rat_color.jpg", name: "RatTexture" },
+    { srcName: "Lizard_baseColor.jpg", name: "LizardTexture" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -257,7 +258,7 @@ LoadShaders = [
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
     "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj", "wardrobe.obj",
-    "barrel.obj", "crate.obj", "skull.obj", "rat.obj",
+    "barrel.obj", "crate.obj", "skull.obj", "rat.obj","lizard.obj"
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
@@ -268,11 +269,10 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 LoadSprites = [
     // frescoes - entities
     { srcName: "BlackWidow2.jpg", name: "BlackWidow" },
-    { srcName: "HedgeHog2.jpg", name: "HedgeHog" },
-    //{ srcName: "HedgeHog.png", name: "HedgeHog" },
+    { srcName: "HedgeHog.jpg", name: "HedgeHog" },
     { srcName: "PrettyBunny2.jpg", name: "PrettyBunny" },
     { srcName: "DemonGirl3.jpg", name: "DemonGirl" },
-    { srcName: "Squirell2.jpg", name: "Squirell" },
+    { srcName: "Squirrel3.jpg", name: "Squirell" },
     { srcName: "Devilla.jpg", name: "Devilla" },
     { srcName: "FemaleKnight.jpg", name: "FemaleKnight" },
     { srcName: "Puss.jpg", name: "PussInBoots" },
@@ -288,6 +288,7 @@ LoadSprites = [
     { srcName: "IceQueen.jpg", name: "IceQueen" },
     { srcName: "DragonLady.jpg", name: "DragonLady" },
     { srcName: "Puss.jpg", name: "CatGirl" },
+    { srcName: "Librarian.jpg", name: "Librarian" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -318,6 +319,9 @@ LoadSprites = [
     { srcName: "goldBar.png", name: "GoldBar" },
     { srcName: "IceCube.png", name: "IceCube" },
     { srcName: "RatIcon.png", name: "Rat" },
+    { srcName: "Lizard.png", name: "Lizard" },
+    { srcName: "EmptyScrroll.png", name: "Scroll" },
+    { srcName: "Quill.png", name: "Quill" },
 
 
     //triggers

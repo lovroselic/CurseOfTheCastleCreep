@@ -1599,6 +1599,7 @@ class Portal extends Decal {
         this.destination = destination;
         this.texture = texture;
         this.call = call;
+        this.excludeFromInventory = true;
     }
     interact() {
         this.call(this.destination);
@@ -1613,7 +1614,6 @@ class ExternalGate extends Portal {
         this.color = color;
         this.open = open;
         this.locked = locked;
-        this.excludeFromInventory = true;
         if (this.open) this.interactive = false;
     }
     openGate() {
@@ -2050,6 +2050,8 @@ class WallFeature3D {
         this.texture = SPRITE[this.sprite];
         this.width = this.texture.width;
         this.height = this.texture.height;
+        this.excludeFromInventory = true;
+        this.reset();
     }
     deactivate() {
         this.active = false;
@@ -2058,20 +2060,9 @@ class WallFeature3D {
     storageLog() {
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
     }
-}
-
-class InteractionEntity extends WallFeature3D {
-    constructor(grid, face, type) {
-        super(grid, face, type);
-        this.wantCount = this.wants.length;
-        this.reset();
-        this.mode = "intro";
-        this.virgin = true;
-        this.excludeFromInventory = true;
-        this.expand = true;
-    }
-    setMode(mode) {
-        this.mode = mode;
+    speak(text) {
+        SPEECH.use(this.voice);
+        SPEECH.speakWithArticulation(text);
     }
     reset() {
         this.ready = true;
@@ -2079,9 +2070,18 @@ class InteractionEntity extends WallFeature3D {
     block() {
         this.ready = false;
     }
-    speak(text) {
-        SPEECH.use(this.voice);
-        SPEECH.speakWithArticulation(text);
+}
+
+class InteractionEntity extends WallFeature3D {
+    constructor(grid, face, type) {
+        super(grid, face, type);
+        this.wantCount = this.wants.length;
+        this.mode = "intro";
+        this.virgin = true;
+        this.expand = true;
+    }
+    setMode(mode) {
+        this.mode = mode;
     }
     storageLogWantRemoval(name) {
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "removeWant", name));
@@ -2118,7 +2118,6 @@ class InteractionEntity extends WallFeature3D {
                 this.storageLog();
                 name = this.gives;
                 inventorySprite = INTERACTION_ITEM[name].inventorySprite
-                //category = "interaction_item";
                 category = INTERACTION_ITEM[name].category;
                 color = INTERACTION_ITEM[name].color;
 
@@ -2184,7 +2183,6 @@ class Trap extends WallFeature3D {
         this.action = action;
         this.targetGrid = targetGrid;
         this.prototype = prototype;
-        this.excludeFromInventory = true;
     }
     interact(GA, inventory, mouseClick, hero) {
         console.log("trap - interact");

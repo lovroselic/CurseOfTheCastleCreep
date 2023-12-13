@@ -10,7 +10,7 @@ const MAP_TOOLS = {
     VERSION: "0.5",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
-        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps'],
+        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
@@ -94,6 +94,7 @@ const SPAWN_TOOLS = {
         this.decals(map, GA);
         this.lights(map, GA);
         this.shrines(map, GA);
+        this.oracles(map, GA);
         this.externalGates(map, GA);
         this.keys(map, GA);
         this.monsters(map, GA);
@@ -212,6 +213,14 @@ const SPAWN_TOOLS = {
             GA.addShrine(grid);
             const face = DirectionToFace(Vector.fromInt(S[1]));
             INTERACTIVE_DECAL3D.add(new Shrine(grid, face, SHRINE_TYPE[S[2]]));
+        }
+    },
+    oracles(map, GA) {
+        for (const S of map.oracles) {
+            const grid = GA.indexToGrid(S[0]);
+            GA.addShrine(grid);
+            const face = DirectionToFace(Vector.fromInt(S[1]));
+            INTERACTIVE_DECAL3D.add(new Oracle(grid, face, ORACLE_TYPE[S[2]]));
         }
     },
     doors(map, GA) {

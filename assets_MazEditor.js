@@ -192,6 +192,7 @@ LoadSprites = [
     { srcName: "Lizard.png", name: "Lizard" },
     { srcName: "EmptyScrroll.png", name: "Scroll" },
     { srcName: "Quill.png", name: "Quill" },
+    { srcName: "BloodFlask.png", name: "Blood" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },
@@ -750,7 +751,7 @@ LoadSprites = [
     { srcName: "ManicMiner63.png", name: "ManicMiner63" },
     { srcName: "ManicMiner64.png", name: "ManicMiner64" },
     { srcName: "MrRobot60.png", name: "MrRobot60" },
-    { srcName: "ORiley'sMine60.png", name: "ORiley'sMine60" },
+    { srcName: "ORiley'sMine60.png", name: "ORileysMine60" },
     { srcName: "Pitfall60.png", name: "Pitfall60" },
     { srcName: "RickDangerous60.png", name: "RickDangerous60" },
     { srcName: "SP60.png", name: "SP60" },

@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.09.00",
+  VERSION: "0.09.01",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -188,7 +188,7 @@ const GAME = {
     if (!maze.start[0]) return;
     console.log(maze.start[0]);
     const start = GA.indexToGrid(maze.start[0]);
-   
+
     console.warn("creating maze", start);
     maze.carveMaze(start);
     GAME.render();
@@ -435,11 +435,27 @@ const GAME = {
         }
         dirs = GA.getDirections(grid, MAPDICT.EMPTY);
         if (dirs.length > 1) {
-          alert(`bad gate position, posible exits ${dirs.length}`);
+          alert(`Bad shrine position, posible exits ${dirs.length}`);
           break;
         }
         dirIndex = dirs[0].toInt();
         $MAP.map.shrines.push(Array(gridIndex, dirIndex, $("#shrine_type")[0].value));
+        break;
+      case "oracle":
+        switch (currentValue) {
+          case MAPDICT.WALL:
+            break;
+          default:
+            $("#error_message").html(`Oracle placement not supported on value: ${currentValue}`);
+            return;
+        }
+        dirs = GA.getDirections(grid, MAPDICT.EMPTY);
+        if (dirs.length > 1) {
+          alert(`Bad oracle position, posible exits ${dirs.length}`);
+          break;
+        }
+        dirIndex = dirs[0].toInt();
+        $MAP.map.oracles.push(Array(gridIndex, dirIndex, $("#oracle_type")[0].value));
         break;
       case "trigger":
 
@@ -942,6 +958,10 @@ const GAME = {
 
     for (const shrineType in SHRINE_TYPE) {
       $("#shrine_type").append(`<option value="${shrineType}">${shrineType}</option>`);
+    }
+
+    for (const oracleType in ORACLE_TYPE) {
+      $("#oracle_type").append(`<option value="${oracleType}">${oracleType}</option>`);
     }
 
     for (const triggerDecal of TRIGGER_DECALS) {

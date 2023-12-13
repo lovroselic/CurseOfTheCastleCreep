@@ -44,6 +44,17 @@ const SHRINE_TYPE = {
     },
 };
 
+const ORACLE_TYPE = {
+    BlondeOracle: {
+        name: "BlondeOracle",
+        sprite: "BlondeOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "If the bug has not been solved, run away, don't be too bold.",
+        interactionCategory: "oracle",
+    },
+};
+
 const GOLD_ITEM_TYPE = {
     GoldBar: {
         name: "GoldBar",
@@ -909,6 +920,12 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Quill",
     },
+    Blood: {
+        name: "Blood",
+        category: "interaction_item",
+        inventorySprite: "Blood",
+        text: "Blood? Yuck."
+    }
 };
 
 const INTERACTION_ENTITY = {

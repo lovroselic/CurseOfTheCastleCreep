@@ -37,35 +37,32 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-         * magic 1x
-         * attack 2x
+         * magic 2x
+         * attack 3x
          * defense 1x
          * 
-         * 35 - Ice Queen - unfinished, unplayed (icecubes: 3, missing: 0)
-         * 37 - Cat Girl - unfinished, unplayed (rats3: missing 0)
-         * 38 - dragon lady - unfinishd, unplayed (lizards 3: missing 0), no scrolls placed, no gold placed
          */
-        GAME.level = 37; //26 - bug room 
-        GAME.gold = 164;
-        HERO.maxHealth = 79;
-        HERO.maxMana = 96;
-        HERO.health = 39;
-        HERO.mana = 18;
-        HERO.defense = 20;
+        GAME.level = 42; //42
+        GAME.gold = 949;
+        HERO.maxHealth = 91;
+        HERO.maxMana = 106;
+        HERO.health = 58;
+        HERO.mana = 10;
+        HERO.defense = 22;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 21;
+        HERO.attack = 25;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 20;
+        HERO.magic = 22;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 218;
-        HERO.defenseExp = 86;
-        HERO.magicExp = 819;
-        HERO.attackExpGoal = 1142;
+        HERO.attackExp = 239;
+        HERO.defenseExp = 230;
+        HERO.magicExp = 1577;
+        HERO.attackExpGoal = 1713;
         HERO.defenseExpGoal = 507;
         HERO.magicExpGoal = 1713;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Petrify", "MagicBoost", "Invisibility", "Light", "Light", "Explode", "HalfLife", "HalfLife", "Cripple"];
+        HERO.inventory.potion.red = 2;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["MagicBoost"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -76,12 +73,12 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Rat", "Rat", "Lizard", "Lizard", "IceCube", "Quill"];
+        let invItems = ["Quill", "Blood"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Gold", "Gold"];
+        let keys = [];
         //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -115,7 +112,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.10.18",
+    VERSION: "0.11.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -225,6 +222,32 @@ class Shrine extends WallFeature3D {
     }
     storageLog() {
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
+    }
+}
+
+class Oracle extends WallFeature3D {
+    constructor(grid, face, type) {
+        super(grid, face, type);
+        this.expand = true;
+    }
+    interact() {
+        if (!this.ready) return;
+        this.block();
+        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
+
+        if (GAME.gold >= 1) {
+            GAME.gold -= 1;
+            TITLE.gold();
+            this.speak(this.text);
+            return {
+                category: this.interactionCategory,
+                text: this.text
+            };
+
+        } else {
+            AUDIO.MagicFail.play();
+            return null;
+        }
     }
 }
 /** ******************************** */
@@ -1034,6 +1057,9 @@ const GAME = {
                 AUDIO.LevelUp.play();
                 HERO.restore();
                 TITLE.status();
+                break;
+            case 'oracle':
+                if (interaction.text) TURN.subtitle(interaction.text);
                 break;
             case 'skill':
                 HERO.raiseStat(interaction.which);

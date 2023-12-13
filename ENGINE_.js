@@ -2333,11 +2333,12 @@ const ENGINE = {
       }
       if (maze.entities) {
         for (const entity of maze.entities) {
-          let grid = GA.indexToGrid(entity[0]);
-          let dir = Vector.fromInt(entity[1]);
-          dotOrLine(grid, dir, "#FF0000");
-          let mid = GRID.gridToCenterPX(grid);
-          write(mid, entity[2]);
+          displayEntity(entity, "#FF0000");
+        }
+      }
+      if (maze.oracles) {
+        for (const entity of maze.oracles) {
+          displayEntity(entity, "#666");
         }
       }
       if (maze.triggers) {
@@ -2548,6 +2549,14 @@ const ENGINE = {
             dotOrLine(grid, dir, "#444");
           }
         }
+      }
+
+      function displayEntity(entity, color) {
+        let grid = GA.indexToGrid(entity[0]);
+        let dir = Vector.fromInt(entity[1]);
+        dotOrLine(grid, dir, color);
+        let mid = GRID.gridToCenterPX(grid);
+        write(mid, entity[2]);
       }
 
       function write(point, text, color = "#000") {

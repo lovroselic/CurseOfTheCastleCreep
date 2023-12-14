@@ -812,7 +812,7 @@ const MAP = {
         objects: '[[12,"Scroll"]]',
     }
     ,
-    42 : {
+    42: {
         name: "Run Away",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2AA7BABB2AA4BAÁAA2BB5ÁÁ3AA5BB3ABB3AA12BB2ABAA2BAA2BABB2AA3BABB2ABB2ABAA4ÁABB2ABB3ABÁBB2ÁÁ3BÁBB4ABB7ABB5ABB7ABB10ABB2AA3BAA2BAA4BABB3ABB2ABB4AA2BB5ABB4ABB15ABB6$ABABAA3ÁBB3ÁÁ3AA3ÁBÁAA2ÁÁ2B"}',
@@ -824,7 +824,7 @@ const MAP = {
         lights: '[[217,1,"WallLamp","standard"],[168,1,"WallLamp2","dim"],[221,1,"WallLamp2","dim"],[56,7,"WallLamp2","dim"],[97,1,"WallLamp3","dim"]]',
         gates: '[[105,5,"42.1","26.10","Open"],[119,3,"42.2","43.1","Gold"]]',
         monsters: '[[172,"GhostMinionGreen"],[207,"GhostMinionGreen2"],[52,"GhostMinionGreen2"]]',
-        scrolls: '[[122,2],[183,4]]',
+        scrolls: '[[122,2],[183,4],[118,12]]',
         potions: '[[109,0],[66,0]]',
         gold: '[[196,"GoldCube"],[31,"GoldCube"],[53,"GoldCube"],[191,"GoldCube"],[43,"SilverBar"]]',
         skills: '[[187,"Heart"]]',
@@ -832,6 +832,55 @@ const MAP = {
         triggers: '[[199,3,"RockTriggerButton",0,111],[178,3,"RockTriggerButton",0,113],[97,7,"RockTriggerButton",0,112],[188,4,"MarbleTriggerButton",1,117]]',
         traps: '[[186,4,"MarbleTriggerButton",0,"Bounceball",127]]',
         oracles: '[[7,7,"BlondeOracle"]]',
+    }
+    ,
+    43: {
+        name: "Descent",
+        sg: 0,
+        data: '{"width":"9","height":"9","map":"BB2ABAA3QBB2ABAQAA2BB2AA2BAA2BAA6BB11ABB4ABB2ABB9ABB2AA2BB5AA2BB7A$AA2"}',
+        wall: "BigRockWall3",
+        floor: "Pavement2",
+        ceil: "Moss",
+        start: '[37,5]',
+        decals: '[[9,5,"Underwurlde141","picture"],[46,5,"Wolfenstein31","picture"],[30,5,"Yennefer21","picture"],[25,3,"Killerwat60","picture"],[71,3,"HalfLife14","picture"],[50,3,"Scramble10","picture"],[67,1,"Platoon50","picture"],[78,1,"TombRaider103","picture"],[29,1,"LaraCroft2","picture"],[13,7,"DefenderOfTheCrown110","picture"],[30,7,"Skeleton12","crest"]]',
+        lights: '[[75,1,"Lamp4","yellowgreen"],[5,7,"Lamp4","yellowgreen"]]',
+        gates: '[[36,5,"43.1","42.2","Open"],[35,3,"43.2","44.1","Down"]]',
+        monsters: '[[14,"Skeleton"]]',
+        scrolls: '[[40,12]]',
+        potions: '[[19,1],[10,1],[11,1]]',
+        gold: '[[61,"GoldBar"],[69,"GoldBar"]]',
+        containers: '[[56,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[24,"Crate","GOLD_ITEM_TYPE.SilverBar",7]]',
+        objects: '[[70,"Scroll"]]',
+    }
+    ,
+    44: {
+        name: "Lady Vampyra",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB4AA5BABB2AA30BAA7BAA2BAA4BAA4BB4AA2BABABAA5BAA11BAA3BAA2BAA8BAA3BB2AA2BAA2BABB7ABABB6ABB3ABB3ABB10AA7BB8AA3BAA2BB3AA3BB4AA2BABB16ABABB14$A"}',
+        wall: "MossyWall5",
+        floor: "BrokenRuin",
+        ceil: "RockWall100",
+        start: '[181,5]',
+        decals: '[[213,1,"Pirates200","picture"],[221,1,"PharaohCurse130","picture"],[162,1,"KokotoniWilf70","picture"],[152,1,"EyeOfTheBeholder101","picture"],[100,1,"ScubaDive60","picture"],[66,1,"Ishar14","picture"],[94,1,"Barbarian3","picture"],[68,1,"Hero50","picture"],[1,7,"EOB11","picture"],[13,7,"DonkeyKong200","picture"],[35,7,"Witcher112","picture"],[39,7,"Underwurlde141","picture"],[66,7,"SpaceQuest103","picture"],[68,7,"Hero51","picture"],[112,7,"Oblivion110","picture"],[154,7,"TempleOfApshai89","picture"],[160,7,"ArticShipwreck2","picture"],[108,7,"Shamus91","picture"],[116,7,"Arena201","picture"],[120,5,"SirFred62","picture"],[166,5,"ChuckieEgg2","picture"],[61,5,"Commando201","picture"],[68,5,"AntAttack2","picture"],[66,3,"TombRaider112","picture"],[73,3,"Defender110","picture"],[134,3,"Yennefer","picture"],[208,3,"HalfLife12","picture"],[185,4,"Grate1_128","crest"],[189,4,"Grate1_128","crest"],[191,4,"Grate1_128","crest"]]',
+        lights: '[[217,1,"WallLamp","lightgray"],[112,1,"WallLamp","standard"],[75,5,"WallLamp","lightgray"],[89,3,"WallLamp","lightgray"]]',
+        gates: '[[180,5,"44.1","43.2","Up"],[194,3,"44.2","45.1","Emerald"]]',
+        monsters: '[[63,"Skeleton"],[71,"Skeleton"],[192,"Skeleton"]]',
+        scrolls: '[[137,1],[200,4],[177,5],[147,6],[31,7],[43,3]]',
+        potions: '[[67,0],[138,1],[146,1]]',
+        gold: '[[187,"GoldCube"],[81,"GoldCube"],[99,"GoldCube"],[101,"GoldCube"],[47,"GoldCube"]]',
+        containers: '[[17,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[27,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[171,"Barrel","GOLD_ITEM_TYPE.SilverBar",7],[173,"Barrel","GOLD_ITEM_TYPE.SilverBar",7]]',
+        entities: '[[7,7,"LadyVampyra"]]',
+    }
+    ,
+    45 : {
+        name: "Placeholder",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB3ABB50ABB4ABB125$BB39A"}',
+        wall: "CastleWall",
+        floor: "TlakFloor3",
+        ceil: "RockWall100",
+        start: '[91,5]',
+        gates: '[[90,5,"45.1","44.2","Open"]]',
         }
     ,
     99: {

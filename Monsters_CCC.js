@@ -12,7 +12,7 @@
 
 "use strict";
 console.log("%cMonsters for CCC loaded.", "color: #888");
-const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down"];
+const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald"];
 
 const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
     "Petrify", "MagicBoost", "Luck", "HalfLife", "Explode"];
@@ -647,6 +647,26 @@ const MONSTER_TYPE = {
         missile: Missile,
         missileType: COMMON_ITEM_TYPE.Fireball,
     },
+    Skeleton: {
+        name: "WhiteSkeleton",
+        model: "Skeleton",
+        scale: 1.8 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "SmokeExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 30,
+        defense: 20,
+        magic: 20,
+        health: 45,
+        xp: 75,
+        gold: 75,
+        attackSound: "MonsterAttack2",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standardShine,
+    },
 
 };
 
@@ -914,6 +934,12 @@ const INTERACTION_ITEM = {
         category: "key",
         inventorySprite: "GoldKey",
         color: "Gold"
+    },
+    EmeraldKey: {
+        name: "EmeraldKey",
+        category: "key",
+        inventorySprite: "EmeraldKey",
+        color: "Emerald"
     },
     Quill: {
         name: "Quill",
@@ -1189,9 +1215,22 @@ const INTERACTION_ENTITY = {
             conclusion: "Scrolls thrice given, blank and fine, for you, quill and ink, to make words shine."
         }
     },
+    LadyVampyra: {
+        name: "LadyVampyra",
+        sprite: "LadyVampyra",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Scroll", "Quill", "Blood"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "In shadows deep, a pact to weave, scroll, blood, and quill, for me to receive.",
+            progress: "One item received, night's work not done. Bring all to seal, under the moon, not sun.",
+            conclusion: "Scroll, blood, quill, the pact is nigh, For you, an Emerald Key, under the dark sky."
+        }
+    },
 
     /**
-     * Vampyra
+     * NA:: Butterfly, Angel
      */
 
 };
@@ -1206,9 +1245,9 @@ const TRAP_ACTIONS = {
 };
 const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
 
-const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue"];
-const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal"];
-const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine"];
+const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald"];
+const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture"];
+const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine", "standard"];
 const KEY_TYPE = {};
 for (let [index, key] of KEY_TYPES.entries()) {
     KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);

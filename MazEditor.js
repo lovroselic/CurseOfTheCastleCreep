@@ -910,8 +910,10 @@ const GAME = {
       $("#key_type").append(`<option value="${keyType}" style="background-color: ${keyType.toLowerCase()}">${keyType}</option>`);
     }
     $("#key_type").change(function () {
-      const selectedOption = $("#key_type").val();
-      $("#key_selection").css("background-color", selectedOption.toLowerCase());
+      let selectedOption = $("#key_type").val().toLowerCase();
+      console.log("selectedOption", selectedOption);
+      if (selectedOption === "emerald") selectedOption = "#50C878";
+      $("#key_selection").css("background-color", selectedOption);
     });
     $("#key_type").trigger("change");
 

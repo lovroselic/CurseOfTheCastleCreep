@@ -189,6 +189,7 @@ LoadTextures = [
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
     { srcName: "BlueMetal.jpg", name: "BlueMetal" },
+    { srcName: "EmeraldTexture.jpg", name: "EmeraldTexture" },
     { srcName: "Pear_baseColor.jpg", name: "Pear_baseColor" },
     { srcName: "Apple_BaseColor.jpg", name: "Apple_BaseColor" },
     { srcName: "Skull_texture.jpg", name: "Skull_texture" },
@@ -290,6 +291,7 @@ LoadSprites = [
     { srcName: "Puss.jpg", name: "CatGirl" },
     { srcName: "Librarian.jpg", name: "Librarian" },
     { srcName: "BlondeOracle.jpg", name: "BlondeOracle" },
+    { srcName: "LadyVampyra.jpg", name: "LadyVampyra" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -345,6 +347,7 @@ LoadSprites = [
     { srcName: "dungeondoor_red.png", name: "DungeonDoor_Red" },
     { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
     { srcName: "Blocked door.png", name: "DungeonDoor_Blocked" },
+    { srcName: "dungeondoor_emerald.png", name: "DungeonDoor_Emerald" },
 
     { srcName: "DoorUp2.png", name: "DungeonDoor_Up" },
     { srcName: "DoorDown2.png", name: "DungeonDoor_Down" },
@@ -394,7 +397,7 @@ LoadSprites = [
     { srcName: "Heart24.png", name: "Health" },
     { srcName: "MagicOrb24.png", name: "Mana" },
 
-    //title sprites
+    //title sprites, keys
     { srcName: "divLineB_200.png", name: "LineBottom" },
     { srcName: "divLineT_200.png", name: "LineTop" },
     { srcName: "RedKey.png", name: "RedKey" },
@@ -404,6 +407,7 @@ LoadSprites = [
     { srcName: "RedPotion24.png", name: "RedPotion24" },
     { srcName: "GreenKey.png", name: "GreenKey" },
     { srcName: "BlueKey.png", name: "BlueKey" },
+    { srcName: "EmeraldKey.png", name: "EmeraldKey" },
 
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },

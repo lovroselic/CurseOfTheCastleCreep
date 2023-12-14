@@ -37,32 +37,32 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-         * magic 2x
+         * magic 3x
          * attack 3x
          * defense 1x
          * 
          */
-        GAME.level = 42; //42
-        GAME.gold = 949;
+        GAME.level = 45; //45
+        GAME.gold = 299;
         HERO.maxHealth = 91;
         HERO.maxMana = 106;
-        HERO.health = 58;
-        HERO.mana = 10;
+        HERO.health = 65;
+        HERO.mana = 22;
         HERO.defense = 22;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 25;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 22;
+        HERO.magic = 23;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 239;
-        HERO.defenseExp = 230;
-        HERO.magicExp = 1577;
+        HERO.attackExp = 479;
+        HERO.defenseExp = 295;
+        HERO.magicExp = 1676;
         HERO.attackExpGoal = 1713;
         HERO.defenseExpGoal = 507;
         HERO.magicExpGoal = 1713;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["MagicBoost"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 3;
+        let scrolls = ["Invisibility", "Cripple", "DestroyWeapon", "DestroyArmor", "BoostArmor"];
 
         //debug
         //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
@@ -73,13 +73,12 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Quill", "Blood"];
+        let invItems = [];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         let keys = [];
-        //let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -112,7 +111,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.11.00",
+    VERSION: "0.11.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

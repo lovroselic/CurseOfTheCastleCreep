@@ -28,7 +28,7 @@ knownBugs:
 const AI = {
   VERSION: "2.01",
   CSS: "color: silver",
-  VERBOSE: true,
+  VERBOSE: false,
   INI: {
     CHANGE_ADVANCER_TO_HUNT_MIN_DISTANCE: 3,
   },

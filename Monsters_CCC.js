@@ -667,6 +667,26 @@ const MONSTER_TYPE = {
         moveSpeed: 1.1,
         material: MATERIAL.standardShine,
     },
+    GreatChick: {
+        name: "GreatChick",
+        model: "Chicken",
+        scale: 1 / 2 ** 5,
+        rotateToNorth: -Math.PI / 2,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 50,
+        defense: 0,
+        magic: 0,
+        health: 50,
+        xp: 25,
+        gold: 1,
+        attackSound: "MonsterAttack1",
+        hurtSound: "PainSqueek",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.2,
+        material: MATERIAL.standard,
+    },
 
 };
 
@@ -839,6 +859,21 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.paper,
         inventorySprite: "Scroll",
         text: "It's empty? I should write a poem."
+    },
+};
+
+const MOVABLE_INTERACTION_OBJECT = {
+    LittleChicken: {
+        name: "LittleChicken",
+        category: "interaction_item",
+        model: "Chicken",
+        scale: 1 / 2 ** 6,
+        rotateToNorth: -Math.PI / 2,
+        moveSpeed: 1.2,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "ChickenDinner",
+        text: "Yummy."
     },
 };
 
@@ -1230,7 +1265,7 @@ const INTERACTION_ENTITY = {
     },
 
     /**
-     * NA:: Butterfly, Angel
+     * NA:: Butterfly, Angel, Foxy
      */
 
 };

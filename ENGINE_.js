@@ -2518,8 +2518,9 @@ const ENGINE = {
           write(mid, gold[1]);
         }
       }
-      if (maze.objects) {
-        for (const obj of maze.objects) {
+      const concat_objects = [...maze.objects, ...maze.movables];
+      if (concat_objects) {
+        for (const obj of concat_objects) {
           let grid = GA.indexToGrid(obj[0]);
           let mid = GRID.gridToCenterPX(grid);
           let text = `-${obj[1]}-`;

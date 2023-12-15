@@ -12,7 +12,7 @@ TODO:
 */
 
 const IndexArrayManagers = {
-    VERSION: "3.01",
+    VERSION: "3.02",
     VERBOSE: false,
     DEAD_LAPSED_TIME: 5,
 };
@@ -816,7 +816,6 @@ class Animated_3d_entity extends IAM {
                 if (entity.caster) {
                     distance = entity.airDistance;
                 }
-                //entity.behaviour.manage(entity, entity.distance, passiveFlag);
                 entity.behaviour.manage(entity, distance, passiveFlag);
                 if (!entity.hasStack()) {
                     let ARG = {
@@ -934,6 +933,7 @@ const INTERACTIVE_BUMP3D = new Decal3D(256, "interactive_bump3d");
 const BUMP3D = new Decal_IA_3D();
 const ENTITY3D = new Animated_3d_entity();
 const MISSILE3D = new Missile3D("enemyIA", ENTITY3D);
+const DYNAMIC_ITEM3D = new Decal3D(256, "dynamic_item3d");
 /** *********************************************** */
 
 console.log(`%cIndexArrayManagers (IAM) ${IndexArrayManagers.VERSION} ready.`, "color: #7FFFD4");

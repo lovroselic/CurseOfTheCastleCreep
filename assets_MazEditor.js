@@ -194,6 +194,9 @@ LoadSprites = [
     { srcName: "Quill.png", name: "Quill" },
     { srcName: "BloodFlask.png", name: "Blood" },
 
+    //action movables
+    { srcName: "ChickenDinner.png", name: "ChickenDinner" },
+
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },
     { srcName: "MarbleTriggerButton.png", name: "MarbleTriggerButton" },

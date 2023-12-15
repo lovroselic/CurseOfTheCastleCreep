@@ -264,7 +264,7 @@ LoadObjects = [
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
     'Spider.gltf', 'Wolf.gltf', 'Skeleton.gltf', 'Goblin.gltf', 'Drax.gltf', 'MissGalaxy.gltf',
-    'ThePrincess.gltf',
+    'ThePrincess.gltf', 'Chicken.gltf'
 ];
 
 LoadSprites = [
@@ -327,6 +327,8 @@ LoadSprites = [
     { srcName: "Quill.png", name: "Quill" },
     { srcName: "BloodFlask.png", name: "Blood" },
 
+    //action movables
+    { srcName: "ChickenDinner.png", name: "ChickenDinner" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

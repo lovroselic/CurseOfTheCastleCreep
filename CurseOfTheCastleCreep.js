@@ -111,7 +111,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.11.01",
+    VERSION: "0.11.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -745,7 +745,7 @@ const GAME = {
         //GAME.gold = 10000;
         GAME.gold = 0;
 
-        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D"];
+        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D", "DYNAMIC_ITEM3D"];
         GAME.STORE = new Store(storeList);
 
         HERO.construct();
@@ -986,6 +986,7 @@ const GAME = {
         MISSILE3D.manage(lapsedTime);
         EXPLOSION3D.manage(date);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
+        DYNAMIC_ITEM3D.manage(lapsedTime);
         GAME.respond(lapsedTime);
         MINIMAP.unveil(Vector3.to_FP_Grid(HERO.player.pos), HERO.vision);
         ENGINE.TIMERS.update();
@@ -1079,7 +1080,6 @@ const GAME = {
                 AUDIO.Thud.play();
                 break;
             case "interaction_item":
-                //console.log("interaction_item", interaction);
                 const item = new NamedInventoryItem(interaction.name, interaction.inventorySprite);
                 HERO.inventory.item.push(item);
                 if (interaction.text) TURN.subtitle(interaction.text);
@@ -1087,7 +1087,6 @@ const GAME = {
                 display(interaction.inventorySprite);
                 break;
             case "entity_interaction":
-                //console.log("entity_interaction", interaction);
                 if (interaction.text) TURN.subtitle(interaction.text);
                 TITLE.keys()
                 break;

@@ -873,14 +873,19 @@ const MAP = {
     }
     ,
     45 : {
-        name: "Placeholder",
+        name: "El Gran Pollo",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB3ABB50ABB4ABB125$BB39A"}',
+        data: '{"width":"15","height":"15","map":"BB2ABB2AA7BB2AA10BAA6BB3AA3BAA9BAA2BAA2BB2AA3BAA5BAA3BAA18BB2AA5BAA6BB2AA6BB11AA2BB3ABABAA2BB13ABB4AA2BB5ABB5AA3BABABABABB8AA2BB2AA2BB6ABB12ABB13ABB4$"}',
         wall: "CastleWall",
         floor: "TlakFloor3",
         ceil: "RockWall100",
         start: '[91,5]',
+        lights: '[[65,7,"WallLamp2","dim"],[69,7,"WallLamp2","dim"],[150,5,"WallTorch","fire"],[164,3,"WallTorch","fire"],[112,7,"WallLamp","dim"]]',
         gates: '[[90,5,"45.1","44.2","Open"]]',
+        monsters: '[[82,"GreatChick"]]',
+        scrolls: '[[182,10]]',
+        potions: '[[97,0]]',
+        movables: '[[37,"LittleChicken"],[177,"LittleChicken"],[168,"LittleChicken"]]',
         }
     ,
     99: {

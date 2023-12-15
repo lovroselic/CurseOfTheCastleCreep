@@ -10,7 +10,7 @@ const MAP_TOOLS = {
     VERSION: "0.5",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
-        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles'],
+        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
@@ -107,6 +107,7 @@ const SPAWN_TOOLS = {
         this.triggers(map, GA);
         this.entities(map, GA);
         this.objects(map, GA);
+        this.movables(map, GA);
         this.traps(map, GA);
         //console.info("GA after spawning level", level, "->", GA.exportMap());
     },
@@ -255,6 +256,13 @@ const SPAWN_TOOLS = {
             const grid = Grid.toCenter(GA.indexToGrid(O[0]));
             const type = INTERACTION_OBJECT[O[1]];
             ITEM3D.add(new FloorItem3D(grid, type));
+        }
+    },
+    movables(map, GA) {
+        for (const O of map.movables) {
+            const grid = Grid.toCenter(GA.indexToGrid(O[0]));
+            const type = MOVABLE_INTERACTION_OBJECT[O[1]];
+            DYNAMIC_ITEM3D.add(new $Movable_Interactive_entity(grid, type));
         }
     },
     traps(map, GA) {

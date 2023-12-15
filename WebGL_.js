@@ -38,7 +38,7 @@
  */
 
 const WebGL = {
-    VERSION: "1.02",
+    VERSION: "1.03",
     CSS: "color: gold",
     CTX: null,
     VERBOSE: false,
@@ -179,6 +179,7 @@ const WebGL = {
         GATE3D.init(map);
         VANISHING3D.init(map);
         ITEM3D.init(map);
+        DYNAMIC_ITEM3D.init(map);
         MISSILE3D.init(map, hero);
         INTERACTIVE_DECAL3D.init(map);
         INTERACTIVE_BUMP3D.init(map);
@@ -709,10 +710,23 @@ const WebGL = {
                 entity.drawSkin(gl);
             }
         }
+        //movables
+        for (const entity of DYNAMIC_ITEM3D.POOL) {
+            if (entity) {
+                entity.drawSkin(gl);
+            }
+        }
+        //movable interaction - switching to picking program and to frame buffer!
+        for (const entity of DYNAMIC_ITEM3D.POOL) {
+            if (entity) {
+                entity.drawInteraction(gl, this.frameBuffer);
+            }
+        }
 
         //and HERO
+        gl.useProgram(WebGL.model_program.program);
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
         if (!this.CONFIG.firstperson || this.CONFIG.dual) {
-            //if (true) {
             for (const player of this.playerList) {
                 player.draw(gl);
             }
@@ -752,6 +766,7 @@ const WebGL = {
                     const data = new Uint8Array(4);
                     gl.readPixels(pixelX, pixelY, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, data);
                     const id = data[0] + (data[1] << 8) + (data[2] << 16) + (data[3] << 24);
+                    //console.warn("id", id); //debug
                     if (id <= 0) return;
                     const obj = GLOBAL_ID_MANAGER.getObject(id);
                     if (!obj) return;
@@ -1764,6 +1779,152 @@ class Drawable_object {
         this.interactive = false;
     }
 }
+
+class $POV extends Drawable_object {
+    constructor(type, player, offset, maxZ = 0.45) {
+        super();
+        offset = offset || [-0.1, 0.20, -0.02];
+        maxZ = maxZ || 0.45;
+        for (const prop in type) {
+            this[prop] = type[prop];
+        }
+        this.start = `${this.element}_start`;
+        this.element = ELEMENT[this.element];
+        this.initBuffers();
+        this.texture = TEXTURE[this.texture];
+        this.texture = WebGL.createTexture(this.texture);
+        if (typeof (this.scale) === "number") {
+            this.scale = new Float32Array([this.scale, this.scale, this.scale]);
+        }
+        this.indices = this.element.indices.length;
+        this.player = player;
+        this.offset = Vector3.from_array(offset);
+        this.minZ = this.offset.z;
+        this.maxZ = maxZ;
+        this.translationLength = this.maxZ - this.minZ;
+
+        //scale
+        const mScaleMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
+        this.mScaleMatrix = mScaleMatrix;
+
+        //sword management
+        this.time = 500;
+        this.length = 0.5;
+        this.stopMoving();
+        this.manage();
+    }
+    stab() {
+        if (this.moving) return;
+        this.startMoving();
+    }
+    stopMoving() {
+        this.now = this.minZ;
+        this.moving = false;
+        this.direction = null;
+    }
+    startMoving() {
+        this.date = Date.now();
+        this.moving = true;
+        this.direction = 1;
+    }
+    setRotation() {
+        const identity = glMatrix.mat4.create();
+        const angle = -FP_Vector.toClass(UP).radAngleBetweenVectors(Vector3.to_FP_Vector(this.player.dir));
+        glMatrix.mat4.rotate(identity, identity, angle, [0, 1, 0]);
+        this.mRotationMatrix = identity;
+    }
+    setPosition() {
+        let pos = this.player.pos.translate(this.player.dir, this.now);
+        let dirRight = glMatrix.vec3.create();
+        glMatrix.vec3.rotateY(dirRight, this.player.dir.array, glMatrix.vec3.create(), Math.PI / 2);
+        pos = pos.translate(Vector3.from_array(dirRight), this.offset.x);
+        pos = pos.translate(DIR_DOWN, this.offset.y);
+        const mTranslationMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromTranslation(mTranslationMatrix, pos.array);
+        this.mTranslationMatrix = mTranslationMatrix;
+    }
+    stabbed() {
+        this.direction = -1;
+        this.date = Date.now();
+        const hit = this.hit();
+        if (!hit) return;
+        let damage = TURN.damage(this.IAM.hero, hit);
+        const luckAddiction = Math.min(1, (damage * 0.1) >>> 0);
+        damage += this.IAM.hero.luck * luckAddiction;
+        if (damage <= 0) {
+            damage = "MISSED";
+            TURN.display(damage);
+            this.miss();
+            return;
+        }
+        TURN.display(damage);
+        AUDIO.SwordHit.play();
+        this.IAM.hero.incExp(Math.min(damage, hit.health), "attack");
+        hit.health -= damage;
+        AUDIO[hit.hurtSound].play();
+        EXPLOSION3D.add(new BloodSmudge(hit.moveState.pos.translate(DIR_UP, hit.midHeight)));
+        if (hit.health <= 0) hit.die("attack");
+    }
+    miss() {
+        AUDIO.SwordMiss.play();
+    }
+    hit() {
+        const refPoint = this.player.pos.translate(this.player.dir, this.length);
+        const refGrid = Vector3.toGrid(refPoint);
+        const playerGrid = Vector3.toGrid(this.player.pos);
+        const IA = this.IAM.IA.enemy;
+        const map = this.IAM.map;
+        const POOL = this.IAM.external.enemy.POOL;
+        const enemies = map[IA].unrollArray([refGrid, playerGrid]);
+
+        if (enemies.size === 0) return this.miss();
+        let attackedEnemy = null;
+        if (enemies.size === 1) {
+            attackedEnemy = POOL[enemies.first() - 1];
+        } else if (enemies.size > 1) {
+            let distance = Infinity;
+            for (let e of enemies) {
+                const entity = POOL[e - 1];
+                if (!entity.swordTipDistance) {
+                    entity.swordTipDistance = this.player.swordTipPosition.EuclidianDistance(entity.moveState.pos);
+                }
+                if (entity.swordTipDistance < distance) {
+                    distance = entity.swordTipDistance;
+                    attackedEnemy = entity;
+                }
+            }
+        }
+        if (ENGINE.verbose) console.info("selected attackedEnemy", `${attackedEnemy.name}-${attackedEnemy.id}`);
+
+        let hit = ENGINE.lineIntersectsCircle(Vector3.to_FP_Grid(this.player.pos),
+            Vector3.to_FP_Grid(refPoint),
+            Vector3.to_FP_Grid(attackedEnemy.moveState.pos),
+            attackedEnemy.r);
+        if (hit) return attackedEnemy;
+        return null;
+    }
+    manage() {
+        if (this.moving) {
+            let currentTime;
+            if (this.direction === 1) {
+                currentTime = (Date.now() - this.date) / this.time;
+                if (currentTime >= 1.0) {
+                    this.stabbed();
+                }
+            } else if (this.direction === -1) {
+                currentTime = 1.0 - (Date.now() - this.date) / this.time;
+                if (currentTime <= 0.0) {
+                    this.stopMoving();
+                }
+            }
+            this.now = this.translationLength * currentTime + this.minZ;
+        }
+        this.setPosition();
+        this.setRotation();
+    }
+}
+
 class Gate extends Drawable_object {
     constructor(grid, type) {
         super();
@@ -1814,6 +1975,7 @@ class Gate extends Drawable_object {
         this.IAM.map.storage.add(new IAM_Storage_item("GATE3D", this.id, "deactivate"));
     }
 }
+
 class LiftingGate {
     constructor(gate) {
         this.gate = gate;
@@ -2649,6 +2811,8 @@ class StaticParticleBomb extends ParticleEmmiter {
     }
 }
 
+/** Animated movable entitites */
+
 class $3D_Entity {
     constructor(grid, type, dir = UP) {
         this.distance = null;
@@ -2751,6 +2915,47 @@ class $3D_Entity {
     resetTime() {
         this.birth = Date.now();
     }
+    drawInteraction(gl, frameBuffer) {
+        const id_vec = WebGL.idToVec(this.global_id);
+        const program = WebGL.pickProgram.program;
+        const attrib = WebGL.pickProgram.attribLocations;
+        const uniforms = WebGL.pickProgram.uniformLocations;
+        gl.useProgram(program);
+
+        //uniforms
+        //scale
+        const mScaleMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
+        gl.uniformMatrix4fv(uniforms.uScale, false, mScaleMatrix);
+
+        //translate
+        const mTranslationMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromTranslation(mTranslationMatrix, this.moveState.pos.array);
+        gl.uniformMatrix4fv(uniforms.uTranslate, false, mTranslationMatrix);
+
+        //rotate
+        gl.uniformMatrix4fv(uniforms.uRotY, false, this.moveState.rotate);
+
+        //id
+        gl.uniform4fv(uniforms.id, new Float32Array(id_vec));
+
+        //positions
+        gl.bindFramebuffer(gl.FRAMEBUFFER, frameBuffer);
+        for (let mesh of this.model.meshes) {
+            for (let [index, primitive] of mesh.primitives.entries()) {
+
+                //positions
+                gl.bindBuffer(gl.ARRAY_BUFFER, primitive.positions.buffer);
+                gl.vertexAttribPointer(attrib.vertexPosition, 3, gl[primitive.positions.type], false, 0, 0);
+                gl.enableVertexAttribArray(attrib.vertexPosition);
+
+                //indices
+                gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, primitive.indices.buffer);
+
+                gl.drawElements(gl.TRIANGLES, primitive.indices.count, gl[primitive.indices.type], 0);
+            }
+        }
+    }
     drawSkin(gl) {
         const program = WebGL.model_program.program;
 
@@ -2760,6 +2965,7 @@ class $3D_Entity {
         gl.uniform3fv(WebGL.model_program.uniforms.uMaterialDiffuseColor, this.material.diffuseColor);
         gl.uniform3fv(WebGL.model_program.uniforms.uMaterialSpecularColor, this.material.specularColor);
         gl.uniform1f(WebGL.model_program.uniforms.uMaterialShininess, this.material.shininess);
+
         //scale
         const mScaleMatrix = glMatrix.mat4.create();
         glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
@@ -2852,7 +3058,6 @@ class $3D_Entity {
     die(expType, exp = 0) {
         this.storageLog();
         exp += this.xp;
-        //this.IAM.remove(this.id);
         this.remove();
         this.dropInventory();
         EXPLOSION3D.add(new (eval(this.deathType))(this.moveState.pos.translate(DIR_UP, this.midHeight)));
@@ -2923,148 +3128,32 @@ class $3D_Entity {
     }
 }
 
-class $POV extends Drawable_object {
-    constructor(type, player, offset, maxZ = 0.45) {
-        super();
-        offset = offset || [-0.1, 0.20, -0.02];
-        maxZ = maxZ || 0.45;
-        for (const prop in type) {
-            this[prop] = type[prop];
-        }
-        this.start = `${this.element}_start`;
-        this.element = ELEMENT[this.element];
-        this.initBuffers();
-        this.texture = TEXTURE[this.texture];
-        this.texture = WebGL.createTexture(this.texture);
-        if (typeof (this.scale) === "number") {
-            this.scale = new Float32Array([this.scale, this.scale, this.scale]);
-        }
-        this.indices = this.element.indices.length;
-        this.player = player;
-        this.offset = Vector3.from_array(offset);
-        this.minZ = this.offset.z;
-        this.maxZ = maxZ;
-        this.translationLength = this.maxZ - this.minZ;
+class $Movable_Interactive_entity extends $3D_Entity {
+    constructor(grid, type, dir = UP) {
+        super(grid, type, dir = UP);
+        this.excludeFromInventory = false;
+        this.interactive = true;
+    }
+    manage(lapsedTime) {
 
-        //scale
-        const mScaleMatrix = glMatrix.mat4.create();
-        glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
-        this.mScaleMatrix = mScaleMatrix;
-
-        //sword management
-        this.time = 500;
-        this.length = 0.5;
-        this.stopMoving();
-        this.manage();
     }
-    stab() {
-        if (this.moving) return;
-        this.startMoving();
+    interact(GA, inventory, click, hero) {
+        console.log("interaction", this.name, "-", this.id);
+        this.storageLog();
+        if (this.text) hero.speak(this.text);
+        this.remove();
+        return {
+            category: this.category,
+            inventorySprite: this.inventorySprite,
+            name: this.name,
+        };
     }
-    stopMoving() {
-        this.now = this.minZ;
-        this.moving = false;
-        this.direction = null;
+    storageLog() {
+        if (this.dropped) return;
+        this.IAM.map.storage.add(new IAM_Storage_item("DYNAMIC_ITEM3D", this.id, "remove"));
     }
-    startMoving() {
-        this.date = Date.now();
-        this.moving = true;
-        this.direction = 1;
-    }
-    setRotation() {
-        const identity = glMatrix.mat4.create();
-        const angle = -FP_Vector.toClass(UP).radAngleBetweenVectors(Vector3.to_FP_Vector(this.player.dir));
-        glMatrix.mat4.rotate(identity, identity, angle, [0, 1, 0]);
-        this.mRotationMatrix = identity;
-    }
-    setPosition() {
-        let pos = this.player.pos.translate(this.player.dir, this.now);
-        let dirRight = glMatrix.vec3.create();
-        glMatrix.vec3.rotateY(dirRight, this.player.dir.array, glMatrix.vec3.create(), Math.PI / 2);
-        pos = pos.translate(Vector3.from_array(dirRight), this.offset.x);
-        pos = pos.translate(DIR_DOWN, this.offset.y);
-        const mTranslationMatrix = glMatrix.mat4.create();
-        glMatrix.mat4.fromTranslation(mTranslationMatrix, pos.array);
-        this.mTranslationMatrix = mTranslationMatrix;
-    }
-    stabbed() {
-        this.direction = -1;
-        this.date = Date.now();
-        const hit = this.hit();
-        if (!hit) return;
-        let damage = TURN.damage(this.IAM.hero, hit);
-        const luckAddiction = Math.min(1, (damage * 0.1) >>> 0);
-        damage += this.IAM.hero.luck * luckAddiction;
-        if (damage <= 0) {
-            damage = "MISSED";
-            TURN.display(damage);
-            this.miss();
-            return;
-        }
-        TURN.display(damage);
-        AUDIO.SwordHit.play();
-        this.IAM.hero.incExp(Math.min(damage, hit.health), "attack");
-        hit.health -= damage;
-        AUDIO[hit.hurtSound].play();
-        EXPLOSION3D.add(new BloodSmudge(hit.moveState.pos.translate(DIR_UP, hit.midHeight)));
-        if (hit.health <= 0) hit.die("attack");
-    }
-    miss() {
-        AUDIO.SwordMiss.play();
-    }
-    hit() {
-        const refPoint = this.player.pos.translate(this.player.dir, this.length);
-        const refGrid = Vector3.toGrid(refPoint);
-        const playerGrid = Vector3.toGrid(this.player.pos);
-        const IA = this.IAM.IA.enemy;
-        const map = this.IAM.map;
-        const POOL = this.IAM.external.enemy.POOL;
-        const enemies = map[IA].unrollArray([refGrid, playerGrid]);
-
-        if (enemies.size === 0) return this.miss();
-        let attackedEnemy = null;
-        if (enemies.size === 1) {
-            attackedEnemy = POOL[enemies.first() - 1];
-        } else if (enemies.size > 1) {
-            let distance = Infinity;
-            for (let e of enemies) {
-                const entity = POOL[e - 1];
-                if (!entity.swordTipDistance) {
-                    entity.swordTipDistance = this.player.swordTipPosition.EuclidianDistance(entity.moveState.pos);
-                }
-                if (entity.swordTipDistance < distance) {
-                    distance = entity.swordTipDistance;
-                    attackedEnemy = entity;
-                }
-            }
-        }
-        if (ENGINE.verbose) console.info("selected attackedEnemy", `${attackedEnemy.name}-${attackedEnemy.id}`);
-
-        let hit = ENGINE.lineIntersectsCircle(Vector3.to_FP_Grid(this.player.pos),
-            Vector3.to_FP_Grid(refPoint),
-            Vector3.to_FP_Grid(attackedEnemy.moveState.pos),
-            attackedEnemy.r);
-        if (hit) return attackedEnemy;
-        return null;
-    }
-    manage() {
-        if (this.moving) {
-            let currentTime;
-            if (this.direction === 1) {
-                currentTime = (Date.now() - this.date) / this.time;
-                if (currentTime >= 1.0) {
-                    this.stabbed();
-                }
-            } else if (this.direction === -1) {
-                currentTime = 1.0 - (Date.now() - this.date) / this.time;
-                if (currentTime <= 0.0) {
-                    this.stopMoving();
-                }
-            }
-            this.now = this.translationLength * currentTime + this.minZ;
-        }
-        this.setPosition();
-        this.setRotation();
+    remove() {
+        this.IAM.remove(this.id);
     }
 }
 /** model formats */

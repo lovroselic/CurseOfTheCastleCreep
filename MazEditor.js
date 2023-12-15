@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.09.01",
+  VERSION: "0.09.02",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -192,8 +192,6 @@ const GAME = {
     console.warn("creating maze", start);
     maze.carveMaze(start);
     GAME.render();
-    //$MAP.map = MAZE.configure($MAP.map);
-
   },
   mouseClick(event) {
     ENGINE.readMouse(event);
@@ -543,6 +541,16 @@ const GAME = {
             return;
         }
         break;
+        case "movable":
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            $MAP.map.movables.push(Array(gridIndex, $("#movable_type")[0].value));
+            break;
+          default:
+            $("#error_message").html(`MOVABLE placement not supported on value: ${currentValue}`);
+            return;
+        }
+        break;
       case "trap":
 
         if (GAME.stack.previousRadio === radio) {
@@ -823,7 +831,6 @@ const GAME = {
 
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
     ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["pacgrid", "wall", "grid", "coord", "click"], null);
-    //webgl
     ENGINE.addBOX("WEBGL", 800, 600, ["3d_webgl"], null);
 
     $("#buttons").append("<input type='button' id='new' value='New'>");
@@ -990,6 +997,15 @@ const GAME = {
       ENGINE.drawToId("object_canvas", 0, 0, SPRITE[INTERACTION_OBJECT[$("#interaction_object_type")[0].value].inventorySprite]);
     });
     $("#interaction_object_type").trigger("change");
+
+    for (const obj in MOVABLE_INTERACTION_OBJECT) {
+      $("#movable_type").append(`<option value="${obj}">${obj}</option>`);
+    }
+
+    $("#movable_type").change(function () {
+      ENGINE.drawToId("movable_canvas", 0, 0, SPRITE[MOVABLE_INTERACTION_OBJECT[$("#movable_type")[0].value].inventorySprite]);
+    });
+    $("#movable_type").trigger("change");
 
     for (const action of TRAP_ACTION_LIST) {
       $("#trap_type").append(`<option value="${action}">${action}</option>`);

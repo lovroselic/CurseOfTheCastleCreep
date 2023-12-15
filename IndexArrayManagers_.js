@@ -590,6 +590,7 @@ class Decal3D extends IAM {
         this.POOL.push(obj);
         obj.id = this.POOL.length;
         obj.IAM = this;
+        obj.parent = this;
         obj.global_id = this.globalId(obj.id);
     }
     globalId(id) {
@@ -598,11 +599,11 @@ class Decal3D extends IAM {
         }
         return null;
     }
-    manage(lapsedTime) {
+    manage(lapsedTime, date) {
         this.reIndex();
         for (const item of this.POOL) {
             if (item) {
-                item.manage(lapsedTime);
+                item.manage(lapsedTime, date);
             }
         }
     }
@@ -612,7 +613,11 @@ class Decal3D extends IAM {
         console.table(this.POOL, ['name', 'id', 'global_id', 'grid']);
         console.log("------------------------------------------");
     }
-
+    drawVector2D() {
+        for (let obj of this.POOL) {
+            if (obj) obj.drawVector2D(this.map);
+        }
+    }
 }
 
 class Missile3D extends IAM {

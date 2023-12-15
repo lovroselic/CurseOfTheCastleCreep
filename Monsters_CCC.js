@@ -869,7 +869,7 @@ const MOVABLE_INTERACTION_OBJECT = {
         model: "Chicken",
         scale: 1 / 2 ** 6,
         rotateToNorth: -Math.PI / 2,
-        moveSpeed: 1.2,
+        moveSpeed: 1.5,
         material: MATERIAL.standard,
         behaviourArguments: [Infinity, ["wanderer"], -1],
         inventorySprite: "ChickenDinner",

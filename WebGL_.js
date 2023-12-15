@@ -179,7 +179,7 @@ const WebGL = {
         GATE3D.init(map);
         VANISHING3D.init(map);
         ITEM3D.init(map);
-        DYNAMIC_ITEM3D.init(map);
+        DYNAMIC_ITEM3D.init(map, hero);
         MISSILE3D.init(map, hero);
         INTERACTIVE_DECAL3D.init(map);
         INTERACTIVE_BUMP3D.init(map);
@@ -773,10 +773,15 @@ const WebGL = {
                     if (!obj.interactive) return;
                     if (WebGL.VERBOSE) console.info("Object clicked:", obj, "globalID", id);
                     let PPos2d = Vector3.to_FP_Grid(hero.player.pos);
+
                     let itemGrid = obj.grid;
-                    if (obj.grid.constructor.name === "Grid") {
+                    if (obj.moveState) {
+                        itemGrid = obj.moveState.grid;                                                          // support fort movables
+                    }
+                    else if (obj.grid.constructor.name === "Grid") {                                            // support for non FP grids
                         itemGrid = Grid.toCenter(obj.grid);
                     }
+
                     let distance = PPos2d.EuclidianDistance(itemGrid);
                     if (WebGL.VERBOSE) console.info("Object distance:", distance);
                     if (distance < WebGL.INI.INTERACT_DISTANCE) {
@@ -3134,11 +3139,22 @@ class $Movable_Interactive_entity extends $3D_Entity {
         this.excludeFromInventory = false;
         this.interactive = true;
     }
-    manage(lapsedTime) {
+    manage(lapsedTime, date) {
+        if (this.moveState.moving) {
+            if (this.IAM.hero.dead) {
+                lapsedTime = IndexArrayManagers.DEAD_LAPSED_TIME;
+            }
+            GRID.translatePosition3D(this, lapsedTime);
+            this.update(date);
+            return;
+        }
 
+        if (!this.hasStack()) {
+            this.dirStack = AI.wanderer(this);
+        }
+        this.makeMove();
     }
     interact(GA, inventory, click, hero) {
-        console.log("interaction", this.name, "-", this.id);
         this.storageLog();
         if (this.text) hero.speak(this.text);
         this.remove();

@@ -111,7 +111,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.11.02",
+    VERSION: "0.11.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -986,7 +986,7 @@ const GAME = {
         MISSILE3D.manage(lapsedTime);
         EXPLOSION3D.manage(date);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
-        DYNAMIC_ITEM3D.manage(lapsedTime);
+        DYNAMIC_ITEM3D.manage(lapsedTime, date);
         GAME.respond(lapsedTime);
         MINIMAP.unveil(Vector3.to_FP_Grid(HERO.player.pos), HERO.vision);
         ENGINE.TIMERS.update();
@@ -1124,6 +1124,7 @@ const GAME = {
             ENGINE.BLOCKGRID.draw(MAP[GAME.level].map);
             MISSILE3D.draw();
             ENTITY3D.drawVector2D();
+            DYNAMIC_ITEM3D.drawVector2D();
         }
     },
     drawFirstFrame(level) {

@@ -1436,12 +1436,13 @@ const MINIMAP = {
     ROOM: "#111",
     DOOR: "#333",
     STAIR: "#008000",
-    WALL: "#8b4513", //brown
+    WALL: "#8b4513",            //brown
     LOCKED_DOOR: "#826644",
     HERO: "#FFF",
     SHRINE: "#FF00FF",
     HOLE: "#444",
-    BLOCKWALL: "#d2691e"
+    BLOCKWALL: "#d2691e",
+    ENEMY: "#ff9800"            //orange
   },
   DATA: {
     PIX_SIZE: 4,
@@ -1455,7 +1456,7 @@ const MINIMAP = {
     h: null,
     rectWidth: 1
   },
-  init(map, W, H, player = PLAYER, layer = "minimap") {
+  init(map, W, H, player = null, layer = "minimap") {
     this.DATA.dungeon = map;
     this.setLayer(layer);
     this.calcSize(W, H);
@@ -1477,7 +1478,7 @@ const MINIMAP = {
     this.DATA.drawX = this.DATA.x + ((W - this.DATA.w) / 2) | 0;
     this.DATA.drawY = this.DATA.y + ((H - this.DATA.h) / 2) | 0;
   },
-  draw(player) {
+  draw(radar, player = null) {
     ENGINE.clearLayer(this.DATA.layer);
     let CTX = LAYER[this.DATA.layer];
     CTX.fillStyle = MINIMAP.LEGEND.FOG;
@@ -1579,6 +1580,22 @@ const MINIMAP = {
       this.DATA.drawY + heroPos.y * this.DATA.PIX_SIZE,
       this.DATA.PIX_SIZE
     );
+
+    //enemy if radar
+    if (radar) {
+      CTX.fillStyle = MINIMAP.LEGEND.ENEMY;
+      const todo = [ENTITY3D, DYNAMIC_ITEM3D];
+      for (const IAM of todo) {
+        for (const entity of IAM.POOL) {
+          const position = Grid.toClass(entity.moveState.grid);
+          CTX.pixelAt(
+            this.DATA.drawX + position.x * this.DATA.PIX_SIZE,
+            this.DATA.drawY + position.y * this.DATA.PIX_SIZE,
+            this.DATA.PIX_SIZE
+          );
+        }
+      }
+    }
   },
   unveil(at, vision = 1) {
     let x = at.x - vision;

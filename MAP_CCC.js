@@ -872,7 +872,7 @@ const MAP = {
         entities: '[[7,7,"LadyVampyra"]]',
     }
     ,
-    45: {
+    45 : {
         name: "El Gran Pollo",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABB2AA7BB2AA10BAA6BB3AA3BAA9BAA2BAA2BB2AA3BAA5BAA3BAA18BB2AA5BAA6BB2AA6BB11AA2BB3ABABAA2BB13ABB4AA2BB5ABB5AA3BABABABABB8AA2BB2AA2BB6ABB12ABB13ABB4$"}',
@@ -884,12 +884,12 @@ const MAP = {
         lights: '[[65,7,"WallLamp2","dim"],[69,7,"WallLamp2","dim"],[150,5,"WallTorch","fire"],[164,3,"WallTorch","fire"],[112,7,"WallLamp","dim"]]',
         gates: '[[90,5,"45.1","44.2","Open"],[7,7,"45.2","46.1","Closed"],[213,1,"45.3","47.1","Closed"],[221,1,"45.4","48.1","Closed"]]',
         monsters: '[[82,"GreatChick"],[178,"RedSkeleton"],[202,"Goblin"]]',
-        scrolls: '[[182,10],[190,11],[51,4]]',
+        scrolls: '[[182,10],[190,11],[51,4],[93,13]]',
         potions: '[[97,0]]',
         gold: '[[78,"GoldCube"],[53,"GoldCube"],[154,"GoldCube"],[160,"GoldCube"],[101,"GoldCube"]]',
         containers: '[[34,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[40,"Chest","GOLD_ITEM_TYPE.GoldBar",7],[128,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",7],[147,"Barrel","GOLD_ITEM_TYPE.SilverBar",7],[151,"Crate","GOLD_ITEM_TYPE.SilverBar",7]]',
         movables: '[[37,"LittleChicken"],[177,"LittleChicken"],[168,"LittleChicken"]]',
-    }
+        }
     ,
     46: {
         name: "Foxy Lady",

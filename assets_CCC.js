@@ -291,12 +291,11 @@ LoadSprites = [
     { srcName: "Librarian.jpg", name: "Librarian" },
     { srcName: "BlondeOracle.jpg", name: "BlondeOracle" },
     { srcName: "LadyVampyra.jpg", name: "LadyVampyra" },
-
     { srcName: "Foxy.jpg", name: "FoxyLady" },
     { srcName: "ButterFlyLady.jpg", name: "ButterFlyLady" },
     { srcName: "Angel.jpg", name: "AngelLick" },
     { srcName: "OwlLady.jpg", name: "OwlLady" },
-    //SpiderDominaOracle
+
     { srcName: "SpiderDominaOracle.jpg", name: "SpiderDominaOracle" },
     { srcName: "DominaOracle2.jpg", name: "SpiderDominaOracle2" },
 
@@ -396,11 +395,13 @@ LoadSprites = [
     { srcName: "DrainMana.png", name: "SCR_DrainMana" },
     { srcName: "Petrify.png", name: "SCR_Petrify" },
     { srcName: "Scroll_Bomb.png", name: "SCR_Explode" },
+    { srcName: "Scrol_Radar.png", name: "SCR_Radar" },
 
     //status
     { srcName: "Invisible24.png", name: "Invisible" },
     { srcName: "Clover24.png", name: "Clover" },
     { srcName: "Lantern24.png", name: "Lantern" },
+    { srcName: "Radar.png", name: "Radar" },
 
     //skills
     { srcName: "Magic24.png", name: "MagicSkill" },

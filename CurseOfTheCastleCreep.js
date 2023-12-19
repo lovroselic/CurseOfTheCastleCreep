@@ -47,7 +47,7 @@ const DEBUG = {
          * 47 mrs owl  (one heels placed) - draft (3 spiders done)
          * 48 miss ButterFly (1 spider  placed, 1 heels placed)(2 heels done, ) - draft
          */
-        GAME.level = 48; //45
+        GAME.level = 45; //45
         GAME.gold = 927;
         HERO.maxHealth = 91;
         HERO.maxMana = 119;
@@ -103,6 +103,7 @@ const INI = {
     LAMP_PERSISTENCE: 99,
     INVISIBILITY_TIME: 60,
     LUCKY_TIME: 60,
+    RADAR_TIME: 60,
     INI_BASE_EXP_FONT: 100,
     LEVEL_FACTOR: 1.5,
     POTION_INC: 0.4,
@@ -118,7 +119,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.11.04",
+    VERSION: "0.11.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -406,6 +407,21 @@ class Scroll {
                     TITLE.keys();
                 }
                 break;
+            case "Radar":
+                console.log("setting radar");
+                HERO.setRadar();
+                const radarTimerId = "radarTimer";
+
+                if (ENGINE.TIMERS.exists(radarTimerId)) {
+                    T = ENGINE.TIMERS.access(radarTimerId);
+                    T.extend(INI.RADAR_TIME);
+                } else {
+                    T = new CountDown(radarTimerId, INI.RADAR_TIME, HERO.killRadar);
+                    let status = new Status("Radar", "Radar");
+                    HERO.inventory.status.push(status);
+                    TITLE.keys();
+                }
+                break;
             case "HalfLife":
                 for (let enemy of ENTITY3D.POOL) {
                     if (enemy === null) continue;
@@ -461,6 +477,7 @@ const HERO = {
         this.resetVision();
         this.visible();
         this.unlucky();
+        HERO.radar = false;
         this.dead = false;
         this.maxHealth = 15;
         this.maxMana = 3 * Missile.calcMana(5);
@@ -488,6 +505,16 @@ const HERO = {
         for (const P of propsToSave) {
             this.attributesForSaveGame.push(`HERO.${P}`);
         }
+    },
+    setRadar() {
+        HERO.radar = true;
+        console.log("radar on", HERO.radar);
+    },
+    killRadar() {
+        HERO.radar = false;
+        console.log("radar off", HERO.radar);
+        HERO.removeStatus("Radar");
+        TITLE.keys();
     },
     resetVision() {
         this.vision = 1;
@@ -1120,7 +1147,7 @@ const GAME = {
             GAME.drawPlayer();
         }
         WebGL.renderScene();
-        MINIMAP.draw();
+        MINIMAP.draw(HERO.radar);
         TITLE.compassNeedle();
         TITLE.time();
 

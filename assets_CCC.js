@@ -132,11 +132,9 @@ LoadTextures = [
     { srcName: "OrderedTiles.jpg", name: "OrderedTiles" },
     { srcName: "water1.jpg", name: "Water1" },
     { srcName: "water2.jpg", name: "Water2" },
-
     { srcName: "BigRockWall1.jpg", name: "BigRockWall1" },
     { srcName: "BigRockWall2.jpg", name: "BigRockWall2" },
     { srcName: "BigRockWall3.jpg", name: "BigRockWall3" },
-
     { srcName: "IceWall1.jpg", name: "IceWall1" },
     { srcName: "IceWall2.jpg", name: "IceWall2" },
     { srcName: "IceWall3.jpg", name: "IceWall3" },
@@ -144,13 +142,14 @@ LoadTextures = [
     { srcName: "IceWall5.jpg", name: "IceWall5" },
     { srcName: "IceWall6.jpg", name: "IceWall6" },
     { srcName: "IceWall7.jpg", name: "IceWall7" },
-
     { srcName: "IceFloor1.jpg", name: "IceFloor1" },
     { srcName: "IceFloor2.jpg", name: "IceFloor2" },
     { srcName: "IceFloor3.jpg", name: "IceFloor3" },
     { srcName: "IceFloor4.jpg", name: "IceFloor4" },
     { srcName: "IceFloor5.jpg", name: "IceFloor5" },
     { srcName: "IceFloor6.jpg", name: "IceFloor6" },
+
+    { srcName: "BrownWall100.jpg", name: "BrownWall100" },
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
@@ -293,6 +292,14 @@ LoadSprites = [
     { srcName: "BlondeOracle.jpg", name: "BlondeOracle" },
     { srcName: "LadyVampyra.jpg", name: "LadyVampyra" },
 
+    { srcName: "Foxy.jpg", name: "FoxyLady" },
+    { srcName: "ButterFlyLady.jpg", name: "ButterFlyLady" },
+    { srcName: "Angel.jpg", name: "AngelLick" },
+    { srcName: "OwlLady.jpg", name: "OwlLady" },
+    //SpiderDominaOracle
+    { srcName: "SpiderDominaOracle.jpg", name: "SpiderDominaOracle" },
+    { srcName: "DominaOracle2.jpg", name: "SpiderDominaOracle2" },
+
     //action items
     { srcName: "fly.png", name: "Fly" },
     { srcName: "hat.png", name: "Hat" },
@@ -326,9 +333,12 @@ LoadSprites = [
     { srcName: "EmptyScrroll.png", name: "Scroll" },
     { srcName: "Quill.png", name: "Quill" },
     { srcName: "BloodFlask.png", name: "Blood" },
+    { srcName: "GoldenBook.png", name: "GoldenBook" },
+    { srcName: "Heels.png", name: "Heels" },
 
     //action movables
-    { srcName: "ChickenDinner.png", name: "ChickenDinner" },
+    { srcName: "Spider.png", name: "Spider" },
+    { srcName: "ChickenDinner.png", name: "LittleChicken" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

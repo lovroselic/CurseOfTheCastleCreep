@@ -88,7 +88,6 @@ LoadTextures = [
     { srcName: "MossyBricks1.jpg", name: "MossyBricks1" },
     { srcName: "StoneBlockPavement.jpg", name: "StoneBlockPavement" },
     { srcName: "TinyBricks.jpg", name: "TinyBricks" },
-
     { srcName: "BlackBrickWall128.jpg", name: "BlackBrickWall" },
     { srcName: "CastleWall.jpg", name: "CastleWall" },
     { srcName: "RockFloor.jpg", name: "RockFloor" },
@@ -122,19 +121,15 @@ LoadTextures = [
     { srcName: "Wall9.jpg", name: "Wall9" },
     { srcName: "Wall8.jpg", name: "Wall8" },
     { srcName: "GreyWall.jpg", name: "GreyWall" },
-
     { srcName: "Grass10.jpg", name: "Grass1" },
     { srcName: "Grass20.jpg", name: "Grass2" },
     { srcName: "Sky1.jpg", name: "Sky1" },
     { srcName: "Forest1.jpg", name: "Forest" },
-
     { srcName: "water1.jpg", name: "Water1" },
     { srcName: "water2.jpg", name: "Water2" },
-
     { srcName: "BigRockWall1.jpg", name: "BigRockWall1" },
     { srcName: "BigRockWall2.jpg", name: "BigRockWall2" },
     { srcName: "BigRockWall3.jpg", name: "BigRockWall3" },
-
     { srcName: "IceWall1.jpg", name: "IceWall1" },
     { srcName: "IceWall2.jpg", name: "IceWall2" },
     { srcName: "IceWall3.jpg", name: "IceWall3" },
@@ -148,6 +143,8 @@ LoadTextures = [
     { srcName: "IceFloor4.jpg", name: "IceFloor4" },
     { srcName: "IceFloor5.jpg", name: "IceFloor5" },
     { srcName: "IceFloor6.jpg", name: "IceFloor6" },
+
+    { srcName: "BrownWall100.jpg", name: "BrownWall100" },
     
 ];
 
@@ -193,9 +190,12 @@ LoadSprites = [
     { srcName: "EmptyScrroll.png", name: "Scroll" },
     { srcName: "Quill.png", name: "Quill" },
     { srcName: "BloodFlask.png", name: "Blood" },
+    { srcName: "GoldenBook.png", name: "GoldenBook" },
+    { srcName: "Heels.png", name: "Heels" },
 
     //action movables
-    { srcName: "ChickenDinner.png", name: "ChickenDinner" },
+    { srcName: "Spider.png", name: "Spider" },
+    { srcName: "ChickenDinner.png", name: "LittleChicken" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

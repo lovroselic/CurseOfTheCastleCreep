@@ -52,7 +52,7 @@ const DECAL_PAINTINGS = [
     "TheHobbit72", "TheHobbit73", "TimeTunnel70", "Ultima70", "Vixen70", "WhoDaresWins70", "WhoDaresWins71", "Wolfenstein70", "Yeppelin70", "Zaxxon70",
     "DynaBlaster60", "FireAnt60", "Gods60", "HalfLife60", "HeavyOnTheMagick60", "Hero60", "Imhotep60", "Infiltrator60", "JetSetWilly60", "JungleStory60", "Kangaroo60",
     "Killerwat60", "KingsQuest60", "KokotoniWilf60", "LadyTut60", "LeisureSuitLarry60", "LeisureSuitLarry61", "ManicMiner60", "ManicMiner61", "ManicMiner62",
-    "ManicMiner63", "ManicMiner64", "MrRobot60", "ORiley'sMine60", "Pitfall60", "RickDangerous60", "SP60", "SP62", "SP63", "SP64", "SP65", "SP66", "SP67", "SP68",
+    "ManicMiner63", "ManicMiner64", "MrRobot60", "ORileysMine60", "Pitfall60", "RickDangerous60", "SP60", "SP62", "SP63", "SP64", "SP65", "SP66", "SP67", "SP68",
     "SP69", "SP70", "SP71", "SasbreWulf60", "Scramble60", "ScubaDive60", "SeaWolf60", "Shamus60", "SirFred60", "SirFred61", "SirFred62", "SkoolDaze60", "SkoolDaze61",
     "Sp61", "SumerGames60", "TimeTunnel60", "F50", "HalfLife50", "Hero50", "Hero51", "Hero52", "HeroQuest50", "JetPac50", "JungleHunt50", "Kangaroo50", "Killerwat50",
     "Killerwat51", "KingsQuest50", "KingsQuest51", "KingsQuest52", "KingsQuest53", "LeisureSuitLarry50", "ManicMiner50", "ManicMiner51", "ManicMiner52", "MontyMole50",

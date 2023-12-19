@@ -53,6 +53,22 @@ const ORACLE_TYPE = {
         text: "If the bug has not been solved, run away, don't be too bold.",
         interactionCategory: "oracle",
     },
+    SpiderDominaOracle: {
+        name: "SpiderDominaOracle",
+        sprite: "SpiderDominaOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "I heard the maze of Lady Fox is infested with spiders.",
+        interactionCategory: "oracle",
+    },
+    SpiderDominaOracle2: {
+        name: "SpiderDominaOracle2",
+        sprite: "SpiderDominaOracle2",
+        category: 'crest',
+        voice: "Female",
+        text: "Don't miss the spider in this dungeon.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -647,26 +663,6 @@ const MONSTER_TYPE = {
         missile: Missile,
         missileType: COMMON_ITEM_TYPE.Fireball,
     },
-    Skeleton: {
-        name: "WhiteSkeleton",
-        model: "Skeleton",
-        scale: 1.8 / 2 ** 3,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "SmokeExplosion",
-        inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 30,
-        defense: 20,
-        magic: 20,
-        health: 45,
-        xp: 75,
-        gold: 75,
-        attackSound: "MonsterAttack2",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1.1,
-        material: MATERIAL.standardShine,
-    },
     GreatChick: {
         name: "GreatChick",
         model: "Chicken",
@@ -687,7 +683,73 @@ const MONSTER_TYPE = {
         moveSpeed: 1.2,
         material: MATERIAL.standard,
     },
-
+    Skeleton: {
+        name: "WhiteSkeleton",
+        model: "Skeleton",
+        scale: 1.8 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "SmokeExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 30,
+        defense: 20,
+        magic: 20,
+        health: 45,
+        xp: 75,
+        gold: 75,
+        attackSound: "MonsterAttack2",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standardShine,
+    },
+    RedSkeleton: {
+        name: "RedSkeleton",
+        texture: "Red2",
+        model: "Skeleton",
+        scale: 1.8 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "SmokeExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 35,
+        defense: 25,
+        magic: 20,
+        health: 50,
+        xp: 80,
+        gold: 80,
+        attackSound: "MonsterAttack2",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.redShine,
+    },
+    Goblin: {
+        name: "Goblin",
+        model: "Goblin",
+        scale: 1.01 / 2 ** 1,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 30,
+        defense: 20,
+        magic: 25,
+        health: 50,
+        xp: 100,
+        gold: 100,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        moveSpeed: 1.0,
+        mana: 3,
+        caster: true,
+        shootDistance: 7,
+        stalkDistance: 8,
+        material: MATERIAL.standard,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.Fireball,
+    },
 };
 
 const HERO_TYPE = {
@@ -872,8 +934,20 @@ const MOVABLE_INTERACTION_OBJECT = {
         moveSpeed: 1.5,
         material: MATERIAL.standard,
         behaviourArguments: [Infinity, ["wanderer"], -1],
-        inventorySprite: "ChickenDinner",
-        text: "Yummy."
+        inventorySprite: "LittleChicken",
+        text: "Chicken dinner? Yummy."
+    },
+    Spider: {
+        name: "Spider",
+        category: "interaction_item",
+        model: "Spider",
+        scale: 1 / 2 ** 8,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.5,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "Spider",
+        text: "Eight hairy legs? Creepy spider."
     },
 };
 
@@ -986,7 +1060,18 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Blood",
         text: "Blood? Yuck."
-    }
+    },
+    GoldenBook: {
+        name: "GoldenBook",
+        category: "interaction_item",
+        inventorySprite: "GoldenBook",
+    },
+    Heels: {
+        name: "Heels",
+        category: "interaction_item",
+        inventorySprite: "Heels",
+        text: "Hot. I'll wear those when I stomp on Ghostface."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1263,9 +1348,48 @@ const INTERACTION_ENTITY = {
             conclusion: "Scroll, blood, quill, the pact is nigh, For you, an Emerald Key, under the dark sky."
         }
     },
+    FoxyLady: {
+        name: "FoxyLady",
+        sprite: "FoxyLady",
+        category: 'crest',
+        voice: "Female",
+        wants: ["LittleChicken", "LittleChicken", "LittleChicken"],
+        gives: "GoldenBook",
+        text: {
+            intro: "Sly and swift, with a hunger keen, three chickens sought, barely seen.",
+            progress: "A chicken found, more to seek, fulfill my hunger, sly and sleek.",
+            conclusion: "Three chickens caught, you're clever indeed, here's your book, for your deed."
+        }
+    },
+    MrsOwl: {
+        name: "MrsOwl",
+        sprite: "OwlLady",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Spider", "Spider", "Spider"],
+        gives: "GoldenBook",
+        text: {
+            intro: "In moonlit nights, with eyes so wide, I seek three spiders, nowhere to hide.",
+            progress: "One spider snared, silent flight, but more for feast, in the night.",
+            conclusion: "Three spiders caught, my hunger's booked, for you, a Golden Book, wisely overlooked."
+        }
+    },
+    MissButterfly: {
+        name: "MissButterfly",
+        sprite: "ButterFlyLady",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Heels", "Heels"],
+        gives: "GoldenBook",
+        text: {
+            intro: "Fluttering fashion, a wish so bold, a pair of red stilettos, leather, I'm sold.",
+            progress: "One shoe found, or is it none? Bring the pair, then we're done.",
+            conclusion: "Stilettos in pair, a sight so grand, here's your Golden Book, as planned."
+        }
+    },
 
     /**
-     * NA:: Butterfly, Angel, Foxy
+     * NA::  Angel
      */
 
 };

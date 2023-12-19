@@ -508,12 +508,9 @@ const HERO = {
     },
     setRadar() {
         HERO.radar = true;
-        console.log("radar on", HERO.radar);
     },
     killRadar() {
         HERO.radar = false;
-        console.log("radar off", HERO.radar);
-        HERO.removeStatus("Radar");
         TITLE.keys();
     },
     resetVision() {

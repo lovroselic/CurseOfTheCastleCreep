@@ -47,7 +47,7 @@ const DEBUG = {
          * 47 mrs owl  (one heels placed) - draft (3 spiders done)
          * 48 miss ButterFly (1 spider  placed, 1 heels placed)(2 heels done, ) - draft
          */
-        GAME.level = 45; //45
+        GAME.level = 46; //45
         GAME.gold = 927;
         HERO.maxHealth = 91;
         HERO.maxMana = 119;
@@ -67,7 +67,7 @@ const DEBUG = {
         HERO.magicExpGoal = 2570;
         HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["Invisibility", "Cripple", "DestroyWeapon", "DestroyArmor", "BoostArmor", "BoostWeapon", "HalfLife", "Luck"];
+        let scrolls = ["Invisibility", "Cripple", "DestroyWeapon", "DestroyArmor", "BoostArmor", "BoostWeapon", "HalfLife", "Luck", "Radar"];
         //let scrolls = [];
 
         //debug
@@ -80,7 +80,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         let invItems = ["LittleChicken", "LittleChicken", "LittleChicken"];
-        //let invItems = ["Heels", "Heels"];
+        //let invItems = ["GoldenBook", "GoldenBook", "GoldenBook"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -119,7 +119,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.11.05",
+    VERSION: "0.11.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

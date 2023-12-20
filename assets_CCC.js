@@ -150,6 +150,10 @@ LoadTextures = [
     { srcName: "IceFloor6.jpg", name: "IceFloor6" },
 
     { srcName: "BrownWall100.jpg", name: "BrownWall100" },
+    { srcName: "DarkWall_MC1.jpg", name: "DarkWall_MC1" },
+    { srcName: "DarkFloorTiles1.jpg", name: "DarkFloorTiles1" },
+    { srcName: "SmallDarkBricks1.jpg", name: "SmallDarkBricks1" },
+
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },

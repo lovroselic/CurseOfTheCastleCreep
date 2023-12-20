@@ -1387,9 +1387,22 @@ const INTERACTION_ENTITY = {
             conclusion: "Stilettos in pair, a sight so grand, here's your Golden Book, as planned."
         }
     },
+    AngelLick: {
+        name: "AngelLick",
+        sprite: "AngelLick",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["GoldenBook", "GoldenBook", "GoldenBook"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "In heavenly realms, where clouds are my bed, seek three books, for ours is quite dead.",
+            progress: "A book from below, a start indeed, more wisdom required, fulfill this need.",
+            conclusion: "Three books from below, now heaven's new lore, here's an Emerald Key, to open new door."
+        }
+    },
 
     /**
-     * NA::  Angel
+     * NA::  
      */
 
 };

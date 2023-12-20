@@ -1587,6 +1587,7 @@ const MINIMAP = {
       const todo = [ENTITY3D, DYNAMIC_ITEM3D];
       for (const IAM of todo) {
         for (const entity of IAM.POOL) {
+          if (!entity) continue;
           const position = Grid.toClass(entity.moveState.grid);
           CTX.pixelAt(
             this.DATA.drawX + position.x * this.DATA.PIX_SIZE,

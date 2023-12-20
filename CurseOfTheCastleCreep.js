@@ -42,32 +42,28 @@ const DEBUG = {
          * attack 3x
          * defense 1x
          * 
-         * 45 anchor -played, included in stats
-         * 46 foxy lady (3 chickends done, 2 spiders in 46): unplayed  - draft only
-         * 47 mrs owl  (one heels placed) - draft (3 spiders done)
-         * 48 miss ButterFly (1 spider  placed, 1 heels placed)(2 heels done, ) - draft
          */
-        GAME.level = 46; //45
-        GAME.gold = 927;
-        HERO.maxHealth = 91;
-        HERO.maxMana = 119;
-        HERO.health = 64;
-        HERO.mana = 15;
-        HERO.defense = 22;
+        GAME.level = 45; //45
+        GAME.gold = 1579;
+        HERO.maxHealth = 107;
+        HERO.maxMana = 129;
+        HERO.health = 107;
+        HERO.mana = 53;
+        HERO.defense = 27;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 25;
+        HERO.attack = 28;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 24;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 479;
-        HERO.defenseExp = 295;
-        HERO.magicExp = 262;
-        HERO.attackExpGoal = 1713;
-        HERO.defenseExpGoal = 507;
+        HERO.attackExp = 247;
+        HERO.defenseExp = 210;
+        HERO.magicExp = 2167;
+        HERO.attackExpGoal = 2570;
+        HERO.defenseExpGoal = 761;
         HERO.magicExpGoal = 2570;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Invisibility", "Cripple", "DestroyWeapon", "DestroyArmor", "BoostArmor", "BoostWeapon", "HalfLife", "Luck", "Radar"];
+        HERO.inventory.potion.red = 0;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["Petrify"];
         //let scrolls = [];
 
         //debug
@@ -79,13 +75,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["LittleChicken", "LittleChicken", "LittleChicken"];
+        let invItems = [];
         //let invItems = ["GoldenBook", "GoldenBook", "GoldenBook"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = [];
+        let keys = ["Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -119,7 +115,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.11.06",
+    VERSION: "0.11.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

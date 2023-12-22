@@ -3109,16 +3109,25 @@ class $3D_ACTOR {
 
     const delta = (rawDelta) % A.nodes[0].max;
     let keyFrameIndex = -1;
-    let KFL = null;
+    let samplingPeriod = null;
     let keyFrameTime = 0;
     const animationMatrix = new Array(Object.keys(A.nodes).length);
+
     for (let nodeIndex in A.nodes) {
       const node = A.nodes[nodeIndex];
-      if (!(keyFrameIndex >= 0 && KFL === node.time.length && keyFrameTime === node.time[keyFrameIndex])) {
-        KFL = node.time.length;
-        keyFrameIndex = binarySearchClosestLowFloat(node.time, delta, node.max / KFL);
+
+      /** 
+       * perform binary search only for the first node, 
+       * the rest should be in sync
+       * this will fail if nodes are not sampled uniformly! 
+       */
+      
+      if (!(keyFrameIndex >= 0 && samplingPeriod && keyFrameTime === node.time[keyFrameIndex])) {
+        samplingPeriod = node.time[1] - node.time[0];
+        keyFrameIndex = binarySearchClosestLowFloat(node.time, delta, samplingPeriod);
         keyFrameTime = node.time[keyFrameIndex];
       }
+
       const nextKeyFrameTime = node.time[keyFrameIndex + 1];
       const timeScale = (delta - keyFrameTime) / (nextKeyFrameTime - keyFrameTime);
       const translation = glMatrix.vec3.create();

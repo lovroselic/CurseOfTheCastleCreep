@@ -153,7 +153,18 @@ LoadTextures = [
     { srcName: "DarkWall_MC1.jpg", name: "DarkWall_MC1" },
     { srcName: "DarkFloorTiles1.jpg", name: "DarkFloorTiles1" },
     { srcName: "SmallDarkBricks1.jpg", name: "SmallDarkBricks1" },
+    { srcName: "Brown_MC_floor_tiles_1.jpg", name: "Brown_MC_floor_tiles_1" },
+    { srcName: "ComplexDarkCeiling1.jpg", name: "ComplexDarkCeiling1" },
 
+    { srcName: "BrownMC_ceiling.jpg", name: "BrownMC_ceiling" },
+    { srcName: "DarkRunningFloor_MC1.jpg", name: "DarkRunningFloor_MC1" },
+    { srcName: "DarkWall_MC2.jpg", name: "DarkWall_MC2" },
+    { srcName: "GreyGreenishTiles1.jpg", name: "GreyGreenishTiles1" },
+    { srcName: "BrownWall2.jpg", name: "BrownWall2" },
+    { srcName: "DarkWall_MC4.jpg", name: "DarkWall_MC4" },
+    { srcName: "MC_Floor_2.jpg", name: "MC_Floor_2" },
+    { srcName: "DetailedCeiling2.jpg", name: "DetailedCeiling2" },
+    { srcName: "StoneFloorTiles2.jpg", name: "StoneFloorTiles2" },
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
@@ -262,12 +273,12 @@ LoadShaders = [
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
     "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj", "wardrobe.obj",
-    "barrel.obj", "crate.obj", "skull.obj", "rat.obj","lizard.obj"
+    "barrel.obj", "crate.obj", "skull.obj", "rat.obj", "lizard.obj"
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
     'Spider.gltf', 'Wolf.gltf', 'Skeleton.gltf', 'Goblin.gltf', 'Drax.gltf', 'MissGalaxy.gltf',
-    'ThePrincess.gltf', 'Chicken.gltf'
+    'ThePrincess.gltf', 'Chicken.gltf', 'Cat.gltf'
 ];
 
 LoadSprites = [
@@ -299,9 +310,12 @@ LoadSprites = [
     { srcName: "ButterFlyLady.jpg", name: "ButterFlyLady" },
     { srcName: "Angel.jpg", name: "AngelLick" },
     { srcName: "OwlLady.jpg", name: "OwlLady" },
-
     { srcName: "SpiderDominaOracle.jpg", name: "SpiderDominaOracle" },
     { srcName: "DominaOracle2.jpg", name: "SpiderDominaOracle2" },
+
+    { srcName: "CuddlyBear.jpg", name: "CuddlyBear" },
+    { srcName: "CatOracle.jpg", name: "CatOracle" },
+    { srcName: "Puss2.jpg", name: "Puss2" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -342,6 +356,8 @@ LoadSprites = [
     //action movables
     { srcName: "Spider.png", name: "Spider" },
     { srcName: "ChickenDinner.png", name: "LittleChicken" },
+    { srcName: "Cat7.png", name: "Cat" },
+
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

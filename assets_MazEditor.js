@@ -148,7 +148,17 @@ LoadTextures = [
     { srcName: "DarkWall_MC1.jpg", name: "DarkWall_MC1" },
     { srcName: "DarkFloorTiles1.jpg", name: "DarkFloorTiles1" },
     { srcName: "SmallDarkBricks1.jpg", name: "SmallDarkBricks1" },
-    
+    { srcName: "Brown_MC_floor_tiles_1.jpg", name: "Brown_MC_floor_tiles_1" },
+    { srcName: "ComplexDarkCeiling1.jpg", name: "ComplexDarkCeiling1" },
+    { srcName: "BrownMC_ceiling.jpg", name: "BrownMC_ceiling" },
+    { srcName: "DarkRunningFloor_MC1.jpg", name: "DarkRunningFloor_MC1" },
+    { srcName: "DarkWall_MC2.jpg", name: "DarkWall_MC2" },
+    { srcName: "GreyGreenishTiles1.jpg", name: "GreyGreenishTiles1" },
+    { srcName: "BrownWall2.jpg", name: "BrownWall2" },
+    { srcName: "DarkWall_MC4.jpg", name: "DarkWall_MC4" },
+    { srcName: "MC_Floor_2.jpg", name: "MC_Floor_2" },
+    { srcName: "DetailedCeiling2.jpg", name: "DetailedCeiling2" },
+    { srcName: "StoneFloorTiles2.jpg", name: "StoneFloorTiles2" },
 ];
 
 LoadSheetSequences = [
@@ -199,6 +209,7 @@ LoadSprites = [
     //action movables
     { srcName: "Spider.png", name: "Spider" },
     { srcName: "ChickenDinner.png", name: "LittleChicken" },
+    { srcName: "Cat7.png", name: "Cat" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

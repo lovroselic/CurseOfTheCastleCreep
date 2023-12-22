@@ -10,6 +10,7 @@
 TODO:
     * scroll: show movables
 known bugs: 
+    * model loading fulfill promise too soon
     * i don't do bugs
     
 
@@ -38,32 +39,38 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-         * magic 3x
-         * attack 3x
-         * defense 1x
+         * magic 
+         * attack 
+         * defense 
          * 
+         * 
+         * 51 - cellar - in dev
+         * 52 temple unfinished
+         * 53 - planned: bear lair from 51
+         * 54 planned cat2
+         * 55 lizzy
          */
-        GAME.level = 45; //45
-        GAME.gold = 1579;
+        GAME.level = 51; //51
+        GAME.gold = 2497;
         HERO.maxHealth = 107;
         HERO.maxMana = 129;
-        HERO.health = 107;
-        HERO.mana = 53;
+        HERO.health = 94;
+        HERO.mana = 19;
         HERO.defense = 27;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 28;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 24;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 247;
-        HERO.defenseExp = 210;
-        HERO.magicExp = 2167;
+        HERO.attackExp = 481;
+        HERO.defenseExp = 223;
+        HERO.magicExp = 2378;
         HERO.attackExpGoal = 2570;
         HERO.defenseExpGoal = 761;
         HERO.magicExpGoal = 2570;
-        HERO.inventory.potion.red = 0;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Petrify"];
+        HERO.inventory.potion.red = 2;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Petrify", "BoostWeapon"];
         //let scrolls = [];
 
         //debug
@@ -81,7 +88,7 @@ const DEBUG = {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Emerald"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -115,7 +122,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.11.07",
+    VERSION: "0.12.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

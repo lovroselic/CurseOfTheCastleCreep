@@ -71,7 +71,7 @@ const AI = {
     if (exactPosition.hasOwnProperty("exactPlayerPosition")) exactPosition = exactPosition.exactPlayerPosition;
     let nodeMap = enemy.parent.map.GA.nodeMap;
     let grid = this.getPosition(enemy);
-    let goto = nodeMap[grid.x][grid.y].goto || NOWAY;
+    let goto = nodeMap[grid.x][grid.y]?.goto || NOWAY;
     if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
     if (GRID.same(goto, NOWAY) && this.setting === "3D") return this.hunt_FP(enemy, exactPosition);
     return [goto];

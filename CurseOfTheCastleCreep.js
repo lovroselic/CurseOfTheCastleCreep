@@ -43,14 +43,17 @@ const DEBUG = {
          * attack 
          * defense 
          * 
-         * 
+         * cats placed 3 / 5;
+         * pears placed 3/ 3
+         * greenheels 1/2
          * 51 - cellar - in dev
          * 52 temple unfinished
-         * 53 - planned: bear lair from 51
-         * 54 planned cat2
-         * 55 lizzy
+         * 53 bear lair unfinished
+         * 54 pear harbor unfinished
+         * 55 Kittie unfinished - unplayed
+         *  lizzy
          */
-        GAME.level = 51; //51
+        GAME.level = 51; //51 //53
         GAME.gold = 2497;
         HERO.maxHealth = 107;
         HERO.maxMana = 129;
@@ -83,7 +86,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         let invItems = [];
-        //let invItems = ["GoldenBook", "GoldenBook", "GoldenBook"];
+        //let invItems = ["Cat", "Cat", "Cat", "Cat", "Cat"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -122,7 +125,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.12.00",
+    VERSION: "0.12.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

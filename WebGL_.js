@@ -60,6 +60,7 @@ const WebGL = {
         BLOOD_DURATION_MS: 2500,
         SMUDGE_DURATION_MS: 500,
         MIN_R: 0.25,
+        MAX_R: 0.5001,
         INTERACTION_TIMEOUT: 4000,
         BLAST_RADIUS: 1.495,
         BLAST_DAMAGE: 100,
@@ -2855,6 +2856,7 @@ class $3D_Entity {
         const avgDim = (dZ + dX) / 2;
         const maxDim = Math.max(dZ, dX);
         this.r = Math.max((avgDim + maxDim) / 2, WebGL.INI.MIN_R);
+        this.r = Math.min(this.r, WebGL.INI.MAX_R)
 
         this.canAttack = true;
         this.canShoot = false;

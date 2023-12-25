@@ -148,14 +148,12 @@ LoadTextures = [
     { srcName: "IceFloor4.jpg", name: "IceFloor4" },
     { srcName: "IceFloor5.jpg", name: "IceFloor5" },
     { srcName: "IceFloor6.jpg", name: "IceFloor6" },
-
     { srcName: "BrownWall100.jpg", name: "BrownWall100" },
     { srcName: "DarkWall_MC1.jpg", name: "DarkWall_MC1" },
     { srcName: "DarkFloorTiles1.jpg", name: "DarkFloorTiles1" },
     { srcName: "SmallDarkBricks1.jpg", name: "SmallDarkBricks1" },
     { srcName: "Brown_MC_floor_tiles_1.jpg", name: "Brown_MC_floor_tiles_1" },
     { srcName: "ComplexDarkCeiling1.jpg", name: "ComplexDarkCeiling1" },
-
     { srcName: "BrownMC_ceiling.jpg", name: "BrownMC_ceiling" },
     { srcName: "DarkRunningFloor_MC1.jpg", name: "DarkRunningFloor_MC1" },
     { srcName: "DarkWall_MC2.jpg", name: "DarkWall_MC2" },
@@ -165,6 +163,17 @@ LoadTextures = [
     { srcName: "MC_Floor_2.jpg", name: "MC_Floor_2" },
     { srcName: "DetailedCeiling2.jpg", name: "DetailedCeiling2" },
     { srcName: "StoneFloorTiles2.jpg", name: "StoneFloorTiles2" },
+    { srcName: "MC_FLoor10.jpg", name: "MC_FLoor10" },
+    { srcName: "MC_Floor11.jpg", name: "MC_Floor11" },
+    { srcName: "MC_Floor12.jpg", name: "MC_Floor12" },
+    { srcName: "MC_Floor13.jpg", name: "MC_Floor13" },
+    { srcName: "MC_Wall3.jpg", name: "MC_Wall3" },
+    { srcName: "MC_Wall4.jpg", name: "MC_Wall4" },
+    { srcName: "MC_Wall6.jpg", name: "MC_Wall6" },
+    { srcName: "MC_Wall7.jpg", name: "MC_Wall7" },
+    { srcName: "MC_Wall8.jpg", name: "MC_Wall8" },
+    { srcName: "MC_Wall9.jpg", name: "MC_Wall9" },
+    { srcName: "MC_wall5.jpg", name: "MC_wall5" },
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
@@ -243,6 +252,7 @@ LoadAudio = [
     { srcName: "short-buzz.mp3", name: "Buzz" },
     { srcName: "thud.mp3", name: "Thud" },
     { srcName: "Fuse.mp3", name: "Fuse" },
+    { srcName: "AngryCat.mp3", name: "AngryCat" },
 
     //monstersounds
     { srcName: "MonsterDeath.mp3", name: "MonsterDeath" },
@@ -278,7 +288,7 @@ LoadObjects = [
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
     'Spider.gltf', 'Wolf.gltf', 'Skeleton.gltf', 'Goblin.gltf', 'Drax.gltf', 'MissGalaxy.gltf',
-    'ThePrincess.gltf', 'Chicken.gltf', 'Cat.gltf'
+    'ThePrincess.gltf', 'Chicken.gltf', 'Cat.gltf', "Dragon.gltf", "Basilisk.gltf", "Rex.gltf"
 ];
 
 LoadSprites = [
@@ -315,7 +325,7 @@ LoadSprites = [
 
     { srcName: "CuddlyBear.jpg", name: "CuddlyBear" },
     { srcName: "CatOracle.jpg", name: "CatOracle" },
-    { srcName: "Puss2.jpg", name: "Puss2" },
+    { srcName: "Puss2.jpg", name: "Kittie" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -352,6 +362,7 @@ LoadSprites = [
     { srcName: "BloodFlask.png", name: "Blood" },
     { srcName: "GoldenBook.png", name: "GoldenBook" },
     { srcName: "Heels.png", name: "Heels" },
+    { srcName: "GreenHeels.png", name: "GreenHeels" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

@@ -69,6 +69,14 @@ const ORACLE_TYPE = {
         text: "Don't miss the spider in this dungeon.",
         interactionCategory: "oracle",
     },
+    CatOracle: {
+        name: "CatOracle",
+        sprite: "CatOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "There are five cats around. Find them all.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -683,6 +691,27 @@ const MONSTER_TYPE = {
         moveSpeed: 1.2,
         material: MATERIAL.standard,
     },
+    /** not tuned */
+    GreatCat: {
+        name: "GreatCat",
+        model: "Cat",
+        scale: 1.7 / 2 ** 7,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 50,
+        defense: 0,
+        magic: 0,
+        health: 50,
+        xp: 25,
+        gold: 1,
+        attackSound: "AngryCat",
+        hurtSound: "PainSqueek",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.2,
+        material: MATERIAL.standard,
+    },
     Skeleton: {
         name: "WhiteSkeleton",
         model: "Skeleton",
@@ -728,6 +757,82 @@ const MONSTER_TYPE = {
         name: "Goblin",
         model: "Goblin",
         scale: 1.01 / 2 ** 1,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 30,
+        defense: 20,
+        magic: 25,
+        health: 50,
+        xp: 100,
+        gold: 100,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        moveSpeed: 1.0,
+        mana: 3,
+        caster: true,
+        shootDistance: 7,
+        stalkDistance: 8,
+        material: MATERIAL.standard,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.Fireball,
+    },
+    /** not tuned */
+    Dragon: {
+        name: "Dragon",
+        model: "Dragon",
+        scale: 1.9 / 2 ** 4,
+        rotateToNorth: Math.PI,
+        midHeight: 0.25,
+        fly: 0.25,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 30,
+        defense: 20,
+        magic: 25,
+        health: 50,
+        xp: 100,
+        gold: 100,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        moveSpeed: 1.0,
+        mana: 5,
+        caster: true,
+        shootDistance: 7,
+        stalkDistance: 8,
+        material: MATERIAL.gold,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.Fireball,
+    },
+    /** not tuned */
+    Basilisk: {
+        name: "Basilisk",
+        model: "Basilisk",
+        scale: 1.8 / 2 ** 9,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 35,
+        defense: 25,
+        magic: 20,
+        health: 50,
+        xp: 80,
+        gold: 80,
+        attackSound: "MonsterAttack2",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 0.85,
+        material: MATERIAL.greenFluence,
+    },
+    /** not tuned */
+    Rex: {
+        name: "Rex",
+        model: "Rex",
+        scale: 1.5 / 2 ** 9,
         rotateToNorth: Math.PI,
         midHeight: 0.5,
         deathType: "BloodExplosion",
@@ -1084,6 +1189,11 @@ const INTERACTION_ITEM = {
         inventorySprite: "Heels",
         text: "Hot. I'll wear those when I stomp on Ghostface."
     },
+    GreenHeels: {
+        name: "GreenHeels",
+        category: "interaction_item",
+        inventorySprite: "GreenHeels",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1410,6 +1520,32 @@ const INTERACTION_ENTITY = {
             intro: "In heavenly realms, where clouds are my bed, seek three books, for ours is quite dead.",
             progress: "A book from below, a start indeed, more wisdom required, fulfill this need.",
             conclusion: "Three books from below, now heaven's new lore, here's an Emerald Key, to open new door."
+        }
+    },
+    CuddlyBear: {
+        name: "CuddlyBear",
+        sprite: "CuddlyBear",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Pear", "Pear", "Pear"],
+        gives: "GreenHeels",
+        text: {
+            intro: "a pear, a pear, for a cuddly bear?",
+            progress: "Another pear or I'll despair.",
+            conclusion: "Pears all here, back to my lair. For you, a stiletto with flair to spare."
+        }
+    },
+    Kittie: {
+        name: "Kittie",
+        sprite: "Kittie",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Cat", "Cat", "Cat", "Cat", "Cat"],
+        gives: "GreenHeels",
+        text: {
+            intro: "Whiskers twitch, in search I roam, help find my sisters, bring them home.",
+            progress: "One sister found, purrs of delight, more out there, hidden from sight.",
+            conclusion: "Sisters gathered, all in view, a stiletto not my hue, now for you."
         }
     },
 

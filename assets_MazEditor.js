@@ -143,7 +143,6 @@ LoadTextures = [
     { srcName: "IceFloor4.jpg", name: "IceFloor4" },
     { srcName: "IceFloor5.jpg", name: "IceFloor5" },
     { srcName: "IceFloor6.jpg", name: "IceFloor6" },
-
     { srcName: "BrownWall100.jpg", name: "BrownWall100" },
     { srcName: "DarkWall_MC1.jpg", name: "DarkWall_MC1" },
     { srcName: "DarkFloorTiles1.jpg", name: "DarkFloorTiles1" },
@@ -159,6 +158,17 @@ LoadTextures = [
     { srcName: "MC_Floor_2.jpg", name: "MC_Floor_2" },
     { srcName: "DetailedCeiling2.jpg", name: "DetailedCeiling2" },
     { srcName: "StoneFloorTiles2.jpg", name: "StoneFloorTiles2" },
+    { srcName: "MC_FLoor10.jpg", name: "MC_FLoor10" },
+    { srcName: "MC_Floor11.jpg", name: "MC_Floor11" },
+    { srcName: "MC_Floor12.jpg", name: "MC_Floor12" },
+    { srcName: "MC_Floor13.jpg", name: "MC_Floor13" },
+    { srcName: "MC_Wall3.jpg", name: "MC_Wall3" },
+    { srcName: "MC_Wall4.jpg", name: "MC_Wall4" },
+    { srcName: "MC_Wall6.jpg", name: "MC_Wall6" },
+    { srcName: "MC_Wall7.jpg", name: "MC_Wall7" },
+    { srcName: "MC_Wall8.jpg", name: "MC_Wall8" },
+    { srcName: "MC_Wall9.jpg", name: "MC_Wall9" },
+    { srcName: "MC_wall5.jpg", name: "MC_wall5" },
 ];
 
 LoadSheetSequences = [
@@ -205,6 +215,7 @@ LoadSprites = [
     { srcName: "BloodFlask.png", name: "Blood" },
     { srcName: "GoldenBook.png", name: "GoldenBook" },
     { srcName: "Heels.png", name: "Heels" },
+    { srcName: "GreenHeels.png", name: "GreenHeels" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

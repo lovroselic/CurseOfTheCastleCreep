@@ -43,37 +43,37 @@ const DEBUG = {
          * attack 
          * defense 
          * 
-         * cats placed 3 / 5;
+         * cats placed 5/ 5;
          * pears placed 3/ 3
-         * greenheels 1/2
-         * 51 - cellar - in dev
-         * 52 temple unfinished
+         * greenheels 2/2
+         * 51 - cellar - complete 
+         * 52 temple complete
          * 53 bear lair unfinished
          * 54 pear harbor unfinished
          * 55 Kittie unfinished - unplayed
-         *  lizzy
+         * 56 lizzy unfinished - unplayed
          */
-        GAME.level = 51; //51 //53
-        GAME.gold = 2497;
-        HERO.maxHealth = 107;
-        HERO.maxMana = 129;
-        HERO.health = 94;
-        HERO.mana = 19;
-        HERO.defense = 27;
+        GAME.level = 53; //51 //53
+        GAME.gold = 771;
+        HERO.maxHealth = 111;
+        HERO.maxMana = 139;
+        HERO.health = 111;
+        HERO.mana = 139;
+        HERO.defense = 29;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 28;
+        HERO.attack = 29;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 24;
+        HERO.magic = 26;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 481;
-        HERO.defenseExp = 223;
-        HERO.magicExp = 2378;
+        HERO.attackExp = 940;
+        HERO.defenseExp = 423;
+        HERO.magicExp = 483;
         HERO.attackExpGoal = 2570;
         HERO.defenseExpGoal = 761;
-        HERO.magicExpGoal = 2570;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Petrify", "BoostWeapon"];
+        HERO.magicExpGoal = 3855;
+        HERO.inventory.potion.red = 3;
+        HERO.inventory.potion.blue = 2;
+        let scrolls = ["Petrify","DestroyArmor", "BoostArmor", "HalfLife", "DrainMana", "Light", "Light", "Light"];
         //let scrolls = [];
 
         //debug
@@ -85,8 +85,8 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [];
-        //let invItems = ["Cat", "Cat", "Cat", "Cat", "Cat"];
+        let invItems = ["Pear", "Cat", "Cat"];
+        //let invItems = ["GreenHeels", "GreenHeels"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -125,7 +125,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.12.01",
+    VERSION: "0.12.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

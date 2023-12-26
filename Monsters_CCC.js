@@ -691,7 +691,6 @@ const MONSTER_TYPE = {
         moveSpeed: 1.2,
         material: MATERIAL.standard,
     },
-    /** not tuned */
     GreatCat: {
         name: "GreatCat",
         model: "Cat",
@@ -700,11 +699,11 @@ const MONSTER_TYPE = {
         midHeight: 0.5,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 50,
+        attack: 60,
         defense: 0,
         magic: 0,
-        health: 50,
-        xp: 25,
+        health: 60,
+        xp: 30,
         gold: 1,
         attackSound: "AngryCat",
         hurtSound: "PainSqueek",
@@ -752,6 +751,27 @@ const MONSTER_TYPE = {
         behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
         moveSpeed: 1.1,
         material: MATERIAL.redShine,
+    },
+    SilverSkeleton: {
+        name: "SilverSkeleton",
+        texture: "Silver",
+        model: "Skeleton",
+        scale: 1.8 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "SmokeExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 38,
+        defense: 28,
+        magic: 20,
+        health: 50,
+        xp: 90,
+        gold: 90,
+        attackSound: "MonsterAttack2",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.silver,
     },
     Goblin: {
         name: "Goblin",
@@ -1546,6 +1566,19 @@ const INTERACTION_ENTITY = {
             intro: "Whiskers twitch, in search I roam, help find my sisters, bring them home.",
             progress: "One sister found, purrs of delight, more out there, hidden from sight.",
             conclusion: "Sisters gathered, all in view, a stiletto not my hue, now for you."
+        }
+    },
+    Lizzie: {
+        name: "Lizzie",
+        sprite: "Lizzie",
+        category: 'crest',
+        voice: "GlaDOS",
+        wants: ["GreenHeels", "GreenHeels"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "Green scales, so sleek, but black shoes? a blight! Bring green stilettos, make my outfit right!",
+            progress: "Stiletto found, is it green and bright? One more to match, then I'm a sight.",
+            conclusion: "Perfect pair, now I'm a dazzle in the light, Here's an Emerald Key, for your dungeon fight."
         }
     },
 

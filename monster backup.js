@@ -41,27 +41,7 @@ const MONSTER_TYPE = {
         moveSpeed: 1.1,
         material: MATERIAL.gold,
     },
-    SilverSkeleton: {
-        name: "SilverSkeleton",
-        texture: "Silver",
-        model: "Skeleton",
-        scale: 1.8 / 2 ** 3,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "SmokeExplosion",
-        inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 26,
-        defense: 16,
-        magic: 17,
-        health: 50,
-        xp: 65,
-        gold: 50,
-        attackSound: "MonsterAttack2",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1.1,
-        material: MATERIAL.silver,
-    },
+    
     
     Drax: {
         name: "Drax",

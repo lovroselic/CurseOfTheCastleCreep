@@ -560,7 +560,7 @@ LoadSprites = [
     { srcName: "ReturnToCastleWolfenstein14.png", name: "ReturnToCastleWolfenstein14" },
     { srcName: "RickDangerous11.png", name: "RickDangerous11" },
     { srcName: "Sorcery31.png", name: "Sorcery31" },
-    { srcName: "Spike'sPeak1.png", name: "Spike'sPeak1" },
+    { srcName: "Spike'sPeak1.png", name: "SpikesPeak1" },
     { srcName: "SpyVsSpy41.png", name: "SpyVsSpy41" },
     { srcName: "TheHobbit16.png", name: "TheHobbit16" },
     { srcName: "Valhalla2.png", name: "Valhalla2" },

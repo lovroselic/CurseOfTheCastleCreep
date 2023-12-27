@@ -1043,7 +1043,7 @@ const MAP = {
         movables: '[[58,"Cat"]]',
         }
     ,
-    53: {
+    53 : {
         name: "Cuddly Bear",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BEBB2AA2ÁÁ2ABB2ABAA2BB2ABAA9BABAA6BB2AA5BABB2AA19BABAÁAA2BABABB2ABB3AA2BB2ABAA3BB8AA2BB2AA3BABAA4BB5ABB5ABB2ABABB8ABABB4ABB2ABB5AA2BB2ABB2ABABB2AA2BEABB3ABABABB2ABABB4AA3BABB7ABB2AA2BB2EBB3ABB18AB$AA2BB8ABB2ÁÁ6AA3"}',
@@ -1054,15 +1054,17 @@ const MAP = {
         decals: '[[3,7,"SabreWulf87","picture"],[11,7,"Ultima89","picture"],[81,7,"KQ100","picture"],[116,7,"CastleWolfenstein21","picture"],[188,7,"TheHobbit99","picture"],[180,7,"ScubaDive60","picture"],[88,7,"ReturnToCastleWolfenstein11","picture"],[124,7,"ReturnToCastleWolfenstein12","picture"],[158,7,"ReturnToCastleWolfenstein13","picture"],[115,1,"ReturnToCastleWolfenstein14","picture"],[241,1,"Witcher103","picture"],[124,1,"ManicMiner12","picture"],[188,1,"CongoBongo2","picture"],[230,1,"EyeOfTheBeholder140","picture"],[234,1,"Ultima50","picture"],[150,7,"KnightLore31","picture"],[154,7,"ZimSalaBim2","picture"],[135,5,"MissileCommand","picture"],[235,5,"Blackwyche110","picture"],[181,5,"Tutankhamun88","picture"],[128,5,"Wolf10","picture"],[158,1,"LeisureSuitLarry201","picture"],[150,1,"BattleThroughTime2","picture"],[103,3,"TheHobbit70","picture"],[165,3,"AlleyKat","picture"],[75,1,"KokotoniWilf70","picture"]]',
         lights: '[[41,5,"WallLamp","standard"],[41,3,"WallLamp","standard"],[152,7,"WallLamp","standard"],[145,7,"WallLamp","standard"],[254,1,"WallLamp","standard"]]',
         gates: '[[32,5,"53.1","51.3","Open"],[248,1,"53.2","54.1","Closed"]]',
+        monsters: '[[42,"Dragon"],[148,"RedSkeleton"],[201,"SilverSkeleton"]]',
+        potions: '[[59,0],[168,0],[161,1],[156,1]]',
         containers: '[[18,"Barrel","GOLD_ITEM_TYPE.SilverBar",5],[50,"Barrel","GOLD_ITEM_TYPE.SilverBar",5],[166,"Barrel","GOLD_ITEM_TYPE.SilverBar",5],[29,"Barrel","GOLD_ITEM_TYPE.SilverBar",7]]',
         doors: '[67,197,76]',
         triggers: '[[41,1,"RockTriggerButton",0,55],[141,5,"RockTriggerButton",0,53],[85,5,"RockTriggerButton",0,54]]',
         entities: '[[47,3,"CuddlyBear"]]',
         objects: '[[142,"Pear"]]',
         movables: '[[200,"Cat"]]',
-    }
+        }
     ,
-    54: {
+    54 : {
         name: "Pear Harbor",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB2AA6ÁÁ4AA7ÁAA10ÁÁ3BÁBABAA4ÁBB12AA4BB13ABB13ÁBB5$ÁÁ4ABB5ÁÁ15AÁÁ4AÁÁ9BB3AA2ÁÁ3AA3ÁÁ2AÁAÁÁ14AÁÁ4BB2"}',
@@ -1073,12 +1075,15 @@ const MAP = {
         decals: '[[15,7,"CrawlMaster112","picture"],[17,7,"MonkeyIsland111","picture"],[21,7,"LeisureSuitLarry75","picture"],[23,7,"Ski64","picture"],[160,1,"ForbiddenForest110","picture"],[164,1,"Cavelon4","picture"],[116,3,"Pssst","picture"],[64,3,"BattleThroughTime2","picture"],[52,5,"HunchBack70","picture"],[104,5,"Zeppelin89","picture"]]',
         lights: '[[162,1,"WallLamp","standard"],[157,1,"WallLamp","standard"],[167,1,"WallLamp","standard"],[38,3,"WallLamp3","dimRed"],[26,5,"WallLamp3","dimRed"]]',
         gates: '[[6,7,"54.1","53.2","Open"]]',
-        monsters: '[[123,"Dragon"]]',
+        monsters: '[[123,"Dragon"],[149,"Dragon"],[71,"SilverSkeleton"]]',
+        scrolls: '[[66,4]]',
+        potions: '[[76,1],[45,1]]',
         triggers: '[[78,5,"MarbleTriggerButton",0,84],[90,3,"MarbleTriggerButton",0,97],[57,4,"MarbleTriggerButton",0,110]]',
         objects: '[[136,"Pear"]]',
-    }
+        traps: '[[59,4,"MarbleTriggerButton",0,"Bounceball",147]]',
+        }
     ,
-    55: {
+    55 : {
         name: "Kittie",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB3AA2BAA2BB3AA2BB3ABAA8BAA3BB2AA3BABB2ABABAA9BAA3BAA7BAA2BB2ABB3ABB5ABAA3BAA2BABAA3BB2ABABB2AA4BB4ABABB2ABB3AA2BB4AA3BB2ABB4AA3BAA2BB2ABB4AA3BB2ABB2ABB2ABABB2ABB3AA2BAA2BB5ABB4AA3BB2AA2BB2ABB2ABB2ABB2ABB2ABABB18AB$"}',
@@ -1089,24 +1094,32 @@ const MAP = {
         decals: '[[62,1,"JupiterLander99","picture"],[64,1,"Scramble10","picture"],[96,1,"GatewayToApshai140","picture"],[145,1,"FalconPatrol71","picture"],[128,1,"Tutamkham50","picture"],[147,1,"TheHobbit72","picture"],[223,1,"SVS1011","picture"],[219,1,"Tornado1","picture"],[215,1,"Cuthbert70","picture"],[183,1,"MontyMole52","picture"],[170,1,"DigDug2","picture"],[61,7,"Pipeline51","picture"],[39,7,"Pitfall89","picture"],[43,7,"SabreWulf50","picture"],[52,7,"TheHobbit88","picture"],[128,7,"HungryHorace11","picture"],[68,7,"SP111","picture"],[148,7,"JungleHunt89","picture"],[93,7,"Popeye2","picture"],[165,5,"Goonies70","picture"],[175,5,"TombRaider103","picture"],[101,5,"JetSetWilly89","picture"],[101,3,"MassEffect1","picture"],[160,3,"EyeOfTheBeholder111","picture"],[127,3,"Hero51","picture"],[172,7,"JetSetWilly60","picture"],[2,7,"SittingSkeleton2","crest"],[4,7,"Crack21","crest"],[89,3,"PrayingSkeleton10","crest"]]',
         lights: '[[101,1,"WallLamp","standard"],[3,7,"WallLamp","standard"],[101,7,"WallLamp","standard"],[95,7,"WallLamp","standard"],[211,1,"WallLamp","standard"]]',
         gates: '[[30,5,"55.1","51.4","Up"]]',
-        monsters: '[[71,"GreatCat"]]',
+        monsters: '[[71,"GreatCat"],[66,"RedSkeleton"],[176,"SilverSkeleton"],[109,"RedSkeleton"],[185,"SilverSkeleton"]]',
+        scrolls: '[[202,10],[116,4],[54,6],[19,13]]',
+        potions: '[[47,0],[130,0],[42,1],[204,1],[166,1]]',
         gold: '[[33,"GoldCube"],[86,"GoldCube"],[161,"GoldCube"],[125,"GoldCube"],[181,"GoldCube"]]',
+        skills: '[[58,"Magic"],[163,"Sword"],[78,"Shield"],[143,"Heart"],[126,"Mana"]]',
         containers: '[[35,"Crate","GOLD_ITEM_TYPE.GoldCube",7],[40,"Crate","GOLD_ITEM_TYPE.GoldCube",7],[97,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[118,"Barrel","GOLD_ITEM_TYPE.SilverBar",1]]',
         triggers: '[[170,7,"RockTriggerButton",1,63]]',
         entities: '[[11,7,"Kittie"]]',
         movables: '[[187,"Cat"]]',
-    }
+        }
     ,
     56 : {
         name: "Lizzie",
         sg: 0,
-        data: '{"width":"13","height":"13","map":"BB4AA6BAA7BABAA12BAA2BAA5BB2AA2BAA2BAA3BAA3BAA6BAA4BB2AA3BAA7BAA7BB8ABAA2BB4ABABB4ABB4ABB3ABB4ABB4AA2BAA2BB9ABAA3BB2ABB14A$"}',
+        data: '{"width":"13","height":"13","map":"BB4AA11BABAA10BB3ABAA5BB2AA3BAA2BAA3BAA4BAA6BAA4BB3AA3BAA8BAA7BB8AA2BAA2BB4ABAA2BB3ABB5ABB3ABB3ABB5AA2BAA2BABABB5ABABABB15A$"}',
         wall: "MC_Wall8",
         floor: "MC_Floor11",
         ceil: "DullMoss",
         start: '[149,1]',
+        decals: '[[110,7,"DM106","picture"],[2,7,"MrRobot70","picture"],[9,7,"Underwurlde141","picture"],[93,7,"AmberMoon200","picture"],[101,7,"DM107","picture"],[54,1,"SpikesPeak1","picture"],[62,1,"ArabianNights1","picture"],[134,1,"Scramble7","picture"],[138,1,"AA100","picture"],[67,5,"HoraceSki","picture"],[130,5,"Kangaroo50","picture"],[75,3,"Tutankham104","picture"],[142,3,"EyeOfTheBeholder112","picture"]]',
         lights: '[[110,1,"WallLamp","standard"],[13,5,"WallLamp2","standard"],[25,3,"WallLamp2","standard"],[158,1,"WallLamp2","dim"],[166,1,"WallLamp2","dim"]]',
         gates: '[[162,1,"56.1","51.5","Up"]]',
+        monsters: '[[84,"Basilisk"],[123,"RedSkeleton"],[32,"SilverSkeleton"],[24,"Dragon"],[14,"Dragon"]]',
+        scrolls: '[[136,9],[23,4],[27,5],[153,11],[118,3]]',
+        containers: '[[17,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[21,"Crate","GOLD_ITEM_TYPE.SilverBar",7],[144,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[154,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1]]',
+        shrines: '[[6,7,"AttackShrine"],[78,5,"DefenseShrine"],[90,3,"MagicShrine"]]',
         entities: '[[45,7,"Lizzie"]]',
         }
     ,

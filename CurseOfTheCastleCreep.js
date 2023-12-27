@@ -43,37 +43,28 @@ const DEBUG = {
          * attack 
          * defense 
          * 
-         * cats placed 5/ 5;
-         * pears placed 3/ 3
-         * greenheels 2/2
-         * 51 - cellar - complete 
-         * 52 temple complete
-         * 53 bear lair unfinished
-         * 54 pear harbor unfinished
-         * 55 Kittie unfinished - unplayed
-         * 56 lizzy unfinished - unplayed
          */
-        GAME.level = 53; //51 //53
-        GAME.gold = 771;
-        HERO.maxHealth = 111;
-        HERO.maxMana = 139;
-        HERO.health = 111;
-        HERO.mana = 139;
-        HERO.defense = 29;
+        GAME.level = 57;
+        GAME.gold = 789;
+        HERO.maxHealth = 115;
+        HERO.maxMana = 144;
+        HERO.health = 115;
+        HERO.mana = 12;
+        HERO.defense = 31;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 29;
+        HERO.attack = 31;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 26;
+        HERO.magic = 27;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 940;
-        HERO.defenseExp = 423;
-        HERO.magicExp = 483;
+        HERO.attackExp = 1792;
+        HERO.defenseExp = 759;
+        HERO.magicExp = 1361;
         HERO.attackExpGoal = 2570;
         HERO.defenseExpGoal = 761;
         HERO.magicExpGoal = 3855;
-        HERO.inventory.potion.red = 3;
-        HERO.inventory.potion.blue = 2;
-        let scrolls = ["Petrify","DestroyArmor", "BoostArmor", "HalfLife", "DrainMana", "Light", "Light", "Light"];
+        HERO.inventory.potion.red = 0;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["HalfLife", "BoostWeapon", "BoostArmor"];
         //let scrolls = [];
 
         //debug
@@ -85,13 +76,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Pear", "Cat", "Cat"];
+        let invItems = [];
         //let invItems = ["GreenHeels", "GreenHeels"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = [];
+        let keys = ["Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -125,7 +116,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.12.02",
+    VERSION: "0.12.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -414,7 +405,6 @@ class Scroll {
                 }
                 break;
             case "Radar":
-                console.log("setting radar");
                 HERO.setRadar();
                 const radarTimerId = "radarTimer";
 
@@ -517,6 +507,7 @@ const HERO = {
     },
     killRadar() {
         HERO.radar = false;
+        HERO.removeStatus("Radar");
         TITLE.keys();
     },
     resetVision() {

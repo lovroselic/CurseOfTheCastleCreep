@@ -999,7 +999,7 @@ const MAP = {
         containers: '[[168,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[148,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[191,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
     }
     ,
-    51 : {
+    51: {
         name: "The Cellar",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BEQABB3ABB3ABAA4BAA4BABB2AA9BB4AA3BB5AA4BAA2BAA3BB3AA25BABAQBAA9BAA2BAA18BB2AA2BB2AA3BAA15BB4ABAA6BAA7EBB3AA7BABAA4BAA4EAA4BAA3BAA8BB2AA3BAA2BABAA6BABAA3BB5ABB5ABB6ABB3AA2BAA3BB2AA6BAA2BB2AA3BABB4ABB7ABB2ABB3ABB7ABABABB5ABB4ABAA2BB3AA3BAA3BABB3ABB2ABB8AA2BABB8ABB7AA2BB3ABEBB9EBB3ABB6ABB21AB$AA2BB9AA3BB2AA2"}',
@@ -1021,9 +1021,9 @@ const MAP = {
         objects: '[[54,"Pear"]]',
         oracles: '[[184,7,"CatOracle"]]',
         movables: '[[267,"Cat"],[395,"Cat"]]',
-        }
+    }
     ,
-    52 : {
+    52: {
         name: "Say Your Prayers",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB5AA6BB2AA8BB2AA15BB6AA12BAA5BB2AA4BAA11BB2AA7BB8ABB2AA4BB15ABB2ABB6AA2BB2AA3BAA3BB7AA4BB17A$"}',
@@ -1041,9 +1041,9 @@ const MAP = {
         containers: '[[14,"Barrel","GOLD_ITEM_TYPE.SilverBar",4],[24,"Barrel","GOLD_ITEM_TYPE.SilverBar",4]]',
         shrines: '[[90,3,"AttackShrine"],[6,7,"DefenseShrine"],[162,1,"MagicShrine"]]',
         movables: '[[58,"Cat"]]',
-        }
+    }
     ,
-    53 : {
+    53: {
         name: "Cuddly Bear",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BEBB2AA2ÁÁ2ABB2ABAA2BB2ABAA9BABAA6BB2AA5BABB2AA19BABAÁAA2BABABB2ABB3AA2BB2ABAA3BB8AA2BB2AA3BABAA4BB5ABB5ABB2ABABB8ABABB4ABB2ABB5AA2BB2ABB2ABABB2AA2BEABB3ABABABB2ABABB4AA3BABB7ABB2AA2BB2EBB3ABB18AB$AA2BB8ABB2ÁÁ6AA3"}',
@@ -1062,9 +1062,9 @@ const MAP = {
         entities: '[[47,3,"CuddlyBear"]]',
         objects: '[[142,"Pear"]]',
         movables: '[[200,"Cat"]]',
-        }
+    }
     ,
-    54 : {
+    54: {
         name: "Pear Harbor",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB2AA6ÁÁ4AA7ÁAA10ÁÁ3BÁBABAA4ÁBB12AA4BB13ABB13ÁBB5$ÁÁ4ABB5ÁÁ15AÁÁ4AÁÁ9BB3AA2ÁÁ3AA3ÁÁ2AÁAÁÁ14AÁÁ4BB2"}',
@@ -1081,9 +1081,9 @@ const MAP = {
         triggers: '[[78,5,"MarbleTriggerButton",0,84],[90,3,"MarbleTriggerButton",0,97],[57,4,"MarbleTriggerButton",0,110]]',
         objects: '[[136,"Pear"]]',
         traps: '[[59,4,"MarbleTriggerButton",0,"Bounceball",147]]',
-        }
+    }
     ,
-    55 : {
+    55: {
         name: "Kittie",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB3AA2BAA2BB3AA2BB3ABAA8BAA3BB2AA3BABB2ABABAA9BAA3BAA7BAA2BB2ABB3ABB5ABAA3BAA2BABAA3BB2ABABB2AA4BB4ABABB2ABB3AA2BB4AA3BB2ABB4AA3BAA2BB2ABB4AA3BB2ABB2ABB2ABABB2ABB3AA2BAA2BB5ABB4AA3BB2AA2BB2ABB2ABB2ABB2ABB2ABABB18AB$"}',
@@ -1103,9 +1103,9 @@ const MAP = {
         triggers: '[[170,7,"RockTriggerButton",1,63]]',
         entities: '[[11,7,"Kittie"]]',
         movables: '[[187,"Cat"]]',
-        }
+    }
     ,
-    56 : {
+    56: {
         name: "Lizzie",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB4AA11BABAA10BB3ABAA5BB2AA3BAA2BAA3BAA4BAA6BAA4BB3AA3BAA8BAA7BB8AA2BAA2BB4ABAA2BB3ABB5ABB3ABB3ABB5AA2BAA2BABABB5ABABABB15A$"}',
@@ -1121,18 +1121,32 @@ const MAP = {
         containers: '[[17,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[21,"Crate","GOLD_ITEM_TYPE.SilverBar",7],[144,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[154,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1]]',
         shrines: '[[6,7,"AttackShrine"],[78,5,"DefenseShrine"],[90,3,"MagicShrine"]]',
         entities: '[[45,7,"Lizzie"]]',
+    }
+    ,
+    57 : {
+        name: "Going So Deep Now",
+        sg: 0,
+        data: '{"width":"9","height":"9","map":"BÁAA2ÁAÁAA3BAÁAÁÁ2AÁAÁBB5ABB2ABB6A$BB5ÁBB3AA2BB2ABB6ÁÁ6BAÁÁ6BÁÁ5BAA3B"}',
+        wall: "MC_Wall7",
+        floor: "MC_Floor_2",
+        ceil: "ComplexDarkCeiling1",
+        start: '[37,5]',
+        decals: '[[5,7,"LS","crest"],[25,7,"Reaper","crest"],[2,7,"Skeleton12","crest"],[79,1,"Skull2","crest"],[76,1,"Skull11","crest"],[28,5,"WOWc1","crest"],[46,5,"Skull10","crest"],[53,3,"Skull4","crest"]]',
+        lights: '[[74,1,"WallLamp","standard"]]',
+        gates: '[[36,5,"57.1","51.6","Open"],[17,3,"57.2","58.1","Down"]]',
+        monsters: '[[14,"RedGoldBat"],[32,"RedGoldBat"],[52,"RedGoldBat"],[70,"RedGoldBat"],[68,"RedGoldBat"],[66,"RedGoldBat"],[47,"RedGoldBat"]]',
         }
     ,
-    57: {
-        name: "Generic room name",
+    58 : {
+        name: "Dungeons",
         sg: 0,
-        data: '{"width":"9","height":"9","map":"BB75$BB5A"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
-        start: '[37,5]',
-        gates: '[[36,5,"57.1","51.6","Open"]]',
-    }
+        data: '{"width":"15","height":"15","map":"BB3ABB50ABB4ABB5$BB159A"}',
+        wall: "MossWall12",
+        floor: "MarbleTiles2",
+        ceil: "MarbleTiles4",
+        start: '[31,5]',
+        gates: '[[30,5,"58.1","57.2","Up"]]',
+        }
     ,
     99: {
         name: "Sandbox",

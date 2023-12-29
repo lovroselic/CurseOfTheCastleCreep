@@ -44,26 +44,26 @@ const DEBUG = {
          * defense 
          * 
          */
-        GAME.level = 57;
+        GAME.level = 58;
         GAME.gold = 789;
         HERO.maxHealth = 115;
         HERO.maxMana = 144;
         HERO.health = 115;
-        HERO.mana = 12;
+        HERO.mana = 26;
         HERO.defense = 31;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 31;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 27;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 1792;
+        HERO.attackExp = 1822;
         HERO.defenseExp = 759;
-        HERO.magicExp = 1361;
+        HERO.magicExp = 1371;
         HERO.attackExpGoal = 2570;
         HERO.defenseExpGoal = 761;
         HERO.magicExpGoal = 3855;
         HERO.inventory.potion.red = 0;
-        HERO.inventory.potion.blue = 1;
+        HERO.inventory.potion.blue = 0;
         let scrolls = ["HalfLife", "BoostWeapon", "BoostArmor"];
         //let scrolls = [];
 
@@ -82,7 +82,7 @@ const DEBUG = {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Emerald"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -116,7 +116,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.12.03",
+    VERSION: "0.13.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

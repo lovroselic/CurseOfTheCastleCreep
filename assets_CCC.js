@@ -208,6 +208,7 @@ LoadTextures = [
     { srcName: "IceTexture.jpg", name: "IceTexture" },
     { srcName: "Rat_color.jpg", name: "RatTexture" },
     { srcName: "Lizard_baseColor.jpg", name: "LizardTexture" },
+    { srcName: "mushroom_baseColor.jpg", name: "MushroomTexture" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -283,7 +284,7 @@ LoadShaders = [
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
     "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj", "wardrobe.obj",
-    "barrel.obj", "crate.obj", "skull.obj", "rat.obj", "lizard.obj"
+    "barrel.obj", "crate.obj", "skull.obj", "rat.obj", "lizard.obj", "mushroom.obj"
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
@@ -322,11 +323,11 @@ LoadSprites = [
     { srcName: "OwlLady.jpg", name: "OwlLady" },
     { srcName: "SpiderDominaOracle.jpg", name: "SpiderDominaOracle" },
     { srcName: "DominaOracle2.jpg", name: "SpiderDominaOracle2" },
-
     { srcName: "CuddlyBear.jpg", name: "CuddlyBear" },
     { srcName: "CatOracle.jpg", name: "CatOracle" },
     { srcName: "Puss2.jpg", name: "Kittie" },
     { srcName: "Lizzie.jpg", name: "Lizzie" },
+    { srcName: "Sorceress.jpg", name: "Sorceress" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -364,6 +365,7 @@ LoadSprites = [
     { srcName: "GoldenBook.png", name: "GoldenBook" },
     { srcName: "Heels.png", name: "Heels" },
     { srcName: "GreenHeels.png", name: "GreenHeels" },
+    { srcName: "Poison.png", name: "Poison" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

@@ -245,6 +245,7 @@ const SPAWN_TOOLS = {
     entities(map, GA) {
         for (const E of map.entities) {
             const grid = GA.indexToGrid(E[0]);
+            GA.addShrine(grid);
             const face = DirectionToFace(Vector.fromInt(E[1]));
             const type = INTERACTION_ENTITY[E[2]];
             const entity = new InteractionEntity(grid, face, type);

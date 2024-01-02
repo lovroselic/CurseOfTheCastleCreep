@@ -826,7 +826,6 @@ const MONSTER_TYPE = {
         missile: Missile,
         missileType: COMMON_ITEM_TYPE.Fireball,
     },
-    /** not tuned */
     Basilisk: {
         name: "Basilisk",
         model: "Basilisk",
@@ -1046,6 +1045,28 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Scroll",
         text: "It's empty? I should write a poem."
     },
+    Mushroom: {
+        name: "Mushroom",
+        category: "interaction_item",
+        element: "MUSHROOM",
+        scale: 1.4 / 2 ** 7,
+        glueToFloor: true,
+        texture: "MushroomTexture",
+        inventorySprite: "Mushroom",
+        material: MATERIAL.standard,
+        text: "Poisonous. Don't eat."
+    },
+    Poison: {
+        name: "Poison",
+        category: "interaction_item",
+        element: "FLASK",
+        scale: 1.1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "GreenMetal",
+        inventorySprite: "Poison",
+        material: MATERIAL.greenFluence,
+        text: "Yikes. Don't drink this. It's deadly."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -1212,6 +1233,12 @@ const INTERACTION_ITEM = {
         name: "GreenHeels",
         category: "interaction_item",
         inventorySprite: "GreenHeels",
+    },
+    Poison: {
+        name: "Poison",
+        category: "interaction_item",
+        inventorySprite: "Poison",
+        text: "Yikes. Don't drink this. It's deadly."
     },
 };
 
@@ -1578,6 +1605,19 @@ const INTERACTION_ENTITY = {
             intro: "Green scales, so sleek, but black shoes? a blight! Bring green stilettos, make my outfit right!",
             progress: "Stiletto found, is it green and bright? One more to match, then I'm a sight.",
             conclusion: "Perfect pair, now I'm a dazzle in the light, Here's an Emerald Key, for your dungeon fight."
+        }
+    },
+    Sorceress: {
+        name: "Sorceress",
+        sprite: "Sorceress",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Mushroom", "Mushroom", "Mushroom", "Mushroom", "Mushroom"],
+        gives: "Poison",
+        text: {
+            intro: "In shadows deep, where secrets bloom, bring me mushrooms, filled with doom.",
+            progress: "Mushrooms enough for my dark concoction. Here's your poison, a lethal potion.",
+            conclusion: "Enough for a deadly stew, so sly, take this flask of poison, let your enemies die."
         }
     },
 

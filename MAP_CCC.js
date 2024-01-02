@@ -1123,7 +1123,7 @@ const MAP = {
         entities: '[[45,7,"Lizzie"]]',
     }
     ,
-    57 : {
+    57: {
         name: "Going So Deep Now",
         sg: 0,
         data: '{"width":"9","height":"9","map":"BÁAA2ÁAÁAA3BAÁAÁÁ2AÁAÁBB5ABB2ABB6A$BB5ÁBB3AA2BB2ABB6ÁÁ6BAÁÁ6BÁÁ5BAA3B"}',
@@ -1135,18 +1135,50 @@ const MAP = {
         lights: '[[74,1,"WallLamp","standard"]]',
         gates: '[[36,5,"57.1","51.6","Open"],[17,3,"57.2","58.1","Down"]]',
         monsters: '[[14,"RedGoldBat"],[32,"RedGoldBat"],[52,"RedGoldBat"],[70,"RedGoldBat"],[68,"RedGoldBat"],[66,"RedGoldBat"],[47,"RedGoldBat"]]',
-        }
+    }
     ,
-    58 : {
+    58: {
         name: "Dungeons",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB3ABB50ABB4ABB5$BB159A"}',
+        data: '{"width":"15","height":"15","map":"BB3AA4BB2AA20BB3AA6BAA3ÁAA2BB2AA6ÁAA2ÁAA2ÁÁ4ABB4AA4BAA18BAA10BAA10BB6AA2BABB5AA2BB15AA2BABAA2BABB5ABABB3EBB17AA2BB14A$ABB3ÁBEBB2AA3ÁAA3ÁÁ7AB"}',
         wall: "MossWall12",
         floor: "MarbleTiles2",
         ceil: "MarbleTiles4",
         start: '[31,5]',
-        gates: '[[30,5,"58.1","57.2","Up"]]',
+        lights: '[[6,7,"WallLamp","standard"],[153,1,"WallLamp","standard"],[161,1,"WallLamp","standard"],[112,7,"WallLamp","standard"]]',
+        gates: '[[30,5,"58.1","57.2","Up"],[7,7,"58.2","59.1","Closed"],[217,1,"58.3","60.1","Down"],[44,3,"58.4","59.2","Red"]]',
+        skills: '[[52,"Magic"],[37,"Magic"]]',
+        doors: '[78,86]',
+        objects: '[[33,"Mushroom"]]',
+    }
+    ,
+    59 : {
+        name: "Sorcery",
+        sg: 0,
+        data: '{"width":"16","height":"16","map":"BB5AA2BAA2BB2ABAA7BABB2EBB2AA33BAA2BB2AA2BABAA2BB2AA3BAA4BAA2BB2ABAA2BAA6BAA15BB10ABB2ABABB2AA2BB2AA3BABB2ABB6AA2BB2AA2BB3ABB12ABB8ABB3ABB32AA2BB7ABAA2BAA2BB13ABB5A$A"}',
+        wall: "MC_Wall9",
+        floor: "GreyDungeonFloor",
+        ceil: "TinyBricks",
+        start: '[215,5]',
+        decals: '[[32,5,"KingsQuest53","picture"],[80,5,"SVS110","picture"],[134,5,"BoogaBoo11","picture"],[38,5,"SirFred61","picture"],[183,5,"HalfLife11","picture"],[54,3,"MonkeyIsland141","picture"],[105,3,"TombRaider107","picture"],[63,3,"TombRaider106","picture"],[143,3,"SammyLightfoot2","picture"],[223,3,"Popeye2","picture"],[248,1,"FalconPatrol7","picture"],[253,1,"Hobbit101","picture"],[107,1,"KokotoniWilf70","picture"],[109,1,"HalfLife50","picture"],[101,1,"Witcher112","picture"],[5,7,"AticAtac204","picture"],[24,7,"Scramble60","picture"],[14,7,"Pitfall2-100","picture"],[60,7,"HeavyOnTheMagick60","picture"],[202,7,"AmberStar202","picture"],[109,7,"Hero52","picture"]]',
+        lights: '[[12,7,"WallLamp","standard"],[3,7,"WallLamp","standard"],[107,7,"WallLamp","standard"],[251,1,"WallLamp2","dim"],[51,7,"WallLamp2","dim"]]',
+        gates: '[[115,1,"59.1","58.2","Closed"],[214,5,"59.2","58.4","Open"]]',
+        doors: '[41]',
+        entities: '[[203,1,"Sorceress"]]',
+        objects: '[[44,"Mushroom"]]',
+        movables: '[[35,"LittleChicken"]]',
         }
+    ,
+    60: {
+        name: "Generic room name",
+        sg: 0,
+        data: '{"width":"9","height":"9","map":"BB3AA2BB2AA2BB52AA2BB3AA2BB2AA2BB8A$"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[13,7]',
+        gates: '[[4,7,"60.1","58.3","Up"]]',
+    }
     ,
     99: {
         name: "Sandbox",

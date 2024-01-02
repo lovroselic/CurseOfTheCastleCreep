@@ -43,8 +43,18 @@ const DEBUG = {
          * attack 
          * defense 
          * 
+         * 
+         * mushroom 2/5
+         * chicken 1/1
+         * poison 0/x
+         * missing keys: red
+         * todo
+            * 59 sorcery: sorceress wants 5 mushrooms gives 1 poison, unplayed unfinished
+            * 60
+         * 
+         * medal of honor -> skill teachers
          */
-        GAME.level = 58;
+        GAME.level = 60;    //58
         GAME.gold = 789;
         HERO.maxHealth = 115;
         HERO.maxMana = 144;
@@ -77,7 +87,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         let invItems = [];
-        //let invItems = ["GreenHeels", "GreenHeels"];
+        //let invItems = ["Mushroom", "Mushroom", "Mushroom", "Mushroom", "Mushroom", "Mushroom"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -116,7 +126,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.00",
+    VERSION: "0.13.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -781,12 +791,6 @@ const GAME = {
          * debug
          */
 
-        /*
-        for (let i = 0; i < 18; i++) {
-            HERO.inventory.item.push(new NamedInventoryItem("Hat", "Hat"));
-        }
-        */
-
         DEBUG.checkpoint1();
 
         /** debug end */
@@ -922,7 +926,7 @@ const GAME = {
     forceOpenDoor(waypoint) {
         for (const gate of INTERACTIVE_BUMP3D.POOL) {
             if (gate.destination.origin === waypoint) {
-                if (gate.locked) {
+                if (gate.locked || gate.color === "Closed") {
                     gate.openGate();
                     gate.storageLog();
                 }
@@ -1425,6 +1429,7 @@ const GAME = {
         }
     }
 };
+
 const TITLE = {
     stack: {
         delta2: 48,

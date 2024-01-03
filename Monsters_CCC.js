@@ -77,6 +77,14 @@ const ORACLE_TYPE = {
         text: "There are five cats around. Find them all.",
         interactionCategory: "oracle",
     },
+    RedRidingOracle: {
+        name: "RedRidingOracle",
+        sprite: "RedRidingOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "If you want to be sure something is poisoned, use many bottles of poison.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -1240,6 +1248,22 @@ const INTERACTION_ITEM = {
         inventorySprite: "Poison",
         text: "Yikes. Don't drink this. It's deadly."
     },
+    LittleChicken: {
+        name: "LittleChicken",
+        category: "interaction_item",
+        inventorySprite: "LittleChicken",
+    },
+    ChickenBones: {
+        name: "ChickenBones",
+        category: "interaction_item",
+        inventorySprite: "ChickenBones",
+    },
+    GoldCoin: {
+        name: "GoldCoin",
+        category: "interaction_item",
+        inventorySprite: "GoldCoin",
+        text: "Face on the coin looks like my mother."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1620,9 +1644,36 @@ const INTERACTION_ENTITY = {
             conclusion: "Enough for a deadly stew, so sly, take this flask of poison, let your enemies die."
         }
     },
+    RedRidingHood: {
+        name: "RedRidingHood",
+        sprite: "RedRidingHood",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Poison", "Poison", "Poison", "LittleChicken"],
+        gives: "ChickenBones",
+        text: {
+            intro: "Through woods so dark, a plan I weave, bring poison and chicken, for the wolf to deceive.",
+            progress: "Part of the plan, now in my basket, more to gather, before we mask it.",
+            conclusion: "Poison and chicken, now in my grasp, here's a poisoned corpse, for the wolf to clasp."
+        }
+    },
+    Granny: {
+        name: "Granny",
+        sprite: "Granny",
+        category: 'crest',
+        voice: "GlaDOS",
+        wants: ["ChickenBones"],
+        gives: "GoldCoin",
+        text: {
+            intro: "Fear the wolf with each knock and tap, bring a poisoned chicken, set my trap.",
+            progress: null,
+            conclusion: "Tricky chicken for the wolf's last meal, for your help, a gold coin, that's the deal."
+        }
+    },
 
     /**
      * NA::  
+     * Punisher
      */
 
 };

@@ -329,6 +329,16 @@ LoadSprites = [
     { srcName: "Lizzie.jpg", name: "Lizzie" },
     { srcName: "Sorceress.jpg", name: "Sorceress" },
 
+    { srcName: "Sharkira.jpg", name: "Sharkira" },
+    { srcName: "Fischelle.jpg", name: "Fischelle" },
+    { srcName: "MagicProfessor.jpg", name: "MagicProfessor" },
+    { srcName: "Granny.jpg", name: "Granny" },
+    { srcName: "DefenceProfessor.jpg", name: "DefenceProfessor" },
+    { srcName: "Punisher.jpg", name: "Punisher" },
+    { srcName: "RedRidingHood.jpg", name: "RedRidingHood" },
+    { srcName: "RedRidingOracle.jpg", name: "RedRidingOracle" },
+
+
     //action items
     { srcName: "fly.png", name: "Fly" },
     { srcName: "hat.png", name: "Hat" },
@@ -366,6 +376,8 @@ LoadSprites = [
     { srcName: "Heels.png", name: "Heels" },
     { srcName: "GreenHeels.png", name: "GreenHeels" },
     { srcName: "Poison.png", name: "Poison" },
+    { srcName: "ChickenBones.png", name: "ChickenBones" },
+    { srcName: "GoldCoin.png", name: "GoldCoin" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

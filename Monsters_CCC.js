@@ -85,6 +85,22 @@ const ORACLE_TYPE = {
         text: "If you want to be sure something is poisoned, use many bottles of poison.",
         interactionCategory: "oracle",
     },
+    PunisherOracle: {
+        name: "PunisherOracle",
+        sprite: "PunisherOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Punisher will sell you a key to continue the quest, but it's wiser to invest in training first.",
+        interactionCategory: "oracle",
+    },
+    DungeonOracle: {
+        name: "DungeonOracle",
+        sprite: "DungeonOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Everybody loves chicken. Except those that want fish. Or something else.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -1670,10 +1686,36 @@ const INTERACTION_ENTITY = {
             conclusion: "Tricky chicken for the wolf's last meal, for your help, a gold coin, that's the deal."
         }
     },
+    Punisher: {
+        name: "Punisher",
+        sprite: "Punisher",
+        category: 'crest',
+        voice: "GlaDOS",
+        wants: ["GoldCoin"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "Kneel before me, make it quick, a gold coin for your path, don't be thick.",
+            progress: null,
+            conclusion: "Coin in hand, you've served me well, here’s an Emerald Key, continue your tale to tell."
+        }
+    },
+    Wolfie: {
+        name: "Wolfie",
+        sprite: "Wolfie",
+        category: 'crest',
+        voice: "MaleLowSlow",
+        wants: ["LittleChicken", "LittleChicken", "LittleChicken", "LittleChicken", "LittleChicken"],
+        gives: "GoldCoin",
+        text: {
+            intro: "Betrayed by Granny, and you, her aide, bring fresh chickens, no foul play laid!",
+            progress: "Claws retracted, for now, my dear, more chickens needed to clear the air, I fear.",
+            conclusion: "Chickens enough to calm my snarl, for you, a coin, from Wolfie's quarrel."
+        }
+    },
 
     /**
      * NA::  
-     * Punisher
+     * Sharkeera, Fichelle
      */
 
 };

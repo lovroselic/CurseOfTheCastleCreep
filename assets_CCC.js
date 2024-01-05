@@ -174,6 +174,8 @@ LoadTextures = [
     { srcName: "MC_Wall8.jpg", name: "MC_Wall8" },
     { srcName: "MC_Wall9.jpg", name: "MC_Wall9" },
     { srcName: "MC_wall5.jpg", name: "MC_wall5" },
+    { srcName: "DarkShiny.jpg", name: "DarkShiny" },
+    { srcName: "MC_floor20.jpg", name: "MC_floor20" },
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
@@ -337,6 +339,9 @@ LoadSprites = [
     { srcName: "Punisher.jpg", name: "Punisher" },
     { srcName: "RedRidingHood.jpg", name: "RedRidingHood" },
     { srcName: "RedRidingOracle.jpg", name: "RedRidingOracle" },
+    { srcName: "PunisherOracle.jpg", name: "PunisherOracle" },
+    { srcName: "Wolfie.jpg", name: "Wolfie" },
+    { srcName: "DungeonOracle.jpg", name: "DungeonOracle" },
 
 
     //action items

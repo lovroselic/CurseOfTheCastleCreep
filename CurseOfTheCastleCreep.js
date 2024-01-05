@@ -46,20 +46,26 @@ const DEBUG = {
          * 
          * mushroom 2/5
          * chicken 1/1
+         * chicken for wolfie: 1/5
+         * fish 0/3
+         * fish 0/3
          * poison 2/3
          * missing keys: 
-         * excess keys; blue,
+         * excess keys; ,
          * * chicken corpse 1/1
-         * coin 1/x
+         * coin 1/6
          * todo
+         * 58 dungeons: unplayed unfinished undecorated
             * 59 sorcery: sorceress wants 5 mushrooms gives 1 poison, unplayed unfinished
             * 60 another descent: unplayed unfinished undecorated
             * 61 red riding hood unplayed unfinished undecorated
             * 62 granny: unplayed unfinished undecorated
+            * 63 punisher: unplayed unfinished undecorated
+            * 64 wolfie: unplayed unfinished undecorated
          * 
          * gold coin -> skill teachers ??
          */
-        GAME.level = 60;    //58 //61
+        GAME.level = 58;    //58 //61
         GAME.gold = 789;
         HERO.maxHealth = 115;
         HERO.maxMana = 144;
@@ -92,7 +98,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         //let invItems = [];
-        let invItems = ["ChickenBones", "Poison", "Poison", "LittleChicken", "Poison"];
+        let invItems = ["ChickenBones", "Poison", "Poison", "LittleChicken", "Poison", "GoldCoin", "LittleChicken", "LittleChicken", "LittleChicken", "LittleChicken"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -131,7 +137,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.02",
+    VERSION: "0.13.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

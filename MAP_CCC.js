@@ -1137,20 +1137,22 @@ const MAP = {
         monsters: '[[14,"RedGoldBat"],[32,"RedGoldBat"],[52,"RedGoldBat"],[70,"RedGoldBat"],[68,"RedGoldBat"],[66,"RedGoldBat"],[47,"RedGoldBat"]]',
     }
     ,
-    58: {
+    58 : {
         name: "Dungeons",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB3AA4BB2AA20BB3AA6BAA3ÁAA2BB2AA6ÁAA2ÁAA2ÁÁ4ABB4AA4BAA18BAA10BAA10BB6AA2BABB5AA2BB15AA2BABAA2BABB5ABABB3EBB17AA2BB14A$ABB3ÁBEBB2AA3ÁAA3ÁÁ7AB"}',
+        data: '{"width":"15","height":"15","map":"BB3ABAA4BAA20BB3AA6BAA4ÁABB2AA7ÁAÁAA2ÁÁ4ABB4AA4BAA18BAA10BAA10BB6AA2BABB5AA2BB15AA2BAA4BABB6ABB3EBB17AA2BB14A$ABB3ÁBEBB2AA3ÁAA3ÁÁ7AB"}',
         wall: "MossWall12",
         floor: "MarbleTiles2",
         ceil: "MarbleTiles4",
         start: '[31,5]',
         lights: '[[6,7,"WallLamp","standard"],[153,1,"WallLamp","standard"],[161,1,"WallLamp","standard"],[112,7,"WallLamp","standard"]]',
-        gates: '[[30,5,"58.1","57.2","Up"],[7,7,"58.2","59.1","Closed"],[217,1,"58.3","60.1","Down"],[44,3,"58.4","59.2","Red"],[120,5,"58.5","61.1","Closed"]]',
+        gates: '[[30,5,"58.1","57.2","Up"],[7,7,"58.2","59.1","Closed"],[217,1,"58.3","60.1","Down"],[44,3,"58.4","59.2","Red"],[120,5,"58.5","61.1","Closed"],[134,3,"58.6","64.1","Blue"]]',
         skills: '[[52,"Magic"],[37,"Magic"]]',
         doors: '[78,86]',
         objects: '[[33,"Mushroom"]]',
-    }
+        oracles: '[[104,3,"DungeonOracle"]]',
+        movables: '[[127,"LittleChicken"]]',
+        }
     ,
     59: {
         name: "Sorcery",
@@ -1169,7 +1171,7 @@ const MAP = {
         movables: '[[35,"LittleChicken"]]',
     }
     ,
-    60 : {
+    60: {
         name: "Oh no. Another Descent.",
         sg: 0,
         data: '{"width":"9","height":"9","map":"BB3AA2BB2ABABAA11BABB5ABB14AA2BB11ABABB7ABABB10A$"}',
@@ -1180,7 +1182,7 @@ const MAP = {
         lights: '[[40,7,"WallTorch","fire"]]',
         gates: '[[4,7,"60.1","58.3","Up"],[36,5,"60.2","63.1","Closed"]]',
         keys: '[[49,2]]',
-        }
+    }
     ,
     61: {
         name: "Little Red Riding Hood",
@@ -1199,7 +1201,7 @@ const MAP = {
         oracles: '[[263,3,"RedRidingOracle"]]',
     }
     ,
-    62 : {
+    62: {
         name: "Granny",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB4AA8BB2ABAA7BAA5BAA2BB2AA16BAA2BB6ABB2AA5BAA13BB2AA2EABAA3BAA2BABABAA2BABABABABB2AA3BAA5BABB2ABB3ABAA2BB2ABB4ABB7ABAA2BB3ABAA2BABB3AA7BAA2BB2AA2BABABB2ABB2AA2BABB2AA3BAA2BB4ABB5ABABABB5ABB4ABB2AA2BB3EABB7ABB2ABABABB3ABB4ABB23ABB4A$AA2B"}',
@@ -1214,6 +1216,34 @@ const MAP = {
         triggers: '[[232,7,"RockTriggerButton",1,103]]',
         entities: '[[54,5,"Granny"]]',
         objects: '[[59,"Poison"]]',
+    }
+    ,
+    63: {
+        name: "Punisher",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB11AA40BB3AA39BAA27BABAA42BB31AA3BB11ABABB2AA10BB62A$"}',
+        wall: "DarkShiny",
+        floor: "MC_floor20",
+        ceil: "MC_FLoor10",
+        start: '[151,3]',
+        lights: '[[145,3,"WallLamp","standard"],[117,3,"WallLamp2","dim"],[185,3,"WallLamp2","dim"]]',
+        gates: '[[152,3,"63.1","60.2","Open"]]',
+        entities: '[[136,5,"Punisher"]]',
+        oracles: '[[146,5,"PunisherOracle"]]',
+    }
+    ,
+    64 : {
+        name: "Wolf Den",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB8AA7BAA5BAA11BAA2BB2AA2BAA4ÁABAA15BB4AA3BB2ABB3ABB14AA4BB2AA3BB2ABB5ABABB2AA6BAA3BAA6BB2AA5BB6ABAA4BB3ABB2ABABB4AA2BAA7BAA3BB8ABB7AA2BB2ABABB2ABB19$BB2AA2"}',
+        wall: "MC_Wall9",
+        floor: "MarbleTiles1",
+        ceil: "BlurryMossy",
+        start: '[16,5]',
+        lights: '[[121,1,"WallLamp","standard"],[215,1,"WallLamp","standard"],[13,7,"WallLamp","standard"],[130,7,"WallLamp","dim"],[5,7,"WallLamp2","dim"]]',
+        gates: '[[15,5,"64.1","58.6","Open"]]',
+        triggers: '[[121,7,"RockTriggerButton",0,85],[130,3,"RockTriggerButton",1,111]]',
+        entities: '[[220,1,"Wolfie"]]',
         }
     ,
     99: {

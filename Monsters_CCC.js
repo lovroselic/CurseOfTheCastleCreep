@@ -1712,6 +1712,32 @@ const INTERACTION_ENTITY = {
             conclusion: "Chickens enough to calm my snarl, for you, a coin, from Wolfie's quarrel."
         }
     },
+    Sharkeera: {
+        name: "Sharkeera",
+        sprite: "Sharkeera",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Fish", "Fish", "Fish"],
+        gives: "GoldCoin",
+        text: {
+            intro: "From depths of charm, a finned request, bring fish to satisfy my quest.",
+            progress: "A fish has found its way to me, more to capture, can't you see?",
+            conclusion: "Fish aplenty, you've done well, a gold coin for you, from the ocean's swell."
+        }
+    },
+    Fischelle: {
+        name: "Fischelle",
+        sprite: "Fischelle",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Fish", "Pearl", "Frog"],
+        gives: "GoldCoin",
+        text: {
+            intro: "Ocean's riddle, three parts to seek, Shell's gem, deep swimmer, and jumper meek.",
+            progress: "Gifts of depth, one, maybe two, continue the hunt, till riddle's through.",
+            conclusion: "Riddle solved, sea's treasures found, for you, a coin of gold, profound."
+        }
+    },
 
     /**
      * NA::  

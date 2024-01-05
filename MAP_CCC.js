@@ -1137,7 +1137,7 @@ const MAP = {
         monsters: '[[14,"RedGoldBat"],[32,"RedGoldBat"],[52,"RedGoldBat"],[70,"RedGoldBat"],[68,"RedGoldBat"],[66,"RedGoldBat"],[47,"RedGoldBat"]]',
     }
     ,
-    58 : {
+    58: {
         name: "Dungeons",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB3ABAA4BAA20BB3AA6BAA4ÁABB2AA7ÁAÁAA2ÁÁ4ABB4AA4BAA18BAA10BAA10BB6AA2BABB5AA2BB15AA2BAA4BABB6ABB3EBB17AA2BB14A$ABB3ÁBEBB2AA3ÁAA3ÁÁ7AB"}',
@@ -1146,13 +1146,13 @@ const MAP = {
         ceil: "MarbleTiles4",
         start: '[31,5]',
         lights: '[[6,7,"WallLamp","standard"],[153,1,"WallLamp","standard"],[161,1,"WallLamp","standard"],[112,7,"WallLamp","standard"]]',
-        gates: '[[30,5,"58.1","57.2","Up"],[7,7,"58.2","59.1","Closed"],[217,1,"58.3","60.1","Down"],[44,3,"58.4","59.2","Red"],[120,5,"58.5","61.1","Closed"],[134,3,"58.6","64.1","Blue"]]',
+        gates: '[[30,5,"58.1","57.2","Up"],[7,7,"58.2","59.1","Closed"],[217,1,"58.3","60.1","Down"],[44,3,"58.4","59.2","Red"],[120,5,"58.5","61.1","Closed"],[134,3,"58.6","64.1","Blue"],[180,5,"58.7","65.1","Closed"]]',
         skills: '[[52,"Magic"],[37,"Magic"]]',
         doors: '[78,86]',
         objects: '[[33,"Mushroom"]]',
         oracles: '[[104,3,"DungeonOracle"]]',
         movables: '[[127,"LittleChicken"]]',
-        }
+    }
     ,
     59: {
         name: "Sorcery",
@@ -1232,7 +1232,7 @@ const MAP = {
         oracles: '[[146,5,"PunisherOracle"]]',
     }
     ,
-    64 : {
+    64: {
         name: "Wolf Den",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB8AA7BAA5BAA11BAA2BB2AA2BAA4ÁABAA15BB4AA3BB2ABB3ABB14AA4BB2AA3BB2ABB5ABABB2AA6BAA3BAA6BB2AA5BB6ABAA4BB3ABB2ABABB4AA2BAA7BAA3BB8ABB7AA2BB2ABABB2ABB19$BB2AA2"}',
@@ -1244,6 +1244,44 @@ const MAP = {
         gates: '[[15,5,"64.1","58.6","Open"]]',
         triggers: '[[121,7,"RockTriggerButton",0,85],[130,3,"RockTriggerButton",1,111]]',
         entities: '[[220,1,"Wolfie"]]',
+    }
+    ,
+    65: {
+        name: "The Cliff",
+        sg: 0,
+        data: '{"width":"11","height":"11","map":"BB5AA4BB3AA11BAA2BAA3BAA6BAA6BAA11BB2ABB7ABAA2BB8AA2BB7ABABABB3ABB2ABB4AA3BB13AB$"}',
+        wall: "RockWall100",
+        floor: "GoldMarbleFloor",
+        ceil: "ThatchFloor",
+        start: '[64,3]',
+        lights: '[[59,5,"WallLamp","standard"],[8,7,"WallLamp3","dimRed"],[118,1,"WallLamp3","dimRed"]]',
+        gates: '[[65,3,"65.1","58.7","Open"],[2,7,"65.2","66.1","Down"],[112,1,"65.3","67.1","Down"]]',
+    }
+    ,
+    66: {
+        name: "Sharkeera",
+        sg: 0,
+        data: '{"width":"11","height":"11","map":"BB2ABABB5AA41BABB22ABB3ABB5AA2BAA2BB11ABABB16A$"}',
+        wall: "StoneWall2",
+        floor: "Water1",
+        ceil: "Sky1",
+        start: '[104,1]',
+        lights: '[[102,1,"WallLamp","standard"],[106,1,"WallLamp","standard"]]',
+        gates: '[[115,1,"66.1","65.2","Up"]]',
+        entities: '[[5,7,"Sharkeera"]]',
+    }
+    ,
+    67 : {
+        name: "Fischelle",
+        sg: 0,
+        data: '{"width":"11","height":"11","map":"BB2ABABB5AA41BABB22ABB3ABB5AA2BAA2BB11ABABB16A$"}',
+        wall: "RockWall",
+        floor: "Water2",
+        ceil: "Sky1",
+        start: '[16,7]',
+        lights: '[[14,7,"WallLamp","standard"],[18,7,"WallLamp","standard"]]',
+        gates: '[[5,7,"67.1","65.3","Up"]]',
+        entities: '[[115,1,"Fischelle"]]',
         }
     ,
     99: {

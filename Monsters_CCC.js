@@ -101,6 +101,14 @@ const ORACLE_TYPE = {
         text: "Everybody loves chicken. Except those that want fish. Or something else.",
         interactionCategory: "oracle",
     },
+    DescentOracle: {
+        name: "DescentOracle",
+        sprite: "DescentOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Are you sure you are ready to be here already?",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -1158,7 +1166,7 @@ const INTERACTION_ITEM = {
         name: "Pearl",
         category: "interaction_item",
         inventorySprite: "Pearl",
-        text: "Pearl looks like moon0s tear."
+        text: "Pearl looks like moon's tear."
     },
     Fish: {
         name: "Fish",
@@ -1279,6 +1287,24 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "GoldCoin",
         text: "Face on the coin looks like my mother."
+    },
+    Leotard: {
+        name: "Leotard",
+        category: "interaction_item",
+        inventorySprite: "Leotard",
+        text: "Leotard for leopard."
+    },
+    LeoHat: {
+        name: "LeoHat",
+        category: "interaction_item",
+        inventorySprite: "LeoHat",
+        text: "Cool hat. Leopard spots. I could hide in the jungle."
+    },
+    LeoPumps: {
+        name: "LeoPumps",
+        category: "interaction_item",
+        inventorySprite: "LeoPumps",
+        text: "Looks like something Purrscilla would wear."
     },
 };
 
@@ -1738,10 +1764,23 @@ const INTERACTION_ENTITY = {
             conclusion: "Riddle solved, sea's treasures found, for you, a coin of gold, profound."
         }
     },
+    Purrscilla: {
+        name: "Purrscilla",
+        sprite: "Purrscilla",
+        category: 'crest',
+        voice: "Female",
+        wants: ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"],
+        gives: "GoldCoin",
+        text: {
+            intro: "Purrscilla purrs for stylish grace, spotted fashion, my ideal embrace.",
+            progress: "Fashion's call, one piece is here, more to strut, bring them near.",
+            conclusion: "All in leopard, style complete, here's your gold, for a feat so neat."
+        }
+    },
 
     /**
      * NA::  
-     * Sharkeera, Fichelle
+     * Purrscilla
      */
 
 };

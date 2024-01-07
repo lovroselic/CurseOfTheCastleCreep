@@ -1145,11 +1145,18 @@ const MAP = {
         floor: "MarbleTiles2",
         ceil: "MarbleTiles4",
         start: '[31,5]',
+        decals: '[[3,7,"DungeonMaster97","picture"],[11,7,"LastNinja130","picture"],[79,7,"KnightLore31","picture"],[85,7,"Sentinel50","picture"],[169,7,"Jumpman70","picture"],[175,7,"Breakout200","picture"],[162,7,"BrideOfFrankenstein200","picture"],[152,7,"RiverRaid70","picture"],[156,7,"MontezumasRevenge90","picture"],[158,7,"DonkeyKong100","picture"],[201,1,"DefenderOfTheCrown110","picture"],[203,1,"CastleOfTerror4","picture"],[219,1,"TheHobbit88","picture"],[213,1,"AmberStar202","picture"],[155,1,"Cauldron8","picture"],[159,1,"AticAtac111","picture"],[106,5,"FalconPatrol70","picture"],[46,5,"DigDug2","picture"],[73,3,"GI_Joe2","picture"],[118,3,"RickDangerous50","picture"]]',
         lights: '[[6,7,"WallLamp","standard"],[153,1,"WallLamp","standard"],[161,1,"WallLamp","standard"],[112,7,"WallLamp","standard"]]',
-        gates: '[[30,5,"58.1","57.2","Up"],[7,7,"58.2","59.1","Closed"],[217,1,"58.3","60.1","Down"],[44,3,"58.4","59.2","Red"],[120,5,"58.5","61.1","Closed"],[134,3,"58.6","64.1","Blue"],[180,5,"58.7","65.1","Closed"]]',
+        gates: '[[30,5,"58.1","57.2","Up"],[7,7,"58.2","59.1","Closed"],[217,1,"58.3","60.1","Down"],[44,3,"58.4","59.2","Red"],[120,5,"58.5","61.1","Closed"],[134,3,"58.6","64.1","Blue"],[180,5,"58.7","65.1","Closed"],[194,3,"58.8","68.1","Green"]]',
+        monsters: '[[53,"SilverSkeleton"],[115,"SilverSkeleton"],[108,"RedSkeleton"],[41,"RedSkeleton"],[204,"Dragon"],[48,"Bat"],[51,"RedGoldBat"]]',
+        scrolls: '[[70,13],[111,1],[207,6]]',
+        potions: '[[187,0],[98,0],[140,1],[19,1]]',
+        gold: '[[64,"GoldCube"],[56,"GoldCube"],[142,"GoldCube"],[93,"GoldCube"],[117,"GoldCube"],[189,"GoldCube"],[198,"GoldCube"]]',
         skills: '[[52,"Magic"],[37,"Magic"]]',
+        containers: '[[23,"TreasureChest","INTERACTION_ITEM.LeoPumps",7],[147,"Barrel","INTERACTION_ITEM.Pearl",1],[137,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[17,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",7],[27,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",7],[176,"Crate","GOLD_ITEM_TYPE.SilverBar",7],[168,"Crate","GOLD_ITEM_TYPE.SilverBar",7]]',
         doors: '[78,86]',
         objects: '[[33,"Mushroom"]]',
+        traps: '[[112,1,"RockTriggerButton",0,"Bounceball",26]]',
         oracles: '[[104,3,"DungeonOracle"]]',
         movables: '[[127,"LittleChicken"]]',
     }
@@ -1174,14 +1181,18 @@ const MAP = {
     60: {
         name: "Oh no. Another Descent.",
         sg: 0,
-        data: '{"width":"9","height":"9","map":"BB3AA2BB2ABABAA11BABB5ABB14AA2BB11ABABB7ABABB10A$"}',
+        data: '{"width":"9","height":"9","map":"BB2AA2BB2AA3BABAA2BAA7BB3AA5BB6ABB6ABB4AA2BB3AA3BB8ABB7ABB5$BB2A"}',
         wall: "BrownWall100",
         floor: "Wall8",
         ceil: "LumpyWetWall",
         start: '[13,7]',
+        decals: '[[40,1,"LS","crest"],[34,3,"AticAtacCrest1","crest"],[52,3,"AticAtacCrest1","crest"],[28,5,"Skull1","crest"],[46,5,"Skull1","crest"],[68,1,"PrayingSkeleton10","crest"],[66,1,"PrayingSkeleton10","crest"],[7,7,"LeisureSuitLarry90","picture"]]',
         lights: '[[40,7,"WallTorch","fire"]]',
         gates: '[[4,7,"60.1","58.3","Up"],[36,5,"60.2","63.1","Closed"]]',
         keys: '[[49,2]]',
+        monsters: '[[58,"Skeleton"]]',
+        potions: '[[51,0],[47,1]]',
+        oracles: '[[1,7,"DescentOracle"]]',
     }
     ,
     61: {
@@ -1271,7 +1282,7 @@ const MAP = {
         entities: '[[5,7,"Sharkeera"]]',
     }
     ,
-    67 : {
+    67: {
         name: "Fischelle",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB2ABABB5AA41BABB22ABB3ABB5AA2BAA2BB11ABABB16A$"}',
@@ -1282,7 +1293,23 @@ const MAP = {
         lights: '[[14,7,"WallLamp","standard"],[18,7,"WallLamp","standard"]]',
         gates: '[[5,7,"67.1","65.3","Up"]]',
         entities: '[[115,1,"Fischelle"]]',
-        }
+    }
+    ,
+    68: {
+        name: "Purrscilla",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB6ABAA6BAA3BABAA11BB4AA2BAA2BB2AA2BAA10BB2AA2BAA5BAA3BABB2AA4BAA2BB5ABB7AA3BB2ABB4AA2BABB3ABB8ABB6ABB4ABB3ABAA5BB2AA2BAA2BB2ABAA2BABAA5BB3AA3BB3AA4BABAA2BAA3BB2AA3BABAA8BAA3BABAA2BB4AA5BABB2AA2BB2ABB4ABB2ABB2ABB2AA2BABB9ABB12ABB6ABB12A$"}',
+        wall: "BeautifullWall1",
+        floor: "Moss",
+        ceil: "MossyWall",
+        start: '[18,5]',
+        lights: '[[35,7,"WallLamp3","dim"],[8,7,"WallLamp","standard"],[273,1,"WallLamp3","dim"],[287,1,"WallLamp3","dim"],[115,7,"WallLamp3","dim"],[173,1,"WallLamp3","dim"],[280,1,"WallLamp3","dim"],[151,7,"WallTorch","dimRed"]]',
+        gates: '[[17,5,"68.1","58.8","Open"]]',
+        triggers: '[[231,7,"RockTriggerButton",1,208],[179,5,"PurpleTriggerButton",1,123]]',
+        entities: '[[178,1,"Purrscilla"]]',
+        objects: '[[168,"Mushroom"]]',
+        movables: '[[144,"LittleChicken"]]',
+    }
     ,
     99: {
         name: "Sandbox",

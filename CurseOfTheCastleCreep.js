@@ -44,20 +44,23 @@ const DEBUG = {
          * defense 
          * 
          * 
-         * mushroom 2/5
+         * mushroom 3/5
          * chicken 1/1
-         * chicken for wolfie: 1/5
+         * chicken for wolfie: 2/5
          * fish 0/3 sharkeera
-         * fish 0/1, pearl0/1, frog 0/1
+         * fish 0/1, pearl 1/1, frog 0/1
          * poison 2/3
-         * missing keys: 
+         * leotard 0/1
+         * leopumps 1/2
+         * leohat 0/1
+         * missing keys: green
          * excess keys; ,
          * * chicken corpse 1/1
-         * coin 2/6
+         * coin 6/6
          * todo
-         * 58 dungeons: unplayed unfinished undecorated
+         * 58 dungeons: done;
             * 59 sorcery: sorceress wants 5 mushrooms gives 1 poison, unplayed unfinished
-            * 60 another descent: unplayed unfinished undecorated
+            * 60 another descent: played, finished, missing doors
             * 61 red riding hood unplayed unfinished undecorated
             * 62 granny: unplayed unfinished undecorated
             * 63 punisher: unplayed unfinished undecorated
@@ -65,30 +68,34 @@ const DEBUG = {
             * 65 Cliff: unplayed unfinished undecorated
             * 66 sharkeera: unplayed unfinished undecorated
             * 67 fichelle: unplayed unfinished undecorated
+            * 68 jungle:  unplayed unfinished undecorated
          * 
          * gold coin -> skill teachers ??
+            * magic
+            * defense 
          */
-        GAME.level = 58;    //58 //61 //65
-        GAME.gold = 789;
-        HERO.maxHealth = 115;
+
+        GAME.level = 59;  //58 //61 //65
+        GAME.gold = 1588;
+        HERO.maxHealth = 119;
         HERO.maxMana = 144;
-        HERO.health = 115;
-        HERO.mana = 26;
-        HERO.defense = 31;
+        HERO.health = 63;
+        HERO.mana = 10;
+        HERO.defense = 32;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 31;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 27;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 1822;
-        HERO.defenseExp = 759;
-        HERO.magicExp = 1371;
+        HERO.attackExp = 2313;
+        HERO.defenseExp = 116;
+        HERO.magicExp = 1660;
         HERO.attackExpGoal = 2570;
-        HERO.defenseExpGoal = 761;
+        HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 3855;
-        HERO.inventory.potion.red = 0;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["HalfLife", "BoostWeapon", "BoostArmor"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["HalfLife", "BoostWeapon", "BoostArmor", "Invisibility", "Radar", "DestroyArmor"];
         //let scrolls = [];
 
         //debug
@@ -100,13 +107,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        //let invItems = [];
-        let invItems = ["ChickenBones", "Poison", "Poison", "Pearl", "Frog", "GoldCoin", "LittleChicken", "LittleChicken", "LittleChicken", "LittleChicken", "Fish", "Fish", "Fish"];
+        let invItems = ["Mushroom", "Pearl", "LittleChicken"];
+        //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = [];
+        let keys = ["Red"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -140,7 +147,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.04",
+    VERSION: "0.13.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

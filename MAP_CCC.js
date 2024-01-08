@@ -1161,7 +1161,7 @@ const MAP = {
         movables: '[[127,"LittleChicken"]]',
     }
     ,
-    59: {
+    59 : {
         name: "Sorcery",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB5AA2BAA2BB2ABAA7BABB2EBB2AA33BAA2BB2AA2BABAA2BB2AA3BAA4BAA2BB2ABAA2BAA6BAA15BB10ABB2ABABB2AA2BB2AA3BABB2ABB6AA2BB2AA2BB3ABB12ABB8ABB3ABB32AA2BB7ABAA2BAA2BB13ABB5A$A"}',
@@ -1172,11 +1172,18 @@ const MAP = {
         decals: '[[32,5,"KingsQuest53","picture"],[80,5,"SVS110","picture"],[134,5,"BoogaBoo11","picture"],[38,5,"SirFred61","picture"],[183,5,"HalfLife11","picture"],[54,3,"MonkeyIsland141","picture"],[105,3,"TombRaider107","picture"],[63,3,"TombRaider106","picture"],[143,3,"SammyLightfoot2","picture"],[223,3,"Popeye2","picture"],[248,1,"FalconPatrol7","picture"],[253,1,"Hobbit101","picture"],[107,1,"KokotoniWilf70","picture"],[109,1,"HalfLife50","picture"],[101,1,"Witcher112","picture"],[5,7,"AticAtac204","picture"],[24,7,"Scramble60","picture"],[14,7,"Pitfall2-100","picture"],[60,7,"HeavyOnTheMagick60","picture"],[202,7,"AmberStar202","picture"],[109,7,"Hero52","picture"]]',
         lights: '[[12,7,"WallLamp","standard"],[3,7,"WallLamp","standard"],[107,7,"WallLamp","standard"],[251,1,"WallLamp2","dim"],[51,7,"WallLamp2","dim"]]',
         gates: '[[115,1,"59.1","58.2","Closed"],[214,5,"59.2","58.4","Open"]]',
+        keys: '[[39,3]]',
+        monsters: '[[67,"Basilisk"],[40,"Dragon"],[76,"SilverSkeleton"],[87,"RedSkeleton"],[189,"RedSkeleton"]]',
+        scrolls: '[[94,13]]',
+        potions: '[[219,0],[102,0],[17,0],[30,1],[142,1]]',
+        gold: '[[153,"GoldCube"],[43,"GoldCube"],[68,"GoldCube"],[220,"SilverBar"],[81,"SilverBar"],[70,"GoldBar"]]',
+        skills: '[[151,"Mana"]]',
+        containers: '[[123,"TreasureChest","INTERACTION_ITEM.Fish",7],[26,"Barrel","INTERACTION_ITEM.Leotard",7],[19,"Crate","GOLD_ITEM_TYPE.SilverBar",7],[238,"Chest","GOLD_ITEM_TYPE.GoldCube",1]]',
         doors: '[41]',
         entities: '[[203,1,"Sorceress"]]',
         objects: '[[44,"Mushroom"]]',
         movables: '[[35,"LittleChicken"]]',
-    }
+        }
     ,
     60: {
         name: "Oh no. Another Descent.",
@@ -1257,7 +1264,7 @@ const MAP = {
         entities: '[[220,1,"Wolfie"]]',
     }
     ,
-    65: {
+    65 : {
         name: "The Cliff",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB5AA4BB3AA11BAA2BAA3BAA6BAA6BAA11BB2ABB7ABAA2BB8AA2BB7ABABABB3ABB2ABB4AA3BB13AB$"}',
@@ -1265,9 +1272,15 @@ const MAP = {
         floor: "GoldMarbleFloor",
         ceil: "ThatchFloor",
         start: '[64,3]',
+        decals: '[[15,7,"Fred111","picture"],[9,7,"BrideOfFrankenstein","picture"],[59,7,"SpaceQuest10","picture"],[59,1,"MonkeyIsland111","picture"],[103,1,"TimeTunnel70","picture"],[119,1,"CrystalCastles200","picture"],[94,1,"Montezuma200","picture"],[28,7,"AirWolf200","picture"],[41,3,"AticAtac140","picture"],[85,3,"MonkeyIsland100","picture"],[22,5,"Galaga71","picture"],[88,5,"JSW112","picture"]]',
         lights: '[[59,5,"WallLamp","standard"],[8,7,"WallLamp3","dimRed"],[118,1,"WallLamp3","dimRed"]]',
         gates: '[[65,3,"65.1","58.7","Open"],[2,7,"65.2","66.1","Down"],[112,1,"65.3","67.1","Down"]]',
-    }
+        monsters: '[[58,"Basilisk"]]',
+        scrolls: '[[34,7]]',
+        potions: '[[78,1],[19,1],[23,0]]',
+        containers: '[[31,"Barrel","INTERACTION_ITEM.Frog",1],[97,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[60,"Crate","GOLD_ITEM_TYPE.SilverBar",5]]',
+        shrines: '[[55,5,"MagicShrine"]]',
+        }
     ,
     66: {
         name: "Sharkeera",

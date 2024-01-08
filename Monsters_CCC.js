@@ -1172,11 +1172,13 @@ const INTERACTION_ITEM = {
         name: "Fish",
         category: "interaction_item",
         inventorySprite: "Fish",
+        text: "Smelly little swimmer."
     },
     Frog: {
         name: "Frog",
         category: "interaction_item",
         inventorySprite: "Frog",
+        text: "Is that a prince?"
     },
     MagicWand: {
         name: "MagicWand",

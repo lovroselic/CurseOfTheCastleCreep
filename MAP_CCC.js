@@ -1282,7 +1282,7 @@ const MAP = {
         shrines: '[[55,5,"MagicShrine"]]',
         }
     ,
-    66: {
+    66 : {
         name: "Sharkeera",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB2ABABB5AA41BABB22ABB3ABB5AA2BAA2BB11ABABB16A$"}',
@@ -1290,12 +1290,19 @@ const MAP = {
         floor: "Water1",
         ceil: "Sky1",
         start: '[104,1]',
+        decals: '[[14,7,"KnightLore110","picture"],[18,7,"SpyVsSpy41","picture"],[34,5,"Pitfall89","picture"],[78,5,"Arena200","picture"],[42,3,"Ishar71","picture"],[86,3,"TombRaider107","picture"],[65,3,"Friday70","picture"]]',
         lights: '[[102,1,"WallLamp","standard"],[106,1,"WallLamp","standard"]]',
         gates: '[[115,1,"66.1","65.2","Up"]]',
+        monsters: '[[27,"Basilisk"],[24,"Dragon"],[30,"Dragon"]]',
+        potions: '[[60,1],[40,1]]',
+        gold: '[[36,"SilverBar"],[51,"SilverBar"],[70,"GoldBar"]]',
+        containers: '[[95,"Barrel","INTERACTION_ITEM.Fish",1],[91,"Barrel","GOLD_ITEM_TYPE.GoldBar",1]]',
+        shrines: '[[55,5,"AttackShrine"]]',
         entities: '[[5,7,"Sharkeera"]]',
-    }
+        objects: '[[64,"Poison"]]',
+        }
     ,
-    67: {
+    67 : {
         name: "Fischelle",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB2ABABB5AA41BABB22ABB3ABB5AA2BAA2BB11ABABB16A$"}',
@@ -1303,10 +1310,16 @@ const MAP = {
         floor: "Water2",
         ceil: "Sky1",
         start: '[16,7]',
+        decals: '[[65,3,"Fred112","picture"],[102,1,"AticAtac140","picture"],[106,1,"AticAtac203","picture"],[34,5,"ReturnToCastleWolfenstein12","picture"],[78,5,"SirFred60","picture"],[42,3,"DungeonMaster203","picture"],[86,3,"FireAnt2","picture"]]',
         lights: '[[14,7,"WallLamp","standard"],[18,7,"WallLamp","standard"]]',
         gates: '[[5,7,"67.1","65.3","Up"]]',
+        monsters: '[[35,"RedSkeleton"],[52,"SilverSkeleton"],[93,"Basilisk"],[64,"Dragon"]]',
+        scrolls: '[[29,10],[96,11]]',
+        gold: '[[24,"GoldCube"],[50,"GoldCube"],[91,"GoldCube"],[41,"GoldCube"]]',
+        containers: '[[47,"Barrel","INTERACTION_ITEM.Fish",4],[73,"Barrel","GOLD_ITEM_TYPE.SilverBar",4]]',
+        shrines: '[[55,5,"DefenseShrine"]]',
         entities: '[[115,1,"Fischelle"]]',
-    }
+        }
     ,
     68: {
         name: "Purrscilla",

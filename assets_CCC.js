@@ -286,7 +286,7 @@ LoadShaders = [
 LoadObjects = [
     "key.obj", "flask.obj", "scroll.obj", "ball.obj", "sword.obj", "heart.obj", "shield.obj", "pentagram.obj", "chest.obj",
     "treasure_chest.obj", "coins.obj", "sting.obj", "apple.obj", "pear.obj", "gem.obj", "blockwall.obj", "wardrobe.obj",
-    "barrel.obj", "crate.obj", "skull.obj", "rat.obj", "lizard.obj", "mushroom.obj"
+    "barrel.obj", "crate.obj", "skull.obj", "rat.obj", "lizard.obj", "mushroom.obj", "coin.obj"
 ];
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',

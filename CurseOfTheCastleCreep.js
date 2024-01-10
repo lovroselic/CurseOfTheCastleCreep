@@ -44,58 +44,63 @@ const DEBUG = {
          * defense 
          * 
          * 
-         * mushroom 3/5
+         * mushroom 5/5
          * chicken 1/1
-         * chicken for wolfie: 2/5
-         * fish 2/3 sharkeera
-         * fish 1/1, pearl 1/1, frog 1/1
+         * chicken for wolfie: 4/5
+         * fish 3/3 sharkeera
          * poison 3/3
          * leotard 1/1
-         * leopumps 1/2
-         * leohat 0/1
+         * leopumps 2/2
+         * leohat 1/1
          * missing keys: 
          * excess keys; 
          * * chicken corpse 1/1
-         * coin 6/6
+         * coin 5/6
+            * granny
+            * wolfie
+            * fishelee
+            * sharkeera
+            * purrscilla
+            * object ->  
          * todo
          * 58 dungeons: done;
-            * 59 tems not given
+            * 59 sorcery: items not given
             * 60 missing doors
-            * 61 red riding hood unplayed unfinished undecorated
-            * 62 granny: unplayed unfinished undecorated
+            * 61 red riding hood: items not given;
+            * 62 granny: items not given;
             * 63 punisher: unplayed unfinished undecorated
             * 64 wolfie: unplayed unfinished undecorated
             * 65 Cliff: done
-            * 66 items not given
-            * 67 fichelle: complete, 
+            * 66 sharkeera: complete
+            * 67 fichelle: complete
             * 68 jungle - purrscilla :  unplayed unfinished undecorated
          * 
-         * gold coin -> skill teachers ??
+         * gold coin -> skill teachers ?? 
             * magic
             * defense 
          */
 
-        GAME.level = 61;  //58 //61 //65
-        GAME.gold = 698;
-        HERO.maxHealth = 123;
-        HERO.maxMana = 149;
-        HERO.health = 123;
-        HERO.mana = 2;
+        GAME.level = 68;   //58 //61 //65
+        GAME.gold = 1319;
+        HERO.maxHealth = 127;
+        HERO.maxMana = 154;
+        HERO.health = 127;
+        HERO.mana = 154;
         HERO.defense = 33;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 33;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 30;
+        HERO.magic = 31;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 409;
-        HERO.defenseExp = 240;
-        HERO.magicExp = 2866;
+        HERO.attackExp = 1681;
+        HERO.defenseExp = 507;
+        HERO.magicExp = 3432;
         HERO.attackExpGoal = 3855;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 3855;
         HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Radar", "Radar"];
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["Radar", "Radar", "Invisibility", "BoostWeapon", "DestroyArmor"];
         //let scrolls = [];
 
         //debug
@@ -107,13 +112,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin", "Mushroom", "LittleChicken", "LittleChicken", "Mushroom", "Fish", "Leotard", "LeoPumps", "Poison"];
+        let invItems = ["GoldCoin", "GoldCoin", "Mushroom", "LittleChicken", "LittleChicken", "Mushroom", "Leotard", "LeoPumps", "Poison", "LittleChicken", "Mushroom", "LeoPumps", "LittleChicken", "Poison", "Mushroom", "LeoHat",];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = ["Green"];
+        let keys = ["Blue"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -147,7 +152,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.07",
+    VERSION: "0.13.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

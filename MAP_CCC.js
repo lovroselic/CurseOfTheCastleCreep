@@ -1202,39 +1202,56 @@ const MAP = {
         oracles: '[[1,7,"DescentOracle"]]',
     }
     ,
-    61: {
+    61 : {
         name: "Little Red Riding Hood",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB7AA5BAA4BABAA3BB2AA7BB4AA7BAA3BAA13BB2ABAA5BB3AA3BAA2BAA3BABB2ABB4AA8BB7ABABB4AA2BB2ABB3AA3BABB2AA2BB4ABB3AA2BB2ABAA4BB2AA5BAA7BABAA2BB5ABABB2ABB7AA2BAA2BB2ABB2ABAA3BB5AA2BB6ABB3ABB6ABB4ABABB3ABB3AA3EABB3ABB6ABB5ABB17ABB6$AB"}',
+        data: '{"width":"17","height":"17","map":"BB7AA5BAA4BABAA3BB2AA7BB4AA7BAA3BAA13BB2ABAA5BB2ABAA2BAA2BB2AA3BABB2ABB4AA8BB7ABABB4AA2BABABB4AA2BABB2AA2BABB2ABB3AA2BB2ABAA4BB2AA5BB2AA7BABAA2BB5ABABB2ABB7AA2BAA2BB2ABB3ABAA3BB5ABABB5ABB2ABABB7ABB3ABABB3AA2BB3AA2EABB3ABB6ABB5ABB17AB$AB"}',
         wall: "MC_Wall3",
         floor: "MC_FLoor10",
         ceil: "BeautifullWall1",
         start: '[49,3]',
-        lights: '[[12,7,"WallLamp","standard"],[99,7,"WallLamp","standard"],[255,5,"WallLamp2","dim"],[284,1,"WallLamp","standard"],[161,3,"WallLamp","standard"],[87,7,"WallTorch","fire"],[143,1,"WallLamp","standard"]]',
+        decals: '[[15,7,"KokotoniWilf2","picture"],[56,7,"Scarab200","picture"],[60,7,"AntAttack200","picture"],[174,7,"Vixen50","picture"],[214,7,"Biggles2","picture"],[185,7,"BlueMax11","picture"],[117,7,"LeisureSuitLarry61","picture"],[210,7,"ManicMiner12","picture"],[137,7,"SabreWulf11","picture"],[205,7,"LSL31","picture"],[84,3,"HalfLife14","picture"],[271,3,"JetSetWilly89","picture"],[198,3,"TombRaider104","picture"],[56,3,"SVS1011","picture"],[111,3,"Belwothe","picture"],[149,3,"ImpossibleMsission110","picture"],[107,5,"RedWarrior1","picture"],[192,5,"CrawlMaster2","picture"],[56,5,"TombRaider108","picture"],[181,5,"Karateka200","picture"],[234,5,"Ishar71","picture"],[132,5,"RobinToTheRescue89","picture"],[187,5,"MassEffect1","picture"],[264,5,"Scramble23","picture"],[278,1,"TempleOfApshai89","picture"],[111,1,"CrystalCastles2","picture"],[218,1,"Pitfall96","picture"],[172,1,"BrianBloodaxe11","picture"],[242,1,"HoraceSki","picture"],[98,1,"FF101","picture"]]',
+        lights: '[[12,7,"WallLamp","standard"],[99,7,"WallLamp","standard"],[255,5,"WallLamp2","dim"],[284,1,"WallLamp","standard"],[161,3,"WallLamp","standard"],[87,7,"WallTorch","fire"],[143,1,"WallLamp","standard"],[2,7,"WallTorch","dimRed"]]',
         gates: '[[50,3,"61.1","58.5","Open"],[102,5,"61.2","62.1","Green"],[51,5,"61.3","62.2","Closed"]]',
         keys: '[[116,3]]',
+        monsters: '[[41,"Rex"],[250,"RedSkeleton"],[133,"SilverSkeleton"],[224,"Basilisk"],[39,"Dragon"],[103,"Dragon"],[53,"Bat"],[47,"RedGoldBat"]]',
+        scrolls: '[[82,0],[154,2],[228,4],[90,7]]',
+        potions: '[[63,1],[258,1],[121,1],[163,1],[43,0],[129,0],[30,0]]',
+        skills: '[[235,"Mana"],[193,"Heart"]]',
+        containers: '[[19,"TreasureChest","INTERACTION_ITEM.LeoHat",7],[31,"Crate","GOLD_ITEM_TYPE.GoldBar",7],[123,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[94,"Barrel","GOLD_ITEM_TYPE.GoldBar",1]]',
         doors: '[97]',
         triggers: '[[179,1,"MarbleTriggerButton",1,145],[70,1,"MarbleTriggerButton",1,54],[27,7,"MarbleTriggerButton",1,45]]',
         entities: '[[7,7,"RedRidingHood"]]',
+        objects: '[[93,"Mushroom"]]',
         oracles: '[[263,3,"RedRidingOracle"]]',
-    }
+        movables: '[[267,"LittleChicken"]]',
+        }
     ,
-    62: {
+    62 : {
         name: "Granny",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB4AA8BB2ABAA7BAA5BAA2BB2AA16BAA2BB6ABB2AA5BAA13BB2AA2EABAA3BAA2BABABAA2BABABABABB2AA3BAA5BABB2ABB3ABAA2BB2ABB4ABB7ABAA2BB3ABAA2BABB3AA7BAA2BB2AA2BABABB2ABB2AA2BABB2AA3BAA2BB4ABB5ABABABB5ABB4ABB2AA2BB3EABB7ABB2ABABABB3ABB4ABB23ABB4A$AA2B"}',
+        data: '{"width":"17","height":"17","map":"BB4AA7BAA2BB2AA7BAA5BAA3BB2AA15BAA2BB4ABB2ABB2AA4BAA14BB2AA2EAA2BABAA2BABABAA2BABABABABB2AA4BAA5BAA2BB2ABB5ABABB6ABB7ABAA2BB3ABAA2BABB3AA7BAA2BB2AA2BAA2BB2ABB2ABB2AA2BABB2AA3BAA2BB5ABB4AA2BABABB5ABAA2BABB2AA2BB3EABB6ABABABB7ABB23ABB4A$AA2B"}',
         wall: "DungeonWall",
         floor: "MC_Floor13",
         ceil: "BrownWall2",
         start: '[117,3]',
+        decals: '[[82,1,"Witcher100","picture"],[150,1,"DragonSkulle110","picture"],[232,1,"SkoolDaze60","picture"],[279,1,"MonkeyIsland141","picture"],[273,1,"HeadOverHeels3","picture"],[200,1,"Ultima70","picture"],[109,1,"MrRobot70","picture"],[61,1,"AmberMoon200","picture"],[113,1,"ImpossibleMission90","picture"],[179,1,"ForbiddenForest91","picture"],[205,1,"GatewayToApshai130","picture"],[5,7,"DefenderOfTheCrown","picture"],[9,7,"TombRaider130","picture"],[113,7,"MoonBuggy","picture"],[105,7,"SVS102","picture"],[173,7,"FalconPatrol7","picture"],[141,7,"SabreWulf87","picture"],[111,7,"HalfLife14","picture"],[179,7,"Sorcery31","picture"],[51,5,"Grog1","picture"],[153,5,"AztecChallenge100","picture"],[180,5,"Tutankham105","picture"],[193,5,"Oblivion141","picture"],[225,5,"Tombraider141","picture"],[54,3,"ArticShipwreck2","picture"],[47,3,"Hero104","picture"],[220,3,"KnightLore31","picture"]]',
         lights: '[[61,3,"WallLamp","dim"],[61,5,"WallLamp","standard"],[287,1,"WallLamp","standard"],[281,1,"WallLamp","standard"],[98,7,"WallLamp","standard"],[143,7,"WallLamp","standard"],[205,7,"WallLamp","standard"],[1,7,"WallLamp2","dim"]]',
         gates: '[[118,3,"62.1","61.2","Open"],[67,3,"62.2","61.3","Closed"]]',
         keys: '[[270,4]]',
+        monsters: '[[181,"RedSkeleton"],[219,"SilverSkeleton"],[120,"SilverSkeleton"],[259,"Basilisk"],[24,"Basilisk"],[62,"Rex"],[195,"Dragon"]]',
+        scrolls: '[[215,1],[258,4],[91,6]]',
+        potions: '[[115,1],[218,1],[249,1],[222,1],[194,1],[89,1]]',
+        gold: '[[57,"SilverBar"],[230,"SilverBar"],[239,"SilverBar"],[157,"SilverBar"],[35,"GoldCube"],[48,"GoldCube"],[133,"GoldCube"],[268,"GoldCube"],[227,"GoldBar"]]',
+        containers: '[[99,"TreasureChest","INTERACTION_ITEM.LeoPumps",7],[168,"Barrel","INTERACTION_ITEM.Fish",7],[25,"Chest","GOLD_ITEM_TYPE.GoldBar",7]]',
+        shrines: '[[14,7,"MagicShrine"]]',
         doors: '[64,149]',
         triggers: '[[232,7,"RockTriggerButton",1,103]]',
         entities: '[[54,5,"Granny"]]',
-        objects: '[[59,"Poison"]]',
-    }
+        objects: '[[59,"Poison"],[20,"Mushroom"]]',
+        traps: '[[61,7,"MarbleTriggerButton",1,"GreatChick",65],[104,7,"MarbleTriggerButton",1,"GreatCat",126]]',
+        movables: '[[208,"LittleChicken"]]',
+        }
     ,
     63: {
         name: "Punisher",
@@ -1337,7 +1354,7 @@ const MAP = {
         movables: '[[144,"LittleChicken"]]',
     }
     ,
-    99: {
+    99 : {
         name: "Sandbox",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB13AA132BB41AA11BB58A$"}',
@@ -1346,6 +1363,6 @@ const MAP = {
         ceil: "MossyWall",
         start: '[40,7]',
         lights: '[[24,7,"WallLamp","standard"],[232,1,"WallLamp","standard"],[126,3,"WallLamp","standard"],[129,5,"WallLamp","standard"]]',
-        objects: '[[104,"CrystallBall"],[72,"CrystallBall"],[131,"CrystallBall"],[125,"CrystallBall"],[200,"CrystallBall"],[132,"IceCube"],[71,"IceCube"],[123,"IceCube"],[184,"IceCube"],[56,"Rat"],[115,"Rat"],[124,"Rat"],[199,"Rat"],[116,"Lizard"],[55,"Lizard"],[108,"Lizard"],[183,"Lizard"],[34,"Lizard"]]',
-    }
+        objects: '[[104,"CrystallBall"],[72,"CrystallBall"],[131,"CrystallBall"],[125,"CrystallBall"],[200,"CrystallBall"],[132,"IceCube"],[71,"IceCube"],[123,"IceCube"],[184,"IceCube"],[56,"Rat"],[115,"Rat"],[124,"Rat"],[199,"Rat"],[116,"Lizard"],[55,"Lizard"],[108,"Lizard"],[183,"Lizard"],[34,"Lizard"],[57,"GoldCoin"]]',
+        }
 };

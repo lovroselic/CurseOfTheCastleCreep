@@ -46,7 +46,7 @@ const DEBUG = {
          * 
          * mushroom 5/5
          * chicken 1/1
-         * chicken for wolfie: 4/5
+         * chicken for wolfie: 5/5
          * fish 3/3 sharkeera
          * poison 3/3
          * leotard 1/1
@@ -64,43 +64,43 @@ const DEBUG = {
             * object ->  
          * todo
          * 58 dungeons: done;
-            * 59 sorcery: items not given
+            * 59 sorcery: complete;
             * 60 missing doors
-            * 61 red riding hood: items not given;
-            * 62 granny: items not given;
+            * 61 red riding hood: complete;
+            * 62 granny: complete;
             * 63 punisher: unplayed unfinished undecorated
             * 64 wolfie: unplayed unfinished undecorated
             * 65 Cliff: done
             * 66 sharkeera: complete
             * 67 fichelle: complete
-            * 68 jungle - purrscilla :  unplayed unfinished undecorated
+            * 68 jungle - purrscilla :  complete
          * 
          * gold coin -> skill teachers ?? 
             * magic
             * defense 
          */
 
-        GAME.level = 68;   //58 //61 //65
-        GAME.gold = 1319;
+        GAME.level = 64;   //58 
+        GAME.gold = 2271;
         HERO.maxHealth = 127;
         HERO.maxMana = 154;
-        HERO.health = 127;
-        HERO.mana = 154;
-        HERO.defense = 33;
+        HERO.health = 68;
+        HERO.mana = 23;
+        HERO.defense = 34;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 33;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 31;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 1681;
-        HERO.defenseExp = 507;
-        HERO.magicExp = 3432;
+        HERO.attackExp = 2449;
+        HERO.defenseExp = 601;
+        HERO.magicExp = 3603;
         HERO.attackExpGoal = 3855;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 3855;
         HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 1;
-        let scrolls = ["Radar", "Radar", "Invisibility", "BoostWeapon", "DestroyArmor"];
+        let scrolls = ["DestroyWeapon"];
         //let scrolls = [];
 
         //debug
@@ -112,7 +112,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin", "GoldCoin", "Mushroom", "LittleChicken", "LittleChicken", "Mushroom", "Leotard", "LeoPumps", "Poison", "LittleChicken", "Mushroom", "LeoPumps", "LittleChicken", "Poison", "Mushroom", "LeoHat",];
+        let invItems = ["GoldCoin", "GoldCoin", "GoldCoin", "GoldCoin", "LittleChicken", "LittleChicken", "LittleChicken", "LittleChicken", "LittleChicken"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -152,7 +152,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.08",
+    VERSION: "0.13.09",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

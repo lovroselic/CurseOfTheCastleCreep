@@ -1338,7 +1338,7 @@ const MAP = {
         entities: '[[115,1,"Fischelle"]]',
         }
     ,
-    68: {
+    68 : {
         name: "Purrscilla",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB6ABAA6BAA3BABAA11BB4AA2BAA2BB2AA2BAA10BB2AA2BAA5BAA3BABB2AA4BAA2BB5ABB7AA3BB2ABB4AA2BABB3ABB8ABB6ABB4ABB3ABAA5BB2AA2BAA2BB2ABAA2BABAA5BB3AA3BB3AA4BABAA2BAA3BB2AA3BABAA8BAA3BABAA2BB4AA5BABB2AA2BB2ABB4ABB2ABB2ABB2AA2BABB9ABB12ABB6ABB12A$"}',
@@ -1346,13 +1346,20 @@ const MAP = {
         floor: "Moss",
         ceil: "MossyWall",
         start: '[18,5]',
+        decals: '[[23,3,"Zaxxon3","picture"],[93,3,"Vixen89","picture"],[99,3,"Pipeline50","picture"],[33,3,"DM107","picture"],[89,3,"CrawlMaster130","picture"],[262,3,"AztecChallenge112","picture"],[191,3,"AticAtac204","picture"],[165,3,"JupiterLander70","picture"],[199,3,"MontyMole100","picture"],[201,3,"Triss","picture"],[247,5,"Ghostbusters200","picture"],[153,5,"Ishar11","picture"],[61,5,"1942_201","picture"],[27,5,"Arnie201","picture"],[187,5,"GatewayToApshai11","picture"],[3,7,"Ishar71","picture"],[110,7,"ManicMiner64","picture"],[140,5,"KnightLore111","picture"],[191,5,"BrianBloodaxe71","picture"],[228,1,"Cavelon11","picture"],[231,1,"ImpossibleMsission112","picture"],[285,1,"DungeonMaster92","picture"],[241,1,"MassEffect2","picture"],[104,1,"RobinHood3","picture"],[151,1,"TombRaider112","picture"],[111,1,"HungryHorace12","picture"],[178,7,"SabreWulf99","picture"],[233,5,"LastNinja10","picture"],[148,5,"WhoDaresWins71","picture"],[184,5,"SP68","picture"],[220,3,"DM106","picture"]]',
         lights: '[[35,7,"WallLamp3","dim"],[8,7,"WallLamp","standard"],[273,1,"WallLamp3","dim"],[287,1,"WallLamp3","dim"],[115,7,"WallLamp3","dim"],[173,1,"WallLamp3","dim"],[280,1,"WallLamp3","dim"],[151,7,"WallTorch","dimRed"]]',
         gates: '[[17,5,"68.1","58.8","Open"]]',
-        triggers: '[[231,7,"RockTriggerButton",1,208],[179,5,"PurpleTriggerButton",1,123]]',
+        monsters: '[[87,"RedSkeleton"],[95,"SilverSkeleton"],[166,"Dragon"],[219,"Basilisk"],[222,"Basilisk"],[193,"Basilisk"],[146,"Rex"]]',
+        scrolls: '[[26,3],[248,5],[239,10],[130,7]]',
+        potions: '[[120,0],[149,0],[195,1],[125,1]]',
+        gold: '[[88,"GoldCube"],[91,"GoldCube"],[30,"GoldCube"],[134,"GoldCube"],[158,"GoldCube"],[197,"GoldCube"],[188,"GoldCube"],[244,"GoldCube"],[268,"GoldCube"]]',
+        skills: '[[224,"Sting"]]',
+        containers: '[[52,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
+        triggers: '[[231,7,"RockTriggerButton",1,208],[179,5,"RockTriggerButton",1,123]]',
         entities: '[[178,1,"Purrscilla"]]',
         objects: '[[168,"Mushroom"]]',
         movables: '[[144,"LittleChicken"]]',
-    }
+        }
     ,
     99 : {
         name: "Sandbox",

@@ -8,9 +8,9 @@
 /*
       
 TODO:
-    * scroll: show movables
+    * 
 known bugs: 
-    * model loading fulfill promise too soon
+    * model loading fulfills promise too soon
     * i don't do bugs
     
 
@@ -55,13 +55,13 @@ const DEBUG = {
          * missing keys: 
          * excess keys; 
          * * chicken corpse 1/1
-         * coin 5/6
+         * coin 6/6
             * granny
             * wolfie
             * fishelee
             * sharkeera
             * purrscilla
-            * object ->  
+            * object ->  wolf den floor
          * todo
          * 58 dungeons: done;
             * 59 sorcery: complete;
@@ -152,7 +152,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.09",
+    VERSION: "0.13.10",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

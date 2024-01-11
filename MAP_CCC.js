@@ -1161,7 +1161,7 @@ const MAP = {
         movables: '[[127,"LittleChicken"]]',
     }
     ,
-    59 : {
+    59: {
         name: "Sorcery",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB5AA2BAA2BB2ABAA7BABB2EBB2AA33BAA2BB2AA2BABAA2BB2AA3BAA4BAA2BB2ABAA2BAA6BAA15BB10ABB2ABABB2AA2BB2AA3BABB2ABB6AA2BB2AA2BB3ABB12ABB8ABB3ABB32AA2BB7ABAA2BAA2BB13ABB5A$A"}',
@@ -1183,7 +1183,7 @@ const MAP = {
         entities: '[[203,1,"Sorceress"]]',
         objects: '[[44,"Mushroom"]]',
         movables: '[[35,"LittleChicken"]]',
-        }
+    }
     ,
     60: {
         name: "Oh no. Another Descent.",
@@ -1195,14 +1195,14 @@ const MAP = {
         start: '[13,7]',
         decals: '[[40,1,"LS","crest"],[34,3,"AticAtacCrest1","crest"],[52,3,"AticAtacCrest1","crest"],[28,5,"Skull1","crest"],[46,5,"Skull1","crest"],[68,1,"PrayingSkeleton10","crest"],[66,1,"PrayingSkeleton10","crest"],[7,7,"LeisureSuitLarry90","picture"]]',
         lights: '[[40,7,"WallTorch","fire"]]',
-        gates: '[[4,7,"60.1","58.3","Up"],[36,5,"60.2","63.1","Closed"]]',
+        gates: '[[4,7,"60.1","58.3","Up"],[36,5,"60.2","63.1","Closed"],[44,3,"60.3","69.1","Closed"]]',
         keys: '[[49,2]]',
         monsters: '[[58,"Skeleton"]]',
         potions: '[[51,0],[47,1]]',
         oracles: '[[1,7,"DescentOracle"]]',
     }
     ,
-    61 : {
+    61: {
         name: "Little Red Riding Hood",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB7AA5BAA4BABAA3BB2AA7BB4AA7BAA3BAA13BB2ABAA5BB2ABAA2BAA2BB2AA3BABB2ABB4AA8BB7ABABB4AA2BABABB4AA2BABB2AA2BABB2ABB3AA2BB2ABAA4BB2AA5BB2AA7BABAA2BB5ABABB2ABB7AA2BAA2BB2ABB3ABAA3BB5ABABB5ABB2ABABB7ABB3ABABB3AA2BB3AA2EABB3ABB6ABB5ABB17AB$AB"}',
@@ -1225,9 +1225,9 @@ const MAP = {
         objects: '[[93,"Mushroom"]]',
         oracles: '[[263,3,"RedRidingOracle"]]',
         movables: '[[267,"LittleChicken"]]',
-        }
+    }
     ,
-    62 : {
+    62: {
         name: "Granny",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB4AA7BAA2BB2AA7BAA5BAA3BB2AA15BAA2BB4ABB2ABB2AA4BAA14BB2AA2EAA2BABAA2BABABAA2BABABABABB2AA4BAA5BAA2BB2ABB5ABABB6ABB7ABAA2BB3ABAA2BABB3AA7BAA2BB2AA2BAA2BB2ABB2ABB2AA2BABB2AA3BAA2BB5ABB4AA2BABABB5ABAA2BABB2AA2BB3EABB6ABABABB7ABB23ABB4A$AA2B"}',
@@ -1251,7 +1251,7 @@ const MAP = {
         objects: '[[59,"Poison"],[20,"Mushroom"]]',
         traps: '[[61,7,"MarbleTriggerButton",1,"GreatChick",65],[104,7,"MarbleTriggerButton",1,"GreatCat",126]]',
         movables: '[[208,"LittleChicken"]]',
-        }
+    }
     ,
     63: {
         name: "Punisher",
@@ -1267,7 +1267,7 @@ const MAP = {
         oracles: '[[146,5,"PunisherOracle"]]',
     }
     ,
-    64 : {
+    64: {
         name: "Wolf Den",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB8AA7BAA6BAA10BAA2BB2AA2BAA3ÁAA2BAA15BB4AA3BB2ABB3ABB10AA4BAA2BB2ABABB5ABB3ABB2AA6BAA3BAA5QBB2AA4BB4ABAA2QBB2ABB3ABABB6AA2BAA7BABB3AA2BB5ABB7AA2BB2ABABB2ABB19$BB2AA3BB2A"}',
@@ -1288,9 +1288,9 @@ const MAP = {
         entities: '[[220,1,"Wolfie"]]',
         objects: '[[78,"GoldCoin"]]',
         traps: '[[130,5,"RockTriggerButton",0,"Bounceball",178],[130,1,"RockTriggerButton",0,"Bounceball",172]]',
-        }
+    }
     ,
-    65 : {
+    65: {
         name: "The Cliff",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB5AA4BB3AA11BAA2BAA3BAA6BAA6BAA11BB2ABB7ABAA2BB8AA2BB7ABABABB3ABB2ABB4AA3BB13AB$"}',
@@ -1306,9 +1306,9 @@ const MAP = {
         potions: '[[78,1],[19,1],[23,0]]',
         containers: '[[31,"Barrel","INTERACTION_ITEM.Frog",1],[97,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[60,"Crate","GOLD_ITEM_TYPE.SilverBar",5]]',
         shrines: '[[55,5,"MagicShrine"]]',
-        }
+    }
     ,
-    66 : {
+    66: {
         name: "Sharkeera",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB2ABABB5AA41BABB22ABB3ABB5AA2BAA2BB11ABABB16A$"}',
@@ -1326,9 +1326,9 @@ const MAP = {
         shrines: '[[55,5,"AttackShrine"]]',
         entities: '[[5,7,"Sharkeera"]]',
         objects: '[[64,"Poison"]]',
-        }
+    }
     ,
-    67 : {
+    67: {
         name: "Fischelle",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB2ABABB5AA41BABB22ABB3ABB5AA2BAA2BB11ABABB16A$"}',
@@ -1345,9 +1345,9 @@ const MAP = {
         containers: '[[47,"Barrel","INTERACTION_ITEM.Fish",4],[73,"Barrel","GOLD_ITEM_TYPE.SilverBar",4]]',
         shrines: '[[55,5,"DefenseShrine"]]',
         entities: '[[115,1,"Fischelle"]]',
-        }
+    }
     ,
-    68 : {
+    68: {
         name: "Purrscilla",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB6ABAA6BAA3BABAA11BB4AA2BAA2BB2AA2BAA10BB2AA2BAA5BAA3BABB2AA4BAA2BB5ABB7AA3BB2ABB4AA2BABB3ABB8ABB6ABB4ABB3ABAA5BB2AA2BAA2BB2ABAA2BABAA5BB3AA3BB3AA4BABAA2BAA3BB2AA3BABAA8BAA3BABAA2BB4AA5BABB2AA2BB2ABB4ABB2ABB2ABB2AA2BABB9ABB12ABB6ABB12A$"}',
@@ -1368,9 +1368,21 @@ const MAP = {
         entities: '[[178,1,"Purrscilla"]]',
         objects: '[[168,"Mushroom"]]',
         movables: '[[144,"LittleChicken"]]',
+    }
+    ,
+    69 : {
+        name: "Dungeon University Main Hall",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB6ABB5AA60BABAA10BB2AA26BB2AA3BB2AA46BB12AA3BB2AA2BB15ABB14AA11BB62A$"}',
+        wall: "MC_FLoor10",
+        floor: "MarbleFloor1",
+        ceil: "BigRockWall1",
+        start: '[52,5]',
+        lights: '[[144,3,"WallLamp","standard"],[144,5,"WallLamp","standard"],[90,1,"WallLamp2","dim"],[96,1,"WallLamp2","dim"],[192,7,"WallLamp2","dim"],[198,7,"WallLamp2","dim"]]',
+        gates: '[[51,5,"69.1","60.3","Open"]]',
         }
     ,
-    99 : {
+    99: {
         name: "Sandbox",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB13AA132BB41AA11BB58A$"}',
@@ -1380,5 +1392,5 @@ const MAP = {
         start: '[40,7]',
         lights: '[[24,7,"WallLamp","standard"],[232,1,"WallLamp","standard"],[126,3,"WallLamp","standard"],[129,5,"WallLamp","standard"]]',
         objects: '[[104,"CrystallBall"],[72,"CrystallBall"],[131,"CrystallBall"],[125,"CrystallBall"],[200,"CrystallBall"],[132,"IceCube"],[71,"IceCube"],[123,"IceCube"],[184,"IceCube"],[56,"Rat"],[115,"Rat"],[124,"Rat"],[199,"Rat"],[116,"Lizard"],[55,"Lizard"],[108,"Lizard"],[183,"Lizard"],[34,"Lizard"],[57,"GoldCoin"]]',
-        }
+    }
 };

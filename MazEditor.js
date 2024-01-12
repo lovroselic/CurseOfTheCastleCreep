@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.09.02",
+  VERSION: "0.09.03",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -927,6 +927,7 @@ const GAME = {
     $("#randpic").click(GAME.randomPic);
     $("#randcrest").click(GAME.randomCrest);
     $("#randtriggerdecal").click(GAME.randomTrigger);
+    $("#randlight").click(GAME.randomLight);
 
     for (const monsterType in MONSTER_TYPE) {
       $("#monster_type").append(`<option value="${monsterType}">${monsterType} A: ${MONSTER_TYPE[monsterType].attack} D: ${MONSTER_TYPE[monsterType].defense} M: ${MONSTER_TYPE[monsterType].magic}</option>`);
@@ -1017,6 +1018,11 @@ const GAME = {
       }
     });
     $("#trap_type").trigger("change");
+  },
+  randomLight(){
+    const pic = LIGHT_DECALS.chooseRandom();
+    $("#light_decal").val(pic).change();
+    ENGINE.drawToId("lightcanvas", 0, 0, SPRITE[$("#light_decal")[0].value]);
   },
   randomPic() {
     const pic = DECAL_PAINTINGS.chooseRandom();

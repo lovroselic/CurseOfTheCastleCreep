@@ -43,12 +43,15 @@ const DEBUG = {
          * attack 
          * defense 
          * 
+         * excesss ekeys: blue
+         * missing keys: 
          * rooms
             * 63 punisher - unplayed
             * 69 Uni main hall  
+            * 70 chapel
          */
 
-        GAME.level = 69;   //69
+        GAME.level = 70;   //69
         GAME.gold = 3410;
         HERO.maxHealth = 131;
         HERO.maxMana = 164;
@@ -120,7 +123,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.11",
+    VERSION: "0.13.12",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

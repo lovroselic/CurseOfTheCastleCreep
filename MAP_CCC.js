@@ -1373,13 +1373,28 @@ const MAP = {
     69 : {
         name: "Dungeon University Main Hall",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB6ABB5AA60BABAA10BB2AA26BB2AA3BB2AA46BB12AA3BB2AA2BB15ABB14AA11BB62A$"}',
+        data: '{"width":"17","height":"17","map":"BB3AA2BB2AA2BB6AA50BAA2BAA21BB2AA26BB2AA8BABAA39BB5ABB13AA3BB2AA2BB27AA2BB4ABAA3BB10AA6BB2AA4BABABB28A$"}',
         wall: "MC_FLoor10",
         floor: "MarbleFloor1",
         ceil: "BigRockWall1",
         start: '[52,5]',
         lights: '[[144,3,"WallLamp","standard"],[144,5,"WallLamp","standard"],[90,1,"WallLamp2","dim"],[96,1,"WallLamp2","dim"],[192,7,"WallLamp2","dim"],[198,7,"WallLamp2","dim"]]',
-        gates: '[[51,5,"69.1","60.3","Open"]]',
+        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"]]',
+        }
+    ,
+    70 : {
+        name: "Another Chapel",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB5AA28BB2AA4BB3AA2BAA3BB2AA2BABB3ABB3AA12BB3AA7BB6AA2BB16ABAA3BABB4AA5BB7ABB2AA5BB7ABB8AA2BB12A$"}',
+        wall: "SmallDarkBricks1",
+        floor: "RedBrickFloor1",
+        ceil: "MossyWall",
+        start: '[149,1]',
+        lights: '[[6,7,"WallLamp19","dim"],[65,5,"WallLamp20","dim"],[77,3,"WallLamp16","dim"],[157,1,"WallLamp13","standard"],[167,1,"WallLamp9","standard"]]',
+        gates: '[[162,1,"70.1","69.2","Open"]]',
+        keys: '[[18,4]]',
+        shrines: '[[58,1,"AttackShrine"],[69,3,"DefenseShrine"],[73,5,"MagicShrine"]]',
+        oracles: '[[84,7,"TrainingOracle"]]',
         }
     ,
     99: {

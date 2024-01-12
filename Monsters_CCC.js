@@ -109,6 +109,14 @@ const ORACLE_TYPE = {
         text: "Are you sure you are ready to be here already?",
         interactionCategory: "oracle",
     },
+    TrainingOracle: {
+        name: "TrainingOracle",
+        sprite: "TrainingOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "If you will not train with all of the dungeon professors, you will never defeat Ghostface.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {

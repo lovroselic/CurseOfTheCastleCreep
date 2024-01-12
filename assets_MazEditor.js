@@ -260,6 +260,19 @@ LoadSprites = [
     { srcName: "WallTorch.png", name: "WallTorch" },
     { srcName: "Lamp4.png", name: "Lamp4" },
 
+    { srcName: "WallLamp10.png", name: "WallLamp10" },
+    { srcName: "WallLamp11.png", name: "WallLamp11" },
+    { srcName: "WallLamp12.png", name: "WallLamp12" },
+    { srcName: "WallLamp13.png", name: "WallLamp13" },
+    { srcName: "WallLamp14.png", name: "WallLamp14" },
+    { srcName: "WallLamp15.png", name: "WallLamp15" },
+    { srcName: "WallLamp16.png", name: "WallLamp16" },
+    { srcName: "WallLamp17.png", name: "WallLamp17" },
+    { srcName: "WallLamp18.png", name: "WallLamp18" },
+    { srcName: "WallLamp19.png", name: "WallLamp19" },
+    { srcName: "WallLamp20.png", name: "WallLamp20" },
+    { srcName: "WallLamp9.png", name: "WallLamp9" },
+
     //gates
     { srcName: "DungeonDoor.png", name: "DungeonDoor_Closed" },
     { srcName: "dungeondoor_blue.png", name: "DungeonDoor_Blue" },

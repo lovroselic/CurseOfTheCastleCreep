@@ -345,6 +345,11 @@ LoadSprites = [
     { srcName: "Purrscilla.jpg", name: "Purrscilla" },
     { srcName: "DescentOracle.jpg", name: "DescentOracle" },
 
+    { srcName: "Alchemist.jpg", name: "Alchemist" },
+    { srcName: "DefenseProfessor.jpg", name: "DefenseProfessor" },
+    { srcName: "FirstAid.jpg", name: "FirstAid" },
+    { srcName: "TrainingOracle.jpg", name: "TrainingOracle" },
+
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -385,7 +390,6 @@ LoadSprites = [
     { srcName: "Poison.png", name: "Poison" },
     { srcName: "ChickenBones.png", name: "ChickenBones" },
     { srcName: "GoldCoin.png", name: "GoldCoin" },
-
     { srcName: "Leotard.png", name: "Leotard" },
     { srcName: "JagHat.png", name: "LeoHat" },
     { srcName: "LeoPumps.png", name: "LeoPumps" },
@@ -426,6 +430,19 @@ LoadSprites = [
     { srcName: "WallLamp3.png", name: "WallLamp3" },
     { srcName: "WallTorch.png", name: "WallTorch" },
     { srcName: "Lamp4.png", name: "Lamp4" },
+
+    { srcName: "WallLamp10.png", name: "WallLamp10" },
+    { srcName: "WallLamp11.png", name: "WallLamp11" },
+    { srcName: "WallLamp12.png", name: "WallLamp12" },
+    { srcName: "WallLamp13.png", name: "WallLamp13" },
+    { srcName: "WallLamp14.png", name: "WallLamp14" },
+    { srcName: "WallLamp15.png", name: "WallLamp15" },
+    { srcName: "WallLamp16.png", name: "WallLamp16" },
+    { srcName: "WallLamp17.png", name: "WallLamp17" },
+    { srcName: "WallLamp18.png", name: "WallLamp18" },
+    { srcName: "WallLamp19.png", name: "WallLamp19" },
+    { srcName: "WallLamp20.png", name: "WallLamp20" },
+    { srcName: "WallLamp9.png", name: "WallLamp9" },
 
     //compas
     { srcName: "CompassRose.png", name: "CompassRose" },

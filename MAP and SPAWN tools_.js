@@ -10,7 +10,7 @@ const MAP_TOOLS = {
     VERSION: "0.5",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
-        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables'],
+        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables', 'trainers'],
     INI: {
         FOG: true,
         GA_BYTE_SIZE: 2
@@ -106,6 +106,7 @@ const SPAWN_TOOLS = {
         this.doors(map, GA);
         this.triggers(map, GA);
         this.entities(map, GA);
+        this.trainers(map, GA);
         this.objects(map, GA);
         this.movables(map, GA);
         this.traps(map, GA);
@@ -248,6 +249,16 @@ const SPAWN_TOOLS = {
             GA.addShrine(grid);
             const face = DirectionToFace(Vector.fromInt(E[1]));
             const type = INTERACTION_ENTITY[E[2]];
+            const entity = new InteractionEntity(grid, face, type);
+            INTERACTIVE_DECAL3D.add(entity);
+        }
+    },
+    trainers(map, GA) {
+        for (const E of map.trainers) {
+            const grid = GA.indexToGrid(E[0]);
+            GA.addShrine(grid);
+            const face = DirectionToFace(Vector.fromInt(E[1]));
+            const type = INTERACTION_SHRINE[E[2]];
             const entity = new InteractionEntity(grid, face, type);
             INTERACTIVE_DECAL3D.add(entity);
         }

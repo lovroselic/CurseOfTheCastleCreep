@@ -49,9 +49,11 @@ const DEBUG = {
             * 63 punisher - unplayed
             * 69 Uni main hall  
             * 70 chapel
+            * 71 faculty of healing
+            * 72 faculty of defense
          */
 
-        GAME.level = 70;   //69
+        GAME.level = 72;   //69 //71
         GAME.gold = 3410;
         HERO.maxHealth = 131;
         HERO.maxMana = 164;
@@ -89,7 +91,8 @@ const DEBUG = {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        let keys = [];
+        //let keys = [];
+        let keys = ["Blue", "Green"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -123,7 +126,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.12",
+    VERSION: "0.13.13",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -538,9 +541,9 @@ const HERO = {
         this.health = this.maxHealth;
         this.mana = this.maxMana;
     },
-    raiseStat(which) {
-        this[which]++;
-        this[`reference_${which}`]++;
+    raiseStat(which, level = 1) {
+        this[which] += level;
+        this[`reference_${which}`] += level;
         TITLE.stats();
     },
     incStat(which) {
@@ -593,13 +596,14 @@ const HERO = {
             TITLE.status();
         }
     },
-    incStatus(type) {
+    incStatus(type, level = 1) {
+        //console.log("incStatus", type, level);
         let Type = type.capitalize();
         let max = `max${Type}`;
         if (type === 'mana') {
             this[max] = Math.max(this[max], 3 * Missile.calcMana(this.reference_magic));
         }
-        this[max] += INI[`${type.toUpperCase()}_INC`];
+        this[max] += INI[`${type.toUpperCase()}_INC`] * level;
         this[type] = this[max];
         TITLE.status();
     },
@@ -1091,14 +1095,18 @@ const GAME = {
                 if (interaction.text) TURN.subtitle(interaction.text);
                 break;
             case 'skill':
-                HERO.raiseStat(interaction.which);
+                console.log("SKILL", interaction);
+                HERO.raiseStat(interaction.which, interaction.level);
                 display(interaction.inventorySprite);
                 AUDIO.LevelUp.play();
+                TITLE.keys();
                 break;
             case 'status':
-                HERO.incStatus(interaction.which);
+                //console.log("STATUS", interaction);
+                HERO.incStatus(interaction.which, interaction.level);
                 display(interaction.inventorySprite);
                 AUDIO.PowerUp.play();
+                TITLE.keys();
                 break;
             case 'chest':
                 AUDIO.OpenChest.play();

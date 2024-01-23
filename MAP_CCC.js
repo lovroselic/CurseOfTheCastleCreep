@@ -1370,7 +1370,7 @@ const MAP = {
         movables: '[[144,"LittleChicken"]]',
     }
     ,
-    69 : {
+    69: {
         name: "Dungeon University Main Hall",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA2BB2AA2BB6AA50BAA2BAA21BB2AA26BB2AA8BABAA39BB5ABB13AA3BB2AA2BB27AA2BB4ABAA3BB10AA6BB2AA4BABABB28A$"}',
@@ -1379,10 +1379,10 @@ const MAP = {
         ceil: "BigRockWall1",
         start: '[52,5]',
         lights: '[[144,3,"WallLamp","standard"],[144,5,"WallLamp","standard"],[90,1,"WallLamp2","dim"],[96,1,"WallLamp2","dim"],[192,7,"WallLamp2","dim"],[198,7,"WallLamp2","dim"]]',
-        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"]]',
-        }
+        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"]]',
+    }
     ,
-    70 : {
+    70: {
         name: "Another Chapel",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB5AA28BB2AA4BB3AA2BAA3BB2AA2BABB3ABB3AA12BB3AA7BB6AA2BB16ABAA3BABB4AA5BB7ABB2AA5BB7ABB8AA2BB12A$"}',
@@ -1395,17 +1395,44 @@ const MAP = {
         keys: '[[18,4]]',
         shrines: '[[58,1,"AttackShrine"],[69,3,"DefenseShrine"],[73,5,"MagicShrine"]]',
         oracles: '[[84,7,"TrainingOracle"]]',
+    }
+    ,
+    71: {
+        name: "Faculty of Healing",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB3AA2BB6AA8BAA6BB2ÁÁ3BB2AA11BB3AA37BB9ABB28ÁÁ2BB8ABAÁÁ4AÁÁ2BB3ÁBB6ÁBB18ABB17$BB5AA3BB2AÁÁ26BB3ÁÁ33AÁAÁÁ5AA2ÁÁ6AÁAÁÁ2AÁAÁAA2"}',
+        wall: "MossyWall3",
+        floor: "GoldMarbleFloor",
+        ceil: "BlurryMossy",
+        start: '[137,5]',
+        lights: '[[28,7,"WallLamp19","standard"],[266,1,"WallLamp19","standard"],[35,5,"WallLamp31","standardDimmed"],[239,5,"WallLamp31","standardDimmed"],[151,3,"WallLamp35","fire"]]',
+        gates: '[[136,5,"71.1","69.3","Open"]]',
+        keys: '[[149,3]]',
+        triggers: '[[86,5,"RockTriggerButton",0,112],[161,7,"RockTriggerButton",0,129],[262,3,"RockTriggerButton",0,130],[4,7,"RockTriggerButton",0,111]]',
+        trainers: '[[144,3,"Doctress"]]',
+    }
+    ,
+    72 : {
+        name: "Faculty of Defence",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB6AA3BB2AA2BB3AA3BAA2BABAA15BABABABAA3BAA3BABB3AA24BABAA3BB2AA4BB5AA2BB4ABB3ABB3ABAA2BB3ABAA2BABB4AA2BB2ABAA2BB2ABB3ABB2ABB6ABABB2AA3BABAA3BABAA2BAA2BABAA2BABB3ABB4AA3BAA7BB2ABB8AA2BABABB4ABAA2BB2ABABABB4ABB5ABABABB9ABB8ABB6ABB12A$"}',
+        wall: "CastleWall",
+        floor: "MC_Floor_2",
+        ceil: "DarkMarble3",
+        start: '[20,7]',
+        lights: '[[187,5,"WallLamp33","standardDimmed"]]',
+        gates: '[[3,7,"72.1","69.4","Open"]]',
+        trainers: '[[195,3,"DefenseProfessor"]]',
         }
     ,
     99: {
         name: "Sandbox",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB13AA132BB41AA11BB58A$"}',
-        wall: "MossyWall4",
-        floor: "ScarletStoneFloor1",
-        ceil: "MossyWall",
-        start: '[40,7]',
-        lights: '[[24,7,"WallLamp","standard"],[232,1,"WallLamp","standard"],[126,3,"WallLamp","standard"],[129,5,"WallLamp","standard"]]',
-        objects: '[[104,"CrystallBall"],[72,"CrystallBall"],[131,"CrystallBall"],[125,"CrystallBall"],[200,"CrystallBall"],[132,"IceCube"],[71,"IceCube"],[123,"IceCube"],[184,"IceCube"],[56,"Rat"],[115,"Rat"],[124,"Rat"],[199,"Rat"],[116,"Lizard"],[55,"Lizard"],[108,"Lizard"],[183,"Lizard"],[34,"Lizard"],[57,"GoldCoin"]]',
+        data: '{"width":"17","height":"17","map":"BB14AA156BB44AA12BB62A$"}',
+        wall: "MossyWall3",
+        floor: "GoldMarbleFloor",
+        ceil: "BlurryMossy",
+        start: '[161,1]',
+        lights: '[[19,7,"WallLamp35","standard"],[21,7,"WallLamp34","standard"],[23,7,"WallLamp33","standard"],[25,7,"WallLamp32","standard"],[27,7,"WallLamp31","standard"],[30,7,"WallLamp9","standard"]]',
     }
 };

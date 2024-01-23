@@ -52,7 +52,7 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.09.03",
+  VERSION: "0.09.04",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
@@ -439,6 +439,22 @@ const GAME = {
         dirIndex = dirs[0].toInt();
         $MAP.map.shrines.push(Array(gridIndex, dirIndex, $("#shrine_type")[0].value));
         break;
+      case "item_shrine":
+        switch (currentValue) {
+          case MAPDICT.WALL:
+            break;
+          default:
+            $("#error_message").html(`Item Shrine placement not supported on value: ${currentValue}`);
+            return;
+        }
+        dirs = GA.getDirections(grid, MAPDICT.EMPTY);
+        if (dirs.length > 1) {
+          alert(`Bad shrine position, posible exits ${dirs.length}`);
+          break;
+        }
+        dirIndex = dirs[0].toInt();
+        $MAP.map.trainers.push(Array(gridIndex, dirIndex, $("#item_shrine_type")[0].value));
+        break;
       case "oracle":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -541,7 +557,7 @@ const GAME = {
             return;
         }
         break;
-        case "movable":
+      case "movable":
         switch (currentValue) {
           case MAPDICT.EMPTY:
             $MAP.map.movables.push(Array(gridIndex, $("#movable_type")[0].value));
@@ -970,6 +986,10 @@ const GAME = {
       $("#shrine_type").append(`<option value="${shrineType}">${shrineType}</option>`);
     }
 
+    for (const item_shrine_type in INTERACTION_SHRINE) {
+      $("#item_shrine_type").append(`<option value="${item_shrine_type}">${item_shrine_type}</option>`);
+    }
+
     for (const oracleType in ORACLE_TYPE) {
       $("#oracle_type").append(`<option value="${oracleType}">${oracleType}</option>`);
     }
@@ -1019,7 +1039,7 @@ const GAME = {
     });
     $("#trap_type").trigger("change");
   },
-  randomLight(){
+  randomLight() {
     const pic = LIGHT_DECALS.chooseRandom();
     $("#light_decal").val(pic).change();
     ENGINE.drawToId("lightcanvas", 0, 0, SPRITE[$("#light_decal")[0].value]);

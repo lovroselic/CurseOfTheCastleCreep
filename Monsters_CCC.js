@@ -1326,6 +1326,20 @@ const INTERACTION_ITEM = {
         inventorySprite: "LeoPumps",
         text: "Looks like something Purrscilla would wear."
     },
+    HealthSkill: {
+        name: "HealthSkill",
+        category: "status",
+        inventorySprite: "Health",
+        which: "health",
+        level: 5,
+    },
+    DefenseSkill: {
+        name: "DefenseSkill",
+        category: "skill",
+        inventorySprite: "ShieldSkill",
+        which: "defense",
+        level: 3,
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1800,9 +1814,37 @@ const INTERACTION_ENTITY = {
 
     /**
      * NA::  
-     * Purrscilla
      */
 
+};
+
+const INTERACTION_SHRINE = {
+    Doctress: {
+        name: "Doctress",
+        sprite: "Doctress",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "HealthSkill",
+        text: {
+            intro: "In white coat's care, a cure I wield, your health to boost, if gold's unsealed.",
+            progress: null,
+            conclusion: "Gold received, now feel my art, increased health, a fresh new start."
+        }
+    },
+    DefenseProfessor: {
+        name: "DefenseProfessor",
+        sprite: "DefenseProfessor",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "DefenseSkill",
+        text: {
+            intro: "In armor clad, skills to bestow, for gold, your defense shall grow.",
+            progress: null,
+            conclusion: "Gold in hand, now heed my lore, stronger defense, for battles more."
+        }
+    },
 };
 
 //container content

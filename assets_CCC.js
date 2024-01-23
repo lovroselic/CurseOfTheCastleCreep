@@ -330,12 +330,9 @@ LoadSprites = [
     { srcName: "Puss2.jpg", name: "Kittie" },
     { srcName: "Lizzie.jpg", name: "Lizzie" },
     { srcName: "Sorceress.jpg", name: "Sorceress" },
-
     { srcName: "Sharkira.jpg", name: "Sharkeera" },
     { srcName: "Fischelle.jpg", name: "Fischelle" },
-    { srcName: "MagicProfessor.jpg", name: "MagicProfessor" },
     { srcName: "Granny.jpg", name: "Granny" },
-    { srcName: "Ninja.jpg", name: "Ninja" },
     { srcName: "Punisher.jpg", name: "Punisher" },
     { srcName: "RedRidingHood.jpg", name: "RedRidingHood" },
     { srcName: "RedRidingOracle.jpg", name: "RedRidingOracle" },
@@ -344,11 +341,15 @@ LoadSprites = [
     { srcName: "DungeonOracle.jpg", name: "DungeonOracle" },
     { srcName: "Purrscilla.jpg", name: "Purrscilla" },
     { srcName: "DescentOracle.jpg", name: "DescentOracle" },
+    { srcName: "TrainingOracle.jpg", name: "TrainingOracle" },
 
+    { srcName: "MagicProfessor.jpg", name: "MagicProfessor" },
     { srcName: "Alchemist.jpg", name: "Alchemist" },
     { srcName: "DefenseProfessor.jpg", name: "DefenseProfessor" },
-    { srcName: "FirstAid.jpg", name: "FirstAid" },
-    { srcName: "TrainingOracle.jpg", name: "TrainingOracle" },
+    { srcName: "FirstAid.jpg", name: "Doctress" },
+    { srcName: "Ninja.jpg", name: "Ninja" },
+
+    { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
 
 
     //action items
@@ -443,6 +444,12 @@ LoadSprites = [
     { srcName: "WallLamp19.png", name: "WallLamp19" },
     { srcName: "WallLamp20.png", name: "WallLamp20" },
     { srcName: "WallLamp9.png", name: "WallLamp9" },
+
+    { srcName: "WallLamp31.png", name: "WallLamp31" },
+    { srcName: "WallLamp32.png", name: "WallLamp32" },
+    { srcName: "WallLamp33.png", name: "WallLamp33" },
+    { srcName: "WallLamp34.png", name: "WallLamp34" },
+    { srcName: "WallLamp35.png", name: "WallLamp35" },
 
     //compas
     { srcName: "CompassRose.png", name: "CompassRose" },

@@ -2385,8 +2385,9 @@ const ENGINE = {
           ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
         }
       }
-      if (maze.shrines) {
-        for (const shrine of maze.shrines) {
+      const concat_shrines = [...maze.shrines, ...maze.trainers];
+      if (concat_shrines) {
+        for (const shrine of concat_shrines) {
           let grid = GA.indexToGrid(shrine[0]);
           let mid = GRID.gridToCenterPX(grid);
           let dir = Vector.fromInt(shrine[1]);
@@ -3121,7 +3122,7 @@ class $3D_ACTOR {
        * the rest should be in sync
        * this will fail if nodes are not sampled uniformly! 
        */
-      
+
       if (!(keyFrameIndex >= 0 && samplingPeriod && keyFrameTime === node.time[keyFrameIndex])) {
         samplingPeriod = node.time[1] - node.time[0];
         keyFrameIndex = binarySearchClosestLowFloat(node.time, delta, samplingPeriod);

@@ -52,14 +52,14 @@ const INI = {
   SPACE_Y: 2048
 };
 const PRG = {
-  VERSION: "0.09.04",
+  VERSION: "0.09.05",
   NAME: "MazEditor",
   YEAR: "2022, 2023",
   CSS: "color: #239AFF;",
   INIT() {
 
     console.log("%c**************************************************************************************************************************************", PRG.CSS);
-    console.log(`${PRG.NAME} ${PRG.VERSION} by Lovro Selic, (c) C00lSch00l ${PRG.YEAR} on ${navigator.userAgent}`);
+    console.log(`${PRG.NAME} ${PRG.VERSION} by Lovro Selic, (c) LaughingSkull ${PRG.YEAR} on ${navigator.userAgent}`);
     console.log("%c**************************************************************************************************************************************", PRG.CSS);
     $("#title").html(PRG.NAME);
     $("#version").html(`${PRG.NAME} V${PRG.VERSION} <span style='font-size:14px'>&copy</span> C00lSch00l ${PRG.YEAR}`);
@@ -264,6 +264,7 @@ const GAME = {
       case "decal":
         switch (currentValue) {
           case MAPDICT.EMPTY:
+          case MAPDICT.BLOCKWALL:
             dir = NOWAY;
             [nameId, type] = GAME.getSelectedDecal();
             break;
@@ -1038,6 +1039,15 @@ const GAME = {
       }
     });
     $("#trap_type").trigger("change");
+
+    $("#randwall").click(GAME.randomTexture.bind(null, TextureList, "#walltexture", "#wallcanvas"));
+    $("#randfloor").click(GAME.randomTexture.bind(null, TextureList, "#floortexture", "#floorcanvas"));
+    $("#randceil").click(GAME.randomTexture.bind(null, TextureList, "#ceiltexture", "#ceilcanvas"));
+  },
+  randomTexture(TextureList, id, canvas) {
+    const texture = TextureList.chooseRandom();
+    $(id).val(texture).change();
+    ENGINE.drawToId(canvas, 0, 0, SPRITE[$(id)[0].value]);
   },
   randomLight() {
     const pic = LIGHT_DECALS.chooseRandom();

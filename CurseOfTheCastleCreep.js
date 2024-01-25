@@ -51,9 +51,11 @@ const DEBUG = {
             * 70 chapel
             * 71 faculty of healing
             * 72 faculty of defense
+            * 73 faculty of alchemy
+            * 74 faculty of magic
          */
 
-        GAME.level = 72;   //69 //71
+        GAME.level = 74;   //69 
         GAME.gold = 3410;
         HERO.maxHealth = 131;
         HERO.maxMana = 164;
@@ -92,7 +94,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue", "Green"];
+        let keys = ["Blue", "Green", "Red", "Silver", "Gold"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -126,14 +128,14 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.13",
+    VERSION: "0.13.14",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
     CSS: "color: #239AFF;",
     INIT() {
         console.log("%c**************************************************************************************************************************************", PRG.CSS);
-        console.log(`${PRG.NAME} ${PRG.VERSION} by Lovro Selic, (c) C00lSch00l ${PRG.YEAR} on ${navigator.userAgent}`);
+        console.log(`${PRG.NAME} ${PRG.VERSION} by Lovro Selic, (c) LaughingSkull ${PRG.YEAR} on ${navigator.userAgent}`);
         console.log("%c**************************************************************************************************************************************", PRG.CSS);
         $("#title").html(PRG.NAME);
         $("#version").html(`${PRG.NAME} V${PRG.VERSION} <span style='font-size:14px'>&copy</span> C00lSch00l ${PRG.YEAR}`);
@@ -442,7 +444,8 @@ class Scroll {
                 AUDIO.Fuse.volume = RAY.volume(0);
                 AUDIO.Fuse.loop = true;
                 AUDIO.Fuse.play();
-                const escapeTexts = ["I better run away.",
+                const escapeTexts = [
+                    "I better run away.",
                     "This thing is going to explode.",
                     "I should move.",
                     "Run, you fool."

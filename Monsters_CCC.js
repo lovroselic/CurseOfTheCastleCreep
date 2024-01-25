@@ -117,6 +117,22 @@ const ORACLE_TYPE = {
         text: "If you will not train with all of the dungeon professors, you will never defeat Ghostface.",
         interactionCategory: "oracle",
     },
+    MagicOracle: {
+        name: "MagicOracle",
+        sprite: "MagicOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "There are clues as to which path will be right one. If you fail you die!",
+        interactionCategory: "oracle",
+    },
+    MagicOracle2: {
+        name: "MagicOracle2",
+        sprite: "MagicOracle2",
+        category: 'crest',
+        voice: "Female",
+        text: "Don't leave without the gold key. Or else.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -1333,6 +1349,13 @@ const INTERACTION_ITEM = {
         which: "health",
         level: 5,
     },
+    ManaSkill: {
+        name: "ManaSkill",
+        category: "status",
+        inventorySprite: "Mana",
+        which: "mana",
+        level: 5,
+    },
     DefenseSkill: {
         name: "DefenseSkill",
         category: "skill",
@@ -1340,6 +1363,14 @@ const INTERACTION_ITEM = {
         which: "defense",
         level: 3,
     },
+    MagicSkill: {
+        name: "MagicSkill",
+        category: "skill",
+        inventorySprite: "MagicSkill",
+        which: "magic",
+        level: 3,
+    },
+
 };
 
 const INTERACTION_ENTITY = {
@@ -1843,6 +1874,32 @@ const INTERACTION_SHRINE = {
             intro: "In armor clad, skills to bestow, for gold, your defense shall grow.",
             progress: null,
             conclusion: "Gold in hand, now heed my lore, stronger defense, for battles more."
+        }
+    },
+    Alchemist: {
+        name: "Alchemist",
+        sprite: "Alchemist",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "With potions brewed and arcane might, for gold, I'll boost your mana's flight.",
+            progress: null,
+            conclusion: "Coin transmuted, now feel the surge, mana expanded, let power emerge."
+        }
+    },
+    Sorceress: {
+        name: "Sorceress",
+        sprite: "Sorceress",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "MagicSkill",
+        text: {
+            intro: "Veiled in secrets, wisdom's key, a small price for magic's spree.",
+            progress: null,
+            conclusion: "Offering accepted, now wisdom flows, in magic's depth, your knowledge grows."
         }
     },
 };

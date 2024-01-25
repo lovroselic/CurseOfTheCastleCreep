@@ -1379,7 +1379,7 @@ const MAP = {
         ceil: "BigRockWall1",
         start: '[52,5]',
         lights: '[[144,3,"WallLamp","standard"],[144,5,"WallLamp","standard"],[90,1,"WallLamp2","dim"],[96,1,"WallLamp2","dim"],[192,7,"WallLamp2","dim"],[198,7,"WallLamp2","dim"]]',
-        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"]]',
+        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"],[136,5,"69.5","73.1","Red"],[8,7,"69.6","74.1","Silver"]]',
     }
     ,
     70: {
@@ -1412,17 +1412,53 @@ const MAP = {
         trainers: '[[144,3,"Doctress"]]',
     }
     ,
-    72 : {
+    72: {
         name: "Faculty of Defence",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB6AA3BB2AA2BB3AA3BAA2BABAA15BABABABAA3BAA3BABB3AA24BABAA3BB2AA4BB5AA2BB4ABB3ABB3ABAA2BB3ABAA2BABB4AA2BB2ABAA2BB2ABB3ABB2ABB6ABABB2AA3BABAA3BABAA2BAA2BABAA2BABB3ABB4AA3BAA7BB2ABB8AA2BABABB4ABAA2BB2ABABABB4ABB5ABABABB9ABB8ABB6ABB12A$"}',
+        data: '{"width":"17","height":"17","map":"BB2ABB4AA4BB2AA2BB3AA3BAA2BABAA8BAA7BABAA2BAA4BAA3BABABAA22BAA4BAA3BB3AA2BB3ABABB3ABB4AA3BB2AEBB2AA2BABB2ABB3ABB4AA2BB5ABB2ABB6AA2BB2AA2BAA3BB2ABB2AA3BB2ABABB2AA2BB5ABAA3BAA7BABB3ABB6ABABB7ABAA2BB2ABB2AEBB4ABB2ABB3ABAA2BB7ABB10ABB6ABB12A$ABAB"}',
         wall: "CastleWall",
         floor: "MC_Floor_2",
         ceil: "DarkMarble3",
         start: '[20,7]',
-        lights: '[[187,5,"WallLamp33","standardDimmed"]]',
+        lights: '[[187,5,"WallLamp33","standardDimmed"],[15,7,"WallLamp10","standardDimmed"],[99,3,"WallLamp10","standardDimmed"],[271,3,"WallLamp10","standardDimmed"]]',
         gates: '[[3,7,"72.1","69.4","Open"]]',
+        keys: '[[183,2]]',
+        scrolls: '[[112,0]]',
+        doors: '[69,74]',
+        triggers: '[[122,7,"RockTriggerButton",1,121],[225,7,"RockTriggerButton",1,200]]',
         trainers: '[[195,3,"DefenseProfessor"]]',
+    }
+    ,
+    73: {
+        name: "Faculty of Alchemy",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB3AA8ÁÁ4AA18BAA2BAA5BAA2ÁAÁBB2AA4BB2AA5ÁÁ4AA2BB4AA6BB2ABB2ÁÁ7AA3BB7AA8ÁÁ2BABAA4BAA9BB3AA2BB4AA5BB11AA2BB2AA2BB3ABB2AA6BAA3BAA3BB4AA2BB27A$AA2BB3ABAA2BB2AA2BABABABB14ÁÁ2BB4ÁÁ9AA2ÁÁ2AÁAA5ÁÁ2AÁÁ14BB2"}',
+        wall: "BrownMossyWall20",
+        floor: "DarkFloor5",
+        ceil: "SmallBrick2",
+        start: '[151,3]',
+        lights: '[[149,3,"WallLamp35","dimRed"],[149,5,"WallLamp18","standardDimmed"],[12,7,"WallLamp32","standard"],[284,1,"WallLamp32","standard"],[19,7,"WallLamp33","standard"],[257,1,"WallLamp33","standard"],[136,5,"WallLamp34","standardDimmed"]]',
+        gates: '[[152,3,"73.1","69.5","Open"]]',
+        keys: '[[137,1]]',
+        triggers: '[[7,7,"RockTriggerButton",0,146],[101,3,"RockTriggerButton",0,145],[273,1,"RockTriggerButton",0,147]]',
+        trainers: '[[141,5,"Alchemist"]]',
+    }
+    ,
+    74 : {
+        name: "Faculty of Magic",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB2AA8BB2QQ5AA34BABQQ3AA5QBABABAA3BAA8QBB11ABB4ABB2ABB4ABB2ABB11AA2BB2AQBB23ABB7$QABB12QQ4BQAA3BQQ4BB5QBB5QBB3QQ15BQQ9BQQ6AA3BQQ21BQQ4BB3QQ4BB5QBB2ABAQQ3BB2AQBA"}',
+        wall: "MossyWall33",
+        floor: "OrnateFloor1",
+        ceil: "BrownWall35",
+        start: '[263,1]',
+        decals: '[[212,4,"Crack20","crest"],[177,4,"Crack20","crest"],[158,4,"Crack3","crest"],[175,4,"Crack21","crest"],[157,4,"Crack21","crest"],[122,4,"Crack21","crest"],[210,4,"Crack21","crest"],[106,4,"Reaper","crest"],[139,4,"Crack3","crest"],[211,4,"Crack3","crest"],[79,4,"Crack3","crest"],[62,4,"Crack3","crest"],[194,4,"Crack3","crest"],[159,4,"Crack3","crest"]]',
+        lights: '[[260,1,"WallLamp11","standardDimmed"],[266,1,"WallLamp11","standardDimmed"],[127,1,"WallLamp12","standardDimmed"],[84,3,"WallLamp35","standardRedish"],[262,1,"WallLamp18","standardDimmed"],[264,1,"WallLamp18","standardDimmed"]]',
+        gates: '[[280,1,"74.1","69.6","Open"]]',
+        keys: '[[83,0]]',
+        scrolls: '[[228,0],[230,12],[161,12],[175,12],[173,12],[110,0],[113,12]]',
+        oracles: '[[258,3,"MagicOracle"],[268,5,"MagicOracle2"]]',
+        trainers: '[[8,7,"Sorceress"]]',
         }
     ,
     99: {

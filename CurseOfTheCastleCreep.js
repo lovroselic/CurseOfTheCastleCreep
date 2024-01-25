@@ -46,16 +46,17 @@ const DEBUG = {
          * excesss ekeys: blue
          * missing keys: 
          * rooms
-            * 63 punisher - unplayed
+            * 63 punisher (gives emeral key for continuation) - unplayed  
             * 69 Uni main hall  
             * 70 chapel
             * 71 faculty of healing
             * 72 faculty of defense
             * 73 faculty of alchemy
             * 74 faculty of magic
+            * 75 faculty of kicking
          */
 
-        GAME.level = 74;   //69 
+        GAME.level = 69;   //69 
         GAME.gold = 3410;
         HERO.maxHealth = 131;
         HERO.maxMana = 164;
@@ -128,7 +129,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.13.14",
+    VERSION: "0.14.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

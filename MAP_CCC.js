@@ -1370,7 +1370,7 @@ const MAP = {
         movables: '[[144,"LittleChicken"]]',
     }
     ,
-    69: {
+    69 : {
         name: "Dungeon University Main Hall",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA2BB2AA2BB6AA50BAA2BAA21BB2AA26BB2AA8BABAA39BB5ABB13AA3BB2AA2BB27AA2BB4ABAA3BB10AA6BB2AA4BABABB28A$"}',
@@ -1379,8 +1379,9 @@ const MAP = {
         ceil: "BigRockWall1",
         start: '[52,5]',
         lights: '[[144,3,"WallLamp","standard"],[144,5,"WallLamp","standard"],[90,1,"WallLamp2","dim"],[96,1,"WallLamp2","dim"],[192,7,"WallLamp2","dim"],[198,7,"WallLamp2","dim"]]',
-        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"],[136,5,"69.5","73.1","Red"],[8,7,"69.6","74.1","Silver"]]',
-    }
+        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"],[136,5,"69.5","73.1","Red"],[8,7,"69.6","74.1","Silver"],[67,3,"69.7","75.1","Gold"]]',
+        monsters: '[[54,"Bat"],[234,"Bat"],[224,"RedGoldBat"],[64,"RedGoldBat"],[139,"RedSkeleton"],[59,"RedSkeleton"],[149,"RedSkeleton"],[229,"RedSkeleton"],[110,"SilverSkeleton"],[142,"SilverSkeleton"],[146,"SilverSkeleton"],[178,"SilverSkeleton"]]',
+        }
     ,
     70: {
         name: "Another Chapel",
@@ -1444,7 +1445,7 @@ const MAP = {
         trainers: '[[141,5,"Alchemist"]]',
     }
     ,
-    74 : {
+    74: {
         name: "Faculty of Magic",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB2AA8BB2QQ5AA34BABQQ3AA5QBABABAA3BAA8QBB11ABB4ABB2ABB4ABB2ABB11AA2BB2AQBB23ABB7$QABB12QQ4BQAA3BQQ4BB5QBB5QBB3QQ15BQQ9BQQ6AA3BQQ21BQQ4BB3QQ4BB5QBB2ABAQQ3BB2AQBA"}',
@@ -1459,6 +1460,19 @@ const MAP = {
         scrolls: '[[228,0],[230,12],[161,12],[175,12],[173,12],[110,0],[113,12]]',
         oracles: '[[258,3,"MagicOracle"],[268,5,"MagicOracle2"]]',
         trainers: '[[8,7,"Sorceress"]]',
+    }
+    ,
+    75 : {
+        name: "Faculty of Kicking",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB2AA2BAA3BAA5BB2AA2BB2ABAA10BB3ABABAA6BAA3BB2AA10BAA6BB2ABB2AA9BB2ABB2AA14BAA30BAA3BAA4BAA14BAA2BABAA7BABAA2BABABB4ABAA3BB4ABB5AA2BAA9BB7AA2BB2AA8BB7ABB2AA2BB2ABB2ABB4ABB4ABB6ABB7ABB16AB$"}',
+        wall: "BrownWall40",
+        floor: "OrnateFloor343",
+        ceil: "DarkShiny3",
+        start: '[35,5]',
+        lights: '[[173,1,"WallLamp31","standard"],[179,1,"WallLamp31","standard"],[31,7,"WallLamp32","standardDimmed"],[174,7,"WallLamp32","standardDimmed"],[183,7,"WallLamp32","standardDimmed"],[4,7,"WallLamp20","standardDimmed"],[8,7,"WallLamp14","standardDimmed"]]',
+        gates: '[[34,5,"75.1","69.7","Open"]]',
+        trainers: '[[284,1,"Ninja"]]',
         }
     ,
     99: {

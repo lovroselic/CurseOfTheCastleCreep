@@ -1370,7 +1370,13 @@ const INTERACTION_ITEM = {
         which: "magic",
         level: 3,
     },
-
+    AttackSkill: {
+        name: "AttackSkill",
+        category: "skill",
+        inventorySprite: "SwordSkill",
+        which: "attack",
+        level: 3,
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1900,6 +1906,19 @@ const INTERACTION_SHRINE = {
             intro: "Veiled in secrets, wisdom's key, a small price for magic's spree.",
             progress: null,
             conclusion: "Offering accepted, now wisdom flows, in magic's depth, your knowledge grows."
+        }
+    },
+    Ninja: {
+        name: "Ninja",
+        sprite: "Ninja",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "AttackSkill",
+        text: {
+            intro: "Shadows whisper, skills to impart, for a price, the art of the martial heart.",
+            progress: null,
+            conclusion: "Price accepted, now shadows your guide, asskicking skills, in you reside."
         }
     },
 };

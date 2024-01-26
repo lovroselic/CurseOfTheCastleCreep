@@ -1370,7 +1370,7 @@ const MAP = {
         movables: '[[144,"LittleChicken"]]',
     }
     ,
-    69 : {
+    69: {
         name: "Dungeon University Main Hall",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA2BB2AA2BB6AA50BAA2BAA21BB2AA26BB2AA8BABAA39BB5ABB13AA3BB2AA2BB27AA2BB4ABAA3BB10AA6BB2AA4BABABB28A$"}',
@@ -1378,10 +1378,12 @@ const MAP = {
         floor: "MarbleFloor1",
         ceil: "BigRockWall1",
         start: '[52,5]',
+        decals: '[[22,7,"Witcher111","picture"],[28,7,"Hero51","picture"],[261,1,"Choplifter12","picture"],[265,1,"Invaders2","picture"],[103,5,"Ishar98","picture"],[171,5,"Biggles2","picture"],[100,3,"DigDug2","picture"],[202,3,"Invasion","picture"]]',
         lights: '[[144,3,"WallLamp","standard"],[144,5,"WallLamp","standard"],[90,1,"WallLamp2","dim"],[96,1,"WallLamp2","dim"],[192,7,"WallLamp2","dim"],[198,7,"WallLamp2","dim"]]',
         gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"],[136,5,"69.5","73.1","Red"],[8,7,"69.6","74.1","Silver"],[67,3,"69.7","75.1","Gold"]]',
         monsters: '[[54,"Bat"],[234,"Bat"],[224,"RedGoldBat"],[64,"RedGoldBat"],[139,"RedSkeleton"],[59,"RedSkeleton"],[149,"RedSkeleton"],[229,"RedSkeleton"],[110,"SilverSkeleton"],[142,"SilverSkeleton"],[146,"SilverSkeleton"],[178,"SilverSkeleton"]]',
-        }
+        potions: '[[36,0],[48,0],[240,0],[252,0],[127,1],[143,1],[161,1],[145,1]]',
+    }
     ,
     70: {
         name: "Another Chapel",
@@ -1391,27 +1393,36 @@ const MAP = {
         floor: "RedBrickFloor1",
         ceil: "MossyWall",
         start: '[149,1]',
+        decals: '[[26,5,"CrystalsOfZong10","picture"],[91,5,"Arnie200","picture"],[117,5,"Vixen70","picture"],[48,5,"JetSetWilly88","picture"],[100,5,"JetSetWilly89","picture"],[51,3,"BattleChopper","picture"],[116,3,"Shamus60","picture"],[94,3,"AticAtac112","picture"],[42,3,"Pitfall27","picture"],[3,7,"ReturnToCastleWolfenstein13","picture"],[9,7,"LastNinja140","picture"],[95,7,"SVS103","picture"],[99,7,"EveryoneIsAWally2","picture"],[43,1,"ArticShipwreck7","picture"],[47,1,"Zeppelin88","picture"],[134,1,"UW10","picture"],[138,1,"Frogger110","picture"]]',
         lights: '[[6,7,"WallLamp19","dim"],[65,5,"WallLamp20","dim"],[77,3,"WallLamp16","dim"],[157,1,"WallLamp13","standard"],[167,1,"WallLamp9","standard"]]',
         gates: '[[162,1,"70.1","69.2","Open"]]',
         keys: '[[18,4]]',
+        monsters: '[[32,"SilverSkeleton"],[19,"Goblin"],[66,"SilverSkeleton"]]',
+        scrolls: '[[14,10],[144,10],[24,10],[154,10]]',
         shrines: '[[58,1,"AttackShrine"],[69,3,"DefenseShrine"],[73,5,"MagicShrine"]]',
         oracles: '[[84,7,"TrainingOracle"]]',
     }
     ,
-    71: {
+    71 : {
         name: "Faculty of Healing",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA2BB6AA8BAA6BB2ÁÁ3BB2AA11BB3AA37BB9ABB28ÁÁ2BB8ABAÁÁ4AÁÁ2BB3ÁBB6ÁBB18ABB17$BB5AA3BB2AÁÁ26BB3ÁÁ33AÁAÁÁ5AA2ÁÁ6AÁAÁÁ2AÁAÁAA2"}',
-        wall: "MossyWall3",
+        wall: "MossyWall30",
         floor: "GoldMarbleFloor",
         ceil: "BlurryMossy",
         start: '[137,5]',
+        decals: '[[103,5,"LadyTut60","picture"],[171,5,"CastleOfTerror4","picture"],[127,5,"JSW10","picture"],[139,3,"CrawlMaster2","picture"],[20,7,"LeisureSuitLarry61","picture"],[6,7,"LaraCroft2","picture"],[258,1,"EyeOfTheBeholder90","picture"],[139,1,"Prince51","picture"],[139,5,"SirFred61","picture"],[139,7,"TombRaider100","picture"]]',
         lights: '[[28,7,"WallLamp19","standard"],[266,1,"WallLamp19","standard"],[35,5,"WallLamp31","standardDimmed"],[239,5,"WallLamp31","standardDimmed"],[151,3,"WallLamp35","fire"]]',
         gates: '[[136,5,"71.1","69.3","Open"]]',
         keys: '[[149,3]]',
+        monsters: '[[150,"Rex"],[110,"Dragon"],[178,"Dragon"],[23,"SilverSkeleton"],[261,"SilverSkeleton"]]',
+        scrolls: '[[140,9],[259,2],[56,3],[107,4],[210,5]]',
+        gold: '[[133,"SilverBar"],[166,"SilverBar"]]',
+        containers: '[[69,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5],[205,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5]]',
         triggers: '[[86,5,"RockTriggerButton",0,112],[161,7,"RockTriggerButton",0,129],[262,3,"RockTriggerButton",0,130],[4,7,"RockTriggerButton",0,111]]',
+        traps: '[[188,5,"RockTriggerButton",0,"Bounceball",125],[24,3,"RockTriggerButton",0,"Bounceball",148],[127,1,"RockTriggerButton",0,"Bounceball",37],[276,1,"RockTriggerButton",1,"GreatCat",122]]',
         trainers: '[[144,3,"Doctress"]]',
-    }
+        }
     ,
     72: {
         name: "Faculty of Defence",
@@ -1462,7 +1473,7 @@ const MAP = {
         trainers: '[[8,7,"Sorceress"]]',
     }
     ,
-    75 : {
+    75: {
         name: "Faculty of Kicking",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB2AA2BAA3BAA5BB2AA2BB2ABAA10BB3ABABAA6BAA3BB2AA10BAA6BB2ABB2AA9BB2ABB2AA14BAA30BAA3BAA4BAA14BAA2BABAA7BABAA2BABABB4ABAA3BB4ABB5AA2BAA9BB7AA2BB2AA8BB7ABB2AA2BB2ABB2ABB4ABB4ABB6ABB7ABB16AB$"}',
@@ -1473,7 +1484,7 @@ const MAP = {
         lights: '[[173,1,"WallLamp31","standard"],[179,1,"WallLamp31","standard"],[31,7,"WallLamp32","standardDimmed"],[174,7,"WallLamp32","standardDimmed"],[183,7,"WallLamp32","standardDimmed"],[4,7,"WallLamp20","standardDimmed"],[8,7,"WallLamp14","standardDimmed"]]',
         gates: '[[34,5,"75.1","69.7","Open"]]',
         trainers: '[[284,1,"Ninja"]]',
-        }
+    }
     ,
     99: {
         name: "Sandbox",

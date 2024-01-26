@@ -43,40 +43,40 @@ const DEBUG = {
          * attack 
          * defense 
          * 
-         * excesss ekeys: blue
+         * excesss ekeys: 
          * missing keys: 
          * rooms
             * 63 punisher (gives emeral key for continuation) - unplayed  
-            * 69 Uni main hall  
-            * 70 chapel
-            * 71 faculty of healing
+            * 69 Uni main hall completed 
+            * 70 chapel completed
+            * 71 faculty of healing completed
             * 72 faculty of defense
             * 73 faculty of alchemy
             * 74 faculty of magic
             * 75 faculty of kicking
          */
 
-        GAME.level = 69;   //69 
-        GAME.gold = 3410;
-        HERO.maxHealth = 131;
+        GAME.level = 72;   //69
+        GAME.gold = 2108;
+        HERO.maxHealth = 155;
         HERO.maxMana = 164;
-        HERO.health = 72;
-        HERO.mana = 5;
-        HERO.defense = 34;
+        HERO.health = 155;
+        HERO.mana = 0;
+        HERO.defense = 35;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 33;
+        HERO.attack = 35;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 32;
+        HERO.magic = 33;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 3099;
-        HERO.defenseExp = 760;
-        HERO.magicExp = 157;
-        HERO.attackExpGoal = 3855;
+        HERO.attackExp = 283;
+        HERO.defenseExp = 879;
+        HERO.magicExp = 1275;
+        HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 5783;
-        HERO.inventory.potion.red = 0;
+        HERO.inventory.potion.red = 4;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["HalfLife", "Petrify"];
+        let scrolls = ["Petrify",];
         //let scrolls = [];
 
         //debug
@@ -88,14 +88,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin", "GoldCoin", "GoldCoin", "GoldCoin", "GoldCoin", "GoldCoin"];
+        let invItems = ["GoldCoin", "GoldCoin", "GoldCoin", "GoldCoin", "GoldCoin"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue", "Green", "Red", "Silver", "Gold"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -129,7 +129,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.00",
+    VERSION: "0.14.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

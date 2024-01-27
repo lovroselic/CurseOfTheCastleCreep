@@ -51,32 +51,33 @@ const DEBUG = {
             * 70 chapel completed
             * 71 faculty of healing completed
             * 72 faculty of defense copleted
-            * 73 faculty of alchemy
+            * 73 faculty of alchemy completed
             * 74 faculty of magic
             * 75 faculty of kicking
+            * 76 Pray or die
          */
 
-        GAME.level = 73;   //69
-        GAME.gold = 2988;
+        GAME.level = 12;   //69
+        GAME.gold = 4469;
         HERO.maxHealth = 155;
-        HERO.maxMana = 170;
-        HERO.health = 135;
-        HERO.mana = 26;
+        HERO.maxMana = 195;
+        HERO.health = 133;
+        HERO.mana = 195;
         HERO.defense = 38;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 35;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 33;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 411;
-        HERO.defenseExp = 887;
-        HERO.magicExp = 2158;
+        HERO.attackExp = 1299;
+        HERO.defenseExp = 939;
+        HERO.magicExp = 3384;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 5783;
-        HERO.inventory.potion.red = 3;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Petrify", "BoostWeapon"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 3;
+        let scrolls = ["MagicBoost", "BoostWeapon"];
         //let scrolls = [];
 
         //debug
@@ -88,14 +89,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin", "GoldCoin", "GoldCoin", "GoldCoin",];
+        let invItems = ["GoldCoin", "GoldCoin", "GoldCoin"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Red"];
+        let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -129,7 +130,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.02",
+    VERSION: "0.14.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -216,18 +217,20 @@ const PRG = {
 class Shrine extends WallFeature3D {
     constructor(grid, face, type) {
         super(grid, face, type);
+        this.expand = true;
     }
     interact() {
-        if (GAME.gold >= 1000) {
+        if (GAME.gold >= this.price) {
             this.storageLog();
             this.deactivate();
-            GAME.gold -= 1000;
+            GAME.gold -= this.price;
             TITLE.gold();
 
             return {
                 category: this.interactionCategory,
                 inventorySprite: this.inventorySprite,
                 which: this.which,
+                level: this.level,
             };
         } else {
             AUDIO.MagicFail.play();
@@ -245,7 +248,7 @@ class Shrine extends WallFeature3D {
 class Oracle extends WallFeature3D {
     constructor(grid, face, type) {
         super(grid, face, type);
-        this.expand = true;
+        //this.expand = true;
     }
     interact() {
         if (!this.ready) return;
@@ -1089,7 +1092,7 @@ const GAME = {
                 AUDIO.Scroll.play();
                 break;
             case 'shrine':
-                HERO.raiseStat(interaction.which);
+                HERO.raiseStat(interaction.which, interaction.level);
                 display(interaction.inventorySprite);
                 AUDIO.LevelUp.play();
                 HERO.restore();

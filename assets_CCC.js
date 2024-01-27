@@ -431,6 +431,7 @@ LoadSprites = [
     { srcName: "Ninja.jpg", name: "Ninja" },
 
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
+    { srcName: "Priestess.jpg", name: "Priestess" },
 
 
     //action items
@@ -539,6 +540,15 @@ LoadSprites = [
     { srcName: "AttackShrine256.png", name: "AttackShrine" },
     { srcName: "DefenseShrine256.png", name: "DefenseShrine" },
     { srcName: "MagicShrine256.png", name: "MagicShrine" },
+
+    //new shrines
+    { srcName: "AttackShrine1.jpg", name: "AttackShrine1" },
+    { srcName: "DefenseShrine1.jpg", name: "DefenseShrine1" },
+    { srcName: "MagicShrine1.jpg", name: "MagicShrine1" },
+
+    { srcName: "AttackShrine2.jpg", name: "AttackShrine2" },
+    { srcName: "DefenseShrine2.jpg", name: "DefenseShrine2" },
+    { srcName: "MagicShrine2.jpg", name: "MagicShrine2" },
 
 
     //scrolls

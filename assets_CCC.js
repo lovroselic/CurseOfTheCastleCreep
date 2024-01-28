@@ -545,20 +545,16 @@ LoadSprites = [
     { srcName: "AttackShrine1.jpg", name: "AttackShrine1" },
     { srcName: "DefenseShrine1.jpg", name: "DefenseShrine1" },
     { srcName: "MagicShrine1.jpg", name: "MagicShrine1" },
-
     { srcName: "AttackShrine2.jpg", name: "AttackShrine2" },
     { srcName: "DefenseShrine2.jpg", name: "DefenseShrine2" },
     { srcName: "MagicShrine2.jpg", name: "MagicShrine2" },
-
     { srcName: "AttackShrine3.jpg", name: "AttackShrine3" },
     { srcName: "DefenseShrine3.jpg", name: "DefenseShrine3" },
     { srcName: "MagicShrine3.jpg", name: "MagicShrine3" },
-
     { srcName: "AttackShrine4.jpg", name: "AttackShrine4" },
     { srcName: "DefenseShrine4.jpg", name: "DefenseShrine4" },
     { srcName: "DefenseShrine8.jpg", name: "DefenseShrine8" },
     { srcName: "MagicShrine4.jpg", name: "MagicShrine4" },
-
     { srcName: "AttackShrine5.jpg", name: "AttackShrine5" },
     { srcName: "DefenseShrine5.jpg", name: "DefenseShrine5" },
     { srcName: "MagicShrine5.jpg", name: "MagicShrine5" },
@@ -568,9 +564,17 @@ LoadSprites = [
     { srcName: "AttackShrine7.jpg", name: "AttackShrine7" },
     { srcName: "DefenseShrine7.jpg", name: "DefenseShrine7" },
     { srcName: "MagicShrine7.jpg", name: "MagicShrine7" },
-
     { srcName: "DefenseShrine9.jpg", name: "DefenseShrine9" },
+    { srcName: "AttackShrine10.jpg", name: "AttackShrine10" },
+    { srcName: "DefenseShrine10.jpg", name: "DefenseShrine10" },
+    { srcName: "AttackShrine11.jpg", name: "AttackShrine11" },
+    { srcName: "DefenseShrine11.jpg", name: "DefenseShrine11" },
+    { srcName: "MagicShrine11.jpg", name: "MagicShrine11" },
+    { srcName: "AttackShrine12.jpg", name: "AttackShrine12" },
+    { srcName: "DefenseShrine12.jpg", name: "DefenseShrine12" },
+    { srcName: "MagicShrine12.jpg", name: "MagicShrine12" },
 
+    { srcName: "MagicShrine13.jpg", name: "MagicShrine13" },
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

@@ -977,7 +977,7 @@ const MAP = {
         potions: '[[67,0]]',
         gold: '[[46,"SilverBar"],[58,"SilverBar"],[157,"SilverBar"],[138,"SilverBar"],[146,"SilverBar"],[172,"GoldBar"]]',
         skills: '[[24,"Sting"],[20,"Shield"]]',
-        shrines: '[[49,1,"AttackShrine"],[55,1,"DefenseShrine"]]',
+        shrines: '[[49,1,"Attack1_10"],[55,1,"Defense1_10"]]',
         entities: '[[217,1,"AngelLick"]]',
     }
     ,
@@ -1023,7 +1023,7 @@ const MAP = {
         movables: '[[267,"Cat"],[395,"Cat"]]',
     }
     ,
-    52: {
+    52 : {
         name: "Say Your Prayers",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB5AA6BB2AA8BB2AA15BB6AA12BAA5BB2AA4BAA11BB2AA7BB8ABB2AA4BB15ABB2ABB6AA2BB2AA3BAA3BB7AA4BB17A$"}',
@@ -1031,17 +1031,17 @@ const MAP = {
         floor: "MC_Floor_2",
         ceil: "SpideryWall",
         start: '[79,5]',
-        decals: '[[54,5,"Tutamkham50","picture"],[106,5,"1942_200","picture"],[26,5,"CBM_VIC20","picture"],[130,5,"HoraceSki","picture"],[62,3,"FF5","picture"],[114,3,"FireAnt21","picture"],[38,3,"Cavelon13","picture"],[84,3,"TombRaider107","picture"],[142,3,"MrRobot11","picture"],[30,7,"Zaxxon89","picture"],[34,7,"KokotoniWilf2","picture"],[2,7,"Underwurlde130","picture"],[10,7,"LeisureSuitLarry70","picture"],[134,1,"ManicMiner50","picture"],[138,1,"Bagitman11","picture"],[158,1,"TheHobbit16","picture"],[166,1,"Ishar14","picture"]]',
-        lights: '[[84,1,"WallLamp","standard"],[84,7,"WallLamp","standard"],[84,5,"WallLamp","standard"]]',
+        decals: '[[54,5,"Tutamkham50","picture"],[106,5,"1942_200","picture"],[26,5,"CBM_VIC20","picture"],[130,5,"HoraceSki","picture"],[62,3,"FF5","picture"],[114,3,"FireAnt21","picture"],[38,3,"Cavelon13","picture"],[142,3,"MrRobot11","picture"],[30,7,"Zaxxon89","picture"],[34,7,"KokotoniWilf2","picture"],[2,7,"Underwurlde130","picture"],[10,7,"LeisureSuitLarry70","picture"],[134,1,"ManicMiner50","picture"],[138,1,"Bagitman11","picture"],[158,1,"TheHobbit16","picture"],[166,1,"Ishar14","picture"],[84,1,"Pyjamarama11","picture"],[84,7,"KingsQuest53","picture"],[84,3,"DonkeyKong200","picture"]]',
+        lights: '[[66,5,"WallLamp12","standardDimmed"],[84,5,"WallLamp34","standardDimmed"]]',
         gates: '[[78,5,"52.1","51.2","Open"]]',
         monsters: '[[110,"GreatCat"]]',
         scrolls: '[[71,0],[85,0],[97,0]]',
         potions: '[[82,1],[87,1]]',
         skills: '[[144,"Heart"],[154,"Shield"]]',
         containers: '[[14,"Barrel","GOLD_ITEM_TYPE.SilverBar",4],[24,"Barrel","GOLD_ITEM_TYPE.SilverBar",4]]',
-        shrines: '[[90,3,"AttackShrine"],[6,7,"DefenseShrine"],[162,1,"MagicShrine"]]',
+        shrines: '[[90,3,"Attack1_11"],[6,7,"Defense1_11"],[162,1,"Magic1_11"]]',
         movables: '[[58,"Cat"]]',
-    }
+        }
     ,
     53: {
         name: "Cuddly Bear",
@@ -1119,7 +1119,7 @@ const MAP = {
         monsters: '[[84,"Basilisk"],[123,"RedSkeleton"],[32,"SilverSkeleton"],[24,"Dragon"],[14,"Dragon"]]',
         scrolls: '[[136,9],[23,4],[27,5],[153,11],[118,3]]',
         containers: '[[17,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[21,"Crate","GOLD_ITEM_TYPE.SilverBar",7],[144,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[154,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1]]',
-        shrines: '[[6,7,"AttackShrine"],[78,5,"DefenseShrine"],[90,3,"MagicShrine"]]',
+        shrines: '[[6,7,"Attack1_12"],[78,5,"Defense1_12"],[90,3,"Magic1_12"]]',
         entities: '[[45,7,"Lizzie"]]',
     }
     ,
@@ -1244,7 +1244,7 @@ const MAP = {
         potions: '[[115,1],[218,1],[249,1],[222,1],[194,1],[89,1]]',
         gold: '[[57,"SilverBar"],[230,"SilverBar"],[239,"SilverBar"],[157,"SilverBar"],[35,"GoldCube"],[48,"GoldCube"],[133,"GoldCube"],[268,"GoldCube"],[227,"GoldBar"]]',
         containers: '[[99,"TreasureChest","INTERACTION_ITEM.LeoPumps",7],[168,"Barrel","INTERACTION_ITEM.Fish",7],[25,"Chest","GOLD_ITEM_TYPE.GoldBar",7]]',
-        shrines: '[[14,7,"MagicShrine"]]',
+        shrines: '[[14,7,"Magic1_13"]]',
         doors: '[64,149]',
         triggers: '[[232,7,"RockTriggerButton",1,103]]',
         entities: '[[54,5,"Granny"]]',

@@ -57,7 +57,7 @@ const DEBUG = {
             * 76 Pray or die
          */
 
-        GAME.level = 46;   //69 //46
+        GAME.level = 62;   //69 
         GAME.gold = 4469;
         HERO.maxHealth = 155;
         HERO.maxMana = 195;
@@ -130,7 +130,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.05",
+    VERSION: "0.14.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

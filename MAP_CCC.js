@@ -141,7 +141,7 @@ const MAP = {
         entities: '[[40,5,"BlackWidow"]]',
     }
     ,
-    8 : {
+    8: {
         name: "West Top",
         sg: 0,
         data: '{"width":"10","height":"10","map":"BB3AA2BABAA12BB5ABAA4BAA4BB2AA4BABB7ABABABABABB2ABB5ABB2ABB2AA3BABB2ABB4ABB11$BA"}',
@@ -158,7 +158,7 @@ const MAP = {
         containers: '[[83,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[17,"Wardrobe","GOLD_ITEM_TYPE.GoldCube",7]]',
         shrines: '[[49,3,"Attack1_1"],[69,3,"Defense1_1"],[96,1,"Magic1_1"]]',
         objects: '[[11,"RedGem"]]',
-        }
+    }
     ,
     9: {
         name: "East Tower - Hedgehog",
@@ -224,7 +224,7 @@ const MAP = {
         traps: '[[7,7,"MarbleTriggerButton",1,"MissGreen",63],[51,3,"MarbleTriggerButton",1,"SpiderGreen",24],[73,1,"MarbleTriggerButton",0,"Bounceball",21]]',
     }
     ,
-    12 : {
+    12: {
         name: "East Spire",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2AA4EAA3BAA2BAA2BAA2BB3ABAA3BB2ABB3ABAA4BABAA7BAA3BAA4BB2AA3BB2ABAA2BAA5BB2ABAA5BAA2BAA2BAA4BAA3BAA4BAA3BB10ABB8AA5BB2ABABB3AA2BB2AA2BB2AA2BABAA3BAA2BABB2ABB4ABB2ABAA2BEABABB8QBB2ABB8ABB13A$AA2BB5ABB2"}',
@@ -244,7 +244,7 @@ const MAP = {
         doors: '[129,35]',
         triggers: '[[133,4,"MarbleTriggerButton",1,148],[47,4,"MarbleTriggerButton",1,62]]',
         objects: '[[32,"BlueGem"]]',
-        }
+    }
     ,
     13: {
         name: "Strange Corridor",
@@ -303,7 +303,7 @@ const MAP = {
         triggers: '[[141,4,"RockTriggerButton",1,77],[216,4,"RockTriggerButton",1,219]]',
     }
     ,
-    16 : {
+    16: {
         name: "A Chapel",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB6AA30BB3AA6BAA3BAA2BAA2BABB13AA2BABB10AA7BAA4BB3ABAA2BB16AB$"}',
@@ -319,7 +319,7 @@ const MAP = {
         potions: '[[100,0],[108,1]]',
         containers: '[[23,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[31,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
         shrines: '[[2,7,"Attack1_3"],[5,7,"Defense1_3"],[8,7,"Magic1_3"]]',
-        }
+    }
     ,
     17: {
         name: "Pretty Bunny",
@@ -459,7 +459,7 @@ const MAP = {
         objects: '[[119,"CrystallBall"],[142,"Shield"]]',
     }
     ,
-    24 : {
+    24: {
         name: "Server Room",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB5AA8BB2AA5BABABAA4BABAA17BABB7AA2BB3ABB14AA2BAA5BB15ABABB16A$"}',
@@ -473,7 +473,7 @@ const MAP = {
         monsters: '[[27,"Bat"],[71,"RedGoldBat"]]',
         containers: '[[78,"Wardrobe","INTERACTION_ITEM.Chip",5],[86,"Wardrobe","INTERACTION_ITEM.Floppy",3],[24,"Crate","GOLD_ITEM_TYPE.GoldBar",7],[30,"Crate","GOLD_ITEM_TYPE.GoldBar",7]]',
         shrines: '[[5,7,"Attack1_4"],[33,5,"Defense1_4"],[43,3,"Defense1_8"]]',
-        }
+    }
     ,
     25: {
         name: "Stairway To Hell",
@@ -546,7 +546,7 @@ const MAP = {
         traps: '[[131,7,"PurpleTriggerButton",0,"Bounceball",182],[243,1,"PurpleTriggerButton",0,"Bounceball",177]]',
     }
     ,
-    29 : {
+    29: {
         name: "Ghost Sisters",
         sg: 0,
         data: '{"width":"20","height":"20","map":"BB2EBB8ABABB14AA7BABAA3BAA6BAA2BAA2BB2AA4BABAA6BB3ABAA11BABAA8BAA5BAA5BAA3EBEAA41BAA2BB3AA23BABAA2BAA5BB2ABB2AA4BABAA2BB7AA2BB2ABB4AA2BB12AA3BAA6BB5AA2BB5ABABAA4BB2AA4BB2AA3BB2ABAA3BAA6BB9ABAA4BB2ABB3ABABABB8ABB3ABB15EBB14EBB11ABB2$ABB4ABB10AA3BB2"}',
@@ -567,7 +567,7 @@ const MAP = {
         doors: '[125,243,305,187,352]',
         triggers: '[[62,7,"RockTriggerButton",1,131],[90,7,"RockTriggerButton",1,173],[275,7,"RockTriggerButton",1,237],[177,7,"RockTriggerButton",1,138],[95,7,"RockTriggerButton",1,72],[288,7,"RockTriggerButton",1,251],[90,1,"RockTriggerButton",1,66]]',
         entities: '[[3,7,"RoseGhostGirl"],[16,7,"SkullGhostGirl"]]',
-        }
+    }
     ,
     30: {
         name: "Devilla",
@@ -627,7 +627,7 @@ const MAP = {
         traps: '[[17,7,"PurpleTriggerButton",1,"Viking",80],[147,1,"PurpleTriggerButton",1,"Viking",93]]',
     }
     ,
-    33 : {
+    33: {
         name: "Temple",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB3AA2BB2AA2BB6AA70BAA2BAA8BB2AA15BB4AA10BABB13AA3BB20AA4BAA2BB4AA3BABB3AA3BABB7ABABB24A$"}',
@@ -641,7 +641,7 @@ const MAP = {
         scrolls: '[[64,10],[160,10],[154,6],[70,4]]',
         containers: '[[199,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[205,"Barrel","GOLD_ITEM_TYPE.SilverBar",1]]',
         shrines: '[[7,7,"Attack1_5"],[4,7,"Defense1_5"],[10,7,"Magic1_5"],[105,5,"Attack1_6"],[60,5,"Defense1_6"],[150,5,"Magic1_6"],[164,3,"Magic1_7"],[119,3,"Attack1_7"],[74,3,"Defense1_7"]]',
-        }
+    }
     ,
     34: {
         name: "Goldie The Alien",
@@ -1023,7 +1023,7 @@ const MAP = {
         movables: '[[267,"Cat"],[395,"Cat"]]',
     }
     ,
-    52 : {
+    52: {
         name: "Say Your Prayers",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB5AA6BB2AA8BB2AA15BB6AA12BAA5BB2AA4BAA11BB2AA7BB8ABB2AA4BB15ABB2ABB6AA2BB2AA3BAA3BB7AA4BB17A$"}',
@@ -1041,7 +1041,7 @@ const MAP = {
         containers: '[[14,"Barrel","GOLD_ITEM_TYPE.SilverBar",4],[24,"Barrel","GOLD_ITEM_TYPE.SilverBar",4]]',
         shrines: '[[90,3,"Attack1_11"],[6,7,"Defense1_11"],[162,1,"Magic1_11"]]',
         movables: '[[58,"Cat"]]',
-        }
+    }
     ,
     53: {
         name: "Cuddly Bear",
@@ -1385,7 +1385,7 @@ const MAP = {
         potions: '[[36,0],[48,0],[240,0],[252,0],[127,1],[143,1],[161,1],[145,1]]',
     }
     ,
-    70 : {
+    70: {
         name: "Another Chapel",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB5AA28BB2AA4BB3AA2BAA3BB2AA2BABB3ABB3AA12BB3AA7BB6AA2BB16ABAA3BABB4AA5BB7ABB2AA5BB7ABB8AA2BB12A$"}',
@@ -1401,7 +1401,7 @@ const MAP = {
         scrolls: '[[14,10],[144,10],[24,10],[154,10]]',
         shrines: '[[58,1,"Attack1_17"],[69,3,"Defense1_17"],[73,5,"Magic1_17"]]',
         oracles: '[[84,7,"TrainingOracle"]]',
-        }
+    }
     ,
     71: {
         name: "Faculty of Healing",
@@ -1499,7 +1499,7 @@ const MAP = {
     }
     ,
     76 : {
-        name: "Pray or Die",
+        name: "Godesses of Attack",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB7AA10BAA2BB2AA36BAA3BAA7BAA23BAA7BAA26BAA5BB4ABB12AA2BABB8AA2BAA2BB3ABB8AA6BB2ABB2ABABABB2ABB24$A"}',
         wall: "WetShinyWall1",
@@ -1509,7 +1509,8 @@ const MAP = {
         decals: '[[221,1,"DungeonDoor_Blocked","crest"]]',
         lights: '[[109,1,"WallLamp31","standardDimmed"],[157,1,"WallLamp31","standardDimmed"],[115,1,"WallLamp31","standardDimmed"]]',
         gates: '[[213,1,"76.1","69.8","Open"]]',
-        shrines: '[[2,7,"Attack1_1"],[12,7,"Defense1_1"],[7,7,"Magic1_1"]]',
+        shrines: '[[2,7,"Attack1_18"],[7,7,"Attack2_19"],[12,7,"Attack3_20"]]',
+        oracles: '[[217,1,"PriceOracle"]]',
         }
     ,
     99: {

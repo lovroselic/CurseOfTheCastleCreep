@@ -423,12 +423,13 @@ LoadSprites = [
     { srcName: "TrainingOracle.jpg", name: "TrainingOracle" },
     { srcName: "MagicUniOracle.jpg", name: "MagicOracle" },
     { srcName: "MagicOracle2.jpg", name: "MagicOracle2" },
-
     { srcName: "MagicProfessor.jpg", name: "Sorceress" },
     { srcName: "Alchemist.jpg", name: "Alchemist" },
     { srcName: "DefenseProfessor.jpg", name: "DefenseProfessor" },
     { srcName: "FirstAid.jpg", name: "Doctress" },
     { srcName: "Ninja.jpg", name: "Ninja" },
+
+    { srcName: "PriceOracle.jpg", name: "PriceOracle" },
 
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
     { srcName: "Priestess.jpg", name: "Priestess" },
@@ -536,12 +537,7 @@ LoadSprites = [
     //compas
     { srcName: "CompassRose.png", name: "CompassRose" },
 
-    //shrine
-    { srcName: "AttackShrine256.png", name: "AttackShrine" },
-    { srcName: "DefenseShrine256.png", name: "DefenseShrine" },
-    { srcName: "MagicShrine256.png", name: "MagicShrine" },
-
-    //new shrines
+    //shrines
     { srcName: "AttackShrine1.jpg", name: "AttackShrine1" },
     { srcName: "DefenseShrine1.jpg", name: "DefenseShrine1" },
     { srcName: "MagicShrine1.jpg", name: "MagicShrine1" },
@@ -577,10 +573,12 @@ LoadSprites = [
     { srcName: "MagicShrine14.jpg", name: "MagicShrine14" },
     { srcName: "AttackShrine15.jpg", name: "AttackShrine15" },
     { srcName: "DefenseShrine16.jpg", name: "DefenseShrine16" },
-
     { srcName: "AttackShrine17.jpg", name: "AttackShrine17" },
     { srcName: "DefenseShrine17.jpg", name: "DefenseShrine17" },
     { srcName: "MagicShrine17.jpg", name: "MagicShrine17" },
+    { srcName: "AttackShrine18.jpg", name: "AttackShrine18" },
+    { srcName: "AttackShrine19.jpg", name: "AttackShrine19" },
+    { srcName: "AttackShrine20.jpg", name: "AttackShrine20" },
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

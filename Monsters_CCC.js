@@ -18,36 +18,6 @@ const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeap
     "Petrify", "MagicBoost", "Luck", "HalfLife", "Explode", "Radar"];
 
 const SHRINE_TYPE = {
-    AttackShrine: {
-        name: "AttackShrine",
-        sprite: "AttackShrine",
-        which: "attack",
-        category: 'crest',
-        interactionCategory: 'shrine',
-        inventorySprite: "SwordSkill",
-        price: 1000,
-        level: 1,
-    },
-    DefenseShrine: {
-        name: "DefenseShrine",
-        sprite: "DefenseShrine",
-        which: "defense",
-        category: 'crest',
-        interactionCategory: 'shrine',
-        inventorySprite: "ShieldSkill",
-        price: 1000,
-        level: 1,
-    },
-    MagicShrine: {
-        name: "MagicShrine",
-        sprite: "MagicShrine",
-        which: "magic",
-        category: 'crest',
-        interactionCategory: 'shrine',
-        inventorySprite: "MagicSkill",
-        price: 1000,
-        level: 1,
-    },
     Attack1_1: {
         name: "AttackShrine_1_1",
         sprite: "AttackShrine1",
@@ -399,7 +369,6 @@ const SHRINE_TYPE = {
         price: 1000,
         level: 1,
     },
-
     Attack1_17: {
         name: "AttackShrine_1_17",
         sprite: "AttackShrine17",
@@ -429,6 +398,37 @@ const SHRINE_TYPE = {
         inventorySprite: "MagicSkill",
         price: 1000,
         level: 1,
+    },
+
+    Attack1_18: {
+        name: "AttackShrine_1_18",
+        sprite: "AttackShrine18",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 1000,
+        level: 1,
+    },
+    Attack2_19: {
+        name: "AttackShrine_2_19",
+        sprite: "AttackShrine19",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 1750,
+        level: 2,
+    },
+    Attack3_20: {
+        name: "AttackShrine_3_20",
+        sprite: "AttackShrine20",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 2500,
+        level: 3,
     },
 };
 
@@ -519,6 +519,14 @@ const ORACLE_TYPE = {
         category: 'crest',
         voice: "Female",
         text: "Don't leave without the gold key. Or else.",
+        interactionCategory: "oracle",
+    },
+    PriceOracle: {
+        name: "PriceOracle",
+        sprite: "PriceOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Some shrines are more expensive than others. But the also give more. Maybe.",
         interactionCategory: "oracle",
     },
 };

@@ -57,7 +57,7 @@ const DEBUG = {
             * 76 Pray or die
          */
 
-        GAME.level = 62;   //69 
+        GAME.level = 76;   //69 
         GAME.gold = 4469;
         HERO.maxHealth = 155;
         HERO.maxMana = 195;
@@ -130,7 +130,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.06",
+    VERSION: "0.14.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -248,7 +248,7 @@ class Shrine extends WallFeature3D {
 class Oracle extends WallFeature3D {
     constructor(grid, face, type) {
         super(grid, face, type);
-        //this.expand = true;
+        this.expand = true;
     }
     interact() {
         if (!this.ready) return;

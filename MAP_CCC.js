@@ -1305,7 +1305,7 @@ const MAP = {
         scrolls: '[[34,7]]',
         potions: '[[78,1],[19,1],[23,0]]',
         containers: '[[31,"Barrel","INTERACTION_ITEM.Frog",1],[97,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[60,"Crate","GOLD_ITEM_TYPE.SilverBar",5]]',
-        shrines: '[[55,5,"MagicShrine"]]',
+        shrines: '[[55,5,"Magic1_14"]]',
     }
     ,
     66: {
@@ -1323,7 +1323,7 @@ const MAP = {
         potions: '[[60,1],[40,1]]',
         gold: '[[36,"SilverBar"],[51,"SilverBar"],[70,"GoldBar"]]',
         containers: '[[95,"Barrel","INTERACTION_ITEM.Fish",1],[91,"Barrel","GOLD_ITEM_TYPE.GoldBar",1]]',
-        shrines: '[[55,5,"AttackShrine"]]',
+        shrines: '[[55,5,"Attack1_15"]]',
         entities: '[[5,7,"Sharkeera"]]',
         objects: '[[64,"Poison"]]',
     }
@@ -1343,7 +1343,7 @@ const MAP = {
         scrolls: '[[29,10],[96,11]]',
         gold: '[[24,"GoldCube"],[50,"GoldCube"],[91,"GoldCube"],[41,"GoldCube"]]',
         containers: '[[47,"Barrel","INTERACTION_ITEM.Fish",4],[73,"Barrel","GOLD_ITEM_TYPE.SilverBar",4]]',
-        shrines: '[[55,5,"DefenseShrine"]]',
+        shrines: '[[55,5,"Defense1_16"]]',
         entities: '[[115,1,"Fischelle"]]',
     }
     ,
@@ -1385,7 +1385,7 @@ const MAP = {
         potions: '[[36,0],[48,0],[240,0],[252,0],[127,1],[143,1],[161,1],[145,1]]',
     }
     ,
-    70: {
+    70 : {
         name: "Another Chapel",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB5AA28BB2AA4BB3AA2BAA3BB2AA2BABB3ABB3AA12BB3AA7BB6AA2BB16ABAA3BABB4AA5BB7ABB2AA5BB7ABB8AA2BB12A$"}',
@@ -1394,14 +1394,14 @@ const MAP = {
         ceil: "MossyWall",
         start: '[149,1]',
         decals: '[[26,5,"CrystalsOfZong10","picture"],[91,5,"Arnie200","picture"],[117,5,"Vixen70","picture"],[48,5,"JetSetWilly88","picture"],[100,5,"JetSetWilly89","picture"],[51,3,"BattleChopper","picture"],[116,3,"Shamus60","picture"],[94,3,"AticAtac112","picture"],[42,3,"Pitfall27","picture"],[3,7,"ReturnToCastleWolfenstein13","picture"],[9,7,"LastNinja140","picture"],[95,7,"SVS103","picture"],[99,7,"EveryoneIsAWally2","picture"],[43,1,"ArticShipwreck7","picture"],[47,1,"Zeppelin88","picture"],[134,1,"UW10","picture"],[138,1,"Frogger110","picture"]]',
-        lights: '[[6,7,"WallLamp19","dim"],[65,5,"WallLamp20","dim"],[77,3,"WallLamp16","dim"],[157,1,"WallLamp13","standard"],[167,1,"WallLamp9","standard"]]',
+        lights: '[[6,7,"WallLamp19","darkgray"],[65,5,"WallLamp20","darkgray"],[77,3,"WallLamp16","darkgray"],[157,1,"WallLamp13","standard"],[167,1,"WallLamp9","standard"]]',
         gates: '[[162,1,"70.1","69.2","Open"]]',
         keys: '[[18,4]]',
         monsters: '[[32,"SilverSkeleton"],[19,"Goblin"],[66,"SilverSkeleton"]]',
         scrolls: '[[14,10],[144,10],[24,10],[154,10]]',
-        shrines: '[[58,1,"AttackShrine"],[69,3,"DefenseShrine"],[73,5,"MagicShrine"]]',
+        shrines: '[[58,1,"Attack1_17"],[69,3,"Defense1_17"],[73,5,"Magic1_17"]]',
         oracles: '[[84,7,"TrainingOracle"]]',
-    }
+        }
     ,
     71: {
         name: "Faculty of Healing",

@@ -573,8 +573,14 @@ LoadSprites = [
     { srcName: "AttackShrine12.jpg", name: "AttackShrine12" },
     { srcName: "DefenseShrine12.jpg", name: "DefenseShrine12" },
     { srcName: "MagicShrine12.jpg", name: "MagicShrine12" },
-
     { srcName: "MagicShrine13.jpg", name: "MagicShrine13" },
+    { srcName: "MagicShrine14.jpg", name: "MagicShrine14" },
+    { srcName: "AttackShrine15.jpg", name: "AttackShrine15" },
+    { srcName: "DefenseShrine16.jpg", name: "DefenseShrine16" },
+
+    { srcName: "AttackShrine17.jpg", name: "AttackShrine17" },
+    { srcName: "DefenseShrine17.jpg", name: "DefenseShrine17" },
+    { srcName: "MagicShrine17.jpg", name: "MagicShrine17" },
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

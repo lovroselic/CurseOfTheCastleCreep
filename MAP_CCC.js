@@ -303,7 +303,7 @@ const MAP = {
         triggers: '[[141,4,"RockTriggerButton",1,77],[216,4,"RockTriggerButton",1,219]]',
     }
     ,
-    16: {
+    16 : {
         name: "A Chapel",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB6AA30BB3AA6BAA3BAA2BAA2BABB13AA2BABB10AA7BAA4BB3ABAA2BB16AB$"}',
@@ -312,14 +312,14 @@ const MAP = {
         ceil: "RockCeiling",
         start: '[104,1]',
         decals: '[[57,7,"MontyMole111","picture"],[63,7,"DM104","picture"],[111,1,"Hero81","picture"],[119,1,"LeisureSuitLarry75","picture"],[91,1,"Apshai10","picture"],[95,1,"Arena200","picture"],[33,5,"LaraCroft1","picture"],[55,5,"ESB","picture"],[77,5,"AticAtac113","picture"],[43,3,"CamelotWarriors","picture"],[65,3,"Infiltrator71","picture"],[87,3,"TombRaider109","picture"],[63,3,"SpectrumGame1","picture"],[57,5,"CrawlMaster131","picture"],[57,3,"TheHobbit15","picture"],[60,3,"Shamus91","picture"],[63,5,"ManicMiner14","picture"],[60,5,"TempleOfApshai70","picture"],[57,1,"WhoDaresWins50","picture"],[63,1,"FranticFreddie3","picture"]]',
-        lights: '[[60,1,"WallLamp","standard"],[60,7,"WallTorch","dimRed"]]',
+        lights: '[[60,1,"WallLamp13","dim"],[60,7,"WallTorch","dimRed"]]',
         gates: '[[115,1,"16.1","15.2","Open"]]',
         monsters: '[[45,"Bat"],[53,"Bat"],[27,"RedGoldBat"],[49,"RedGoldBat"]]',
         scrolls: '[[46,3]]',
         potions: '[[100,0],[108,1]]',
         containers: '[[23,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[31,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
-        shrines: '[[2,7,"AttackShrine"],[5,7,"DefenseShrine"],[8,7,"MagicShrine"]]',
-    }
+        shrines: '[[2,7,"Attack1_3"],[5,7,"Defense1_3"],[8,7,"Magic1_3"]]',
+        }
     ,
     17: {
         name: "Pretty Bunny",
@@ -459,7 +459,7 @@ const MAP = {
         objects: '[[119,"CrystallBall"],[142,"Shield"]]',
     }
     ,
-    24: {
+    24 : {
         name: "Server Room",
         sg: 0,
         data: '{"width":"11","height":"11","map":"BB5AA8BB2AA5BABABAA4BABAA17BABB7AA2BB3ABB14AA2BAA5BB15ABABB16A$"}',
@@ -468,12 +468,12 @@ const MAP = {
         ceil: "RockCeiling",
         start: '[104,1]',
         decals: '[[82,7,"C64","picture"],[36,7,"C64_hard","picture"],[40,7,"ZX Spectrum","picture"],[60,7,"ZX81-89","picture"],[81,1,"Amiga","picture"],[83,1,"AtariST","picture"],[60,3,"AtariFalcon","picture"],[60,5,"VIC20","picture"],[60,1,"AppleLisa","picture"],[67,5,"Captive200","picture"],[75,3,"Geos","picture"],[36,5,"ST2","picture"],[40,3,"Skull1","crest"]]',
-        lights: '[[14,7,"Lamp4","dim"],[18,7,"Lamp4","dim"],[102,1,"Lamp4","dim"],[106,1,"Lamp4","dim"],[45,5,"Lamp4","dim"],[53,3,"Lamp4","dim"]]',
+        lights: '[[102,1,"Lamp4","standardDimmed"],[106,1,"Lamp4","standardDimmed"]]',
         gates: '[[115,1,"24.1","19.4","Open"],[65,3,"24.2","27.1","Closed"],[55,5,"24.3","28.1","Down"]]',
         monsters: '[[27,"Bat"],[71,"RedGoldBat"]]',
         containers: '[[78,"Wardrobe","INTERACTION_ITEM.Chip",5],[86,"Wardrobe","INTERACTION_ITEM.Floppy",3],[24,"Crate","GOLD_ITEM_TYPE.GoldBar",7],[30,"Crate","GOLD_ITEM_TYPE.GoldBar",7]]',
-        shrines: '[[5,7,"AttackShrine"],[33,5,"DefenseShrine"],[43,3,"DefenseShrine"]]',
-    }
+        shrines: '[[5,7,"Attack1_4"],[33,5,"Defense1_4"],[43,3,"Defense1_4b"]]',
+        }
     ,
     25: {
         name: "Stairway To Hell",
@@ -546,7 +546,7 @@ const MAP = {
         traps: '[[131,7,"PurpleTriggerButton",0,"Bounceball",182],[243,1,"PurpleTriggerButton",0,"Bounceball",177]]',
     }
     ,
-    29: {
+    29 : {
         name: "Ghost Sisters",
         sg: 0,
         data: '{"width":"20","height":"20","map":"BB2EBB8ABABB14AA7BABAA3BAA6BAA2BAA2BB2AA4BABAA6BB3ABAA11BABAA8BAA5BAA5BAA3EBEAA41BAA2BB3AA23BABAA2BAA5BB2ABB2AA4BABAA2BB7AA2BB2ABB4AA2BB12AA3BAA6BB5AA2BB5ABABAA4BB2AA4BB2AA3BB2ABAA3BAA6BB9ABAA4BB2ABB3ABABABB8ABB3ABB15EBB14EBB11ABB2$ABB4ABB10AA3BB2"}',
@@ -555,7 +555,7 @@ const MAP = {
         ceil: "SpideryWall2",
         start: '[362,1]',
         decals: '[[25,7,"AlienKong","picture"],[21,7,"Pitfall72","picture"],[27,7,"Wally88","picture"],[31,7,"CrystalCastles200","picture"],[34,7,"AntAttack4","picture"],[38,7,"DM100","picture"],[134,7,"Barbarian110","picture"],[132,7,"ReturnToCastleWolfenstein14","picture"],[128,7,"Pipeline50","picture"],[247,7,"TombRaider99","picture"],[234,7,"TombRaider112","picture"],[250,7,"OlympicSkier6","picture"],[238,7,"Triss","picture"],[264,7,"LeisureSuitLarry77","picture"],[261,7,"SVS102","picture"],[340,5,"PharaohCurse111","picture"],[140,5,"TombRaider100","picture"],[220,5,"BeachHead100","picture"],[227,5,"SabreWulf11","picture"],[80,5,"Karateka200","picture"],[86,5,"MontyMole51","picture"],[93,5,"Miner2049_1","picture"],[293,5,"GatewayToApshai130","picture"],[373,5,"Ski23","picture"],[366,5,"Galaga71","picture"],[350,5,"Decathlon200","picture"],[355,5,"SexOlympics1","picture"],[288,5,"BackToFuture201","picture"],[62,5,"AztecChallenge112","picture"],[183,5,"MassEffect1","picture"],[190,5,"1942_201","picture"],[275,5,"HungryHorace12","picture"],[242,1,"ManicMiner62","picture"],[389,1,"JetSetWilly88","picture"],[236,1,"ForbiddenForest99","picture"],[127,1,"ForbiddenForest110","picture"],[134,1,"Jawbreaker","picture"],[137,1,"Pitfall100","picture"],[397,1,"BrianBloodaxe11","picture"],[95,1,"RobinsonsRequiem1","picture"],[350,1,"AticAtac115","picture"],[355,1,"BrianBloodaxe70","picture"],[298,1,"Tutanham11","picture"],[250,1,"Elvira2","picture"],[99,3,"Jetpac3","picture"],[86,3,"ChuckieEgg2","picture"],[166,3,"ImpossibleMission130","picture"],[177,3,"WinterGames79","picture"],[199,3,"BrideOfFrankenstein","picture"],[338,3,"AMC2","picture"],[298,3,"CastleWolfenstein21","picture"],[325,3,"IK2","picture"],[312,3,"SpyVsSpy41","picture"],[183,3,"Ishar71","picture"],[190,3,"Hero60","picture"],[350,3,"Ultima11","picture"],[359,3,"BeyondForbiddenForest111","picture"],[112,3,"Pitfall88","picture"],[213,3,"Pitfall89","picture"],[193,5,"ImpossibleMsission113","picture"],[167,5,"TombRaider110","picture"]]',
-        lights: '[[363,1,"WallLamp3","dim"],[123,1,"WallLamp","standard"],[136,1,"WallLamp","standard"],[129,1,"WallLamp","standard"],[123,7,"WallLamp","dim"],[245,1,"WallLamp","standard"],[300,5,"WallLamp3","dim"],[326,5,"WallLamp3","dim"],[333,5,"WallLamp3","dim"],[136,7,"WallLamp","dim"],[130,7,"WallLamp","dim"]]',
+        lights: '[[363,1,"WallLamp3","dim"],[123,1,"WallLamp","dim"],[136,1,"WallLamp","dim"],[123,7,"WallLamp","dim"],[245,1,"WallLamp","standard"],[300,5,"WallLamp3","dim"],[326,5,"WallLamp3","dim"],[333,5,"WallLamp3","dim"],[136,7,"WallLamp","dim"],[130,7,"WallLamp","dim"]]',
         gates: '[[382,1,"29.1","25.2","Up"],[180,5,"29.2","30.1","Down"],[319,3,"29.3","31.1","Down"]]',
         monsters: '[[263,"MissGalaxyGold"],[141,"Viking"],[221,"Viking"],[42,"GhostMinionGreen2"],[48,"GhostMinionGreen"],[191,"GhostMinion"],[75,"Wolf"],[317,"Wolf"],[175,"GhostMinionGreen"],[268,"GhostMinion"]]',
         scrolls: '[[170,4],[157,5],[378,6]]',
@@ -563,11 +563,11 @@ const MAP = {
         gold: '[[77,"GoldCube"],[209,"GoldCube"],[215,"GoldCube"],[184,"GoldCube"],[301,"GoldCube"],[329,"GoldCube"],[375,"GoldCube"],[91,"GoldCube"]]',
         skills: '[[163,"Heart"],[289,"Mana"]]',
         containers: '[[101,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[367,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[47,"Barrel","GOLD_ITEM_TYPE.SilverBar",7],[258,"Barrel","GOLD_ITEM_TYPE.SilverBar",7]]',
-        shrines: '[[9,7,"MagicShrine"]]',
+        shrines: '[[9,7,"Magic1_4"]]',
         doors: '[125,243,305,187,352]',
         triggers: '[[62,7,"RockTriggerButton",1,131],[90,7,"RockTriggerButton",1,173],[275,7,"RockTriggerButton",1,237],[177,7,"RockTriggerButton",1,138],[95,7,"RockTriggerButton",1,72],[288,7,"RockTriggerButton",1,251],[90,1,"RockTriggerButton",1,66]]',
         entities: '[[3,7,"RoseGhostGirl"],[16,7,"SkullGhostGirl"]]',
-    }
+        }
     ,
     30: {
         name: "Devilla",
@@ -627,7 +627,7 @@ const MAP = {
         traps: '[[17,7,"PurpleTriggerButton",1,"Viking",80],[147,1,"PurpleTriggerButton",1,"Viking",93]]',
     }
     ,
-    33: {
+    33 : {
         name: "Temple",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB3AA2BB2AA2BB6AA70BAA2BAA8BB2AA15BB4AA10BABB13AA3BB20AA4BAA2BB4AA3BABB3AA3BABB7ABABB24A$"}',
@@ -636,12 +636,12 @@ const MAP = {
         ceil: "IntricateCeiling",
         start: '[202,1]',
         decals: '[[17,7,"RickDangerous51","picture"],[27,7,"RobinToTheRescue89","picture"],[197,1,"Pitfall100","picture"],[207,1,"FireAnt2","picture"],[214,1,"JetPac50","picture"],[220,1,"LeisureSuitLarry90","picture"],[43,3,"TombRaider103","picture"],[193,3,"TempleOfApshai89","picture"],[109,3,"JSW110","picture"],[112,3,"ManicMiner63","picture"],[115,3,"LSL101","picture"],[109,5,"TombRaider102","picture"],[31,5,"Scarab200","picture"],[181,5,"SammyLightfoot4","picture"],[112,5,"Prince41","picture"],[115,5,"Choplifter12","picture"],[21,7,"IK200","picture"],[23,7,"LastNinja130","picture"],[201,1,"Scramble23","picture"],[203,1,"SVS111","picture"],[91,5,"Shamus4","picture"],[121,5,"LeisureSuitLarry200","picture"],[103,3,"WhoDaresWins70","picture"],[133,3,"AirWolf201","picture"]]',
-        lights: '[[109,1,"WallLamp","dim"],[112,1,"WallLamp","dim"],[115,1,"WallLamp","dim"],[109,7,"WallLamp","dim"],[112,7,"WallLamp","dim"],[115,7,"WallLamp","dim"]]',
+        lights: '[[112,1,"WallLamp34","dim"],[112,7,"WallLamp14","standardDimmed"]]',
         gates: '[[217,1,"33.1","26.2","Open"]]',
         scrolls: '[[64,10],[160,10],[154,6],[70,4]]',
         containers: '[[199,"Barrel","GOLD_ITEM_TYPE.SilverBar",1],[205,"Barrel","GOLD_ITEM_TYPE.SilverBar",1]]',
-        shrines: '[[7,7,"AttackShrine"],[4,7,"DefenseShrine"],[10,7,"MagicShrine"],[105,5,"AttackShrine"],[60,5,"DefenseShrine"],[150,5,"MagicShrine"],[164,3,"MagicShrine"],[119,3,"AttackShrine"],[74,3,"DefenseShrine"]]',
-    }
+        shrines: '[[7,7,"Attack1_5"],[4,7,"Defense1_5"],[10,7,"Magic1_5"],[105,5,"Attack1_6"],[60,5,"Defense1_6"],[150,5,"Magic1_6"],[164,3,"Magic1_7"],[119,3,"Attack1_7"],[74,3,"Defense1_7"]]',
+        }
     ,
     34: {
         name: "Goldie The Alien",

@@ -550,6 +550,25 @@ LoadSprites = [
     { srcName: "DefenseShrine2.jpg", name: "DefenseShrine2" },
     { srcName: "MagicShrine2.jpg", name: "MagicShrine2" },
 
+    { srcName: "AttackShrine3.jpg", name: "AttackShrine3" },
+    { srcName: "DefenseShrine3.jpg", name: "DefenseShrine3" },
+    { srcName: "MagicShrine3.jpg", name: "MagicShrine3" },
+
+    { srcName: "AttackShrine4.jpg", name: "AttackShrine4" },
+    { srcName: "DefenseShrine4.jpg", name: "DefenseShrine4" },
+    { srcName: "DefenseShrine4b.jpg", name: "DefenseShrine4b" },
+    { srcName: "MagicShrine4.jpg", name: "MagicShrine4" },
+
+    { srcName: "AttackShrine5.jpg", name: "AttackShrine5" },
+    { srcName: "DefenseShrine5.jpg", name: "DefenseShrine5" },
+    { srcName: "MagicShrine5.jpg", name: "MagicShrine5" },
+    { srcName: "AttackShrine6.jpg", name: "AttackShrine6" },
+    { srcName: "DefenseShrine6.jpg", name: "DefenseShrine6" },
+    { srcName: "MagicShrine6.jpg", name: "MagicShrine6" },
+    { srcName: "AttackShrine7.jpg", name: "AttackShrine7" },
+    { srcName: "DefenseShrine7.jpg", name: "DefenseShrine7" },
+    { srcName: "MagicShrine7.jpg", name: "MagicShrine7" },
+
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

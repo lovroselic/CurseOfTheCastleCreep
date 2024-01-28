@@ -158,9 +158,9 @@ const SHRINE_TYPE = {
         price: 1000,
         level: 1,
     },
-    Defense1_4b: {
-        name: "Defense1_4b",
-        sprite: "DefenseShrine4b",
+    Defense1_8: {
+        name: "Defense1_8",
+        sprite: "DefenseShrine8",
         which: "defense",
         category: 'crest',
         interactionCategory: 'shrine',
@@ -178,7 +178,6 @@ const SHRINE_TYPE = {
         price: 1000,
         level: 1,
     },
-
     Attack1_5: {
         name: "AttackShrine_1_5",
         sprite: "AttackShrine5",
@@ -266,6 +265,17 @@ const SHRINE_TYPE = {
         category: 'crest',
         interactionCategory: 'shrine',
         inventorySprite: "MagicSkill",
+        price: 1000,
+        level: 1,
+    },
+
+    Defense1_9: {
+        name: "Defense1_9",
+        sprite: "DefenseShrine9",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ShieldSkill",
         price: 1000,
         level: 1,
     },

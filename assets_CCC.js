@@ -556,7 +556,7 @@ LoadSprites = [
 
     { srcName: "AttackShrine4.jpg", name: "AttackShrine4" },
     { srcName: "DefenseShrine4.jpg", name: "DefenseShrine4" },
-    { srcName: "DefenseShrine4b.jpg", name: "DefenseShrine4b" },
+    { srcName: "DefenseShrine8.jpg", name: "DefenseShrine8" },
     { srcName: "MagicShrine4.jpg", name: "MagicShrine4" },
 
     { srcName: "AttackShrine5.jpg", name: "AttackShrine5" },
@@ -568,6 +568,8 @@ LoadSprites = [
     { srcName: "AttackShrine7.jpg", name: "AttackShrine7" },
     { srcName: "DefenseShrine7.jpg", name: "DefenseShrine7" },
     { srcName: "MagicShrine7.jpg", name: "MagicShrine7" },
+
+    { srcName: "DefenseShrine9.jpg", name: "DefenseShrine9" },
 
 
     //scrolls

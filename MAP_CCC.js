@@ -472,7 +472,7 @@ const MAP = {
         gates: '[[115,1,"24.1","19.4","Open"],[65,3,"24.2","27.1","Closed"],[55,5,"24.3","28.1","Down"]]',
         monsters: '[[27,"Bat"],[71,"RedGoldBat"]]',
         containers: '[[78,"Wardrobe","INTERACTION_ITEM.Chip",5],[86,"Wardrobe","INTERACTION_ITEM.Floppy",3],[24,"Crate","GOLD_ITEM_TYPE.GoldBar",7],[30,"Crate","GOLD_ITEM_TYPE.GoldBar",7]]',
-        shrines: '[[5,7,"Attack1_4"],[33,5,"Defense1_4"],[43,3,"Defense1_4b"]]',
+        shrines: '[[5,7,"Attack1_4"],[33,5,"Defense1_4"],[43,3,"Defense1_8"]]',
         }
     ,
     25: {
@@ -908,7 +908,7 @@ const MAP = {
         gold: '[[228,"GoldCube"],[197,"GoldCube"],[65,"GoldCube"],[59,"GoldCube"],[122,"GoldCube"],[269,"SilverBar"]]',
         skills: '[[195,"Heart"],[32,"Mana"]]',
         containers: '[[151,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",3],[219,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",3],[199,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[253,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[21,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[61,"Crate","GOLD_ITEM_TYPE.SilverBar",1]]',
-        shrines: '[[186,3,"DefenseShrine"]]',
+        shrines: '[[186,3,"Defense1_9"]]',
         triggers: '[[136,5,"RockTriggerButton",1,205],[252,5,"RockTriggerButton",1,266],[18,5,"RockTriggerButton",1,103]]',
         entities: '[[88,7,"FoxyLady"]]',
         movables: '[[156,"Spider"],[253,"Spider"]]',

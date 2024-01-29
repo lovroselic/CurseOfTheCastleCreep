@@ -52,32 +52,33 @@ const DEBUG = {
             * 71 faculty of healing completed
             * 72 faculty of defense copleted
             * 73 faculty of alchemy completed
-            * 74 faculty of magic
+            * 74 faculty of magic completed
             * 75 faculty of kicking
-            * 76 Pray or die
+            * 76 Goddesses of attack complete
+            * 77 godesses of defense complete
          */
 
-        GAME.level = 76;   //69 
-        GAME.gold = 4469;
+        GAME.level = 75;   //69 
+        GAME.gold = 1387;
         HERO.maxHealth = 155;
         HERO.maxMana = 195;
-        HERO.health = 133;
+        HERO.health = 155;
         HERO.mana = 195;
-        HERO.defense = 38;
+        HERO.defense = 41;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 35;
+        HERO.attack = 38;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 33;
+        HERO.magic = 36;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 1299;
-        HERO.defenseExp = 939;
-        HERO.magicExp = 3384;
+        HERO.attackExp = 1498;
+        HERO.defenseExp = 958;
+        HERO.magicExp = 4470;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 5783;
         HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 3;
-        let scrolls = ["MagicBoost", "BoostWeapon"];
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Explode", "BoostWeapon", "Light", "BoostArmor"];
         //let scrolls = [];
 
         //debug
@@ -89,14 +90,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin", "GoldCoin", "GoldCoin"];
+        let invItems = ["GoldCoin", "GoldCoin"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Silver"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -130,7 +131,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.07",
+    VERSION: "0.14.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

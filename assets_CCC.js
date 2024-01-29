@@ -428,11 +428,15 @@ LoadSprites = [
     { srcName: "DefenseProfessor.jpg", name: "DefenseProfessor" },
     { srcName: "FirstAid.jpg", name: "Doctress" },
     { srcName: "Ninja.jpg", name: "Ninja" },
-
     { srcName: "PriceOracle.jpg", name: "PriceOracle" },
+    { srcName: "CrouchingDom.jpg", name: "CrouchingDom" },
 
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
     { srcName: "Priestess.jpg", name: "Priestess" },
+    { srcName: "Dominatrix.jpg", name: "Dominatrix" },
+    { srcName: "PoliceWoman.jpg", name: "PoliceWoman" },
+    { srcName: "SittingDomme.jpg", name: "SittingDomme" },
+    { srcName: "StandingDomme.jpg", name: "StandingDomme" },
 
 
     //action items
@@ -579,6 +583,15 @@ LoadSprites = [
     { srcName: "AttackShrine18.jpg", name: "AttackShrine18" },
     { srcName: "AttackShrine19.jpg", name: "AttackShrine19" },
     { srcName: "AttackShrine20.jpg", name: "AttackShrine20" },
+
+
+    { srcName: "DefenseShrine18.jpg", name: "DefenseShrine18" },
+    { srcName: "DefenseShrine19.jpg", name: "DefenseShrine19" },
+    { srcName: "DefenseShrine20.jpg", name: "DefenseShrine20" },
+
+    { srcName: "MagicShrine18.jpg", name: "MagicShrine18" },
+    { srcName: "MagicShrine19.jpg", name: "MagicShrine19" },
+    { srcName: "MagicShrine20.jpg", name: "MagicShrine20" },
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

@@ -298,6 +298,7 @@ LoadTextures = [
     { srcName: "Pear_baseColor.jpg", name: "Pear_baseColor" },
     { srcName: "Apple_BaseColor.jpg", name: "Apple_BaseColor" },
     { srcName: "Skull_texture.jpg", name: "Skull_texture" },
+    { srcName: "dragon_redColor.jpg", name: "RedDragon" },
 
     //decal-gates
     { srcName: "WoodeGate1_256.png", name: "WoodenGate1" },
@@ -432,7 +433,10 @@ LoadSprites = [
     { srcName: "CrouchingDom.jpg", name: "CrouchingDom" },
 
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
+    { srcName: "Ghostess.jpg", name: "Ghostess" },
     { srcName: "Priestess.jpg", name: "Priestess" },
+    { srcName: "DeMona.jpg", name: "DeMona" },
+
     { srcName: "Dominatrix.jpg", name: "Dominatrix" },
     { srcName: "PoliceWoman.jpg", name: "PoliceWoman" },
     { srcName: "SittingDomme.jpg", name: "SittingDomme" },
@@ -669,6 +673,12 @@ LoadSprites = [
     { srcName: "FlatPond3.png", name: "FlatPond3" },
     { srcName: "BrownWall256.jpg", name: "DungeonWall" },
     { srcName: "Forest_sprite.jpg", name: "Forest" },
+
+    { srcName: "Skeleton20.png", name: "Skeleton20" },
+    { srcName: "Skeleton121.png", name: "Skeleton121" },
+    { srcName: "Skeleton23.png", name: "Skeleton23" },
+    { srcName: "Skull20.png", name: "Skull20" },
+    { srcName: "Skull21.png", name: "Skull21" },
 
     //messages
     { srcName: "CCC1.png", name: "CCC1" },

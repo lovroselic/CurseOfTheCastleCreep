@@ -1,46 +1,7 @@
 const MONSTER_TYPE = {
-    Hulk: {
-        name: "Hulk",
-        model: "Hulk",
-        scale: 1.5 / 2 ** 6,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 20,
-        defense: 12,
-        magic: 5,
-        health: 40,
-        xp: 50,
-        gold: 50,
-        attackSound: "HumanAttack1",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [10, ["wanderer"], 4, ["advancer"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.greenShine,
-    },
+
     
-    GoldSkeleton: {
-        name: "GoldSkeleton",
-        texture: "Gold",
-        model: "Skeleton",
-        scale: 1.8 / 2 ** 3,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "SmokeExplosion",
-        inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 30,
-        defense: 20,
-        magic: 20,
-        health: 60,
-        xp: 70,
-        gold: 50,
-        attackSound: "MonsterAttack2",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1.1,
-        material: MATERIAL.gold,
-    },
+    
     
     
     Drax: {

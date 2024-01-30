@@ -1380,7 +1380,7 @@ const MAP = {
         start: '[52,5]',
         decals: '[[22,7,"Witcher111","picture"],[28,7,"Hero51","picture"],[261,1,"Choplifter12","picture"],[265,1,"Invaders2","picture"],[103,5,"Ishar98","picture"],[171,5,"Biggles2","picture"],[100,3,"DigDug2","picture"],[202,3,"Invasion","picture"]]',
         lights: '[[144,3,"WallLamp","standard"],[144,5,"WallLamp","standard"],[90,1,"WallLamp2","dim"],[96,1,"WallLamp2","dim"],[192,7,"WallLamp2","dim"],[198,7,"WallLamp2","dim"]]',
-        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"],[136,5,"69.5","73.1","Red"],[8,7,"69.6","74.1","Silver"],[67,3,"69.7","75.1","Gold"],[13,7,"69.8","76.1","Closed"],[221,5,"69.9","77.1","Closed"]]',
+        gates: '[[51,5,"69.1","60.3","Open"],[3,7,"69.2","70.1","Closed"],[152,3,"69.3","71.1","Blue"],[275,1,"69.4","72.1","Green"],[136,5,"69.5","73.1","Red"],[8,7,"69.6","74.1","Silver"],[67,3,"69.7","75.1","Gold"],[13,7,"69.8","76.1","Closed"],[221,5,"69.9","77.1","Closed"],[285,1,"69.10","78.1","Closed"]]',
         monsters: '[[54,"Bat"],[234,"Bat"],[224,"RedGoldBat"],[64,"RedGoldBat"],[139,"RedSkeleton"],[59,"RedSkeleton"],[149,"RedSkeleton"],[229,"RedSkeleton"],[110,"SilverSkeleton"],[142,"SilverSkeleton"],[146,"SilverSkeleton"],[178,"SilverSkeleton"]]',
         potions: '[[36,0],[48,0],[240,0],[252,0],[127,1],[143,1],[161,1],[145,1]]',
     }
@@ -1496,8 +1496,13 @@ const MAP = {
         floor: "OrnateFloor343",
         ceil: "DarkShiny3",
         start: '[35,5]',
+        decals: '[[119,5,"ForbiddenForest91","picture"],[62,5,"Scramble7","picture"],[187,5,"TempleOfApshai70","picture"],[238,5,"DonkeyKong100","picture"],[245,5,"Soccer3","picture"],[159,5,"AztecChallenge100","picture"],[57,5,"SabreWulf87","picture"],[57,3,"Blackwyche2","picture"],[84,3,"Hero52","picture"],[220,3,"OperationWolf50","picture"],[262,3,"Galaga70","picture"],[152,3,"ForbiddenForest99","picture"],[281,1,"MontyMole110","picture"],[275,1,"BackToFuture201","picture"],[29,7,"Athanor200","picture"],[72,7,"Elvira3","picture"],[180,7,"MassEffect1","picture"],[2,7,"BoogaBoo90","picture"],[10,7,"Skeleton12","crest"],[110,7,"LS","crest"],[172,7,"Skull3","crest"],[178,7,"DancingSkeletons2","crest"],[180,1,"Skull2","crest"],[166,1,"Skeleton11","crest"],[116,1,"PrayingSkeleton10","crest"]]',
         lights: '[[173,1,"WallLamp31","standard"],[179,1,"WallLamp31","standard"],[31,7,"WallLamp32","standardDimmed"],[174,7,"WallLamp32","standardDimmed"],[183,7,"WallLamp32","standardDimmed"],[4,7,"WallLamp20","standardDimmed"],[8,7,"WallLamp14","standardDimmed"]]',
         gates: '[[34,5,"75.1","69.7","Open"]]',
+        monsters: '[[38,"RedSkeleton"],[43,"SilverSkeleton"],[105,"SilverSkeleton"],[81,"Dragon"],[145,"Basilisk"],[225,"Basilisk"],[151,"Basilisk"],[157,"Basilisk"],[217,"Rex"],[247,"Rex"],[233,"Hulk"]]',
+        scrolls: '[[49,5],[195,6]]',
+        potions: '[[53,0],[92,1],[256,1],[270,1],[86,1]]',
+        containers: '[[22,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[130,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[158,"Chest","GOLD_ITEM_TYPE.GoldCube",1],[167,"Crate","GOLD_ITEM_TYPE.GoldCube",1],[269,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[193,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[61,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[97,"Barrel","GOLD_ITEM_TYPE.GoldBar",5]]',
         trainers: '[[284,1,"Ninja"]]',
     }
     ,
@@ -1519,7 +1524,7 @@ const MAP = {
         oracles: '[[217,1,"PriceOracle"]]',
     }
     ,
-    77 : {
+    77: {
         name: "Godesses of Defense",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB4AA2BB3AA3BB6AA61BAA43BAA8BAA8BAA7BAA25BB2AA8BB14ABB2ABB21AA2BB3ABABB2AA5BB3AA6BB15ABB17ABB7$"}',
@@ -1536,6 +1541,21 @@ const MAP = {
         containers: '[[39,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[29,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[244,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",1],[267,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",1],[142,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[148,"Crate","GOLD_ITEM_TYPE.GoldBar",5]]',
         shrines: '[[204,5,"Defense1_18"],[136,5,"Defense2_19"],[68,5,"Defense3_20"]]',
         oracles: '[[8,7,"CrouchingDom"]]',
+    }
+    ,
+    78 : {
+        name: "Godesses of Magic",
+        sg: 0,
+        data: '{"width":"16","height":"16","map":"BB3AA2BB4AA6BB2AA10BAA2BAA7BAA18BAA8BAA51BAA13BB2AA5BAA3BABB2AA5BABB4ABB10ABABB8AA3BB4ABABABB5ABAA4BABB2AA6BABB4ABB5ABB11ABB15ABB2$"}',
+        wall: "BrownWall35",
+        floor: "OrnateFloor3",
+        ceil: "OrnateCeiling1",
+        start: '[19,7]',
+        decals: '[[230,1,"Skeleton121","crest"],[232,1,"Skeleton23","crest"],[119,1,"Skull20","crest"],[108,1,"Skull21","crest"]]',
+        lights: '[[119,7,"WallLamp16","standard"],[67,7,"WallLamp19","standardDimmed"],[108,7,"WallLamp19","standardDimmed"]]',
+        gates: '[[3,7,"78.1","69.10","Open"]]',
+        gold: '[[196,"GoldBar"],[199,"SilverBar"],[202,"GoldCube"]]',
+        shrines: '[[250,1,"Magic1_18"],[247,1,"Magic2_19"],[244,1,"Magic3_20"]]',
         }
     ,
     999: {

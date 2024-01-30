@@ -48,37 +48,29 @@ const DEBUG = {
          * rooms
             * 63 punisher (gives emeral key for continuation) - unplayed  
             * 69 Uni main hall completed 
-            * 70 chapel completed
-            * 71 faculty of healing completed
-            * 72 faculty of defense copleted
-            * 73 faculty of alchemy completed
-            * 74 faculty of magic completed
-            * 75 faculty of kicking
-            * 76 Goddesses of attack complete
-            * 77 godesses of defense complete
          */
 
-        GAME.level = 75;   //69 
-        GAME.gold = 1387;
+        GAME.level = 78;   //69 
+        GAME.gold = 2947;
         HERO.maxHealth = 155;
         HERO.maxMana = 195;
-        HERO.health = 155;
-        HERO.mana = 195;
+        HERO.health = 127;
+        HERO.mana = 46;
         HERO.defense = 41;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 38;
+        HERO.attack = 41;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 36;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 1498;
-        HERO.defenseExp = 958;
-        HERO.magicExp = 4470;
+        HERO.attackExp = 2404;
+        HERO.defenseExp = 981;
+        HERO.magicExp = 5160;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 5783;
         HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Explode", "BoostWeapon", "Light", "BoostArmor"];
+        HERO.inventory.potion.blue = 2;
+        let scrolls = ["Explode", "BoostWeapon", "DestroyArmor"];
         //let scrolls = [];
 
         //debug
@@ -90,7 +82,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin", "GoldCoin"];
+        let invItems = ["GoldCoin"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -131,7 +123,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.08",
+    VERSION: "0.14.09",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

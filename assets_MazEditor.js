@@ -407,6 +407,12 @@ LoadSprites = [
     { srcName: "BrownWall256.jpg", name: "DungeonWall" },
     { srcName: "Forest_sprite.jpg", name: "Forest" },
 
+    { srcName: "Skeleton20.png", name: "Skeleton20" },
+    { srcName: "Skeleton121.png", name: "Skeleton121" },
+    { srcName: "Skeleton23.png", name: "Skeleton23" },
+    { srcName: "Skull20.png", name: "Skull20" },
+    { srcName: "Skull21.png", name: "Skull21" },
+
     //messages
     { srcName: "CCC1.png", name: "CCC1" },
 

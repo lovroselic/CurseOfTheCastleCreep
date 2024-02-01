@@ -50,27 +50,27 @@ const DEBUG = {
             * 69 Uni main hall completed 
          */
 
-        GAME.level = 78;   //69 
-        GAME.gold = 2947;
+        GAME.level = 69;   //69 
+        GAME.gold = 2191;
         HERO.maxHealth = 155;
-        HERO.maxMana = 195;
-        HERO.health = 127;
-        HERO.mana = 46;
+        HERO.maxMana = 212;
+        HERO.health = 130;
+        HERO.mana = 195;
         HERO.defense = 41;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 41;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 36;
+        HERO.magic = 40;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 2404;
-        HERO.defenseExp = 981;
-        HERO.magicExp = 5160;
+        HERO.attackExp = 2554;
+        HERO.defenseExp = 1009;
+        HERO.magicExp = 457;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1142;
-        HERO.magicExpGoal = 5783;
+        HERO.magicExpGoal = 8675;
         HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 2;
-        let scrolls = ["Explode", "BoostWeapon", "DestroyArmor"];
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["BoostWeapon", "DestroyArmor", "MagicBoost"];
         //let scrolls = [];
 
         //debug
@@ -123,7 +123,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.09",
+    VERSION: "0.14.10",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

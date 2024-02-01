@@ -479,8 +479,8 @@ const SHRINE_TYPE = {
         category: 'crest',
         interactionCategory: 'shrine',
         inventorySprite: "MagicSkill",
-        price: 1000,
-        level: 1,
+        price: 1750,
+        level: 2,
     },
     Magic3_20: {
         name: "MagicShrine_3_20",
@@ -489,8 +489,8 @@ const SHRINE_TYPE = {
         category: 'crest',
         interactionCategory: 'shrine',
         inventorySprite: "MagicSkill",
-        price: 1000,
-        level: 1,
+        price: 2500,
+        level: 3,
     },
 };
 
@@ -597,6 +597,14 @@ const ORACLE_TYPE = {
         category: 'crest',
         voice: "Female",
         text: "There migh be subtle clues as to which shrine is more expensive than the other.",
+        interactionCategory: "oracle",
+    },
+    StandingDomme: {
+        name: "StandingDomme",
+        sprite: "StandingDomme",
+        category: 'crest',
+        voice: "Female",
+        text: "Sometimes a situation requires explosive solution.",
         interactionCategory: "oracle",
     },
 };

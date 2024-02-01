@@ -431,16 +431,24 @@ LoadSprites = [
     { srcName: "Ninja.jpg", name: "Ninja" },
     { srcName: "PriceOracle.jpg", name: "PriceOracle" },
     { srcName: "CrouchingDom.jpg", name: "CrouchingDom" },
+    { srcName: "StandingDomme.jpg", name: "StandingDomme" },
 
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
     { srcName: "Ghostess.jpg", name: "Ghostess" },
     { srcName: "Priestess.jpg", name: "Priestess" },
     { srcName: "DeMona.jpg", name: "DeMona" },
-
     { srcName: "Dominatrix.jpg", name: "Dominatrix" },
     { srcName: "PoliceWoman.jpg", name: "PoliceWoman" },
+
+    { srcName: "Whipper.jpg", name: "Whipper" },
+    { srcName: "RedWoman.jpg", name: "RedWoman" },
+    { srcName: "Croucher.jpg", name: "Croucher" },
+    { srcName: "MetalMaiden.jpg", name: "MetalMaiden" },
+    { srcName: "Croucher2.jpg", name: "Croucher2" },
+    { srcName: "Siren.jpg", name: "Siren" },
+
     { srcName: "SittingDomme.jpg", name: "SittingDomme" },
-    { srcName: "StandingDomme.jpg", name: "StandingDomme" },
+    
 
 
     //action items
@@ -485,6 +493,9 @@ LoadSprites = [
     { srcName: "Leotard.png", name: "Leotard" },
     { srcName: "JagHat.png", name: "LeoHat" },
     { srcName: "LeoPumps.png", name: "LeoPumps" },
+
+    { srcName: "Whip.png", name: "Whip" },
+    { srcName: "Handcuffs.png", name: "Handcuffs" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

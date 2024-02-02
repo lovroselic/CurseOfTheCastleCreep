@@ -1195,7 +1195,7 @@ const MAP = {
         start: '[13,7]',
         decals: '[[40,1,"LS","crest"],[34,3,"AticAtacCrest1","crest"],[52,3,"AticAtacCrest1","crest"],[28,5,"Skull1","crest"],[46,5,"Skull1","crest"],[68,1,"PrayingSkeleton10","crest"],[66,1,"PrayingSkeleton10","crest"],[7,7,"LeisureSuitLarry90","picture"]]',
         lights: '[[40,7,"WallTorch","fire"]]',
-        gates: '[[4,7,"60.1","58.3","Up"],[36,5,"60.2","63.1","Closed"],[44,3,"60.3","69.1","Closed"]]',
+        gates: '[[4,7,"60.1","58.3","Up"],[36,5,"60.2","63.1","Closed"],[44,3,"60.3","69.1","Closed"],[76,1,"60.4","81.1","Emerald"]]',
         keys: '[[49,2]]',
         monsters: '[[58,"Skeleton"]]',
         potions: '[[51,0],[47,1]]',
@@ -1253,10 +1253,10 @@ const MAP = {
         movables: '[[208,"LittleChicken"]]',
     }
     ,
-    63 : {
+    63: {
         name: "Punisher",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB11AA40BB3AA39BAA27BABAA41BABB34AA3BB13ABABB4AA10BB23ABABB28A$"}',
+        data: '{"width":"17","height":"17","map":"BB3AA3BABB7AA40BB3AA42BAA27BAA4BAA4BAA16BB3AA17BB2AA3BB25ABB11AA3BB2ABB4ABB4ABB3ABABB6AA8BB6ABAA3BB24A$"}',
         wall: "DarkShiny",
         floor: "MC_floor20",
         ceil: "MC_FLoor10",
@@ -1264,11 +1264,14 @@ const MAP = {
         decals: '[[130,5,"Skull20","crest"],[164,5,"Skull20","crest"],[103,5,"Skull21","crest"],[171,5,"Skull21","crest"],[69,5,"TheHobbit16","picture"],[205,5,"TheHobbit14","picture"],[66,3,"LeisureSuitLarry60","picture"],[236,3,"Pitfall73","picture"],[22,7,"BC90","picture"],[28,7,"MrRobot60","picture"],[260,1,"DungeonMaster206","picture"],[266,1,"SabreWulf50","picture"]]',
         lights: '[[145,3,"WallLamp","standard"],[117,3,"WallLamp2","dim"],[185,3,"WallLamp2","dim"]]',
         gates: '[[152,3,"63.1","60.2","Open"]]',
+        monsters: '[[147,"Hulk"],[109,"Rex"],[177,"Rex"],[138,"RedDragon"]]',
+        scrolls: '[[115,10],[183,10]]',
+        potions: '[[18,1],[32,1],[270,1],[256,1]]',
         gold: '[[97,"GoldCube"],[77,"GoldCube"],[73,"GoldCube"],[140,"GoldCube"],[209,"GoldCube"],[230,"GoldCube"],[217,"GoldCube"]]',
         containers: '[[25,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[263,"Barrel","GOLD_ITEM_TYPE.GoldBar",1]]',
         entities: '[[136,5,"Punisher"]]',
         oracles: '[[146,5,"PunisherOracle"]]',
-        }
+    }
     ,
     64: {
         name: "Wolf Den",
@@ -1583,7 +1586,7 @@ const MAP = {
         oracles: '[[3,7,"StandingDomme"]]',
     }
     ,
-    80 : {
+    80: {
         name: "Did You say Gold?",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB2ABB4AA3BB2ABB2AA6BB2AA4BB3ABAA4BAA2BB2AA2BABABB10ABABABABB5ABABAA2BABABAA8BB3AA2BB2AA2BABB5ABB2AA3BB3ABB2AA2BAA2BABB2AA2BB2AA2BB2AA2BB2ABB4AA3BB12ABB10A$"}',
@@ -1598,6 +1601,18 @@ const MAP = {
         gold: '[[47,"GoldCube"],[71,"GoldCube"],[100,"GoldCube"],[127,"GoldCube"],[152,"GoldCube"],[122,"GoldCube"],[133,"GoldCube"],[118,"GoldCube"],[81,"GoldCube"],[30,"GoldCube"],[14,"GoldCube"]]',
         containers: '[[66,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[144,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[21,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[23,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5],[69,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",3]]',
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
+    }
+    ,
+    81 : {
+        name: "Generic room name",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB11AA60BB2ABB2AA11BB2AA30BAA47BABB14AA2BAA2BB27ABB3ABB3ABAA9BB23ABABB28A$"}',
+        wall: "SmallBricks5",
+        floor: "StoneFloorTiles2",
+        ceil: "BrownMC_ceiling",
+        start: '[25,7]',
+        lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
+        gates: '[[8,7,"81.1","60.4","Open"]]',
         }
     ,
     999: {

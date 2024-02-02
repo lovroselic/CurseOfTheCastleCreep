@@ -525,9 +525,11 @@ LoadSprites = [
     { srcName: "dungeondoor_emerald.png", name: "DungeonDoor_Emerald" },
 
     //{ srcName: "DoorUp2.png", name: "DungeonDoor_Up" },
-    { srcName: "DoorUp3.jpg", name: "DungeonDoor_Up" },
+    //{ srcName: "DoorUp3.jpg", name: "DungeonDoor_Up" },
     //{ srcName: "DoorDown2.png", name: "DungeonDoor_Down" },
-    { srcName: "StairsDown2.jpg", name: "DungeonDoor_Down" },
+    //{ srcName: "StairsDown2.jpg", name: "DungeonDoor_Down" },
+    { srcName: "StairsDownNoArc.jpg", name: "DungeonDoor_Down" },
+    { srcName: "StairCaseUpNoArc.jpg", name: "DungeonDoor_Up" },
 
     //lights
     { srcName: "WallLamp256.png", name: "WallLamp" },

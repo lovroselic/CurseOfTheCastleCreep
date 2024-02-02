@@ -39,37 +39,34 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-         * magic 3
-         * attack 3,2,1
-         * defense 3
          * 
          * excesss ekeys: 
          * missing keys: 
          * rooms
-            * 63 punisher (gives emeral key for continuation) - unplayed  
+
          */
 
-        GAME.level = 63;   //69 
-        GAME.gold = 3175;
+        GAME.level = 81;
+        GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
-        HERO.health = 104;
-        HERO.mana = 57;
+        HERO.health = 155;
+        HERO.mana = 212;
         HERO.defense = 41;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 41;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 40;
+        HERO.magic = 41;
         HERO.reference_magic = HERO.magic;
         HERO.attackExp = 2854;
         HERO.defenseExp = 1059;
-        HERO.magicExp = 649;
+        HERO.magicExp = 1332;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 8675;
         HERO.inventory.potion.red = 0;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["BoostWeapon", "DestroyArmor"];
+        let scrolls = [];
         //let scrolls = [];
 
         //debug
@@ -81,14 +78,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin"];
+        let invItems = [];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = [];
+        let keys = ["Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -122,7 +119,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.11",
+    VERSION: "0.15.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

@@ -884,7 +884,7 @@ const WORLD = {
         let resolution = WebGL.INI.DEFAULT_RESOLUTION;
         if (decal.resolution) {
             resolution = decal.resolution;
-        } else if (decal.category === "crest" && decal.expand) {
+        } else if ((decal.category === "crest" || decal.category === "portal") && decal.expand) {
             resolution = this.divineResolution(decal.texture);
             decal.resolution = resolution;
         }
@@ -1632,6 +1632,7 @@ class ExternalGate extends Portal {
         super(grid, face, texture, category, name, destination, call);
         this.type = "Portal";
         this.interactive = true;
+        this.expand = true;//
         this.color = color;
         this.open = open;
         this.locked = locked;

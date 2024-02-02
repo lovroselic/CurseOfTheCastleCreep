@@ -39,38 +39,37 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-         * magic 
-         * attack 
-         * defense 
+         * magic 3
+         * attack 3,2,1
+         * defense 3
          * 
          * excesss ekeys: 
          * missing keys: 
          * rooms
             * 63 punisher (gives emeral key for continuation) - unplayed  
-            * 69 Uni main hall completed 
          */
 
-        GAME.level = 69;   //69 
-        GAME.gold = 2191;
+        GAME.level = 63;   //69 
+        GAME.gold = 3175;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
-        HERO.health = 130;
-        HERO.mana = 195;
+        HERO.health = 104;
+        HERO.mana = 57;
         HERO.defense = 41;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 41;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 40;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 2554;
-        HERO.defenseExp = 1009;
-        HERO.magicExp = 457;
+        HERO.attackExp = 2854;
+        HERO.defenseExp = 1059;
+        HERO.magicExp = 649;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1142;
         HERO.magicExpGoal = 8675;
-        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.red = 0;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["BoostWeapon", "DestroyArmor", "MagicBoost"];
+        let scrolls = ["BoostWeapon", "DestroyArmor"];
         //let scrolls = [];
 
         //debug
@@ -123,7 +122,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.14.10",
+    VERSION: "0.14.11",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

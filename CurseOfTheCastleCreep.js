@@ -42,11 +42,17 @@ const DEBUG = {
          * 
          * excesss ekeys: 
          * missing keys: 
+         * items
+            * handcuffs
+            * whip  
+            * revolver: dominatrix
          * rooms
+            * 81 guard
+            * 82 dominatrix 
 
          */
 
-        GAME.level = 81;
+        GAME.level = 81;    //81, //82
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -119,7 +125,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.00",
+    VERSION: "0.15.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

@@ -1920,6 +1920,23 @@ const INTERACTION_ITEM = {
         which: "attack",
         level: 3,
     },
+    Whip: {
+        name: "Whip",
+        category: "interaction_item",
+        inventorySprite: "Whip",
+        text: "I can punish GhostFace."
+    },
+    Handcuffs: {
+        name: "Handcuffs",
+        category: "interaction_item",
+        inventorySprite: "Handcuffs",
+        text: "Should I arrest or kill GhostFace?"
+    },
+    Revolver: {
+        name: "Revolver",
+        category: "interaction_item",
+        inventorySprite: "Revolver",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -2389,6 +2406,19 @@ const INTERACTION_ENTITY = {
             intro: "Purrscilla purrs for stylish grace, spotted fashion, my ideal embrace.",
             progress: "Fashion's call, one piece is here, more to strut, bring them near.",
             conclusion: "All in leopard, style complete, here's your gold, for a feat so neat."
+        }
+    },
+    Dominatrix: {
+        name: "Dominatrix",
+        sprite: "Dominatrix",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Handcuffs", "Whip"],
+        gives: "Revolver",
+        text: {
+            intro: "In leather's embrace, I seek delight, Bring my favorite toys, hidden from sight.",
+            progress: "Toys for play, part of my game, more to find, to fuel the flame.",
+            conclusion: "Toys in hand, my collection's prime, take this revolver, use it in time.",
         }
     },
 

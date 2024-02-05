@@ -445,6 +445,7 @@ const WebGL = {
                 uTranslate: gl.getUniformLocation(shaderProgram, "uTranslate"),
                 uItemPosition: gl.getUniformLocation(shaderProgram, "uItemPosition"),
                 lightColors: gl.getUniformLocation(shaderProgram, "uLightColors"),
+                lightDirections: gl.getUniformLocation(shaderProgram, "uLightDirections"), 
                 uRotY: gl.getUniformLocation(shaderProgram, "uRotateY"),
                 uMaterialAmbientColor: gl.getUniformLocation(shaderProgram, 'uMaterial.ambientColor'),
                 uMaterialDiffuseColor: gl.getUniformLocation(shaderProgram, 'uMaterial.diffuseColor'),
@@ -523,7 +524,10 @@ const WebGL = {
         //light uniforms
         let lights = [];
         let lightColors = [];
+        let lightDirections = [];
         for (let L = 0; L < LIGHTS3D.POOL.length; L++) {
+            let dir = Vector3.from_2D_dir(FaceToDirection(LIGHTS3D.POOL[L].face));
+            lightDirections.push(...dir.array);
             lights.push(...LIGHTS3D.POOL[L].position.array);
             lightColors.push(...LIGHTS3D.POOL[L].lightColor);
         }
@@ -531,13 +535,16 @@ const WebGL = {
         //dynamic lights
         let dynLights = [];
         let dynLightColors = [];
+        let dynLightDirs = [];                      // in current implementation dynamic light has no direction - same level in all directions
         let dynCount = 0;
         let cont = true;
         for (let iam of this.dynamicLightSources) {
             for (let LS of iam.POOL) {
                 if (!LS) continue;
+                //console.warn("LS", LS)
                 dynLights.push(...LS.pos.array);
                 dynLightColors.push(...LS.lightColor);
+                dynLightDirs.push(255, 255, 255);
                 dynCount++;
                 if (dynCount > this.INI.DYNAMIC_LIGHTS_RESERVATION) {
                     console.error("Dynamic light sources exceed reserved memory! Ignoring silently.");
@@ -551,15 +558,22 @@ const WebGL = {
         while (dynLights.length < this.INI.DYNAMIC_LIGHTS_RESERVATION * 3) {
             dynLights.push(-1, -1, -1);
             dynLightColors.push(0, 0, 0);
+            dynLightDirs.push(255, 255, 255);
         }
 
         lights.push(...dynLights);
         lightColors.push(...dynLightColors);
+        lightDirections.push(...dynLightDirs);
         lights = new Float32Array(lights);
         lightColors = new Float32Array(lightColors);
+        lightDirections = new Float32Array(lightDirections);
+
+        //console.info("lightDirections", lightDirections);
+
 
         gl.uniform3fv(this.program.uniformLocations.lights, lights);
         gl.uniform3fv(this.program.uniformLocations.lightColors, lightColors);
+        gl.uniform3fv(this.program.uniformLocations.lightDirections, lightDirections);
 
         //set global uniforms for model program - could be extended to loop over more programs if required
         gl.useProgram(this.model_program.program);

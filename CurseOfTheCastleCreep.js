@@ -52,7 +52,7 @@ const DEBUG = {
 
          */
 
-        GAME.level = 81;    //81, //82
+        GAME.level = 82;    //81, //82
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;

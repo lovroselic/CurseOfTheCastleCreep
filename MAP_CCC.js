@@ -1603,17 +1603,17 @@ const MAP = {
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
     }
     ,
-    81: {
+    81 : {
         name: "Guard Room",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB11AA60BB2ABB2AA11BB2AA30BAA47BABB14AA2BAA2BB27ABB3ABB3ABAA9BB23ABABB28A$"}',
+        data: '{"width":"17","height":"17","map":"BB3AA3BABB7AA60BB2AA5BABAA6BAA3BAA27BAA18BAA13BB3AA18BB2AA3BB13AA2BAA2BB8ABB13ABB4ABB4ABB2ABB2ABB6AA8BB6ABAA3BB24A$"}',
         wall: "SmallBricks5",
         floor: "StoneFloorTiles2",
         ceil: "BrownMC_ceiling",
         start: '[25,7]',
         lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
         gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"]]',
-    }
+        }
     ,
     82 : {
         name: "Dominatrix",

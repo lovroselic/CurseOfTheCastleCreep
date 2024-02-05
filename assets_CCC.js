@@ -432,9 +432,9 @@ LoadSprites = [
     { srcName: "PriceOracle.jpg", name: "PriceOracle" },
     { srcName: "CrouchingDom.jpg", name: "CrouchingDom" },
     { srcName: "StandingDomme.jpg", name: "StandingDomme" },
-
     { srcName: "Dominatrix.jpg", name: "Dominatrix" },
 
+    //unused
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
     { srcName: "Ghostess.jpg", name: "Ghostess" },
     { srcName: "Priestess.jpg", name: "Priestess" },
@@ -442,14 +442,13 @@ LoadSprites = [
     { srcName: "PoliceWoman.jpg", name: "PoliceWoman" },
     { srcName: "RedWellWoman.jpg", name: "RedWellWoman" },
     { srcName: "Rapunzel.jpg", name: "Rapunzel" },
-
     { srcName: "Whipper.jpg", name: "Whipper" },
     { srcName: "RedWoman.jpg", name: "RedWoman" },
     { srcName: "Croucher.jpg", name: "Croucher" },
     { srcName: "MetalMaiden.jpg", name: "MetalMaiden" },
     { srcName: "Croucher2.jpg", name: "Croucher2" },
     { srcName: "Siren.jpg", name: "Siren" },
-
+    { srcName: "CanyonGirl.jpg", name: "CanyonGirl" },
     { srcName: "SittingDomme.jpg", name: "SittingDomme" },
     
 
@@ -526,11 +525,6 @@ LoadSprites = [
     { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
     { srcName: "Blocked door.png", name: "DungeonDoor_Blocked" },
     { srcName: "dungeondoor_emerald.png", name: "DungeonDoor_Emerald" },
-
-    //{ srcName: "DoorUp2.png", name: "DungeonDoor_Up" },
-    //{ srcName: "DoorUp3.jpg", name: "DungeonDoor_Up" },
-    //{ srcName: "DoorDown2.png", name: "DungeonDoor_Down" },
-    //{ srcName: "StairsDown2.jpg", name: "DungeonDoor_Down" },
     { srcName: "StairsDownNoArc.jpg", name: "DungeonDoor_Down" },
     { srcName: "StairCaseUpNoArc.jpg", name: "DungeonDoor_Up" },
 

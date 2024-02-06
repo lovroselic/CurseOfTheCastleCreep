@@ -1603,7 +1603,7 @@ const MAP = {
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
     }
     ,
-    81 : {
+    81: {
         name: "Guard Room",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA3BABB7AA60BB2AA5BABAA6BAA3BAA27BAA18BAA13BB3AA18BB2AA3BB13AA2BAA2BB8ABB13ABB4ABB4ABB2ABB2ABB6AA8BB6ABAA3BB24A$"}',
@@ -1613,19 +1613,51 @@ const MAP = {
         start: '[25,7]',
         lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
         gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"]]',
-        }
+    }
     ,
     82 : {
         name: "Dominatrix",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB4AA3BAA2BABABABABAA4BAA9BABABB2ABB2ABABABAA4BAA24BAA2BB6AA4BAA2BABABAA2BB2ABB3AA3BB4AA4BB6ABABAA3BB4AA4BAA6BB11ABABB3ABABAA2BB3ABB2AA3BB2AA2BABB2ABB2AA2BB4ABB14ABB13$BA"}',
+        data: '{"width":"15","height":"15","map":"BB3AA2BABABB2ABABAA2BAA3BAA9BB2AA2BB2ABB2AA3BABAA3BB2AA24BAA2BB6AA4BAA2BABABB2AA2BB5AA4BB4AA4BB6ABABAA2BABB2ABAA3BAA4BAA2BB11ABABB3ABABB2AA2BABABB2AA2BB3AA2BB2ABABB3ABABB2ABABB14ABB10AB$"}',
         wall: "RockMossWall3",
         floor: "ScarletStoneFloor1",
         ceil: "BrownWall6",
         start: '[46,5]',
         lights: '[[130,7,"WallLamp35","standardDimmed"],[61,5,"WallLamp19","standard"],[6,7,"WallLamp34","standardDimmed"],[43,7,"WallLamp34","standardDimmed"],[97,7,"WallLamp34","standardDimmed"],[93,7,"WallLamp34","standardDimmed"]]',
-        gates: '[[45,5,"82.1","81.2","Up"]]',
+        gates: '[[45,5,"82.1","81.2","Up"],[29,3,"82.2","83.1","Closed"],[223,1,"82.3","84.1","Down"]]',
+        scrolls: '[[62,13]]',
         entities: '[[220,1,"Dominatrix"]]',
+        oracles: '[[180,5,"SittingDomme"]]',
+        movables: '[[183,"BabyDragon"]]',
+        }
+    ,
+    83: {
+        name: "Bathroom",
+        sg: 0,
+        data: '{"width":"11","height":"11","map":"BB3ABABB7AA6BAA8BB5ABB3ABB2AA4BAA2BB4AA2BB2AA2BABAA4BABB3ABABAA3BB6AA2BABB2AA3BABB4AA3BB3ABB3ABB12A$"}',
+        wall: "GreyWall5",
+        floor: "MarbleTiles1",
+        ceil: "MC_floor20",
+        start: '[100,5]',
+        lights: '[[63,1,"WallLamp33","standardDimmed"],[86,7,"WallLamp10","standardDimmed"],[47,7,"WallLamp31","standardDimmed"],[1,7,"WallLamp9","standardDimmed"],[5,7,"WallLamp11","standardDimmed"]]',
+        gates: '[[99,5,"83.1","82.2","Open"]]',
+        triggers: '[[93,7,"RockTriggerButton",1,103]]',
+        entities: '[[8,7,"Siren"]]',
+    }
+    ,
+    84 : {
+        name: "Miss DeMona",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB7ABB3AA7BAA5BABABAA9BB2AA4BB2ABB2ABB3ABB2AA2BB2ABAA4BB2AA3BABB3AA2BB2AA2BB3AA2BB3ABAA4BB2AA4BB3ABB2ABB5ABABABABB2AA3BB2ABABB3AA4BB2ABAA2BB9ABB13AB$"}',
+        wall: "BrownBrick32",
+        floor: "PlainRockWall",
+        ceil: "BlurryFloor1",
+        start: '[15,7]',
+        lights: '[[74,1,"WallLamp19","standardDimmed"],[43,3,"WallLamp34","lightRed"],[66,7,"WallLamp14","standard"],[100,7,"WallLamp14","standard"],[71,7,"WallLamp19","standardDimmed"],[5,7,"WallLamp19","gray"]]',
+        gates: '[[2,7,"84.1","82.3","Up"]]',
+        triggers: '[[74,7,"RockTriggerButton",1,32]]',
+        entities: '[[9,7,"DeMona"]]',
+        movables: '[[120,"BabyDragon"]]',
         }
     ,
     999: {

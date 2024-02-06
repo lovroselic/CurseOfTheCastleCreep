@@ -42,17 +42,36 @@ const DEBUG = {
          * 
          * excesss ekeys: 
          * missing keys: 
-         * items
+         * items source
             * handcuffs
             * whip  
-            * revolver: dominatrix
+            * revolver: dominatrix (whip, handcuffs)
+            * sponge
+            * rubber duck
+            * RedLiquid
+            * goldbar: Demon (dragons)
+            * goldbar
+            * goldbar
+            * green gem
+            * blue gem
+            * dragons (5x): 82, 84
+            * candle: siren (sponge, duck)
+            * ammo:
+         * entitites:
+             * dominatrix (whip, handcuffs) -> revolver
+             * siren (sponge, duck) -> candle
+             * keyMaker (gold, gold, gold, green gem, blue gem) -> emerald Key
+             * policewoman (gun, ammo) ->
+             * deMona (dragons 5x) -> Gold Bar
          * rooms
             * 81 guard
             * 82 dominatrix 
+            * 83 bathroom
+            * 84 deMona
 
          */
 
-        GAME.level = 82;    //81, //82
+        GAME.level = 82;    //81, //82 
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -84,14 +103,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [];
+        let invItems = ["BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Emerald"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -125,7 +144,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.01",
+    VERSION: "0.15.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

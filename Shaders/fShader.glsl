@@ -69,7 +69,7 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
     vec3 lightDir = normalize(lightPosition - FragPos);
     float attenuation = 1.0 / (1.0 + 0.1 * distance + 0.65 * (distance * distance));
 
-    //is fragment illuminated by ligh source? omni dir is (255,255, 255)
+    //is fragment illuminated by ligh source? omni dir is (255,255,255)
     if (inner == 0) {
         if (lightDirection.x < 2.0) {
         // considers only directional lights

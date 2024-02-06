@@ -250,6 +250,28 @@ LoadTextures = [
     { srcName: "WetShinyWall1.jpg", name: "WetShinyWall1" },
     { srcName: "WetWall1.jpg", name: "WetWall1" },
     { srcName: "WhiteTiledFloor1.jpg", name: "WhiteTiledFloor1" },
+
+    { srcName: "BlurryFloor1.jpg", name: "BlurryFloor1" },
+    { srcName: "BrownBrick30.jpg", name: "BrownBrick30" },
+    { srcName: "BrownBrick32.jpg", name: "BrownBrick32" },
+    { srcName: "BrownBricks31.jpg", name: "BrownBricks31" },
+    { srcName: "BrownBricks33.jpg", name: "BrownBricks33" },
+    { srcName: "BrownBricks34.jpg", name: "BrownBricks34" },
+    { srcName: "BrownBricks36.jpg", name: "BrownBricks36" },
+    { srcName: "BrownBricks37.jpg", name: "BrownBricks37" },
+    { srcName: "BrownBricks38.jpg", name: "BrownBricks38" },
+    { srcName: "CrumblyWall1.jpg", name: "CrumblyWall1" },
+    { srcName: "CrumblyWall2.jpg", name: "CrumblyWall2" },
+    { srcName: "GreyWal35.jpg", name: "GreyWal35" },
+    { srcName: "GreyWall31.jpg", name: "GreyWall31" },
+    { srcName: "GreyWall32.jpg", name: "GreyWall32" },
+    { srcName: "GreyWall33.jpg", name: "GreyWall33" },
+    { srcName: "GreyWall34.jpg", name: "GreyWall34" },
+    { srcName: "MC_Bricks31.jpg", name: "MC_Bricks31" },
+    { srcName: "MC_Bricks32.jpg", name: "MC_Bricks32" },
+    { srcName: "OrnateFloor31.jpg", name: "OrnateFloor31" },
+    { srcName: "RockyWall31.jpg", name: "RockyWall31" },
+    { srcName: "StrangeWall1.jpg", name: "StrangeWall1" },
 ];
 
 LoadSheetSequences = [
@@ -307,10 +329,17 @@ LoadSprites = [
     { srcName: "Handcuffs.png", name: "Handcuffs" },
     { srcName: "Revolver.png", name: "Revolver" },
 
+    { srcName: "Sponge.png", name: "Sponge" },
+    { srcName: "RubberDuck.png", name: "RubberDuck" },
+    { srcName: "Candle.png", name: "Candle" },
+    { srcName: "Ammo.png", name: "Ammo" },
+
     //action movables
     { srcName: "Spider.png", name: "Spider" },
     { srcName: "ChickenDinner.png", name: "LittleChicken" },
     { srcName: "Cat7.png", name: "Cat" },
+    { srcName: "Dragon.png", name: "BabyDragon" },
+
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

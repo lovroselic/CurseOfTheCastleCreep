@@ -607,6 +607,14 @@ const ORACLE_TYPE = {
         text: "Sometimes a situation requires explosive solution.",
         interactionCategory: "oracle",
     },
+    SittingDomme: {
+        name: "SittingDomme",
+        sprite: "SittingDomme",
+        category: 'crest',
+        voice: "Female",
+        text: "Not everybody has something important to say. Some just waste your time.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -1676,6 +1684,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "Face on the coin looks like my mother."
     },
+    RedLiquid: {
+        name: "RedLiquid",
+        category: "interaction_item",
+        element: "FLASK",
+        scale: 1.1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "RedLiquid",
+        inventorySprite: "RedPotion24",
+        material: MATERIAL.redShine,
+        text: "Disgusting. Give it to someone else."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -1714,6 +1733,19 @@ const MOVABLE_INTERACTION_OBJECT = {
         behaviourArguments: [Infinity, ["wanderer"], -1],
         inventorySprite: "Cat",
         text: "Here, kitty kitty kitty!"
+    },
+    BabyDragon: {
+        name: "BabyDragon",
+        category: "interaction_item",
+        model: "Dragon",
+        scale: 1 / 2 ** 5,
+        fly: 0.5,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.75,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "BabyDragon",
+        text: "Come to mamma."
     },
 };
 
@@ -1936,6 +1968,40 @@ const INTERACTION_ITEM = {
         name: "Revolver",
         category: "interaction_item",
         inventorySprite: "Revolver",
+    },
+    Sponge: {
+        name: "Sponge",
+        category: "interaction_item",
+        inventorySprite: "Sponge",
+        text: "Maybe I should tajke a bath?"
+    },
+    RubberDuck: {
+        name: "RubberDuck",
+        category: "interaction_item",
+        inventorySprite: "RubberDuck",
+        text: "One should never bath alone."
+    },
+    RedLiquid: {
+        name: "RedLiquid",
+        category: "interaction_item",
+        inventorySprite: "RedLiquid",
+        text: "Disgusting. Give it to someone else."
+    },
+    Candle: {
+        name: "Candle",
+        category: "interaction_item",
+        inventorySprite: "Candle",
+        text: "Common baby ligh my fire."
+    },
+    Ammo: {
+        name: "Ammo",
+        category: "interaction_item",
+        inventorySprite: "Ammo",
+    },
+    GoldBar: {
+        name: "GoldBar",
+        category: "interaction_item",
+        inventorySprite: "GoldBar",
     },
 };
 
@@ -2419,6 +2485,32 @@ const INTERACTION_ENTITY = {
             intro: "In leather's embrace, I seek delight, Bring my favorite toys, hidden from sight.",
             progress: "Toys for play, part of my game, more to find, to fuel the flame.",
             conclusion: "Toys in hand, my collection's prime, take this revolver, use it in time.",
+        }
+    },
+    Siren: {
+        name: "Siren",
+        sprite: "Siren",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Sponge", "RubberDuck"],
+        gives: "Candle",
+        text: {
+            intro: "A siren's bath, a wish so vague, bring items soft and buoyant, a watery stage.",
+            progress: "A piece for my bath, one more to seek, bring it swift, don't be meek.",
+            conclusion: "Bath complete, a splash of fun, hold this candle, till my return, hun.",
+        }
+    },
+    DeMona: {
+        name: "DeMona",
+        sprite: "DeMona",
+        category: 'crest',
+        voice: "Female",
+        wants: ["BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon"],
+        gives: "GoldBar",
+        text: {
+            intro: "Mother of dragons, heart in a whirl, Find all my babies, each precious pearl.",
+            progress: "A dragonling found, more out there roam, seek my brood, bring them home.",
+            conclusion: "All my babies, back in my nest, take this gold bar, gold is best.",
         }
     },
 

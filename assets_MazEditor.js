@@ -171,7 +171,6 @@ LoadTextures = [
     { srcName: "MC_wall5.jpg", name: "MC_wall5" },
     { srcName: "DarkShiny.jpg", name: "DarkShiny" },
     { srcName: "MC_floor20.jpg", name: "MC_floor20" },
-
     { srcName: "BorinGrey1.jpg", name: "BorinGrey1" },
     { srcName: "BoringCeiling1.jpg", name: "BoringCeiling1" },
     { srcName: "BoringCeiling2.jpg", name: "BoringCeiling2" },
@@ -328,11 +327,13 @@ LoadSprites = [
     { srcName: "Whip.png", name: "Whip" },
     { srcName: "Handcuffs.png", name: "Handcuffs" },
     { srcName: "Revolver.png", name: "Revolver" },
-
     { srcName: "Sponge.png", name: "Sponge" },
     { srcName: "RubberDuck.png", name: "RubberDuck" },
     { srcName: "Candle.png", name: "Candle" },
     { srcName: "Ammo.png", name: "Ammo" },
+    { srcName: "LP.png", name: "LP" },
+    { srcName: "Ribbon.png", name: "Ribbon" },
+    { srcName: "HairBrush.png", name: "HairBrush" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

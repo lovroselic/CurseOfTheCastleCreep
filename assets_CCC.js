@@ -457,21 +457,25 @@ LoadSprites = [
     { srcName: "DeMona.jpg", name: "DeMona" },
     { srcName: "Siren.jpg", name: "Siren" },
     { srcName: "SittingDomme.jpg", name: "SittingDomme" },
+    { srcName: "PoliceWoman.jpg", name: "PoliceWoman" },
+    { srcName: "Priestess.jpg", name: "Priestess" },
+    { srcName: "HealthGoddess.jpg", name: "ManaGoddess" },
+    { srcName: "Whipper.jpg", name: "Whipper" },
+    { srcName: "RedWoman.jpg", name: "RedWoman" },
 
     //unused
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
     { srcName: "Ghostess.jpg", name: "Ghostess" },
-    { srcName: "Priestess.jpg", name: "Priestess" },
-    { srcName: "PoliceWoman.jpg", name: "PoliceWoman" },
+    
     { srcName: "RedWellWoman.jpg", name: "RedWellWoman" },
     { srcName: "Rapunzel.jpg", name: "Rapunzel" },
-    { srcName: "Whipper.jpg", name: "Whipper" },
-    { srcName: "RedWoman.jpg", name: "RedWoman" },
+    
     { srcName: "Croucher.jpg", name: "Croucher" },
     { srcName: "MetalMaiden.jpg", name: "MetalMaiden" },
     { srcName: "Croucher2.jpg", name: "Croucher2" },
     { srcName: "CanyonGirl.jpg", name: "CanyonGirl" },
     { srcName: "KeyMaker.jpg", name: "KeyMaker" },
+    
 
 
 
@@ -524,6 +528,10 @@ LoadSprites = [
     { srcName: "RubberDuck.png", name: "RubberDuck" },
     { srcName: "Candle.png", name: "Candle" },
     { srcName: "Ammo.png", name: "Ammo" },
+    { srcName: "LP.png", name: "LP" },
+
+    { srcName: "Ribbon.png", name: "Ribbon" },
+    { srcName: "HairBrush.png", name: "HairBrush" },
 
 
     //action movables

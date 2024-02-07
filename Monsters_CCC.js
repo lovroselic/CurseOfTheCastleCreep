@@ -615,6 +615,14 @@ const ORACLE_TYPE = {
         text: "Not everybody has something important to say. Some just waste your time.",
         interactionCategory: "oracle",
     },
+    RedWoman: {
+        name: "RedWoman",
+        sprite: "RedWoman",
+        category: 'crest',
+        voice: "Female",
+        text: "If you think ther are enough gold coins for all the trainers, than you haven't beem paying attention.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -2003,6 +2011,24 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "GoldBar",
     },
+    LP: {
+        name: "LP",
+        category: "interaction_item",
+        inventorySprite: "LP",
+        text: "Some nice death metal."
+    },
+    Ribbon: {
+        name: "Ribbon",
+        category: "interaction_item",
+        inventorySprite: "Ribbon",
+        text: "I will look pretty with this."
+    },
+    HairBrush: {
+        name: "HairBrush",
+        category: "interaction_item",
+        inventorySprite: "HairBrush",
+        text: "Time to comb my hair. I have been adventuring too long."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -2513,6 +2539,19 @@ const INTERACTION_ENTITY = {
             conclusion: "All my babies, back in my nest, take this gold bar, gold is best.",
         }
     },
+    PoliceWoman: {
+        name: "PoliceWoman",
+        sprite: "PoliceWoman",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Revolver", "Ammo"],
+        gives: "LP",
+        text: {
+            intro: "In law's pursuit, a tool I lack, a revolver and ammo, I need in my pack.",
+            progress: "Part supplied, but still I wait, complete the set, before it's too late.",
+            conclusion: "Armed and ready, thanks to you, here's a metal LP, blast it true!",
+        }
+    },
 
     /**
      * NA::  
@@ -2584,6 +2623,45 @@ const INTERACTION_SHRINE = {
             intro: "Shadows whisper, skills to impart, for a price, the art of the martial heart.",
             progress: null,
             conclusion: "Price accepted, now shadows your guide, asskicking skills, in you reside."
+        }
+    },
+    Priestess: {
+        name: "Priestess",
+        sprite: "Priestess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "HealthSkill",
+        text: {
+            intro: "In sacred light, a blessing I hold, For a token, watch your health unfold.",
+            progress: null,
+            conclusion: "Offering given, now receive my grace, health enhanced, for your journeys pace."
+        }
+    },
+    ManaGoddess: {
+        name: "ManaGoddess",
+        sprite: "ManaGoddess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "In celestial realms, power I wield, for your coin, Mana's full force unsealed.",
+            progress: null,
+            conclusion: "Your offering accepted, let the magic flow, Mana unleashed, in radiant glow."
+        }
+    },
+    Whipper: {
+        name: "Whipper",
+        sprite: "Whipper",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "AttackSkill",
+        text: {
+            intro: "With whip in hand, skills to hone, for a gold coin, your strength I'll own.",
+            progress: null,
+            conclusion: "Payment made, now feel my power, attack skills honed, foes will cower."
         }
     },
 };

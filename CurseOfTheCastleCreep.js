@@ -50,28 +50,34 @@ const DEBUG = {
             * rubber duck
             * RedLiquid
             * goldbar: Demon (dragons)
+            * goldbar: 85 floor object
             * goldbar
-            * goldbar
+            * LP (5): police, 
             * green gem
             * blue gem
             * dragons (5x): 82, 84
             * candle: siren (sponge, duck)
             * ammo:
+            * gold coins (3x): 81, 
+            * ribbon
+            * hairbrush
          * entitites:
              * dominatrix (whip, handcuffs) -> revolver
              * siren (sponge, duck) -> candle
-             * keyMaker (gold, gold, gold, green gem, blue gem) -> emerald Key
-             * policewoman (gun, ammo) ->
+             * NOT DONE: keyMaker (gold, gold, gold, green gem, blue gem) -> emerald Key
+             * policewoman (gun, ammo) -> LP
              * deMona (dragons 5x) -> Gold Bar
+             * NOT DONE: rapunzel (ribbon, hairebrush) -> 
          * rooms
             * 81 guard
             * 82 dominatrix 
             * 83 bathroom
             * 84 deMona
+            * 85 police
 
          */
 
-        GAME.level = 82;    //81, //82 
+        GAME.level = 81;    //81, //82 
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -103,7 +109,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon"];
+        let invItems = ["Revolver", "Ammo"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -144,7 +150,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.02",
+    VERSION: "0.15.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -1053,6 +1059,7 @@ const GAME = {
         if (HERO.dead) GAME.checkIfProcessesComplete();
     },
     processInteraction(interaction) {
+        if (interaction.text) TURN.subtitle(interaction.text);
         switch (interaction.category) {
             case 'error':
                 switch (interaction.which) {
@@ -1113,17 +1120,19 @@ const GAME = {
                 TITLE.status();
                 break;
             case 'oracle':
-                if (interaction.text) TURN.subtitle(interaction.text);
+                //if (interaction.text) TURN.subtitle(interaction.text);
                 break;
             case 'skill':
                 console.log("SKILL", interaction);
+                //if (interaction.text) TURN.subtitle(interaction.text);
                 HERO.raiseStat(interaction.which, interaction.level);
                 display(interaction.inventorySprite);
                 AUDIO.LevelUp.play();
                 TITLE.keys();
                 break;
             case 'status':
-                //console.log("STATUS", interaction);
+                console.log("STATUS", interaction);
+                //if (interaction.text) TURN.subtitle(interaction.text);
                 HERO.incStatus(interaction.which, interaction.level);
                 display(interaction.inventorySprite);
                 AUDIO.PowerUp.play();
@@ -1140,12 +1149,13 @@ const GAME = {
             case "interaction_item":
                 const item = new NamedInventoryItem(interaction.name, interaction.inventorySprite);
                 HERO.inventory.item.push(item);
-                if (interaction.text) TURN.subtitle(interaction.text);
+                //if (interaction.text) TURN.subtitle(interaction.text);
                 TITLE.keys();
                 display(interaction.inventorySprite);
                 break;
             case "entity_interaction":
-                if (interaction.text) TURN.subtitle(interaction.text);
+                //console.log("interaction.text", interaction.text);
+                //if (interaction.text) TURN.subtitle(interaction.text);
                 TITLE.keys()
                 break;
             default:

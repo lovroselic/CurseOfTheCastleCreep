@@ -1603,7 +1603,7 @@ const MAP = {
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
     }
     ,
-    81 : {
+    81: {
         name: "Guard Room",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB5AA4BB2AA3BABB3AA60BB3AA9BAA3BAA5BAA25BAA35BB9AA13BB14AA2BAA2BB26AA8BAA4BB3AA3BAA2BABAA4BB29A$"}',
@@ -1617,7 +1617,7 @@ const MAP = {
         objects: '[[144,"GoldCoin"]]',
         oracles: '[[286,1,"RedWoman"],[5,7,"Croucher"]]',
         trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"]]',
-        }
+    }
     ,
     82: {
         name: "Dominatrix",
@@ -1679,7 +1679,7 @@ const MAP = {
         objects: '[[82,"GoldBar"]]',
     }
     ,
-    86 : {
+    86: {
         name: "Rapunzel",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB5AA4BB2AA2EBB2AA2BAA5BABAA3BB2AA2BB2AA3BAA2BABB2AA17BB2AA5BB3AA6BB3AA2BB3AA2BABAA3BAA5BB2ABABAA2BB5ABABB2AA2BB5AA2BB3ABB4ABB2AA5BB8AA2BAA2BB3ABABB2ABB8AA4BB2ABB3AA6BB2ABB3ABAA2BB4ABB18A$A"}',
@@ -1688,9 +1688,22 @@ const MAP = {
         ceil: "OrnateFloor1",
         start: '[118,3]',
         lights: '[[110,3,"WallLamp31","standardDimmed"],[81,1,"WallLamp31","standardDimmed"],[141,7,"WallLamp31","standardDimmed"],[11,7,"WallLamp18","standard"],[221,1,"WallLamp18","standard"]]',
-        gates: '[[119,3,"86.1","81.3","Up"]]',
+        gates: '[[119,3,"86.1","81.3","Up"],[6,7,"86.2","87.1","Down"]]',
         doors: '[113]',
         entities: '[[105,5,"Rapunzel"]]',
+    }
+    ,
+    87 : {
+        name: "Froggess",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB2ABABAA15BAA3BAA5BB6ABB2AA4BB3ABABAA2BB2AA5BABAA5BB2AA4BAA2BAA5BABAA5BB8AA4BB7AA4BB4AA2BB4AA3BABB6ABABB3ABB2ABB2AA2BABB2AA2BAA2BB9ABAA3BB5AA2BB9ABB3ABABABABB2AA3BB20$A"}',
+        wall: "BrownBrick32",
+        floor: "ColorfulTiles1",
+        ceil: "OrnateFloor11",
+        start: '[187,1]',
+        lights: '[[82,1,"WallLamp","standardDimmed"],[214,1,"WallLamp","standardDimmed"],[220,1,"WallLamp","standardDimmed"],[142,7,"WallLamp19","standardDimmed"]]',
+        gates: '[[217,1,"87.1","86.2","Up"]]',
+        entities: '[[7,7,"Froggess"]]',
         }
     ,
     999: {

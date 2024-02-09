@@ -2073,6 +2073,11 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Shield",
     },
+    Sword: {
+        name: "Sword",
+        category: "interaction_item",
+        inventorySprite: "Sword",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -2607,6 +2612,19 @@ const INTERACTION_ENTITY = {
             intro: "Long hair's plight, a brush and band, for Rapunzel's locks, lend a hand.",
             progress: "One item here, my hair awaits, bring the next, before it's too late.",
             conclusion: "Brush and ribbon, now I'm dight, For your aid, a shield for fight.",
+        }
+    },
+    Froggess: {
+        name: "Froggess",
+        sprite: "Froggess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Fly", "Fly", "Fly"],
+        gives: "Sword",
+        text: {
+            intro: "Froggess here, in pond's domain, three flies I seek, for your gain.",
+            progress: "A fly snagged, my appetite whets, more to catch in my nets.",
+            conclusion: "Three flies caught, my feast's delight, for you, a sword, which I stole from the knight.",
         }
     },
 

@@ -59,11 +59,13 @@ const DEBUG = {
             * candle: siren (sponge, duck)
             * ammo:
             * gold coins (3x): 81, 
-            * ribbon
-            * hairbrush
+            * ribbon: metal maiden
+            * hairbrush: ghostess
             * shield: rapunzel
             * sword: frogess
             * fly (3x):
+            * skull (3x)
+            * candle (2x)
          * entitites:
              * dominatrix (whip, handcuffs) -> revolver
              * siren (sponge, duck) -> candle
@@ -73,6 +75,8 @@ const DEBUG = {
              * rapunzel (ribbon, hairbrush) -> shield
              * not done: sword girl (sword, shield) -->
              * frogess (fly 3x) -> sword
+             * metal maiden (LP. 5x) -> ribbon
+             * ghostess (skull, skull, skull, candle, candle) -> hairbrush
          * rooms
             * 81 guard
             * 82 dominatrix 
@@ -80,10 +84,13 @@ const DEBUG = {
             * 84 deMona
             * 85 police
             * 86 rapunzel
+            * 87 frogess
+            * 88 metal maiden
+            * 89 ghostess
 
          */
 
-        GAME.level = 86;    //81, //82 //86
+        GAME.level = 89;    //81, //82 //86 //87
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -115,7 +122,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Fly", "Fly", "Fly"];
+        let invItems = ["Skull", "Skull", "Skull", "Candle", "Candle"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);

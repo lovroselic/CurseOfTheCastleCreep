@@ -2627,7 +2627,32 @@ const INTERACTION_ENTITY = {
             conclusion: "Three flies caught, my feast's delight, for you, a sword, which I stole from the knight.",
         }
     },
-
+    MetalMaiden: {
+        name: "MetalMaiden",
+        sprite: "MetalMaiden",
+        category: 'crest',
+        voice: "Female",
+        wants: ["LP", "LP", "LP", "LP", "LP"],
+        gives: "Ribbon",
+        text: {
+            intro: "Metal's maiden, vinyl's my quest, five LPs to rock at my best.",
+            progress: "Records found, but still some missing, my playlist's hungry, keep on fishing.",
+            conclusion: "Metal's roar now complete in my lair, for you, a ribbon, wear it if you dare.",
+        }
+    },
+    Ghostess: {
+        name: "Ghostess",
+        sprite: "Ghostess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Skull", "Skull", "Skull", "Candle", "Candle"],
+        gives: "HairBrush",
+        text: {
+            intro: "Ghostess whispers, in shadows roam, three skulls, two candles, for my ghostly home.",
+            progress: "Skulls and candles, some in sight, bring more to glow in the night.",
+            conclusion: "Skulls and candles, now in place, for your aid, a hairbrush with grace.",
+        }
+    },
     /**
      * NA::  
      */

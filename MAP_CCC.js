@@ -1688,12 +1688,12 @@ const MAP = {
         ceil: "OrnateFloor1",
         start: '[118,3]',
         lights: '[[110,3,"WallLamp31","standardDimmed"],[81,1,"WallLamp31","standardDimmed"],[141,7,"WallLamp31","standardDimmed"],[11,7,"WallLamp18","standard"],[221,1,"WallLamp18","standard"]]',
-        gates: '[[119,3,"86.1","81.3","Up"],[6,7,"86.2","87.1","Down"]]',
+        gates: '[[119,3,"86.1","81.3","Up"],[6,7,"86.2","87.1","Down"],[216,1,"86.3","88.1","Down"]]',
         doors: '[113]',
         entities: '[[105,5,"Rapunzel"]]',
     }
     ,
-    87 : {
+    87: {
         name: "Froggess",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABABAA15BAA3BAA5BB6ABB2AA4BB3ABABAA2BB2AA5BABAA5BB2AA4BAA2BAA5BABAA5BB8AA4BB7AA4BB4AA2BB4AA3BABB6ABABB3ABB2ABB2AA2BABB2AA2BAA2BB9ABAA3BB5AA2BB9ABB3ABABABABB2AA3BB20$A"}',
@@ -1701,9 +1701,37 @@ const MAP = {
         floor: "ColorfulTiles1",
         ceil: "OrnateFloor11",
         start: '[187,1]',
+        decals: '[[20,7,"Frogger110","picture"],[24,7,"Frogger111","picture"],[95,1,"Frogger112","picture"],[99,1,"Frogger2","picture"]]',
         lights: '[[82,1,"WallLamp","standardDimmed"],[214,1,"WallLamp","standardDimmed"],[220,1,"WallLamp","standardDimmed"],[142,7,"WallLamp19","standardDimmed"]]',
-        gates: '[[217,1,"87.1","86.2","Up"]]',
+        gates: '[[217,1,"87.1","86.2","Up"],[118,1,"87.2","89.1","Down"]]',
         entities: '[[7,7,"Froggess"]]',
+    }
+    ,
+    88: {
+        name: "Metal Maiden",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB2ABAA5BABABB3ABB2AA3BB2AA4BB4ABB3AA5BAA5BAA5BABABABB2AA2BABB3AA4BB8ABB4ABB2ABABB2AA3BB2AA2BABAA2BB4ABAA3BB5AA4BABB3ABB10AA7BB7AA3BABB4AA8BABABB2AA2BB2AA3BABABB2AA2BB2ABB3AA5BB22A$"}',
+        wall: "BrownBricks37",
+        floor: "ScarletTiles2",
+        ceil: "OrnateFloor343",
+        start: '[37,7]',
+        lights: '[[82,1,"WallLamp33","standardDimmed"],[127,7,"WallLamp33","standardDimmed"],[1,7,"WallLamp20","standard"],[13,7,"WallLamp20","standard"],[212,1,"WallLamp35","lightRed"],[222,1,"WallLamp35","lightRed"]]',
+        gates: '[[7,7,"88.1","86.3","Up"]]',
+        entities: '[[217,1,"MetalMaiden"]]',
+    }
+    ,
+    89 : {
+        name: "Ghostess",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB3AA2BAA2BAA4BB3AA4BAA3BAA4BAA2BABABAA3BAA3BB2AA5BABAA13BB3AA3BB2AA4BB2ABB9AA2BABAA2BAA2BB3AA2BB2ABB2ABB4ABABB5ABAA4BB3AA2BB2ABABB2ABB3ABB2ABABAA4BB2AA3BAA5BB2AA3BB3AA3BAA2BB4AA2BB2ABB9ABB10ABB11AB$"}',
+        wall: "WetWall1",
+        floor: "MarbleTiles2",
+        ceil: "GreyWall11",
+        start: '[17,7]',
+        lights: '[[142,7,"WallLamp34","standard"],[67,3,"WallLamp20","standardDimmed"],[13,7,"WallLamp32","standardDimmed"],[90,5,"WallLamp32","standardDimmed"],[119,3,"WallLamp32","standardDimmed"]]',
+        gates: '[[2,7,"89.1","87.2","Up"]]',
+        triggers: '[[98,7,"RockTriggerButton",1,80]]',
+        entities: '[[217,1,"Ghostess"]]',
         }
     ,
     999: {

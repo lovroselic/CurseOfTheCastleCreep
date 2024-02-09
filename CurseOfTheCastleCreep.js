@@ -61,23 +61,27 @@ const DEBUG = {
             * gold coins (3x): 81, 
             * ribbon
             * hairbrush
+            * shield: rapunzel
+            * sword
          * entitites:
              * dominatrix (whip, handcuffs) -> revolver
              * siren (sponge, duck) -> candle
              * NOT DONE: keyMaker (gold, gold, gold, green gem, blue gem) -> emerald Key
              * policewoman (gun, ammo) -> LP
              * deMona (dragons 5x) -> Gold Bar
-             * NOT DONE: rapunzel (ribbon, hairebrush) -> 
+             * NOT DONE: rapunzel (ribbon, hairbrush) -> shield
+             * not done: sword girl (sword, shield) -->
          * rooms
             * 81 guard
             * 82 dominatrix 
             * 83 bathroom
             * 84 deMona
             * 85 police
+            * 86 rapunzel
 
          */
 
-        GAME.level = 81;    //81, //82 
+        GAME.level = 81;    //81, //82 //86
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -109,7 +113,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Revolver", "Ammo"];
+        let invItems = ["Ribbon", "HairBrush"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -150,7 +154,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.03",
+    VERSION: "0.15.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

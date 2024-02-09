@@ -492,6 +492,37 @@ const SHRINE_TYPE = {
         price: 2500,
         level: 3,
     },
+
+    Attack1_21: {
+        name: "AttackShrine_1_21",
+        sprite: "AttackShrine21",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 1500,
+        level: 1,
+    },
+    Defense1_21: {
+        name: "DefenseShrine_1_21",
+        sprite: "DefenseShrine21",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ShieldSkill",
+        price: 1500,
+        level: 1,
+    },
+    Magic1_21: {
+        name: "MagicShrine_1_21",
+        sprite: "MagicShrine21",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "MagicSkill",
+        price: 1500,
+        level: 1,
+    },
 };
 
 const ORACLE_TYPE = {
@@ -621,6 +652,14 @@ const ORACLE_TYPE = {
         category: 'crest',
         voice: "Female",
         text: "If you think ther are enough gold coins for all the trainers, than you haven't beem paying attention.",
+        interactionCategory: "oracle",
+    },
+    Croucher: {
+        name: "Croucher",
+        sprite: "Croucher",
+        category: 'crest',
+        voice: "Female",
+        text: "Did you notice that praying has just gotten more expensive?",
         interactionCategory: "oracle",
     },
 };
@@ -2029,6 +2068,11 @@ const INTERACTION_ITEM = {
         inventorySprite: "HairBrush",
         text: "Time to comb my hair. I have been adventuring too long."
     },
+    Shield: {
+        name: "Shield",
+        category: "interaction_item",
+        inventorySprite: "Shield",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -2552,6 +2596,19 @@ const INTERACTION_ENTITY = {
             conclusion: "Armed and ready, thanks to you, here's a metal LP, blast it true!",
         }
     },
+    Rapunzel: {
+        name: "Rapunzel",
+        sprite: "Rapunzel",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Ribbon", "HairBrush"],
+        gives: "Shield",
+        text: {
+            intro: "Long hair's plight, a brush and band, for Rapunzel's locks, lend a hand.",
+            progress: "One item here, my hair awaits, bring the next, before it's too late.",
+            conclusion: "Brush and ribbon, now I'm dight, For your aid, a shield for fight.",
+        }
+    },
 
     /**
      * NA::  
@@ -2662,6 +2719,19 @@ const INTERACTION_SHRINE = {
             intro: "With whip in hand, skills to hone, for a gold coin, your strength I'll own.",
             progress: null,
             conclusion: "Payment made, now feel my power, attack skills honed, foes will cower."
+        }
+    },
+    CanyonGirl: {
+        name: "CanyonGirl",
+        sprite: "CanyonGirl",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "HealthSkill",
+        text: {
+            intro: "In canyon's echo, a secret I hold, for a coin of gold, watch your health threshold.",
+            progress: null,
+            conclusion: "Gold received, under open sky, your health soars, reaching high."
         }
     },
 };

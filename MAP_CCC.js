@@ -1612,10 +1612,11 @@ const MAP = {
         ceil: "BrownMC_ceiling",
         start: '[25,7]',
         lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
-        gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"]]',
+        gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"],[187,5,"81.3","86.1","Down"]]',
+        shrines: '[[11,7,"Attack1_21"],[283,1,"Defense1_21"],[101,3,"Magic1_21"]]',
         objects: '[[144,"GoldCoin"]]',
-        oracles: '[[286,1,"RedWoman"]]',
-        trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"]]',
+        oracles: '[[286,1,"RedWoman"],[5,7,"Croucher"]]',
+        trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"]]',
         }
     ,
     82: {
@@ -1663,7 +1664,7 @@ const MAP = {
         movables: '[[120,"BabyDragon"]]',
     }
     ,
-    85 : {
+    85: {
         name: "Dungeon Police",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB2ABB3AA5BB2ABAA2BB2ABB2AA5BB2AA6BABAA5BABB5ABB3ABAA3BABB2ABB2ABB7AA3BB2AA2BB3ABB3ABB2ABABABB3ABB2ABAA2BB3ABB2AA4BB2AA2BB5ABB2AA3BABABB2AA3BB4ABB6ABB3ABB12A$"}',
@@ -1676,6 +1677,20 @@ const MAP = {
         triggers: '[[89,1,"RockTriggerButton",1,59]]',
         entities: '[[10,7,"PoliceWoman"]]',
         objects: '[[82,"GoldBar"]]',
+    }
+    ,
+    86 : {
+        name: "Rapunzel",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB5AA4BB2AA2EBB2AA2BAA5BABAA3BB2AA2BB2AA3BAA2BABB2AA17BB2AA5BB3AA6BB3AA2BB3AA2BABAA3BAA5BB2ABABAA2BB5ABABB2AA2BB5AA2BB3ABB4ABB2AA5BB8AA2BAA2BB3ABABB2ABB8AA4BB2ABB3AA6BB2ABB3ABAA2BB4ABB18A$A"}',
+        wall: "MC_Bricks32",
+        floor: "BorinGrey1",
+        ceil: "OrnateFloor1",
+        start: '[118,3]',
+        lights: '[[110,3,"WallLamp31","standardDimmed"],[81,1,"WallLamp31","standardDimmed"],[141,7,"WallLamp31","standardDimmed"],[11,7,"WallLamp18","standard"],[221,1,"WallLamp18","standard"]]',
+        gates: '[[119,3,"86.1","81.3","Up"]]',
+        doors: '[113]',
+        entities: '[[105,5,"Rapunzel"]]',
         }
     ,
     999: {

@@ -462,18 +462,20 @@ LoadSprites = [
     { srcName: "HealthGoddess.jpg", name: "ManaGoddess" },
     { srcName: "Whipper.jpg", name: "Whipper" },
     { srcName: "RedWoman.jpg", name: "RedWoman" },
+    { srcName: "CanyonGirl.jpg", name: "CanyonGirl" },
+    { srcName: "Rapunzel.jpg", name: "Rapunzel" },
+
+    { srcName: "Croucher.jpg", name: "Croucher" },
 
     //unused
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
     { srcName: "Ghostess.jpg", name: "Ghostess" },
-    
     { srcName: "RedWellWoman.jpg", name: "RedWellWoman" },
-    { srcName: "Rapunzel.jpg", name: "Rapunzel" },
     
-    { srcName: "Croucher.jpg", name: "Croucher" },
+    
     { srcName: "MetalMaiden.jpg", name: "MetalMaiden" },
     { srcName: "Croucher2.jpg", name: "Croucher2" },
-    { srcName: "CanyonGirl.jpg", name: "CanyonGirl" },
+    { srcName: "SwordGirl.jpg", name: "SwordGirl" },
     { srcName: "KeyMaker.jpg", name: "KeyMaker" },
     
 
@@ -529,7 +531,6 @@ LoadSprites = [
     { srcName: "Candle.png", name: "Candle" },
     { srcName: "Ammo.png", name: "Ammo" },
     { srcName: "LP.png", name: "LP" },
-
     { srcName: "Ribbon.png", name: "Ribbon" },
     { srcName: "HairBrush.png", name: "HairBrush" },
 
@@ -635,15 +636,18 @@ LoadSprites = [
     { srcName: "AttackShrine18.jpg", name: "AttackShrine18" },
     { srcName: "AttackShrine19.jpg", name: "AttackShrine19" },
     { srcName: "AttackShrine20.jpg", name: "AttackShrine20" },
-
-
     { srcName: "DefenseShrine18.jpg", name: "DefenseShrine18" },
     { srcName: "DefenseShrine19.jpg", name: "DefenseShrine19" },
     { srcName: "DefenseShrine20.jpg", name: "DefenseShrine20" },
-
     { srcName: "MagicShrine18.jpg", name: "MagicShrine18" },
     { srcName: "MagicShrine19.jpg", name: "MagicShrine19" },
     { srcName: "MagicShrine20.jpg", name: "MagicShrine20" },
+
+    { srcName: "AttackShrine21.jpg", name: "AttackShrine21" },
+    { srcName: "DefenseShrine21.jpg", name: "DefenseShrine21" },
+    { srcName: "MagicShrine21.jpg", name: "MagicShrine21" },
+
+
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

@@ -334,13 +334,14 @@ LoadSprites = [
     { srcName: "LP.png", name: "LP" },
     { srcName: "Ribbon.png", name: "Ribbon" },
     { srcName: "HairBrush.png", name: "HairBrush" },
+    { srcName: "Helmet.png", name: "Helmet" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
     { srcName: "ChickenDinner.png", name: "LittleChicken" },
     { srcName: "Cat7.png", name: "Cat" },
     { srcName: "Dragon.png", name: "BabyDragon" },
-
+    { srcName: "Sheep.png", name: "Sheep" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

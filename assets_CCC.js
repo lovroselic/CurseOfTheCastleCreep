@@ -320,6 +320,7 @@ LoadTextures = [
     { srcName: "Apple_BaseColor.jpg", name: "Apple_BaseColor" },
     { srcName: "Skull_texture.jpg", name: "Skull_texture" },
     { srcName: "dragon_redColor.jpg", name: "RedDragon" },
+    { srcName: "BloodTexture.jpg", name: "BloodTexture" },
 
     //decal-gates
     { srcName: "WoodeGate1_256.png", name: "WoodenGate1" },
@@ -392,7 +393,8 @@ LoadObjects = [
 
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
     'Spider.gltf', 'Wolf.gltf', 'Skeleton.gltf', 'Goblin.gltf', 'Drax.gltf', 'MissGalaxy.gltf',
-    'ThePrincess.gltf', 'Chicken.gltf', 'Cat.gltf', "Dragon.gltf", "Basilisk.gltf", "Rex.gltf"
+    'ThePrincess.gltf', 'Chicken.gltf', 'Cat.gltf', "Dragon.gltf", "Basilisk.gltf", "Rex.gltf",
+    'Sheep.gltf',
 ];
 
 LoadSprites = [
@@ -468,14 +470,14 @@ LoadSprites = [
     { srcName: "Froggess.jpg", name: "Froggess" },
     { srcName: "MetalMaiden.jpg", name: "MetalMaiden" },
     { srcName: "Ghostess.jpg", name: "Ghostess" },
-
-    //unused
-    { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
-
-    { srcName: "RedWellWoman.jpg", name: "RedWellWoman" },
-
-    { srcName: "Croucher2.jpg", name: "Croucher2" },
     { srcName: "SwordGirl.jpg", name: "SwordGirl" },
+    { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
+    { srcName: "RedWellWoman.jpg", name: "RedWellWoman" },
+    //unused
+
+
+    { srcName: "Croucher2.jpg", name: "SkullCollector" },
+    { srcName: "Shepardess.jpg", name: "Shepardess" },
     { srcName: "KeyMaker.jpg", name: "KeyMaker" },
 
 
@@ -533,6 +535,7 @@ LoadSprites = [
     { srcName: "LP.png", name: "LP" },
     { srcName: "Ribbon.png", name: "Ribbon" },
     { srcName: "HairBrush.png", name: "HairBrush" },
+    { srcName: "Helmet.png", name: "Helmet" },
 
 
     //action movables
@@ -540,6 +543,7 @@ LoadSprites = [
     { srcName: "ChickenDinner.png", name: "LittleChicken" },
     { srcName: "Cat7.png", name: "Cat" },
     { srcName: "Dragon.png", name: "BabyDragon" },
+    { srcName: "Sheep.png", name: "Sheep" },
 
 
     //triggers

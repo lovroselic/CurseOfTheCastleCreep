@@ -1731,14 +1731,14 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "Face on the coin looks like my mother."
     },
-    RedLiquid: {
-        name: "RedLiquid",
+    Blood: {
+        name: "Blood",
         category: "interaction_item",
         element: "FLASK",
         scale: 1.1 / 2 ** 5,
         glueToFloor: true,
-        texture: "RedLiquid",
-        inventorySprite: "RedPotion24",
+        texture: "BloodTexture",
+        inventorySprite: "Blood",
         material: MATERIAL.redShine,
         text: "Disgusting. Give it to someone else."
     },
@@ -1793,6 +1793,18 @@ const MOVABLE_INTERACTION_OBJECT = {
         behaviourArguments: [Infinity, ["wanderer"], -1],
         inventorySprite: "BabyDragon",
         text: "Come to mamma."
+    },
+    BabySheep: {
+        name: "BabySheep",
+        category: "interaction_item",
+        model: "Sheep",
+        scale: 1.1 / 2 ** 10,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.25,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "Sheep",
+        text: "Poor lamb. Are you hurt?",
     },
 };
 
@@ -2028,12 +2040,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "RubberDuck",
         text: "One should never bath alone."
     },
-    RedLiquid: {
+    /*RedLiquid: {
         name: "RedLiquid",
         category: "interaction_item",
-        inventorySprite: "RedLiquid",
+        inventorySprite: "RedPotion24",
         text: "Disgusting. Give it to someone else."
-    },
+    },*/
     Candle: {
         name: "Candle",
         category: "interaction_item",
@@ -2077,6 +2089,11 @@ const INTERACTION_ITEM = {
         name: "Sword",
         category: "interaction_item",
         inventorySprite: "Sword",
+    },
+    Helmet: {
+        name: "Helmet",
+        category: "interaction_item",
+        inventorySprite: "Helmet",
     },
 };
 
@@ -2653,6 +2670,32 @@ const INTERACTION_ENTITY = {
             conclusion: "Skulls and candles, now in place, for your aid, a hairbrush with grace.",
         }
     },
+    SwordGirl: {
+        name: "SwordGirl",
+        sprite: "SwordGirl",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Sword", "Shield"],
+        gives: "Helmet",
+        text: {
+            intro: "Sword Girl shines, in battle's light, seeks sharp allies, for her fight.",
+            progress: "Weapons gather, her collection grows, yet still, for more, her eagerness shows.",
+            conclusion: "My beauty's unmatched, no helmet to wear, for you instead, this helm, I'll share.",
+        }
+    },
+    RedWellWoman: {
+        name: "RedWellWoman",
+        sprite: "RedWellWoman",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Blood", "Blood", "Blood"],
+        gives: "GoldCoin",
+        text: {
+            intro: "From depths dark, a plea so red, three doses sought, of liquid dread.",
+            progress: "Your quest unfolds, in shadows deep, still more to find, before you sleep.",
+            conclusion: "Your task complete, with red in hand, a gold coin for you, as was planned.",
+        }
+    },
     /**
      * NA::  
      */
@@ -2775,6 +2818,19 @@ const INTERACTION_SHRINE = {
             intro: "In canyon's echo, a secret I hold, for a coin of gold, watch your health threshold.",
             progress: null,
             conclusion: "Gold received, under open sky, your health soars, reaching high."
+        }
+    },
+    SnakeGirl: {
+        name: "SnakeGirl",
+        sprite: "SnakeGirl",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "DefenseSkill",
+        text: {
+            intro: "Slithering grace, defense to weave, a gold coin offered, lessons you'll receive.",
+            progress: null,
+            conclusion: "Coin now mine, your training's begun, in defense arts, you'll second to none."
         }
     },
 };

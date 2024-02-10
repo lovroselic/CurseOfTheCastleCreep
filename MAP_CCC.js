@@ -1603,7 +1603,7 @@ const MAP = {
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
     }
     ,
-    81: {
+    81 : {
         name: "Guard Room",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB5AA4BB2AA3BABB3AA60BB3AA9BAA3BAA5BAA25BAA35BB9AA13BB14AA2BAA2BB26AA8BAA4BB3AA3BAA2BABAA4BB29A$"}',
@@ -1612,12 +1612,12 @@ const MAP = {
         ceil: "BrownMC_ceiling",
         start: '[25,7]',
         lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
-        gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"],[187,5,"81.3","86.1","Down"]]',
+        gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"],[187,5,"81.3","86.1","Down"],[280,1,"81.4","90.1","Red"]]',
         shrines: '[[11,7,"Attack1_21"],[283,1,"Defense1_21"],[101,3,"Magic1_21"]]',
         objects: '[[144,"GoldCoin"]]',
         oracles: '[[286,1,"RedWoman"],[5,7,"Croucher"]]',
-        trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"]]',
-    }
+        trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"],[203,3,"SnakeGirl"]]',
+        }
     ,
     82: {
         name: "Dominatrix",
@@ -1649,7 +1649,7 @@ const MAP = {
         entities: '[[8,7,"Siren"]]',
     }
     ,
-    84: {
+    84 : {
         name: "Miss DeMona",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB7ABB3AA7BAA5BABABAA9BB2AA4BB2ABB2ABB3ABB2AA2BB2ABAA4BB2AA3BABB3AA2BB2AA2BB3AA2BB3ABAA4BB2AA4BB3ABB2ABB5ABABABABB2AA3BB2ABABB3AA4BB2ABAA2BB9ABB13AB$"}',
@@ -1659,10 +1659,12 @@ const MAP = {
         start: '[15,7]',
         lights: '[[74,1,"WallLamp19","standardDimmed"],[43,3,"WallLamp34","lightRed"],[66,7,"WallLamp14","standard"],[100,7,"WallLamp14","standard"],[71,7,"WallLamp19","standardDimmed"],[5,7,"WallLamp19","gray"]]',
         gates: '[[2,7,"84.1","82.3","Up"]]',
+        keys: '[[102,2]]',
         triggers: '[[74,7,"RockTriggerButton",1,32]]',
         entities: '[[9,7,"DeMona"]]',
+        objects: '[[128,"Blood"]]',
         movables: '[[120,"BabyDragon"]]',
-    }
+        }
     ,
     85: {
         name: "Dungeon Police",
@@ -1720,7 +1722,7 @@ const MAP = {
         entities: '[[217,1,"MetalMaiden"]]',
     }
     ,
-    89 : {
+    89: {
         name: "Ghostess",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB3AA2BAA2BAA4BB3AA4BAA3BAA4BAA2BABABAA3BAA3BB2AA5BABAA13BB3AA3BB2AA4BB2ABB9AA2BABAA2BAA2BB3AA2BB2ABB2ABB4ABABB5ABAA4BB3AA2BB2ABABB2ABB3ABB2ABABAA4BB2AA3BAA5BB2AA3BB3AA3BAA2BB4AA2BB2ABB9ABB10ABB11AB$"}',
@@ -1732,6 +1734,21 @@ const MAP = {
         gates: '[[2,7,"89.1","87.2","Up"]]',
         triggers: '[[98,7,"RockTriggerButton",1,80]]',
         entities: '[[217,1,"Ghostess"]]',
+    }
+    ,
+    90 : {
+        name: "Red Keep",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB6AA35BAA5BABB6AA5BAA2BAA5BB3ABAA5BB3ABAA10BB2AA8BB2AA30BABABB6ABB6AA3BB2ABB2ABB4AA2BB10AA4BB16ABB2ABEBB8AA5BB3ABB6ABAA3BB9ABB11ABABB28A$ABB3"}',
+        wall: "RedBricks1",
+        floor: "WhiteTiledFloor1",
+        ceil: "MC_floor20",
+        start: '[25,7]',
+        lights: '[[147,3,"WallLamp31","standardDimmed"],[21,7,"WallLamp11","standardDimmed"],[29,7,"WallLamp11","standardDimmed"],[258,1,"WallLamp15","standardDimmed"],[268,1,"WallLamp15","standardDimmed"],[141,3,"WallLamp13","dim"],[147,5,"WallLamp13","dim"]]',
+        gates: '[[8,7,"90.1","81.4","Open"]]',
+        doors: '[93]',
+        entities: '[[141,5,"SwordGirl"],[136,5,"RedWellWoman"]]',
+        movables: '[[212,"BabySheep"]]',
         }
     ,
     999: {

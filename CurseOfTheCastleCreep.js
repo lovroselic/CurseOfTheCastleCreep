@@ -40,43 +40,52 @@ const DEBUG = {
          * current temple
          * used shrines: 
          * 
-         * excesss ekeys: 
+         * excess keys: 
          * missing keys: 
+            *  
          * items source
             * handcuffs
             * whip  
             * revolver: dominatrix (whip, handcuffs)
             * sponge
             * rubber duck
-            * RedLiquid
+            * Blood (2x): 84, 
+            * Blood (3x)
             * goldbar: Demon (dragons)
             * goldbar: 85 floor object
             * goldbar
             * LP (5): police, 
             * green gem
             * blue gem
+            * red gem:
             * dragons (5x): 82, 84
-            * candle: siren (sponge, duck)
             * ammo:
-            * gold coins (3x): 81, 
+            * gold coins (4x): 81, REdWellWoman, 
             * ribbon: metal maiden
             * hairbrush: ghostess
             * shield: rapunzel
             * sword: frogess
+            * helmet: sword girl(), 
             * fly (3x):
             * skull (3x)
-            * candle (2x)
+            * skull (5x)
+            * candle (2x): siren (sponge, duck), 
+            * sheep: (5x): 90,
          * entitites:
-             * dominatrix (whip, handcuffs) -> revolver
-             * siren (sponge, duck) -> candle
-             * NOT DONE: keyMaker (gold, gold, gold, green gem, blue gem) -> emerald Key
-             * policewoman (gun, ammo) -> LP
-             * deMona (dragons 5x) -> Gold Bar
-             * rapunzel (ribbon, hairbrush) -> shield
-             * not done: sword girl (sword, shield) -->
-             * frogess (fly 3x) -> sword
-             * metal maiden (LP. 5x) -> ribbon
-             * ghostess (skull, skull, skull, candle, candle) -> hairbrush
+                * dominatrix (whip, handcuffs) -> revolver
+                * siren (sponge, duck) -> candle
+             * NOT DONE: keyMaker (gold, gold, gold, green gem, blue gem, red gem) -> emerald Key
+                * policewoman (gun, ammo) -> LP
+                * deMona (dragons 5x) -> Gold Bar
+                * rapunzel (ribbon, hairbrush) -> shield
+                * frogess (fly 3x) -> sword
+                * metal maiden (LP. 5x) -> ribbon
+                * ghostess (skull, skull, skull, candle, candle) -> hairbrush
+                * sword girl (sword, shield) -> Helmet
+             * NOT DONE: shepardess: (sheep 5x) ->
+             * NOT DONE: wizardess: (helmet, Blood, Blood, ...) ->
+             * NOT DONE: SkullCollector (skulls 5x) ->
+             * NOT DONE: REdWellWoman (Blood (3x)) -> GOld Coin
          * rooms
             * 81 guard
             * 82 dominatrix 
@@ -87,10 +96,11 @@ const DEBUG = {
             * 87 frogess
             * 88 metal maiden
             * 89 ghostess
+            * 90 red keep (sword girl)
 
          */
 
-        GAME.level = 89;    //81, //82 //86 //87
+        GAME.level = 84;    //81, //82 //86 //87 //cont 90
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -122,14 +132,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Skull", "Skull", "Skull", "Candle", "Candle"];
+        let invItems = ["Sword", "Shield", "Blood","Blood","Blood"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = [];
+        let keys = ["Red"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -163,7 +173,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.05",
+    VERSION: "0.15.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

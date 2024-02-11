@@ -311,6 +311,7 @@ LoadTextures = [
     { srcName: "Rat_color.jpg", name: "RatTexture" },
     { srcName: "Lizard_baseColor.jpg", name: "LizardTexture" },
     { srcName: "mushroom_baseColor.jpg", name: "MushroomTexture" },
+    { srcName: "IronTexture.jpg", name: "IronTexture" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -473,12 +474,15 @@ LoadSprites = [
     { srcName: "SwordGirl.jpg", name: "SwordGirl" },
     { srcName: "SnakeGirl.jpg", name: "SnakeGirl" },
     { srcName: "RedWellWoman.jpg", name: "RedWellWoman" },
+    { srcName: "Croucher2.jpg", name: "SkullCollector" },
+    { srcName: "AnotherWitch.jpg", name: "AnotherWitch" },
+    { srcName: "KeyMaker.jpg", name: "Locksmithstress" },
+
     //unused
 
 
-    { srcName: "Croucher2.jpg", name: "SkullCollector" },
+
     { srcName: "Shepardess.jpg", name: "Shepardess" },
-    { srcName: "KeyMaker.jpg", name: "KeyMaker" },
 
 
 
@@ -536,6 +540,10 @@ LoadSprites = [
     { srcName: "Ribbon.png", name: "Ribbon" },
     { srcName: "HairBrush.png", name: "HairBrush" },
     { srcName: "Helmet.png", name: "Helmet" },
+    { srcName: "IronBar.png", name: "IronBar" },
+
+    { srcName: "Emerald.png", name: "Emerald" },
+    { srcName: "Diamond.png", name: "Diamond" },
 
 
     //action movables

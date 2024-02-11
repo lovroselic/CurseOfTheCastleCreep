@@ -60,7 +60,7 @@ const DEBUG = {
             * red gem:
             * dragons (5x): 82, 84
             * ammo:
-            * gold coins (4x): 81, REdWellWoman, 
+            * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90)
             * ribbon: metal maiden
             * hairbrush: ghostess
             * shield: rapunzel
@@ -70,11 +70,15 @@ const DEBUG = {
             * skull (3x)
             * skull (5x)
             * candle (2x): siren (sponge, duck), 
-            * sheep: (5x): 90,
+            * sheep: (5x): 90,81, 88, 
+            * diamond
+            * emerald 
+            * iron bar (3x)
          * entitites:
                 * dominatrix (whip, handcuffs) -> revolver
                 * siren (sponge, duck) -> candle
-             * NOT DONE: keyMaker (gold, gold, gold, green gem, blue gem, red gem) -> emerald Key
+                * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) -> emerald Key
+            * NOT DONE Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) -> emerald Key
                 * policewoman (gun, ammo) -> LP
                 * deMona (dragons 5x) -> Gold Bar
                 * rapunzel (ribbon, hairbrush) -> shield
@@ -82,10 +86,10 @@ const DEBUG = {
                 * metal maiden (LP. 5x) -> ribbon
                 * ghostess (skull, skull, skull, candle, candle) -> hairbrush
                 * sword girl (sword, shield) -> Helmet
-             * NOT DONE: shepardess: (sheep 5x) ->
-             * NOT DONE: wizardess: (helmet, Blood, Blood, ...) ->
-             * NOT DONE: SkullCollector (skulls 5x) ->
-             * NOT DONE: REdWellWoman (Blood (3x)) -> GOld Coin
+             * NOT DONE: shepardess: (sheep 5x) -> diamond
+             * NOT DONE: wizardess: (helmet, Blood, Blood) -> emerald
+                * SkullCollector (skulls 5x) -> Gold Coin
+                * RedWellWoman (Blood (3x)) -> GOld Coin
          * rooms
             * 81 guard
             * 82 dominatrix 
@@ -96,11 +100,12 @@ const DEBUG = {
             * 87 frogess
             * 88 metal maiden
             * 89 ghostess
-            * 90 red keep (sword girl)
+            * 90 red keep (sword girl, redwell woman, SkullCollector)
+            * 91 Locksmithstress (L1, L2)
 
          */
 
-        GAME.level = 84;    //81, //82 //86 //87 //cont 90
+        GAME.level = 91;    //81, //82 //86 //87 //cont 90
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -132,14 +137,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sword", "Shield", "Blood","Blood","Blood"];
+        let invItems = ["GoldBar", "GoldBar", "GoldBar", "RedGem", "BlueGem", "GreenGem"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Red"];
+        let keys = ["Red", "Green"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -173,7 +178,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.06",
+    VERSION: "0.15.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

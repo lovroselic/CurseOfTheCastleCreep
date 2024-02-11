@@ -1603,7 +1603,7 @@ const MAP = {
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
     }
     ,
-    81 : {
+    81: {
         name: "Guard Room",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB5AA4BB2AA3BABB3AA60BB3AA9BAA3BAA5BAA25BAA35BB9AA13BB14AA2BAA2BB26AA8BAA4BB3AA3BAA2BABAA4BB29A$"}',
@@ -1613,11 +1613,13 @@ const MAP = {
         start: '[25,7]',
         lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
         gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"],[187,5,"81.3","86.1","Down"],[280,1,"81.4","90.1","Red"]]',
+        scrolls: '[[76,0],[148,13]]',
         shrines: '[[11,7,"Attack1_21"],[283,1,"Defense1_21"],[101,3,"Magic1_21"]]',
         objects: '[[144,"GoldCoin"]]',
         oracles: '[[286,1,"RedWoman"],[5,7,"Croucher"]]',
-        trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"],[203,3,"SnakeGirl"]]',
-        }
+        movables: '[[212,"BabySheep"]]',
+        trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"],[203,3,"SnakeGirl"],[85,5,"AnotherWitch"]]',
+    }
     ,
     82: {
         name: "Dominatrix",
@@ -1649,7 +1651,7 @@ const MAP = {
         entities: '[[8,7,"Siren"]]',
     }
     ,
-    84 : {
+    84: {
         name: "Miss DeMona",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB7ABB3AA7BAA5BABABAA9BB2AA4BB2ABB2ABB3ABB2AA2BB2ABAA4BB2AA3BABB3AA2BB2AA2BB3AA2BB3ABAA4BB2AA4BB3ABB2ABB5ABABABABB2AA3BB2ABABB3AA4BB2ABAA2BB9ABB13AB$"}',
@@ -1664,7 +1666,7 @@ const MAP = {
         entities: '[[9,7,"DeMona"]]',
         objects: '[[128,"Blood"]]',
         movables: '[[120,"BabyDragon"]]',
-        }
+    }
     ,
     85: {
         name: "Dungeon Police",
@@ -1719,7 +1721,9 @@ const MAP = {
         start: '[37,7]',
         lights: '[[82,1,"WallLamp33","standardDimmed"],[127,7,"WallLamp33","standardDimmed"],[1,7,"WallLamp20","standard"],[13,7,"WallLamp20","standard"],[212,1,"WallLamp35","lightRed"],[222,1,"WallLamp35","lightRed"]]',
         gates: '[[7,7,"88.1","86.3","Up"]]',
+        keys: '[[34,3]]',
         entities: '[[217,1,"MetalMaiden"]]',
+        movables: '[[205,"BabySheep"]]',
     }
     ,
     89: {
@@ -1736,7 +1740,7 @@ const MAP = {
         entities: '[[217,1,"Ghostess"]]',
     }
     ,
-    90 : {
+    90: {
         name: "Red Keep",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB6AA35BAA5BABB6AA5BAA2BAA5BB3ABAA5BB3ABAA10BB2AA8BB2AA30BABABB6ABB6AA3BB2ABB2ABB4AA2BB10AA4BB16ABB2ABEBB8AA5BB3ABB6ABAA3BB9ABB11ABABB28A$ABB3"}',
@@ -1744,11 +1748,25 @@ const MAP = {
         floor: "WhiteTiledFloor1",
         ceil: "MC_floor20",
         start: '[25,7]',
-        lights: '[[147,3,"WallLamp31","standardDimmed"],[21,7,"WallLamp11","standardDimmed"],[29,7,"WallLamp11","standardDimmed"],[258,1,"WallLamp15","standardDimmed"],[268,1,"WallLamp15","standardDimmed"],[141,3,"WallLamp13","dim"],[147,5,"WallLamp13","dim"]]',
-        gates: '[[8,7,"90.1","81.4","Open"]]',
+        lights: '[[147,3,"WallLamp31","dim"],[21,7,"WallLamp11","standardDimmed"],[29,7,"WallLamp11","standardDimmed"],[258,1,"WallLamp15","standardDimmed"],[268,1,"WallLamp15","standardDimmed"],[141,3,"WallLamp13","dim"],[147,5,"WallLamp13","dim"]]',
+        gates: '[[8,7,"90.1","81.4","Open"],[280,1,"90.2","91.1","Green"]]',
         doors: '[93]',
-        entities: '[[141,5,"SwordGirl"],[136,5,"RedWellWoman"]]',
+        entities: '[[141,5,"SwordGirl"],[136,5,"RedWellWoman"],[152,3,"SkullCollector"]]',
         movables: '[[212,"BabySheep"]]',
+    }
+    ,
+    91 : {
+        name: "Locksmithstress",
+        sg: 0,
+        data: '{"width":"17","height":"11","map":"BB3AA2EBB3AA2BB5ABB9AA5EAA15BAA12BB4AA6BB2AA5BAA2BB7ABB5ABB3ABB12AA2BB4ABABB8ABABB4AA4BB2AA4BABABB5ABAA3BB26A$AA2"}',
+        wall: "DarkWall12",
+        floor: "StoneFloorTiles2",
+        ceil: "DarkShinyWall",
+        start: '[25,7]',
+        lights: '[[93,3,"WallLamp11","standard"],[93,5,"WallLamp15","standard"],[93,1,"WallLamp18","standardDimmed"],[93,7,"WallLamp13","standardDimmed"]]',
+        gates: '[[8,7,"91.1","90.2","Open"]]',
+        doors: '[90,96]',
+        entities: '[[85,5,"Locksmithstress"]]',
         }
     ,
     999: {

@@ -1654,6 +1654,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "I should store some gold in the bag. Who knows ..."
     },
+    IronBar: {
+        name: "IronBar",
+        category: "interaction_item",
+        element: "BAR",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "IronTexture",
+        inventorySprite: "IronBar",
+        material: MATERIAL.standard,
+        text: "Iron? I can make something from it."
+    },
     IceCube: {
         name: "IceCube",
         category: "interaction_item",
@@ -2094,6 +2105,24 @@ const INTERACTION_ITEM = {
         name: "Helmet",
         category: "interaction_item",
         inventorySprite: "Helmet",
+    },
+    IronBar: {
+        name: "IronBar",
+        category: "interaction_item",
+        inventorySprite: "IronBar",
+        text: "Iron? I can make something from it."
+    },
+    Emerald: {
+        name: "Emerald",
+        category: "interaction_item",
+        inventorySprite: "Emerald",
+        text: "Emerald? I can make something from it."
+    },
+    Diamond: {
+        name: "Diamond",
+        category: "interaction_item",
+        inventorySprite: "Diamond",
+        text: "Diamond? My best friend."
     },
 };
 
@@ -2696,6 +2725,32 @@ const INTERACTION_ENTITY = {
             conclusion: "Your task complete, with red in hand, a gold coin for you, as was planned.",
         }
     },
+    SkullCollector: {
+        name: "SkullCollector",
+        sprite: "SkullCollector",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Skull", "Skull", "Skull", "Skull", "Skull"],
+        gives: "GoldCoin",
+        text: {
+            intro: "In shadows lurk, a collector's plea, skulls she seeks, from you and me.",
+            progress: "Her collection grows, yet still she waits, for more to come, through darkened gates.",
+            conclusion: "With skulls in tow, her smile gleams, a gold coin yours, in moonlight beams.",
+        }
+    },
+    Locksmithstress: {
+        name: "Locksmithstress",
+        sprite: "Locksmithstress",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldBar", "GoldBar", "GoldBar", "RedGem", "BlueGem", "GreenGem"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "In keys and locks, my skills supreme, Gold and gems to fulfill my dream.",
+            progress: "More treasures sought to forge the link, How close are we? What do you think?",
+            conclusion: "With gold and gems now in my stash, An Emerald Key for you, to dash."
+        }
+    },
     /**
      * NA::  
      */
@@ -2831,6 +2886,19 @@ const INTERACTION_SHRINE = {
             intro: "Slithering grace, defense to weave, a gold coin offered, lessons you'll receive.",
             progress: null,
             conclusion: "Coin now mine, your training's begun, in defense arts, you'll second to none."
+        }
+    },
+    AnotherWitch: {
+        name: "AnotherWitch",
+        sprite: "AnotherWitch",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "MagicSkill",
+        text: {
+            intro: "A witch in shadows, magic's host, seeks gold coin for her arcane boast.",
+            progress: null,
+            conclusion: "Gold coin given, the pact is sealed, arcane secrets to you revealed."
         }
     },
 };

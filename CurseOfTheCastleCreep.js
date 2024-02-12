@@ -71,8 +71,8 @@ const DEBUG = {
             * skull (5x)
             * candle (2x): siren (sponge, duck), 
             * sheep: (5x): 90,81, 88, 
-            * diamond
-            * emerald 
+            * diamond: shepardess
+            * emerald: 
             * iron bar (3x)
          * entitites:
                 * dominatrix (whip, handcuffs) -> revolver
@@ -86,8 +86,8 @@ const DEBUG = {
                 * metal maiden (LP. 5x) -> ribbon
                 * ghostess (skull, skull, skull, candle, candle) -> hairbrush
                 * sword girl (sword, shield) -> Helmet
-             * NOT DONE: shepardess: (sheep 5x) -> diamond
-             * NOT DONE: wizardess: (helmet, Blood, Blood) -> emerald
+                * shepardess: (sheep 5x) -> diamond
+            * NOT DONE: ForestWitch: (helmet, Blood, Blood) -> emerald
                 * SkullCollector (skulls 5x) -> Gold Coin
                 * RedWellWoman (Blood (3x)) -> GOld Coin
          * rooms
@@ -102,10 +102,12 @@ const DEBUG = {
             * 89 ghostess
             * 90 red keep (sword girl, redwell woman, SkullCollector)
             * 91 Locksmithstress (L1, L2)
+            * 92 shepardess:
+            * 93 wizardess:
 
          */
 
-        GAME.level = 91;    //81, //82 //86 //87 //cont 90
+        GAME.level = 93;    //81, //82 //86 //87 //cont 90 //91
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -137,7 +139,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldBar", "GoldBar", "GoldBar", "RedGem", "BlueGem", "GreenGem"];
+        let invItems = ["Sheep", "Sheep", "Sheep", "Sheep", "Sheep"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -178,7 +180,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.07",
+    VERSION: "0.15.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

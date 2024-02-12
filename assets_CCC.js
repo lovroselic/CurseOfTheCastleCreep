@@ -477,12 +477,13 @@ LoadSprites = [
     { srcName: "Croucher2.jpg", name: "SkullCollector" },
     { srcName: "AnotherWitch.jpg", name: "AnotherWitch" },
     { srcName: "KeyMaker.jpg", name: "Locksmithstress" },
+    { srcName: "Shepardess.jpg", name: "Shepardess" },
 
     //unused
+    { srcName: "ForestWitch.jpg", name: "ForestWitch" },
 
 
 
-    { srcName: "Shepardess.jpg", name: "Shepardess" },
 
 
 

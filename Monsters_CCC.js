@@ -2751,6 +2751,21 @@ const INTERACTION_ENTITY = {
             conclusion: "With gold and gems now in my stash, An Emerald Key for you, to dash."
         }
     },
+    Shepardess: {
+        name: "Shepardess",
+        sprite: "Shepardess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Sheep", "Sheep", "Sheep", "Sheep", "Sheep"],
+        gives: "Diamond",
+        text: {
+            intro: "Lost in meadows, my sheep, my care, Find them please, this task I dare.",
+            progress: "Some sheep found, but more remain, In fields afar, 'neath sun and rain.",
+            conclusion: "All my sheep, safe and sound, For you, a diamond, as promised, profound."
+        }
+    },
+
+
     /**
      * NA::  
      */

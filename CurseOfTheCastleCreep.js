@@ -49,14 +49,14 @@ const DEBUG = {
             * revolver: dominatrix (whip, handcuffs)
             * sponge
             * rubber duck
-            * Blood (2x): 84, 
-            * Blood (3x)
+            * Poison (2x): 84, 
+            * Blood (3x): 84, 
             * goldbar: Demon (dragons)
             * goldbar: 85 floor object
             * goldbar
             * LP (5): police, 
             * green gem
-            * blue gem
+            * blue gem (2x)
             * red gem:
             * dragons (5x): 82, 84
             * ammo:
@@ -78,7 +78,7 @@ const DEBUG = {
                 * dominatrix (whip, handcuffs) -> revolver
                 * siren (sponge, duck) -> candle
                 * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) -> emerald Key
-            * NOT DONE Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) -> emerald Key
+                * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) -> emerald Key
                 * policewoman (gun, ammo) -> LP
                 * deMona (dragons 5x) -> Gold Bar
                 * rapunzel (ribbon, hairbrush) -> shield
@@ -87,7 +87,7 @@ const DEBUG = {
                 * ghostess (skull, skull, skull, candle, candle) -> hairbrush
                 * sword girl (sword, shield) -> Helmet
                 * shepardess: (sheep 5x) -> diamond
-            * NOT DONE: ForestWitch: (helmet, Blood, Blood) -> emerald
+                * ForestWitch: (helmet, poison, poison,BlueGem) -> emerald
                 * SkullCollector (skulls 5x) -> Gold Coin
                 * RedWellWoman (Blood (3x)) -> GOld Coin
          * rooms
@@ -103,11 +103,11 @@ const DEBUG = {
             * 90 red keep (sword girl, redwell woman, SkullCollector)
             * 91 Locksmithstress (L1, L2)
             * 92 shepardess:
-            * 93 wizardess:
+            * 93 ForestWitch:
 
          */
 
-        GAME.level = 93;    //81, //82 //86 //87 //cont 90 //91
+        GAME.level = 81;    //81, //82 //86 //87 //cont 90 //91
         GAME.gold = 172;
         HERO.maxHealth = 155;
         HERO.maxMana = 212;
@@ -139,7 +139,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "Sheep", "Sheep", "Sheep", "Sheep"];
+        let invItems = ["IronBar", "IronBar", "IronBar", "Emerald", "Diamond"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -180,7 +180,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.15.08",
+    VERSION: "0.16.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

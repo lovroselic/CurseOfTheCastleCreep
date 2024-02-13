@@ -662,6 +662,30 @@ const ORACLE_TYPE = {
         text: "Did you notice that praying has just gotten more expensive?",
         interactionCategory: "oracle",
     },
+    WitchOracle1: {
+        name: "WitchOracle1",
+        sprite: "WitchOracle1",
+        category: 'crest',
+        voice: "Female",
+        text: "Helmets look like little cauldrons, right?",
+        interactionCategory: "oracle",
+    },
+    WitchOracle2: {
+        name: "WitchOracle2",
+        sprite: "WitchOracle2",
+        category: 'crest',
+        voice: "Female",
+        text: "Poisons are so green, don't you think?",
+        interactionCategory: "oracle",
+    },
+    KeyOracle: {
+        name: "KeyOracle",
+        sprite: "KeyOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "From some metal bars, and some precious gems, keys can be forged.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -2051,12 +2075,6 @@ const INTERACTION_ITEM = {
         inventorySprite: "RubberDuck",
         text: "One should never bath alone."
     },
-    /*RedLiquid: {
-        name: "RedLiquid",
-        category: "interaction_item",
-        inventorySprite: "RedPotion24",
-        text: "Disgusting. Give it to someone else."
-    },*/
     Candle: {
         name: "Candle",
         category: "interaction_item",
@@ -2764,10 +2782,36 @@ const INTERACTION_ENTITY = {
             conclusion: "All my sheep, safe and sound, For you, a diamond, as promised, profound."
         }
     },
-
-
+    ForestWitch: {
+        name: "ForestWitch",
+        sprite: "ForestWitch",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Helmet", "Poison", "Poison", "BlueGem"],
+        gives: "Emerald",
+        text: {
+            intro: "In the forest deep, a potion to brew, Needs of green hue, and a cauldron too.",
+            progress: "Ingredients gather, my brew starts to bubble, Still something's missing, on the double.",
+            conclusion: "Potion complete, with cauldron and gem, An emerald for you, from the forest's hem."
+        }
+    },
+    Locksmithstress2: {
+        name: "Locksmithstress2",
+        sprite: "Locksmithstress2",
+        category: 'crest',
+        voice: "Female",
+        wants: ["IronBar", "IronBar", "IronBar", "Emerald", "Diamond"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "With iron's strength and gems so fine, A key I'll forge, both tough and divine.",
+            progress: "The forge burns bright, your task's halfway, More materials needed, without delay.",
+            conclusion: "All combined, with skill and flair, Your Emerald Key, crafted with care."
+        }
+    },
+    
     /**
      * NA::  
+
      */
 
 };

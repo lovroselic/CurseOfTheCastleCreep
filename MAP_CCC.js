@@ -321,10 +321,10 @@ const MAP = {
         shrines: '[[2,7,"Attack1_3"],[5,7,"Defense1_3"],[8,7,"Magic1_3"]]',
     }
     ,
-    17: {
+    17 : {
         name: "Pretty Bunny",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB3EAA2BAA2BB2ABAA2BB2ABB5AA6BABAA14ÁAA11BABÁBB2AA5BAA7BAA12ÁAA3ÁAA2BB4AÁAA8EBB12AA4BB5ABB13ABB7ABAA2BABB2ABB2AA3BB2AA3BB8EBABB2ABB5QBB3ABB6EABB17$AA2BB2AA2BB3AA4BB3ÁAA2ÁÁ5AÁÁ6BB2"}',
+        data: '{"width":"16","height":"16","map":"BB3EAA2BAA2BABAA2BB2ABB5AA5BABAA13ÁAA10BABÁBB2AA5BAA7BAA3BAA3BB2AA5ÁAA3ÁAA2BB4AÁAA8EBB11AA4BB5AA3BB13ABB8ABAA2BABB2ABAA3BB2AA3BB8EBB2ABB2ABB5QBB2ABB6EABB18$AA2BB2AA2BB3AA4BB3ÁAA2ÁÁ5AÁÁ6BB2"}',
         wall: "MossWall14",
         floor: "DarkMarble3",
         ceil: "MossyWall",
@@ -342,7 +342,7 @@ const MAP = {
         triggers: '[[13,7,"RockTriggerButton",0,74],[105,5,"RockTriggerButton",0,72],[78,3,"RockTriggerButton",0,73],[119,1,"RockTriggerButton",0,87],[197,1,"RockTriggerButton",0,55]]',
         entities: '[[3,7,"PrettyBunny"]]',
         traps: '[[75,4,"RockTriggerButton",0,"Fireball",77]]',
-    }
+        }
     ,
     18: {
         name: "Sassy Squirell",
@@ -1603,7 +1603,7 @@ const MAP = {
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
     }
     ,
-    81: {
+    81 : {
         name: "Guard Room",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB5AA4BB2AA3BABB3AA60BB3AA9BAA3BAA5BAA25BAA35BB9AA13BB14AA2BAA2BB26AA8BAA4BB3AA3BAA2BABAA4BB29A$"}',
@@ -1611,6 +1611,7 @@ const MAP = {
         floor: "StoneFloorTiles2",
         ceil: "BrownMC_ceiling",
         start: '[25,7]',
+        decals: '[[34,5,"DungeonDoor_Blocked","crest"],[238,5,"DungeonDoor_Blocked","crest"],[277,1,"DungeonDoor_Blocked","crest"],[50,3,"DungeonDoor_Blocked","crest"],[254,3,"DungeonDoor_Blocked","crest"]]',
         lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
         gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"],[187,5,"81.3","86.1","Down"],[280,1,"81.4","90.1","Red"]]',
         scrolls: '[[76,0],[148,13]]',
@@ -1619,7 +1620,7 @@ const MAP = {
         oracles: '[[286,1,"RedWoman"],[5,7,"Croucher"]]',
         movables: '[[212,"BabySheep"]]',
         trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"],[203,3,"SnakeGirl"],[85,5,"AnotherWitch"]]',
-    }
+        }
     ,
     82: {
         name: "Dominatrix",
@@ -1740,10 +1741,10 @@ const MAP = {
         entities: '[[217,1,"Ghostess"]]',
     }
     ,
-    90: {
+    90 : {
         name: "Red Keep",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB4ABABAA35BAA5BABB5AA2BAA3BAA2BAA5BB2AA2BAA2BAA2BB3ABAA10BB2AA8BB2AA30BABABB6ABB6AA3BB2ABB2ABB4AA2BB10AA4BB12ABB2AA2BB2ABEBB7AA2BABB3ABB6ABAA3BB9ABB11ABABB28A$ABB3"}',
+        data: '{"width":"17","height":"17","map":"BB3AA2BB2AA2BAA35BAA5BABB5AA4BABAA2BAA5BB2AA3BAA2BABB3ABAA10BB2AA8BB2AA30BABABB6ABB6AA3BB2ABB2ABB4AA2BB10AA4BB11AA2BB2AA3BABEBB8ABB3ABB6ABAA3BB9ABB11ABABB28A$ABB3"}',
         wall: "RedBricks1",
         floor: "WhiteTiledFloor1",
         ceil: "MC_floor20",
@@ -1752,10 +1753,11 @@ const MAP = {
         gates: '[[8,7,"90.1","81.4","Open"],[280,1,"90.2","91.1","Green"],[221,5,"90.3","92.1","Up"],[67,3,"90.4","93.1","Up"]]',
         doors: '[93]',
         entities: '[[141,5,"SwordGirl"],[136,5,"RedWellWoman"],[152,3,"SkullCollector"]]',
+        oracles: '[[51,5,"KeyOracle"]]',
         movables: '[[212,"BabySheep"]]',
-    }
+        }
     ,
-    91: {
+    91 : {
         name: "Locksmithstress",
         sg: 0,
         data: '{"width":"17","height":"11","map":"BB3AA2EBB3AA2BB5ABB9AA5EAA15BAA12BB4AA6BB2AA5BAA2BB7ABB5ABB3ABB12AA2BB4ABABB8ABABB4AA4BB2AA4BABABB5ABAA3BB26A$AA2"}',
@@ -1766,8 +1768,8 @@ const MAP = {
         lights: '[[93,3,"WallLamp11","standard"],[93,5,"WallLamp15","standard"],[93,1,"WallLamp18","standardDimmed"],[93,7,"WallLamp13","standardDimmed"]]',
         gates: '[[8,7,"91.1","90.2","Open"]]',
         doors: '[90,96]',
-        entities: '[[85,5,"Locksmithstress"]]',
-    }
+        entities: '[[85,5,"Locksmithstress"],[101,3,"Locksmithstress2"]]',
+        }
     ,
     92: {
         name: "Shepardess",
@@ -1784,16 +1786,19 @@ const MAP = {
     }
     ,
     93 : {
-        name: "Wizardess",
+        name: "Forest Witches",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB2ABB2AA2BAA2BB4ABAA2BAA8BB2AA3BB2AA4BABB2AA4BAA4BAA5BAA2BB3AA4BAA4BB2ABB4AA2BB3AA2BB2ABAA2BB3AA3BB2ABAA2BB4ABB2AA5BB4ABAA6BABB2ABB2AA4BB3AA3BABB4ABB4AA2BB3AA2BAA2BAA2BB2ABABABB4AA4BB2AA2BABB4ABB6ABABB2ABB6AA2BAA3BB2ABABABB3AA7BB2ABB10AA2BABB2ABAA2BB2ABB2ABB21ABB2$"}',
+        data: '{"width":"17","height":"17","map":"BB2AA2BB3ABB2ABB3AA2BAA5BAA3BAA3BB3AA2BAA2BB2AA2BB2AA3BAA2BAA2BAA6BAA4BABAA7BABABAA2BB3AA9BABAA2BAA2BB2AA3BAA2BB7ABB5AA4BAA2BB2AA3BB4AA3BB3ABB2ABB6ABB4AA2BB6ABB2ABB4AA2BABABB4AA2BABB2ABB3AA2BB4ABABB3ABB2AA2BB3ABABABB5AA7BAA6BB3ABB3ABABB3ABABB15ABB15AB$"}',
         wall: "SmallBricks5",
         floor: "RedBrickFloor1",
         ceil: "BrownBricks36",
         start: '[52,5]',
-        lights: '[[60,5,"WallLamp12","standardDimmed"],[60,3,"WallLamp9","standard"]]',
+        decals: '[[41,3,"Skull21","crest"],[75,3,"Skull20","crest"]]',
+        lights: '[[60,5,"WallLamp12","standardDimmed"],[60,3,"WallLamp9","standard"],[206,1,"WallLamp33","standardDimmed"],[248,5,"WallLamp33","standardDimmed"],[176,5,"WallLamp33","standardDimmed"],[147,3,"WallLamp9","standardDimmed"]]',
         gates: '[[51,5,"93.1","90.4","Down"]]',
         triggers: '[[43,5,"RockTriggerButton",1,77]]',
+        entities: '[[67,3,"ForestWitch"]]',
+        oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
         }
     ,
     999: {

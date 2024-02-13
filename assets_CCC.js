@@ -402,7 +402,7 @@ LoadSprites = [
     // frescoes - entities
     { srcName: "BlackWidow2.jpg", name: "BlackWidow" },
     { srcName: "HedgeHog.jpg", name: "HedgeHog" },
-    { srcName: "PrettyBunny2.jpg", name: "PrettyBunny" },
+    { srcName: "PrettyBunny.jpg", name: "PrettyBunny" },
     { srcName: "DemonGirl3.jpg", name: "DemonGirl" },
     { srcName: "Squirrel3.jpg", name: "Squirell" },
     { srcName: "Devilla.jpg", name: "Devilla" },
@@ -478,9 +478,13 @@ LoadSprites = [
     { srcName: "AnotherWitch.jpg", name: "AnotherWitch" },
     { srcName: "KeyMaker.jpg", name: "Locksmithstress" },
     { srcName: "Shepardess.jpg", name: "Shepardess" },
-
-    //unused
     { srcName: "ForestWitch.jpg", name: "ForestWitch" },
+    { srcName: "Locksmithstress2.jpg", name: "Locksmithstress2" },
+    { srcName: "WitchOracle1.jpg", name: "WitchOracle1" },
+    { srcName: "WitchOracle2.jpg", name: "WitchOracle2" },
+    { srcName: "KeyOracle.jpg", name: "KeyOracle" },
+    //unused
+
 
 
 

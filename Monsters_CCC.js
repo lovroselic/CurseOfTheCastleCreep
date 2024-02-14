@@ -1550,6 +1550,26 @@ const MONSTER_TYPE = {
         moveSpeed: 1.1,
         material: MATERIAL.gold,
     },
+    AngrySheep: {
+        name: "AngrySheep",
+        model: "Sheep",
+        scale: 1.5 / 2 ** 9,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 100,
+        defense: 0,
+        magic: 0,
+        health: 60,
+        xp: 30,
+        gold: 1,
+        attackSound: "Sheep",
+        hurtSound: "PainSqueek",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standard,
+    },
 };
 
 const HERO_TYPE = {
@@ -2079,7 +2099,7 @@ const INTERACTION_ITEM = {
         name: "Candle",
         category: "interaction_item",
         inventorySprite: "Candle",
-        text: "Common baby ligh my fire."
+        text: "Common baby light my fire."
     },
     Ammo: {
         name: "Ammo",

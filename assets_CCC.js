@@ -359,6 +359,7 @@ LoadAudio = [
     { srcName: "thud.mp3", name: "Thud" },
     { srcName: "Fuse.mp3", name: "Fuse" },
     { srcName: "AngryCat.mp3", name: "AngryCat" },
+    { srcName: "Sheep.mp3", name: "Sheep" },
 
     //monstersounds
     { srcName: "MonsterDeath.mp3", name: "MonsterDeath" },
@@ -400,10 +401,10 @@ LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.g
 
 LoadSprites = [
     // frescoes - entities
-    { srcName: "BlackWidow2.jpg", name: "BlackWidow" },
+    { srcName: "BlackWidow.jpg", name: "BlackWidow" },
     { srcName: "HedgeHog.jpg", name: "HedgeHog" },
     { srcName: "PrettyBunny.jpg", name: "PrettyBunny" },
-    { srcName: "DemonGirl3.jpg", name: "DemonGirl" },
+    { srcName: "DemonGirl.jpg", name: "DemonGirl" },
     { srcName: "Squirrel3.jpg", name: "Squirell" },
     { srcName: "Devilla.jpg", name: "Devilla" },
     { srcName: "FemaleKnight.jpg", name: "FemaleKnight" },
@@ -484,11 +485,7 @@ LoadSprites = [
     { srcName: "WitchOracle2.jpg", name: "WitchOracle2" },
     { srcName: "KeyOracle.jpg", name: "KeyOracle" },
     //unused
-
-
-
-
-
+    { srcName: "RealSpiderGirl.jpg", name: "RealSpiderGirl" },
 
 
 

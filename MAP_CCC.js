@@ -122,7 +122,7 @@ const MAP = {
     7: {
         name: "West Tower - Black Widow",
         sg: 0,
-        data: '{"width":"20","height":"20","map":"BB3AA8EAA5BB4AEÁÁ2AA32BAA8BB5AA2BB2AQBEBB2ABB2ÁÁ3AA2BÁABAA2BB2AA2BB2AA16BAA6EABAA4BAA2BAA8BAA9BAA7BAA8BAA2BAA12BB4AA2BABB3ABABB2ABB2ÁBB6AA2BAA2BABB4AA2EABB2ABB3ABABB7ABB3ABAA2BB10ABB2AA2BABB2ABB4EBB7ABB7ABB4ABB12EBB15$AA2BB10ABB2ABB12ABB6AA4BB3AA3ÁAA2ÁÁ22BÁÁ2AA2"}',
+        data: '{"width":"20","height":"20","map":"BB3AA6EAA5BB4AEÁÁ2AA32BAA8BB5AA2BB2ABEBB2AQBB2ÁÁ3AA2BÁABAA2BB2AA2BB2AA16BAA6EABAA4BAA2BAA8BAA8BAA8BAA8BAA2BAA12BB4AA2BABB3ABABB2ABB2ÁBB6AA2BAA2BABB5AEABB2ABB3ABABB7ABB2ABABAA2BB10ABB2AA2BABB2ABB4EBB7ABB7ABB4ABB12EBB16A$ABB10ABB2ABB12ABB6AA4BB3AA3ÁAA2ÁÁ22BÁÁ2AA2"}',
         wall: "SpideryWall2",
         floor: "BrownishMarble",
         ceil: "BlurryScarlet",
@@ -135,7 +135,7 @@ const MAP = {
         potions: '[[318,0],[365,1],[372,1],[328,1],[329,1]]',
         gold: '[[241,"GoldCube"],[196,"GoldCube"],[274,"GoldCube"],[368,"GoldCube"],[307,"GoldCube"],[122,"SilverBar"],[135,"SilverBar"],[165,"SilverBar"]]',
         skills: '[[281,"Heart"],[361,"Mana"],[276,"Magic"]]',
-        containers: '[[283,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[363,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[22,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[29,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[61,"Barrel","SKILL_ITEM_TYPE.Magic",1],[74,"Crate","GOLD_ITEM_TYPE.SilverBar",1]]',
+        containers: '[[283,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[363,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",3],[22,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[29,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[74,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[87,"Barrel","SKILL_ITEM_TYPE.Magic",5]]',
         doors: '[335,324,124,162,175,133,108]',
         triggers: '[[313,3,"MarbleTriggerButton",0,268],[304,5,"MarbleTriggerButton",0,248],[232,4,"MarbleTriggerButton",0,188]]',
         entities: '[[40,5,"BlackWidow"]]',
@@ -267,7 +267,7 @@ const MAP = {
     14: {
         name: "Demon Girl",
         sg: 0,
-        data: '{"width":"11","height":"11","map":"BB4AA11BAA5BB3ABB2AA3BAA3BAA2BAA4BABB2AA3BB2AA5BB2AA4BB5ABB2AA2BABB2AA2BB3ABAA3BB2AA2ÁAA3BB6ABABB14A$ABB2"}',
+        data: '{"width":"11","height":"11","map":"BB4AA11BAA5BB2ABB2AA3BB2AA2BAA3BAA5BB2AA2BB2AA5BB3AA4BB5ABAA2BB2ABB2ABB4ABAA3BAA3ÁAA3BB7ABABB14AB$AB"}',
         wall: "MossyWallExcellent",
         floor: "StoneBlockPavement",
         ceil: "BeautifullWall1",
@@ -277,7 +277,7 @@ const MAP = {
         gates: '[[5,7,"14.1","13.2","Up"]]',
         monsters: '[[71,"MissWhite"],[93,"Viking"],[19,"MissGalaxyGold"]]',
         potions: '[[78,0],[86,1]]',
-        containers: '[[19,"Wardrobe","INTERACTION_ITEM.Pearl",7],[12,"Crate","GOLD_ITEM_TYPE.SilverBar",5],[100,"Crate","GOLD_ITEM_TYPE.SilverBar",5],[108,"Chest","GOLD_ITEM_TYPE.GoldBar",3]]',
+        containers: '[[19,"Wardrobe","INTERACTION_ITEM.Pearl",7],[100,"Crate","GOLD_ITEM_TYPE.SilverBar",5],[108,"Chest","GOLD_ITEM_TYPE.GoldBar",3],[25,"Crate","GOLD_ITEM_TYPE.SilverBar",1]]',
         triggers: '[[26,5,"RockTriggerButton",0,38]]',
         entities: '[[2,7,"DemonGirl"]]',
         objects: '[[104,"GreenGem"]]',
@@ -321,7 +321,7 @@ const MAP = {
         shrines: '[[2,7,"Attack1_3"],[5,7,"Defense1_3"],[8,7,"Magic1_3"]]',
     }
     ,
-    17 : {
+    17: {
         name: "Pretty Bunny",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB3EAA2BAA2BABAA2BB2ABB5AA5BABAA13ÁAA10BABÁBB2AA5BAA7BAA3BAA3BB2AA5ÁAA3ÁAA2BB4AÁAA8EBB11AA4BB5AA3BB13ABB8ABAA2BABB2ABAA3BB2AA3BB8EBB2ABB2ABB5QBB2ABB6EABB18$AA2BB2AA2BB3AA4BB3ÁAA2ÁÁ5AÁÁ6BB2"}',
@@ -342,7 +342,7 @@ const MAP = {
         triggers: '[[13,7,"RockTriggerButton",0,74],[105,5,"RockTriggerButton",0,72],[78,3,"RockTriggerButton",0,73],[119,1,"RockTriggerButton",0,87],[197,1,"RockTriggerButton",0,55]]',
         entities: '[[3,7,"PrettyBunny"]]',
         traps: '[[75,4,"RockTriggerButton",0,"Fireball",77]]',
-        }
+    }
     ,
     18: {
         name: "Sassy Squirell",
@@ -1603,7 +1603,7 @@ const MAP = {
         triggers: '[[2,7,"RockTriggerButton",1,31]]',
     }
     ,
-    81 : {
+    81: {
         name: "Guard Room",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB5AA4BB2AA3BABB3AA60BB3AA9BAA3BAA5BAA25BAA35BB9AA13BB14AA2BAA2BB26AA8BAA4BB3AA3BAA2BABAA4BB29A$"}',
@@ -1611,29 +1611,38 @@ const MAP = {
         floor: "StoneFloorTiles2",
         ceil: "BrownMC_ceiling",
         start: '[25,7]',
-        decals: '[[34,5,"DungeonDoor_Blocked","crest"],[238,5,"DungeonDoor_Blocked","crest"],[277,1,"DungeonDoor_Blocked","crest"],[50,3,"DungeonDoor_Blocked","crest"],[254,3,"DungeonDoor_Blocked","crest"]]',
+        decals: '[[34,5,"DungeonDoor_Blocked","crest"],[238,5,"DungeonDoor_Blocked","crest"],[277,1,"DungeonDoor_Blocked","crest"],[50,3,"DungeonDoor_Blocked","crest"],[254,3,"DungeonDoor_Blocked","crest"],[60,4,"Drain2_96","crest"],[96,4,"Drain2_96","crest"],[132,4,"Drain2_96","crest"],[150,4,"Drain2_96","crest"],[24,7,"TheHobbit13","picture"],[26,7,"DungeonMaster97","picture"],[110,7,"GatewayToApshai140","picture"],[178,1,"CrawlMaster130","picture"],[262,1,"ZimSalaBim2","picture"],[264,1,"KingsQuest53","picture"],[171,5,"Pitfall60","picture"],[205,5,"ImpossibleMsission111","picture"],[142,5,"FalconPatrol72","picture"],[146,3,"SirFred88","picture"],[134,3,"BlueMax11","picture"],[168,3,"Wally88","picture"],[110,3,"MontyMole51","picture"],[178,3,"Witcher111","picture"],[110,5,"SVS131","picture"],[178,5,"GatewayToApshai140","picture"],[142,1,"DM103","picture"],[146,1,"WhoDaresWins10","picture"],[142,7,"Hero52","picture"],[146,7,"Underwurlde140","picture"]]',
         lights: '[[178,7,"WallLamp10","standard"],[110,1,"WallLamp10","standard"],[142,3,"WallLamp10","standard"],[146,5,"WallLamp10","standard"]]',
         gates: '[[8,7,"81.1","60.4","Open"],[152,3,"81.2","82.1","Down"],[187,5,"81.3","86.1","Down"],[280,1,"81.4","90.1","Red"]]',
+        monsters: '[[159,"AngrySheep"],[163,"AngrySheep"]]',
         scrolls: '[[76,0],[148,13]]',
+        gold: '[[73,"GoldCube"],[139,"GoldCube"],[209,"GoldCube"],[216,"GoldCube"],[98,"GoldCube"],[47,"GoldCube"],[231,"GoldCube"]]',
+        containers: '[[35,"Chest","GOLD_ITEM_TYPE.GoldCube",5],[239,"Chest","GOLD_ITEM_TYPE.GoldCube",5],[49,"Chest","GOLD_ITEM_TYPE.GoldCube",3],[253,"Chest","GOLD_ITEM_TYPE.GoldCube",3],[260,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",1]]',
         shrines: '[[11,7,"Attack1_21"],[283,1,"Defense1_21"],[101,3,"Magic1_21"]]',
         objects: '[[144,"GoldCoin"]]',
         oracles: '[[286,1,"RedWoman"],[5,7,"Croucher"]]',
         movables: '[[212,"BabySheep"]]',
         trainers: '[[2,7,"Priestess"],[14,7,"ManaGoddess"],[274,1,"Whipper"],[136,5,"CanyonGirl"],[203,3,"SnakeGirl"],[85,5,"AnotherWitch"]]',
-        }
+    }
     ,
     82: {
         name: "Dominatrix",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB3AA2BABABB2ABABAA2BAA3BAA9BB2AA2BB2ABB2AA3BABAA3BB2AA24BAA2BB6AA4BAA2BABABB2AA2BB5AA4BB4AA4BB6ABABAA2BABB2ABAA3BAA4BAA2BB11ABABB3ABABB2AA2BABABB2AA2BB3AA2BB2ABABB3ABABB2ABABB14ABB10AB$"}',
+        data: '{"width":"15","height":"15","map":"BB2ABB2ABB2ABB2AA2BAA3BB2AA9BB2AA2BB4AA3BAA2BAA2BB2AA7EAA18BAA2BB6AA4BAA2BABABB2ABABB4AA4BB2ABAA4BB7ABABAA2BABB2ABAA3BAA4BAA2BB11ABABB3ABABB2AA2BABB3AA3BB3AA2BB2ABABB3ABABB2ABABB14ABB10AB$A"}',
         wall: "RockMossWall3",
         floor: "ScarletStoneFloor1",
         ceil: "BrownWall6",
         start: '[46,5]',
+        decals: '[[4,7,"ChuckieEgg1","picture"],[11,7,"CrystalCastles2","picture"],[54,7,"JungleHunt89","picture"],[158,7,"Hero51","picture"],[163,7,"Pitfall90","picture"],[91,7,"CrawlMaster2","picture"],[95,7,"MonkeyIsland102","picture"],[86,7,"LadyTut60","picture"],[93,1,"Vixen70","picture"],[96,1,"LadyTut102","picture"],[86,1,"Galaxians10","picture"],[53,1,"TombRaider104","picture"],[163,1,"FalconPatrol9","picture"],[202,1,"TheHobbit73","picture"],[213,1,"SirFred4","picture"],[16,5,"OReillyMine50","picture"],[22,5,"TheHobbit71","picture"],[137,5,"SammyLightfoot2","picture"],[141,5,"BladeRunner","picture"],[158,5,"AticAtac204","picture"],[52,3,"ReturnToCastleWolfenstein13","picture"],[134,3,"EricTheViking10","picture"],[185,3,"KL102","picture"],[162,3,"DM103","picture"]]',
         lights: '[[130,7,"WallLamp35","standardDimmed"],[61,5,"WallLamp19","standard"],[6,7,"WallLamp34","standardDimmed"],[43,7,"WallLamp34","standardDimmed"],[97,7,"WallLamp34","standardDimmed"],[93,7,"WallLamp34","standardDimmed"]]',
         gates: '[[45,5,"82.1","81.2","Up"],[29,3,"82.2","83.1","Closed"],[223,1,"82.3","84.1","Down"],[151,1,"82.4","85.1","Down"]]',
-        scrolls: '[[62,13]]',
+        monsters: '[[50,"Basilisk"],[26,"Rex"],[106,"Rex"],[175,"Hulk"],[197,"RedDragon"]]',
+        scrolls: '[[62,13],[80,10],[115,10],[140,3]]',
+        potions: '[[17,0],[191,0],[81,1],[199,1]]',
+        containers: '[[20,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[167,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[171,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7]]',
+        doors: '[67]',
         entities: '[[220,1,"Dominatrix"]]',
+        objects: '[[38,"Skull"],[71,"BlueGem"]]',
         oracles: '[[180,5,"SittingDomme"]]',
         movables: '[[183,"BabyDragon"]]',
     }
@@ -1646,28 +1655,39 @@ const MAP = {
         floor: "MarbleTiles1",
         ceil: "MC_floor20",
         start: '[100,5]',
+        decals: '[[63,3,"BruceLee200","picture"],[86,3,"JSW110","picture"],[92,3,"Arena200","picture"],[81,5,"RMC50","picture"],[63,5,"SP63","picture"],[72,5,"Pitfall23","picture"],[35,5,"DungeonMaster201","picture"],[63,7,"SVS100","picture"],[118,1,"EyeOfTheBeholder100","picture"],[68,1,"LSL_Eve2","picture"],[39,3,"AticAtacCrest1","crest"],[17,3,"DungeonMaster96","picture"],[22,5,"DungeonMaster96","picture"],[89,1,"HunchBack10","picture"],[98,3,"Defender110","picture"]]',
         lights: '[[63,1,"WallLamp33","standardDimmed"],[86,7,"WallLamp10","standardDimmed"],[47,7,"WallLamp31","standardDimmed"],[1,7,"WallLamp9","standardDimmed"],[5,7,"WallLamp11","standardDimmed"]]',
         gates: '[[99,5,"83.1","82.2","Open"]]',
+        monsters: '[[30,"GoldSkeleton"],[82,"RedDragon"]]',
+        potions: '[[104,0],[56,1],[40,1]]',
+        skills: '[[36,"Heart"]]',
+        containers: '[[108,"Wardrobe","INTERACTION_ITEM.Whip",3],[78,"TreasureChest","INTERACTION_ITEM.Candle",1]]',
         triggers: '[[93,7,"RockTriggerButton",1,103]]',
         entities: '[[8,7,"Siren"]]',
     }
     ,
-    84: {
+    84 : {
         name: "Miss DeMona",
         sg: 0,
-        data: '{"width":"13","height":"13","map":"BB7ABB3AA7BAA5BABABAA9BB2AA4BB2ABB2ABB3ABB2AA2BB2ABAA4BB2AA3BABB3AA2BB2AA2BB3AA2BB3ABAA4BB2AA4BB3ABB2ABB5ABABABABB2AA3BB2ABABB3AA4BB2ABAA2BB9ABB13AB$"}',
+        data: '{"width":"13","height":"13","map":"BB7ABB3AA7BAA5BABABAA9BB2AA3BABABB2ABB3ABB2AA2BB2ABAA4BAA3BABB3AA2BB2AA2BB3AA2BB3ABAA4BB2AA4BB3ABABB5ABABABABB2AA2EBABABB3AA4BABAA2BB19AB$ABB7"}',
         wall: "BrownBrick32",
         floor: "PlainRockWall",
         ceil: "BlurryFloor1",
         start: '[15,7]',
+        decals: '[[39,5,"ManicMiner64","picture"],[43,5,"SP4","picture"],[45,5,"AticAtac131","picture"],[74,5,"HoraceSki","picture"],[117,5,"LastNinja111","picture"],[145,5,"WhoDaresWins88","picture"],[109,5,"DungeonMaster100","picture"],[135,5,"Pooyan3","picture"],[58,3,"Wolfenstein70","picture"],[51,3,"Ishar11","picture"],[74,3,"BeyondForbiddenForest111","picture"],[100,3,"Hero72","picture"],[126,3,"SabreWulf11","picture"],[129,3,"FireAnt70","picture"],[103,3,"CrawlMaster115","picture"],[155,3,"Cuthbert70","picture"],[100,5,"F50","picture"],[126,5,"Barbarian111","picture"],[16,7,"DonkeyKong100","picture"],[68,7,"Witcher102","picture"],[67,1,"MonkeyIsland142","picture"],[162,1,"TempleOfApshai89","picture"],[164,1,"FF5","picture"]]',
         lights: '[[74,1,"WallLamp19","standardDimmed"],[43,3,"WallLamp34","lightRed"],[66,7,"WallLamp14","standard"],[100,7,"WallLamp14","standard"],[71,7,"WallLamp19","standardDimmed"],[5,7,"WallLamp19","gray"]]',
         gates: '[[2,7,"84.1","82.3","Up"]]',
         keys: '[[102,2]]',
+        monsters: '[[44,"Basilisk"],[92,"GoldSkeleton"],[35,"GoldSkeleton"],[139,"GoldSkeleton"],[110,"RedDragon"],[62,"RedDragon"]]',
+        scrolls: '[[79,4],[113,6]]',
+        potions: '[[151,1],[18,0]]',
+        containers: '[[154,"Barrel","GOLD_ITEM_TYPE.SilverBar",3],[144,"Wardrobe","INTERACTION_ITEM.LP",1]]',
+        doors: '[70]',
         triggers: '[[74,7,"RockTriggerButton",1,32]]',
         entities: '[[9,7,"DeMona"]]',
-        objects: '[[128,"Blood"]]',
+        objects: '[[128,"Blood"],[121,"Skull"]]',
         movables: '[[120,"BabyDragon"]]',
-    }
+        }
     ,
     85: {
         name: "Dungeon Police",
@@ -1741,7 +1761,7 @@ const MAP = {
         entities: '[[217,1,"Ghostess"]]',
     }
     ,
-    90 : {
+    90: {
         name: "Red Keep",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA2BB2AA2BAA35BAA5BABB5AA4BABAA2BAA5BB2AA3BAA2BABB3ABAA10BB2AA8BB2AA30BABABB6ABB6AA3BB2ABB2ABB4AA2BB10AA4BB11AA2BB2AA3BABEBB8ABB3ABB6ABAA3BB9ABB11ABABB28A$ABB3"}',
@@ -1755,9 +1775,9 @@ const MAP = {
         entities: '[[141,5,"SwordGirl"],[136,5,"RedWellWoman"],[152,3,"SkullCollector"]]',
         oracles: '[[51,5,"KeyOracle"]]',
         movables: '[[212,"BabySheep"]]',
-        }
+    }
     ,
-    91 : {
+    91: {
         name: "Locksmithstress",
         sg: 0,
         data: '{"width":"17","height":"11","map":"BB3AA2EBB3AA2BB5ABB9AA5EAA15BAA12BB4AA6BB2AA5BAA2BB7ABB5ABB3ABB12AA2BB4ABABB8ABABB4AA4BB2AA4BABABB5ABAA3BB26A$AA2"}',
@@ -1769,7 +1789,7 @@ const MAP = {
         gates: '[[8,7,"91.1","90.2","Open"]]',
         doors: '[90,96]',
         entities: '[[85,5,"Locksmithstress"],[101,3,"Locksmithstress2"]]',
-        }
+    }
     ,
     92: {
         name: "Shepardess",
@@ -1785,7 +1805,7 @@ const MAP = {
         entities: '[[221,5,"Shepardess"]]',
     }
     ,
-    93 : {
+    93: {
         name: "Forest Witches",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB2AA2BB3ABB2ABB3AA2BAA5BAA3BAA3BB3AA2BAA2BB2AA2BB2AA3BAA2BAA2BAA6BAA4BABAA7BABABAA2BB3AA9BABAA2BAA2BB2AA3BAA2BB7ABB5AA4BAA2BB2AA3BB4AA3BB3ABB2ABB6ABB4AA2BB6ABB2ABB4AA2BABABB4AA2BABB2ABB3AA2BB4ABABB3ABB2AA2BB3ABABABB5AA7BAA6BB3ABB3ABABB3ABABB15ABB15AB$"}',
@@ -1799,7 +1819,7 @@ const MAP = {
         triggers: '[[43,5,"RockTriggerButton",1,77]]',
         entities: '[[67,3,"ForestWitch"]]',
         oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
-        }
+    }
     ,
     999: {
         name: "Sandbox",

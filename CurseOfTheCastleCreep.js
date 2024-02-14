@@ -39,40 +39,39 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-         * 
-         * excess keys: 
-         * missing keys: 
-            *  
+            * 
+         * used trrainers;
+            * 
          * items source
             * handcuffs
-            * whip  
-            * revolver: dominatrix (whip, handcuffs)
+                * whip : 83 
+                * revolver: dominatrix (whip, handcuffs)
             * sponge
             * rubber duck
-            * Poison (2x): 84, 
+            * Poison (2x):  
             * Blood (3x): 84, 
-            * goldbar: Demon (dragons)
-            * goldbar: 85 floor object
+                * goldbar: Demon (dragons)
+                * goldbar: 85 floor object
             * goldbar
-            * LP (5): police, 
+            * LP (5): police, 84, 
             * green gem
-            * blue gem (2x)
+            * blue gem (2x): 82,
             * red gem:
             * dragons (5x): 82, 84
             * ammo:
             * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90)
-            * ribbon: metal maiden
-            * hairbrush: ghostess
-            * shield: rapunzel
-            * sword: frogess
-            * helmet: sword girl(), 
+                * ribbon: metal maiden
+                * hairbrush: ghostess
+                * shield: rapunzel
+                * sword: frogess
+                * helmet: sword girl(), 
             * fly (3x):
-            * skull (3x)
+            * skull (3x): 82, 84, 
             * skull (5x)
-            * candle (2x): siren (sponge, duck), 
+                * candle (2x): siren (sponge, duck), 83
             * sheep: (5x): 90,81, 88, 
-            * diamond: shepardess
-            * emerald: 
+                * diamond: shepardess
+                * emerald: ForestWitch
             * iron bar (3x)
          * entitites:
                 * dominatrix (whip, handcuffs) -> revolver
@@ -91,10 +90,10 @@ const DEBUG = {
                 * SkullCollector (skulls 5x) -> Gold Coin
                 * RedWellWoman (Blood (3x)) -> GOld Coin
          * rooms
-            * 81 guard
-            * 82 dominatrix 
-            * 83 bathroom
-            * 84 deMona
+                * COMPLETED: 81 guard
+                * COMPLETED: 82 dominatrix 
+                * COMPLETED: 83 bathroom
+                * COMPLETED 84 deMona
             * 85 police
             * 86 rapunzel
             * 87 frogess
@@ -107,26 +106,26 @@ const DEBUG = {
 
          */
 
-        GAME.level = 81;    //81, //82 //86 //87 //cont 90 //91
-        GAME.gold = 172;
-        HERO.maxHealth = 155;
+        GAME.level = 85;     //81, //82 //86 //87 //cont 90 //91
+        GAME.gold = 1983;
+        HERO.maxHealth = 163;
         HERO.maxMana = 212;
-        HERO.health = 155;
-        HERO.mana = 212;
-        HERO.defense = 41;
+        HERO.health = 96;
+        HERO.mana = 55;
+        HERO.defense = 42;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 41;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 41;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 2854;
-        HERO.defenseExp = 1059;
-        HERO.magicExp = 1332;
+        HERO.attackExp = 4284;
+        HERO.defenseExp = 198;
+        HERO.magicExp = 2240;
         HERO.attackExpGoal = 5783;
-        HERO.defenseExpGoal = 1142;
+        HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
-        HERO.inventory.potion.red = 0;
-        HERO.inventory.potion.blue = 0;
+        HERO.inventory.potion.red = 2;
+        HERO.inventory.potion.blue = 1;
         let scrolls = [];
         //let scrolls = [];
 
@@ -139,14 +138,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["IronBar", "IronBar", "IronBar", "Emerald", "Diamond"];
+        let invItems = ["GoldCoin", "Sheep", "BabyDragon", "BlueGem", "Skull", "Whip", "LP", "Skull", "Blood", "BabyDragon"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Red", "Green"];
+        let keys = ["Red"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -180,7 +179,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.16.00",
+    VERSION: "0.16.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

@@ -39,25 +39,25 @@ const DEBUG = {
         /**
          * current temple
          * used shrines: 
-            * 
+            * attack1
          * used trrainers;
-            * 
+            * whipper (atatck)
          * items source
-            * handcuffs
+                * handcuffs: 86
                 * whip : 83 
                 * revolver: dominatrix (whip, handcuffs)
-            * sponge
-            * rubber duck
+                * sponge: 85
+                * rubber duck: 86
             * Poison (2x):  
             * Blood (3x): 84, 
                 * goldbar: Demon (dragons)
                 * goldbar: 85 floor object
             * goldbar
-            * LP (5): police, 84, 
-            * green gem
-            * blue gem (2x): 82,
+            * LP (5): police, 84, 86,
+                * green gem: 86
+                * blue gem (2x): 82,86
             * red gem:
-            * dragons (5x): 82, 84
+            * dragons (5x): 82, 84, 86, 
             * ammo:
             * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90)
                 * ribbon: metal maiden
@@ -65,14 +65,14 @@ const DEBUG = {
                 * shield: rapunzel
                 * sword: frogess
                 * helmet: sword girl(), 
-            * fly (3x):
-            * skull (3x): 82, 84, 
-            * skull (5x)
+            * fly (3x): 85,
+                * skull (3x): 82, 84, 85
+            * skull (5x):
                 * candle (2x): siren (sponge, duck), 83
-            * sheep: (5x): 90,81, 88, 
+            * sheep: (5x): 90,81, 88, 86,
                 * diamond: shepardess
                 * emerald: ForestWitch
-            * iron bar (3x)
+            * iron bar (3x): 85, 
          * entitites:
                 * dominatrix (whip, handcuffs) -> revolver
                 * siren (sponge, duck) -> candle
@@ -94,7 +94,7 @@ const DEBUG = {
                 * COMPLETED: 82 dominatrix 
                 * COMPLETED: 83 bathroom
                 * COMPLETED 84 deMona
-            * 85 police
+                * COMPLETED: 85 police
             * 86 rapunzel
             * 87 frogess
             * 88 metal maiden
@@ -103,30 +103,35 @@ const DEBUG = {
             * 91 Locksmithstress (L1, L2)
             * 92 shepardess:
             * 93 ForestWitch:
+            * 
+        * mock entity delivery:
+            * dominatrix: whip; Handcuffs
+            * siren:  sponge, RubberDuck
+            * demona: BabyDragon, BabyDragon,
 
          */
 
-        GAME.level = 85;     //81, //82 //86 //87 //cont 90 //91
-        GAME.gold = 1983;
+        GAME.level = 90;      //cont 86 //87 //cont 90 //91
+        GAME.gold = 258;
         HERO.maxHealth = 163;
-        HERO.maxMana = 212;
-        HERO.health = 96;
-        HERO.mana = 55;
+        HERO.maxMana = 218;
+        HERO.health = 85;
+        HERO.mana = 5;
         HERO.defense = 42;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 41;
+        HERO.attack = 45;
         HERO.reference_attack = HERO.attack;
-        HERO.magic = 41;
+        HERO.magic = 42;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 4284;
-        HERO.defenseExp = 198;
-        HERO.magicExp = 2240;
+        HERO.attackExp = 5157;
+        HERO.defenseExp = 280;
+        HERO.magicExp = 3329;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
         HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = [];
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Radar", "Explode", "BoostArmor"];
         //let scrolls = [];
 
         //debug
@@ -138,7 +143,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["GoldCoin", "Sheep", "BabyDragon", "BlueGem", "Skull", "Whip", "LP", "Skull", "Blood", "BabyDragon"];
+        let invItems = ["Sheep", "BlueGem", "Skull", "LP", "Skull", "Blood", "Candle", "Skull", "Fly", "IronBar", "GoldBar", "LP", "Candle", "BlueGem", "Revolver", "GreenGem"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -179,7 +184,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.16.01",
+    VERSION: "0.16.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

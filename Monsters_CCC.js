@@ -2087,7 +2087,7 @@ const INTERACTION_ITEM = {
         name: "Sponge",
         category: "interaction_item",
         inventorySprite: "Sponge",
-        text: "Maybe I should tajke a bath?"
+        text: "Maybe I should take a bath?"
     },
     RubberDuck: {
         name: "RubberDuck",
@@ -2310,7 +2310,7 @@ const INTERACTION_ENTITY = {
     },
     Knightess: {
         name: "Knightess",
-        sprite: "FemaleKnight",
+        sprite: "Knightess",
         category: 'crest',
         voice: "Female",
         wants: ["Crest"],

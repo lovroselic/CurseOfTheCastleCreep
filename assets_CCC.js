@@ -407,7 +407,8 @@ LoadSprites = [
     { srcName: "DemonGirl.jpg", name: "DemonGirl" },
     { srcName: "Squirrel3.jpg", name: "Squirell" },
     { srcName: "Devilla.jpg", name: "Devilla" },
-    { srcName: "FemaleKnight.jpg", name: "FemaleKnight" },
+    //{ srcName: "FemaleKnight.jpg", name: "FemaleKnight" },
+    { srcName: "Knightess.jpg", name: "Knightess" },
     { srcName: "Puss.jpg", name: "PussInBoots" },
     { srcName: "GhostGirl1.jpg", name: "GhostGirl1" },
     { srcName: "GhostGirl2.jpg", name: "GhostGirl2" },
@@ -486,6 +487,9 @@ LoadSprites = [
     { srcName: "KeyOracle.jpg", name: "KeyOracle" },
     //unused
     { srcName: "RealSpiderGirl.jpg", name: "RealSpiderGirl" },
+    { srcName: "Libra.jpg", name: "Libra" },
+    { srcName: "GothGirl.jpg", name: "GothGirl" },
+    { srcName: "WaterFairy.jpg", name: "WaterFairy" },
 
 
 

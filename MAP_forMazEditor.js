@@ -93,7 +93,7 @@ const DECAL_CRESTS = ["LS", "Skull4", "Skull3", "Skull2", "Skull1", "Crack4", "C
     "PrayingSkeleton10", "SittingSkeleton2", "Skeleton21", "Skull10", "Skull11", "WOWc1", "WOWc2", "Reaper", "AticAtacCrest1", "DungeonWall", "Forest", "DungeonDoor_Blocked",
     "Skeleton20", "Skeleton121", "Skeleton23", "Skull20", "Skull21"];
 const BOTTOM_CRESTS = ["Grate1_128"];
-const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond", "FlatPond2", "FlatPond3"];
+const TOP_CRESTS = ["Drain2_96", "Drain64", "Grate1_128", "RoundGrille96", "FlatPond", "FlatPond2", "FlatPond4", "FlatPond5", "FlatPond6", "FlatPond7"];
 const LIGHT_DECALS = ["WallLamp", "WallLamp2", "WallLamp3", "WallTorch", "Lamp4", "WallLamp10", "WallLamp11", "WallLamp12", "WallLamp13", "WallLamp14", "WallLamp15", "WallLamp16", "WallLamp17", "WallLamp18", "WallLamp19", "WallLamp20", "WallLamp9",
     "WallLamp31", "WallLamp32", "WallLamp33", "WallLamp34", "WallLamp35"];
 const TRIGGER_DECALS = ["RockTriggerButton", "MarbleTriggerButton", "PurpleTriggerButton"];

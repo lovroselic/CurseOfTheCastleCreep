@@ -40,6 +40,7 @@ const DEBUG = {
          * current temple
          * used shrines: 
             * attack1
+            * magic
          * used trrainers;
             * whipper (atatck)
          * items source
@@ -58,7 +59,7 @@ const DEBUG = {
                 * blue gem (2x): 82,86
             * red gem:
             * dragons (5x): 82, 84, 86, 
-            * ammo:
+                * ammo: 90
             * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90)
                 * ribbon: metal maiden
                 * hairbrush: ghostess
@@ -95,11 +96,11 @@ const DEBUG = {
                 * COMPLETED: 83 bathroom
                 * COMPLETED 84 deMona
                 * COMPLETED: 85 police
-            * 86 rapunzel
+                * COMPLETED: 86 rapunzel
             * 87 frogess
             * 88 metal maiden
             * 89 ghostess
-            * 90 red keep (sword girl, redwell woman, SkullCollector)
+            * PLAYED: 90 red keep (sword girl, redwell woman, SkullCollector)
             * 91 Locksmithstress (L1, L2)
             * 92 shepardess:
             * 93 ForestWitch:
@@ -108,30 +109,32 @@ const DEBUG = {
             * dominatrix: whip; Handcuffs
             * siren:  sponge, RubberDuck
             * demona: BabyDragon, BabyDragon,
+            * SkullCollector (skulls 5x): "Skull", "Skull", "Skull"
+            * RedWellWoman (Blood (3x)): "Blood", 
 
          */
 
-        GAME.level = 90;      //cont 86 //87 //cont 90 //91
-        GAME.gold = 258;
+        GAME.level = 87;      //cont 86 //87 //cont 90 //91
+        GAME.gold = 809;
         HERO.maxHealth = 163;
-        HERO.maxMana = 218;
-        HERO.health = 85;
-        HERO.mana = 5;
+        HERO.maxMana = 224;
+        HERO.health = 120;
+        HERO.mana = 78;
         HERO.defense = 42;
         HERO.reference_defense = HERO.defense;
         HERO.attack = 45;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 42;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 5157;
-        HERO.defenseExp = 280;
-        HERO.magicExp = 3329;
+        HERO.attackExp = 5269;
+        HERO.defenseExp = 310;
+        HERO.magicExp = 3945;
         HERO.attackExpGoal = 5783;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Radar", "Explode", "BoostArmor"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["Radar", "BoostArmor"];
         //let scrolls = [];
 
         //debug
@@ -143,7 +146,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "BlueGem", "Skull", "LP", "Skull", "Blood", "Candle", "Skull", "Fly", "IronBar", "GoldBar", "LP", "Candle", "BlueGem", "Revolver", "GreenGem"];
+        let invItems = ["Sheep", "BlueGem",  "LP", "Candle",  "Fly", "IronBar", "GoldBar", "LP", "Candle", "BlueGem", "Revolver", "GreenGem", "Ammo", "Sheep"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -184,7 +187,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.16.02",
+    VERSION: "0.16.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

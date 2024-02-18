@@ -1666,7 +1666,7 @@ const MAP = {
         entities: '[[8,7,"Siren"]]',
     }
     ,
-    84 : {
+    84: {
         name: "Miss DeMona",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB7ABB3AA7BAA5BABABAA9BB2AA3BABABB2ABB3ABB2AA2BB2ABAA4BAA3BABB3AA2BB2AA2BB3AA2BB3ABAA4BB2AA4BB3ABABB5ABABABABB2AA2EBABABB3AA4BABAA2BB19AB$ABB7"}',
@@ -1687,9 +1687,9 @@ const MAP = {
         entities: '[[9,7,"DeMona"]]',
         objects: '[[128,"Blood"],[121,"Skull"]]',
         movables: '[[120,"BabyDragon"]]',
-        }
+    }
     ,
-    85 : {
+    85: {
         name: "Dungeon Police",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB2ABB3AA5BB2ABAA2BB2ABB2AA5BB2AA6BABAA5BABB5ABB3ABAA3BABB2ABB2ABB7AA3BB2AA2BB3ABB3ABB2ABABABB3ABB2ABAA2BB3ABB2AA4BB2AA2BB5ABB2AA3BABABB2AA3BB4ABB6ABB3ABB12A$"}',
@@ -1707,7 +1707,7 @@ const MAP = {
         triggers: '[[89,1,"RockTriggerButton",1,59]]',
         entities: '[[10,7,"PoliceWoman"]]',
         objects: '[[82,"GoldBar"],[16,"Skull"],[148,"IronBar"]]',
-        }
+    }
     ,
     86 : {
         name: "Rapunzel",
@@ -1717,7 +1717,7 @@ const MAP = {
         floor: "BorinGrey1",
         ceil: "OrnateFloor1",
         start: '[118,3]',
-        decals: '[[2,7,"ManicMiner11","picture"],[64,7,"Pipeline51","picture"],[154,7,"DefenderOfTheCrown","picture"],[71,7,"LaraCroft123","picture"],[148,7,"LastNinja10","picture"],[81,7,"CrystalsOfZong10","picture"],[38,7,"WhoDaresWins88","picture"],[212,1,"Scramble23","picture"],[188,1,"Pitstop3","picture"],[64,1,"ActecChallenge2","picture"],[154,1,"BeyondForbiddenForest2","picture"],[110,1,"ForbiddenForest90","picture"],[147,1,"ForbiddenForest99","picture"],[110,7,"ForbiddenForest91","picture"],[141,1,"Pitfall72","picture"],[98,5,"SpaceQuest200","picture"],[77,5,"HalfLife 89","picture"],[137,5,"LSL102","picture"],[64,5,"Skull11","crest"],[110,5,"Skull11","crest"],[154,5,"Skull11","crest"],[30,5,"LCP","picture"],[180,5,"Fred113","picture"],[55,5,"AtariST","picture"],[209,3,"TombRaider111","picture"],[29,3,"Paratroopers3","picture"],[89,3,"Pssst","picture"],[98,3,"Skull20","crest"],[128,3,"Skull20","crest"],[145,1,"ArabianNights1","picture"],[64,3,"Montezuma200","picture"],[154,3,"DungeonMaster204","picture"]]',
+        decals: '[[2,7,"ManicMiner11","picture"],[64,7,"Pipeline51","picture"],[154,7,"DefenderOfTheCrown","picture"],[71,7,"LaraCroft123","picture"],[148,7,"LastNinja10","picture"],[81,7,"CrystalsOfZong10","picture"],[38,7,"WhoDaresWins88","picture"],[212,1,"Scramble23","picture"],[188,1,"Pitstop3","picture"],[64,1,"ActecChallenge2","picture"],[154,1,"BeyondForbiddenForest2","picture"],[110,1,"ForbiddenForest90","picture"],[147,1,"ForbiddenForest99","picture"],[110,7,"ForbiddenForest91","picture"],[141,1,"Pitfall72","picture"],[98,5,"SpaceQuest200","picture"],[77,5,"HalfLife 89","picture"],[137,5,"LSL102","picture"],[64,5,"Skull11","crest"],[110,5,"Skull11","crest"],[154,5,"Skull11","crest"],[30,5,"LCP","picture"],[180,5,"Fred113","picture"],[55,5,"AtariST","picture"],[209,3,"TombRaider111","picture"],[29,3,"Paratroopers3","picture"],[89,3,"Pssst","picture"],[98,3,"Skull20","crest"],[128,3,"Skull20","crest"],[145,1,"ArabianNights1","picture"],[64,3,"Montezuma200","picture"],[154,3,"DungeonMaster204","picture"],[36,4,"Drain64","crest"],[51,4,"Drain2_96","crest"]]',
         lights: '[[110,3,"WallLamp31","standardDimmed"],[81,1,"WallLamp31","standardDimmed"],[141,7,"WallLamp31","standardDimmed"],[11,7,"WallLamp18","standard"],[221,1,"WallLamp18","standard"]]',
         gates: '[[119,3,"86.1","81.3","Up"],[6,7,"86.2","87.1","Down"],[216,1,"86.3","88.1","Down"]]',
         monsters: '[[28,"Rex"],[163,"Rex"],[31,"GoldSkeleton"],[181,"GoldSkeleton"],[107,"RedDragon"],[36,"RedDragon"],[171,"RedDragon"]]',
@@ -1782,8 +1782,13 @@ const MAP = {
         floor: "WhiteTiledFloor1",
         ceil: "MC_floor20",
         start: '[25,7]',
+        decals: '[[23,7,"IK200","picture"],[27,7,"Pitfall72","picture"],[94,7,"MassEffect2","picture"],[193,7,"TempleOfApshai70","picture"],[197,7,"Arena201","picture"],[195,1,"Tutankham104","picture"],[244,1,"SabreWulf87","picture"],[248,1,"BrianBloodaxe70","picture"],[274,1,"RickDangerous51","picture"],[286,1,"HalfLife60","picture"],[91,1,"Portal131","picture"],[95,1,"TheHobbit99","picture"],[2,7,"MrRobot70","picture"],[14,7,"Underwurlde100","picture"],[104,5,"LeisureSuitLarry94","picture"],[172,5,"Wally88","picture"],[108,5,"DungeonMaster96","picture"],[113,5,"SumerGames60","picture"],[181,5,"SabreWulf50","picture"],[116,3,"HunchBack10","picture"],[184,3,"DM106","picture"],[107,3,"RadarRatRace20","picture"],[175,3,"AztecChallenge130","picture"],[164,3,"Skull21","crest"],[224,4,"FlatPond4","crest"],[191,4,"FlatPond5","crest"],[33,3,"MonkeyIsland100","picture"],[157,4,"FlatPond7","crest"]]',
         lights: '[[147,3,"WallLamp31","dim"],[21,7,"WallLamp11","standardDimmed"],[29,7,"WallLamp11","standardDimmed"],[258,1,"WallLamp15","standardDimmed"],[268,1,"WallLamp15","standardDimmed"],[141,3,"WallLamp13","dim"],[147,5,"WallLamp13","dim"]]',
         gates: '[[8,7,"90.1","81.4","Open"],[280,1,"90.2","91.1","Green"],[221,5,"90.3","92.1","Up"],[67,3,"90.4","93.1","Up"]]',
+        monsters: '[[19,"GoldSkeleton"],[31,"GoldSkeleton"],[257,"GoldSkeleton"],[269,"GoldSkeleton"],[144,"AngrySheep"]]',
+        potions: '[[180,1]]',
+        skills: '[[177,"Mana"]]',
+        containers: '[[18,"Barrel","INTERACTION_ITEM.Ammo",5],[32,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",7],[112,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",7],[213,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",7]]',
         doors: '[93]',
         entities: '[[141,5,"SwordGirl"],[136,5,"RedWellWoman"],[152,3,"SkullCollector"]]',
         oracles: '[[51,5,"KeyOracle"]]',

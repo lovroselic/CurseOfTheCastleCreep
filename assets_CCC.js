@@ -716,6 +716,10 @@ LoadSprites = [
     { srcName: "Grate1_128.png", name: "Grate1_128" },
     { srcName: "RoundGrille96.png", name: "RoundGrille96" },
     { srcName: "FlatPond.png", name: "FlatPond" },
+    { srcName: "FlatPond4.png", name: "FlatPond4" },
+    { srcName: "FlatPond5.png", name: "FlatPond5" },
+    { srcName: "FlatPond6.png", name: "FlatPond6" },
+    { srcName: "FlatPond7.png", name: "FlatPond7" },
 
     //decal-other
     { srcName: "LS.png", name: "LS" },

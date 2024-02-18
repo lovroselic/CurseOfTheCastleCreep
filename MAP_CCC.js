@@ -1709,7 +1709,7 @@ const MAP = {
         objects: '[[82,"GoldBar"],[16,"Skull"],[148,"IronBar"]]',
     }
     ,
-    86 : {
+    86: {
         name: "Rapunzel",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB5AA4BB2AA2EBB2AA2BAA5BABAA3BB2AA2BB2AA3BAA2BABB2AA17BB2AA5BB3AA6BB3AA2BB3AA2BABAA3BAA5BB2ABABAA2BB5ABABB2AA2BB5AA2BB3ABB4ABB2AA5BB8AA2BAA2BB3ABABB2ABB8AA4BB2ABB3AA6BB2ABB3ABAA2BB4ABB18A$A"}',
@@ -1729,21 +1729,23 @@ const MAP = {
         entities: '[[105,5,"Rapunzel"]]',
         objects: '[[16,"BlueGem"],[196,"GreenGem"]]',
         movables: '[[109,"BabyDragon"],[111,"BabySheep"]]',
-        }
+    }
     ,
-    87: {
+    87 : {
         name: "Froggess",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB2ABABAA15BAA3BAA5BB6ABB2AA4BB3ABABAA2BB2AA5BABAA5BB2AA4BAA2BAA5BABAA5BB8AA4BB7AA4BB4AA2BB4AA3BABB6ABABB3ABB2ABB2AA2BABB2AA2BAA2BB9ABAA3BB5AA2BB9ABB3ABABABABB2AA3BB20$A"}',
+        data: '{"width":"15","height":"15","map":"BB4AA15BAA2BAA6BB6ABB2AA4BB3ABABAA2BAA5BB2ABAA5BB2AA4BAA2BAA4BB2AA7BB8AA4BB7AA4BB4AA2BB3ABAA2BABB6ABABB6ABB2AA2BABB2AA2BAA2BB9AA2BAA3BB5AA2BB9ABB3ABABABABB3AA2BB2ABB18$A"}',
         wall: "BrownBrick32",
         floor: "ColorfulTiles1",
         ceil: "OrnateFloor11",
-        start: '[187,1]',
-        decals: '[[20,7,"Frogger110","picture"],[24,7,"Frogger111","picture"],[95,1,"Frogger112","picture"],[99,1,"Frogger2","picture"]]',
+        start: '[202,1]',
+        decals: '[[20,7,"Frogger110","picture"],[24,7,"Frogger111","picture"],[95,1,"Frogger112","picture"],[99,1,"Frogger2","picture"],[37,4,"FlatPond7","crest"],[52,4,"FlatPond6","crest"],[51,4,"FlatPond5","crest"],[53,4,"FlatPond4","crest"]]',
         lights: '[[82,1,"WallLamp","standardDimmed"],[214,1,"WallLamp","standardDimmed"],[220,1,"WallLamp","standardDimmed"],[142,7,"WallLamp19","standardDimmed"]]',
-        gates: '[[217,1,"87.1","86.2","Up"],[118,1,"87.2","89.1","Down"]]',
+        gates: '[[217,1,"87.1","86.2","Up"],[118,1,"87.2","89.1","Down"],[61,7,"87.3","94.1","Down"]]',
         entities: '[[7,7,"Froggess"]]',
-    }
+        objects: '[[16,"IronBar"],[28,"Skull"],[181,"RedGem"]]',
+        movables: '[[67,"BabyGreenSpider"]]',
+        }
     ,
     88: {
         name: "Metal Maiden",
@@ -1774,7 +1776,7 @@ const MAP = {
         entities: '[[217,1,"Ghostess"]]',
     }
     ,
-    90 : {
+    90: {
         name: "Red Keep",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA2BB2AA2BAA35BAA5BABB5AA4BB2AA3BAA5BB2AA3BAA3BABB4AA10BB2AA2BAA7BB2AA2BB2ABAA27BB2AA5BB6ABB6AA3BB2ABB2ABB5AA2BB13AA4BB15AA3BAA3BABEBB6ABB4ABB3ABB8ABAA4BAA3BB4ABB21A$ABB3"}',
@@ -1793,7 +1795,7 @@ const MAP = {
         entities: '[[141,5,"SwordGirl"],[136,5,"RedWellWoman"],[152,3,"SkullCollector"]]',
         oracles: '[[51,5,"KeyOracle"]]',
         movables: '[[212,"BabySheep"]]',
-        }
+    }
     ,
     91: {
         name: "Locksmithstress",
@@ -1839,7 +1841,19 @@ const MAP = {
         oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
     }
     ,
-    999: {
+    94 : {
+        name: "The Last Library",
+        sg: 0,
+        data: '{"width":"17","height":"13","map":"BB5ABB8AA13BB2AA2BB2AA4BAA4BAA6BABABAA7BAA5BB2ABABAA2BAA6BB4AA4BB2ABAA3BB3ABB4ABB3AA2BB2ABB5AA10BABAA10BABABB7ABB4AA2BAA2BABB3AA3BB2ABB3ABABAA2BB2AA2BAA2BABB26ABB2$"}',
+        wall: "BrownBricks34",
+        floor: "SpideryWall2",
+        ceil: "BrownMC_ceiling",
+        start: '[195,1]',
+        lights: '[[88,1,"Lamp52","standardDimmed"],[98,1,"Lamp52","standardDimmed"],[144,7,"Lamp41","standardDimmed"],[7,7,"Lamp46","standard"],[9,7,"Lamp46","standard"],[203,3,"Lamp51","dimRed"],[187,5,"Lamp51","dimRed"]]',
+        gates: '[[212,1,"94.1","87.3","Up"]]',
+        }
+    ,
+    999 : {
         name: "Sandbox",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB14AA156BB44AA12BB62A$"}',
@@ -1847,6 +1861,6 @@ const MAP = {
         floor: "GoldMarbleFloor",
         ceil: "BlurryMossy",
         start: '[161,1]',
-        lights: '[[19,7,"WallLamp35","standard"],[21,7,"WallLamp34","standard"],[23,7,"WallLamp33","standard"],[25,7,"WallLamp32","standard"],[27,7,"WallLamp31","standard"],[30,7,"WallLamp9","standard"]]',
-    }
+        lights: '[[19,7,"Lamp40","standard"],[21,7,"Lamp41","standard"],[23,7,"Lamp42","standard"],[25,7,"Lamp43","standard"],[27,7,"Lamp44","standard"],[29,7,"Lamp45","standard"],[31,7,"Lamp46","standard"],[257,1,"Lamp47","standard"],[259,1,"Lamp48","standard"],[261,1,"Lamp49","standard"],[263,1,"Lamp50","standard"],[265,1,"Lamp51","standard"],[267,1,"Lamp52","standard"],[269,1,"Lamp53","standard"]]',
+        }
 };

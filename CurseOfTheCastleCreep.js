@@ -57,7 +57,7 @@ const DEBUG = {
             * LP (5): police, 84, 86,
                 * green gem: 86
                 * blue gem (2x): 82,86
-            * red gem:
+                * red gem:87
             * dragons (5x): 82, 84, 86, 
                 * ammo: 90
             * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90)
@@ -68,13 +68,16 @@ const DEBUG = {
                 * helmet: sword girl(), 
             * fly (3x): 85,
                 * skull (3x): 82, 84, 85
-            * skull (5x):
+            * skull (5x): 87, 
                 * candle (2x): siren (sponge, duck), 83
             * sheep: (5x): 90,81, 88, 86,
                 * diamond: shepardess
                 * emerald: ForestWitch
-            * iron bar (3x): 85, 
+            * iron bar (3x): 85, 87, 
+            * BabyGreenSpider (3x): 87, 
          * entitites:
+            * Spideress (BabyGreenSpider 3x): -> fly, 
+            * Libra (books 3x) -> LP,
                 * dominatrix (whip, handcuffs) -> revolver
                 * siren (sponge, duck) -> candle
                 * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) -> emerald Key
@@ -106,15 +109,16 @@ const DEBUG = {
             * 93 ForestWitch:
             * 
         * mock entity delivery:
-            * dominatrix: whip; Handcuffs
-            * siren:  sponge, RubberDuck
+                * dominatrix: whip; Handcuffs
+                * siren:  sponge, RubberDuck
             * demona: BabyDragon, BabyDragon,
             * SkullCollector (skulls 5x): "Skull", "Skull", "Skull"
             * RedWellWoman (Blood (3x)): "Blood", 
+                * policewoman (gun, ammo) -> LP
 
          */
 
-        GAME.level = 87;      //cont 86 //87 //cont 90 //91
+        GAME.level = 94;      //cont 94 -spideress  //87 frogess
         GAME.gold = 809;
         HERO.maxHealth = 163;
         HERO.maxMana = 224;
@@ -146,7 +150,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "BlueGem",  "LP", "Candle",  "Fly", "IronBar", "GoldBar", "LP", "Candle", "BlueGem", "Revolver", "GreenGem", "Ammo", "Sheep"];
+        let invItems = ["Sheep", "BlueGem", "LP", "Candle", "Fly", "IronBar", "GoldBar", "LP", "Candle", "BlueGem", "GreenGem", "LP", "Sheep"];
         //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -187,7 +191,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.16.03",
+    VERSION: "0.16.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

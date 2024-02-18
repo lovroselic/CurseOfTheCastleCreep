@@ -1856,11 +1856,12 @@ const MAP = {
     999 : {
         name: "Sandbox",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB14AA156BB44AA12BB62A$"}',
+        data: '{"width":"17","height":"17","map":"BB14AA155BABB47AA12BB17ABB30$BB10A"}',
         wall: "MossyWall3",
         floor: "GoldMarbleFloor",
         ceil: "BlurryMossy",
         start: '[161,1]',
-        lights: '[[19,7,"Lamp40","standard"],[21,7,"Lamp41","standard"],[23,7,"Lamp42","standard"],[25,7,"Lamp43","standard"],[27,7,"Lamp44","standard"],[29,7,"Lamp45","standard"],[31,7,"Lamp46","standard"],[257,1,"Lamp47","standard"],[259,1,"Lamp48","standard"],[261,1,"Lamp49","standard"],[263,1,"Lamp50","standard"],[265,1,"Lamp51","standard"],[267,1,"Lamp52","standard"],[269,1,"Lamp53","standard"]]',
+        decals: '[[8,7,"Nook1","crest"]]',
+        lights: '[[19,7,"Lamp40","standard"],[21,7,"Lamp41","standard"],[23,7,"Lamp42","standard"],[27,7,"Lamp44","standard"],[29,7,"Lamp45","standard"],[31,7,"Lamp46","standard"],[257,1,"Lamp47","standard"],[259,1,"Lamp48","standard"],[261,1,"Lamp49","standard"],[263,1,"Lamp50","standard"],[265,1,"Lamp51","standard"],[267,1,"Lamp52","standard"],[269,1,"Lamp53","standard"]]',
         }
 };

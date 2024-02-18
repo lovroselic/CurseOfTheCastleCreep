@@ -686,7 +686,7 @@ LoadSprites = [
     { srcName: "Lamp52.png", name: "Lamp52" },
     { srcName: "Lamp53.png", name: "Lamp53" },
 
-    { srcName: "Nook1.png", name: "Nook1" },
+    
 
     //compas
     { srcName: "CompassRose.png", name: "CompassRose" },
@@ -832,6 +832,8 @@ LoadSprites = [
     { srcName: "Skeleton23.png", name: "Skeleton23" },
     { srcName: "Skull20.png", name: "Skull20" },
     { srcName: "Skull21.png", name: "Skull21" },
+
+    { srcName: "Nook1.jpg", name: "Nook1" },
 
     //messages
     { srcName: "CCC1.png", name: "CCC1" },

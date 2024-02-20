@@ -404,6 +404,7 @@ LoadSprites = [
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
+    { srcName: "Spider.png", name: "BabyGreenSpider" },
     { srcName: "ChickenDinner.png", name: "LittleChicken" },
     { srcName: "Cat7.png", name: "Cat" },
     { srcName: "Dragon.png", name: "BabyDragon" },

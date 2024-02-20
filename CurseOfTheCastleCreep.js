@@ -41,6 +41,7 @@ const DEBUG = {
          * used shrines: 
             * attack1
             * magic
+            * defense
          * used trrainers;
             * whipper (atatck)
          * items source
@@ -54,11 +55,11 @@ const DEBUG = {
                 * goldbar: Demon (dragons)
                 * goldbar: 85 floor object
             * goldbar
-            * LP (5): police, 84, 86,
+            * LP (5): police, 84, 86,Libra,
                 * green gem: 86
                 * blue gem (2x): 82,86
                 * red gem:87
-            * dragons (5x): 82, 84, 86, 
+            * dragons (5x): 82, 84, 86, 87,
                 * ammo: 90
             * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90)
                 * ribbon: metal maiden
@@ -66,7 +67,7 @@ const DEBUG = {
                 * shield: rapunzel
                 * sword: frogess
                 * helmet: sword girl(), 
-            * fly (3x): 85,
+            * fly (3x): 85,Spideress,
                 * skull (3x): 82, 84, 85
             * skull (5x): 87, 
                 * candle (2x): siren (sponge, duck), 83
@@ -75,9 +76,11 @@ const DEBUG = {
                 * emerald: ForestWitch
             * iron bar (3x): 85, 87, 
             * BabyGreenSpider (3x): 87, 
+                * Book: 87
+            * GoldenBook: 
          * entitites:
-            * Spideress (BabyGreenSpider 3x): -> fly, 
-            * Libra (books 3x) -> LP,
+                * Spideress (BabyGreenSpider 3x): -> fly, 
+                * Libra (book, goldenbook 2x) -> LP,
                 * dominatrix (whip, handcuffs) -> revolver
                 * siren (sponge, duck) -> candle
                 * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) -> emerald Key
@@ -111,34 +114,35 @@ const DEBUG = {
         * mock entity delivery:
                 * dominatrix: whip; Handcuffs
                 * siren:  sponge, RubberDuck
-            * demona: BabyDragon, BabyDragon,
+            * demona: BabyDragon, BabyDragon,BabyDragon, 
             * SkullCollector (skulls 5x): "Skull", "Skull", "Skull"
+            * ghostess (skull, skull, skull, candle, candle): 
             * RedWellWoman (Blood (3x)): "Blood", 
                 * policewoman (gun, ammo) -> LP
-
+            * frogess (fly 3x): Fly,
          */
 
-        GAME.level = 94;      //cont 94 -spideress  //87 frogess
-        GAME.gold = 809;
-        HERO.maxHealth = 163;
+        GAME.level = 89;       //87 frogess 
+        GAME.gold = 353;
+        HERO.maxHealth = 167;
         HERO.maxMana = 224;
-        HERO.health = 120;
-        HERO.mana = 78;
-        HERO.defense = 42;
+        HERO.health = 135;
+        HERO.mana = 39;
+        HERO.defense = 43;
         HERO.reference_defense = HERO.defense;
-        HERO.attack = 45;
+        HERO.attack = 46;
         HERO.reference_attack = HERO.attack;
         HERO.magic = 42;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 5269;
-        HERO.defenseExp = 310;
-        HERO.magicExp = 3945;
-        HERO.attackExpGoal = 5783;
+        HERO.attackExp = 431;
+        HERO.defenseExp = 358;
+        HERO.magicExp = 4329;
+        HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
         HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Radar", "BoostArmor"];
+        HERO.inventory.potion.blue = 0;
+        let scrolls = [];
         //let scrolls = [];
 
         //debug
@@ -150,14 +154,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "BlueGem", "LP", "Candle", "Fly", "IronBar", "GoldBar", "LP", "Candle", "BlueGem", "GreenGem", "LP", "Sheep"];
-        //let invItems = ["LeoPumps", "LeoPumps", "LeoHat", "Leotard"];
+        let invItems = ["Sheep", "BlueGem", "LP", "Candle", "Fly", "IronBar", "GoldBar", "LP", "Candle", "BlueGem", "GreenGem", "LP", "Sheep", "BabyGreenSpider", "IronBar", "Skull", "Book"];
+        //let invItems = ["BabyGreenSpider", "BabyGreenSpider", "BabyGreenSpider", "Book", "GoldenBook"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Red"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -191,7 +195,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.16.05",
+    VERSION: "0.16.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

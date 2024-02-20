@@ -1739,12 +1739,17 @@ const MAP = {
         floor: "ColorfulTiles1",
         ceil: "OrnateFloor11",
         start: '[202,1]',
-        decals: '[[20,7,"Frogger110","picture"],[24,7,"Frogger111","picture"],[95,1,"Frogger112","picture"],[99,1,"Frogger2","picture"],[37,4,"FlatPond7","crest"],[52,4,"FlatPond6","crest"],[51,4,"FlatPond5","crest"],[53,4,"FlatPond4","crest"]]',
-        lights: '[[82,1,"WallLamp","standardDimmed"],[214,1,"WallLamp","standardDimmed"],[220,1,"WallLamp","standardDimmed"],[142,7,"WallLamp19","standardDimmed"]]',
+        decals: '[[20,7,"Frogger110","picture"],[24,7,"Frogger111","picture"],[95,1,"Frogger112","picture"],[99,1,"Frogger2","picture"],[37,4,"FlatPond7","crest"],[52,4,"FlatPond6","crest"],[51,4,"FlatPond5","crest"],[53,4,"FlatPond4","crest"],[1,7,"PharaohCurse111","picture"],[13,7,"Hero104","picture"],[78,7,"Scramble60","picture"],[71,7,"SVS130","picture"],[139,7,"AticAtac204","picture"],[110,7,"KingsQuest52","picture"],[114,7,"AticAtac110","picture"],[142,1,"ESB","picture"],[146,1,"SVS112","picture"],[168,1,"CrawlMaster113","picture"],[170,1,"Witcher130","picture"],[174,1,"SirFred61","picture"],[82,5,"BeachHead100","picture"],[139,5,"Pitfall27","picture"],[180,5,"Pitfall60","picture"],[194,3,"Spelunker70","picture"],[146,3,"MontyMole100","picture"],[142,3,"HalfLife11","picture"],[89,3,"TheHobbit89","picture"],[142,5,"CrawlMaster110","picture"],[90,5,"Wally99","picture"],[82,3,"HungryHorace12","picture"],[82,7,"Cavelon13","picture"]]',
+        lights: '[[82,1,"Lamp40","dim"],[214,1,"WallLamp","standardDimmed"],[220,1,"WallLamp","standardDimmed"],[142,7,"WallLamp19","standardDimmed"],[58,3,"Lamp53","standardRedish"],[46,5,"Lamp53","standardRedish"],[135,5,"Lamp50","standardRedish"],[149,3,"Lamp50","standardRedish"]]',
         gates: '[[217,1,"87.1","86.2","Up"],[118,1,"87.2","89.1","Down"],[61,7,"87.3","94.1","Down"]]',
+        monsters: '[[48,"RedDragon"],[56,"RedDragon"],[92,"RedDragon"],[87,"RedDragon"],[136,"RedDragon"],[148,"RedDragon"],[182,"Hulk"],[192,"Hulk"]]',
+        scrolls: '[[157,13],[127,11],[140,1],[145,9]]',
+        potions: '[[137,0],[147,1]]',
+        gold: '[[65,"GoldCube"],[69,"GoldCube"],[138,"GoldCube"],[162,"GoldCube"],[197,"GoldCube"],[190,"GoldCube"]]',
+        containers: '[[193,"Wardrobe","INTERACTION_ITEM.Book",3]]',
         entities: '[[7,7,"Froggess"]]',
         objects: '[[16,"IronBar"],[28,"Skull"],[181,"RedGem"]]',
-        movables: '[[67,"BabyGreenSpider"]]',
+        movables: '[[67,"BabyGreenSpider"],[122,"BabyDragon"]]',
         }
     ,
     88: {
@@ -1841,7 +1846,7 @@ const MAP = {
         oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
     }
     ,
-    94 : {
+    94: {
         name: "The Last Library",
         sg: 0,
         data: '{"width":"17","height":"13","map":"BB5ABB8AA13BB2AA2BB2AA4BAA4BAA6BABABAA7BAA5BB2ABABAA2BAA6BB4AA4BB2ABAA3BB3ABB4ABB3AA2BB2ABB5AA10BABAA10BABABB7ABB4AA2BAA2BABB3AA3BB2ABB3ABABAA2BB2AA2BAA2BABB26ABB2$"}',
@@ -1851,9 +1856,10 @@ const MAP = {
         start: '[195,1]',
         lights: '[[88,1,"Lamp52","standardDimmed"],[98,1,"Lamp52","standardDimmed"],[144,7,"Lamp41","standardDimmed"],[7,7,"Lamp46","standard"],[9,7,"Lamp46","standard"],[203,3,"Lamp51","dimRed"],[187,5,"Lamp51","dimRed"]]',
         gates: '[[212,1,"94.1","87.3","Up"]]',
-        }
+        entities: '[[3,7,"Spideress"],[13,7,"Libra"]]',
+    }
     ,
-    999 : {
+    999: {
         name: "Sandbox",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB14AA155BABB47AA12BB17ABB30$BB10A"}',
@@ -1863,5 +1869,5 @@ const MAP = {
         start: '[161,1]',
         decals: '[[8,7,"Nook1","crest"]]',
         lights: '[[19,7,"Lamp40","standard"],[21,7,"Lamp41","standard"],[23,7,"Lamp42","standard"],[27,7,"Lamp44","standard"],[29,7,"Lamp45","standard"],[31,7,"Lamp46","standard"],[257,1,"Lamp47","standard"],[259,1,"Lamp48","standard"],[261,1,"Lamp49","standard"],[263,1,"Lamp50","standard"],[265,1,"Lamp51","standard"],[267,1,"Lamp52","standard"],[269,1,"Lamp53","standard"]]',
-        }
+    }
 };

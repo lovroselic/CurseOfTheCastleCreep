@@ -548,10 +548,12 @@ LoadSprites = [
     { srcName: "WitchOracle1.jpg", name: "WitchOracle1" },
     { srcName: "WitchOracle2.jpg", name: "WitchOracle2" },
     { srcName: "KeyOracle.jpg", name: "KeyOracle" },
+    { srcName: "RealSpiderGirl.jpg", name: "Spideress" },
+    { srcName: "Libra.jpg", name: "Libra" },
 
     //unused
-    { srcName: "RealSpiderGirl.jpg", name: "RealSpiderGirl" },
-    { srcName: "Libra.jpg", name: "Libra" },
+    
+    
     { srcName: "GothGirl.jpg", name: "GothGirl" },
     { srcName: "WaterFairy.jpg", name: "WaterFairy" },
     { srcName: "DesertGirl.jpg", name: "DesertGirl" },
@@ -618,6 +620,7 @@ LoadSprites = [
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
+    { srcName: "Spider.png", name: "BabyGreenSpider" },
     { srcName: "ChickenDinner.png", name: "LittleChicken" },
     { srcName: "Cat7.png", name: "Cat" },
     { srcName: "Dragon.png", name: "BabyDragon" },

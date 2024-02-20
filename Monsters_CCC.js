@@ -1925,6 +1925,7 @@ const INTERACTION_ITEM = {
         name: "Book",
         category: "interaction_item",
         inventorySprite: "Book",
+        text: "Such a great story. About a princess."
     },
     PurpleRose: {
         name: "PurpleRose",
@@ -1992,6 +1993,7 @@ const INTERACTION_ITEM = {
         name: "GoldenBook",
         category: "interaction_item",
         inventorySprite: "GoldenBook",
+        text: "Hmm. Princess meets GhostFace. Sad story."
     },
     Heels: {
         name: "Heels",
@@ -2841,7 +2843,35 @@ const INTERACTION_ENTITY = {
             conclusion: "All combined, with skill and flair, Your Emerald Key, crafted with care."
         }
     },
-    
+    Spideress: {
+        name: "Spideress",
+        sprite: "Spideress",
+        category: 'crest',
+        voice: "Female",
+        wants: ["BabyGreenSpider", "BabyGreenSpider", "BabyGreenSpider"],
+        gives: "Fly",
+        text: {
+            intro: "In silk and shadow, I await, For my children, do not be late.",
+            progress: "Some returned, yet more to find, In your search, please be kind.",
+            conclusion: "All my babies, safe with their kin, For you, a Fly, caught on a whim."
+        }
+    },
+    Libra: {
+        name: "Libra",
+        sprite: "Libra",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Book", "GoldenBook"],
+        gives: "LP",
+        text: {
+            intro: "Amidst the silence, a desire loud, For knowledge golden, and stories proud.",
+            progress: "One treasure found, one more to seek, In realms of words, for those who peek.",
+            conclusion: "Both book and gold, now in my keep, For you, death metal, dark and deep."
+        }
+    },
+
+
+
     /**
      * NA::  
 

@@ -445,7 +445,7 @@ const WebGL = {
                 uTranslate: gl.getUniformLocation(shaderProgram, "uTranslate"),
                 uItemPosition: gl.getUniformLocation(shaderProgram, "uItemPosition"),
                 lightColors: gl.getUniformLocation(shaderProgram, "uLightColors"),
-                lightDirections: gl.getUniformLocation(shaderProgram, "uLightDirections"), 
+                lightDirections: gl.getUniformLocation(shaderProgram, "uLightDirections"),
                 uRotY: gl.getUniformLocation(shaderProgram, "uRotateY"),
                 uMaterialAmbientColor: gl.getUniformLocation(shaderProgram, 'uMaterial.ambientColor'),
                 uMaterialDiffuseColor: gl.getUniformLocation(shaderProgram, 'uMaterial.diffuseColor'),
@@ -3078,7 +3078,10 @@ class $3D_Entity {
     }
     dropInventory() {
         if (!this.inventory) return;
-        const item = new FloorItem3D(this.moveState.grid, this.inventory);
+        const grid = this.moveState.grid;
+        const GA = this.IAM.map.GA;
+        if (GA.isHole(Grid.toClass(grid))) return;
+        const item = new FloorItem3D(grid, this.inventory);
         if (item.category === 'gold') item.setValue(this.gold);
         item.setTexture();
         item.dropped = true;

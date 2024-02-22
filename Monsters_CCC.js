@@ -686,6 +686,14 @@ const ORACLE_TYPE = {
         text: "From some metal bars, and some precious gems, keys can be forged.",
         interactionCategory: "oracle",
     },
+    Boss: {
+        name: "Boss",
+        sprite: "Boss",
+        category: 'crest',
+        voice: "Female",
+        text: "Are you able to take both?",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -1570,6 +1578,33 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.standard,
     },
+    GreenRex: {
+        name: "GreenRex",
+        texture: "GreenRex",
+        model: "Rex",
+        scale: 1.25 / 2 ** 9,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 55,
+        defense: 45,
+        magic: 42,
+        health: 60,
+        xp: 125,
+        gold: 125,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [10, ["wanderer"], 6, ["shoot"]],
+        moveSpeed: 1.05,
+        mana: 3,
+        caster: true,
+        shootDistance: 6,
+        stalkDistance: 7,
+        material: MATERIAL.standard,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.Fireball,
+    },
 };
 
 const HERO_TYPE = {
@@ -2176,6 +2211,12 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Diamond",
         text: "Diamond? My best friend."
+    },
+    Wasp: {
+        name: "Wasp",
+        category: "interaction_item",
+        inventorySprite: "Wasp",
+        text: "Stingy?"
     },
 };
 

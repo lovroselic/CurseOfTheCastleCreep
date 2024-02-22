@@ -375,6 +375,7 @@ LoadTextures = [
     { srcName: "Lizard_baseColor.jpg", name: "LizardTexture" },
     { srcName: "mushroom_baseColor.jpg", name: "MushroomTexture" },
     { srcName: "IronTexture.jpg", name: "IronTexture" },
+    { srcName: "rex_Green.jpg", name: "GreenRex" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -550,13 +551,16 @@ LoadSprites = [
     { srcName: "KeyOracle.jpg", name: "KeyOracle" },
     { srcName: "RealSpiderGirl.jpg", name: "Spideress" },
     { srcName: "Libra.jpg", name: "Libra" },
-
+    { srcName: "Boss.jpg", name: "Boss" },
     //unused
-    
-    
+
+
     { srcName: "GothGirl.jpg", name: "GothGirl" },
     { srcName: "WaterFairy.jpg", name: "WaterFairy" },
     { srcName: "DesertGirl.jpg", name: "DesertGirl" },
+    { srcName: "Wasp1.jpg", name: "Wasp1" },
+    { srcName: "Wasp2.jpg", name: "Wasp2" },
+    { srcName: "Chef.jpg", name: "Chef" },
 
 
 
@@ -617,6 +621,8 @@ LoadSprites = [
     { srcName: "Emerald.png", name: "Emerald" },
     { srcName: "Diamond.png", name: "Diamond" },
 
+    { srcName: "Wasp.png", name: "Wasp" },
+
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
@@ -673,7 +679,6 @@ LoadSprites = [
     { srcName: "WallLamp33.png", name: "WallLamp33" },
     { srcName: "WallLamp34.png", name: "WallLamp34" },
     { srcName: "WallLamp35.png", name: "WallLamp35" },
-
     { srcName: "Lamp40.png", name: "Lamp40" },
     { srcName: "Lamp41.png", name: "Lamp41" },
     { srcName: "Lamp42.png", name: "Lamp42" },
@@ -689,7 +694,7 @@ LoadSprites = [
     { srcName: "Lamp52.png", name: "Lamp52" },
     { srcName: "Lamp53.png", name: "Lamp53" },
 
-    
+
 
     //compas
     { srcName: "CompassRose.png", name: "CompassRose" },
@@ -829,13 +834,11 @@ LoadSprites = [
     { srcName: "FlatPond3.png", name: "FlatPond3" },
     { srcName: "BrownWall256.jpg", name: "DungeonWall" },
     { srcName: "Forest_sprite.jpg", name: "Forest" },
-
     { srcName: "Skeleton20.png", name: "Skeleton20" },
     { srcName: "Skeleton121.png", name: "Skeleton121" },
     { srcName: "Skeleton23.png", name: "Skeleton23" },
     { srcName: "Skull20.png", name: "Skull20" },
     { srcName: "Skull21.png", name: "Skull21" },
-
     { srcName: "Nook1.jpg", name: "Nook1" },
 
     //messages

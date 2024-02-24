@@ -47,7 +47,7 @@ const DownRight = new Vector(1, 1);
 const DownLeft = new Vector(-1, 1);
 
 const ENGINE = {
-  VERSION: "4.01",
+  VERSION: "4.02",
   CSS: "color: #0FA",
   INI: {
     ANIMATION_INTERVAL: 16,
@@ -553,7 +553,7 @@ const ENGINE = {
     CTX.rect(0, 0, ENGINE.LOAD_W, ENGINE.LOAD_H);
     CTX.closePath();
     CTX.stroke();
-    CTX.fillStyle = "#999";
+    CTX.fillStyle = "#DDE0DD";
     CTX.fillRect(1, 1, Math.floor((ENGINE.LOAD_W - 2) * (percent / 100)), ENGINE.LOAD_H - 2);
     CTX.fillStyle = "black";
     CTX.font = "10px Verdana";

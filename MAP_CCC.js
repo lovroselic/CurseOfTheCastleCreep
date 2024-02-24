@@ -1853,7 +1853,7 @@ const MAP = {
         oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
     }
     ,
-    94: {
+    94 : {
         name: "The Last Library",
         sg: 0,
         data: '{"width":"17","height":"13","map":"BB5ABB8AA13BB2AA2BB2AA4BAA4BAA6BABABAA7BAA5BB2ABABAA2BAA6BB4AA4BB2ABAA3BB3ABB4ABB3AA2BB2ABB5AA10BABAA10BABABB7ABB4AA2BAA2BABB3AA3BB2ABB3ABABAA2BB2AA2BAA2BABB26ABB2$"}',
@@ -1861,10 +1861,17 @@ const MAP = {
         floor: "SpideryWall2",
         ceil: "BrownMC_ceiling",
         start: '[195,1]',
+        decals: '[[88,7,"DungeonMaster100","picture"],[98,7,"AntAttack2","picture"],[76,7,"SP69","picture"],[42,7,"BC103","picture"],[124,7,"Spelunker70","picture"],[134,7,"Fred102","picture"],[120,7,"ScubaDive60","picture"],[196,5,"Elvira1","picture"],[68,5,"Tutamkham50","picture"],[153,5,"Jumpman70","picture"],[163,5,"SabreWulf99","picture"],[78,5,"FalconPatrol70","picture"],[84,3,"Frogger112","picture"],[57,3,"CongoBongo2","picture"],[194,3,"MonkeyIsland140","picture"],[148,3,"AztecChallenge101","picture"],[209,1,"ActecChallenge2","picture"],[183,1,"Prince41","picture"],[173,1,"DM104","picture"],[42,1,"DM107","picture"],[76,1,"DungeonMaster203","picture"],[110,1,"AticAtacCrest1","crest"]]',
         lights: '[[88,1,"Lamp52","standardDimmed"],[98,1,"Lamp52","standardDimmed"],[144,7,"Lamp41","standardDimmed"],[7,7,"Lamp46","standard"],[9,7,"Lamp46","standard"],[203,3,"Lamp51","dimRed"],[187,5,"Lamp51","dimRed"]]',
         gates: '[[212,1,"94.1","87.3","Up"]]',
+        monsters: '[[93,"GoldSkeleton"],[188,"GoldSkeleton"],[202,"GoldSkeleton"],[54,"GreenRex"],[64,"Hulk"]]',
+        scrolls: '[[93,2]]',
+        potions: '[[39,0],[45,0],[166,1],[156,1],[25,1]]',
+        containers: '[[151,"TreasureChest","INTERACTION_ITEM.LP",7],[35,"Chest","GOLD_ITEM_TYPE.SilverBar",7],[49,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",7],[107,"Wardrobe","GOLD_ITEM_TYPE.SilverBar",1],[113,"Crate","GOLD_ITEM_TYPE.SilverBar",1]]',
         entities: '[[3,7,"Spideress"],[13,7,"Libra"]]',
-    }
+        objects: '[[137,"Poison"],[193,"GoldCoin"],[197,"Skull"]]',
+        movables: '[[59,"BabyGreenSpider"]]',
+        }
     ,
     95 : {
         name: "Choices",

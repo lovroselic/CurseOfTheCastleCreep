@@ -50,18 +50,18 @@ const DEBUG = {
                 * revolver: dominatrix (whip, handcuffs)
                 * sponge: 85
                 * rubber duck: 86
-            * Poison (2x):  89,
+                * Poison (2x):  89, 94
             * Blood (3x): 84, 
                 * goldbar: Demon (dragons)
                 * goldbar: 85 floor object
             * goldbar
-            * LP (5): police, 84, 86,Libra,
+                * LP (5): police, 84, 86,Libra, 94
                 * green gem: 86
                 * blue gem (2x): 82,86
                 * red gem:87
                 * dragons (5x): 82, 84, 86, 87, 89
                 * ammo: 90
-            * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90)
+                * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90), 94
                 * ribbon: metal maiden
                 * hairbrush: ghostess
                 * shield: rapunzel
@@ -69,13 +69,13 @@ const DEBUG = {
                 * helmet: sword girl(), 
             * fly (3x): 85,Spideress,
                 * skull (3x): 82, 84, 85
-            * skull (5x): 87, 
+            * skull (5x): 87, 94
                 * candle (2x): siren (sponge, duck), 83
                 * sheep: (5x): 90,81, 88, 86, 89
                 * diamond: shepardess
                 * emerald: ForestWitch
             * iron bar (3x): 85, 87, 
-            * BabyGreenSpider (3x): 87, 
+            * BabyGreenSpider (3x): 87, 94
                 * Book: 87
             * GoldenBook: 
          * entitites:
@@ -121,11 +121,12 @@ const DEBUG = {
             * RedWellWoman (Blood (3x)): "Blood", 
                 * policewoman (gun, ammo) -> LP
             * frogess (fly 3x): Fly,
-            * Spideress (BabyGreenSpider 3x)> BabyGreenSpider, 
+            * Spideress (BabyGreenSpider 3x)> BabyGreenSpider, BabyGreenSpider, 
+            * * Libra (book, goldenbook 2x) ->book, 
          */
 
-        GAME.level = 94;       //return to 87 frogess 
-        GAME.gold = 1165;
+        GAME.level = 88;       //return to 87 frogess 
+        GAME.gold = 1890;
         HERO.maxHealth = 171;
         HERO.maxMana = 224;
         HERO.health = 131;
@@ -142,9 +143,9 @@ const DEBUG = {
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
-        HERO.inventory.potion.red = 0;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Luck", "DrainMana", "MagicBoost"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["DrainMana", "DrainMana"];
         //let scrolls = [];
 
         //debug
@@ -156,7 +157,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "BlueGem", "LP", "IronBar", "GoldBar", "LP", "BlueGem", "GreenGem", "LP", "Sheep", "IronBar", "Book", "Sheep", "Poison", "GoldBar"];
+        let invItems = ["Sheep", "BlueGem", "LP", "IronBar", "GoldBar", "LP", "BlueGem", "GreenGem", "LP", "Sheep", "IronBar", "Sheep", "Poison", "GoldBar", "Skull", "LP", "Poison", "GoldCoin"];
         //let invItems = ["BabyGreenSpider", "BabyGreenSpider", "BabyGreenSpider", "Book", "GoldenBook"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -197,7 +198,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.16.07",
+    VERSION: "0.16.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

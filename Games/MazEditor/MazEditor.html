@@ -4,7 +4,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="./CSS/LaughingStyle.css" rel="stylesheet" type="text/css">
+    <link href="/CSS/LaughingStyle.css" rel="stylesheet" type="text/css">
     <title>MazEditor</title>
 
 </head>
@@ -445,20 +445,24 @@
                             Export:
                         </legend>
                         <textarea id="exp" style="width: 1200px; height: 256px;">
-                            88: {
+                            88 : {
                                 name: "Metal Maiden",
                                 sg: 0,
                                 data: '{"width":"15","height":"15","map":"BB2ABAA5BABABB3ABB2AA3BB2AA4BB4ABB3AA5BAA5BAA5BABABABB2AA2BABB3AA4BB8ABB4ABB2ABABB2AA3BB2AA2BABAA2BB4ABAA3BB5AA4BABB3ABB10AA7BB7AA3BABB4AA8BABABB2AA2BB2AA3BABABB2AA2BB2ABB3AA5BB22A$"}',
                                 wall: "BrownBricks37",
                                 floor: "ScarletTiles2",
                                 ceil: "OrnateFloor343",
-                                start: '[37,7]',
+                                start: '[22,7]',
+                                decals: '[[82,7,"Ishar15","picture"],[79,7,"Pitfall88","picture"],[56,7,"MoonBuggy","picture"],[166,1,"CastleWolfenstein21","picture"],[178,1,"Triss","picture"],[127,1,"ORileysMine2","picture"],[185,1,"GIJoe70","picture"],[189,1,"TombRaider99","picture"],[153,5,"Oblivion141","picture"],[120,5,"Ski64","picture"],[62,5,"WhoDaresWins70","picture"],[134,3,"ImpossibleMsission112","picture"],[209,3,"Valhalla2","picture"],[200,3,"Arena201","picture"],[195,5,"SwordOfFargoal201","picture"],[204,5,"TempleOfApshai70","picture"],[161,3,"DonkeyKong200","picture"],[125,3,"LSL31","picture"],[129,5,"Portal130","picture"],[10,7,"Goonies88","picture"]]',
                                 lights: '[[82,1,"WallLamp33","standardDimmed"],[127,7,"WallLamp33","standardDimmed"],[1,7,"WallLamp20","standard"],[13,7,"WallLamp20","standard"],[212,1,"WallLamp35","lightRed"],[222,1,"WallLamp35","lightRed"]]',
                                 gates: '[[7,7,"88.1","86.3","Up"]]',
                                 keys: '[[34,3]]',
+                                gold: '[[197,"GoldCube"],[177,"GoldCube"],[172,"GoldCube"],[52,"GoldCube"],[61,"GoldCube"],[88,"GoldCube"]]',
+                                containers: '[[199,"Barrel","INTERACTION_ITEM.Fly",3]]',
                                 entities: '[[217,1,"MetalMaiden"]]',
-                                movables: '[[205,"BabySheep"]]',
-                            }
+                                objects: '[[208,"Skull"],[154,"Blood"]]',
+                                movables: '[[205,"BabySheep"],[67,"BabyGreenSpider"]]',
+                                }
                         </textarea>
                     </fieldset>
                 </div>
@@ -478,30 +482,25 @@
     <div id="bottom" class="cb" style="margin-top: 1024px"></div>
     <div id="temp" class="hidden"></div>
     <div id="temp2" class="hidden"></div>
+    <!-- External JS -->
+    <script src="/External/bootstrap.bundle.min.js"></script>
+    <script src="/External/jquery-3.6.0.min.js"></script>
+    <script src="/External/gl-matrix-min.js" type="text/javascript"></script>
     <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
-        </script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-        </script>
-
-    <script src="./gl-matrix-min.js" type="text/javascript"></script>
-    <script src="./Prototype_.js" type="text/javascript"></script>
-    <script src="./LS_Matrix_1_00.js" type="text/javascript"></script>
-    <script src="./ENGINE_.js" type="text/javascript"></script>
-    <script src="./GRID_.js" type="text/javascript"></script>
-    <script src="./MAZE_.js" type="text/javascript"></script>
-    <script src="./BWT_1_00.js" type="text/javascript"></script>
-    <script src='./IndexArrayManagers_.js'></script>
-    <script src="./WebGL_.js" type="text/javascript"></script>
-    <script src="./Lights_and_materials_.js" type="text/javascript"></script>
-    <script src="./assets_MazEditor.js" type="text/javascript"></script>
-    <script src="./Monsters_CCC.js" type="text/javascript"></script>
-    <script src="./MAP_forMazEditor.js" type="text/javascript"></script>
-    <script src="./MazEditor.js" type="text/javascript"></script>
-    <script src="./MAP and SPAWN tools_.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/Prototype_.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/LS_Matrix_1_00.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/ENGINE_.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/GRID_.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/MAZE_.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/BWT_1_00.js" type="text/javascript"></script>
+    <script src='/Code/JS/Library/Engine/IndexArrayManagers_.js'></script>
+    <script src="/Code/JS/Library/Engine/WebGL_.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/Lights_and_materials_.js" type="text/javascript"></script>
+    <script src="/Assets/Definitions/assets_MazEditor.js" type="text/javascript"></script>
+    <script src="/Assets/Definitions/Monsters_CCC.js" type="text/javascript"></script>
+    <script src="/Assets/Definitions//MAP_forMazEditor.js" type="text/javascript"></script>
+    <script src="/Games/MazEditor/MazEditor.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/MAP and SPAWN tools_.js" type="text/javascript"></script>
 
 </body>
 

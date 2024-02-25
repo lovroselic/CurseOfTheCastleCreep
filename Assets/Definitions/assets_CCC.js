@@ -562,6 +562,7 @@ LoadSprites = [
     { srcName: "Chef.jpg", name: "Chef" },
     { srcName: "Spacy.jpg", name: "Spacy" },
     { srcName: "SpaceWarrior.jpg", name: "SpaceWarrior" },
+    { srcName: "Roadie.jpg", name: "Roadie" },
 
 
 

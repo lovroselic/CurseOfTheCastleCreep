@@ -51,7 +51,7 @@ const DEBUG = {
                 * sponge: 85
                 * rubber duck: 86
                 * Poison (2x):  89, 94
-            * Blood (3x): 84, 
+            * Blood (3x): 84, 88, 
                 * goldbar: Demon (dragons)
                 * goldbar: 85 floor object
             * goldbar
@@ -67,15 +67,15 @@ const DEBUG = {
                 * shield: rapunzel
                 * sword: frogess
                 * helmet: sword girl(), 
-            * fly (3x): 85,Spideress,
+                * fly (3x): 85,Spideress, 88
                 * skull (3x): 82, 84, 85
-            * skull (5x): 87, 94
+            * skull (5x): 87, 94, 88
                 * candle (2x): siren (sponge, duck), 83
                 * sheep: (5x): 90,81, 88, 86, 89
                 * diamond: shepardess
                 * emerald: ForestWitch
             * iron bar (3x): 85, 87, 
-            * BabyGreenSpider (3x): 87, 94
+                * BabyGreenSpider (3x): 87, 94, 88
                 * Book: 87
             * GoldenBook: 
          * entitites:
@@ -122,7 +122,8 @@ const DEBUG = {
                 * policewoman (gun, ammo) -> LP
             * frogess (fly 3x): Fly,
             * Spideress (BabyGreenSpider 3x)> BabyGreenSpider, BabyGreenSpider, 
-            * * Libra (book, goldenbook 2x) ->book, 
+            * Libra (book, goldenbook 2x) ->book, 
+            * metal maiden (LP. 5x) -> LP, LP, LP, LP
          */
 
         GAME.level = 88;       //return to 87 frogess 
@@ -157,7 +158,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "BlueGem", "LP", "IronBar", "GoldBar", "LP", "BlueGem", "GreenGem", "LP", "Sheep", "IronBar", "Sheep", "Poison", "GoldBar", "Skull", "LP", "Poison", "GoldCoin"];
+        let invItems = ["Sheep", "BlueGem", "IronBar", "GoldBar","BlueGem", "GreenGem", "Sheep", "IronBar", "Sheep", "Poison", "GoldBar", "Skull",  "Poison", "GoldCoin"];
         //let invItems = ["BabyGreenSpider", "BabyGreenSpider", "BabyGreenSpider", "Book", "GoldenBook"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -198,7 +199,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.16.08",
+    VERSION: "0.17.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

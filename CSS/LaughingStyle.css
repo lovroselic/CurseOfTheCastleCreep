@@ -97,6 +97,11 @@ textarea, select, input {
     border-radius: 5px;
 }
 
+input[type="button"] {
+    /*background-color: #d7d78f;*/
+    background-color: #d9d9b3;;
+}
+
 input {
     margin: 5px;
 }

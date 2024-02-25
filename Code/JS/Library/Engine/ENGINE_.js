@@ -76,24 +76,13 @@ const ENGINE = {
   },
   readyCall: null,
   start: null,
-  //local links
-  SOURCE: "./Assets/AA/",
-  WASM_SOURCE: "https://www.c00lsch00l.eu/WASM/",
-  AUDIO_SOURCE: "./Assets/Mp3/",
-  FONT_SOURCE: "./Assets/Fonts/",
-  SHADER_SOURCE: "./Shaders/",
-  OBJECT_SOURCE: "./Objects/",
-  MODEL_SOURCE: "./Models/",
-  //web links
-  /*
-  SOURCE: "/Games/AA/",
-  WASM_SOURCE: "/WASM/",
-  AUDIO_SOURCE: "/Mp3/",
-  FONT_SOURCE: "/Fonts/",
-  SHADER_SOURCE: "/Games/Shaders/",
-  OBJECT_SOURCE: "/Games/Objects/",
-  MODEL_SOURCE: "/Games/Models/",
-  */
+  SOURCE: "/Assets/Graphics/",
+  WASM_SOURCE: "/Assets/WASM/",
+  AUDIO_SOURCE: "/Assets/Sounds/",
+  FONT_SOURCE: "/Assets/Fonts/",
+  SHADER_SOURCE: "/Code/GLSL/Shaders/",
+  OBJECT_SOURCE: "/Assets/Objects/",
+  MODEL_SOURCE: "/Assets/Models/",
   checkProximity: true, //check proximity before pixel perfect evaluation of collision to background //very obsolete!!
   LOAD_W: 160,
   LOAD_H: 22,
@@ -557,6 +546,7 @@ const ENGINE = {
     CTX.fillRect(1, 1, Math.floor((ENGINE.LOAD_W - 2) * (percent / 100)), ENGINE.LOAD_H - 2);
     CTX.fillStyle = "black";
     CTX.font = "10px Verdana";
+    CTX.fillStyle = "666";
     CTX.fillText(`${text}: ${percent}%`, ENGINE.LOAD_W * 0.1, ENGINE.LOAD_H * 0.62);
     return;
   },

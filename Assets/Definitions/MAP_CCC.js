@@ -1752,20 +1752,24 @@ const MAP = {
         movables: '[[67,"BabyGreenSpider"],[122,"BabyDragon"]]',
     }
     ,
-    88: {
+    88 : {
         name: "Metal Maiden",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABAA5BABABB3ABB2AA3BB2AA4BB4ABB3AA5BAA5BAA5BABABABB2AA2BABB3AA4BB8ABB4ABB2ABABB2AA3BB2AA2BABAA2BB4ABAA3BB5AA4BABB3ABB10AA7BB7AA3BABB4AA8BABABB2AA2BB2AA3BABABB2AA2BB2ABB3AA5BB22A$"}',
         wall: "BrownBricks37",
         floor: "ScarletTiles2",
         ceil: "OrnateFloor343",
-        start: '[37,7]',
+        start: '[22,7]',
+        decals: '[[82,7,"Ishar15","picture"],[79,7,"Pitfall88","picture"],[56,7,"MoonBuggy","picture"],[166,1,"CastleWolfenstein21","picture"],[178,1,"Triss","picture"],[127,1,"ORileysMine2","picture"],[185,1,"GIJoe70","picture"],[189,1,"TombRaider99","picture"],[153,5,"Oblivion141","picture"],[120,5,"Ski64","picture"],[62,5,"WhoDaresWins70","picture"],[134,3,"ImpossibleMsission112","picture"],[209,3,"Valhalla2","picture"],[200,3,"Arena201","picture"],[195,5,"SwordOfFargoal201","picture"],[204,5,"TempleOfApshai70","picture"],[161,3,"DonkeyKong200","picture"],[125,3,"LSL31","picture"],[129,5,"Portal130","picture"],[10,7,"Goonies88","picture"]]',
         lights: '[[82,1,"WallLamp33","standardDimmed"],[127,7,"WallLamp33","standardDimmed"],[1,7,"WallLamp20","standard"],[13,7,"WallLamp20","standard"],[212,1,"WallLamp35","lightRed"],[222,1,"WallLamp35","lightRed"]]',
         gates: '[[7,7,"88.1","86.3","Up"]]',
         keys: '[[34,3]]',
+        gold: '[[197,"GoldCube"],[177,"GoldCube"],[172,"GoldCube"],[52,"GoldCube"],[61,"GoldCube"],[88,"GoldCube"]]',
+        containers: '[[199,"Barrel","INTERACTION_ITEM.Fly",3]]',
         entities: '[[217,1,"MetalMaiden"]]',
-        movables: '[[205,"BabySheep"]]',
-    }
+        objects: '[[208,"Skull"],[154,"Blood"]]',
+        movables: '[[205,"BabySheep"],[67,"BabyGreenSpider"]]',
+        }
     ,
     89 : {
         name: "Ghostess",

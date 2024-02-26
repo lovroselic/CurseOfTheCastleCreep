@@ -694,6 +694,22 @@ const ORACLE_TYPE = {
         text: "Are you able to take both?",
         interactionCategory: "oracle",
     },
+    FunOracle: {
+        name: "FunOracle",
+        sprite: "FunOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Are you having fun yet?",
+        interactionCategory: "oracle",
+    },
+    Roadie: {
+        name: "Roadie",
+        sprite: "Roadie",
+        category: 'crest',
+        voice: "Female",
+        text: "I am fan of LaughingSkull. How about you?",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -2218,6 +2234,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Wasp",
         text: "Stingy?"
     },
+    Beer: {
+        name: "Beer",
+        category: "interaction_item",
+        inventorySprite: "Beer",
+        text: "A cold one."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -2910,6 +2932,20 @@ const INTERACTION_ENTITY = {
             conclusion: "Both book and gold, now in my keep, For you, death metal, dark and deep."
         }
     },
+    DesertGirl: {
+        name: "DesertGirl",
+        sprite: "DesertGirl",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Beer", "Beer"],
+        gives: "GoldBar",
+        text: {
+            intro: "Two beer or not two beer, that is the question.",
+            progress: "One ale procured, yet thirst's ambition calls for a second's provision.",
+            conclusion: "Libations twice, now my spirit's quenched, For thee, a bar of gold, nobly wrenched."
+        }
+    },
+    
 
 
 

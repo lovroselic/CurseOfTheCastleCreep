@@ -1755,23 +1755,26 @@ const MAP = {
     88 : {
         name: "Metal Maiden",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB2ABAA5BABABB3ABB2AA3BB2AA4BB4ABB3AA5BAA5BAA5BABABABB2AA2BABB3AA4BB8ABB4ABB2ABABB2AA3BB2AA2BABAA2BB4ABAA3BB5AA4BABB3ABB10AA7BB7AA3BABB4AA8BABABB2AA2BB2AA3BABABB2AA2BB2ABB3AA5BB22A$"}',
+        data: '{"width":"15","height":"15","map":"BB2ABAA5BABABB3ABB2AA3BAA4BB5ABB3AA5BAA4BAA6BABABABB2AA2BABB3AA3BB8ABB4ABABABB2AA3BB2AA3BABAA2BB4ABAA2BB4ABAA4BABB3ABB10AA6BB7AA3BABB4AA8BABABB2ABB3AA3BABABB2AA2BB3ABB3AA6BB22A$"}',
         wall: "BrownBricks37",
         floor: "ScarletTiles2",
         ceil: "OrnateFloor343",
         start: '[22,7]',
         decals: '[[82,7,"Ishar15","picture"],[79,7,"Pitfall88","picture"],[56,7,"MoonBuggy","picture"],[166,1,"CastleWolfenstein21","picture"],[178,1,"Triss","picture"],[127,1,"ORileysMine2","picture"],[185,1,"GIJoe70","picture"],[189,1,"TombRaider99","picture"],[153,5,"Oblivion141","picture"],[120,5,"Ski64","picture"],[62,5,"WhoDaresWins70","picture"],[134,3,"ImpossibleMsission112","picture"],[209,3,"Valhalla2","picture"],[200,3,"Arena201","picture"],[195,5,"SwordOfFargoal201","picture"],[204,5,"TempleOfApshai70","picture"],[161,3,"DonkeyKong200","picture"],[125,3,"LSL31","picture"],[129,5,"Portal130","picture"],[10,7,"Goonies88","picture"]]',
         lights: '[[82,1,"WallLamp33","standardDimmed"],[127,7,"WallLamp33","standardDimmed"],[1,7,"WallLamp20","standard"],[13,7,"WallLamp20","standard"],[212,1,"WallLamp35","lightRed"],[222,1,"WallLamp35","lightRed"]]',
-        gates: '[[7,7,"88.1","86.3","Up"]]',
+        gates: '[[7,7,"88.1","86.3","Up"],[24,5,"88.2","96.1","Down"]]',
         keys: '[[34,3]]',
+        monsters: '[[63,"GoldSkeleton"],[71,"GoldSkeleton"],[170,"RedDragon"],[174,"RedDragon"],[196,"GreenRex"],[207,"GreenRex"]]',
+        scrolls: '[[97,7],[67,6]]',
+        potions: '[[112,0],[76,1],[58,1],[142,1]]',
         gold: '[[197,"GoldCube"],[177,"GoldCube"],[172,"GoldCube"],[52,"GoldCube"],[61,"GoldCube"],[88,"GoldCube"]]',
-        containers: '[[199,"Barrel","INTERACTION_ITEM.Fly",3]]',
+        containers: '[[199,"Barrel","INTERACTION_ITEM.Fly",3],[160,"TreasureChest","INTERACTION_ITEM.Beer",3]]',
         entities: '[[217,1,"MetalMaiden"]]',
         objects: '[[208,"Skull"],[154,"Blood"]]',
         movables: '[[205,"BabySheep"],[67,"BabyGreenSpider"]]',
         }
     ,
-    89 : {
+    89: {
         name: "Ghostess",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABABAA3BB3AA3BABAA5BAA2BAA2BABB2AEAA3BB3AA6BABAA14BB2AA3BB2AA4BB2ABB10ABABAA3BAA2BB3AA2BB2AA2BABB4ABB8ABAA4BB2AA2BABABB3ABB4ABB2ABABAA3BB2AA4BAA5BABAA3BB3AA3BAA2BB4AA2BB2ABB9ABB10ABB11AB$A"}',
@@ -1790,7 +1793,7 @@ const MAP = {
         entities: '[[217,1,"Ghostess"]]',
         objects: '[[157,"Poison"]]',
         movables: '[[138,"BabyDragon"],[208,"BabySheep"]]',
-        }
+    }
     ,
     90: {
         name: "Red Keep",
@@ -1857,7 +1860,7 @@ const MAP = {
         oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
     }
     ,
-    94 : {
+    94: {
         name: "The Last Library",
         sg: 0,
         data: '{"width":"17","height":"13","map":"BB5ABB8AA13BB2AA2BB2AA4BAA4BAA6BABABAA7BAA5BB2ABABAA2BAA6BB4AA4BB2ABAA3BB3ABB4ABB3AA2BB2ABB5AA10BABAA10BABABB7ABB4AA2BAA2BABB3AA3BB2ABB3ABABAA2BB2AA2BAA2BABB26ABB2$"}',
@@ -1875,9 +1878,9 @@ const MAP = {
         entities: '[[3,7,"Spideress"],[13,7,"Libra"]]',
         objects: '[[137,"Poison"],[193,"GoldCoin"],[197,"Skull"]]',
         movables: '[[59,"BabyGreenSpider"]]',
-        }
+    }
     ,
-    95 : {
+    95: {
         name: "Choices",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABAA3ÁÁ2AÁÁ3BB2ÁAA3ÁÁ2BB4AA3BAA3BAA4ÁAÁAÁÁ2AA14ÁÁ2AA10ÁÁ2AA2BABB12ABABABB3ÁBÁABB20AA2BB14A$ÁÁ4ABABB16ÁÁ2AA2ÁÁ6AÁAÁBB4AA6BB2ÁÁ28QQ2ÁÁ4AA6"}',
@@ -1894,6 +1897,24 @@ const MAP = {
         skills: '[[32,"Heart"],[182,"Mana"]]',
         containers: '[[193,"Barrel","GOLD_ITEM_TYPE.GoldBar",3],[43,"Barrel","GOLD_ITEM_TYPE.GoldBar",3]]',
         oracles: '[[105,5,"Boss"]]',
+    }
+    ,
+    96 : {
+        name: "The Desert",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB2AA2BB6AA7BAA32BAA2BAA9BB2ABABAA20BAA12BB2ABAA13BAA4BB11ABB7ABB3ABB19ABB3ABAA2BAA2BB7AA6BAA3BABB22$BB5A"}',
+        wall: "Sand6",
+        floor: "Sand13",
+        ceil: "Sand2",
+        start: '[177,3]',
+        decals: '[[97,7,"SP4","picture"]]',
+        lights: '[[97,1,"Lamp44","standardDimmed"],[111,3,"Lamp42","standardDimmed"],[113,5,"Lamp42","standardDimmed"]]',
+        gates: '[[178,3,"96.1","88.2","Up"]]',
+        containers: '[[16,"Barrel","INTERACTION_ITEM.GoldenBook",7]]',
+        triggers: '[[201,1,"RockTriggerButton",1,127]]',
+        entities: '[[7,7,"DesertGirl"]]',
+        objects: '[[181,"Skull"],[28,"Blood"]]',
+        oracles: '[[105,5,"FunOracle"],[119,3,"Roadie"]]',
         }
     ,
     999: {

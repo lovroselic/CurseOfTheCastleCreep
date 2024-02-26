@@ -528,7 +528,7 @@ LoadSprites = [
     { srcName: "SittingDomme.jpg", name: "SittingDomme" },
     { srcName: "PoliceWoman.jpg", name: "PoliceWoman" },
     { srcName: "Priestess.jpg", name: "Priestess" },
-    { srcName: "HealthGoddess.jpg", name: "ManaGoddess" },
+    { srcName: "ManaGodess.jpg", name: "ManaGoddess" },
     { srcName: "Whipper.jpg", name: "Whipper" },
     { srcName: "RedWoman.jpg", name: "RedWoman" },
     { srcName: "CanyonGirl.jpg", name: "CanyonGirl" },
@@ -552,6 +552,8 @@ LoadSprites = [
     { srcName: "RealSpiderGirl.jpg", name: "Spideress" },
     { srcName: "Libra.jpg", name: "Libra" },
     { srcName: "Boss.jpg", name: "Boss" },
+    { srcName: "FunOracle.jpg", name: "FunOracle" },
+    { srcName: "Roadie.jpg", name: "Roadie" },
     //unused
 
     { srcName: "GothGirl.jpg", name: "GothGirl" },
@@ -562,7 +564,9 @@ LoadSprites = [
     { srcName: "Chef.jpg", name: "Chef" },
     { srcName: "Spacy.jpg", name: "Spacy" },
     { srcName: "SpaceWarrior.jpg", name: "SpaceWarrior" },
-    { srcName: "Roadie.jpg", name: "Roadie" },
+    { srcName: "RedHeadDomme.jpg", name: "RedHeadDomme" },
+    { srcName: "WellWoman.jpg", name: "WellWoman" },
+    
 
 
 
@@ -622,7 +626,7 @@ LoadSprites = [
     { srcName: "IronBar.png", name: "IronBar" },
     { srcName: "Emerald.png", name: "Emerald" },
     { srcName: "Diamond.png", name: "Diamond" },
-
+    { srcName: "Beer.png", name: "Beer" },
     { srcName: "Wasp.png", name: "Wasp" },
 
 

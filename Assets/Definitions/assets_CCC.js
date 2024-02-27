@@ -376,6 +376,7 @@ LoadTextures = [
     { srcName: "mushroom_baseColor.jpg", name: "MushroomTexture" },
     { srcName: "IronTexture.jpg", name: "IronTexture" },
     { srcName: "rex_Green.jpg", name: "GreenRex" },
+    { srcName: "GreenBasilisk_baseColor.jpg", name: "GreenBasilisk" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -566,6 +567,7 @@ LoadSprites = [
     { srcName: "SpaceWarrior.jpg", name: "SpaceWarrior" },
     { srcName: "RedHeadDomme.jpg", name: "RedHeadDomme" },
     { srcName: "WellWoman.jpg", name: "WellWoman" },
+    { srcName: "Climber.jpg", name: "Climber" },
     
 
 

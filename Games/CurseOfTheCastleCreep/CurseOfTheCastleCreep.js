@@ -45,6 +45,7 @@ const DEBUG = {
          * used trrainers;
             * whipper (atatck)
             * priestess (health)
+            * another witch (magic)
          * items source
                 * handcuffs: 86
                 * whip : 83 
@@ -115,46 +116,47 @@ const DEBUG = {
             * 93 ForestWitch:
             * 94 The Last Library
                 * COMPLETED 95 choices
-            * 96 desert girl 
+            * COMPLETED 96 desert girl 
         * mock entity delivery:
                 * dominatrix: whip; Handcuffs
                 * siren:  sponge, RubberDuck
                 * demona: BabyDragon, BabyDragon,BabyDragon, BabyDragon, BabyDragon
             * SkullCollector (skulls 5x): "Skull", "Skull", "Skull"
                 * ghostess (skull, skull, skull, candle, candle): Candle, Candle, Skull, Skull, Skull,
-            * RedWellWoman (Blood (3x)): "Blood", 
+                * RedWellWoman (Blood (3x)): "Blood", blod, blood
                 * policewoman (gun, ammo) -> LP
                 * frogess (fly 3x): Fly, Fly, Fly
                 * Spideress (BabyGreenSpider 3x)> BabyGreenSpider, BabyGreenSpider, BabyGreenSpider
-            * Libra (book, goldenbook 2x) ->book, 
-            * metal maiden (LP. 5x) -> LP, LP, LP, LP
+                * Libra (book, goldenbook 2x) ->book, goldenBook
+                * metal maiden (LP. 5x) -> LP, LP, LP, LP, LP
             * Desert girl: (beer, Beer): Beer, 
-            * sword girl (sword, shield) -> sword,
-            * RedWellWoman (Blood (3x)) : blood, 
+            * sword girl (sword, shield) -> shield, 
+                * RedWellWoman (Blood (3x)) : blood, blod, blood
                 * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) :blue gem,GoldBar, green gem,gold bar, red gem, 
             * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) : ironbar, ironbar, 
+            * rapunzel (ribbon, hairbrush) -> shield
          */
 
-        GAME.level = 96;       // return to 96 desert girls //return to 88 metal maiden //return to 87 frogess // return to 90
-        GAME.gold = 2674;
-        HERO.maxHealth = 191;
-        HERO.maxMana = 224;
-        HERO.health = 191;
-        HERO.mana = 0;
+        GAME.level = 92;       // return to 90
+        GAME.gold = 3111;
+        HERO.maxHealth = 195;
+        HERO.health = 195;
+        HERO.maxMana = 229;
+        HERO.mana = 229;
         HERO.attack = 46;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 43;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 42;
+        HERO.magic = 45;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 2295;
-        HERO.defenseExp = 729;
-        HERO.magicExp = 4727;
+        HERO.attackExp = 2521;
+        HERO.defenseExp = 761;
+        HERO.magicExp = 4906;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
         HERO.inventory.potion.red = 0;
-        HERO.inventory.potion.blue = 3;
+        HERO.inventory.potion.blue = 0;
         let scrolls = [];
         //let scrolls = [];
 
@@ -167,14 +169,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "BlueGem", "Sheep",  "Sheep", "Poison", "Poison", "Sheep", "HairBrush"];
+        let invItems = ["Sheep", "BlueGem", "Sheep", "Sheep", "Poison", "Poison", "Sheep", "Skull", "Helmet", "Sheep"];
         //let invItems = ["Beer", "Beer"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Emerald"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -208,7 +210,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.17.01",
+    VERSION: "0.17.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

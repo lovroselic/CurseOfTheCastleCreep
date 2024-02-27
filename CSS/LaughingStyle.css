@@ -3,56 +3,50 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'Kristen';
-    src: url("/Fonts/Kristen.ttf");
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'LaughingSkull';
-    src: url("/Fonts/LS.ttf");
+    src: url("/Assets/Fonts/LS.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Emulogic';
-    src: url("/Fonts/emulogic.ttf");
+    src: url("/Assets/Fonts/emulogic.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Arcade';
-    src: url("/Fonts/Arcade Classic.ttf");
+    src: url("/Assets/Fonts/Arcade Classic.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Adore';
-    src: url("/Fonts/Adore64.ttf");
+    src: url("/Assets/Fonts/Adore64.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Annie';
-    src: url("/Fonts/AnnieUseYourTelescope.ttf");
+    src: url("/Assets/Fonts/AnnieUseYourTelescope.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'DeepDown';
-    src: url("/Fonts/DeepDown.ttf");
+    src: url("/Assets/Fonts/DeepDown.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Moria';
-    src: url("/Fonts/MoriaCitadel.ttf");
+    src: url("/Assets/Fonts/MoriaCitadel.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: "C64";
-    src: url("/Fonts/C64_Pro-STYLE.ttf");
+    src: url("/AssetsFonts/C64_Pro-STYLE.ttf");
     font-display: swap;
 }
 

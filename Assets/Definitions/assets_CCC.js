@@ -568,6 +568,7 @@ LoadSprites = [
     { srcName: "RedHeadDomme.jpg", name: "RedHeadDomme" },
     { srcName: "WellWoman.jpg", name: "WellWoman" },
     { srcName: "Climber.jpg", name: "Climber" },
+    { srcName: "HealthGoddess.jpg", name: "HealthGoddess" },
     
 
 
@@ -755,10 +756,13 @@ LoadSprites = [
     { srcName: "MagicShrine18.jpg", name: "MagicShrine18" },
     { srcName: "MagicShrine19.jpg", name: "MagicShrine19" },
     { srcName: "MagicShrine20.jpg", name: "MagicShrine20" },
-
     { srcName: "AttackShrine21.jpg", name: "AttackShrine21" },
     { srcName: "DefenseShrine21.jpg", name: "DefenseShrine21" },
     { srcName: "MagicShrine21.jpg", name: "MagicShrine21" },
+
+    { srcName: "AttackShrine22.jpg", name: "AttackShrine22" },
+    { srcName: "DefenseShrine22.jpg", name: "DefenseShrine22" },
+    { srcName: "MagicShrine22.jpg", name: "MagicShrine22" },
 
 
 

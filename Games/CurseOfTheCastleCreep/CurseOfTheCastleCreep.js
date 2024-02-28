@@ -38,14 +38,13 @@ const DEBUG = {
     checkpoint1() {
         /**
          * current temple
-         * used shrines: 
-            * attack1
-            * magic
-            * defense
+         * used shrines restroom: 
+
          * used trrainers;
             * whipper (atatck)
             * priestess (health)
             * another witch (magic)
+            * mana
          * items source
                 * handcuffs: 86
                 * whip : 83 
@@ -71,13 +70,13 @@ const DEBUG = {
                 * helmet: sword girl(), 
                 * fly (3x): 85,Spideress, 88
                 * skull (3x): 82, 84, 85
-            * skull (5x): 87, 94, 88, 96
+                * skull (5x): 87, 94, 88, 96, 92
                 * candle (2x): siren (sponge, duck), 83
                 * sheep: (5x): 90,81, 88, 86, 89
                 * diamond: shepardess
                 * emerald: ForestWitch
-            * iron bar (3x): 85, 87, 
-            * beer (2x):
+                * iron bar (3x): 85, 87, 92
+                * beer (2x):88, 92
                 * BabyGreenSpider (3x): 87, 94, 88
                 * Book: 87
                 * GoldenBook: 96
@@ -112,16 +111,16 @@ const DEBUG = {
                 * COMPLETED 89 ghostess
             * PLAYED: 90 red keep (sword girl, redwell woman, SkullCollector)
             * 91 Locksmithstress (L1, L2)
-            * 92 shepardess:
+                * COMPLETED 92 shepardess:
             * 93 ForestWitch:
-            * 94 The Last Library
+                * COMPLETED 94 The Last Library
                 * COMPLETED 95 choices
-            * COMPLETED 96 desert girl 
+                * COMPLETED 96 desert girl 
         * mock entity delivery:
                 * dominatrix: whip; Handcuffs
                 * siren:  sponge, RubberDuck
                 * demona: BabyDragon, BabyDragon,BabyDragon, BabyDragon, BabyDragon
-            * SkullCollector (skulls 5x): "Skull", "Skull", "Skull"
+                * SkullCollector (skulls 5x): "Skull", "Skull", "Skull" skull, skull
                 * ghostess (skull, skull, skull, candle, candle): Candle, Candle, Skull, Skull, Skull,
                 * RedWellWoman (Blood (3x)): "Blood", blod, blood
                 * policewoman (gun, ammo) -> LP
@@ -129,34 +128,35 @@ const DEBUG = {
                 * Spideress (BabyGreenSpider 3x)> BabyGreenSpider, BabyGreenSpider, BabyGreenSpider
                 * Libra (book, goldenbook 2x) ->book, goldenBook
                 * metal maiden (LP. 5x) -> LP, LP, LP, LP, LP
-            * Desert girl: (beer, Beer): Beer, 
-            * sword girl (sword, shield) -> shield, 
+                * Desert girl: (beer, Beer): Beer, beer
+                * sword girl (sword, shield) -> helmet, 
                 * RedWellWoman (Blood (3x)) : blood, blod, blood
                 * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) :blue gem,GoldBar, green gem,gold bar, red gem, 
-            * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) : ironbar, ironbar, 
-            * rapunzel (ribbon, hairbrush) -> shield
+            * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) : i
+                * rapunzel (ribbon, hairbrush) -> shield
+            * ForestWitch: (helmet, poison, poison, BlueGem)
          */
 
-        GAME.level = 92;       // return to 90
-        GAME.gold = 3111;
+        GAME.level = 93;        // return to 90
+        GAME.gold = 600;
         HERO.maxHealth = 195;
         HERO.health = 195;
-        HERO.maxMana = 229;
-        HERO.mana = 229;
-        HERO.attack = 46;
+        HERO.maxMana = 262;
+        HERO.mana = 262;
+        HERO.attack = 47;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 43;
+        HERO.defense = 44;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 45;
+        HERO.magic = 46;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 2521;
-        HERO.defenseExp = 761;
-        HERO.magicExp = 4906;
+        HERO.attackExp = 2869;
+        HERO.defenseExp = 827;
+        HERO.magicExp = 6771;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
-        HERO.inventory.potion.red = 0;
-        HERO.inventory.potion.blue = 0;
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 1;
         let scrolls = [];
         //let scrolls = [];
 
@@ -169,7 +169,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Sheep", "BlueGem", "Sheep", "Sheep", "Poison", "Poison", "Sheep", "Skull", "Helmet", "Sheep"];
+        let invItems = ["Diamond", "BlueGem", "Poison", "Poison", "Helmet", "GoldBar", "IronBar", "IronBar", "IronBar"];
         //let invItems = ["Beer", "Beer"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -210,7 +210,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.17.02",
+    VERSION: "0.17.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -220,7 +220,7 @@ const PRG = {
         console.log(`${PRG.NAME} ${PRG.VERSION} by Lovro Selic, (c) LaughingSkull ${PRG.YEAR} on ${navigator.userAgent}`);
         console.log("%c**************************************************************************************************************************************", PRG.CSS);
         $("#title").html(PRG.NAME);
-        $("#version").html(`${PRG.NAME} V${PRG.VERSION} <span style='font-size:14px'>&copy</span> C00lSch00l ${PRG.YEAR}`);
+        $("#version").html(`${PRG.NAME} V${PRG.VERSION} <span style='font-size:14px'>&copy</span> LaughingSkull ${PRG.YEAR}`);
         $("input#toggleAbout").val("About " + PRG.NAME);
         $("#about fieldset legend").append(" " + PRG.NAME + " ");
 
@@ -1311,7 +1311,7 @@ const GAME = {
     },
     generateTitleText() {
         let text = `${PRG.NAME} ${PRG.VERSION
-            }, a game by Lovro Selič, ${"\u00A9"} C00LSch00L ${PRG.YEAR
+            }, a game by Lovro Selič, ${"\u00A9"} LaughingSkull ${PRG.YEAR
             }. 
              
             Music: 'Time Heals Nothing' written and performed by LaughingSkull, ${"\u00A9"

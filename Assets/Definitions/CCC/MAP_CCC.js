@@ -29,7 +29,7 @@ const MAP = {
         floor: "Grass2",
         ceil: "Sky1",
         start: '[40,1]',
-        decals: '[[25,3,"Forest","crest"],[34,3,"Forest","crest"],[43,3,"Forest","crest"],[52,3,"Forest","crest"],[61,3,"Forest","crest"],[19,5,"Forest","crest"],[28,5,"Forest","crest"],[37,5,"Forest","crest"],[46,5,"Forest","crest"],[55,5,"Forest","crest"],[65,1,"Forest","crest"],[66,1,"Forest","crest"],[68,1,"Forest","crest"],[69,1,"Forest","crest"],[67,1,"Forest","crest"],[12,7,"LS","crest"],[14,7,"LS","crest"],[12,5,"CCC1","picture"]]',
+        decals: '[[25,3,"Forest","texture"],[34,3,"Forest","texture"],[43,3,"Forest","texture"],[52,3,"Forest","texture"],[61,3,"Forest","texture"],[19,5,"Forest","texture"],[28,5,"Forest","texture"],[37,5,"Forest","texture"],[46,5,"Forest","texture"],[55,5,"Forest","texture"],[65,1,"Forest","texture"],[66,1,"Forest","texture"],[68,1,"Forest","texture"],[69,1,"Forest","texture"],[67,1,"Forest","texture"],[12,7,"LS","crest"],[14,7,"LS","crest"],[12,5,"CCC1","picture"]]',
         lights: '[[11,7,"WallLamp","standard"],[15,7,"WallLamp","standard"]]',
         gates: '[[4,7,"1.1","2.1","Gold"]]',
         keys: '[[21,0]]',
@@ -345,7 +345,7 @@ const MAP = {
     }
     ,
     18: {
-        name: "Sassy Squirell",
+        name: "Sassy Squirrel",
         sg: 0,
         data: '{"width":"19","height":"19","map":"BÁAA2ÁÁ2BB5EBB3EÁÁ2BB2ABAA21BB2AA4BAÁÁ5AA6ÁÁ5AA9ÁAA22BB2ÁAA2ÁAA5ÁÁ4BAA6BAA16BAÁAÁBB11ABB4ABAA2BB2AA2BÁABAÁÁ2ABB13ABAÁÁ2BB16ÁBB34ÁAB$ABEAA2ÁÁ2AA2BABABB3ABAA4BB2AA2BAA9ÁÁ4BB2AEBAÁAÁÁ2BB3ÁBÁABÁÁ7AÁÁ5BB2ÁÁ2AA2ÁÁ5AÁÁ9BÁBB2ÁÁ6AÁÁ7BÁÁ2A"}',
         wall: "MossWall16",
@@ -1852,21 +1852,23 @@ const MAP = {
         objects: '[[130,"IronBar"],[212,"Skull"]]',
     }
     ,
-    93: {
+    93 : {
         name: "Forest Witches",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB2AA2BB3ABB2ABB3AA2BAA5BAA3BAA3BB3AA2BAA2BB2AA2BB2AA3BAA2BAA2BAA6BAA4BABAA7BABABAA2BB3AA9BABAA2BAA2BB2AA3BAA2BB7ABB5AA4BAA2BB2AA3BB4AA3BB3ABB2ABB6ABB4AA2BB6ABB2ABB4AA2BABABB4AA2BABB2ABB3AA2BB4ABABB3ABB2AA2BB3ABABABB5AA7BAA6BB3ABB3ABABB3ABABB15ABB15AB$"}',
+        data: '{"width":"17","height":"17","map":"BB2AA2BB3ABB2ABB3AA2BAA5BAA3BAA3BB3AA4BB2AA2BB2AA3BAA2BB3AA2BAA5BAA4BAA2BAA6BAA4BAA2BB3AA8BABAA2BB2AA2BB2AA5BB6ABB5AA4BAA3BB2AA3BB4AA3BB3ABABB8ABB3AA2BB9ABB3AA2BABABB4AA2BABABB3AA2BABB3ABABB2ABABB2ABB3EBABABB4ABAA5BAA6BB3ABB3ABABABB3ABB16ABB14AB$AB"}',
         wall: "SmallBricks5",
         floor: "RedBrickFloor1",
         ceil: "BrownBricks36",
         start: '[52,5]',
-        decals: '[[41,3,"Skull21","crest"],[75,3,"Skull20","crest"]]',
+        decals: '[[41,3,"Skull21","crest"],[75,3,"Skull20","crest"],[4,7,"Apshai10","picture"],[8,7,"Pitfall70","picture"],[12,7,"TombRaider102","picture"],[108,7,"FalconPatrol99","picture"],[100,7,"Galaga70","picture"],[124,7,"WhoDaresWins1","picture"],[150,7,"GatewayToApshai130","picture"],[217,7,"GatewayToApshai110","picture"],[163,7,"ORileysMine2","picture"],[106,1,"JetSetWilly11","picture"],[148,1,"SVS111","picture"],[127,1,"KingsQuest52","picture"],[115,1,"SkoolDaze60","picture"],[185,1,"LastNinja140","picture"],[226,1,"KokotoniWilf60","picture"],[274,1,"DungeonMaster70","picture"],[280,1,"Portal140","picture"],[161,7,"JSW112","picture"],[239,5,"JetSetWilly88","picture"],[243,5,"AticAtac201","picture"],[231,1,"Shamus91","picture"],[265,3,"SabreWulf11","picture"],[255,5,"AMC2","picture"],[49,3,"Forest8","texture"],[83,3,"Forest8","texture"],[49,7,"Forest8","texture"],[83,1,"Forest8","texture"],[236,3,"Forest4","texture"],[270,3,"Forest4","texture"],[285,1,"Forest4","texture"],[286,1,"Forest4","texture"],[270,1,"Forest4","texture"],[236,7,"Forest4","texture"],[31,7,"Forest8","texture"],[99,1,"Forest8","texture"],[284,1,"Forest4","texture"],[136,5,"Forest6","texture"],[153,5,"Forest6","texture"],[120,5,"Forest6","texture"],[140,3,"Forest6","texture"],[157,3,"Forest6","texture"],[122,3,"Forest6","texture"],[120,7,"Forest6","texture"],[122,7,"Forest6","texture"]]',
         lights: '[[60,5,"WallLamp12","standardDimmed"],[60,3,"WallLamp9","standard"],[206,1,"WallLamp33","standardDimmed"],[248,5,"WallLamp33","standardDimmed"],[176,5,"WallLamp33","standardDimmed"],[147,3,"WallLamp9","standardDimmed"]]',
         gates: '[[51,5,"93.1","90.4","Down"]]',
+        monsters: '[[63,"Drax"],[251,"GreenRex"],[138,"AngrySheep"],[142,"GoldSkeleton"],[257,"GoldSkeleton"],[214,"GoldSkeleton"],[55,"RedGoldBat"]]',
+        doors: '[114]',
         triggers: '[[43,5,"RockTriggerButton",1,77]]',
         entities: '[[67,3,"ForestWitch"]]',
         oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
-    }
+        }
     ,
     94: {
         name: "The Last Library",
@@ -1941,6 +1943,7 @@ const MAP = {
         lights: '[[8,7,"WallLamp11","standard"],[280,1,"Lamp43","standard"],[152,3,"Lamp46","standard"],[86,5,"Lamp51","standardRedish"],[188,5,"Lamp51","standardRedish"],[143,3,"WallLamp13","standard"],[1,7,"Lamp45","dimRed"],[15,7,"Lamp45","dimRed"],[273,1,"Lamp40","dimRed"],[287,1,"Lamp40","dimRed"]]',
         gates: '[[136,5,"97.1","90.5","Open"]]',
         monsters: '[[32,"RedDragon"],[18,"RedDragon"],[256,"RedDragon"],[270,"RedDragon"],[83,"GhostMinionGreen"],[117,"GhostMinionGreen"],[185,"GhostMinionGreen"],[219,"GhostMinionGreen"]]',
+        scrolls: '[[27,2],[21,4],[259,5],[267,6],[171,7],[103,12],[142,3]]',
         gold: '[[140,"GoldCube"],[59,"GoldCube"],[212,"GoldCube"],[148,"GoldCube"],[65,"GoldCube"],[69,"GoldCube"],[225,"GoldCube"],[265,"GoldCube"],[218,"GoldCube"],[36,"GoldCube"],[190,"SilverBar"],[257,"SilverBar"],[269,"SilverBar"],[74,"SilverBar"],[87,"GoldBar"]]',
         shrines: '[[127,1,"Attack1_22"],[144,5,"Defense1_22"],[161,7,"Magic1_22"]]',
         }

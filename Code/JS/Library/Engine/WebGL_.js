@@ -876,6 +876,7 @@ const WORLD = {
                 break;
             case "crest":
             case "portal":
+            case "texture":
                 dW = (1.0 - W / resolution) / 2;
                 dH = (1.0 - H / resolution) / 2;
                 leftX = dW;
@@ -898,7 +899,7 @@ const WORLD = {
         let resolution = WebGL.INI.DEFAULT_RESOLUTION;
         if (decal.resolution) {
             resolution = decal.resolution;
-        } else if ((decal.category === "crest" || decal.category === "portal") && decal.expand) {
+        } else if ((decal.category === "texture") || (decal.category === "crest" || decal.category === "portal") && decal.expand) {
             resolution = this.divineResolution(decal.texture);
             decal.resolution = resolution;
         }

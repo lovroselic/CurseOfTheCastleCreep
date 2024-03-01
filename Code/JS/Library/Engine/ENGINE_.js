@@ -142,10 +142,20 @@ const ENGINE = {
     LAYER.temp2 = $("#temp_canvas2")[0].getContext("2d");
     VIEW.init();
   },
-  fill(ctx, pattern) {
-    let CTX = ctx;
+  fill(CTX, pattern) {
     let pat = CTX.createPattern(pattern, "repeat");
     CTX.fillStyle = pat;
+    CTX.fillRect(0, 0, CTX.canvas.width, CTX.canvas.height);
+  },
+  resizeCanvas(img, targetSize) {
+    LAYER.temp.canvas.width = targetSize;
+    LAYER.temp.canvas.height = targetSize;
+    LAYER.temp.drawImage(img, 0, 0, img.width, img.height, 0, 0, targetSize, targetSize);
+    return LAYER.temp.canvas;
+  },
+  resizeAndFill(CTX, pattern, targetSize) {
+    const resizedPattern = CTX.createPattern(ENGINE.resizeCanvas(pattern, targetSize), 'repeat');
+    CTX.fillStyle = resizedPattern;
     CTX.fillRect(0, 0, CTX.canvas.width, CTX.canvas.height);
   },
   clearManylayers(layers) {
@@ -3465,6 +3475,14 @@ class Inventory {
   }
   display() {
     console.table("Inventory:", this.list);
+    const list = [];
+    for (let obj of this.list) {
+      for (let c = 0; c < obj.count; c++) {
+        list.push(obj.object.type);
+      }
+
+    }
+    console.info("display by type:", list);
   }
   stringify() {
     let list = [];

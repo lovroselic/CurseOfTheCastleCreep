@@ -7,7 +7,7 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "0.5",
+    VERSION: "0.6",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
         'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables', 'trainers'],
@@ -118,7 +118,9 @@ const SPAWN_TOOLS = {
             const face = DirectionToFace(Vector.fromInt(D[1]));
             const picture = D[2];
             const type = D[3];
-            DECAL3D.add(new StaticDecal(grid, face, SPRITE[picture], type, picture));
+            let decal = SPRITE[picture];
+            if (type === "texture") decal = TEXTURE[picture];
+            DECAL3D.add(new StaticDecal(grid, face, decal, type, picture));
         }
     },
     lights(map, GA) {

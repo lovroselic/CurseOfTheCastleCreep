@@ -49,12 +49,13 @@ const INI = {
   MAX_GRID: 64,
   MIN_GRID: 5,
   SPACE_X: 2048,
-  SPACE_Y: 2048
+  SPACE_Y: 2048,
+  CANVAS_RESOLUTION: 256,
 };
 const PRG = {
-  VERSION: "0.09.05",
+  VERSION: "0.10.00",
   NAME: "MazEditor&#174",
-  YEAR: "2022, 2023",
+  YEAR: "2022, 2023, 2024",
   CSS: "color: #239AFF;",
   INIT() {
 
@@ -62,7 +63,7 @@ const PRG = {
     console.log(`${PRG.NAME} ${PRG.VERSION} by Lovro Selic, (c) LaughingSkull ${PRG.YEAR} on ${navigator.userAgent}`);
     console.log("%c**************************************************************************************************************************************", PRG.CSS);
     $("#title").html(PRG.NAME);
-    $("#version").html(`${PRG.NAME} V${PRG.VERSION} <span style='font-size:14px'>&copy</span> C00lSch00l ${PRG.YEAR}`);
+    $("#version").html(`${PRG.NAME} V${PRG.VERSION} <span style='font-size:14px'>&copy</span> LaughingSkull ${PRG.YEAR}`);
     $("input#toggleAbout").val("About " + PRG.NAME);
     $("#about fieldset legend").append(" " + PRG.NAME + " ");
 
@@ -687,14 +688,17 @@ const GAME = {
   },
   getSelectedDecal() {
     const radio = $("#selector2 input[name=decalusage]:checked").val();
+    console.warn("radio", radio);
     switch (radio) {
       case "picture":
         return [$("#picture_decal")[0].value, radio];
       case "crest":
         return [$("#crest_decal")[0].value, radio];
+      case "texture":
+        return [$("#texture_decal")[0].value, radio];
       default:
         console.error("decalusage error");
-        return [NULL, NULL];
+        return [null, null];
     }
   },
   getSelectedDir() {
@@ -825,12 +829,14 @@ const GAME = {
   updateTextures() {
     const wallTexture = TEXTURE[$("#walltexture")[0].value];
     const floorTexture = TEXTURE[$("#floortexture")[0].value];
-    const ceilTexure = TEXTURE[$("#ceiltexture")[0].value];
+    const ceilTexture = TEXTURE[$("#ceiltexture")[0].value];
+    const textureTexture = TEXTURE[$("#texture_decal")[0].value];
     ENGINE.fill(LAYER.wallcanvas, wallTexture);
     ENGINE.fill(LAYER.floorcanvas, floorTexture);
-    ENGINE.fill(LAYER.ceilcanvas, ceilTexure);
+    ENGINE.fill(LAYER.ceilcanvas, ceilTexture);
+    ENGINE.resizeAndFill(LAYER.texturecanvas, textureTexture, INI.CANVAS_RESOLUTION);
     const ids = ["wall_resolution", "floor_resolution", "ceil_resolution"];
-    for (const [i, pTexture] of [wallTexture, floorTexture, ceilTexure].entries()) {
+    for (const [i, pTexture] of [wallTexture, floorTexture, ceilTexture].entries()) {
       let res = GAME.getResolution(pTexture);
       $(`#${ids[i]}`).html(`width: ${res[0]}, height: ${res[1]}`);
     }
@@ -869,16 +875,22 @@ const GAME = {
       $("#walltexture").append(`<option value="${prop}">${prop}</option>`);
       $("#floortexture").append(`<option value="${prop}">${prop}</option>`);
       $("#ceiltexture").append(`<option value="${prop}">${prop}</option>`);
+      $("#texture_decal").append(`<option value="${prop}">${prop}</option>`);
     }
     LAYER.wallcanvas = $("#wallcanvas")[0].getContext("2d");
     LAYER.floorcanvas = $("#floorcanvas")[0].getContext("2d");
     LAYER.ceilcanvas = $("#ceilcanvas")[0].getContext("2d");
+    LAYER.texturecanvas = $("#texturecanvas")[0].getContext("2d");
+
     $("#floortexture").val("RockFloor");
     $("#ceiltexture").val("Pavement");
+    $("#texture_decal").val("Forest");
+
     GAME.updateTextures();
     $("#walltexture").change(GAME.repaintTextures);
     $("#floortexture").change(GAME.repaintTextures);
     $("#ceiltexture").change(GAME.repaintTextures);
+    $("#texture_decal").change(GAME.repaintTextures);
 
     for (const pic of DECAL_PAINTINGS) {
       $("#picture_decal").append(`<option value="${pic}">${pic}</option>`);
@@ -924,10 +936,10 @@ const GAME = {
     for (const gateType of GATE_TYPES) {
       $("#gatetype").append(`<option value="${gateType}">${gateType}</option>`);
     }
-    ENGINE.drawToId("gatecanvas", 0, 0, SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`]);
+    ENGINE.drawToId("gatecanvas", 0, 0, ENGINE.resizeCanvas(SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`], INI.CANVAS_RESOLUTION));
 
     $("#gatetype").change(function () {
-      ENGINE.drawToId("gatecanvas", 0, 0, SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`]);
+      ENGINE.drawToId("gatecanvas", 0, 0, ENGINE.resizeCanvas(SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`], INI.CANVAS_RESOLUTION));
     });
 
     for (const keyType of KEY_TYPES) {

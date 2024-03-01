@@ -28,6 +28,14 @@ const DEBUG = {
     LOAD: false,
     STUDY: false,
     keys: true,
+    displayInv() {
+        HERO.inventory.scroll.display();
+        const list = [];
+        for (const item of HERO.inventory.item) {
+            list.push(item.name);
+        }
+        console.info("items", list);
+    },
     kill() {
         console.log("KILL all");
         ENTITY3D.POOL.clear();
@@ -132,12 +140,12 @@ const DEBUG = {
                 * sword girl (sword, shield) -> helmet, 
                 * RedWellWoman (Blood (3x)) : blood, blod, blood
                 * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) :blue gem,GoldBar, green gem,gold bar, red gem, 
-            * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) : i
+            * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) : 
                 * rapunzel (ribbon, hairbrush) -> shield
             * ForestWitch: (helmet, poison, poison, BlueGem)
          */
 
-        GAME.level = 93;        // return to 90
+        GAME.level = 93;         // return to 90
         GAME.gold = 600;
         HERO.maxHealth = 195;
         HERO.health = 195;
@@ -157,7 +165,7 @@ const DEBUG = {
         HERO.magicExpGoal = 8675;
         HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 1;
-        let scrolls = [];
+        let scrolls = ["Cripple", "Explode", "BoostWeapon", "DrainMana", "DestroyArmor", "BoostArmor", "DestroyWeapon"];
         //let scrolls = [];
 
         //debug
@@ -210,7 +218,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.17.03",
+    VERSION: "0.17.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",
@@ -1386,12 +1394,7 @@ const GAME = {
         }
         if (map[ENGINE.KEY.map.F7]) {
             if (!DEBUG.keys) return;
-            console.log("TELEPORT TO GOLD ROOM");
-            const M = MAP[GAME.level].map;
-            const room = M.findRoom("Gold");
-            const target = M.findMiddleSpaceUnreserved(room.area);
-            HERO.player.pos = Vector3.from_Grid(Grid.toCenter(target), 0.5);
-            ENGINE.GAME.keymap[ENGINE.KEY.map.F7] = false;
+
         }
         if (map[ENGINE.KEY.map.F8]) {
             if (!DEBUG.keys) return;
@@ -1403,6 +1406,8 @@ const GAME = {
             console.log("#######################################################");
             ENTITY3D.display();
             console.log("MAP", MAP[GAME.level].map);
+            console.info("Inventory:");
+            DEBUG.displayInv();
             console.log("#######################################################");
             ENGINE.GAME.keymap[ENGINE.KEY.map.F9] = false;
         }

@@ -54,137 +54,49 @@ const DEBUG = {
             * another witch (magic)
             * mana
          * items source
-                * handcuffs: 86
-                * whip : 83 
-                * revolver: dominatrix (whip, handcuffs)
-                * sponge: 85
-                * rubber duck: 86
-                * Poison (2x):  89, 94
-                * Blood (3x): 84, 88, 96
-                * goldbar: Demon (dragons)
-                * goldbar: 85 floor object
-                * goldbar: desert girl,
-                * LP (5): police, 84, 86,Libra, 94
-                * green gem: 86
-                * blue gem (2x): 82,86
-                * red gem:87
-                * dragons (5x): 82, 84, 86, 87, 89
-                * ammo: 90
-                * gold coins (4x): 81, REdWellWoman (90), Skull Collector (90), 94
-                * ribbon: metal maiden
-                * hairbrush: ghostess
-                * shield: rapunzel
-                * sword: frogess
-                * helmet: sword girl(), 
-                * fly (3x): 85,Spideress, 88
-                * skull (3x): 82, 84, 85
-                * skull (5x): 87, 94, 88, 96, 92
-                * candle (2x): siren (sponge, duck), 83
-                * sheep: (5x): 90,81, 88, 86, 89
-                * diamond: shepardess
-                * emerald: ForestWitch
-                * iron bar (3x): 85, 87, 92
-                * beer (2x):88, 92
-                * BabyGreenSpider (3x): 87, 94, 88
-                * Book: 87
-                * GoldenBook: 96
          * entitites:
-                * Spideress (BabyGreenSpider 3x): -> fly, 
-                * Libra (book, goldenbook 2x) -> LP,
-                * dominatrix (whip, handcuffs) -> revolver
-                * siren (sponge, duck) -> candle
-                * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) -> emerald Key
-                * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) -> emerald Key
-                * policewoman (gun, ammo) -> LP
-                * deMona (dragons 5x) -> Gold Bar
-                * rapunzel (ribbon, hairbrush) -> shield
-                * frogess (fly 3x) -> sword
-                * metal maiden (LP. 5x) -> ribbon
-                * ghostess (skull, skull, skull, candle, candle) -> hairbrush
-                * sword girl (sword, shield) -> Helmet
-                * shepardess: (sheep 5x) -> diamond
-                * ForestWitch: (helmet, poison, poison, BlueGem) -> emerald
-                * SkullCollector (skulls 5x) -> Gold Coin
-                * RedWellWoman (Blood (3x)) -> GOld Coin
-                * Desert girl: (beer, Beer), GoldBar
          * rooms
-                * COMPLETED: 81 guard
-                * COMPLETED: 82 dominatrix 
-                * COMPLETED: 83 bathroom
-                * COMPLETED 84 deMona
-                * COMPLETED: 85 police
-                * COMPLETED: 86 rapunzel
-                * COMPLETED 87 frogess
-                * COMPLETED 88 metal maiden
-                * COMPLETED 89 ghostess
-            * PLAYED: 90 red keep (sword girl, redwell woman, SkullCollector)
             * 91 Locksmithstress (L1, L2)
-                * COMPLETED 92 shepardess:
-            * 93 ForestWitch:
-                * COMPLETED 94 The Last Library
-                * COMPLETED 95 choices
-                * COMPLETED 96 desert girl 
         * mock entity delivery:
-                * dominatrix: whip; Handcuffs
-                * siren:  sponge, RubberDuck
-                * demona: BabyDragon, BabyDragon,BabyDragon, BabyDragon, BabyDragon
-                * SkullCollector (skulls 5x): "Skull", "Skull", "Skull" skull, skull
-                * ghostess (skull, skull, skull, candle, candle): Candle, Candle, Skull, Skull, Skull,
-                * RedWellWoman (Blood (3x)): "Blood", blod, blood
-                * policewoman (gun, ammo) -> LP
-                * frogess (fly 3x): Fly, Fly, Fly
-                * Spideress (BabyGreenSpider 3x)> BabyGreenSpider, BabyGreenSpider, BabyGreenSpider
-                * Libra (book, goldenbook 2x) ->book, goldenBook
-                * metal maiden (LP. 5x) -> LP, LP, LP, LP, LP
-                * Desert girl: (beer, Beer): Beer, beer
-                * sword girl (sword, shield) -> helmet, 
-                * RedWellWoman (Blood (3x)) : blood, blod, blood
-                * Locksmithstress (gold, gold, gold, green gem, blue gem, red gem) :blue gem,GoldBar, green gem,gold bar, red gem, 
-            * Locksmithstress2 (diamond, emerald, iron bar, iron bar, iron bar) : 
-                * rapunzel (ribbon, hairbrush) -> shield
-            * ForestWitch: (helmet, poison, poison, BlueGem)
          */
 
-        GAME.level = 93;         // return to 90
-        GAME.gold = 600;
-        HERO.maxHealth = 195;
-        HERO.health = 195;
-        HERO.maxMana = 262;
-        HERO.mana = 262;
+        GAME.level = 91;         
+        GAME.gold = 1513;
+        HERO.maxHealth = 199;
+        HERO.health = 173;
+        HERO.maxMana = 267;
+        HERO.mana = 267;
         HERO.attack = 47;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 44;
+        HERO.defense = 45;
         HERO.reference_defense = HERO.defense;
         HERO.magic = 46;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 2869;
-        HERO.defenseExp = 827;
-        HERO.magicExp = 6771;
+        HERO.attackExp = 3192;
+        HERO.defenseExp = 853;
+        HERO.magicExp = 7425;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Cripple", "Explode", "BoostWeapon", "DrainMana", "DestroyArmor", "BoostArmor", "DestroyWeapon"];
+        HERO.inventory.potion.red = 3;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Explode", "DestroyArmor", "BoostArmor" ];
         //let scrolls = [];
 
-        //debug
-        //let scrolls = ["Explode", "Cripple", "BoostWeapon", "DrainMana", "HalfLife", "Light"];
-        //let scrolls = ["DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife", "DestroyWeapon", "DestroyArmor", "BoostWeapon", "BoostArmor", "HalfLife"];
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
             HERO.inventory.scroll.add(scroll);
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Diamond", "BlueGem", "Poison", "Poison", "Helmet", "GoldBar", "IronBar", "IronBar", "IronBar"];
+        let invItems = [];
         //let invItems = ["Beer", "Beer"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = [];
+        let keys = ["Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -218,7 +130,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.17.04",
+    VERSION: "0.17.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

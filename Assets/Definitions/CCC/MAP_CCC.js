@@ -21,7 +21,7 @@ const MAP_TEXT = {
 
 /** Map definitions */
 const MAP = {
-    1 : {
+    1: {
         name: "Outside",
         sg: 0,
         data: '{"width":"9","height":"9","map":"BB6AA19BABB23AA4BB5ABB14$BB6A"}',
@@ -33,7 +33,7 @@ const MAP = {
         lights: '[[11,7,"WallLamp","standard"],[15,7,"WallLamp","standard"]]',
         gates: '[[4,7,"1.1","2.1","Gold"]]',
         keys: '[[21,0]]',
-        }
+    }
     ,
     2: {
         name: "Entrance Hall",
@@ -1824,8 +1824,11 @@ const MAP = {
         floor: "StoneFloorTiles2",
         ceil: "DarkShinyWall",
         start: '[25,7]',
+        decals: '[[79,3,"SittingSkeleton2","crest"],[113,3,"SittingSkeleton2","crest"],[3,7,"Yennefer21","picture"],[13,7,"BrideOfFrankenstein200","picture"],[173,1,"Ski23","picture"],[183,1,"FranticFreddie3","picture"],[18,5,"BrianBloodaxe20","picture"],[28,5,"Shamus60","picture"],[154,5,"ReturnToCastleWolfenstein13","picture"],[164,5,"EveryoneIsAWally71","picture"],[52,5,"DungeonMaster204","picture"],[120,5,"TombRaider99","picture"],[40,5,"Fred112","picture"],[142,5,"ManicMiner14","picture"],[146,3,"ElvenWarrior1","picture"],[44,3,"Captive199","picture"],[32,3,"CrystalCastles2","picture"],[168,3,"FireAnt2","picture"],[56,3,"Portal132","picture"],[124,3,"LastNinja130","picture"],[66,3,"Galaxians10","picture"],[134,3,"Grog1","picture"],[62,5,"MrRobot11","picture"],[130,5,"SabreWulf87","picture"],[22,3,"LeisureSuitLarry201","picture"],[158,3,"ReturnToCastleWolfenstein14","picture"]]',
         lights: '[[93,3,"WallLamp11","standard"],[93,5,"WallLamp15","standard"],[93,1,"WallLamp18","standardDimmed"],[93,7,"WallLamp13","standardDimmed"]]',
-        gates: '[[8,7,"91.1","90.2","Open"]]',
+        gates: '[[8,7,"91.1","90.2","Open"],[178,1,"91.2","98.1","Emerald"]]',
+        monsters: '[[110,"Hulk"],[98,"Drax"],[20,"GreenRex"]]',
+        containers: '[[19,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",5],[155,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",5],[31,"Barrel","GOLD_ITEM_TYPE.GoldBar",3],[167,"Crate","GOLD_ITEM_TYPE.GoldBar",3],[29,"Chest","GOLD_ITEM_TYPE.SilverBar",5]]',
         doors: '[90,96]',
         entities: '[[85,5,"Locksmithstress"],[101,3,"Locksmithstress2"]]',
     }
@@ -1852,7 +1855,7 @@ const MAP = {
         objects: '[[130,"IronBar"],[212,"Skull"]]',
     }
     ,
-    93 : {
+    93: {
         name: "Forest Witches",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB7ABB3AA2BAA5BAA3BAA3BB3AA4BB2AA2BB2AA3BAA2BB3AA2BAA5BAA4BAA2BAA6BAA5BEABB3AA8BABAA2BB2AA2BB2AA5BB6ABB5AA4BAA4BAA3BB5AA3BB3ABABB8ABB3AA2BB9ABB3AA2BABABB4AA2BABABB3AA2BABB3ABABB2ABABB2ABB3EBABABB4ABAA5BAA6BB3ABB3ABABABB3ABB16ABB14AB$AA2B"}',
@@ -1872,7 +1875,7 @@ const MAP = {
         triggers: '[[43,5,"RockTriggerButton",1,77]]',
         entities: '[[67,3,"ForestWitch"]]',
         oracles: '[[104,7,"WitchOracle1"],[254,3,"WitchOracle2"]]',
-        }
+    }
     ,
     94: {
         name: "The Last Library",
@@ -1935,7 +1938,7 @@ const MAP = {
         oracles: '[[105,5,"FunOracle"],[119,3,"Roadie"]]',
     }
     ,
-    97 : {
+    97: {
         name: "Restroom",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB3AA3BABB3AA30BB2AA4BAA4BB3AA2BAA3BAA11BABAA20BB4AA7BB2AA17BB3AA16BAA2BB2AA2BB2AA2BB8AA20BB7AA2BB4AA2BB6AA2BB2AA14BB2ABB4ABB10ABAA8BB2AA4BB2AA2BB27A$"}',
@@ -1950,7 +1953,35 @@ const MAP = {
         scrolls: '[[27,2],[21,4],[259,5],[267,6],[171,7],[103,12],[142,3]]',
         gold: '[[140,"GoldCube"],[59,"GoldCube"],[212,"GoldCube"],[148,"GoldCube"],[65,"GoldCube"],[69,"GoldCube"],[225,"GoldCube"],[265,"GoldCube"],[218,"GoldCube"],[36,"GoldCube"],[190,"SilverBar"],[257,"SilverBar"],[269,"SilverBar"],[74,"SilverBar"],[87,"GoldBar"]]',
         shrines: '[[127,1,"Attack1_22"],[144,5,"Defense1_22"],[161,7,"Magic1_22"]]',
-        }
+    }
+    ,
+    98: {
+        name: "The Passage",
+        sg: 0,
+        data: '{"width":"15","height":"11","map":"BB2AA7BB2ABB5ABB5AA10BB2AA3BAA9BB2AA2BAA6BB3ABABB7AA2BB2ABB5ABB4AA4BB2AA3BB5AA3BABB2ABB3ABB2AA3BAA2BAA2BAA5BABB2AA2BB4ABABB21A$"}',
+        wall: "BlackWall43",
+        floor: "MossFloor100",
+        ceil: "RockWall101",
+        start: '[22,7]',
+        decals: '[[81,1,"ArticShipwreck2","picture"],[83,1,"WhoDaresWins1","picture"],[163,1,"SVS1011","picture"],[131,1,"Fred111","picture"],[109,1,"Sp61","picture"],[106,1,"AticAtac117","picture"],[2,7,"DungeonMaster200","picture"],[10,7,"Sorcery31","picture"],[71,7,"Pacman201","picture"],[46,5,"Hero51","picture"],[59,3,"SirFred60","picture"],[89,3,"Barbarian13","picture"],[114,5,"Ishar71","picture"],[84,5,"TombRaider108","picture"],[110,5,"EnigmaForce2","picture"],[114,3,"MontyMole112","picture"],[15,5,"EveryoneIsAWally2","picture"],[37,4,"Grate1_128","crest"],[52,4,"Grate1_128","crest"],[67,4,"Grate1_128","crest"],[81,7,"Pssst","picture"],[83,7,"TheHobbit14","picture"],[78,7,"BackToNature1","picture"]]',
+        lights: '[[21,7,"WallLamp18","standardDimmed"],[23,7,"WallLamp18","standardDimmed"],[141,1,"WallLamp18","standardDimmed"],[143,1,"WallLamp18","standardDimmed"],[160,1,"Lamp42","standardDimmed"],[13,7,"Lamp48","standardDimmed"],[4,7,"Lamp46","standardDimmed"],[138,1,"WallLamp3","standardDimmed"]]',
+        gates: '[[7,7,"98.1","91.2","Open"],[157,1,"98.2","99.1","Emerald"]]',
+        monsters: '[[112,"GreenRex"],[136,"GreenRex"],[148,"GreenRex"],[16,"RedDragon"],[28,"RedDragon"]]',
+        scrolls: '[[139,9],[103,1],[68,6]]',
+        triggers: '[[135,5,"RockTriggerButton",1,82]]',
+        traps: '[[154,1,"RockTriggerButton",1,"AngrySheep",93]]',
+    }
+    ,
+    99: {
+        name: "Deep Down Into the Darkness",
+        sg: 0,
+        data: '{"width":"21","height":"21","map":"BB63$BB377A"}',
+        wall: "BlackWall43",
+        floor: "MossFloor100",
+        ceil: "RockWall101",
+        start: '[31,7]',
+        gates: '[[10,7,"99.1","98.2","Open"]]',
+    }
     ,
     999: {
         name: "Sandbox",

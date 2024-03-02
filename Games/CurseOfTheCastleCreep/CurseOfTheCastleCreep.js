@@ -47,40 +47,35 @@ const DEBUG = {
         /**
          * current temple
          * used shrines restroom: 
-
          * used trrainers;
-            * whipper (atatck)
-            * priestess (health)
-            * another witch (magic)
-            * mana
          * items source
          * entitites:
          * rooms
-            * 91 Locksmithstress (L1, L2)
+          
         * mock entity delivery:
          */
 
-        GAME.level = 91;         
-        GAME.gold = 1513;
+        GAME.level = 99;         
+        GAME.gold = 2814;
         HERO.maxHealth = 199;
-        HERO.health = 173;
+        HERO.health = 143;
         HERO.maxMana = 267;
-        HERO.mana = 267;
+        HERO.mana = 24;
         HERO.attack = 47;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 45;
         HERO.reference_defense = HERO.defense;
         HERO.magic = 46;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 3192;
-        HERO.defenseExp = 853;
-        HERO.magicExp = 7425;
+        HERO.attackExp = 3733;
+        HERO.defenseExp = 920;
+        HERO.magicExp = 8291;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 8675;
         HERO.inventory.potion.red = 3;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["Explode", "DestroyArmor", "BoostArmor" ];
+        let scrolls = ["Invisibility"];
         //let scrolls = [];
 
         for (let scr of scrolls) {
@@ -130,7 +125,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.17.05",
+    VERSION: "0.17.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

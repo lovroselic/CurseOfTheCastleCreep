@@ -52,10 +52,13 @@ const DEBUG = {
             * wasp (4x): 
                 * shawl: wasp1
                 * cap: wasp2
+                * gloves: another Squirell
+            * acorn 2x: 
          * entitites:
             * wasp1 (wasp,wasp) -> shawl 
             * wasp2 (wasp,wasp) -> cap
-            * climber (shawl, cap) ->
+            * squirrel (acorn , acorn) - gloves
+            * climber (shawl, cap, gloves) ->
          * rooms
             * 99 DDID  
           
@@ -92,7 +95,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         let invItems = [];
-        //let invItems = ["Wasp", "Wasp", "Wasp", "Wasp"];
+        //let invItems = ["Acorn", "Acorn"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -132,9 +135,9 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.00",
+    VERSION: "0.18.01",
     NAME: "The Curse Of The Castle Creep",
-    YEAR: "2023",
+    YEAR: "2023, 2024",
     SG: "CCC",
     CSS: "color: #239AFF;",
     INIT() {

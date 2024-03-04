@@ -2377,6 +2377,11 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "WoolenCap",
     },
+    Gloves: {
+        name: "Gloves",
+        category: "interaction_item",
+        inventorySprite: "Gloves",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3108,17 +3113,19 @@ const INTERACTION_ENTITY = {
             conclusion: "Together again, my heart caps in joy, For your help, a woolen cap, oh boy."
         }
     },
-
-
-
-
-
-
-    /**
-     * NA::  
-
-     */
-
+    AnotherSquirrel: {
+        name: "AnotherSquirrel",
+        sprite: "AnotherSquirrel",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Acorn", "Acorn"],
+        gives: "Gloves",
+        text: {
+            intro: "Chitter chatter, a request so fine, Two acorns sought, for winter's dine.",
+            progress: "One treasure found, another to seek, In leafy nooks, by the creek.",
+            conclusion: "Acorns gathered, my winter's feast, For you, gloves, from the least."
+        }
+    },
 };
 
 const INTERACTION_SHRINE = {

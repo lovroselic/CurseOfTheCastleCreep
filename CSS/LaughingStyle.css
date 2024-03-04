@@ -46,39 +46,39 @@
 
 @font-face {
     font-family: "C64";
-    src: url("/AssetsFonts/C64_Pro-STYLE.ttf");
+    src: url("/Assets/Fonts/C64_Pro-STYLE.ttf");
     font-display: swap;
 }
 
 /* Overrriding Bootstrap */
 
-/*body {
-    background-image: url('/R0.jpg');
-    background-repeat: repeat;
-}*/
-
-
 body {
-
-    background: linear-gradient(90deg,
-            #202020 0%,
-            #212121 20%,
-            #222222 40%,
-            #222222 60%,
-            #212121 80%,
-            #202020 100%) !important;
-
+    background-image: url('/Images/CloudyBackground.webp');
+    background-repeat: repeat;
     font-family: "Lora", serif !important;
 }
+
 
 fieldset, legend {
     all: revert;
 }
 
 /* LS theme */
+
 h1 {
     color: #FF0000;
 }
+
+.arcade {
+    font-family: Arcade;
+    font-size: 24px;
+}
+
+.c64 {
+    font-family: C64;
+    font-size: 15px;
+}
+
 
 h2, h3, h4, h5, h6, p, section, fieldset {
     color: #DDE0DD;
@@ -99,9 +99,9 @@ textarea, select, input {
 }
 
 input[type="button"] {
-    /*background-color: #d7d78f;*/
     background-color: #d9d9b3;
-    ;
+    /*border: 1px solid #222;*/
+    padding: 6px;
 }
 
 input {
@@ -121,6 +121,14 @@ input {
 }
 
 /* Games compatibility and specifics */
+
+.win {
+    background: #2a2a2a;
+    border: 2px #AAA ridge;
+    border-radius: 7px !important;
+    padding: 20px;
+    background: #2a2a2a;
+}
 
 .winTrans {
     width: 960px;

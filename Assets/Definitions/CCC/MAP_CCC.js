@@ -1983,7 +1983,7 @@ const MAP = {
         decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"]]',
         lights: '[[94,7,"Lamp53","standardDimmed"],[89,3,"WallLamp20","standardDimmed"],[99,5,"Lamp41","standardDimmed"],[220,7,"Lamp42","standard"],[320,3,"Lamp45","standardDimmed"],[330,5,"Lamp44","standardDimmed"],[325,7,"Lamp50","dimRed"]]',
         gates: '[[10,7,"99.1","98.2","Open"]]',
-        entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"]]',
+        entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"]]',
         oracles: '[[199,1,"RockDomme"]]',
         }
     ,

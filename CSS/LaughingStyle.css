@@ -52,7 +52,14 @@
 
 /* Overrriding Bootstrap */
 
+/*body {
+    background-image: url('/R0.jpg');
+    background-repeat: repeat;
+}*/
+
+
 body {
+
     background: linear-gradient(90deg,
             #202020 0%,
             #212121 20%,
@@ -93,7 +100,8 @@ textarea, select, input {
 
 input[type="button"] {
     /*background-color: #d7d78f;*/
-    background-color: #d9d9b3;;
+    background-color: #d9d9b3;
+    ;
 }
 
 input {

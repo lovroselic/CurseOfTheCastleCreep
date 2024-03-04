@@ -737,6 +737,15 @@ const ORACLE_TYPE = {
         text: "I am fan of LaughingSkull. How about you?",
         interactionCategory: "oracle",
     },
+    RockDomme: {
+        name: "RockDomme",
+        sprite: "RockDomme",
+        category: 'crest',
+        voice: "Female",
+        text: "Welcome to level 99. It's surprising you are still alive.",
+        interactionCategory: "oracle",
+    },
+
 };
 
 const GOLD_ITEM_TYPE = {
@@ -2358,6 +2367,16 @@ const INTERACTION_ITEM = {
         inventorySprite: "Beer",
         text: "A cold one."
     },
+    Shawl: {
+        name: "Shawl",
+        category: "interaction_item",
+        inventorySprite: "Shawl",
+    },
+    WoolenCap: {
+        name: "WoolenCap",
+        category: "interaction_item",
+        inventorySprite: "WoolenCap",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3063,6 +3082,34 @@ const INTERACTION_ENTITY = {
             conclusion: "Libations twice, now my spirit's quenched, For thee, a bar of gold, nobly wrenched."
         }
     },
+    Wasp1: {
+        name: "Wasp1",
+        sprite: "Wasp1",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Wasp", "Wasp"],
+        gives: "Shawl",
+        text: {
+            intro: "Buzzing heart, a mother's plea, For my babies, come fly to me.",
+            progress: "One found, in the hive's embrace, Yet another, lost in space.",
+            conclusion: "Babies back, in their rightful buzz, For you, a shawl, as warm as fuzz."
+        }
+    },
+    Wasp2: {
+        name: "Wasp2",
+        sprite: "Wasp2",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Wasp", "Wasp"],
+        gives: "WoolenCap",
+        text: {
+            intro: "In the buzz of day, a sister's call, For my wasplets, small and all.",
+            progress: "A sibling safe, beneath my wing, Seek the last, let the hive sing.",
+            conclusion: "Together again, my heart caps in joy, For your help, a woolen cap, oh boy."
+        }
+    },
+
+
 
 
 

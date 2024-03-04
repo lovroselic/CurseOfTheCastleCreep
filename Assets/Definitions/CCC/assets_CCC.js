@@ -581,13 +581,14 @@ LoadSprites = [
     { srcName: "Boss.jpg", name: "Boss" },
     { srcName: "FunOracle.jpg", name: "FunOracle" },
     { srcName: "Roadie.jpg", name: "Roadie" },
+    { srcName: "RockDomme.jpg", name: "RockDomme" },
+    { srcName: "Wasp1.jpg", name: "Wasp1" },
+    { srcName: "Wasp2.jpg", name: "Wasp2" },
     //unused
 
     { srcName: "GothGirl.jpg", name: "GothGirl" },
     { srcName: "WaterFairy.jpg", name: "WaterFairy" },
     { srcName: "DesertGirl.jpg", name: "DesertGirl" },
-    { srcName: "Wasp1.jpg", name: "Wasp1" },
-    { srcName: "Wasp2.jpg", name: "Wasp2" },
     { srcName: "Chef.jpg", name: "Chef" },
     { srcName: "Spacy.jpg", name: "Spacy" },
     { srcName: "SpaceWarrior.jpg", name: "SpaceWarrior" },
@@ -595,6 +596,9 @@ LoadSprites = [
     { srcName: "WellWoman.jpg", name: "WellWoman" },
     { srcName: "Climber.jpg", name: "Climber" },
     { srcName: "HealthGoddess.jpg", name: "HealthGoddess" },
+    { srcName: "HillBilly.jpg", name: "HillBilly" },
+    { srcName: "AnotherSquirrel.jpg", name: "AnotherSquirrel" },
+
 
 
 
@@ -657,6 +661,9 @@ LoadSprites = [
     { srcName: "Diamond.png", name: "Diamond" },
     { srcName: "Beer.png", name: "Beer" },
     { srcName: "Wasp.png", name: "Wasp" },
+
+    { srcName: "Shawl.png", name: "Shawl" },
+    { srcName: "WoolenCap.png", name: "WoolenCap" },
 
 
     //action movables

@@ -49,13 +49,20 @@ const DEBUG = {
          * used shrines restroom: 
          * used trrainers;
          * items source
+            * wasp (4x): 
+                * shawl: wasp1
+                * cap: wasp2
          * entitites:
+            * wasp1 (wasp,wasp) -> shawl 
+            * wasp2 (wasp,wasp) -> cap
+            * climber (shawl, cap) ->
          * rooms
+            * 99 DDID  
           
         * mock entity delivery:
          */
 
-        GAME.level = 99;         
+        GAME.level = 99;
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -85,7 +92,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         let invItems = [];
-        //let invItems = ["Beer", "Beer"];
+        //let invItems = ["Wasp", "Wasp", "Wasp", "Wasp"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -125,7 +132,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.17.06",
+    VERSION: "0.18.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023",
     SG: "CCC",

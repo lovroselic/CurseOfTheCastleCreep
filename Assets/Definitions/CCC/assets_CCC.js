@@ -414,6 +414,7 @@ LoadTextures = [
     { srcName: "Skull_texture.jpg", name: "Skull_texture" },
     { srcName: "dragon_redColor.jpg", name: "RedDragon" },
     { srcName: "BloodTexture.jpg", name: "BloodTexture" },
+    { srcName: "PurpleMetal.jpg", name: "PurpleMetal" },
 
     //decal-gates
     { srcName: "WoodeGate1_256.png", name: "WoodenGate1" },
@@ -598,7 +599,6 @@ LoadSprites = [
     { srcName: "Climber.jpg", name: "Climber" },
     { srcName: "HealthGoddess.jpg", name: "HealthGoddess" },
     { srcName: "HillBilly.jpg", name: "HillBilly" },
-    { srcName: "AnotherSquirrel.jpg", name: "AnotherSquirrel" },
     { srcName: "Venus.jpg", name: "Venus" },
 
 
@@ -667,6 +667,11 @@ LoadSprites = [
     { srcName: "WoolenCap.png", name: "WoolenCap" },
     { srcName: "Gloves.png", name: "Gloves" },
 
+    { srcName: "Dough.png", name: "Dough" },
+    { srcName: "Pie.png", name: "Pie" },
+    { srcName: "Amethyst.png", name: "Amethyst" },
+    { srcName: "Moonstone.png", name: "Moonstone" },
+    { srcName: "PocketRocket.png", name: "PocketRocket" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
@@ -697,6 +702,7 @@ LoadSprites = [
     { srcName: "dungeondoor_silver.png", name: "DungeonDoor_Silver" },
     { srcName: "Blocked door.png", name: "DungeonDoor_Blocked" },
     { srcName: "dungeondoor_emerald.png", name: "DungeonDoor_Emerald" },
+    { srcName: "dungeondoor_purple.png", name: "DungeonDoor_Purple" },
     { srcName: "StairsDownNoArc.jpg", name: "DungeonDoor_Down" },
     { srcName: "StairCaseUpNoArc.jpg", name: "DungeonDoor_Up" },
 
@@ -794,10 +800,12 @@ LoadSprites = [
     { srcName: "AttackShrine21.jpg", name: "AttackShrine21" },
     { srcName: "DefenseShrine21.jpg", name: "DefenseShrine21" },
     { srcName: "MagicShrine21.jpg", name: "MagicShrine21" },
-
     { srcName: "AttackShrine22.jpg", name: "AttackShrine22" },
     { srcName: "DefenseShrine22.jpg", name: "DefenseShrine22" },
     { srcName: "MagicShrine22.jpg", name: "MagicShrine22" },
+    { srcName: "AttackShrine23.jpg", name: "AttackShrine23" },
+    { srcName: "DefenseShrine23.jpg", name: "DefenseShrine23" },
+    { srcName: "MagicShrine23.jpg", name: "MagicShrine23" },
 
 
 
@@ -843,6 +851,7 @@ LoadSprites = [
     { srcName: "GreenKey.png", name: "GreenKey" },
     { srcName: "BlueKey.png", name: "BlueKey" },
     { srcName: "EmeraldKey.png", name: "EmeraldKey" },
+    { srcName: "PurpleKey.png", name: "PurpleKey" },
 
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },

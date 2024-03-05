@@ -1089,9 +1089,10 @@ const GAME = {
     let Export = { width: $MAP.width, height: $MAP.height, map: rle };
     let RoomID = $("#roomid")[0].value;
     let RoomName = $("#roomname")[0].value;
-    let SG = $("input[name='checkpoint']")[0].checked;
-    SG = SG === true ? 1 : 0;
+
+    let SG = parseInt($("#checkpoint")[0].value, 10);
     console.log("SG", SG);
+
     let roomExport = `${RoomID} : {
 name: "${RoomName}",
 sg: ${SG},

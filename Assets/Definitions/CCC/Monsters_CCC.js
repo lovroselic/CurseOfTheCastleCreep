@@ -12,7 +12,7 @@
 
 "use strict";
 console.log("%cMonsters for CCC loaded.", "color: #888");
-const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald"];
+const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald", "Purple"];
 
 const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
     "Petrify", "MagicBoost", "Luck", "HalfLife", "Explode", "Radar"];
@@ -548,6 +548,37 @@ const SHRINE_TYPE = {
         interactionCategory: 'shrine',
         inventorySprite: "MagicSkill",
         price: 1500,
+        level: 1,
+    },
+
+    Attack1_23: {
+        name: "AttackShrine_1_23",
+        sprite: "AttackShrine23",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 2000,
+        level: 1,
+    },
+    Defense1_23: {
+        name: "DefenseShrine_1_23",
+        sprite: "DefenseShrine23",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ShieldSkill",
+        price: 2000,
+        level: 1,
+    },
+    Magic1_23: {
+        name: "MagicShrine_1_23",
+        sprite: "MagicShrine23",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "MagicSkill",
+        price: 2000,
         level: 1,
     },
 };
@@ -2382,6 +2413,31 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Gloves",
     },
+    Dough: {
+        name: "Dough",
+        category: "interaction_item",
+        inventorySprite: "Dough",
+    },
+    Pie: {
+        name: "Pie",
+        category: "interaction_item",
+        inventorySprite: "Pie",
+    },
+    Amethyst: {
+        name: "Amethyst",
+        category: "interaction_item",
+        inventorySprite: "Amethyst",
+    },
+    Moonstone: {
+        name: "Moonstone",
+        category: "interaction_item",
+        inventorySprite: "Moonstone",
+    },
+    PocketRocket: {
+        name: "PocketRocket",
+        category: "interaction_item",
+        inventorySprite: "PocketRocket",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3284,9 +3340,9 @@ const TRAP_ACTIONS = {
 };
 const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
 
-const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald"];
-const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture"];
-const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine", "standard"];
+const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald", "Purple"];
+const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture", "PurpleMetal"];
+const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine", "standard", "standard"];
 const KEY_TYPE = {};
 for (let [index, key] of KEY_TYPES.entries()) {
     KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);

@@ -62,10 +62,9 @@ const MAP_TOOLS = {
             this.MAP[level].name = `Room - ${level}`;
         }
         const SG = this.MAP[level].sg || null;
-        this.MAP[level].map.sg = SG == 1 ? true : false;
+        this.MAP[level].map.sg = SG;
         this.MAP[level].map.storage = new IAM_Storage();
         if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
-        //console.info("Unpacked MAP level", level, "map", this.MAP[level].map);      //debug
     },
 
     /**
@@ -86,6 +85,13 @@ const MAP_TOOLS = {
         //console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
     }
 };
+
+const SG_DICT = {
+    NEUTRAL: 0,
+    BLOCK: 1,
+    RESTORE: 2,
+};
+
 const SPAWN_TOOLS = {
     spawn(level) {
         //console.info("spawning level", level);

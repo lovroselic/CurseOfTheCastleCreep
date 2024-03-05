@@ -54,18 +54,31 @@ const DEBUG = {
                 * cap: wasp2
                 * gloves: another Squirell
             * acorn 2x: 
+            * amethyst
+            * moonstone
+            * chicken
+            * apple
+            * dough
+                * pie: cook;
+            * pocketrocket (2x): climber
          * entitites:
             * wasp1 (wasp,wasp) -> shawl 
             * wasp2 (wasp,wasp) -> cap
             * squirrel (acorn , acorn) - gloves
-            * climber (shawl, cap, gloves) ->
+            * climber (shawl, cap, gloves) -> pocketRocket
+            * cook (chicken, apple, dough) -> pie
+            * spacey1 (pocket,rocket) ->
+            * spacey2 (pocketrocket) ->
          * rooms
             * 99 DDID  
-          
+            * 100 praise gold - temple
+        
+        * missing keys:
+            
         * mock entity delivery:
          */
 
-        GAME.level = 99;
+        GAME.level = 101; // return to 99
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -101,7 +114,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Emerald"];
+        let keys = ["Blue"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -135,7 +148,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.01",
+    VERSION: "0.18.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

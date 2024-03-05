@@ -430,10 +430,14 @@ LoadSprites = [
     { srcName: "Diamond.png", name: "Diamond" },
     { srcName: "Wasp.png", name: "Wasp" },
     { srcName: "Beer.png", name: "Beer" },
-
     { srcName: "Shawl.png", name: "Shawl" },
     { srcName: "WoolenCap.png", name: "WoolenCap" },
     { srcName: "Gloves.png", name: "Gloves" },
+    { srcName: "Dough.png", name: "Dough" },
+    { srcName: "Pie.png", name: "Pie" },
+    { srcName: "Amethyst.png", name: "Amethyst" },
+    { srcName: "Moonstone.png", name: "Moonstone" },
+    { srcName: "PocketRocket.png", name: "PocketRocket" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
@@ -519,6 +523,7 @@ LoadSprites = [
     { srcName: "StairCaseUpNoArc.jpg", name: "DungeonDoor_Up" },
     { srcName: "Blocked door.png", name: "DungeonDoor_Blocked" },
     { srcName: "dungeondoor_emerald.png", name: "DungeonDoor_Emerald" },
+    { srcName: "dungeondoor_purple.png", name: "DungeonDoor_Purple" },
 
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },

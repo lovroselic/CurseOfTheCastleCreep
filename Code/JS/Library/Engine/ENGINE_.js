@@ -2470,7 +2470,7 @@ const ENGINE = {
       }
       if (maze.keys) {
         for (const key of maze.keys) {
-          const KEY_COLORS = ["gold", "silver", "red", "green", "blue", "#50C878"];
+          const KEY_COLORS = ["gold", "silver", "red", "green", "blue", "#50C878", "purple"];
           const color = KEY_COLORS[key[1]];
           let grid = GA.indexToGrid(key[0]);
           let mid = GRID.gridToCenterPX(grid).translate(LEFT, W / 2);

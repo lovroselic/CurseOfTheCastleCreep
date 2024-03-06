@@ -15,7 +15,7 @@ from pandas import ExcelWriter
 from collections import defaultdict
 
 
-_file = "C:/Users/lovro/OneDrive/Documents/JS/CurseOfTheCastleCreep/Assets/Definitions/Monsters_CCC.js"
+_file = "C:/Users/lovro/OneDrive/Documents/JS/CurseOfTheCastleCreep/Assets/Definitions/CCC/Monsters_CCC.js"
 with open(_file) as fh:
     data = fh.read()
 

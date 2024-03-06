@@ -54,31 +54,41 @@ const DEBUG = {
                 * cap: wasp2
                 * gloves: another Squirell
             * acorn 2x: 
-            * amethyst
-            * moonstone
+                * amethyst: spacy1
+                * moonstone: spacy2
             * chicken
             * apple
-            * dough
+                * dough: baker
                 * pie: cook;
             * pocketrocket (2x): climber
+            * wolf head
+                * egg: farmer
+                * milk: hillbilly
          * entitites:
-            * wasp1 (wasp,wasp) -> shawl 
-            * wasp2 (wasp,wasp) -> cap
-            * squirrel (acorn , acorn) - gloves
-            * climber (shawl, cap, gloves) -> pocketRocket
+            * wasp1 (wasp,wasp) -> shawl  TESTED
+            * wasp2 (wasp,wasp) -> cap TESTED
+            * squirrel (acorn , acorn) - gloves TESTED
+            * climber (shawl, cap, gloves) -> pocketRocket TESTED
             * cook (chicken, apple, dough) -> pie
-            * spacey1 (pocket,rocket) ->
-            * spacey2 (pocketrocket) ->
+            * spacey1 (pocketrocket) -> amethyst
+            * spacey2 (pocketrocket) -> moonstone
+            * farmer (wolf head) - > egg
+            * BAkER (eqq, milk) -> dough
+            * hillbilly (,) -> milk
+            * WaterFairy:  ()->
          * rooms
             * 99 DDID  
             * 100 praise gold - temple
+            * 101 the mountains
+            * 102 enchanted forest
+            * 103 farm
         
         * missing keys:
             
         * mock entity delivery:
          */
 
-        GAME.level = 101; // return to 99
+        GAME.level = 102; //101 // return to 99
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -108,7 +118,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         let invItems = [];
-        //let invItems = ["Acorn", "Acorn"];
+        //let invItems = ["Shawl", "Gloves", "WoolenCap"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -148,7 +158,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.02",
+    VERSION: "0.18.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

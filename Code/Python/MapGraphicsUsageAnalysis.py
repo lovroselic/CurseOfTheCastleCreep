@@ -13,7 +13,7 @@ from collections import defaultdict
 import pandas as pd
 
 
-_file = "C:/Users/lovro/OneDrive/Documents/JS/CurseOfTheCastleCreep/Assets/Definitions/MAP_CCC.js"
+_file = "C:/Users/lovro/OneDrive/Documents/JS/CurseOfTheCastleCreep/Assets/Definitions/CCC/MAP_CCC.js"
 with open(_file, encoding="utf8") as fh:
     data = fh.read()
 

@@ -2002,15 +2002,33 @@ const MAP = {
         shrines: '[[6,7,"Attack1_23"],[78,5,"Defense1_23"],[162,1,"Magic1_23"]]',
     }
     ,
-    101 : {
+    101: {
         name: "The Mountains",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB212ABB12$"}',
-        wall: "GreyBricks45",
-        floor: "MossFloor103",
-        ceil: "MossFloor106",
-        start: '[118,5]',
-        gates: '[[119,3,"101.1","99.3","Open"]]',
+        data: '{"width":"15","height":"15","map":"BB4ABAA2BB7AA12BB2ABB2AA18BB2AA3BB2AA6BB2AA3BAA5BAA4BAA4BB3AA2BB5ABABB3ABAA4BB3ABB4ABB2ABB10AA3BB2ABB3AA2BABAA2BB3ABAA2BB4ABAA9BAA2BB2ABB7AA3BAA2BAA2BB2ABB2ABB2ABB2ABABB20ABB2$"}',
+        wall: "GreyWall34",
+        floor: "Grass17",
+        ceil: "DarkMarble1",
+        start: '[118,3]',
+        lights: '[[78,1,"WallLamp35","standardDimmed"],[138,7,"WallLamp35","standardDimmed"],[112,3,"Lamp46","standardDimmed"],[112,5,"Lamp49","standardDimmed"],[209,3,"Lamp40","standardDimmed"],[29,3,"Lamp52","standardDimmed"]]',
+        gates: '[[119,3,"101.1","99.3","Open"],[105,5,"101.2","102.1","Up"]]',
+        entities: '[[3,7,"Climber"]]',
+    }
+    ,
+    102 : {
+        name: "Enchanted Forest",
+        sg: 0,
+        data: '{"width":"16","height":"16","map":"BB3AA10BAA2BAA3BAA2BAA2BB2ABABB2ABAA3BAA12BB2AA2BAA6BABAA24BABB2ABABABB8ABB8AA2BB3AA3BB2ABB2AA2BAA3BB2ABABB3AA2BB5ABB4AA5BAA4BAA2BB2AA5BB2AA11BB4ABAA2BB5ABB2ABB2ABB2AA2BABABAA3BAA4BABB7ABB21$A"}',
+        wall: "Forest",
+        floor: "Grass16",
+        ceil: "Clouds11",
+        start: '[222,3]',
+        lights: '[[199,3,"WallLamp35","standardDimmed"],[219,3,"WallLamp35","standardDimmed"]]',
+        gates: '[[223,3,"102.1","101.2","Down"]]',
+        monsters: '[[17,"GreenWolf"],[212,"GreenWolf"],[30,"GreenWolf"],[156,"GreenWolf"],[129,"Wolf"],[69,"Wolf"],[136,"Wolf"],[76,"Wolf"],[23,"Wolf"],[190,"Wolf"],[234,"Wolf"]]',
+        triggers: '[[196,4,"PurpleTriggerButton",1,215]]',
+        entities: '[[192,5,"WaterFairy"]]',
+        movables: '[[102,"WolfLeader"]]',
         }
     ,
     999: {

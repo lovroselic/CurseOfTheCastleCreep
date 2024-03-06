@@ -361,6 +361,8 @@ LoadTextures = [
     { srcName: "MossyFloor110.jpg", name: "MossyFloor110" },
     { srcName: "MossyFloor111.jpg", name: "MossyFloor111" },
     { srcName: "MossyFloor112.jpg", name: "MossyFloor112" },
+    { srcName: "Clouds11.jpg", name: "Clouds11" },
+    { srcName: "Clouds12.jpg", name: "Clouds12" },
 ];
 
 LoadSheetSequences = [
@@ -438,6 +440,9 @@ LoadSprites = [
     { srcName: "Amethyst.png", name: "Amethyst" },
     { srcName: "Moonstone.png", name: "Moonstone" },
     { srcName: "PocketRocket.png", name: "PocketRocket" },
+    { srcName: "Milk.png", name: "Milk" },
+    { srcName: "Egg.png", name: "Egg" },
+    { srcName: "WolfHead.png", name: "WolfHead" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

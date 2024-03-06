@@ -367,6 +367,9 @@ LoadTextures = [
     { srcName: "MossyFloor111.jpg", name: "MossyFloor111" },
     { srcName: "MossyFloor112.jpg", name: "MossyFloor112" },
 
+    { srcName: "Clouds11.jpg", name: "Clouds11" },
+    { srcName: "Clouds12.jpg", name: "Clouds12" },
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -404,6 +407,7 @@ LoadTextures = [
     { srcName: "IronTexture.jpg", name: "IronTexture" },
     { srcName: "rex_Green.jpg", name: "GreenRex" },
     { srcName: "GreenBasilisk_baseColor.jpg", name: "GreenBasilisk" },
+    { srcName: "GreenWolf.jpg", name: "GreenWolf" },
 
     //new
     { srcName: "GreenMetal.jpg", name: "GreenMetal" },
@@ -587,6 +591,7 @@ LoadSprites = [
     { srcName: "Wasp1.jpg", name: "Wasp1" },
     { srcName: "Wasp2.jpg", name: "Wasp2" },
     { srcName: "AnotherSquirrel.jpg", name: "AnotherSquirrel" },
+    { srcName: "WaterFairy.jpg", name: "WaterFairy" },
     //unused
 
     { srcName: "GothGirl.jpg", name: "GothGirl" },
@@ -600,6 +605,9 @@ LoadSprites = [
     { srcName: "HealthGoddess.jpg", name: "HealthGoddess" },
     { srcName: "HillBilly.jpg", name: "HillBilly" },
     { srcName: "Venus.jpg", name: "Venus" },
+
+    { srcName: "FarmeressOracle.jpg", name: "FarmeressOracle" },
+    { srcName: "Farmeress.jpg", name: "Farmeress" },
 
 
 
@@ -666,12 +674,15 @@ LoadSprites = [
     { srcName: "Shawl.png", name: "Shawl" },
     { srcName: "WoolenCap.png", name: "WoolenCap" },
     { srcName: "Gloves.png", name: "Gloves" },
-
     { srcName: "Dough.png", name: "Dough" },
     { srcName: "Pie.png", name: "Pie" },
     { srcName: "Amethyst.png", name: "Amethyst" },
     { srcName: "Moonstone.png", name: "Moonstone" },
     { srcName: "PocketRocket.png", name: "PocketRocket" },
+
+    { srcName: "Milk.png", name: "Milk" },
+    { srcName: "Egg.png", name: "Egg" },
+    { srcName: "WolfHead.png", name: "WolfHead" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

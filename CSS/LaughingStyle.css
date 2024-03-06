@@ -53,7 +53,15 @@
 /* Overrriding Bootstrap */
 
 body {
-    background-image: url('/Images/CloudyBackground.webp');
+    background: linear-gradient(90deg,
+            #202020 0%,
+            #212121 20%,
+            #222222 40%,
+            #222222 60%,
+            #212121 80%,
+            #202020 100%);
+
+    background-image: url('/Images/CloudyBackground.webp') !important;
     background-repeat: repeat;
     font-family: "Lora", serif !important;
 }

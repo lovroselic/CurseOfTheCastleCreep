@@ -1714,6 +1714,27 @@ const MONSTER_TYPE = {
         missile: Missile,
         missileType: COMMON_ITEM_TYPE.Fireball,
     },
+    GreenWolf: {
+        name: "Wolf",
+        texture: "GreenWolf",
+        model: "Wolf",
+        scale: 1.6 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.Coins,
+        attack: 60,
+        defense: 40,
+        magic: 12,
+        health: 50,
+        xp: 100,
+        gold: 50,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt3",
+        behaviourArguments: [10, ["wanderer"], 5, ["advancer"]],
+        moveSpeed: 1.2,
+        material: MATERIAL.greenFluence,
+    },
     /** not yet tuned */
     GreenBasilisk: {
         name: "GreenBasilisk",
@@ -2083,6 +2104,18 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "Sheep",
         text: "Poor lamb. Are you hurt?",
     },
+    WolfLeader: {
+        name: "WolfLeader",
+        category: "interaction_item",
+        model: "Wolf",
+        scale: 1.0 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.1,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "WolfHead",
+        text: "Got you, evil bastard.",
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -2437,6 +2470,21 @@ const INTERACTION_ITEM = {
         name: "PocketRocket",
         category: "interaction_item",
         inventorySprite: "PocketRocket",
+    },
+    Milk: {
+        name: "Milk",
+        category: "interaction_item",
+        inventorySprite: "Milk",
+    },
+    Egg: {
+        name: "Egg",
+        category: "interaction_item",
+        inventorySprite: "Egg",
+    },
+    WolfHead: {
+        name: "WolfHead",
+        category: "interaction_item",
+        inventorySprite: "WolfHead",
     },
 };
 
@@ -3180,6 +3228,32 @@ const INTERACTION_ENTITY = {
             intro: "Chitter chatter, a request so fine, Two acorns sought, for winter's dine.",
             progress: "One treasure found, another to seek, In leafy nooks, by the creek.",
             conclusion: "Acorns gathered, my winter's feast, For you, gloves, from the least."
+        }
+    },
+    Climber: {
+        name: "Climber",
+        sprite: "Climber",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Shawl", "Gloves", "WoolenCap"],
+        gives: "PocketRocket",
+        text: {
+            intro: "Where were you so long, Princess? Don't you know how cold I am?",
+            progress: "Cloth and warmth, piece by piece, Continue on, till all's in fleece.",
+            conclusion: "At last, warmth surrounds, chill's defeat, A PocketRocket, for you, a fiery treat."
+        }
+    },
+    WaterFairy: {
+        name: "WaterFairy",
+        sprite: "WaterFairy",
+        category: 'crest',
+        voice: "Female",
+        wants: [],
+        gives: "",
+        text: {
+            intro: "",
+            progress: "",
+            conclusion: ""
         }
     },
 };

@@ -3289,7 +3289,36 @@ const INTERACTION_ENTITY = {
             conclusion: "Both segments joined, a rocket's grace, Ready for space, in its rightful place."
         }
     },
+    Cookie: {
+        name: "Cookie",
+        sprite: "Cookie",
+        category: 'crest',
+        voice: "Female",
+        wants: ["LittleChicken", "Apple", "Dough"],
+        gives: "Pie",
+        text: {
+            intro: "In the kitchen, where magic's spun, Ingredients needed, one by one.",
+            progress: "A mix in progress, but not yet complete, Seek and gather, for a treat so sweet.",
+            conclusion: "Ingredients blended, under my chef's guise, For you, a pie, a delicious surprise."
+        }
+    },
+    Bakeress: {
+        name: "Bakeress",
+        sprite: "Bakeress",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Egg", "Milk"],
+        gives: "Dough",
+        text: {
+            intro: "Whisk and knead, a craft so fine, Egg and milk, for dough divine.",
+            progress: "Stirring, waiting, what have you found? My oven's warm, ingredients bound.",
+            conclusion: "With egg and milk, now mixed and risen, Dough's yours, from the baker's prison."
+        }
+    },
+    
     /** undef */
+
+
 
 
 

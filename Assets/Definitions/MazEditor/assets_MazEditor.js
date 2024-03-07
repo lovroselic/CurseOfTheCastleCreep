@@ -249,7 +249,6 @@ LoadTextures = [
     { srcName: "WetShinyWall1.jpg", name: "WetShinyWall1" },
     { srcName: "WetWall1.jpg", name: "WetWall1" },
     { srcName: "WhiteTiledFloor1.jpg", name: "WhiteTiledFloor1" },
-
     { srcName: "BlurryFloor1.jpg", name: "BlurryFloor1" },
     { srcName: "BrownBrick30.jpg", name: "BrownBrick30" },
     { srcName: "BrownBrick32.jpg", name: "BrownBrick32" },
@@ -271,7 +270,6 @@ LoadTextures = [
     { srcName: "OrnateFloor31.jpg", name: "OrnateFloor31" },
     { srcName: "RockyWall31.jpg", name: "RockyWall31" },
     { srcName: "StrangeWall1.jpg", name: "StrangeWall1" },
-
     { srcName: "BigBricks4.jpg", name: "BigBricks4" },
     { srcName: "BigRocks2.jpg", name: "BigRocks2" },
     { srcName: "BlackBricks45.jpg", name: "BlackBricks45" },
@@ -378,6 +376,7 @@ LoadTextures = [
     { srcName: "Wood7.jpg", name: "Wood7" },
     { srcName: "Wood8.jpg", name: "Wood8" },
     { srcName: "Wood9.jpg", name: "Wood9" },
+    { srcName: "Nook1.jpg", name: "Nook1" },
 ];
 
 LoadSheetSequences = [
@@ -591,7 +590,7 @@ LoadSprites = [
     { srcName: "Skeleton23.png", name: "Skeleton23" },
     { srcName: "Skull20.png", name: "Skull20" },
     { srcName: "Skull21.png", name: "Skull21" },
-    { srcName: "Nook1.jpg", name: "Nook1" },
+   
 
     //messages
     { srcName: "CCC1.png", name: "CCC1" },

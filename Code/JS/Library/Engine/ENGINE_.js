@@ -153,8 +153,18 @@ const ENGINE = {
     LAYER.temp.drawImage(img, 0, 0, img.width, img.height, 0, 0, targetSize, targetSize);
     return LAYER.temp.canvas;
   },
+  conditionalResize(img, targetSize) {
+    const dim = Math.max(img.width, img.height);
+    if (dim > targetSize) return ENGINE.resizeCanvas(img, targetSize);
+    return img;
+  },
   resizeAndFill(CTX, pattern, targetSize) {
     const resizedPattern = CTX.createPattern(ENGINE.resizeCanvas(pattern, targetSize), 'repeat');
+    CTX.fillStyle = resizedPattern;
+    CTX.fillRect(0, 0, CTX.canvas.width, CTX.canvas.height);
+  },
+  conditionalResizeAndFill(CTX, pattern, targetSize) {
+    const resizedPattern = CTX.createPattern(ENGINE.conditionalResize(pattern, targetSize), 'repeat');
     CTX.fillStyle = resizedPattern;
     CTX.fillRect(0, 0, CTX.canvas.width, CTX.canvas.height);
   },

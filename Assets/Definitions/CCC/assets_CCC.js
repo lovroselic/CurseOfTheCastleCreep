@@ -176,7 +176,6 @@ LoadTextures = [
     { srcName: "MC_wall5.jpg", name: "MC_wall5" },
     { srcName: "DarkShiny.jpg", name: "DarkShiny" },
     { srcName: "MC_floor20.jpg", name: "MC_floor20" },
-
     { srcName: "BorinGrey1.jpg", name: "BorinGrey1" },
     { srcName: "BoringCeiling1.jpg", name: "BoringCeiling1" },
     { srcName: "BoringCeiling2.jpg", name: "BoringCeiling2" },
@@ -276,7 +275,6 @@ LoadTextures = [
     { srcName: "OrnateFloor31.jpg", name: "OrnateFloor31" },
     { srcName: "RockyWall31.jpg", name: "RockyWall31" },
     { srcName: "StrangeWall1.jpg", name: "StrangeWall1" },
-
     { srcName: "BigBricks4.jpg", name: "BigBricks4" },
     { srcName: "BigRocks2.jpg", name: "BigRocks2" },
     { srcName: "BlackBricks45.jpg", name: "BlackBricks45" },
@@ -383,6 +381,7 @@ LoadTextures = [
     { srcName: "Wood7.jpg", name: "Wood7" },
     { srcName: "Wood8.jpg", name: "Wood8" },
     { srcName: "Wood9.jpg", name: "Wood9" },
+    { srcName: "Nook1.jpg", name: "Nook1" },
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
@@ -608,11 +607,13 @@ LoadSprites = [
     { srcName: "WaterFairy.jpg", name: "WaterFairy" },
     { srcName: "FarmeressOracle.jpg", name: "FarmeressOracle" },
     { srcName: "Farmeress.jpg", name: "Farmeress" },
+    { srcName: "Chef.jpg", name: "Cookie" },
+    { srcName: "Bakeress.jpg", name: "Bakeress" },
     //unused
 
     { srcName: "GothGirl.jpg", name: "GothGirl" },
     { srcName: "WaterFairy.jpg", name: "WaterFairy" },
-    { srcName: "Chef.jpg", name: "Chef" },
+    
     { srcName: "Spacy.jpg", name: "Spacy" },
     { srcName: "SpaceWarrior.jpg", name: "SpaceWarrior" },
     { srcName: "RedHeadDomme.jpg", name: "RedHeadDomme" },
@@ -621,13 +622,6 @@ LoadSprites = [
     { srcName: "HealthGoddess.jpg", name: "HealthGoddess" },
     { srcName: "HillBilly.jpg", name: "HillBilly" },
     { srcName: "Venus.jpg", name: "Venus" },
-
-
-    { srcName: "Bakeress.jpg", name: "Bakeress" },
-
-
-
-
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -923,7 +917,7 @@ LoadSprites = [
     { srcName: "Skeleton23.png", name: "Skeleton23" },
     { srcName: "Skull20.png", name: "Skull20" },
     { srcName: "Skull21.png", name: "Skull21" },
-    { srcName: "Nook1.jpg", name: "Nook1" },
+    
 
     //messages
     { srcName: "CCC1.png", name: "CCC1" },

@@ -904,10 +904,10 @@ const GAME = {
     for (const crest of [...DECAL_CRESTS, ...BOTTOM_CRESTS, ...TOP_CRESTS].sort()) {
       $("#crest_decal").append(`<option value="${crest}">${crest}</option>`);
     }
-    ENGINE.drawToId("crestcanvas", 0, 0, SPRITE[$("#crest_decal")[0].value]);
+    ENGINE.drawToId("crestcanvas", 0, 0, ENGINE.conditionalResize(SPRITE[$("#crest_decal")[0].value], INI.CANVAS_RESOLUTION));
 
     $("#crest_decal").change(function () {
-      ENGINE.drawToId("crestcanvas", 0, 0, SPRITE[$("#crest_decal")[0].value]);
+      ENGINE.drawToId("crestcanvas", 0, 0, ENGINE.conditionalResize(SPRITE[$("#crest_decal")[0].value], INI.CANVAS_RESOLUTION));
     });
 
     for (const light of LIGHT_DECALS) {

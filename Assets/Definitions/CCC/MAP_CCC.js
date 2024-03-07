@@ -1972,7 +1972,7 @@ const MAP = {
         traps: '[[154,1,"RockTriggerButton",1,"AngrySheep",93]]',
     }
     ,
-    99 : {
+    99: {
         name: "Deep Down Into the Darkness",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB2ABB2AA25BAA2BAA8BAA3BABB4ABB2ABB2AA4BB6AA5BB2AA16BABB4AA11BB4AA4BAA7BAA2BAA25BAA7BAA3BB9AA3BAA5BABABAA2BB3AA3BAA2BABAA5BB6ABABB5ABB12AA6BB7ABB2AA4BB4AA4BB5AA2BB2ABB7ABB5ABB3AA4BABB5AA3BABB5ABB16ABABAA4BB7AA5BB3ABB15ABB3AA2BB7AA4BABABABB2AA5BB7AA2BABB2ABB27ABB3$"}',
@@ -1982,11 +1982,11 @@ const MAP = {
         start: '[31,7]',
         decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"]]',
         lights: '[[94,7,"Lamp53","standardDimmed"],[89,3,"WallLamp20","standardDimmed"],[99,5,"Lamp41","standardDimmed"],[220,7,"Lamp42","standard"],[320,3,"Lamp45","standardDimmed"],[330,5,"Lamp44","standardDimmed"],[325,7,"Lamp50","dimRed"]]',
-        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"]]',
+        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"]]',
         keys: '[[405,3]]',
         entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"]]',
         oracles: '[[199,1,"RockDomme"]]',
-        }
+    }
     ,
     100: {
         name: "Praise the Gold",
@@ -2016,7 +2016,7 @@ const MAP = {
         entities: '[[3,7,"Climber"]]',
     }
     ,
-    102 : {
+    102: {
         name: "Enchanted Forest",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB3AA10BAA2BAA3BAA2BAA2BB2ABABB2ABAA3BAA12BB2AA2BAA6BABAA24BABB2ABABABB8ABB8AA2BB3AA3BB2ABB2AA2BAA3BB2ABABB3AA2BB5ABB4AA5BAA4BAA2BB2AA5BB2AA11BB4ABAA2BB5ABB2ABB2ABB2AA2BABABAA3BAA4BABB7ABB21$A"}',
@@ -2030,9 +2030,9 @@ const MAP = {
         triggers: '[[196,4,"RockTriggerButton",1,215]]',
         entities: '[[192,5,"WaterFairy"]]',
         movables: '[[102,"WolfLeader"]]',
-        }
+    }
     ,
-    103 : {
+    103: {
         name: "The Farm",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABAA2BAA3BAA7BB3AA2BB2AA6BAA2BAA8BAA2BAA4BB2AA16BB5AA2BAA2BB2ABB8AA2BB6ABB2ABB2ABB4AA3BB4ABB9AA3BAA4BAA3BAA2BAA3BABAA4BB5AA3BABAA6BABB2AA2BB2ABB8AA2BAA5BABABB2AA2BB22A$"}',
@@ -2044,6 +2044,21 @@ const MAP = {
         gates: '[[7,7,"103.1","102.2","Open"]]',
         entities: '[[213,1,"Farmeress"]]',
         oracles: '[[97,1,"FarmeressOracle"]]',
+    }
+    ,
+    104 : {
+        name: "The Kitchen",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB2AA8BAA2BB7AA10BAA10BAA3BAA2BAA14BABAA2BB12AA2BB135ABB2ABB5ABB2AA5BB9EE2ABABB10A$AA2BB28"}',
+        wall: "GreyRocks40",
+        floor: "Wood13",
+        ceil: "RedBrickFloor1",
+        start: '[137,5]',
+        decals: '[[58,3,"Nook1","texture"],[196,5,"Nook1","texture"]]',
+        lights: '[[88,1,"Lamp51","standardDimmed"],[200,7,"Lamp52","standardDimmed"]]',
+        gates: '[[136,5,"104.1","99.4","Open"]]',
+        doors: '[122,166]',
+        entities: '[[285,1,"Cookie"],[3,7,"Bakeress"]]',
         }
     ,
     999: {
@@ -2054,7 +2069,7 @@ const MAP = {
         floor: "GoldMarbleFloor",
         ceil: "BlurryMossy",
         start: '[161,1]',
-        decals: '[[8,7,"Nook1","crest"]]',
+        decals: '[[8,7,"Nook1","texture"]]',
         lights: '[[19,7,"Lamp40","standard"],[21,7,"Lamp41","standard"],[23,7,"Lamp42","standard"],[27,7,"Lamp44","standard"],[29,7,"Lamp45","standard"],[31,7,"Lamp46","standard"],[257,1,"Lamp47","standard"],[259,1,"Lamp48","standard"],[261,1,"Lamp49","standard"],[263,1,"Lamp50","standard"],[265,1,"Lamp51","standard"],[267,1,"Lamp52","standard"],[269,1,"Lamp53","standard"]]',
     }
 };

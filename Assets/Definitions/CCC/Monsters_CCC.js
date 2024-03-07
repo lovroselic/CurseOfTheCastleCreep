@@ -776,6 +776,14 @@ const ORACLE_TYPE = {
         text: "Welcome to level 99. It's surprising you are still alive.",
         interactionCategory: "oracle",
     },
+    FarmeressOracle: {
+        name: "FarmeressOracle",
+        sprite: "FarmeressOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "I heard the wolves come from the Enchanted Forest.",
+        interactionCategory: "oracle",
+    },
 
 };
 
@@ -2486,6 +2494,18 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "WolfHead",
     },
+    RocketTop: {
+        name: "RocketTop",
+        category: "interaction_item",
+        inventorySprite: "RocketTop",
+        text: "Part of the rocket? Where is another?"
+    },
+    RocketBottom: {
+        name: "RocketBottom",
+        category: "interaction_item",
+        inventorySprite: "RocketBottom",
+        text: "Fixing this might be a rocket science. Ha ha."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3243,19 +3263,38 @@ const INTERACTION_ENTITY = {
             conclusion: "At last, warmth surrounds, chill's defeat, A PocketRocket, for you, a fiery treat."
         }
     },
+    Farmeress: {
+        name: "Farmeress",
+        sprite: "Farmeress",
+        category: 'crest',
+        voice: "Female",
+        wants: ["WolfHead"],
+        gives: "Egg",
+        text: {
+            intro: "Troubled by wolves, night and day, Bring me their leader's head, I pray.",
+            progress: "Is the pack still prowling, leader strong? Your quest, it seems, still lingers long.",
+            conclusion: "With the leader's fall, my farm's at peace, For your bravery, an egg, my thanks won't cease."
+        }
+    },
     WaterFairy: {
         name: "WaterFairy",
         sprite: "WaterFairy",
         category: 'crest',
         voice: "Female",
-        wants: [],
-        gives: "",
+        wants: ["RocketBottom", "RocketTop"],
+        gives: "PocketRocket",
         text: {
-            intro: "",
-            progress: "",
-            conclusion: ""
+            intro: "Rocket science? Bring it to Fairy, In engines and thrusters, I'm quite merry.",
+            progress: "Part secured, but incomplete, More engineering feats to meet.",
+            conclusion: "Both segments joined, a rocket's grace, Ready for space, in its rightful place."
         }
     },
+    /** undef */
+
+
+
+
+
 };
 
 const INTERACTION_SHRINE = {

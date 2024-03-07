@@ -366,9 +366,23 @@ LoadTextures = [
     { srcName: "MossyFloor110.jpg", name: "MossyFloor110" },
     { srcName: "MossyFloor111.jpg", name: "MossyFloor111" },
     { srcName: "MossyFloor112.jpg", name: "MossyFloor112" },
-
     { srcName: "Clouds11.jpg", name: "Clouds11" },
     { srcName: "Clouds12.jpg", name: "Clouds12" },
+    { srcName: "Water11.jpg", name: "Water11" },
+    { srcName: "Water12.jpg", name: "Water12" },
+    { srcName: "Wood1.jpg", name: "Wood1" },
+    { srcName: "Wood10.jpg", name: "Wood10" },
+    { srcName: "Wood11.jpg", name: "Wood11" },
+    { srcName: "Wood12.jpg", name: "Wood12" },
+    { srcName: "Wood13.jpg", name: "Wood13" },
+    { srcName: "Wood21.jpg", name: "Wood21" },
+    { srcName: "Wood3.jpg", name: "Wood3" },
+    { srcName: "Wood4.jpg", name: "Wood4" },
+    { srcName: "Wood5.jpg", name: "Wood5" },
+    { srcName: "Wood6.jpg", name: "Wood6" },
+    { srcName: "Wood7.jpg", name: "Wood7" },
+    { srcName: "Wood8.jpg", name: "Wood8" },
+    { srcName: "Wood9.jpg", name: "Wood9" },
 
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
@@ -592,6 +606,8 @@ LoadSprites = [
     { srcName: "Wasp2.jpg", name: "Wasp2" },
     { srcName: "AnotherSquirrel.jpg", name: "AnotherSquirrel" },
     { srcName: "WaterFairy.jpg", name: "WaterFairy" },
+    { srcName: "FarmeressOracle.jpg", name: "FarmeressOracle" },
+    { srcName: "Farmeress.jpg", name: "Farmeress" },
     //unused
 
     { srcName: "GothGirl.jpg", name: "GothGirl" },
@@ -606,8 +622,8 @@ LoadSprites = [
     { srcName: "HillBilly.jpg", name: "HillBilly" },
     { srcName: "Venus.jpg", name: "Venus" },
 
-    { srcName: "FarmeressOracle.jpg", name: "FarmeressOracle" },
-    { srcName: "Farmeress.jpg", name: "Farmeress" },
+
+    { srcName: "Bakeress.jpg", name: "Bakeress" },
 
 
 
@@ -679,10 +695,12 @@ LoadSprites = [
     { srcName: "Amethyst.png", name: "Amethyst" },
     { srcName: "Moonstone.png", name: "Moonstone" },
     { srcName: "PocketRocket.png", name: "PocketRocket" },
-
     { srcName: "Milk.png", name: "Milk" },
     { srcName: "Egg.png", name: "Egg" },
-    { srcName: "WolfHead.png", name: "WolfHead" },
+    
+
+    { srcName: "RocketTop.png", name: "RocketTop" },
+    { srcName: "RocketBottom.png", name: "RocketBottom" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
@@ -691,7 +709,7 @@ LoadSprites = [
     { srcName: "Cat7.png", name: "Cat" },
     { srcName: "Dragon.png", name: "BabyDragon" },
     { srcName: "Sheep.png", name: "Sheep" },
-
+    { srcName: "WolfHead.png", name: "WolfHead" },
 
     //triggers
     { srcName: "PurpleTriggerButton1.png", name: "PurpleTriggerButton" },

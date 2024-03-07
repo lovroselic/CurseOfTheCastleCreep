@@ -1972,7 +1972,7 @@ const MAP = {
         traps: '[[154,1,"RockTriggerButton",1,"AngrySheep",93]]',
     }
     ,
-    99: {
+    99 : {
         name: "Deep Down Into the Darkness",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB2ABB2AA25BAA2BAA8BAA3BABB4ABB2ABB2AA4BB6AA5BB2AA16BABB4AA11BB4AA4BAA7BAA2BAA25BAA7BAA3BB9AA3BAA5BABABAA2BB3AA3BAA2BABAA5BB6ABABB5ABB12AA6BB7ABB2AA4BB4AA4BB5AA2BB2ABB7ABB5ABB3AA4BABB5AA3BABB5ABB16ABABAA4BB7AA5BB3ABB15ABB3AA2BB7AA4BABABABB2AA5BB7AA2BABB2ABB27ABB3$"}',
@@ -1983,9 +1983,10 @@ const MAP = {
         decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"]]',
         lights: '[[94,7,"Lamp53","standardDimmed"],[89,3,"WallLamp20","standardDimmed"],[99,5,"Lamp41","standardDimmed"],[220,7,"Lamp42","standard"],[320,3,"Lamp45","standardDimmed"],[330,5,"Lamp44","standardDimmed"],[325,7,"Lamp50","dimRed"]]',
         gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"]]',
+        keys: '[[405,3]]',
         entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"]]',
         oracles: '[[199,1,"RockDomme"]]',
-    }
+        }
     ,
     100: {
         name: "Praise the Gold",
@@ -2024,11 +2025,25 @@ const MAP = {
         ceil: "Clouds11",
         start: '[222,3]',
         lights: '[[199,3,"WallLamp35","standardDimmed"],[219,3,"WallLamp35","standardDimmed"]]',
-        gates: '[[223,3,"102.1","101.2","Down"]]',
+        gates: '[[223,3,"102.1","101.2","Down"],[248,1,"102.2","103.1","Green"]]',
         monsters: '[[17,"GreenWolf"],[212,"GreenWolf"],[30,"GreenWolf"],[156,"GreenWolf"],[129,"Wolf"],[69,"Wolf"],[136,"Wolf"],[76,"Wolf"],[23,"Wolf"],[190,"Wolf"],[234,"Wolf"]]',
-        triggers: '[[196,4,"PurpleTriggerButton",1,215]]',
+        triggers: '[[196,4,"RockTriggerButton",1,215]]',
         entities: '[[192,5,"WaterFairy"]]',
         movables: '[[102,"WolfLeader"]]',
+        }
+    ,
+    103 : {
+        name: "The Farm",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB2ABAA2BAA3BAA7BB3AA2BB2AA6BAA2BAA8BAA2BAA4BB2AA16BB5AA2BAA2BB2ABB8AA2BB6ABB2ABB2ABB4AA3BB4ABB9AA3BAA4BAA3BAA2BAA3BABAA4BB5AA3BABAA6BABB2AA2BB2ABB8AA2BAA5BABABB2AA2BB22A$"}',
+        wall: "CrumblyWall1",
+        floor: "Wood4",
+        ceil: "Wood1",
+        start: '[22,7]',
+        lights: '[[123,7,"Lamp52","standardDimmed"],[21,7,"WallLamp14","standardDimmed"],[2,7,"Lamp42","standardDimmed"],[223,1,"WallLamp9","standardDimmed"],[129,7,"Lamp50","dimRed"]]',
+        gates: '[[7,7,"103.1","102.2","Open"]]',
+        entities: '[[213,1,"Farmeress"]]',
+        oracles: '[[97,1,"FarmeressOracle"]]',
         }
     ,
     999: {

@@ -64,18 +64,20 @@ const DEBUG = {
             * wolf head
                 * egg: farmer
                 * milk: hillbilly
+            * top rocket, 
+            * bottom rocket, 
          * entitites:
-            * wasp1 (wasp,wasp) -> shawl  TESTED
-            * wasp2 (wasp,wasp) -> cap TESTED
-            * squirrel (acorn , acorn) - gloves TESTED
-            * climber (shawl, cap, gloves) -> pocketRocket TESTED
+                * wasp1 (wasp,wasp) -> shawl  TESTED
+                * wasp2 (wasp,wasp) -> cap TESTED
+                * squirrel (acorn , acorn) - gloves TESTED
+                * climber (shawl, cap, gloves) -> pocketRocket TESTED
             * cook (chicken, apple, dough) -> pie
             * spacey1 (pocketrocket) -> amethyst
             * spacey2 (pocketrocket) -> moonstone
-            * farmer (wolf head) - > egg
+                * farmer (wolf head) - > egg TESTED
             * BAkER (eqq, milk) -> dough
             * hillbilly (,) -> milk
-            * WaterFairy:  ()->
+                * WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
          * rooms
             * 99 DDID  
             * 100 praise gold - temple
@@ -88,7 +90,7 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 102; //101 // return to 99
+        GAME.level = 99;  // return to 99
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -117,14 +119,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [];
-        //let invItems = ["Shawl", "Gloves", "WoolenCap"];
+        //let invItems = [];
+        let invItems = ["WolfHead", "Shawl", "Gloves", "WoolenCap"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue"];
+        let keys = ["Blue", "Green"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -158,7 +160,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.03",
+    VERSION: "0.18.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

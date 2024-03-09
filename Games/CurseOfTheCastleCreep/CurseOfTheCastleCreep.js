@@ -47,8 +47,14 @@ const DEBUG = {
         /**
          * current temple
          * used shrines restroom: 
-         * used trrainers;
+         * trrainers;
+            * health goddess - health 
+            * defense temple
+            * mana - goth
+            * redhead attack
+            * redmagic magic
          * items source
+            * goldCoin (5x - 1)(4x): 
             * wasp (4x): 
                 * shawl: wasp1
                 * cap: wasp2
@@ -60,41 +66,52 @@ const DEBUG = {
             * apple
                 * dough: baker
                 * pie: cook;
-            * pocketrocket (2x): climber
-            * wolf head
+                * pocketrocket (2x): climber, fairy
+                * wolf head: enchanted forest
                 * egg: farmer
                 * milk: hillbilly
             * top rocket, 
             * bottom rocket, 
+            * backpack
+            * hinkingboot (2x)
+                * pearl: venus
+            * sunscreen
+            * towel
         * who needs
             * pie
             * amethyst
-            * moonstone   
+            * moonstone  
+            * pearl 
          * entitites:
                 * wasp1 (wasp,wasp) -> shawl  TESTED
                 * wasp2 (wasp,wasp) -> cap TESTED
                 * squirrel (acorn , acorn) - gloves TESTED
                 * climber (shawl, cap, gloves) -> pocketRocket TESTED
                 * cook (chicken, apple, dough) -> pie TESTED
-            * spacey1 (pocketrocket) -> amethyst
-            * spacey2 (pocketrocket) -> moonstone
+                * spacey1 (pocketrocket) -> amethyst TESTED
+                * spacey2 (pocketrocket) -> moonstone TESTED
                 * farmer (wolf head) - > egg TESTED
-            * BAkERess (eqq, milk) -> dough
-            * hillbilly (,) -> milk
+                * BAkERess (eqq, milk) -> dough TESTED
+                * hillbillie (hinkingboot,hinkingboot, backpack) -> milk
                 * WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
+            * Venus: (towel, sunscreen)->pearl
          * rooms
             * 99 DDID  
             * 100 praise gold - temple
             * 101 the mountains
             * 102 enchanted forest
             * 103 farm
+            * 104 the kitchen
+            * 105 space base
+            * 106 training mistresses hall
+            * 107 underground sea
         
         * missing keys:
             
         * mock entity delivery:
          */
 
-        GAME.level = 104;  // return to 99
+        GAME.level = 107;  // return to 99
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -124,13 +141,13 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         //let invItems = [];
-        let invItems = ["LittleChicken", "Apple", "Dough", "Egg", "Milk"];
+        let invItems = ["LittleChicken", "Apple", "Dough", "Egg", "HikingBoot", "HikingBoot", "BackPack", "PocketRocket", "PocketRocket", "GoldCoin"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue", "Green"];
+        let keys = ["Blue", "Green", "Red"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -164,7 +181,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.05",
+    VERSION: "0.18.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

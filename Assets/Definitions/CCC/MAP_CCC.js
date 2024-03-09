@@ -1982,7 +1982,7 @@ const MAP = {
         start: '[31,7]',
         decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"]]',
         lights: '[[94,7,"Lamp53","standardDimmed"],[89,3,"WallLamp20","standardDimmed"],[99,5,"Lamp41","standardDimmed"],[220,7,"Lamp42","standard"],[320,3,"Lamp45","standardDimmed"],[330,5,"Lamp44","standardDimmed"],[325,7,"Lamp50","dimRed"]]',
-        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"]]',
+        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"],[358,7,"99.5","106.1","Down"]]',
         keys: '[[405,3]]',
         entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"]]',
         oracles: '[[199,1,"RockDomme"]]',
@@ -2013,7 +2013,7 @@ const MAP = {
         start: '[118,3]',
         lights: '[[78,1,"WallLamp35","standardDimmed"],[138,7,"WallLamp35","standardDimmed"],[112,3,"Lamp46","standardDimmed"],[112,5,"Lamp49","standardDimmed"],[209,3,"Lamp40","standardDimmed"],[29,3,"Lamp52","standardDimmed"]]',
         gates: '[[119,3,"101.1","99.3","Open"],[105,5,"101.2","102.1","Up"]]',
-        entities: '[[3,7,"Climber"]]',
+        entities: '[[3,7,"Climber"],[213,1,"HillBillie"]]',
     }
     ,
     102: {
@@ -2046,19 +2046,59 @@ const MAP = {
         oracles: '[[97,1,"FarmeressOracle"]]',
     }
     ,
-    104 : {
+    104: {
         name: "The Kitchen",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB2AA8BAA2BB7AA10BAA10BAA3BAA2BAA14BABAA2BB12AA2BB135ABB2ABB5ABB2AA5BB9EE2ABABB10A$AA2BB28"}',
+        data: '{"width":"17","height":"17","map":"BB2AA5BABAA3BAA2BAA5BB3ABB3ABABAA15BAA2BB3AA2BAA8BB2AA3BAA5BAA10BB3ABB2AA3BB4ABB2ABAA2BB2AA4BB3ABB2ABAA3BAA2BB2AA2BB3ABB8AA2BB5AA5BAA4BABABAA3BAA4BAA2BB4ABB2ABB2ABAA3BAA3BAA2BABABB2ABB2ABB4AA5BB3ABEE2BB2ABABB29A$EE2BB10AA2BB16"}',
         wall: "GreyRocks40",
         floor: "Wood13",
         ceil: "RedBrickFloor1",
         start: '[137,5]',
         decals: '[[58,3,"Nook1","texture"],[196,5,"Nook1","texture"]]',
         lights: '[[88,1,"Lamp51","standardDimmed"],[200,7,"Lamp52","standardDimmed"]]',
-        gates: '[[136,5,"104.1","99.4","Open"]]',
-        doors: '[122,166]',
+        gates: '[[136,5,"104.1","99.4","Open"],[152,3,"104.2","105.1","Red"]]',
+        keys: '[[109,2]]',
+        doors: '[122,166,132,156]',
         entities: '[[285,1,"Cookie"],[3,7,"Bakeress"]]',
+    }
+    ,
+    105: {
+        name: "The Space Base",
+        sg: 0,
+        data: '{"width":"17","height":"17","map":"BB2AA5BAA3BB3ABB2AA15BABAA6BAA2BAA3BB5ABAA2BB2AA8BAA2BAA11BABB2AA2BB2AA3BB3AA2BAA2BB2ABABB2ABABABB3AA2BB5ABABB7AA3BB10AA4BB3AA6BAA2BAA2BABABABAA6BB3AA4BB2AA2BB3AA2BB4AA3BABB2AA2BAA4BABB3AA3ÁBABABABB11ABB24ÁABB11ABB2$ABB2ABB6"}',
+        wall: "BlackReddish1",
+        floor: "Sand15",
+        ceil: "NightSky3",
+        start: '[35,5]',
+        lights: '[[107,3,"Lamp51","dim"],[107,5,"Lamp44","dim"],[11,7,"Lamp40","dim"],[15,7,"WallLamp15","standard"],[255,5,"WallLamp15","standard"],[162,7,"Lamp53","standardRedish"]]',
+        gates: '[[34,5,"105.1","104.2","Open"]]',
+        triggers: '[[145,5,"RockTriggerButton",1,156],[56,7,"RockTriggerButton",1,54],[7,7,"RockTriggerButton",0,151],[29,5,"RockTriggerButton",0,117]]',
+        entities: '[[102,5,"Spacy"],[112,3,"SpaceWarrior"]]',
+    }
+    ,
+    106: {
+        name: "Hall of Grand Mistresses",
+        sg: 0,
+        data: '{"width":"21","height":"21","map":"BB11AA80BB2AA2BAA3BAA7BB5AA4BAA6BB2AA26BB2AA3BB2AA99BAA21BABB14AA4BB3ABB4AA3BB33ABB2ABB3AA4BB3AA3BAA9BB31ABABB36A$"}',
+        wall: "GreyRocks41",
+        floor: "ComplexFloor1",
+        ceil: "Wood1",
+        start: '[409,1]',
+        lights: '[[136,1,"Lamp49","standardDimmed"],[174,3,"Lamp42","standardDimmed"],[321,3,"Lamp47","standardDimmed"],[182,5,"WallLamp15","standardDimmed"],[329,5,"WallLamp19","standardDimmed"],[346,1,"WallLamp33","dimRed"]]',
+        gates: '[[430,1,"106.1","99.5","Up"],[241,7,"106.2","107.1","Down"]]',
+        trainers: '[[10,7,"HealthGoddess"],[168,5,"TempleGuardian"],[188,3,"GothGirl"],[315,5,"RedHeadDomme"],[335,3,"RedMagicWoman"]]',
+    }
+    ,
+    107 : {
+        name: "Underground Sea",
+        sg: 0,
+        data: '{"width":"21","height":"13","map":"BB9AA88BB2AA18BB2AA33BABB11AA3BB19ABB3ABB3AA3BAA3BB31ABABB36A$"}',
+        wall: "GreenWall1",
+        floor: "Water11",
+        ceil: "GreyRocks41",
+        start: '[241,1]',
+        lights: '[[136,1,"WallLamp19","standardDimmed"],[132,3,"WallLamp12","standardDimmed"],[140,5,"WallLamp18","standardDimmed"]]',
+        gates: '[[262,1,"107.1","106.2","Up"]]',
         }
     ,
     999: {

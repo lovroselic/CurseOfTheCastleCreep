@@ -2506,6 +2506,30 @@ const INTERACTION_ITEM = {
         inventorySprite: "RocketBottom",
         text: "Fixing this might be a rocket science. Ha ha."
     },
+    BackPack: {
+        name: "BackPack",
+        category: "interaction_item",
+        inventorySprite: "BackPack",
+        text: "Let's put this pack on my back."
+    },
+    HikingBoot: {
+        name: "HikingBoot",
+        category: "interaction_item",
+        inventorySprite: "HikingBoot",
+        text: "Not my size."
+    },
+    SunScreen: {
+        name: "SunScreen",
+        category: "interaction_item",
+        inventorySprite: "SunScreen",
+        text: "Sun screen factor 50."
+    },
+    Towel: {
+        name: "Towel",
+        category: "interaction_item",
+        inventorySprite: "Towel",
+        text: "A towel. Pity I am not wet."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3310,19 +3334,53 @@ const INTERACTION_ENTITY = {
         wants: ["Egg", "Milk"],
         gives: "Dough",
         text: {
-            intro: "Whisk and knead, a craft so fine, Egg and milk, for dough divine.",
-            progress: "Stirring, waiting, what have you found? My oven's warm, ingredients bound.",
-            conclusion: "With egg and milk, now mixed and risen, Dough's yours, from the baker's prison."
+            intro: "Flour and passion, for bread to rise, Egg and milk, for dough's disguise.",
+            progress: "Stirring, waiting, something lacks, Continue your quest, no time to relax.",
+            conclusion: "Egg and milk, now mixed within, Your reward, dough ready to spin."
         }
     },
-    
+
+    Spacy: {
+        name: "Spacy",
+        sprite: "Spacy",
+        category: 'crest',
+        voice: "Female",
+        wants: ["PocketRocket"],
+        gives: "Amethyst",
+        text: {
+            intro: "Among the stars, I dream to soar, A PocketRocket, I implore.",
+            progress: "Is the rocket ready, to traverse the sky? Your mission, it seems, is not yet nigh.",
+            conclusion: "Rocket in hand, the cosmos await, For your aid, an Amethyst, to celebrate."
+        }
+    },
+    SpaceWarrior: {
+        name: "SpaceWarrior",
+        sprite: "SpaceWarrior",
+        category: 'crest',
+        voice: "Female",
+        wants: ["PocketRocket"],
+        gives: "Moonstone",
+        text: {
+            intro: "In the vacuum of space, a warrior's call, For a PocketRocket, to conquer all.",
+            progress: "The rocket's quest, not yet done, Press on, brave one, till victory's won.",
+            conclusion: "With rocket secured, through stars we'll roam, For your bravery, a Moonstone, from the cosmic dome."
+        }
+    },
+    HillBillie: {
+        name: "HillBillie",
+        sprite: "HillBillie",
+        category: 'crest',
+        voice: "Female",
+        wants: ["HikingBoot", "HikingBoot", "BackPack"],
+        gives: "Milk",
+        text: {
+            intro: "Up these hills, I long to tread, But proper gear, I sadly shed.",
+            progress: "A boot, a pack, my journey's start, Yet more is needed, to play my part.",
+            conclusion: "Fully equipped, the mountains I'll milk, For you, fresh alpine milk, smooth as silk."
+        }
+    },
+
     /** undef */
-
-
-
-
-
-
 
 };
 
@@ -3470,6 +3528,74 @@ const INTERACTION_SHRINE = {
             conclusion: "Gold coin given, the pact is sealed, arcane secrets to you revealed."
         }
     },
+    HealthGoddess: {
+        name: "HealthGoddess",
+        sprite: "HealthGoddess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "HealthSkill",
+        text: {
+            intro: "From realms divine, where well-being thrives, For one gold coin, your health revives.",
+            progress: null,
+            conclusion: "With your tribute gleaming, in palms divine, Receive now a boost of health, eternally thine."
+        }
+    },
+    TempleGuardian: {
+        name: "TempleGuardian",
+        sprite: "TempleGuardian",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "DefenseSkill",
+        text: {
+            intro: "At temple gates, a guardian stands, For gold, she'll teach defense with hands.",
+            progress: null,
+            conclusion: "Gold offered, secrets now unfurled, With newfound skill, face a braver world."
+        }
+    },
+    GothGirl: {
+        name: "GothGirl",
+        sprite: "GothGirl",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "Beneath the moon's pale gaze, secrets thrive, A single gold coin, and your powers I'll revive.",
+            progress: null,
+            conclusion: "The coin disappears into night's embrace, Unleashing mana, your arcane base."
+        }
+    },
+    RedHeadDomme: {
+        name: "RedHeadDomme",
+        sprite: "RedHeadDomme",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "AttackSkill",
+        text: {
+            intro: "In the dance of dominance, power's play, A gold coin's worth, for strength I'll convey.",
+            progress: null,
+            conclusion: "The coin's essence, now a distant memory, In its stead, attack skills sharp as can be."
+        }
+    },
+    RedMagicWoman: {
+        name: "RedMagicWoman",
+        sprite: "RedMagicWoman",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "MagicSkill",
+        text: {
+            intro: "From the heart of fire, where spells are born, For a gold coin, your magic's reborn.",
+            progress: null,
+            conclusion: "The coin's glow fades, but in its wake, A surge of magic, yours to take."
+        }
+    },
+
+
+
 };
 
 //container content

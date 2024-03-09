@@ -377,6 +377,9 @@ LoadTextures = [
     { srcName: "Wood8.jpg", name: "Wood8" },
     { srcName: "Wood9.jpg", name: "Wood9" },
     { srcName: "Nook1.jpg", name: "Nook1" },
+    { srcName: "NightSky1.jpg", name: "NightSky1" },
+    { srcName: "NightSky2.jpg", name: "NightSky2" },
+    { srcName: "NightSky3.jpg", name: "NightSky3" },
 ];
 
 LoadSheetSequences = [
@@ -456,10 +459,12 @@ LoadSprites = [
     { srcName: "PocketRocket.png", name: "PocketRocket" },
     { srcName: "Milk.png", name: "Milk" },
     { srcName: "Egg.png", name: "Egg" },
-    
-    
+    { srcName: "BackPackIcon.png", name: "BackPack" },
+    { srcName: "HikingBoot.png", name: "HikingBoot" },
     { srcName: "RocketTop.png", name: "RocketTop" },
     { srcName: "RocketBottom.png", name: "RocketBottom" },
+    { srcName: "SunScreen.png", name: "SunScreen" },
+    { srcName: "Towel.png", name: "Towel" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
@@ -590,7 +595,7 @@ LoadSprites = [
     { srcName: "Skeleton23.png", name: "Skeleton23" },
     { srcName: "Skull20.png", name: "Skull20" },
     { srcName: "Skull21.png", name: "Skull21" },
-   
+
 
     //messages
     { srcName: "CCC1.png", name: "CCC1" },

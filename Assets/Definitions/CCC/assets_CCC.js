@@ -383,6 +383,10 @@ LoadTextures = [
     { srcName: "Wood9.jpg", name: "Wood9" },
     { srcName: "Nook1.jpg", name: "Nook1" },
 
+    { srcName: "NightSky1.jpg", name: "NightSky1" },
+    { srcName: "NightSky2.jpg", name: "NightSky2" },
+    { srcName: "NightSky3.jpg", name: "NightSky3" },
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -609,19 +613,24 @@ LoadSprites = [
     { srcName: "Farmeress.jpg", name: "Farmeress" },
     { srcName: "Chef.jpg", name: "Cookie" },
     { srcName: "Bakeress.jpg", name: "Bakeress" },
-    //unused
-
-    { srcName: "GothGirl.jpg", name: "GothGirl" },
-    { srcName: "WaterFairy.jpg", name: "WaterFairy" },
-    
+    { srcName: "Climber.jpg", name: "Climber" },
     { srcName: "Spacy.jpg", name: "Spacy" },
     { srcName: "SpaceWarrior.jpg", name: "SpaceWarrior" },
-    { srcName: "RedHeadDomme.jpg", name: "RedHeadDomme" },
-    { srcName: "WellWoman.jpg", name: "WellWoman" },
-    { srcName: "Climber.jpg", name: "Climber" },
+    { srcName: "HillBilly.jpg", name: "HillBillie" },
     { srcName: "HealthGoddess.jpg", name: "HealthGoddess" },
-    { srcName: "HillBilly.jpg", name: "HillBilly" },
+    { srcName: "TempleGuardian.jpg", name: "TempleGuardian" },
+    { srcName: "GothGirl.jpg", name: "GothGirl" },
+    { srcName: "RedHeadDomme.jpg", name: "RedHeadDomme" },
+    { srcName: "RedMagicWoman.jpg", name: "RedMagicWoman" },
+    //unused
+
+    
+
+
+    //possible trainers - one too many
     { srcName: "Venus.jpg", name: "Venus" },
+    { srcName: "WellWoman.jpg", name: "WellWoman" },
+    
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -691,10 +700,13 @@ LoadSprites = [
     { srcName: "PocketRocket.png", name: "PocketRocket" },
     { srcName: "Milk.png", name: "Milk" },
     { srcName: "Egg.png", name: "Egg" },
-    
-
     { srcName: "RocketTop.png", name: "RocketTop" },
     { srcName: "RocketBottom.png", name: "RocketBottom" },
+    { srcName: "BackPackIcon.png", name: "BackPack" },
+    { srcName: "HikingBoot.png", name: "HikingBoot" },
+
+    { srcName: "SunScreen.png", name: "SunScreen" },
+    { srcName: "Towel.png", name: "Towel" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },
@@ -917,7 +929,7 @@ LoadSprites = [
     { srcName: "Skeleton23.png", name: "Skeleton23" },
     { srcName: "Skull20.png", name: "Skull20" },
     { srcName: "Skull21.png", name: "Skull21" },
-    
+
 
     //messages
     { srcName: "CCC1.png", name: "CCC1" },

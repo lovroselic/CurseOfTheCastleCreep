@@ -1982,9 +1982,9 @@ const MAP = {
         start: '[31,7]',
         decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"]]',
         lights: '[[94,7,"Lamp53","standardDimmed"],[89,3,"WallLamp20","standardDimmed"],[99,5,"Lamp41","standardDimmed"],[220,7,"Lamp42","standard"],[320,3,"Lamp45","standardDimmed"],[330,5,"Lamp44","standardDimmed"],[325,7,"Lamp50","dimRed"]]',
-        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"],[358,7,"99.5","106.1","Down"]]',
+        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"],[358,7,"99.5","106.1","Down"],[188,3,"99.6","108.1","Closed"],[412,5,"99.7","109.1","Silver"],[376,7,"99.8","110.1","Gold"]]',
         keys: '[[405,3]]',
-        entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"]]',
+        entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"],[335,3,"MathTeacher"]]',
         oracles: '[[199,1,"RockDomme"]]',
     }
     ,
@@ -2089,7 +2089,7 @@ const MAP = {
         trainers: '[[10,7,"HealthGoddess"],[168,5,"TempleGuardian"],[188,3,"GothGirl"],[315,5,"RedHeadDomme"],[335,3,"RedMagicWoman"]]',
     }
     ,
-    107 : {
+    107: {
         name: "Underground Sea",
         sg: 0,
         data: '{"width":"21","height":"13","map":"BB9AA88BB2AA18BB2AA33BABB11AA3BB19ABB3ABB3AA3BAA3BB31ABABB36A$"}',
@@ -2099,7 +2099,45 @@ const MAP = {
         start: '[241,1]',
         lights: '[[136,1,"WallLamp19","standardDimmed"],[132,3,"WallLamp12","standardDimmed"],[140,5,"WallLamp18","standardDimmed"]]',
         gates: '[[262,1,"107.1","106.2","Up"]]',
-        }
+        entities: '[[10,7,"Venus"],[126,5,"WellWoman"]]',
+    }
+    ,
+    108: {
+        name: "TITS Office",
+        sg: 0,
+        data: '{"width":"16","height":"16","map":"BB3AA9BAA2BB2AA3BAA2BAA3BAA2BB2AA5BAA4BB2AA7BAA10BB2AA3BB2AA6BAA9BB7AA5BABB2AA2BB2AA2BABAA2BB5ABABAA4BB7ABB3ABB5AA4BB3ABAA3BAA2BABB5ABABB4ABB3AA2BB4ABAA2BAA3BABB2ABB3AA2BB4AA7BABB2ABB3AA2BB2ABB10ABB6ABB14A$"}',
+        wall: "BrownBricks31",
+        floor: "RedBricks2",
+        ceil: "Wood11",
+        start: '[225,5]',
+        lights: '[[192,5,"Lamp44","standardDimmed"],[147,1,"Lamp48","standardDimmed"],[13,7,"Lamp49","standardDimmed"],[84,5,"Lamp49","dim"],[108,7,"Lamp41","standardDimmed"]]',
+        gates: '[[224,5,"108.1","99.6","Open"]]',
+        keys: '[[17,1],[126,0]]',
+        entities: '[[204,1,"NinJette"]]',
+        oracles: '[[197,3,"Tits"],[67,7,"MetalOracle"],[109,1,"GemOracle"],[90,3,"DerriereOracle"]]',
+    }
+    ,
+    109: {
+        name: "Gem Mine",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB212ABB12$"}',
+        wall: "GreyBricks45",
+        floor: "MossFloor103",
+        ceil: "MossFloor106",
+        start: '[118,3]',
+        gates: '[[119,3,"109.1","99.7","Open"]]',
+    }
+    ,
+    110: {
+        name: "Heavy Metal Room",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB44ABB180$"}',
+        wall: "GreyBricks45",
+        floor: "MossFloor103",
+        ceil: "MossFloor106",
+        start: '[202,1]',
+        gates: '[[217,1,"110.1","99.8","Open"]]',
+    }
     ,
     999: {
         name: "Sandbox",

@@ -784,6 +784,38 @@ const ORACLE_TYPE = {
         text: "I heard the wolves come from the Enchanted Forest.",
         interactionCategory: "oracle",
     },
+    Tits: {
+        name: "Tits",
+        sprite: "Tits",
+        category: 'crest',
+        voice: "Female",
+        text: "Welcome to Tourist Information, Travel, and Survival. How may I help you?",
+        interactionCategory: "oracle",
+    },
+    MetalOracle: {
+        name: "MetalOracle",
+        sprite: "MetalOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "GoldSteel is alloy of four different metals. Gold, uranium, and what else?",
+        interactionCategory: "oracle",
+    },
+    GemOracle: {
+        name: "GemOracle",
+        sprite: "GemOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Ghosty's Tear can be made from four other precious stones.",
+        interactionCategory: "oracle",
+    },
+    DerriereOracle: {
+        name: "DerriereOracle",
+        sprite: "DerriereOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Ghosty's Tear is made of Diamond, MoonStone and something more. I can't recall.",
+        interactionCategory: "oracle",
+    },
 
 };
 
@@ -1936,6 +1968,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "I should store some gold in the bag. Who knows ..."
     },
+    SilverBar: {
+        name: "SilverBar",
+        category: "interaction_item",
+        element: "BAR",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Silver",
+        inventorySprite: "SilverBar",
+        material: MATERIAL.silver,
+        text: "Silver. Malleable."
+    },
     IronBar: {
         name: "IronBar",
         category: "interaction_item",
@@ -2529,6 +2572,17 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Towel",
         text: "A towel. Pity I am not wet."
+    },
+    SilverBar: {
+        name: "SilverBar",
+        category: "interaction_item",
+        inventorySprite: "SilverBar",
+        text: "Silver. Malleable."
+    },
+    UraniumBar: {
+        name: "UraniumBar",
+        category: "interaction_item",
+        inventorySprite: "UraniumBar",
     },
 };
 
@@ -3379,6 +3433,60 @@ const INTERACTION_ENTITY = {
             conclusion: "Fully equipped, the mountains I'll milk, For you, fresh alpine milk, smooth as silk."
         }
     },
+    Venus: {
+        name: "Venus",
+        sprite: "Venus",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Towel", "SunScreen"],
+        gives: "Pearl",
+        text: {
+            intro: "From ocean's embrace, I emerge anew, Sun's fiery gaze, I wish to eschew.",
+            progress: "Protection begun, yet still incomplete, Items of comfort, for sun's harsh beat.",
+            conclusion: "Now fully shielded, from the sun's fierce kiss, A pearl from the depths, your reward is this."
+        }
+    },
+    WellWoman: {
+        name: "WellWoman",
+        sprite: "WellWoman",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Towel", "SunScreen"],
+        gives: "GoldBar",
+        text: {
+            intro: "From the well's depth, I rise, sun drenched, Towel and sunscreen, my skin's defense.",
+            progress: "Shelter from the sun, partially found, More is needed, for warmth all around.",
+            conclusion: "With both towel and cream, I stand unburned, For your kindness, a gold bar earned."
+        }
+    },
+    MathTeacher: {
+        name: "MathTeacher",
+        sprite: "MathTeacher",
+        category: 'crest',
+        voice: "FemHighQuick",
+        wants: ["Pie"],
+        gives: "UraniumBar",
+        text: {
+            intro: "In a world of numbers, PI reigns supreme. Can you deliver, or is it just a dream?",
+            progress: null,
+            conclusion: "Ah, a pie of a different sort! Not my calculation, but a good sport. Here's Uranium, for your effort."
+        }
+    },
+    NinJette: {
+        name: "NinJette",
+        sprite: "NinJette",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Sword", "Whip"],
+        gives: "Diamond",
+        text: {
+            intro: "Shadows whisper, my arsenal lost, Sword and whip, what a cost.",
+            progress: "One weapon found, yet one remains, Silent footsteps, only gains.",
+            conclusion: "Arsenal complete, my shadow's dance, For you, a diamond, thanks to chance."
+        }
+    },
+    
+
 
     /** undef */
 
@@ -3536,7 +3644,7 @@ const INTERACTION_SHRINE = {
         wants: ["GoldCoin"],
         gives: "HealthSkill",
         text: {
-            intro: "From realms divine, where well-being thrives, For one gold coin, your health revives.",
+            intro: "From realms divine, where well being thrives, For one gold coin, your health revives.",
             progress: null,
             conclusion: "With your tribute gleaming, in palms divine, Receive now a boost of health, eternally thine."
         }
@@ -3593,6 +3701,7 @@ const INTERACTION_SHRINE = {
             conclusion: "The coin's glow fades, but in its wake, A surge of magic, yours to take."
         }
     },
+
 
 
 

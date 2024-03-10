@@ -622,16 +622,17 @@ LoadSprites = [
     { srcName: "GothGirl.jpg", name: "GothGirl" },
     { srcName: "RedHeadDomme.jpg", name: "RedHeadDomme" },
     { srcName: "RedMagicWoman.jpg", name: "RedMagicWoman" },
-    //unused
-
-    
-
-
-    //possible trainers - one too many
     { srcName: "Venus.jpg", name: "Venus" },
     { srcName: "WellWoman.jpg", name: "WellWoman" },
+    { srcName: "MathTeacher.jpg", name: "MathTeacher" },
+    { srcName: "Tits.jpg", name: "Tits" },
+    { srcName: "MetalOracle.jpg", name: "MetalOracle" },
+    { srcName: "GemOracle.jpg", name: "GemOracle" },
+    { srcName: "DerriereOracle.jpg", name: "DerriereOracle" },
+    { srcName: "NinJette.jpg", name: "NinJette" },
+    //unused
+    { srcName: "Gemma.jpg", name: "Gemma" },
     
-
     //action items
     { srcName: "fly.png", name: "Fly" },
     { srcName: "hat.png", name: "Hat" },
@@ -704,9 +705,13 @@ LoadSprites = [
     { srcName: "RocketBottom.png", name: "RocketBottom" },
     { srcName: "BackPackIcon.png", name: "BackPack" },
     { srcName: "HikingBoot.png", name: "HikingBoot" },
-
+    { srcName: "SilverBar.png", name: "SilverBar" },
     { srcName: "SunScreen.png", name: "SunScreen" },
     { srcName: "Towel.png", name: "Towel" },
+
+    { srcName: "GoldSteel.png", name: "GoldSteel" },
+    { srcName: "PurpleTear.png", name: "PurpleTear" },
+    { srcName: "UraniumBar.png", name: "UraniumBar" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

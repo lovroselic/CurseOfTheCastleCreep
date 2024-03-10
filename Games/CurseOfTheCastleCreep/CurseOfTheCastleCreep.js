@@ -75,13 +75,30 @@ const DEBUG = {
             * backpack
             * hinkingboot (2x)
                 * pearl: venus
-            * sunscreen
-            * towel
+            * sunscreen (2x)
+            * towel (2x)
+                * goldbar: wellwoman
+            * iron bar
+            * silver bar
+            * goldSteel
+                * diamond: NinJette
+            * purpleTear
+                * uranium bar: math techer
+            * whip
+            * sword
         * who needs
-            * pie
+            * 
             * amethyst
             * moonstone  
             * pearl 
+            * diamond
+                * -->purpleTear
+            * 
+            * goldBar
+            * iron bar
+            * silver bar
+            * uranium bar
+                * --> goldSteel
          * entitites:
                 * wasp1 (wasp,wasp) -> shawl  TESTED
                 * wasp2 (wasp,wasp) -> cap TESTED
@@ -92,9 +109,15 @@ const DEBUG = {
                 * spacey2 (pocketrocket) -> moonstone TESTED
                 * farmer (wolf head) - > egg TESTED
                 * BAkERess (eqq, milk) -> dough TESTED
-                * hillbillie (hinkingboot,hinkingboot, backpack) -> milk
+                * hillbillie (hinkingboot,hinkingboot, backpack) -> milk TESTED
                 * WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
-            * Venus: (towel, sunscreen)->pearl
+                * Venus: (towel, sunscreen)->pearl TESTED
+                * well woman (towel, sunscreen)->goldBar TESTED
+                * math teacher (pie) - > uranium TESTED
+                * ninja (whip, sword) -> diamond TESTED
+                * TODO
+                    
+                    * Alloya (bars) -> goldSteel
          * rooms
             * 99 DDID  
             * 100 praise gold - temple
@@ -105,13 +128,15 @@ const DEBUG = {
             * 105 space base
             * 106 training mistresses hall
             * 107 underground sea
+            * 108 TITS
         
         * missing keys:
+        * excess keys: gold, silver
             
         * mock entity delivery:
          */
 
-        GAME.level = 107;  // return to 99
+        GAME.level = 109;  // return to 99
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -141,13 +166,13 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         //let invItems = [];
-        let invItems = ["LittleChicken", "Apple", "Dough", "Egg", "HikingBoot", "HikingBoot", "BackPack", "PocketRocket", "PocketRocket", "GoldCoin"];
+        let invItems = ["Pie", "Apple", "Dough", "Egg", "HikingBoot", "HikingBoot", "BackPack", "PocketRocket", "PocketRocket", "GoldCoin", "Towel", "SunScreen", "Sword", "Whip"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue", "Green", "Red"];
+        let keys = ["Blue", "Green", "Red", "Silver", "Gold"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -181,7 +206,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.06",
+    VERSION: "0.18.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

@@ -465,6 +465,11 @@ LoadSprites = [
     { srcName: "RocketBottom.png", name: "RocketBottom" },
     { srcName: "SunScreen.png", name: "SunScreen" },
     { srcName: "Towel.png", name: "Towel" },
+    { srcName: "SilverBar.png", name: "SilverBar" },
+    { srcName: "GoldSteel.png", name: "GoldSteel" },
+    { srcName: "PurpleTear.png", name: "PurpleTear" },
+    { srcName: "UraniumBar.png", name: "UraniumBar" },
+
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

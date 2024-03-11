@@ -813,7 +813,7 @@ const ORACLE_TYPE = {
         sprite: "DerriereOracle",
         category: 'crest',
         voice: "Female",
-        text: "Ghosty's Tear is made of Diamond, MoonStone and something more. I can't recall.",
+        text: "Ghosty's Tear is made of Diamond, Moonstone and something more. I can't recall.",
         interactionCategory: "oracle",
     },
 
@@ -2584,6 +2584,11 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "UraniumBar",
     },
+    PurpleTear: {
+        name: "PurpleTear",
+        category: "interaction_item",
+        inventorySprite: "PurpleTear",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3485,6 +3490,20 @@ const INTERACTION_ENTITY = {
             conclusion: "Arsenal complete, my shadow's dance, For you, a diamond, thanks to chance."
         }
     },
+    Gemma: {
+        name: "Gemma",
+        sprite: "Gemma",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Diamond", "Amethyst", "Moonstone", "Pearl"],
+        gives: "PurpleTear",
+        text: {
+            intro: "Beneath the earth, where secrets gleam, I seek jewels to fulfill a dream.",
+            progress: "A gem a stone, in hand you bring, Yet more are needed, for the tear to sing.",
+            conclusion: "Diamond, amethyst, moonstone, pearl, all unite, Behold, the PurpleTear, in its mystical light."
+        }
+    },
+    
     
 
 

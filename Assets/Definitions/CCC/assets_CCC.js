@@ -630,8 +630,9 @@ LoadSprites = [
     { srcName: "GemOracle.jpg", name: "GemOracle" },
     { srcName: "DerriereOracle.jpg", name: "DerriereOracle" },
     { srcName: "NinJette.jpg", name: "NinJette" },
-    //unused
     { srcName: "Gemma.jpg", name: "Gemma" },
+    //unused
+    
     
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -708,7 +709,6 @@ LoadSprites = [
     { srcName: "SilverBar.png", name: "SilverBar" },
     { srcName: "SunScreen.png", name: "SunScreen" },
     { srcName: "Towel.png", name: "Towel" },
-
     { srcName: "GoldSteel.png", name: "GoldSteel" },
     { srcName: "PurpleTear.png", name: "PurpleTear" },
     { srcName: "UraniumBar.png", name: "UraniumBar" },

@@ -2117,16 +2117,19 @@ const MAP = {
         oracles: '[[197,3,"Tits"],[67,7,"MetalOracle"],[109,1,"GemOracle"],[90,3,"DerriereOracle"]]',
     }
     ,
-    109: {
+    109 : {
         name: "Gem Mine",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB212ABB12$"}',
-        wall: "GreyBricks45",
-        floor: "MossFloor103",
-        ceil: "MossFloor106",
+        data: '{"width":"15","height":"15","map":"BB2AA3BB5ABAA2BABB2AA9BB2AA2BAA3BAA2BAA3BAA2BAA2BAA3BAA2BB3ABB5ABAA3BB2ABB3AA2BABAA2BABB2AA2BB2AA2BB7AA2BAA6BB4AA3BAA2BAA2BB4ABABAA2BAA2BABABB3ABAA2BAA2BB3ABB5AA4BB3AA2BB2ABB3ABB5ABAA5BB6ABABB2ABB10ABABB14A$"}',
+        wall: "SmallBlackBricks41",
+        floor: "ComplexFloor2",
+        ceil: "ComplexDarkCeiling1",
         start: '[118,3]',
+        lights: '[[140,7,"Lamp52","standardDimmed"],[211,1,"Lamp47","standardDimmed"],[145,1,"Lamp46","standardDimmed"],[111,1,"Lamp45","standardDimmed"],[87,1,"Lamp44","standardDimmed"],[148,7,"WallLamp16","standardDimmed"]]',
         gates: '[[119,3,"109.1","99.7","Open"]]',
-    }
+        triggers: '[[64,7,"RockTriggerButton",1,152],[110,7,"RockTriggerButton",1,188],[177,1,"RockTriggerButton",1,144]]',
+        entities: '[[215,1,"Gemma"]]',
+        }
     ,
     110: {
         name: "Heavy Metal Room",

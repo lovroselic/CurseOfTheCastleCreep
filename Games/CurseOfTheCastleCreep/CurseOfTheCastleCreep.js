@@ -88,12 +88,6 @@ const DEBUG = {
             * sword
         * who needs
             * 
-            * amethyst
-            * moonstone  
-            * pearl 
-            * diamond
-                * -->purpleTear
-            * 
             * goldBar
             * iron bar
             * silver bar
@@ -115,9 +109,9 @@ const DEBUG = {
                 * well woman (towel, sunscreen)->goldBar TESTED
                 * math teacher (pie) - > uranium TESTED
                 * ninja (whip, sword) -> diamond TESTED
-                * TODO
-                    
-                    * Alloya (bars) -> goldSteel
+                * gemma (all gems) -> purpleTear TESTED
+            * TODO
+                * Alloya (bars) -> goldSteel
          * rooms
             * 99 DDID  
             * 100 praise gold - temple
@@ -129,14 +123,16 @@ const DEBUG = {
             * 106 training mistresses hall
             * 107 underground sea
             * 108 TITS
+            * 109 gem mine
+            * 110 heavy metal room
         
         * missing keys:
-        * excess keys: gold, silver
+        * excess keys: 
             
         * mock entity delivery:
          */
 
-        GAME.level = 109;  // return to 99
+        GAME.level = 110;  // return to 99
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -166,7 +162,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         //let invItems = [];
-        let invItems = ["Pie", "Apple", "Dough", "Egg", "HikingBoot", "HikingBoot", "BackPack", "PocketRocket", "PocketRocket", "GoldCoin", "Towel", "SunScreen", "Sword", "Whip"];
+        let invItems = ["Diamond", "Amethyst", "Moonstone", "Pearl"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -206,7 +202,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.07",
+    VERSION: "0.18.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

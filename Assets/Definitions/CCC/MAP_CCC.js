@@ -1982,7 +1982,7 @@ const MAP = {
         start: '[31,7]',
         decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"]]',
         lights: '[[94,7,"Lamp53","standardDimmed"],[89,3,"WallLamp20","standardDimmed"],[99,5,"Lamp41","standardDimmed"],[220,7,"Lamp42","standard"],[320,3,"Lamp45","standardDimmed"],[330,5,"Lamp44","standardDimmed"],[325,7,"Lamp50","dimRed"]]',
-        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"],[358,7,"99.5","106.1","Down"],[188,3,"99.6","108.1","Closed"],[412,5,"99.7","109.1","Silver"],[376,7,"99.8","110.1","Gold"]]',
+        gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"],[358,7,"99.5","106.1","Down"],[188,3,"99.6","108.1","Closed"],[412,5,"99.7","109.1","Silver"],[376,7,"99.8","110.1","Gold"],[430,1,"99.9","111.1","Emerald"]]',
         keys: '[[405,3]]',
         entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"],[335,3,"MathTeacher"]]',
         oracles: '[[199,1,"RockDomme"]]',
@@ -2099,7 +2099,7 @@ const MAP = {
         start: '[241,1]',
         lights: '[[136,1,"WallLamp19","standardDimmed"],[132,3,"WallLamp12","standardDimmed"],[140,5,"WallLamp18","standardDimmed"]]',
         gates: '[[262,1,"107.1","106.2","Up"]]',
-        entities: '[[10,7,"Venus"],[126,5,"WellWoman"]]',
+        entities: '[[10,7,"Venus"],[126,5,"WellWoman"],[146,3,"BlondeVenus"]]',
     }
     ,
     108: {
@@ -2117,7 +2117,7 @@ const MAP = {
         oracles: '[[197,3,"Tits"],[67,7,"MetalOracle"],[109,1,"GemOracle"],[90,3,"DerriereOracle"]]',
     }
     ,
-    109 : {
+    109: {
         name: "Gem Mine",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2AA3BB5ABAA2BABB2AA9BB2AA2BAA3BAA2BAA3BAA2BAA2BAA3BAA2BB3ABB5ABAA3BB2ABB3AA2BABAA2BABB2AA2BB2AA2BB7AA2BAA6BB4AA3BAA2BAA2BB4ABABAA2BAA2BABABB3ABAA2BAA2BB3ABB5AA4BB3AA2BB2ABB3ABB5ABAA5BB6ABABB2ABB10ABABB14A$"}',
@@ -2129,28 +2129,44 @@ const MAP = {
         gates: '[[119,3,"109.1","99.7","Open"]]',
         triggers: '[[64,7,"RockTriggerButton",1,152],[110,7,"RockTriggerButton",1,188],[177,1,"RockTriggerButton",1,144]]',
         entities: '[[215,1,"Gemma"]]',
-        }
+    }
     ,
     110: {
         name: "Heavy Metal Room",
         sg: 0,
-        data: '{"width":"15","height":"15","map":"BB44ABB180$"}',
-        wall: "GreyBricks45",
-        floor: "MossFloor103",
-        ceil: "MossFloor106",
+        data: '{"width":"15","height":"15","map":"BB2AA2ÁABAA3BÁAÁABABÁAA4BAA4ÁAA2BAA3ÁBABÁAA6ÁAA2BAA2BÁAA3BB2ABAA2BB5ABÁBAA2BAA2BÁÁ2AÁAA4ÁAA2ÁBB2AÁAÁBAA3BAA2BÁBB2AA2BB3ÁBB3ABAA4BB3ÁBÁBB5ABB3AA2BABAA2BAA3BABABABAA5BB24A$AA3ÁÁ2AÁÁ2AÁÁ2AÁÁ2AÁAÁAA3ÁÁ2AÁAÁÁ2ABAA2ÁAA2ÁAÁAA2"}',
+        wall: "MarbleWall1",
+        floor: "OrnateFloor1",
+        ceil: "Wood21",
         start: '[202,1]',
+        lights: '[[97,1,"WallLamp32","standardDimmed"],[97,7,"Lamp52","standard"],[105,5,"WallLamp17","standardDimmed"],[119,3,"Lamp49","standardDimmed"]]',
         gates: '[[217,1,"110.1","99.8","Open"]]',
+        triggers: '[[20,3,"RockTriggerButton",0,142]]',
+        entities: '[[7,7,"AlloyaPinkass"]]',
     }
     ,
-    999: {
-        name: "Sandbox",
+    111: {
+        name: "Purple Gate",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB14AA155BABB47AA12BB17ABB30$BB10A"}',
-        wall: "MossyWall3",
-        floor: "GoldMarbleFloor",
-        ceil: "BlurryMossy",
-        start: '[161,1]',
-        decals: '[[8,7,"Nook1","texture"]]',
-        lights: '[[19,7,"Lamp40","standard"],[21,7,"Lamp41","standard"],[23,7,"Lamp42","standard"],[27,7,"Lamp44","standard"],[29,7,"Lamp45","standard"],[31,7,"Lamp46","standard"],[257,1,"Lamp47","standard"],[259,1,"Lamp48","standard"],[261,1,"Lamp49","standard"],[263,1,"Lamp50","standard"],[265,1,"Lamp51","standard"],[267,1,"Lamp52","standard"],[269,1,"Lamp53","standard"]]',
+        data: '{"width":"15","height":"15","map":"BB2AA2BB8AA10BAA38BAA2BAA56BB14ABB20ABB10AA8BABB21ABABB23A$"}',
+        wall: "BlackWall40",
+        floor: "RedBricks45",
+        ceil: "OrnateFloor31",
+        start: '[22,7]',
+        lights: '[[112,1,"Lamp48","standardRedish"],[112,7,"Lamp48","standardRedish"],[112,3,"WallLamp34","standardRedish"],[112,5,"Lamp51","standardRedish"]]',
+        gates: '[[7,7,"111.1","99.9","Open"],[45,5,"111.2","112.1","Closed"]]',
     }
+    ,
+    112 : {
+        name: "Purple Key",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB3AA2BB2AA14BB2AA3BB2AA20BB2AA6BB3AA2BB7AA2BABAA4BB6ABB18ABB3AA2BB17AA3BAA2BAA4BABAA2BB4AA3BB2AA2BB16A$"}',
+        wall: "BlackWall40",
+        floor: "RedBricks45",
+        ceil: "OrnateFloor31",
+        start: '[89,3]',
+        lights: '[[84,3,"Lamp40","standardDimmed"],[84,5,"Lamp41","standardDimmed"],[13,5,"Lamp46","standard"],[63,1,"Lamp51","standardDimmed"],[115,7,"Lamp47","standardDimmed"],[143,5,"WallLamp20","standard"]]',
+        gates: '[[90,3,"112.1","111.2","Open"]]',
+        entities: '[[78,5,"Keysa"]]',
+        }
 };

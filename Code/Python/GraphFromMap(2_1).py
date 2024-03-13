@@ -3,7 +3,7 @@
 Created on Thu Oct  5 07:59:53 2023
 
 @author: lovro
-v 0.3.0
+v 0.2.1
 
 https://networkx.org/documentation/stable/reference/introduction.html
 """
@@ -12,7 +12,6 @@ https://networkx.org/documentation/stable/reference/introduction.html
 import networkx as nx
 import matplotlib.pyplot as plt
 import regex as re
-import time
 
 
 def initDictElement(D, roomId):
@@ -54,8 +53,6 @@ def edgeColor(D, node, incoming):
     return color1 or color2 or default
 
 
-start_time = time.perf_counter()
-
 _file = "C:/Users/lovro/OneDrive/Documents/JS/CurseOfTheCastleCreep/Assets/Definitions/CCC/MAP_CCC.js"
 with open(_file, encoding="utf8") as fh:
     data = fh.read()
@@ -92,31 +89,19 @@ for room in MAP:
         MAPDICT[node]["out_color"].append(col)
         MAPDICT[out]["in_color"].append(col)
 
-# G = nx.DiGraph()
-G = nx.Graph()
+G = nx.DiGraph()
 edge_colors = []
 
 for node, el in MAPDICT.items():
     G.add_node(node, name=el["name"])
 
 for node, el in MAPDICT.items():
-    for outgoing_node in el['outcoming']:
-        if not G.has_edge(outgoing_node, node):
-            G.add_edge(node, outgoing_node)
-            ec = edgeColor(MAPDICT, node, outgoing_node)
-            edge_colors.append(ec)
+    for i in el['outcoming']:
+        G.add_edge(node, i)
+        ec = edgeColor(MAPDICT, node, i)
+        edge_colors.append(ec)
 
 label_dict = {node: str(node) + "-" + el["name"] for node, el in MAPDICT.items()}
-pos = nx.spring_layout(G, k=0.5, iterations=300)  # does not give good results
-plt.figure(1, figsize=(50, 50), dpi=300)
-# nx.draw(G, labels=label_dict, with_labels=True, font_size=7, edge_color=edge_colors, node_size=500)
-nx.draw(G, pos, labels=label_dict, with_labels=True, font_size=7, edge_color=edge_colors, node_size=500)
+plt.figure(1, figsize=(30, 30), dpi=192)
+nx.draw(G, labels=label_dict, with_labels=True, font_size=7, edge_color=edge_colors, node_size=500)
 plt.savefig("dungeon_plot.png", dpi=192, bbox_inches='tight')
-
-# =============================================================================
-# #
-# =============================================================================
-
-end_time = time.perf_counter()
-execution_time = end_time - start_time
-print(f"\nExecution time: {execution_time:.4f} seconds")

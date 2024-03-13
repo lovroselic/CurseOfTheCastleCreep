@@ -2271,6 +2271,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "EmeraldKey",
         color: "Emerald"
     },
+    PurpleKey: {
+        name: "PurpleKey",
+        category: "key",
+        inventorySprite: "PurpleKey",
+        color: "Purple"
+    },
     Quill: {
         name: "Quill",
         category: "interaction_item",
@@ -2588,6 +2594,17 @@ const INTERACTION_ITEM = {
         name: "PurpleTear",
         category: "interaction_item",
         inventorySprite: "PurpleTear",
+    },
+    GoldSteel: {
+        name: "GoldSteel",
+        category: "interaction_item",
+        inventorySprite: "GoldSteel",
+    },
+    Shell: {
+        name: "Shell",
+        category: "interaction_item",
+        inventorySprite: "Shell",
+        text: "Pretty shell."
     },
 };
 
@@ -3503,8 +3520,49 @@ const INTERACTION_ENTITY = {
             conclusion: "Diamond, amethyst, moonstone, pearl, all unite, Behold, the PurpleTear, in its mystical light."
         }
     },
+    AlloyaPinkass: {
+        name: "AlloyaPinkass",
+        sprite: "AlloyaPinkass",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldBar", "IronBar", "SilverBar", "UraniumBar"],
+        gives: "GoldSteel",
+        text: {
+            intro: "In fire and forge, my art does bloom, For GoldSteel creation, metals I consume.",
+            progress: "Bar by bar, the alloy takes shape, Continue your quest, let no metal escape.",
+            conclusion: "Gold, iron, silver, uranium, now blend, GoldSteel is forged, your journey's end."
+        }
+    },
+    BlondeVenus: {
+        name: "BlondeVenus",
+        sprite: "BlondeVenus",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Shell", "Shell"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "From seafoam's embrace, I arise, Seeking shells under the skies.",
+            progress: "One shell returned to ocean's call, Yet another awaits, to complete the thrall.",
+            conclusion: "Shells reunited with the sea's embrace, For you, an EmeraldKey, a token of grace."
+        }
+    },
+    Keysa: {
+        name: "Keysa",
+        sprite: "Keysa",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldSteel", "PurpleTear"],
+        gives: "PurpleKey",
+        text: {
+            intro: "In my workshop, magic and metal blend, For a unique key, two treasures I'll mend.",
+            progress: "One piece is here, bring another to be clear.",
+            conclusion: "GoldSteel and PurpleTear, now finely entwined, Behold, the PurpleKey, uniquely designed."
+        }
+    },
     
-    
+
+
+
 
 
     /** undef */

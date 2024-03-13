@@ -86,13 +86,9 @@ const DEBUG = {
                 * uranium bar: math techer
             * whip
             * sword
+            * shell (2x)
         * who needs
-            * 
-            * goldBar
-            * iron bar
-            * silver bar
-            * uranium bar
-                * --> goldSteel
+    
          * entitites:
                 * wasp1 (wasp,wasp) -> shawl  TESTED
                 * wasp2 (wasp,wasp) -> cap TESTED
@@ -110,8 +106,11 @@ const DEBUG = {
                 * math teacher (pie) - > uranium TESTED
                 * ninja (whip, sword) -> diamond TESTED
                 * gemma (all gems) -> purpleTear TESTED
+                * Alloya (bars) -> goldSteel TESTED
+                * Blonde venus (shell, shell) emerald key
+                * keysa (Goldsteel, puerpletear)-> purple key
             * TODO
-                * Alloya (bars) -> goldSteel
+                
          * rooms
             * 99 DDID  
             * 100 praise gold - temple
@@ -125,14 +124,17 @@ const DEBUG = {
             * 108 TITS
             * 109 gem mine
             * 110 heavy metal room
+            * 111 purple gate
+            * 112 purple key
         
         * missing keys:
+           
         * excess keys: 
             
         * mock entity delivery:
          */
 
-        GAME.level = 110;  // return to 99
+        GAME.level = 99;  // return to 99
         GAME.gold = 2814;
         HERO.maxHealth = 199;
         HERO.health = 143;
@@ -162,13 +164,13 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         //let invItems = [];
-        let invItems = ["Diamond", "Amethyst", "Moonstone", "Pearl"];
+        let invItems = ["GoldSteel", "PurpleTear"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue", "Green", "Red", "Silver", "Gold"];
+        let keys = ["Blue", "Green", "Red", "Silver", "Gold", "Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -202,7 +204,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.18.08",
+    VERSION: "0.19.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

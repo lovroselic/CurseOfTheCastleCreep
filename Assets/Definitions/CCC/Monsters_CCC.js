@@ -2164,7 +2164,7 @@ const MOVABLE_INTERACTION_OBJECT = {
         moveSpeed: 1.1,
         material: MATERIAL.standard,
         behaviourArguments: [Infinity, ["wanderer"], -1],
-        inventorySprite: "WolfHead",
+        inventorySprite: "WolfLeader",
         text: "Got you, evil bastard.",
     },
 };
@@ -2190,6 +2190,7 @@ const INTERACTION_ITEM = {
         name: "Acorn",
         category: "interaction_item",
         inventorySprite: "Acorn",
+        text: "Squirrels like them."
     },
     Pearl: {
         name: "Pearl",
@@ -2538,10 +2539,10 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Egg",
     },
-    WolfHead: {
-        name: "WolfHead",
+    WolfLeader: {
+        name: "WolfLeader",
         category: "interaction_item",
-        inventorySprite: "WolfHead",
+        inventorySprite: "WolfLeader",
     },
     RocketTop: {
         name: "RocketTop",
@@ -3368,7 +3369,7 @@ const INTERACTION_ENTITY = {
         sprite: "Farmeress",
         category: 'crest',
         voice: "Female",
-        wants: ["WolfHead"],
+        wants: ["WolfLeader"],
         gives: "Egg",
         text: {
             intro: "Troubled by wolves, night and day, Bring me their leader's head, I pray.",

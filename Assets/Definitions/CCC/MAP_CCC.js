@@ -1972,7 +1972,7 @@ const MAP = {
         traps: '[[154,1,"RockTriggerButton",1,"AngrySheep",93]]',
     }
     ,
-    99 : {
+    99: {
         name: "Deep Down Into the Darkness",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB2ABB2AA25BAA2BAA8BAA3BABB4ABB2ABB2AA4BB6AA5BB2AA16BABB4AA11BB4AA4BAA7BAA2BAA25BAA7BAA3BB9AA3BAA5BABABAA2BB3AA3BAA2BABAA5BB6ABABB5ABB12AA6BB7ABB2AA4BB4AA4BB5AA2BB2ABB7ABB5ABB3AA4BABB5AA3BABB5ABB16ABABAA4BB7AA5BB3ABB15ABB3AA2BB7AA4BABABABB2AA5BB7AA2BABB2ABB27ABB3$"}',
@@ -1991,9 +1991,9 @@ const MAP = {
         entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"],[335,3,"MathTeacher"]]',
         objects: '[[37,"Apple"]]',
         oracles: '[[199,1,"RockDomme"]]',
-        }
+    }
     ,
-    100 : {
+    100: {
         name: "Praise the Gold",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB3AA2BABABB2AA18BABAA14BB2AA8BB2AA7BB2AA7BAA4BB2ABB2AA4BB9AA3BB2AA2BB23AA2BB2AA3BB2AA2BAA3BAA4BB21A$"}',
@@ -2011,7 +2011,7 @@ const MAP = {
         gold: '[[55,"GoldCube"],[82,"GoldCube"],[123,"GoldCube"],[88,"GoldCube"],[47,"GoldCube"]]',
         containers: '[[141,"TreasureChest","INTERACTION_ITEM.GoldCoin",3],[131,"Barrel","INTERACTION_ITEM.Wasp",5]]',
         shrines: '[[6,7,"Attack1_23"],[78,5,"Defense1_23"],[162,1,"Magic1_23"]]',
-        }
+    }
     ,
     101: {
         name: "The Mountains",
@@ -2021,8 +2021,14 @@ const MAP = {
         floor: "Grass17",
         ceil: "DarkMarble1",
         start: '[118,3]',
-        lights: '[[78,1,"WallLamp35","standardDimmed"],[138,7,"WallLamp35","standardDimmed"],[112,3,"Lamp46","standardDimmed"],[112,5,"Lamp49","standardDimmed"],[209,3,"Lamp40","standardDimmed"],[29,3,"Lamp52","standardDimmed"]]',
+        decals: '[[45,5,"AirWolf201","picture"],[165,5,"Imhotep60","picture"],[21,5,"Wolfenstein50","picture"],[201,5,"RadarRatRace20","picture"],[84,5,"Pitfall23","picture"],[158,5,"Hero104","picture"],[94,5,"Fred130","picture"],[124,5,"Pitfall60","picture"],[51,5,"Pipeline50","picture"],[66,3,"Pipeline50","picture"],[156,3,"DungeonMaster206","picture"],[57,3,"SP63","picture"],[99,3,"JupiterLander99","picture"],[129,3,"Skyrim3","picture"],[147,3,"MoonZX","picture"],[179,3,"Skull10","crest"],[93,3,"DefenderOfTheCrown100","picture"],[123,3,"HungryHorace12","picture"],[112,1,"SumerGames60","picture"],[217,1,"Barbarian130","picture"],[190,1,"Hobbit101","picture"],[7,7,"TombRaider112","picture"],[112,7,"DungeonMaster96","picture"],[130,7,"Elite","picture"],[130,5,"WOW104","picture"]]',
+        lights: '[[78,1,"WallLamp35","standardDimmed"],[138,7,"WallLamp35","standardDimmed"],[112,3,"Lamp46","standardDimmed"],[112,5,"Lamp49","standardDimmed"],[209,3,"Lamp40","standardDimmed"],[29,3,"Lamp52","standardDimmed"],[89,3,"Lamp53","dim"]]',
         gates: '[[119,3,"101.1","99.3","Open"],[105,5,"101.2","102.1","Up"]]',
+        monsters: '[[115,"Bat"],[48,"RedDragon"],[183,"RedDragon"],[26,"RedDragon"],[206,"RedDragon"],[110,"GoldSkeleton"]]',
+        scrolls: '[[132,2],[54,10],[208,11],[63,4]]',
+        gold: '[[168,"SilverBar"],[35,"SilverBar"],[25,"SilverBar"],[205,"SilverBar"]]',
+        skills: '[[159,"Mana"]]',
+        containers: '[[163,"Wardrobe","INTERACTION_ITEM.Acorn",7],[85,"Chest","INTERACTION_ITEM.Towel",5],[31,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[185,"Crate","GOLD_ITEM_TYPE.SilverBar",1]]',
         entities: '[[3,7,"Climber"],[213,1,"HillBillie"]]',
     }
     ,
@@ -2037,12 +2043,14 @@ const MAP = {
         lights: '[[199,3,"WallLamp35","standardDimmed"],[219,3,"WallLamp35","standardDimmed"]]',
         gates: '[[223,3,"102.1","101.2","Down"],[248,1,"102.2","103.1","Green"]]',
         monsters: '[[17,"GreenWolf"],[212,"GreenWolf"],[30,"GreenWolf"],[156,"GreenWolf"],[129,"Wolf"],[69,"Wolf"],[136,"Wolf"],[76,"Wolf"],[23,"Wolf"],[190,"Wolf"],[234,"Wolf"]]',
+        skills: '[[35,"Heart"],[97,"Mana"]]',
+        containers: '[[168,"Crate","INTERACTION_ITEM.SunScreen",1],[26,"Crate","INTERACTION_ITEM.BackPack",7]]',
         triggers: '[[196,4,"RockTriggerButton",1,215]]',
         entities: '[[192,5,"WaterFairy"]]',
         movables: '[[102,"WolfLeader"]]',
     }
     ,
-    103: {
+    103 : {
         name: "The Farm",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABAA2BAA3BAA7BB3AA2BB2AA6BAA2BAA8BAA2BAA4BB2AA16BB5AA2BAA2BB2ABB8AA2BB6ABB2ABB2ABB4AA3BB4ABB9AA3BAA4BAA3BAA2BAA3BABAA4BB5AA3BABAA6BABB2AA2BB2ABB8AA2BAA5BABABB2AA2BB22A$"}',
@@ -2050,11 +2058,18 @@ const MAP = {
         floor: "Wood4",
         ceil: "Wood1",
         start: '[22,7]',
+        decals: '[[196,1,"LaraCroft21","picture"],[217,1,"TombRaider103","picture"],[221,1,"KingsQuest60","picture"],[125,1,"MrRobot60","picture"],[129,1,"Pitfall50","picture"],[135,5,"MrRobot11","picture"],[60,5,"Barbarian131","picture"],[90,5,"SVS1011","picture"],[109,5,"KQ100","picture"],[50,5,"SP66","picture"],[119,3,"Witcher101","picture"],[194,3,"BeachHead100","picture"],[55,3,"Underwurlde100","picture"],[72,3,"Popeye2","picture"],[97,7,"WOW10","picture"],[9,7,"TheHobbit14","picture"],[13,7,"BoogaBoo11","picture"],[26,7,"LadyTut10","picture"],[30,5,"TheHobbit88","picture"],[125,7,"LeisureSuitLarry201","picture"],[173,3,"CastleOfTerror91","picture"]]',
         lights: '[[123,7,"Lamp52","standardDimmed"],[21,7,"WallLamp14","standardDimmed"],[2,7,"Lamp42","standardDimmed"],[223,1,"WallLamp9","standardDimmed"],[129,7,"Lamp50","dimRed"]]',
         gates: '[[7,7,"103.1","102.2","Open"]]',
+        monsters: '[[51,"Wolf"],[54,"Wolf"],[16,"GreenWolf"],[28,"GreenWolf"],[208,"GreenWolf"],[166,"GreenWolf"],[204,"GreenWolf"]]',
+        potions: '[[185,0],[73,0],[136,1],[18,1]]',
+        gold: '[[32,"GoldCube"],[67,"GoldCube"],[58,"GoldCube"],[112,"GoldCube"],[153,"GoldCube"],[94,"GoldCube"],[202,"GoldCube"],[178,"GoldCube"],[161,"GoldCube"]]',
+        skills: '[[61,"Heart"],[208,"Shield"]]',
+        containers: '[[91,"TreasureChest","INTERACTION_ITEM.Acorn",5],[24,"Wardrobe","INTERACTION_ITEM.Wasp",7]]',
         entities: '[[213,1,"Farmeress"]]',
         oracles: '[[97,1,"FarmeressOracle"]]',
-    }
+        movables: '[[142,"LittleChicken"]]',
+        }
     ,
     104: {
         name: "The Kitchen",
@@ -2167,7 +2182,7 @@ const MAP = {
         gates: '[[7,7,"111.1","99.9","Open"],[45,5,"111.2","112.1","Closed"]]',
     }
     ,
-    112 : {
+    112: {
         name: "Purple Key",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB3AA2BB2AA14BB2AA3BB2AA20BB2AA6BB3AA2BB7AA2BABAA4BB6ABB18ABB3AA2BB17AA3BAA2BAA4BABAA2BB4AA3BB2AA2BB16A$"}',
@@ -2178,5 +2193,5 @@ const MAP = {
         lights: '[[84,3,"Lamp40","standardDimmed"],[84,5,"Lamp41","standardDimmed"],[13,5,"Lamp46","standard"],[63,1,"Lamp51","standardDimmed"],[115,7,"Lamp47","standardDimmed"],[143,5,"WallLamp20","standard"]]',
         gates: '[[90,3,"112.1","111.2","Open"]]',
         entities: '[[78,5,"Keysa"]]',
-        }
+    }
 };

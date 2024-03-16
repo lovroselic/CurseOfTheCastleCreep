@@ -60,10 +60,10 @@ const DEBUG = {
                 * shawl: wasp1
                 * cap: wasp2
                 * gloves: another Squirell
-            * acorn 2x: 
+                * acorn 2x: 101,103
                 * amethyst: spacy1
                 * moonstone: spacy2
-            * chicken
+                * chicken: 103
                 * apple: 99
                 * dough: baker
                 * pie: cook;
@@ -73,11 +73,11 @@ const DEBUG = {
                 * milk: hillbilly
             * top rocket, 
             * bottom rocket, 
-            * backpack
+                * backpack: 102
             * hiking boot (2x): 99, 
                 * pearl: venus
-            * sunscreen (2x)
-            * towel (2x)
+            * sunscreen (2x): 102
+            * towel (2x): 101, 
                 * goldbar: wellwoman
             * iron bar
             * silver bar
@@ -91,14 +91,14 @@ const DEBUG = {
         * who needs
     
          * entitites:
-                * wasp1 (wasp,wasp) -> shawl  TESTED
+                    * DONE wasp1 (wasp,wasp) -> shawl  TESTED
                 * wasp2 (wasp,wasp) -> cap TESTED
-                * squirrel (acorn , acorn) - gloves TESTED
+                    * DONEsquirrel (acorn , acorn) - gloves TESTED
                 * climber (shawl, cap, gloves) -> pocketRocket TESTED
                 * cook (chicken, apple, dough) -> pie TESTED
                 * spacey1 (pocketrocket) -> amethyst TESTED
                 * spacey2 (pocketrocket) -> moonstone TESTED
-                * farmer (wolf head) - > egg TESTED
+                    * DONE farmer (wolf head) - > egg TESTED
                 * BAkERess (eqq, milk) -> dough TESTED
                 * hillbillie (hinkingboot,hinkingboot, backpack) -> milk TESTED
                 * WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
@@ -115,9 +115,9 @@ const DEBUG = {
          * rooms
             * COMPLETED : 99 DDID  
             * COMPLETED 100 praise gold - temple
-            * 101 the mountains
-            * 102 enchanted forest
-            * 103 farm
+            * COMPLERED 101 the mountains
+            * COMPLETED 102 enchanted forest
+            * COMPLETED 103 farm
             * 104 the kitchen
             * 105 space base
             * 106 training mistresses hall
@@ -135,27 +135,27 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 101;  // return to 99
-        GAME.gold = 1799;
-        HERO.maxHealth = 199;
-        HERO.health = 167;
-        HERO.maxMana = 272;
-        HERO.mana = 189;
+        GAME.level = 104;  // return to 99
+        GAME.gold = 3184;
+        HERO.maxHealth = 207;
+        HERO.health = 207;
+        HERO.maxMana = 282;
+        HERO.mana = 10;
         HERO.attack = 48;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 45;
+        HERO.defense = 46;
         HERO.reference_defense = HERO.defense;
         HERO.magic = 47;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 4243;
-        HERO.defenseExp = 1015;
-        HERO.magicExp = 1086;
+        HERO.attackExp = 5408;
+        HERO.defenseExp = 1280;
+        HERO.magicExp = 2948;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["Light"];
+        HERO.inventory.potion.red = 2;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["Light", "DrainMana" ];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -163,13 +163,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Apple", "HikingBoot", "Wasp", "GoldCoin"];
+        let invItems = ["Apple", "HikingBoot", "GoldCoin", "Towel", "SunScreen", "BackPack", "LittleChicken", "Egg", "Shawl", "Gloves"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Green", "Blue"];
+        let keys = ["Blue"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -203,7 +203,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.01",
+    VERSION: "0.19.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

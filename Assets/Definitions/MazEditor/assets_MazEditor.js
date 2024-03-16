@@ -380,6 +380,17 @@ LoadTextures = [
     { srcName: "NightSky1.jpg", name: "NightSky1" },
     { srcName: "NightSky2.jpg", name: "NightSky2" },
     { srcName: "NightSky3.jpg", name: "NightSky3" },
+    { srcName: "RedMArbleFLoor10.jpg", name: "RedMArbleFLoor10" },
+    { srcName: "RedMArbleFloor12.jpg", name: "RedMArbleFloor12" },
+    { srcName: "RedMArbleFloor2.jpg", name: "RedMArbleFloor2" },
+    { srcName: "RedMArbleFloor3.jpg", name: "RedMArbleFloor3" },
+    { srcName: "RedMArbleFloor5.jpg", name: "RedMArbleFloor5" },
+    { srcName: "RedMArbleFloor9.jpg", name: "RedMArbleFloor9" },
+    { srcName: "RedMarbleFloor1.jpg", name: "RedMarbleFloor1" },
+    { srcName: "RedMarbleFloor13.jpg", name: "RedMarbleFloor13" },
+    { srcName: "RedMarbleFloor4.jpg", name: "RedMarbleFloor4" },
+    { srcName: "RedMarbleFloor7.jpg", name: "RedMarbleFloor7" },
+    { srcName: "RedMarbleFloor8.jpg", name: "RedMarbleFloor8" },
 ];
 
 LoadSheetSequences = [

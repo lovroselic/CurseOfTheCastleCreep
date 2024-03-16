@@ -1972,23 +1972,28 @@ const MAP = {
         traps: '[[154,1,"RockTriggerButton",1,"AngrySheep",93]]',
     }
     ,
-    99: {
+    99 : {
         name: "Deep Down Into the Darkness",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB2ABB2AA25BAA2BAA8BAA3BABB4ABB2ABB2AA4BB6AA5BB2AA16BABB4AA11BB4AA4BAA7BAA2BAA25BAA7BAA3BB9AA3BAA5BABABAA2BB3AA3BAA2BABAA5BB6ABABB5ABB12AA6BB7ABB2AA4BB4AA4BB5AA2BB2ABB7ABB5ABB3AA4BABB5AA3BABB5ABB16ABABAA4BB7AA5BB3ABB15ABB3AA2BB7AA4BABABABB2AA5BB7AA2BABB2ABB27ABB3$"}',
         wall: "GreyBricks45",
         floor: "MossFloor103",
-        ceil: "MossFloor106",
+        ceil: "RedMArbleFLoor10",
         start: '[31,7]',
-        decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"]]',
+        decals: '[[51,7,"AticAtac205","picture"],[53,7,"Zaxxon70","picture"],[89,7,"LastNinja10","picture"],[99,7,"LadyTut10","picture"],[325,3,"Sorcery70","picture"],[330,3,"PharaohCurse140","picture"],[325,5,"DM106","picture"],[320,5,"Ishar80","picture"],[4,7,"TimeTunnel60","picture"],[16,7,"DM105","picture"],[28,7,"HalfLife11","picture"],[34,7,"LSL101","picture"],[153,7,"SP67","picture"],[161,7,"BruceLee200","picture"],[255,7,"Hero82","picture"],[269,7,"WOW10","picture"],[150,1,"FortApocalypse","picture"],[164,1,"SVS1001","picture"],[258,1,"Tombraider140","picture"],[260,1,"RadarRatRace10","picture"],[266,1,"HalfLife72","picture"],[264,1,"Nebulus50","picture"],[134,7,"JetPac50","picture"],[138,7,"OlympicSkier","picture"],[425,1,"DungeonMaster204","picture"],[436,1,"LeisureSuitLarry76","picture"],[407,1,"AticAtac110","picture"],[411,1,"TheHobbit72","picture"],[89,5,"Hero60","picture"],[94,5,"Yennefer21","picture"],[399,5,"TombRaider101","picture"],[94,1,"AticAtac113","picture"],[94,3,"AntAttack200","picture"],[99,3,"Ishar99","picture"],[286,3,"RiverRaid70","picture"],[419,3,"HeroQuest50","picture"],[280,5,"EyeOfTheBeholder110","picture"],[89,1,"Skull21","crest"],[99,1,"Skull1","crest"]]',
         lights: '[[94,7,"Lamp53","standardDimmed"],[89,3,"WallLamp20","standardDimmed"],[99,5,"Lamp41","standardDimmed"],[220,7,"Lamp42","standard"],[320,3,"Lamp45","standardDimmed"],[330,5,"Lamp44","standardDimmed"],[325,7,"Lamp50","dimRed"]]',
         gates: '[[10,7,"99.1","98.2","Open"],[168,5,"99.2","100.1","Closed"],[231,5,"99.3","101.1","Blue"],[251,3,"99.4","104.1","Closed"],[358,7,"99.5","106.1","Down"],[188,3,"99.6","108.1","Closed"],[412,5,"99.7","109.1","Silver"],[376,7,"99.8","110.1","Gold"],[430,1,"99.9","111.1","Emerald"]]',
         keys: '[[405,3]]',
+        monsters: '[[151,"RedDragon"],[163,"RedDragon"],[241,"RedDragon"],[214,"GoldSkeleton"],[226,"GoldSkeleton"],[341,"GreenRex"],[351,"GreenRex"],[388,"Drax"]]',
+        scrolls: '[[92,10],[96,13],[262,9],[224,6]]',
+        potions: '[[131,1],[141,1],[360,1],[374,1],[195,1]]',
+        containers: '[[285,"Wardrobe","INTERACTION_ITEM.HikingBoot",3]]',
         entities: '[[84,5,"Wasp1"],[104,3,"Wasp2"],[315,5,"AnotherSquirrel"],[335,3,"MathTeacher"]]',
+        objects: '[[37,"Apple"]]',
         oracles: '[[199,1,"RockDomme"]]',
-    }
+        }
     ,
-    100: {
+    100 : {
         name: "Praise the Gold",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB3AA2BABABB2AA18BABAA14BB2AA8BB2AA7BB2AA7BAA4BB2ABB2AA4BB9AA3BB2AA2BB23AA2BB2AA3BB2AA2BAA3BAA4BB21A$"}',
@@ -1996,12 +2001,17 @@ const MAP = {
         floor: "Sand15",
         ceil: "ColorfulTiles1",
         start: '[89,3]',
-        decals: '[[56,7,"SP60","picture"],[60,7,"DonkeyKong99","picture"],[108,7,"AztecChallenge111","picture"],[112,7,"HoraceSki","picture"],[2,7,"TimeTunnel70","picture"],[10,7,"KokotoniWilf2","picture"],[108,1,"JSW10","picture"],[112,1,"Witcher112","picture"],[158,1,"GatewayToApshai130","picture"],[166,1,"FalconPatrol9","picture"],[56,1,"Yeppelin70","picture"],[60,1,"CrawlMaster113","picture"]]',
+        decals: '[[56,7,"SP60","picture"],[60,7,"DonkeyKong99","picture"],[108,7,"AztecChallenge111","picture"],[112,7,"HoraceSki","picture"],[2,7,"TimeTunnel70","picture"],[10,7,"KokotoniWilf2","picture"],[108,1,"JSW10","picture"],[112,1,"Witcher112","picture"],[158,1,"GatewayToApshai130","picture"],[166,1,"FalconPatrol9","picture"],[56,1,"Yeppelin70","picture"],[60,1,"CrawlMaster113","picture"],[56,3,"KingsQuest51","picture"],[60,3,"WinterGames10","picture"],[112,3,"Cuthbert90","picture"],[108,3,"KokotoniWilf2","picture"],[56,5,"RickDangerous60","picture"],[60,5,"BrianBloodaxe20","picture"],[112,5,"Tutanham12","picture"],[108,5,"LeisureSuitLarry91","picture"]]',
         lights: '[[84,1,"Lamp48","dim"],[84,7,"WallLamp34","dim"],[84,3,"WallLamp31","dim"],[84,5,"WallLamp32","dim"]]',
         gates: '[[90,3,"100.1","99.2","Open"]]',
         keys: '[[15,4]]',
+        monsters: '[[54,"GoldSkeleton"],[106,"GoldSkeleton"]]',
+        scrolls: '[[27,0]]',
+        potions: '[[37,0]]',
+        gold: '[[55,"GoldCube"],[82,"GoldCube"],[123,"GoldCube"],[88,"GoldCube"],[47,"GoldCube"]]',
+        containers: '[[141,"TreasureChest","INTERACTION_ITEM.GoldCoin",3],[131,"Barrel","INTERACTION_ITEM.Wasp",5]]',
         shrines: '[[6,7,"Attack1_23"],[78,5,"Defense1_23"],[162,1,"Magic1_23"]]',
-    }
+        }
     ,
     101: {
         name: "The Mountains",

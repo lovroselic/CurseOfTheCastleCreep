@@ -46,6 +46,7 @@ const DEBUG = {
     checkpoint1() {
         /**
          * current temple
+            * attack 
          * used shrines restroom: 
          * trrainers;
             * health goddess - health 
@@ -54,8 +55,8 @@ const DEBUG = {
             * redhead attack
             * redmagic magic
          * items source
-            * goldCoin (5x - 1)(4x): 
-            * wasp (4x): 
+            * goldCoin (5x - 1)(4x): 100, 
+            * wasp (4x): 100,
                 * shawl: wasp1
                 * cap: wasp2
                 * gloves: another Squirell
@@ -63,7 +64,7 @@ const DEBUG = {
                 * amethyst: spacy1
                 * moonstone: spacy2
             * chicken
-            * apple
+                * apple: 99
                 * dough: baker
                 * pie: cook;
                 * pocketrocket (2x): climber, fairy
@@ -73,16 +74,16 @@ const DEBUG = {
             * top rocket, 
             * bottom rocket, 
             * backpack
-            * hinkingboot (2x)
+            * hiking boot (2x): 99, 
                 * pearl: venus
             * sunscreen (2x)
             * towel (2x)
                 * goldbar: wellwoman
             * iron bar
             * silver bar
-            * goldSteel
+                * goldSteel: alloya
                 * diamond: NinJette
-            * purpleTear
+                * purpleTear: Gemma
                 * uranium bar: math techer
             * whip
             * sword
@@ -112,8 +113,8 @@ const DEBUG = {
             * TODO
                 
          * rooms
-            * 99 DDID  
-            * 100 praise gold - temple
+            * COMPLETED : 99 DDID  
+            * COMPLETED 100 praise gold - temple
             * 101 the mountains
             * 102 enchanted forest
             * 103 farm
@@ -134,28 +135,27 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 99;  // return to 99
-        GAME.gold = 2814;
+        GAME.level = 101;  // return to 99
+        GAME.gold = 1799;
         HERO.maxHealth = 199;
-        HERO.health = 143;
-        HERO.maxMana = 267;
-        HERO.mana = 24;
-        HERO.attack = 47;
+        HERO.health = 167;
+        HERO.maxMana = 272;
+        HERO.mana = 189;
+        HERO.attack = 48;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 45;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 46;
+        HERO.magic = 47;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 3733;
-        HERO.defenseExp = 920;
-        HERO.magicExp = 8291;
+        HERO.attackExp = 4243;
+        HERO.defenseExp = 1015;
+        HERO.magicExp = 1086;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
-        HERO.magicExpGoal = 8675;
-        HERO.inventory.potion.red = 3;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Invisibility"];
-        //let scrolls = [];
+        HERO.magicExpGoal = 13013;
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["Light"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -163,14 +163,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        //let invItems = [];
-        let invItems = ["GoldSteel", "PurpleTear"];
+        let invItems = ["Apple", "HikingBoot", "Wasp", "GoldCoin"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue", "Green", "Red", "Silver", "Gold", "Emerald"];
+        let keys = ["Green", "Blue"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -204,7 +203,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.00",
+    VERSION: "0.19.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

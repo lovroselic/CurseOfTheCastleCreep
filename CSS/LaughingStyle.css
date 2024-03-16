@@ -1,4 +1,4 @@
-/* LS CSS v1.0.0 */
+/* LS CSS v0.3.0 */
 
 @charset "utf-8";
 
@@ -50,6 +50,12 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: Carolingia;
+    src: url("/Assets/Fonts/carolingia.ttf");
+    font-display: swap;
+}
+
 /* Overrriding Bootstrap */
 
 body {
@@ -71,6 +77,10 @@ fieldset, legend {
     all: revert;
 }
 
+body, td, tfoot, th, thead, tr {
+    border: none !important;
+  }
+
 /* LS theme */
 
 h1 {
@@ -85,6 +95,10 @@ h1 {
 .c64 {
     font-family: C64;
     font-size: 15px;
+}
+
+.LS_radius {
+    border-radius: 0.25rem !important;
 }
 
 
@@ -108,12 +122,68 @@ textarea, select, input {
 
 input[type="button"] {
     background-color: #d9d9b3;
-    /*border: 1px solid #222;*/
     padding: 6px;
 }
 
 input {
     margin: 5px;
+}
+
+.crimson-hr {
+    border: 0;
+    height: 2px;
+    background-color: #C0C0C0;
+    margin: 10px 0;
+    box-shadow: 0 2px 3px#000;
+    border-radius: 1px;
+}
+
+.svg-icon {
+    height: 2rem;
+    width: auto;
+}
+
+/*  navigation specifics */
+
+.nav_back {
+    background: #5E0A1B;
+    background-image: url('/Images/MarbleBackground.webp') !important;
+    background-repeat: repeat;
+    color: #fff !important;
+    box-shadow: 1px 1px #5E0A1B;
+}
+
+.bright-white {
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px #000;
+    font-family: 'Lora', 'serif';
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.crimson-red {
+    color: #FF0000;
+    text-shadow: 1px 1px 2px #000;
+    font-family: 'LaughingSkull', Times, serif;
+    font-size: 3rem;
+}
+
+/* changing bootstrap*/
+
+a.navbar-brand:hover {
+    color: #DC143C !important;
+}
+
+.dropdown a:hover {
+    background-color: transparent !important;
+    color: #B0B0B0 !important;
+    text-shadow: 1px 1px 2px #000 !important;
+}
+
+a.nav-link.bright-white:hover {
+    background-color: transparent !important;
+    color: #B0B0B0 !important;
+    text-shadow: 1px 1px 2px #000 !important;
 }
 
 
@@ -128,7 +198,50 @@ input {
     color: #FF0000;
 }
 
+.games {
+    font-family: Arcade;
+    color: #FF0000;
+    text-shadow: 1px 1px #666;
+}
+
+/* old LS music page classes */
+
+.albumlink {
+    text-decoration: none;
+    color: white;
+    font-family: Carolingia;
+    text-align: center;
+}
+
+.albumlink:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.albumList {
+    table-layout: fixed;
+    text-align: left;
+    color: whitesmoke;
+}
+
+.albumList td {
+    font-size: 1.4rem;
+}
+
+.albumList td:nth-child(2) {
+    font-family: Carolingia;
+}
+
+.disco img {
+    border: 1px solid #222;
+}
+
 /* Games compatibility and specifics */
+
+.win_black {
+    background: linear-gradient(90deg, #000, #222);
+    border-radius: 13px;
+}
 
 .win {
     background: #2a2a2a;
@@ -190,6 +303,7 @@ input {
 .version {
     font-family: Consolas, serif !important;
     font-size: 0.7rem !important;
+    color: #00FF00;
 }
 
 .section {

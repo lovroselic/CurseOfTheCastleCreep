@@ -2050,7 +2050,7 @@ const MAP = {
         movables: '[[102,"WolfLeader"]]',
     }
     ,
-    103 : {
+    103: {
         name: "The Farm",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB2ABAA2BAA3BAA7BB3AA2BB2AA6BAA2BAA8BAA2BAA4BB2AA16BB5AA2BAA2BB2ABB8AA2BB6ABB2ABB2ABB4AA3BB4ABB9AA3BAA4BAA3BAA2BAA3BABAA4BB5AA3BABAA6BABB2AA2BB2ABB8AA2BAA5BABABB2AA2BB22A$"}',
@@ -2069,9 +2069,9 @@ const MAP = {
         entities: '[[213,1,"Farmeress"]]',
         oracles: '[[97,1,"FarmeressOracle"]]',
         movables: '[[142,"LittleChicken"]]',
-        }
+    }
     ,
-    104: {
+    104 : {
         name: "The Kitchen",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB2AA5BABAA3BAA2BAA5BB3ABB3ABABAA15BAA2BB3AA2BAA8BB2AA3BAA5BAA10BB3ABB2AA3BB4ABB2ABAA2BB2AA4BB3ABB2ABAA3BAA2BB2AA2BB3ABB8AA2BB5AA5BAA4BABABAA3BAA4BAA2BB4ABB2ABB2ABAA3BAA3BAA2BABABB2ABB2ABB4AA5BB3ABEE2BB2ABABB29A$EE2BB10AA2BB16"}',
@@ -2079,13 +2079,20 @@ const MAP = {
         floor: "Wood13",
         ceil: "RedBrickFloor1",
         start: '[137,5]',
-        decals: '[[58,3,"Nook1","texture"],[196,5,"Nook1","texture"]]',
-        lights: '[[88,1,"Lamp51","standardDimmed"],[200,7,"Lamp52","standardDimmed"]]',
+        decals: '[[58,3,"Nook1","texture"],[196,5,"Nook1","texture"],[126,1,"ActecChallenge2","picture"],[128,1,"ManicMiner52","picture"],[130,1,"PharaohCurse110","picture"],[134,1,"OlympicSkier6","picture"],[98,1,"Miner3","picture"],[124,1,"TheHobbit99","picture"],[120,1,"KingsQuest60","picture"],[190,1,"Frogger110","picture"],[266,1,"KnightLore31","picture"],[22,7,"ForbiddenForest110","picture"],[11,7,"Scramble60","picture"],[13,7,"Cauldron8","picture"],[168,7,"CyberPunk200","picture"],[160,7,"Wolfenstein70","picture"],[164,7,"HalfLife50","picture"],[154,7,"KokotoniWilf70","picture"],[222,7,"CrawlMaster132","picture"],[204,5,"ZX81-89","picture"],[255,5,"ManicMiner63","picture"],[68,5,"TombRaider97","picture"],[44,5,"Cuthbert20","picture"],[231,5,"Hero82","picture"],[61,3,"LeisureSuitLarry93","picture"],[84,3,"AtariST","picture"],[220,3,"RobinOfTheWood50","picture"],[265,3,"KnightLore111","picture"],[88,7,"LastNinja111","picture"],[226,7,"BlueMax11","picture"],[125,7,"DM100","picture"],[129,7,"AztecChallenge112","picture"],[160,1,"Underwurlde140","picture"]]',
+        lights: '[[88,1,"Lamp51","standardDimmed"],[200,7,"Lamp52","standardDimmed"],[9,7,"WallLamp18","standardDimmed"],[15,7,"Lamp53","standardDimmed"],[275,1,"Lamp53","standardDimmed"],[279,1,"Lamp43","standardDimmed"]]',
         gates: '[[136,5,"104.1","99.4","Open"],[152,3,"104.2","105.1","Red"]]',
         keys: '[[109,2]]',
+        monsters: '[[149,"GoldSkeleton"],[59,"RedDragon"],[83,"RedDragon"],[205,"RedDragon"],[264,"RedDragon"],[54,"GreenRex"],[217,"GreenRex"]]',
+        scrolls: '[[111,10],[30,1],[178,9]]',
+        potions: '[[57,1],[197,1],[194,1],[32,1]]',
+        gold: '[[71,"GoldCube"],[60,"GoldCube"],[100,"GoldCube"],[234,"GoldCube"],[208,"GoldCube"],[150,"GoldCube"]]',
+        skills: '[[243,"Mana"]]',
+        containers: '[[24,"TreasureChest","INTERACTION_ITEM.Shell",5],[230,"Barrel","INTERACTION_ITEM.Wasp",7],[35,"Barrel","INTERACTION_ITEM.RocketTop",5],[253,"Wardrobe","INTERACTION_ITEM.Towel",1]]',
         doors: '[122,166,132,156]',
         entities: '[[285,1,"Cookie"],[3,7,"Bakeress"]]',
-    }
+        objects: '[[239,"GoldCoin"]]',
+        }
     ,
     105: {
         name: "The Space Base",

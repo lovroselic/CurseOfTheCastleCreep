@@ -55,8 +55,8 @@ const DEBUG = {
             * redhead attack
             * redmagic magic
          * items source
-            * goldCoin (5x - 1)(4x): 100, 
-            * wasp (4x): 100,
+            * goldCoin (5x - 1)(4x): 100, 104,
+            * wasp (2x): 104;
                 * shawl: wasp1
                 * cap: wasp2
                 * gloves: another Squirell
@@ -71,13 +71,13 @@ const DEBUG = {
                 * wolf head: enchanted forest
                 * egg: farmer
                 * milk: hillbilly
-            * top rocket, 
+                * top rocket, 104
             * bottom rocket, 
                 * backpack: 102
             * hiking boot (2x): 99, 
                 * pearl: venus
             * sunscreen (2x): 102
-            * towel (2x): 101, 
+                * towel (2x): 101, 104
                 * goldbar: wellwoman
             * iron bar
             * silver bar
@@ -87,7 +87,7 @@ const DEBUG = {
                 * uranium bar: math techer
             * whip
             * sword
-            * shell (2x)
+            * shell (2x): 104;
         * who needs
     
          * entitites:
@@ -118,7 +118,7 @@ const DEBUG = {
             * COMPLERED 101 the mountains
             * COMPLETED 102 enchanted forest
             * COMPLETED 103 farm
-            * 104 the kitchen
+            * COMPLETED 104 the kitchen
             * 105 space base
             * 106 training mistresses hall
             * 107 underground sea
@@ -135,27 +135,27 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 104;  // return to 99
-        GAME.gold = 3184;
+        GAME.level = 105;  //cont // return to 99
+        GAME.gold = 137;
         HERO.maxHealth = 207;
-        HERO.health = 207;
-        HERO.maxMana = 282;
-        HERO.mana = 10;
+        HERO.health = 145;
+        HERO.maxMana = 287;
+        HERO.mana = 185;
         HERO.attack = 48;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 46;
+        HERO.defense = 47;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 47;
+        HERO.magic = 48;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 5408;
-        HERO.defenseExp = 1280;
-        HERO.magicExp = 2948;
+        HERO.attackExp = 6048;
+        HERO.defenseExp = 1342;
+        HERO.magicExp = 3466;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
         HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["Light", "DrainMana" ];
+        HERO.inventory.potion.blue = 1;
+        let scrolls = ["Light", "Invisibility"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -163,13 +163,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Apple", "HikingBoot", "GoldCoin", "Towel", "SunScreen", "BackPack", "LittleChicken", "Egg", "Shawl", "Gloves"];
+        let invItems = ["Apple", "HikingBoot", "GoldCoin", "Towel", "SunScreen", "BackPack", "LittleChicken", "Egg", "Shawl", "Gloves","RocketTop", "Wasp","GoldCoin", "Shell", "Towel"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Blue"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -203,7 +203,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.02",
+    VERSION: "0.19.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

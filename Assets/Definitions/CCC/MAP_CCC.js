@@ -2094,7 +2094,7 @@ const MAP = {
         objects: '[[239,"GoldCoin"]]',
         }
     ,
-    105: {
+    105 : {
         name: "The Space Base",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB2AA5BAA3BB3ABB2AA15BABAA6BAA2BAA3BB5ABAA2BB2AA8BAA2BAA11BABB2AA2BB2AA3BB3AA2BAA2BB2ABABB2ABABABB3AA2BB5ABABB7AA3BB10AA4BB3AA6BAA2BAA2BABABABAA6BB3AA4BB2AA2BB3AA2BB4AA3BABB2AA2BAA4BABB3AA3ÁBABABABB11ABB24ÁABB11ABB2$ABB2ABB6"}',
@@ -2102,11 +2102,18 @@ const MAP = {
         floor: "Sand15",
         ceil: "NightSky3",
         start: '[35,5]',
+        decals: '[[44,3,"SwordOfFargoal200","picture"],[99,3,"Jumpman70","picture"],[67,3,"TheHobbit14","picture"],[237,3,"CastleOfTerror91","picture"],[271,3,"CrawlMaster131","picture"],[199,3,"LeisureSuitLarry74","picture"],[195,3,"Hero81","picture"],[226,3,"EyeOfTheBeholder90","picture"],[77,5,"ChuckieEgg2","picture"],[69,5,"LeisureSuitLarry201","picture"],[129,5,"Tutankham104","picture"],[187,5,"LastNinja111","picture"],[221,5,"Pooyan3","picture"],[226,5,"AztecChallenge101","picture"],[133,3,"ManicMiner14","picture"],[233,5,"LadyTut60","picture"],[3,7,"AmberStar200","picture"],[158,7,"PharaohCurse140","picture"],[154,7,"Wadca","picture"],[211,7,"AA100","picture"],[215,7,"LeisureSuitLarry90","picture"],[149,7,"DungeonMaster91","picture"],[59,7,"Tutankham102","picture"],[174,7,"TheHobbit70","picture"],[158,1,"LaraCroft102","picture"],[107,1,"CrawlMaster110","picture"],[56,1,"Gods2","picture"],[113,1,"ForbiddenForest110","picture"],[253,1,"Cauldron8","picture"],[276,1,"LodeRunner10","picture"],[279,1,"ScubaDive60","picture"],[281,1,"ManicMiner60","picture"],[283,1,"JungleStory60","picture"],[107,7,"PrayingSkeleton10","crest"]]',
         lights: '[[107,3,"Lamp51","dim"],[107,5,"Lamp44","dim"],[11,7,"Lamp40","dim"],[15,7,"WallLamp15","standard"],[255,5,"WallLamp15","standard"],[162,7,"Lamp53","standardRedish"]]',
         gates: '[[34,5,"105.1","104.2","Open"]]',
+        monsters: '[[97,"RedDragon"],[185,"RedDragon"],[183,"RedDragon"],[191,"GreenRex"],[267,"GreenRex"],[73,"Drax"],[72,"Drax"]]',
+        scrolls: '[[78,3],[20,6],[224,4]]',
+        potions: '[[168,1],[146,1],[175,1],[75,0]]',
+        gold: '[[79,"SilverBar"],[134,"SilverBar"],[196,"GoldCube"],[264,"GoldCube"],[223,"GoldCube"],[259,"GoldCube"]]',
+        containers: '[[171,"TreasureChest","INTERACTION_ITEM.Wasp",7],[232,"Barrel","INTERACTION_ITEM.HikingBoot",7],[270,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",3],[132,"Crate","INTERACTION_ITEM.SunScreen",3]]',
         triggers: '[[145,5,"RockTriggerButton",1,156],[56,7,"RockTriggerButton",1,54],[7,7,"RockTriggerButton",0,151],[29,5,"RockTriggerButton",0,117]]',
         entities: '[[102,5,"Spacy"],[112,3,"SpaceWarrior"]]',
-    }
+        objects: '[[90,"GoldCoin"]]',
+        }
     ,
     106: {
         name: "Hall of Grand Mistresses",

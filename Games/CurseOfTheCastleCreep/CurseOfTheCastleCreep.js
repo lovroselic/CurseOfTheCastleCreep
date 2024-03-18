@@ -94,19 +94,19 @@ const DEBUG = {
     
          * entitites:
                     * DONE wasp1 (wasp,wasp) -> shawl  TESTED
-                * wasp2 (wasp,wasp) -> cap TESTED
-                    * DONEsquirrel (acorn , acorn) - gloves TESTED
-                * climber (shawl, cap, gloves) -> pocketRocket TESTED
-                * cook (chicken, apple, dough) -> pie TESTED
+                    * DONE wasp2 (wasp,wasp) -> cap TESTED
+                    * DONE squirrel (acorn , acorn) - gloves TESTED
+                    * DONE climber (shawl, cap, gloves) -> pocketRocket TESTED
+                    * DONE cook (chicken, apple, dough) -> pie TESTED
                 * spacey1 (pocketrocket) -> amethyst TESTED
                 * spacey2 (pocketrocket) -> moonstone TESTED
                     * DONE farmer (wolf head) - > egg TESTED
-                * BAkERess (eqq, milk) -> dough TESTED
-                * hillbillie (hinkingboot,hinkingboot, backpack) -> milk TESTED
+                    * DONE BAkERess (eqq, milk) -> dough TESTED
+                    * DONE hillbillie (hinkingboot,hinkingboot, backpack) -> milk TESTED
                 * WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
                 * Venus: (towel, sunscreen)->pearl TESTED
                 * well woman (towel, sunscreen)->goldBar TESTED
-                * math teacher (pie) - > uranium TESTED
+                    * DONE math teacher (pie) - > uranium TESTED
                 * ninja (whip, sword) -> diamond TESTED
                 * gemma (all gems) -> purpleTear TESTED
                 * Alloya (bars) -> goldSteel TESTED
@@ -137,7 +137,7 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 99;  //cont // return to 99
+        GAME.level = 106; // return to 99
         GAME.gold = 1119;
         HERO.maxHealth = 207;
         HERO.health = 89;
@@ -165,7 +165,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Apple", "HikingBoot", "GoldCoin", "Towel", "SunScreen", "BackPack", "LittleChicken", "Egg", "Shawl", "Gloves","RocketTop", "Wasp","GoldCoin", "Shell", "Towel","SunScreen", "HikingBoot", "Wasp", "GoldCoin"];
+        let invItems = [ "GoldCoin", "Towel", "SunScreen", "RocketTop", "GoldCoin", "Shell", "Towel", "SunScreen", "GoldCoin", "PocketRocket",  "UraniumBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -205,7 +205,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.04",
+    VERSION: "0.19.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

@@ -1775,7 +1775,6 @@ const MONSTER_TYPE = {
         moveSpeed: 1.2,
         material: MATERIAL.greenFluence,
     },
-    /** not yet tuned */
     GreenBasilisk: {
         name: "GreenBasilisk",
         texture: "GreenBasilisk",
@@ -1785,18 +1784,20 @@ const MONSTER_TYPE = {
         midHeight: 0.5,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 40,
-        defense: 30,
-        magic: 25,
-        health: 50,
-        xp: 100,
-        gold: 100,
+        attack: 65,
+        defense: 45,
+        magic: 35,
+        health: 60,
+        xp: 150,
+        gold: 150,
         attackSound: "MonsterAttack2",
         hurtSound: "MonsterHurt2",
         behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 0.95,
+        moveSpeed: 0.99,
         material: MATERIAL.greenFluence,
     },
+    /** not yet tuned */
+   
 
     BlueSkeleton: {
         name: "BlueSkeleton",

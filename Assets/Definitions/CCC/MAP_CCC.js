@@ -2071,7 +2071,7 @@ const MAP = {
         movables: '[[142,"LittleChicken"]]',
     }
     ,
-    104 : {
+    104: {
         name: "The Kitchen",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB2AA5BABAA3BAA2BAA5BB3ABB3ABABAA15BAA2BB3AA2BAA8BB2AA3BAA5BAA10BB3ABB2AA3BB4ABB2ABAA2BB2AA4BB3ABB2ABAA3BAA2BB2AA2BB3ABB8AA2BB5AA5BAA4BABABAA3BAA4BAA2BB4ABB2ABB2ABAA3BAA3BAA2BABABB2ABB2ABB4AA5BB3ABEE2BB2ABABB29A$EE2BB10AA2BB16"}',
@@ -2092,9 +2092,9 @@ const MAP = {
         doors: '[122,166,132,156]',
         entities: '[[285,1,"Cookie"],[3,7,"Bakeress"]]',
         objects: '[[239,"GoldCoin"]]',
-        }
+    }
     ,
-    105 : {
+    105: {
         name: "The Space Base",
         sg: 0,
         data: '{"width":"17","height":"17","map":"BB2AA5BAA3BB3ABB2AA15BABAA6BAA2BAA3BB5ABAA2BB2AA8BAA2BAA11BABB2AA2BB2AA3BB3AA2BAA2BB2ABABB2ABABABB3AA2BB5ABABB7AA3BB10AA4BB3AA6BAA2BAA2BABABABAA6BB3AA4BB2AA2BB3AA2BB4AA3BABB2AA2BAA4BABB3AA3ÁBABABABB11ABB24ÁABB11ABB2$ABB2ABB6"}',
@@ -2113,18 +2113,26 @@ const MAP = {
         triggers: '[[145,5,"RockTriggerButton",1,156],[56,7,"RockTriggerButton",1,54],[7,7,"RockTriggerButton",0,151],[29,5,"RockTriggerButton",0,117]]',
         entities: '[[102,5,"Spacy"],[112,3,"SpaceWarrior"]]',
         objects: '[[90,"GoldCoin"]]',
-        }
+    }
     ,
     106: {
         name: "Hall of Grand Mistresses",
         sg: 0,
-        data: '{"width":"21","height":"21","map":"BB11AA80BB2AA2BAA3BAA7BB5AA4BAA6BB2AA26BB2AA3BB2AA99BAA21BABB14AA4BB3ABB4AA3BB33ABB2ABB3AA4BB3AA3BAA9BB31ABABB36A$"}',
+        data: '{"width":"21","height":"21","map":"BB2ABB9AA80BB3AA4BAA3BAA5BB2AA2BB3AA6BAA3BAA26BB2AA3BABAA98BAA3BAA8BAA10BABB15AA4BB3ABB3AA3BB25ABB11ABAA4BB2AA3BABB2AA6BAA4BB15ABB13ABB31$BB2A"}',
         wall: "GreyRocks41",
         floor: "ComplexFloor1",
         ceil: "Wood1",
         start: '[409,1]',
+        decals: '[[136,7,"Bagitman90","picture"],[174,7,"ManicMiner11","picture"],[182,7,"Gods2","picture"],[329,7,"Pitfall23","picture"],[346,7,"Skeleton23","crest"],[321,7,"Hobbit101","picture"],[321,1,"GIJoe71","picture"],[174,1,"Frogger2","picture"],[220,1,"ImpossibleMsission112","picture"],[182,1,"Miner3","picture"],[329,1,"ZX Spectrum","picture"],[136,3,"SVS102","picture"],[182,3,"Underwurlde130","picture"],[346,3,"LeisureSuitLarry50","picture"],[329,3,"CongoBongo2","picture"],[125,3,"JetSetWilly88","picture"],[174,5,"MatchPoint2","picture"],[136,5,"Drelbs2","picture"],[242,5,"ManicMiner52","picture"],[321,5,"DungeonMaster206","picture"],[346,5,"BattleChopper","picture"],[252,5,"HalfLife70","picture"],[240,3,"Ishar70","picture"]]',
         lights: '[[136,1,"Lamp49","standardDimmed"],[174,3,"Lamp42","standardDimmed"],[321,3,"Lamp47","standardDimmed"],[182,5,"WallLamp15","standardDimmed"],[329,5,"WallLamp19","standardDimmed"],[346,1,"WallLamp33","dimRed"]]',
-        gates: '[[430,1,"106.1","99.5","Up"],[241,7,"106.2","107.1","Down"]]',
+        gates: '[[430,1,"106.1","99.5","Up"],[241,7,"106.2","107.1","Down"],[14,7,"106.3","113.1","Down"]]',
+        monsters: '[[213,"RedDragon"],[199,"RedDragon"],[247,"RedDragon"],[69,"Drax"],[77,"Drax"],[115,"GreenRex"]]',
+        scrolls: '[[236,2],[206,9],[66,5]]',
+        potions: '[[178,0],[44,1],[60,1],[380,1],[396,1]]',
+        gold: '[[89,"SilverBar"],[171,"SilverBar"],[121,"SilverBar"],[268,"SilverBar"],[353,"SilverBar"],[298,"SilverBar"],[304,"SilverBar"],[71,"SilverBar"]]',
+        skills: '[[124,"Heart"],[253,"Mana"]]',
+        containers: '[[28,"Barrel","INTERACTION_ITEM.Shell",7]]',
+        objects: '[[360,"SilverBar"],[98,"IronBar"]]',
         trainers: '[[10,7,"HealthGoddess"],[168,5,"TempleGuardian"],[188,3,"GothGirl"],[315,5,"RedHeadDomme"],[335,3,"RedMagicWoman"]]',
     }
     ,
@@ -2136,8 +2144,13 @@ const MAP = {
         floor: "Water11",
         ceil: "GreyRocks41",
         start: '[241,1]',
+        decals: '[[132,7,"Skeleton11","crest"],[140,7,"DancingSkeletons2","crest"],[136,7,"Skull1","crest"],[132,1,"Skull20","crest"],[140,1,"Skull10","crest"],[132,5,"SirFred60","picture"],[43,5,"Underwurlde131","picture"],[211,5,"Pitfall50","picture"],[61,3,"RickDangerous60","picture"],[229,3,"AmberStar201","picture"],[140,3,"BrideOfFrankenstein200","picture"],[28,7,"Fred100","picture"],[34,7,"Ski64","picture"],[237,1,"Galaxians10","picture"],[245,1,"Zeppelin89","picture"]]',
         lights: '[[136,1,"WallLamp19","standardDimmed"],[132,3,"WallLamp12","standardDimmed"],[140,5,"WallLamp18","standardDimmed"]]',
         gates: '[[262,1,"107.1","106.2","Up"]]',
+        monsters: '[[67,"GreenBasilisk"],[80,"GreenBasilisk"]]',
+        scrolls: '[[129,11]]',
+        potions: '[[157,1]]',
+        containers: '[[115,"Crate","INTERACTION_ITEM.RocketBottom",4],[142,"Barrel","INTERACTION_ITEM.Whip",4]]',
         entities: '[[10,7,"Venus"],[126,5,"WellWoman"],[146,3,"BlondeVenus"]]',
     }
     ,
@@ -2207,5 +2220,16 @@ const MAP = {
         lights: '[[84,3,"Lamp40","standardDimmed"],[84,5,"Lamp41","standardDimmed"],[13,5,"Lamp46","standard"],[63,1,"Lamp51","standardDimmed"],[115,7,"Lamp47","standardDimmed"],[143,5,"WallLamp20","standard"]]',
         gates: '[[90,3,"112.1","111.2","Open"]]',
         entities: '[[78,5,"Keysa"]]',
+    }
+    ,
+    113: {
+        name: "Cemetery",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB38ABB130$"}',
+        wall: "BeautifullWall1",
+        floor: "RockFloor",
+        ceil: "Pavement",
+        start: '[149,1]',
+        gates: '[[162,1,"113.1","106.3","Up"]]',
     }
 };

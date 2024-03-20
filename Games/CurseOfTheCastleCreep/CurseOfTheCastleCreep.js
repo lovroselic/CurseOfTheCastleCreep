@@ -55,7 +55,7 @@ const DEBUG = {
             * mana - goth
             * redmagic magic
          * items source
-            * goldCoin (1x):
+                * goldCoin (1x): GhostBride
                 * wasp (2x): 104;105
                 * shawl: wasp1
                 * cap: wasp2
@@ -86,10 +86,10 @@ const DEBUG = {
                 * purpleTear: Gemma
                 * uranium bar: math techer
                 * whip: 107
-            * sword
+                * sword: 113
                 * shell (2x): 104; 106
-            * iron bar
-            * blood
+                * iron bar: 113
+                * blood: 113
         * who needs
     
          * entitites:
@@ -112,24 +112,26 @@ const DEBUG = {
                 * Alloya (bars) -> goldSteel TESTED
                     * DONE Blonde venus (shell, shell) emerald key
                 * keysa (Goldsteel, puerpletear)-> purple key
+                    * DONEghostess (ironBar, blood) -> gold Coin   TESTED
             * TODO
-                * ghostess (ironBar, blood) -> gold Coin   
+                
                 
          * rooms
-            * COMPLETED : 99 DDID  
-            * COMPLETED 100 praise gold - temple
-            * COMPLERED 101 the mountains
-            * COMPLETED 102 enchanted forest
-            * COMPLETED 103 farm
-            * COMPLETED 104 the kitchen
-            * COMPLETED 105 space base
-            * COMPLETED 106 training mistresses hall
-            * COMPLETED 107 underground sea
+                * COMPLETED : 99 DDID  
+                * COMPLETED 100 praise gold - temple
+                * COMPLERED 101 the mountains
+                * COMPLETED 102 enchanted forest
+                * COMPLETED 103 farm
+                * COMPLETED 104 the kitchen
+                * COMPLETED 105 space base
+                * COMPLETED 106 training mistresses hall
+                * COMPLETED 107 underground sea
             * 108 TITS
             * 109 gem mine
             * 110 heavy metal room
             * 111 purple gate
             * 112 purple key
+                * COMPLETED 113 Cemetery
         
         * missing keys:
            
@@ -138,21 +140,21 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 113; // 106 // return to 99
-        GAME.gold = 2364;
+        GAME.level = 108; // return to 99
+        GAME.gold = 3144;
         HERO.maxHealth = 231;
-        HERO.health = 231;
-        HERO.maxMana = 292;
-        HERO.mana = 122;
+        HERO.health = 120;
+        HERO.maxMana = 317;
+        HERO.mana = 317;
         HERO.attack = 51;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 50;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 48;
+        HERO.magic = 51;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 6946;
-        HERO.defenseExp = 1470;
-        HERO.magicExp = 5517;
+        HERO.attackExp = 7456;
+        HERO.defenseExp = 1478;
+        HERO.magicExp = 5779;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
@@ -166,7 +168,8 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["RocketTop", "PocketRocket", "UraniumBar", "SilverBar", "IronBar", "Pearl", "GoldBar", "RocketBottom", "Whip"];
+        let invItems = [ "UraniumBar", "SilverBar", "Pearl", "GoldBar", "Whip", "IronBar", "Sword", "Amethyst", "Moonstone"];
+        //let invItems = ["Blood", "IronBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);

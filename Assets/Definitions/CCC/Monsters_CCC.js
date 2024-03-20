@@ -816,6 +816,14 @@ const ORACLE_TYPE = {
         text: "Ghosty's Tear is made of Diamond, Moonstone and something more. I can't recall.",
         interactionCategory: "oracle",
     },
+    RunOracle: {
+        name: "RunOracle",
+        sprite: "BedDomme2",
+        category: 'crest',
+        voice: "Female",
+        text: "If a dungeon is too dangerous for you, then maybe you came too soon.",
+        interactionCategory: "oracle",
+    },
 
 };
 
@@ -3559,6 +3567,19 @@ const INTERACTION_ENTITY = {
             intro: "In my workshop, magic and metal blend, For a unique key, two treasures I'll mend.",
             progress: "One piece is here, bring another to be clear.",
             conclusion: "GoldSteel and PurpleTear, now finely entwined, Behold, the PurpleKey, uniquely designed."
+        }
+    },
+    GhostBride: {
+        name: "GhostBride",
+        sprite: "GhostBride",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Blood", "IronBar"],
+        gives: "GoldCoin",
+        text: {
+            intro: "I feel a bit anemic. Help me, Princess.",
+            progress: "It feels better, but not all the way,",
+            conclusion: "I can marry GhostFace now, and you can have this coin. Use it wisely."
         }
     },
     

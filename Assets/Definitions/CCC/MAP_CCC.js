@@ -2154,7 +2154,7 @@ const MAP = {
         entities: '[[10,7,"Venus"],[126,5,"WellWoman"],[146,3,"BlondeVenus"]]',
     }
     ,
-    108: {
+    108 : {
         name: "TITS Office",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB3AA9BAA2BB2AA3BAA2BAA3BAA2BB2AA5BAA4BB2AA7BAA10BB2AA3BB2AA6BAA9BB7AA5BABB2AA2BB2AA2BABAA2BB5ABABAA4BB7ABB3ABB5AA4BB3ABAA3BAA2BABB5ABABB4ABB3AA2BB4ABAA2BAA3BABB2ABB3AA2BB4AA7BABB2ABB3AA2BB2ABB10ABB6ABB14A$"}',
@@ -2162,12 +2162,15 @@ const MAP = {
         floor: "RedBricks2",
         ceil: "Wood11",
         start: '[225,5]',
+        decals: '[[3,7,"TheHobbit88","picture"],[118,7,"Yennefer","picture"],[43,7,"ImpossibleMission11","picture"],[246,1,"AticAtac115","picture"],[252,1,"Witcher113","picture"],[254,1,"SpectrumGame1","picture"],[243,1,"HalfLife 89","picture"],[147,7,"HalfLife91","picture"],[158,7,"KingsQuest53","picture"],[110,7,"F1-1","picture"],[144,5,"SpaceQuest200","picture"],[149,5,"CastleHaunt","picture"],[55,5,"Skeleton21","crest"],[223,3,"LS","crest"],[233,3,"Skull21","crest"],[183,1,"Predator50","picture"],[40,1,"DM105","picture"],[31,3,"ForbiddenForest90","picture"],[63,3,"ForbiddenForest91","picture"]]',
         lights: '[[192,5,"Lamp44","standardDimmed"],[147,1,"Lamp48","standardDimmed"],[13,7,"Lamp49","standardDimmed"],[84,5,"Lamp49","dim"],[108,7,"Lamp41","standardDimmed"]]',
         gates: '[[224,5,"108.1","99.6","Open"]]',
         keys: '[[17,1],[126,0]]',
+        gold: '[[194,"GoldCube"],[115,"GoldCube"],[77,"GoldCube"],[156,"GoldCube"],[201,"GoldCube"],[104,"GoldCube"],[23,"GoldCube"]]',
+        containers: '[[30,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[236,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[238,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[145,"Crate","GOLD_ITEM_TYPE.SilverBar",5]]',
         entities: '[[204,1,"NinJette"]]',
-        oracles: '[[197,3,"Tits"],[67,7,"MetalOracle"],[109,1,"GemOracle"],[90,3,"DerriereOracle"]]',
-    }
+        oracles: '[[197,3,"Tits"],[67,7,"MetalOracle"],[109,1,"GemOracle"],[90,3,"DerriereOracle"],[137,7,"RunOracle"]]',
+        }
     ,
     109: {
         name: "Gem Mine",
@@ -2225,11 +2228,18 @@ const MAP = {
     113: {
         name: "Cemetery",
         sg: 0,
-        data: '{"width":"13","height":"13","map":"BB38ABB130$"}',
-        wall: "BeautifullWall1",
-        floor: "RockFloor",
-        ceil: "Pavement",
+        data: '{"width":"13","height":"13","map":"BB2ABAA7BAA2BABAA3BABABABB2ABAA13BB5AA3BB3AA2BB4AA2BABB2ABB5AA2BB3AA2BABABAA2BAA2BB3ABB2ABABAA2BB2ABABB2AA2BB2AA2BB2AA2BB2AA3BB5ABB8ABB3AA2BB3ABB18ABB2A$"}',
+        wall: "BlackWall41",
+        floor: "RedMArbleFloor2",
+        ceil: "NightSky2",
         start: '[149,1]',
+        decals: '[[110,7,"CrystalCastles90","picture"],[3,7,"Hero50","picture"],[57,7,"RedWarrior1","picture"],[33,7,"Witcher111","picture"],[89,7,"Ultima11","picture"],[1,7,"Ski23","picture"],[55,7,"SVS101","picture"],[113,7,"SwordOfFargoal201","picture"],[111,1,"Tornado88","picture"],[157,1,"GatewayToApshai110","picture"],[165,1,"Hero72","picture"],[148,3,"DungeonMaster201","picture"],[127,3,"DungeonMaster204","picture"],[150,5,"BlueMax11","picture"],[13,5,"SVS112","picture"],[25,3,"Pacman200","picture"]]',
+        lights: '[[10,7,"WallLamp31","standardDimmed"],[117,5,"WallLamp19","standardDimmed"],[155,3,"WallLamp16","standardDimmed"],[41,5,"Lamp44","standardDimmed"],[105,1,"WallLamp15","standardDimmed"],[109,1,"Lamp48","dimRed"]]',
         gates: '[[162,1,"113.1","106.3","Up"]]',
+        monsters: '[[146,"RedDragon"],[100,"RedDragon"],[92,"RedDragon"],[49,"GreenRex"]]',
+        gold: '[[119,"GoldCube"],[153,"GoldCube"],[46,"GoldCube"],[53,"GoldCube"]]',
+        containers: '[[48,"Chest","GOLD_ITEM_TYPE.GoldBar",5],[37,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",3]]',
+        entities: '[[88,1,"GhostBride"]]',
+        objects: '[[96,"Sword"],[147,"IronBar"],[151,"Blood"]]',
     }
 };

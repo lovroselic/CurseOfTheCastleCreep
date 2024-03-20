@@ -2166,6 +2166,8 @@ const MAP = {
         lights: '[[192,5,"Lamp44","standardDimmed"],[147,1,"Lamp48","standardDimmed"],[13,7,"Lamp49","standardDimmed"],[84,5,"Lamp49","dim"],[108,7,"Lamp41","standardDimmed"]]',
         gates: '[[224,5,"108.1","99.6","Open"]]',
         keys: '[[17,1],[126,0]]',
+        monsters: '[[22,"GreenRex"],[61,"GreenRex"],[185,"GreenRex"]]',
+        potions: '[[86,0],[232,1],[35,1],[45,0]]',
         gold: '[[194,"GoldCube"],[115,"GoldCube"],[77,"GoldCube"],[156,"GoldCube"],[201,"GoldCube"],[104,"GoldCube"],[23,"GoldCube"]]',
         containers: '[[30,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[236,"Barrel","GOLD_ITEM_TYPE.GoldBar",1],[238,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[145,"Crate","GOLD_ITEM_TYPE.SilverBar",5]]',
         entities: '[[204,1,"NinJette"]]',

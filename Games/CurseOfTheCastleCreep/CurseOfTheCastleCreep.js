@@ -107,7 +107,7 @@ const DEBUG = {
                     * DONE Venus: (towel, sunscreen)->pearl TESTED
                     * DONEwell woman (towel, sunscreen)->goldBar TESTED
                     * DONE math teacher (pie) - > uranium TESTED
-                * ninja (whip, sword) -> diamond TESTED
+                    * DONE ninja (whip, sword) -> diamond TESTED
                 * gemma (all gems) -> purpleTear TESTED
                 * Alloya (bars) -> goldSteel TESTED
                     * DONE Blonde venus (shell, shell) emerald key
@@ -126,7 +126,7 @@ const DEBUG = {
                 * COMPLETED 105 space base
                 * COMPLETED 106 training mistresses hall
                 * COMPLETED 107 underground sea
-            * 108 TITS
+                * COMPLETED 108 TITS
             * 109 gem mine
             * 110 heavy metal room
             * 111 purple gate
@@ -140,25 +140,25 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 108; // return to 99
-        GAME.gold = 3144;
+        GAME.level = 109; // return to 99
+        GAME.gold = 3988;
         HERO.maxHealth = 231;
-        HERO.health = 120;
+        HERO.health = 112;
         HERO.maxMana = 317;
-        HERO.mana = 317;
+        HERO.mana = 207;
         HERO.attack = 51;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 50;
         HERO.reference_defense = HERO.defense;
         HERO.magic = 51;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 7456;
-        HERO.defenseExp = 1478;
-        HERO.magicExp = 5779;
+        HERO.attackExp = 7464;
+        HERO.defenseExp = 1486;
+        HERO.magicExp = 6307;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
-        HERO.inventory.potion.red = 0;
+        HERO.inventory.potion.red = 2;
         HERO.inventory.potion.blue = 1;
         let scrolls = ["DrainMana", "BoostArmor"];
 
@@ -168,14 +168,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [ "UraniumBar", "SilverBar", "Pearl", "GoldBar", "Whip", "IronBar", "Sword", "Amethyst", "Moonstone"];
+        let invItems = [ "UraniumBar", "SilverBar", "Pearl", "GoldBar", "IronBar", "Amethyst", "Moonstone", "Diamond"];
         //let invItems = ["Blood", "IronBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Emerald"];
+        let keys = ["Emerald", "Gold", "Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -209,7 +209,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.06",
+    VERSION: "0.19.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

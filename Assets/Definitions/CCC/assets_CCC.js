@@ -863,6 +863,9 @@ LoadSprites = [
     { srcName: "AttackShrine23.jpg", name: "AttackShrine23" },
     { srcName: "DefenseShrine23.jpg", name: "DefenseShrine23" },
     { srcName: "MagicShrine23.jpg", name: "MagicShrine23" },
+    { srcName: "AttackShrine24.jpg", name: "AttackShrine24" },
+    { srcName: "DefenseShrine24.jpg", name: "DefenseShrine24" },
+    { srcName: "MagicShrine24.jpg", name: "MagicShrine24" },
 
 
 

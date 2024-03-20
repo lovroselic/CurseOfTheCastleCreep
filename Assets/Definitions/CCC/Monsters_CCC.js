@@ -581,6 +581,37 @@ const SHRINE_TYPE = {
         price: 2000,
         level: 1,
     },
+
+    Attack1_24: {
+        name: "AttackShrine_1_24",
+        sprite: "AttackShrine24",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 2000,
+        level: 1,
+    },
+    Defense1_24: {
+        name: "DefenseShrine_1_24",
+        sprite: "DefenseShrine24",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ShieldSkill",
+        price: 2000,
+        level: 1,
+    },
+    Magic1_24: {
+        name: "MagicShrine_1_24",
+        sprite: "MagicShrine24",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "MagicSkill",
+        price: 2000,
+        level: 1,
+    },
 };
 
 const ORACLE_TYPE = {
@@ -875,6 +906,18 @@ const GOLD_ITEM_TYPE = {
         maxVal: 25,
         value: 10,
         material: MATERIAL.gold,
+    },
+    RedGem: {
+        name: "RedGem",
+        category: "gold",
+        element: "GEM",
+        scale: 1.1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Red",
+        minVal: 100,
+        maxVal: 250,
+        value: 250,
+        material: MATERIAL.standard,
     },
 };
 

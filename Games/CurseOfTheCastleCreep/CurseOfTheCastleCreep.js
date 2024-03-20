@@ -45,15 +45,9 @@ const DEBUG = {
     },
     checkpoint1() {
         /**
-         * current temple
-            * attack 
-            * defense 
+         * current temple not used
             * magic
-         * used shrines restroom: 
-            * all 
-         * trrainers remaining;
-            * mana - goth
-            * redmagic magic
+   
          * items source
                 * goldCoin (1x): GhostBride
                 * wasp (2x): 104;105
@@ -98,17 +92,17 @@ const DEBUG = {
                     * DONE squirrel (acorn , acorn) - gloves TESTED
                     * DONE climber (shawl, cap, gloves) -> pocketRocket TESTED
                     * DONE cook (chicken, apple, dough) -> pie TESTED
-                * spacey1 (pocketrocket) -> amethyst TESTED
-                * spacey2 (pocketrocket) -> moonstone TESTED
+                    * DOONE spacey1 (pocketrocket) -> amethyst TESTED
+                    * DONE spacey2 (pocketrocket) -> moonstone TESTED
                     * DONE farmer (wolf head) - > egg TESTED
                     * DONE BAkERess (eqq, milk) -> dough TESTED
                     * DONE hillbillie (hinkingboot,hinkingboot, backpack) -> milk TESTED
-                * WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
+                    * COMPLETED WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
                     * DONE Venus: (towel, sunscreen)->pearl TESTED
                     * DONEwell woman (towel, sunscreen)->goldBar TESTED
                     * DONE math teacher (pie) - > uranium TESTED
                     * DONE ninja (whip, sword) -> diamond TESTED
-                * gemma (all gems) -> purpleTear TESTED
+                    * DONE gemma (all gems) -> purpleTear TESTED
                 * Alloya (bars) -> goldSteel TESTED
                     * DONE Blonde venus (shell, shell) emerald key
                 * keysa (Goldsteel, puerpletear)-> purple key
@@ -127,8 +121,8 @@ const DEBUG = {
                 * COMPLETED 106 training mistresses hall
                 * COMPLETED 107 underground sea
                 * COMPLETED 108 TITS
-            * 109 gem mine
-            * 110 heavy metal room
+                * COMPLETED 109 gem mine
+                * COMPLETED 110 heavy metal room
             * 111 purple gate
             * 112 purple key
                 * COMPLETED 113 Cemetery
@@ -140,27 +134,27 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 109; // return to 99
-        GAME.gold = 3988;
-        HERO.maxHealth = 231;
-        HERO.health = 112;
+        GAME.level = 111;  // return to 111
+        GAME.gold = 367;
+        HERO.maxHealth = 235;
+        HERO.health = 235;
         HERO.maxMana = 317;
-        HERO.mana = 207;
-        HERO.attack = 51;
+        HERO.mana = 317;
+        HERO.attack = 52;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 50;
+        HERO.defense = 51;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 51;
+        HERO.magic = 52;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 7464;
-        HERO.defenseExp = 1486;
-        HERO.magicExp = 6307;
+        HERO.attackExp = 8000;
+        HERO.defenseExp = 1567;
+        HERO.magicExp = 8420;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["DrainMana", "BoostArmor"];
+        HERO.inventory.potion.red = 1;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = [ "BoostArmor", "BoostArmor", "HalfLife", "DrainMana", "Invisibility", "BoostWeapon"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -168,14 +162,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [ "UraniumBar", "SilverBar", "Pearl", "GoldBar", "IronBar", "Amethyst", "Moonstone", "Diamond"];
+        let invItems = [ "PurpleTear", "GoldSteel"];
         //let invItems = ["Blood", "IronBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Emerald", "Gold", "Silver"];
+        let keys = ["Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -209,7 +203,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.07",
+    VERSION: "0.19.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

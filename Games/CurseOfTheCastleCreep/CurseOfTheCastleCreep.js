@@ -46,86 +46,20 @@ const DEBUG = {
     checkpoint1() {
         /**
          * current temple not used
-            * magic
+           
    
          * items source
-                * goldCoin (1x): GhostBride
-                * wasp (2x): 104;105
-                * shawl: wasp1
-                * cap: wasp2
-                * gloves: another Squirell
-                * acorn 2x: 101,103
-                * amethyst: spacy1
-                * moonstone: spacy2
-                * chicken: 103
-                * apple: 99
-                * dough: baker
-                * pie: cook;
-                * pocketrocket (2x): climber, fairy
-                * wolf head: enchanted forest
-                * egg: farmer
-                * milk: hillbilly
-                * top rocket, 104
-                * bottom rocket, 107
-                * backpack: 102
-                * hiking boot (2x): 99, 105
-                * pearl: venus
-                * sunscreen (2x): 102, 105
-                * towel (2x): 101, 104
-                * goldbar: wellwoman
-                * iron bar: 106
-                * silver bar: 106
-                * goldSteel: alloya
-                * diamond: NinJette
-                * purpleTear: Gemma
-                * uranium bar: math techer
-                * whip: 107
-                * sword: 113
-                * shell (2x): 104; 106
-                * iron bar: 113
-                * blood: 113
+
         * who needs
     
          * entitites:
-                    * DONE wasp1 (wasp,wasp) -> shawl  TESTED
-                    * DONE wasp2 (wasp,wasp) -> cap TESTED
-                    * DONE squirrel (acorn , acorn) - gloves TESTED
-                    * DONE climber (shawl, cap, gloves) -> pocketRocket TESTED
-                    * DONE cook (chicken, apple, dough) -> pie TESTED
-                    * DOONE spacey1 (pocketrocket) -> amethyst TESTED
-                    * DONE spacey2 (pocketrocket) -> moonstone TESTED
-                    * DONE farmer (wolf head) - > egg TESTED
-                    * DONE BAkERess (eqq, milk) -> dough TESTED
-                    * DONE hillbillie (hinkingboot,hinkingboot, backpack) -> milk TESTED
-                    * COMPLETED WaterFairy:  (top rocket, bottom rocket)-> pocketRocket TESTED
-                    * DONE Venus: (towel, sunscreen)->pearl TESTED
-                    * DONEwell woman (towel, sunscreen)->goldBar TESTED
-                    * DONE math teacher (pie) - > uranium TESTED
-                    * DONE ninja (whip, sword) -> diamond TESTED
-                    * DONE gemma (all gems) -> purpleTear TESTED
-                * Alloya (bars) -> goldSteel TESTED
-                    * DONE Blonde venus (shell, shell) emerald key
-                * keysa (Goldsteel, puerpletear)-> purple key
-                    * DONEghostess (ironBar, blood) -> gold Coin   TESTED
+
             * TODO
                 
                 
          * rooms
-                * COMPLETED : 99 DDID  
-                * COMPLETED 100 praise gold - temple
-                * COMPLERED 101 the mountains
-                * COMPLETED 102 enchanted forest
-                * COMPLETED 103 farm
-                * COMPLETED 104 the kitchen
-                * COMPLETED 105 space base
-                * COMPLETED 106 training mistresses hall
-                * COMPLETED 107 underground sea
-                * COMPLETED 108 TITS
-                * COMPLETED 109 gem mine
-                * COMPLETED 110 heavy metal room
-            * 111 purple gate
-            * 112 purple key
-                * COMPLETED 113 Cemetery
+            * 111 purple gate: killed enemies
+
         
         * missing keys:
            
@@ -135,26 +69,26 @@ const DEBUG = {
          */
 
         GAME.level = 111;  // return to 111
-        GAME.gold = 367;
-        HERO.maxHealth = 235;
-        HERO.health = 235;
+        GAME.gold = 2078;
+        HERO.maxHealth = 239;
+        HERO.health = 239;
         HERO.maxMana = 317;
-        HERO.mana = 317;
+        HERO.mana = 40;
         HERO.attack = 52;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 51;
         HERO.reference_defense = HERO.defense;
         HERO.magic = 52;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 8000;
-        HERO.defenseExp = 1567;
-        HERO.magicExp = 8420;
+        HERO.attackExp = 8250;
+        HERO.defenseExp = 1610;
+        HERO.magicExp = 9479;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
         HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 0;
-        let scrolls = [ "BoostArmor", "BoostArmor", "HalfLife", "DrainMana", "Invisibility", "BoostWeapon"];
+        let scrolls = [ "DestroyWeapon" ];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -162,14 +96,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [ "PurpleTear", "GoldSteel"];
+        let invItems = [ ];
         //let invItems = ["Blood", "IronBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Emerald"];
+        let keys = ["Purple"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -203,7 +137,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.08",
+    VERSION: "0.19.09",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

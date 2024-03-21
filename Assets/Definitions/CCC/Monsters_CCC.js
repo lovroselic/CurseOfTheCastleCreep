@@ -268,7 +268,6 @@ const SHRINE_TYPE = {
         price: 1000,
         level: 1,
     },
-
     Attack1_11: {
         name: "AttackShrine_1_11",
         sprite: "AttackShrine11",
@@ -519,7 +518,6 @@ const SHRINE_TYPE = {
         price: 1500,
         level: 1,
     },
-
     Attack1_22: {
         name: "AttackShrine_1_22",
         sprite: "AttackShrine22",
@@ -550,7 +548,6 @@ const SHRINE_TYPE = {
         price: 1500,
         level: 1,
     },
-
     Attack1_23: {
         name: "AttackShrine_1_23",
         sprite: "AttackShrine23",
@@ -610,6 +607,37 @@ const SHRINE_TYPE = {
         interactionCategory: 'shrine',
         inventorySprite: "MagicSkill",
         price: 2000,
+        level: 1,
+    },
+
+    Attack1_25: {
+        name: "AttackShrine_1_25",
+        sprite: "AttackShrine25",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 2500,
+        level: 1,
+    },
+    Defense1_25: {
+        name: "DefenseShrine_1_25",
+        sprite: "DefenseShrine25",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ShieldSkill",
+        price: 2500,
+        level: 1,
+    },
+    Magic1_25: {
+        name: "MagicShrine_1_25",
+        sprite: "MagicShrine25",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "MagicSkill",
+        price: 2500,
         level: 1,
     },
 };
@@ -855,6 +883,15 @@ const ORACLE_TYPE = {
         text: "If a dungeon is too dangerous for you, then maybe you came too soon.",
         interactionCategory: "oracle",
     },
+    PersistOracle: {
+        name: "PersistOracle",
+        sprite: "BedDomme1",
+        category: 'crest',
+        voice: "Female",
+        text: "You came far, don't quit now.",
+        interactionCategory: "oracle",
+    },
+
 
 };
 
@@ -917,6 +954,18 @@ const GOLD_ITEM_TYPE = {
         minVal: 100,
         maxVal: 250,
         value: 250,
+        material: MATERIAL.standard,
+    },
+    GreenGem: {
+        name: "GreenGem",
+        category: "gold",
+        element: "GEM",
+        scale: 1.1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "GreenMetal",
+        minVal: 250,
+        maxVal: 500,
+        value: 500,
         material: MATERIAL.standard,
     },
 };

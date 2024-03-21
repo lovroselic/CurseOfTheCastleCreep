@@ -2465,11 +2465,14 @@ const ENGINE = {
             case "Emerald":
               color = "#50C878";
               break;
+            case "Purple":
+              color = "purple";
+              break;
           }
           ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
           let dir = Vector.fromInt(gate[1]);
           let start = mid.translate(dir, W);
-          ENGINE.drawCircle(CTX, start, decalWidth * 2, "#A000A0");
+          ENGINE.drawCircle(CTX, start, decalWidth * 2, "#99ccff");
 
           CTX.font = "8px Arial";
           CTX.textAlign = "center";

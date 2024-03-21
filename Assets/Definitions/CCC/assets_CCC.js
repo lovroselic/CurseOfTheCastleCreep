@@ -646,9 +646,10 @@ LoadSprites = [
     { srcName: "Keysa.jpg", name: "Keysa" },
     { srcName: "GhostBride.jpg", name: "GhostBride" },
     { srcName: "BedDomme2.jpg", name: "BedDomme2" },
-    //unused
     { srcName: "BedDomme1.jpg", name: "BedDomme1" },
-   
+    //unused
+    
+    { srcName: "Serpent.jpg", name: "Serpent" },
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -866,6 +867,9 @@ LoadSprites = [
     { srcName: "AttackShrine24.jpg", name: "AttackShrine24" },
     { srcName: "DefenseShrine24.jpg", name: "DefenseShrine24" },
     { srcName: "MagicShrine24.jpg", name: "MagicShrine24" },
+    { srcName: "AttackShrine25.jpg", name: "AttackShrine25" },
+    { srcName: "DefenseShrine25.jpg", name: "DefenseShrine25" },
+    { srcName: "MagicShrine25.jpg", name: "MagicShrine25" },
 
 
 

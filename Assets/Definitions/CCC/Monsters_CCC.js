@@ -891,6 +891,22 @@ const ORACLE_TYPE = {
         text: "You came far, don't quit now.",
         interactionCategory: "oracle",
     },
+    MrsRobot: {
+        name: "MrsRobot",
+        sprite: "MrsRobot",
+        category: 'crest',
+        voice: "GlaDOS",
+        text: "Warning: descending will disable save game until you defeat GhostFace",
+        interactionCategory: "oracle",
+    },
+    Serpent: {
+        name: "Serpent",
+        sprite: "Serpent",
+        category: 'crest',
+        voice: "MaleLowSlow",
+        text: "Take time and prepare for the fight with GhostFace.",
+        interactionCategory: "oracle",
+    },
 
 
 };

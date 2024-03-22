@@ -58,7 +58,7 @@ const DEBUG = {
                 
                 
          * rooms
-            * 111 purple gate: killed enemies
+            * 115
 
         
         * missing keys:
@@ -68,26 +68,26 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 111;  // return to 111
-        GAME.gold = 2078;
+        GAME.level = 115;  
+        GAME.gold = 219;
         HERO.maxHealth = 239;
         HERO.health = 239;
         HERO.maxMana = 317;
-        HERO.mana = 40;
-        HERO.attack = 52;
+        HERO.mana = 317;
+        HERO.attack = 53;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 51;
         HERO.reference_defense = HERO.defense;
         HERO.magic = 52;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 8250;
-        HERO.defenseExp = 1610;
+        HERO.attackExp = 8435;
+        HERO.defenseExp = 1645;
         HERO.magicExp = 9479;
         HERO.attackExpGoal = 8675;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 0;
+        HERO.inventory.potion.red = 2;
+        HERO.inventory.potion.blue = 1;
         let scrolls = [ "DestroyWeapon" ];
 
         for (let scr of scrolls) {
@@ -137,7 +137,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.19.09",
+    VERSION: "0.20.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

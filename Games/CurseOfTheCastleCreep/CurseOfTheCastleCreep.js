@@ -68,27 +68,27 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 115;  
-        GAME.gold = 219;
-        HERO.maxHealth = 239;
-        HERO.health = 239;
-        HERO.maxMana = 317;
-        HERO.mana = 317;
-        HERO.attack = 53;
+        GAME.level = 117;
+        GAME.gold = 1588;
+        HERO.maxHealth = 247;
+        HERO.health = 247;
+        HERO.maxMana = 322;
+        HERO.mana = 322;
+        HERO.attack = 54;
         HERO.reference_attack = HERO.attack;
         HERO.defense = 51;
         HERO.reference_defense = HERO.defense;
         HERO.magic = 52;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 8435;
+        HERO.attackExp = 321;
         HERO.defenseExp = 1645;
-        HERO.magicExp = 9479;
-        HERO.attackExpGoal = 8675;
+        HERO.magicExp = 9984;
+        HERO.attackExpGoal = 13013;
         HERO.defenseExpGoal = 1713;
         HERO.magicExpGoal = 13013;
         HERO.inventory.potion.red = 2;
         HERO.inventory.potion.blue = 1;
-        let scrolls = [ "DestroyWeapon" ];
+        let scrolls = ["DestroyWeapon", "DestroyWeapon", "MagicBoost", "Radar", "BoostArmor", "BoostWeapon", "Petrify", "Invisibility", "HalfLife", "Explode", "DestroyArmor"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -96,14 +96,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [ ];
+        let invItems = [];
         //let invItems = ["Blood", "IronBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Purple"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -137,7 +137,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.00",
+    VERSION: "0.20.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

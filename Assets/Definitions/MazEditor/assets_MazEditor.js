@@ -391,6 +391,10 @@ LoadTextures = [
     { srcName: "RedMarbleFloor4.jpg", name: "RedMarbleFloor4" },
     { srcName: "RedMarbleFloor7.jpg", name: "RedMarbleFloor7" },
     { srcName: "RedMarbleFloor8.jpg", name: "RedMarbleFloor8" },
+    { srcName: "DarkMarble50.jpg", name: "DarkMarble50" },
+    { srcName: "DarkMarble51.jpg", name: "DarkMarble51" },
+    { srcName: "DarkMarble52.jpg", name: "DarkMarble52" },
+    { srcName: "DarkMarble54.jpg", name: "DarkMarble54" },
 ];
 
 LoadSheetSequences = [
@@ -519,7 +523,6 @@ LoadSprites = [
     { srcName: "WallLamp3.png", name: "WallLamp3" },
     { srcName: "WallTorch.png", name: "WallTorch" },
     { srcName: "Lamp4.png", name: "Lamp4" },
-
     { srcName: "WallLamp10.png", name: "WallLamp10" },
     { srcName: "WallLamp11.png", name: "WallLamp11" },
     { srcName: "WallLamp12.png", name: "WallLamp12" },
@@ -537,7 +540,6 @@ LoadSprites = [
     { srcName: "WallLamp33.png", name: "WallLamp33" },
     { srcName: "WallLamp34.png", name: "WallLamp34" },
     { srcName: "WallLamp35.png", name: "WallLamp35" },
-
     { srcName: "Lamp40.png", name: "Lamp40" },
     { srcName: "Lamp41.png", name: "Lamp41" },
     { srcName: "Lamp42.png", name: "Lamp42" },
@@ -567,6 +569,7 @@ LoadSprites = [
     { srcName: "Blocked door.png", name: "DungeonDoor_Blocked" },
     { srcName: "dungeondoor_emerald.png", name: "DungeonDoor_Emerald" },
     { srcName: "dungeondoor_purple.png", name: "DungeonDoor_Purple" },
+    { srcName: "dungeondoor_Pearl.png", name: "DungeonDoor_Pearl" },
 
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },

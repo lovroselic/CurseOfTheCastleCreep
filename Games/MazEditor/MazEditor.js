@@ -947,8 +947,16 @@ const GAME = {
     }
     $("#key_type").change(function () {
       let selectedOption = $("#key_type").val().toLowerCase();
-      console.log("selectedOption", selectedOption);
-      if (selectedOption === "emerald") selectedOption = "#50C878";
+
+      switch (selectedOption) {
+        case "emerald":
+          selectedOption = "#50C878";
+          break;
+        case "pearl":
+          selectedOption = "WhiteSmoke";
+          break;
+
+      }
       $("#key_selection").css("background-color", selectedOption);
     });
     $("#key_type").trigger("change");
@@ -1116,12 +1124,9 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     $("#roomid").val(roomId);
     const roomName = ImportText.extractGroup(new RegExp(`name:\\s"(.*)"`));
     $("#roomname").val(roomName);
+
     const SG = ImportText.extractGroup(/sg:\s(\d{1})/);
-    if (!SG || SG == 0) {
-      $("input[name='checkpoint']").prop("checked", false);
-    } else {
-      $("input[name='checkpoint']").prop("checked", true);
-    }
+    $('#checkpoint').val(SG).trigger('change');
 
     const Textures = ["wall", "floor", "ceil"];
     for (const prop of Textures) {

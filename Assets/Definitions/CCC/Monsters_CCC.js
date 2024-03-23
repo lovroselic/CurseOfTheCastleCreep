@@ -12,7 +12,16 @@
 
 "use strict";
 console.log("%cMonsters for CCC loaded.", "color: #888");
-const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald", "Purple"];
+
+const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald", "Purple", "Pearl"];
+
+const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald", "Purple", "Pearl"];
+const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture", "PurpleMetal", "PearlTexture"]; 
+const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine", "standard", "standard", "whiteShine"];
+const KEY_TYPE = {};
+for (let [index, key] of KEY_TYPES.entries()) {
+    KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
+}
 
 const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
     "Petrify", "MagicBoost", "Luck", "HalfLife", "Explode", "Radar"];
@@ -1913,6 +1922,28 @@ const MONSTER_TYPE = {
         material: MATERIAL.greenFluence,
     },
     /** not yet tuned */
+
+    MissGhostFace: {
+        name: "MissGhostFace",
+        model: "MissGhostFace",
+        scale: 1 / 2 ** 1,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: KEY_TYPE.Pearl,
+        attack: 1,
+        defense: 1,
+        magic: 1,
+        health: 1,
+        xp: 1,
+        gold: 1,
+        attackSound: "Banshee",
+        hurtSound: "Ow",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1,
+        material: MATERIAL.standard,
+        final_boss: true,
+    },
    
 
     BlueSkeleton: {
@@ -3925,13 +3956,7 @@ const TRAP_ACTIONS = {
 };
 const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
 
-const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald", "Purple"];
-const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture", "PurpleMetal"];
-const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine", "standard", "standard"];
-const KEY_TYPE = {};
-for (let [index, key] of KEY_TYPES.entries()) {
-    KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
-}
+
 
 const POTION_TYPES = ["Red", "Blue"];
 const POTION_TEXTURES = ["RedLiquid", "BlueLiquid"];

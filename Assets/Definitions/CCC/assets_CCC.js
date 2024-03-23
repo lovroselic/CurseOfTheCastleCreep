@@ -396,7 +396,11 @@ LoadTextures = [
     { srcName: "RedMarbleFloor4.jpg", name: "RedMarbleFloor4" },
     { srcName: "RedMarbleFloor7.jpg", name: "RedMarbleFloor7" },
     { srcName: "RedMarbleFloor8.jpg", name: "RedMarbleFloor8" },
-    
+    { srcName: "DarkMarble50.jpg", name: "DarkMarble50" },
+    { srcName: "DarkMarble51.jpg", name: "DarkMarble51" },
+    { srcName: "DarkMarble52.jpg", name: "DarkMarble52" },
+    { srcName: "DarkMarble54.jpg", name: "DarkMarble54" },
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -446,6 +450,8 @@ LoadTextures = [
     { srcName: "dragon_redColor.jpg", name: "RedDragon" },
     { srcName: "BloodTexture.jpg", name: "BloodTexture" },
     { srcName: "PurpleMetal.jpg", name: "PurpleMetal" },
+    { srcName: "PearlTexture.jpg", name: "PearlTexture" },
+
 
     //decal-gates
     { srcName: "WoodeGate1_256.png", name: "WoodenGate1" },
@@ -484,6 +490,7 @@ LoadAudio = [
     { srcName: "Fuse.mp3", name: "Fuse" },
     { srcName: "AngryCat.mp3", name: "AngryCat" },
     { srcName: "Sheep.mp3", name: "Sheep" },
+    { srcName: "Banshee.mp3", name: "Banshee" },
 
     //monstersounds
     { srcName: "MonsterDeath.mp3", name: "MonsterDeath" },
@@ -520,7 +527,7 @@ LoadObjects = [
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
     'Spider.gltf', 'Wolf.gltf', 'Skeleton.gltf', 'Goblin.gltf', 'Drax.gltf', 'MissGalaxy.gltf',
     'ThePrincess.gltf', 'Chicken.gltf', 'Cat.gltf', "Dragon.gltf", "Basilisk.gltf", "Rex.gltf",
-    'Sheep.gltf',
+    'Sheep.gltf', 'MissGHostFace.gltf'
 ];
 
 LoadSprites = [
@@ -647,10 +654,10 @@ LoadSprites = [
     { srcName: "GhostBride.jpg", name: "GhostBride" },
     { srcName: "BedDomme2.jpg", name: "BedDomme2" },
     { srcName: "BedDomme1.jpg", name: "BedDomme1" },
-    //unused
-    
     { srcName: "Serpent.jpg", name: "Serpent" },
     { srcName: "MrsRobot.jpg", name: "MrsRobot" },
+    //unused
+
 
     //action items
     { srcName: "fly.png", name: "Fly" },
@@ -762,6 +769,7 @@ LoadSprites = [
     { srcName: "Blocked door.png", name: "DungeonDoor_Blocked" },
     { srcName: "dungeondoor_emerald.png", name: "DungeonDoor_Emerald" },
     { srcName: "dungeondoor_purple.png", name: "DungeonDoor_Purple" },
+    { srcName: "dungeondoor_Pearl.png", name: "DungeonDoor_Pearl" },
     { srcName: "StairsDownNoArc.jpg", name: "DungeonDoor_Down" },
     { srcName: "StairCaseUpNoArc.jpg", name: "DungeonDoor_Up" },
 
@@ -917,6 +925,7 @@ LoadSprites = [
     { srcName: "BlueKey.png", name: "BlueKey" },
     { srcName: "EmeraldKey.png", name: "EmeraldKey" },
     { srcName: "PurpleKey.png", name: "PurpleKey" },
+    { srcName: "PearlKey.png", name: "PearlKey" },
 
     //decal bottom
     { srcName: "Drain2_96.png", name: "Drain2_96" },

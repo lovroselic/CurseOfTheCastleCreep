@@ -27,6 +27,7 @@ const LIGHT_COLORS = {
     darkgray: new Float32Array([0.25, 0.25, 0.25]),
     lightgray: new Float32Array([0.75, 0.75, 0.75]),
     emerald: new Float32Array([0.3137, 0.7843, 0.470588]),
+    white: new Float32Array([1.0, 1.0, 1.0]),
 };
 
 /** Materials */
@@ -47,6 +48,7 @@ const MATERIAL = {
     greenFluence: new Material(LIGHT_COLORS.green, LIGHT_COLORS.lightGreen, LIGHT_COLORS.green, 0.05),
     redFluence: new Material(LIGHT_COLORS.fullRed, LIGHT_COLORS.lightRed, LIGHT_COLORS.fullRed, 0.05),
     emeraldShine: new Material(LIGHT_COLORS.emerald, LIGHT_COLORS.emerald, LIGHT_COLORS.emerald, 0.5),
+    whiteShine: new Material(LIGHT_COLORS.white, LIGHT_COLORS.white, LIGHT_COLORS.white, 0.99),
 };
 console.log(`%cMATERIAL v${MATERIAL.VERSION} loaded.`, "color: #888");
 if (ENGINE.verbose) console.table(MATERIAL);

@@ -2282,7 +2282,7 @@ const MAP = {
         shrines: '[[5,7,"Attack1_24"],[65,3,"Defense1_24"],[115,1,"Magic1_24"]]',
     }
     ,
-    115 : {
+    115: {
         name: "Antechamber",
         sg: 0,
         data: '{"width":"19","height":"19","map":"BB2AA2BAA5BAA3BAA2BABAA9BAA9BAA7BB4AA3BAA3BABAA8BAA2BABB2ABB2AA2BABB6AA2BAA3BABAA6BAA7BAA6BABAA9BB2AA10BB3AA3BB3AA3BAA6BB2AA3BAA6BB2AA6BAA4BB2ABB5AA3BABB2ABB2AA2BAA3BB2ABB2AA2BABB4ABB3ABB4AA3BABAA2BABAA2BB7ABABABB3ABB3AA2BAA3BAA2BAA4BB2AA4BB4ABB3ABAA4BB3AA3BAA3BAA2BABABB3ABB4ABB6ABABB25AB$"}',
@@ -2290,11 +2290,15 @@ const MAP = {
         floor: "RedMarbleFloor7",
         ceil: "DarkShinyWall",
         start: '[28,7]',
-        decals: '[[198,1,"Skull20","crest"],[200,1,"Skull20","crest"],[178,1,"Skull21","crest"],[182,1,"Skull21","crest"]]',
+        decals: '[[198,1,"Skull20","crest"],[200,1,"Skull20","crest"],[178,1,"Skull21","crest"],[182,1,"Skull21","crest"],[123,3,"PrayingSkeleton10","crest"],[123,5,"PrayingSkeleton10","crest"],[236,7,"Skull10","crest"],[238,7,"Skull1","crest"],[216,3,"Skull4","crest"],[220,5,"Skeleton23","crest"],[161,4,"Crack20","crest"],[162,4,"Crack21","crest"],[160,4,"Crack4","crest"],[27,7,"AticAtac111","picture"],[29,7,"AticAtac117","picture"],[137,7,"AticAtac130","picture"],[147,7,"AticAtac140","picture"],[101,7,"AticAtac206","picture"],[13,7,"ForbiddenForest99","picture"],[291,1,"WOW104","picture"],[279,1,"Hero70","picture"],[186,1,"EyeOfTheBeholder111","picture"],[318,1,"KL102","picture"],[314,1,"Apshai10","picture"],[312,1,"Bagitman90","picture"],[351,1,"Frogger111","picture"],[154,1,"LastNinja131","picture"],[263,1,"GIJoe70","picture"],[229,1,"Hero72","picture"],[87,1,"Witcher111","picture"],[83,1,"CyberPunk200","picture"],[76,5,"JetSetWilly88","picture"],[190,5,"Wally99","picture"],[247,5,"MontyMole50","picture"],[251,5,"TheHobbit14","picture"],[83,5,"CrawlMaster2","picture"],[109,1,"CyberPunk201","picture"],[42,5,"Barbarian110","picture"],[50,5,"Pitfall27","picture"],[75,3,"TheHobbit72","picture"],[208,3,"RickDangerous60","picture"],[224,3,"HalfLife71","picture"],[99,3,"Pitfall2-100","picture"],[127,3,"PharaohCurse112","picture"],[309,7,"WinterGames79","picture"],[316,7,"Skullkeep","picture"],[344,1,"Pacman200","picture"],[133,5,"MonkeyIsland111","picture"],[286,5,"Rambo11","picture"],[303,3,"Hero51","picture"],[169,3,"MassEffect2","picture"],[82,3,"Tutankham104","picture"]]',
         lights: '[[123,7,"Lamp52","standardDimmed"],[123,1,"Lamp52","standardDimmed"],[116,1,"Lamp41","dim"],[111,1,"WallLamp35","dim"],[5,7,"Lamp40","standardDimmed"],[173,7,"Lamp40","standardDimmed"],[111,7,"Lamp40","standardDimmed"],[237,7,"Lamp40","standardDimmed"],[341,3,"Lamp50","fire"],[323,5,"Lamp50","fire"]]',
-        gates: '[[9,7,"115.1","111.3","Open"]]',
+        gates: '[[9,7,"115.1","111.3","Open"],[218,1,"115.2","117.1","Down"]]',
+        monsters: '[[59,"GhostMinionGreen"],[180,"GhostMinionGreen"],[92,"GhostMinionGreen"],[230,"GhostMinionGreen"],[214,"GhostMinionGreen"],[240,"GhostMinionGreen"],[332,"GhostMinionGreen"],[326,"GhostMinionGreen"],[339,"GhostMinionGreen"],[225,"GhostMinionGreen"]]',
+        scrolls: '[[272,1],[274,8],[278,4],[207,5],[248,11],[24,6],[336,7],[89,9],[153,12],[112,13]]',
+        gold: '[[142,"GoldCube"],[158,"GoldCube"],[196,"GoldCube"],[192,"GoldCube"],[268,"GoldCube"],[325,"GoldCube"],[330,"GoldCube"],[337,"GoldCube"],[321,"GoldCube"],[283,"GoldCube"],[206,"GoldCube"],[165,"GoldCube"],[222,"GoldCube"],[276,"GoldCube"],[254,"GoldCube"],[78,"GoldCube"],[72,"GoldCube"],[66,"GoldCube"],[129,"RedGem"],[288,"GreenGem"]]',
+        skills: '[[41,"Heart"],[31,"Mana"]]',
         oracles: '[[16,7,"MrsRobot"],[2,7,"Serpent"]]',
-        }
+    }
     ,
     116: {
         name: "Healthcare",
@@ -2313,5 +2317,30 @@ const MAP = {
         containers: '[[81,"Crate","GOLD_ITEM_TYPE.GoldBar",null],[139,"Barrel","GOLD_ITEM_TYPE.GoldBar",null],[144,"Chest","GOLD_ITEM_TYPE.SilverBar",null],[91,"TreasureChest","GOLD_ITEM_TYPE.SilverBar",null],[103,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",null]]',
         shrines: '[[213,1,"Attack1_25"],[217,1,"Defense1_25"],[221,1,"Magic1_25"]]',
         oracles: '[[7,7,"PersistOracle"]]',
+    }
+    ,
+    117: {
+        name: "GhostFace",
+        sg: 1,
+        data: '{"width":"32","height":"32","map":"BB18AA222BAA3BAA12BABB3AA4BAA11BAA4BB2AA4BB4AA19BABABB2AA37BB4AA355BB2AA36BB18AA3BB3ABB2ABB12AA2BB56AA2BB14AA23BB4AA4BB2AA4BB120A$"}',
+        wall: "RockyWall31",
+        floor: "DarkMarble1",
+        ceil: "DarkMarble50",
+        start: '[399,7]',
+        lights: '[[527,3,"WallLamp9","standardDimmed"],[527,1,"Lamp40","standardDimmed"],[527,5,"WallLamp34","standardDimmed"],[527,7,"Lamp52","dimRed"]]',
+        gates: '[[367,7,"117.1","115.2","Up"],[687,1,"117.2","118.1","Pearl"]]',
+        keys: '[[591,7]]',
+        monsters: '[[463,"MissGhostFace"]]',
+    }
+    ,
+    118: {
+        name: "Dummy",
+        sg: 2,
+        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
+        wall: "BrownWall6",
+        floor: "SmallBlackBricks47",
+        ceil: "GreyWall32",
+        start: '[11,7]',
+        gates: '[[3,7,"118.1","117.2","Open"]]',
     }
 };

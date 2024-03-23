@@ -7,7 +7,7 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "0.6",
+    VERSION: "1.0",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
         'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables', 'trainers'],
@@ -87,9 +87,9 @@ const MAP_TOOLS = {
 };
 
 const SG_DICT = {
-    NEUTRAL: 0,
-    BLOCK: 1,
-    RESTORE: 2,
+    Neutral: 0,
+    Block: 1,
+    Restore: 2,
 };
 
 const SPAWN_TOOLS = {

@@ -13,10 +13,11 @@ const MAP_TEXT = {
     1: "Are you ready to feel my heels? Ghostface? Here comes Princess!",
     2: "I should leave no stone unturned.",
     3: "Hmm? Which way to go first?",
-    4: "I wonder if you are smart enough to lead me over Ghosty's traps?",
+    4: "I wonder if you are smart enough to lead me over GhostFace's traps?",
     23: "A Witch's lair. Maybe I can find some magical items here.",
     32: "This is my gold! Pick up everything!",
-    42: "I hope you know what you are doing? This is becoming dangerous."
+    42: "I hope you know what you are doing? This is becoming dangerous.",
+    117: "Oh. Surprise. Ghostface is a woman.",
 };
 
 /** Map definitions */
@@ -2319,19 +2320,24 @@ const MAP = {
         oracles: '[[7,7,"PersistOracle"]]',
     }
     ,
-    117: {
-        name: "GhostFace",
+    117 : {
+        name: "Mrs GhostFace",
         sg: 1,
-        data: '{"width":"32","height":"32","map":"BB18AA222BAA3BAA12BABB3AA4BAA11BAA4BB2AA4BB4AA19BABABB2AA37BB4AA355BB2AA36BB18AA3BB3ABB2ABB12AA2BB56AA2BB14AA23BB4AA4BB2AA4BB120A$"}',
+        data: '{"width":"32","height":"32","map":"BB6AA16BAA7BAA3BAA25BB2AA8BAA11BB2AA10EAA21BAA21BAA2BB3AA7BAA3BAA2BABAA11BB2AA2BB2AA7BAA31BB3AA11BAA31BAA16BAA13BAA69BB2ABAA7BB2AA16BAA3BAA3BB6AA11BAA19BABAA10BAA7BABAA4BAA7BAA3BAA2BB3AA26EAA12BAA15BABAA13BABAA17BAA17BAA6BAA33BAA25BABAA35BAA19BAA2BB4AA4BB8AA8BABB3ABB9AA3BB3AA5BB7AA2BABB2AA2BAA4BAA8BB31AA5BB5EBB7ABB2ABB6AA2BB7ABB3AEABB4ABB5ABAA2BAA2BAA4BAA3BB2AA2BB3ABB5AA4BB20ABABB6ABB10AA2BB3ABB44$BAA3BB8AA2BB2"}',
         wall: "RockyWall31",
         floor: "DarkMarble1",
         ceil: "DarkMarble50",
         start: '[399,7]',
-        lights: '[[527,3,"WallLamp9","standardDimmed"],[527,1,"Lamp40","standardDimmed"],[527,5,"WallLamp34","standardDimmed"],[527,7,"Lamp52","dimRed"]]',
+        decals: '[[37,7,"MontyMole52","picture"],[41,7,"Prince4","picture"],[44,7,"Fred100","picture"],[50,7,"PurpleHeart","picture"],[54,7,"Amiga","picture"],[28,7,"LaraCroft1","picture"],[173,7,"Nebulus90","picture"],[170,7,"Imhotep2","picture"],[178,7,"Trashman2","picture"],[182,7,"Paratroopers3","picture"],[326,7,"Pacman200","picture"],[500,7,"SP65","picture"],[278,7,"BlueMax11","picture"],[344,7,"SpaceQuest200","picture"],[410,7,"Paperboy50","picture"],[522,7,"AticAtac110","picture"],[614,7,"LastNinja110","picture"],[486,7,"LSL103","picture"],[874,7,"Pitfall50","picture"],[728,7,"CamelotWarriors","picture"],[801,7,"Pitfall71","picture"],[857,7,"TombRaider110","picture"],[750,7,"Shamus4","picture"],[752,7,"Jawbreaker","picture"],[965,1,"TombRaider130","picture"],[969,1,"Hero52","picture"],[973,1,"ManicMiner64","picture"],[977,1,"RadarRatRace10","picture"],[981,1,"Jumpman70","picture"],[990,1,"UW10","picture"],[885,1,"HungryHorace12","picture"],[522,1,"ZX Spectrum","picture"],[614,1,"LadyTut60","picture"],[500,1,"TombRaider102","picture"],[602,1,"Triss","picture"],[302,1,"LeisureSuitLarry200","picture"],[304,1,"WhoDaresWins1","picture"],[486,1,"GIJoe70","picture"],[410,1,"Pitfall89","picture"],[344,1,"Tutanham11","picture"],[278,1,"Oblivion100","picture"],[283,1,"BoogaBoo90","picture"],[187,1,"ArticShipwreck7","picture"],[173,1,"ReturnToCastleWolfenstein14","picture"],[182,1,"Bagitman11","picture"],[161,1,"FortApocalypse41","picture"],[96,5,"Hero80","picture"],[225,5,"LeisureSuitLarry75","picture"],[326,5,"AticAtac203","picture"],[170,5,"Scramble60","picture"],[173,5,"AticAtac111","picture"],[178,5,"Pyjamarama11","picture"],[182,5,"WhoDaresWins70","picture"],[90,5,"Hero50","picture"],[283,5,"AmberStar201","picture"],[278,5,"DungeonMaster203","picture"],[344,5,"HalfLife91","picture"],[410,5,"Bagitman90","picture"],[353,5,"Grog1","picture"],[513,5,"RobinOfTheWood88","picture"],[522,5,"ManicMiner14","picture"],[486,5,"MontezumasRevenge90","picture"],[614,5,"Prince41","picture"],[500,5,"ManicMiner12","picture"],[602,5,"Fred113","picture"],[705,5,"Karn1","picture"],[728,5,"PharaohCurse130","picture"],[920,5,"KnightLore110","picture"],[874,5,"LaraCroft2","picture"],[885,5,"TombRaider103","picture"],[896,5,"JetSetWilly11","picture"],[874,1,"JSW10","picture"],[127,3,"SuperDogfight3","picture"],[182,3,"Hero103","picture"],[102,3,"F50","picture"],[170,3,"Jumpman3","picture"],[173,3,"Pitfall90","picture"],[178,3,"KQ102","picture"],[318,3,"Commando200","picture"],[278,3,"Underwurlde130","picture"],[344,3,"EnigmaForce2","picture"],[410,3,"TheHobbit71","picture"],[446,3,"Ultima89","picture"],[500,3,"Cauldron10","picture"],[326,3,"Wolf10","picture"],[614,3,"HeavyOnTheMagick60","picture"],[522,3,"Sorcery31","picture"],[638,3,"Portal140","picture"],[766,3,"Witcher112","picture"],[927,3,"SkoolDaze60","picture"],[885,3,"Ishar15","picture"],[902,3,"MassEffect2","picture"],[728,3,"FF101","picture"],[874,3,"FireAnt2","picture"],[602,3,"Frogger110","picture"],[728,1,"EveryoneIsAWally2","picture"]]',
+        lights: '[[527,3,"WallLamp9","standardDimmed"],[527,1,"Lamp40","standardDimmed"],[527,5,"WallLamp34","standardDimmed"],[527,7,"Lamp52","dimRed"],[271,1,"Lamp49","standard"],[783,7,"Lamp49","standardDimmed"],[333,3,"Lamp40","standard"],[337,5,"Lamp43","standard"],[717,3,"WallLamp33","standardDimmed"],[721,5,"WallLamp10","standardDimmed"],[163,1,"Lamp53","dimRed"],[189,1,"Lamp53","dimRed"],[803,7,"Lamp51","dimRed"],[859,7,"Lamp51","dimRed"],[486,3,"WallLamp35","fire"],[170,1,"WallLamp32","fire"],[602,7,"Lamp52","fire"],[283,7,"WallLamp","yellowgreen"],[178,1,"WallLamp31","standardDimmed"],[885,7,"Lamp51","dimRed"]]',
         gates: '[[367,7,"117.1","115.2","Up"],[687,1,"117.2","118.1","Pearl"]]',
-        keys: '[[591,7]]',
-        monsters: '[[463,"MissGhostFace"]]',
-    }
+        monsters: '[[79,"MissGhostFace"],[71,"GreenSkeleton"],[89,"GreenSkeleton"],[238,"BlueSkeleton"],[240,"BlueSkeleton"],[782,"BlueSkeleton"],[784,"BlueSkeleton"],[935,"GreenSkeleton"],[951,"GreenSkeleton"],[514,"GreenBasilisk"],[541,"GreenBasilisk"],[943,"Drax"],[61,"Rex"]]',
+        scrolls: '[[591,2],[67,2],[520,2],[114,2],[504,3],[94,3]]',
+        skills: '[[59,"Heart"],[62,"Mana"]]',
+        shrines: '[[703,3,"FinalAttackShrine"],[1011,1,"FinalDefenceShrine"],[608,5,"FinalMagicShrine"],[2,7,"ScrollSell_HalfLife"]]',
+        doors: '[164,154,861,838]',
+        oracles: '[[15,7,"GF_oracle1"],[543,3,"GF_oracle2"],[448,5,"GF_oracle3"],[1007,1,"GF_oracle4"]]',
+        }
     ,
     118: {
         name: "Dummy",

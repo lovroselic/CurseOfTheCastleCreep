@@ -87,9 +87,9 @@ const MAP_TOOLS = {
 };
 
 const SG_DICT = {
-    Neutral: 0,
-    Block: 1,
-    Restore: 2,
+    0: "Neutral",
+    1: "Block",
+    2: "Restore",
 };
 
 const SPAWN_TOOLS = {

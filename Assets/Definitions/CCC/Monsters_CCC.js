@@ -16,7 +16,7 @@ console.log("%cMonsters for CCC loaded.", "color: #888");
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald", "Purple", "Pearl"];
 
 const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald", "Purple", "Pearl"];
-const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture", "PurpleMetal", "PearlTexture"]; 
+const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture", "PurpleMetal", "PearlTexture"];
 const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine", "standard", "standard", "whiteShine"];
 const KEY_TYPE = {};
 for (let [index, key] of KEY_TYPES.entries()) {
@@ -587,7 +587,6 @@ const SHRINE_TYPE = {
         price: 2000,
         level: 1,
     },
-
     Attack1_24: {
         name: "AttackShrine_1_24",
         sprite: "AttackShrine24",
@@ -618,7 +617,6 @@ const SHRINE_TYPE = {
         price: 2000,
         level: 1,
     },
-
     Attack1_25: {
         name: "AttackShrine_1_25",
         sprite: "AttackShrine25",
@@ -648,6 +646,47 @@ const SHRINE_TYPE = {
         inventorySprite: "MagicSkill",
         price: 2500,
         level: 1,
+    },
+    FinalAttackShrine: {
+        name: "FinalAttackShrine",
+        sprite: "FinalAttackShrine",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SwordSkill",
+        price: 2500,
+        level: 1,
+    },
+    FinalDefenceShrine: {
+        name: "FinalDefenceShrine",
+        sprite: "FinalDefenceShrine",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ShieldSkill",
+        price: 2500,
+        level: 1,
+    },
+    FinalMagicShrine: {
+        name: "FinalMagicShrine",
+        sprite: "FinalMagicShrine",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "MagicSkill",
+        price: 2500,
+        level: 1,
+    },
+    ScrollSell_HalfLife: {
+        name: "ScrollSell_HalfLife",
+        sprite: "ScrollSell_HalfLife",
+        which: "HalfLife",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 500,
+        voice: "Female",
+        text: "HalfLife scroll - 500 gold"
     },
 };
 
@@ -914,6 +953,42 @@ const ORACLE_TYPE = {
         category: 'crest',
         voice: "MaleLowSlow",
         text: "Take time and prepare for the fight with GhostFace.",
+        interactionCategory: "oracle",
+    },
+
+    GF_oracle1: {
+        name: "GF_oracle1",
+        sprite: "GF_oracle1",
+        category: 'crest',
+        voice: "Female",
+        text: "GhostFace carries the Pearl Key. Don't miss it.",
+        interactionCategory: "oracle",
+    },
+
+    GF_oracle2: {
+        name: "GF_oracle2",
+        sprite: "GF_oracle2",
+        category: 'crest',
+        voice: "Female",
+        text: "GhostFace is the greatest sorceress ever. She is imunne to some spells.",
+        interactionCategory: "oracle",
+    },
+
+    GF_oracle3: {
+        name: "GF_oracle3",
+        sprite: "GF_oracle3",
+        category: 'crest',
+        voice: "Female",
+        text: "YOu just need to defeat GhostFace. But killing all, also helps.",
+        interactionCategory: "oracle",
+    },
+
+    GF_oracle4: {
+        name: "GF_oracle4",
+        sprite: "GF_oracle4",
+        category: 'crest',
+        voice: "Female",
+        text: "Some scrolls can be purchased.",
         interactionCategory: "oracle",
     },
 
@@ -1921,30 +1996,6 @@ const MONSTER_TYPE = {
         moveSpeed: 0.99,
         material: MATERIAL.greenFluence,
     },
-    /** not yet tuned */
-
-    MissGhostFace: {
-        name: "MissGhostFace",
-        model: "MissGhostFace",
-        scale: 1 / 2 ** 1,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: KEY_TYPE.Pearl,
-        attack: 1,
-        defense: 1,
-        magic: 1,
-        health: 1,
-        xp: 1,
-        gold: 1,
-        attackSound: "Banshee",
-        hurtSound: "Ow",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1,
-        material: MATERIAL.standard,
-        final_boss: true,
-    },
-   
 
     BlueSkeleton: {
         name: "BlueSkeleton",
@@ -1955,12 +2006,12 @@ const MONSTER_TYPE = {
         midHeight: 0.5,
         deathType: "SmokeExplosion",
         inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 38,
-        defense: 28,
-        magic: 20,
-        health: 50,
-        xp: 90,
-        gold: 90,
+        attack: 70,
+        defense: 50,
+        magic: 40,
+        health: 60,
+        xp: 200,
+        gold: 200,
         attackSound: "MonsterAttack2",
         hurtSound: "MonsterHurt2",
         behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
@@ -1976,18 +2027,48 @@ const MONSTER_TYPE = {
         midHeight: 0.5,
         deathType: "SmokeExplosion",
         inventory: GOLD_ITEM_TYPE.Coins,
-        attack: 38,
-        defense: 28,
-        magic: 20,
-        health: 50,
-        xp: 90,
-        gold: 90,
+        attack: 80,
+        defense: 60,
+        magic: 50,
+        health: 75,
+        xp: 250,
+        gold: 250,
         attackSound: "MonsterAttack2",
         hurtSound: "MonsterHurt2",
         behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
         moveSpeed: 1.1,
         material: MATERIAL.standard,
     },
+    MissGhostFace: {
+        name: "MissGhostFace",
+        model: "MissGhostFace",
+        scale: 1 / 2 ** 1,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: KEY_TYPE.Pearl,
+        attack: 1000,
+        defense: 1000,
+        magic: 100,
+        health: 1000,
+        xp: 10000,
+        attackSound: "Banshee",
+        hurtSound: "Ow",
+        behaviourArguments: [Infinity, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 1.2,
+        material: MATERIAL.standard,
+        final_boss: true,
+        mana: 100,
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        material: MATERIAL.standard,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.Fireball,
+    },
+
+
+
 };
 
 const HERO_TYPE = {
@@ -3721,7 +3802,7 @@ const INTERACTION_ENTITY = {
             conclusion: "I can marry GhostFace now, and you can have this coin. Use it wisely."
         }
     },
-    
+
 
 
 

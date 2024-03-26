@@ -121,7 +121,7 @@ const SAVE_GAME = {
     localStorage.setItem(SAVE_GAME.key + SAVE_GAME.LISTABR, SAVE_GAME.code(listSTR));
   },
   save() {
-    console.log(`%cSaving game ....`, SAVE_GAME.CSS);
+    //console.log(`%cSaving game ....`, SAVE_GAME.CSS);
     SAVE_GAME.clearMap();
     SAVE_GAME.saveMap();
     SAVE_GAME.saveLists();
@@ -191,7 +191,7 @@ const SAVE_MAP_IAM = {
         map_iam[level] = storage;
       }
     }
-    console.warn("save map_iam", map_iam);
+    //console.warn("save map_iam", map_iam);
     const map_iam_string = JSON.stringify(map_iam);
     localStorage.setItem(SAVE_GAME.key + SAVE_GAME.IAMABR, SAVE_GAME.code(map_iam_string));
   },
@@ -214,7 +214,7 @@ const SAVE_MAP_IAM = {
         map_GA[level] = MAP_REFERENCE[level].adapted_data;
       }
     }
-    console.warn("map_GA", map_GA);
+    //console.warn("map_GA", map_GA);
     const map_GA_string = JSON.stringify(map_GA);
     localStorage.setItem(SAVE_GAME.key + SAVE_GAME.GAABR, map_GA_string);
   },

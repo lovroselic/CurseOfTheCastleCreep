@@ -137,7 +137,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.01",
+    VERSION: "0.20.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -219,7 +219,11 @@ const PRG = {
     }
 };
 
-/** WebGL extensions */
+/** 
+ * WebGL extensions with hardcoded external pointers
+ * assume GAME.gold points to money
+ * assume TITLE.gold refreshes display
+ */
 
 class Shrine extends WallFeature3D {
     constructor(grid, face, type) {
@@ -227,11 +231,26 @@ class Shrine extends WallFeature3D {
         this.expand = true;
     }
     interact() {
+
+        if (!this.ready) return;
+        this.block();
+        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
+
+        if (this.introduce) {
+            this.introduce = false;
+            this.speak(this.text);
+            return {
+                category: "oracle",
+                text: this.text
+            };
+        }
+
         if (GAME.gold >= this.price) {
             this.storageLog();
             this.deactivate();
             GAME.gold -= this.price;
             TITLE.gold();
+
 
             return {
                 category: this.interactionCategory,
@@ -350,6 +369,7 @@ class Scroll {
             case "DrainMana":
                 for (let enemy of ENTITY3D.POOL) {
                     if (enemy === null) continue;
+                    if (enemy.final_boss) continue;
                     if (enemy.distance === null) continue;
                     if (enemy.distance <= INI.SCROLL_RANGE) {
                         enemy.mana = 0;
@@ -361,6 +381,7 @@ class Scroll {
             case "Cripple":
                 for (let enemy of ENTITY3D.POOL) {
                     if (enemy === null) continue;
+                    if (enemy.final_boss) continue;
                     if (enemy.distance === null) continue;
                     if (enemy.distance <= INI.SCROLL_RANGE) {
                         enemy.moveSpeed = INI.CRIPPLE_SPEED;
@@ -740,9 +761,11 @@ const HERO = {
 };
 
 const GAME = {
-    upperLimit: null,
-    loadWayPoint: null,
-    //blockDoorFlag: null,
+    /** initialitzed  properties*/
+    gold: 0,                                // WebGl relies on this as default gold source - NOT
+    loadWayPoint: null,                     // save game pointer, keep
+    canBeSaved: true,
+
     clearInfo() {
         ENGINE.clearLayer("info");
     },
@@ -1004,8 +1027,21 @@ const GAME = {
         }
     },
     save(destination) {
+        const flag = SG_DICT[MAP[GAME.level].sg];
+
+        switch (flag) {
+            case "Block":
+                GAME.canBeSaved = false;
+                break;
+            case "Restore":
+                GAME.canBeSaved = true;
+                break;
+        }
+
+        MAP[GAME.level].sg = 0;
+        if (!GAME.canBeSaved) return;
+
         console.time("save");
-        console.warn("SAVING GAME - each waypoint");
         GAME.loadWayPoint = destination.waypoint;
         SAVE_GAME.save();
         SAVE_MAP_IAM.save_map(MAP);
@@ -1091,7 +1127,13 @@ const GAME = {
                 AUDIO.Potion.play();
                 break;
             case 'scroll':
-                let type = SCROLL_TYPE[interaction.instanceIdentification];
+                let type = null;
+                if (interaction.scrollType) {
+                    type = interaction.scrollType;
+                } else {
+                    type = SCROLL_TYPE[interaction.instanceIdentification];
+                }
+
                 let scroll = new Scroll(type);
                 scroll.display();
                 HERO.inventory.scroll.add(scroll);
@@ -1106,8 +1148,12 @@ const GAME = {
                 HERO.restore();
                 TITLE.status();
                 break;
+            case 'scrollshop':
+                return this.processInteraction({
+                    category: "scroll",
+                    scrollType: interaction.which,
+                });
             case 'oracle':
-                //if (interaction.text) TURN.subtitle(interaction.text);
                 break;
             case 'skill':
                 console.log("SKILL", interaction);
@@ -1136,13 +1182,10 @@ const GAME = {
             case "interaction_item":
                 const item = new NamedInventoryItem(interaction.name, interaction.inventorySprite);
                 HERO.inventory.item.push(item);
-                //if (interaction.text) TURN.subtitle(interaction.text);
                 TITLE.keys();
                 display(interaction.inventorySprite);
                 break;
             case "entity_interaction":
-                //console.log("interaction.text", interaction.text);
-                //if (interaction.text) TURN.subtitle(interaction.text);
                 TITLE.keys()
                 break;
             default:

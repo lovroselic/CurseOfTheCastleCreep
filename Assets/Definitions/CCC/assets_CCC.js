@@ -656,6 +656,10 @@ LoadSprites = [
     { srcName: "BedDomme1.jpg", name: "BedDomme1" },
     { srcName: "Serpent.jpg", name: "Serpent" },
     { srcName: "MrsRobot.jpg", name: "MrsRobot" },
+    { srcName: "GF_oracle1.jpg", name: "GF_oracle1" },
+    { srcName: "GF_oracle2.jpg", name: "GF_oracle2" },
+    { srcName: "GF_oracle3.jpg", name: "GF_oracle3" },
+    { srcName: "GF_oracle4.jpg", name: "GF_oracle4" },
     //unused
 
 
@@ -879,8 +883,10 @@ LoadSprites = [
     { srcName: "AttackShrine25.jpg", name: "AttackShrine25" },
     { srcName: "DefenseShrine25.jpg", name: "DefenseShrine25" },
     { srcName: "MagicShrine25.jpg", name: "MagicShrine25" },
-
-
+    { srcName: "FinalMagicShrine.jpg", name: "FinalMagicShrine" },
+    { srcName: "FinalDefenceShrine.jpg", name: "FinalDefenceShrine" },
+    { srcName: "FinalAttackShrine.jpg", name: "FinalAttackShrine" },
+    { srcName: "ScrollSell_HalfLife.jpg", name: "ScrollSell_HalfLife" },
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

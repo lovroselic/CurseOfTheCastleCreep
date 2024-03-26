@@ -2395,6 +2395,8 @@ class Trap extends WallFeature3D {
     }
 }
 
+
+
 class BoundingBox {
     constructor(max, min, scale = null) {
         this.max = Vector3.from_array(max);

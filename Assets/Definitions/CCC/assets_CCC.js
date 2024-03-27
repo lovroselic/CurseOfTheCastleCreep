@@ -660,6 +660,7 @@ LoadSprites = [
     { srcName: "GF_oracle2.jpg", name: "GF_oracle2" },
     { srcName: "GF_oracle3.jpg", name: "GF_oracle3" },
     { srcName: "GF_oracle4.jpg", name: "GF_oracle4" },
+    { srcName: "VictoryOracle.jpg", name: "VictoryOracle" },
     //unused
 
 

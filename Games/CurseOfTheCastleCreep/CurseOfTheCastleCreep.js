@@ -68,17 +68,17 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 118;
+        GAME.level = 119;
         GAME.gold = 1588;
-        HERO.maxHealth = 267;
-        HERO.health = 267;
-        HERO.maxMana = 347;
-        HERO.mana = 59;
+        HERO.maxHealth = 271;
+        HERO.health = 271;
+        HERO.maxMana = 352;
+        HERO.mana = 352;
         HERO.attack = 55;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 52;
+        HERO.defense = 53;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 53;
+        HERO.magic = 54;
         HERO.reference_magic = HERO.magic;
         HERO.attackExp = 789;
         HERO.defenseExp = 275;
@@ -137,7 +137,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.03",
+    VERSION: "0.20.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

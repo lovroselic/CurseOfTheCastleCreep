@@ -2320,7 +2320,7 @@ const MAP = {
         oracles: '[[7,7,"PersistOracle"]]',
     }
     ,
-    117 : {
+    117: {
         name: "Mrs GhostFace",
         sg: 1,
         data: '{"width":"32","height":"32","map":"BB6AA16BAA7BAA3BAA25BB2AA8BAA11BB2AA10EAA21BAA21BAA2BB3AA7BAA3BAA2BABAA11BB2AA2BB2AA7BAA31BB3AA11BAA31BAA16BAA13BAA69BB2ABAA7BB2AA16BAA3BAA3BB6AA11BAA19BABAA10BAA7BABAA4BAA7BAA3BAA2BB3AA26EAA12BAA15BABAA13BABAA17BAA17BAA6BAA33BAA25BABAA35BAA19BAA2BB4AA4BB8AA8BABB3ABB9AA3BB3AA5BB7AA2BABB2AA2BAA4BAA8BB31AA5BB5EBB7ABB2ABB6AA2BB7ABB3AEABB4ABB5ABAA2BAA2BAA4BAA3BB2AA2BB3ABB5AA4BB20ABABB6ABB10AA2BB3ABB44$BAA3BB8AA2BB2"}',
@@ -2338,16 +2338,32 @@ const MAP = {
         shrines: '[[703,3,"FinalAttackShrine"],[1011,1,"FinalDefenceShrine"],[608,5,"FinalMagicShrine"],[2,7,"ScrollSell_HalfLife"],[995,1,"ScrollSell_BoostWeapon"],[1019,1,"ScrollSell_DestroyArmor"]]',
         doors: '[164,154,861,838]',
         oracles: '[[15,7,"GF_oracle1"],[543,3,"GF_oracle2"],[448,5,"GF_oracle3"],[1007,1,"GF_oracle4"]]',
-        }
+    }
     ,
     118: {
-        name: "Dummy",
+        name: "Almost Done",
         sg: 2,
-        data: '{"width":"8","height":"8","map":"BB5AA11BABB20AA3BB5ABB10$BB6A"}',
-        wall: "BrownWall6",
-        floor: "SmallBlackBricks47",
-        ceil: "GreyWall32",
-        start: '[11,7]',
-        gates: '[[3,7,"118.1","117.2","Open"]]',
+        data: '{"width":"9","height":"9","map":"BB3AA2BAA2BAA8BAA5BB3AA5BB8AA2BB10AA4BB8ABB7ABB7$BA"}',
+        wall: "RedBricks44",
+        floor: "OrnateCeiling1",
+        ceil: "SmallBricks1",
+        start: '[13,7]',
+        decals: '[[2,7,"EyeOfTheBeholder111","picture"],[6,7,"MassEffect1","picture"],[26,3,"ZimSalaBim200","picture"],[58,4,"Drain64","crest"],[49,4,"Drain64","crest"],[18,5,"Zaxxon3","picture"],[56,1,"FalconPatrol70","picture"],[60,1,"TombRaider99","picture"]]',
+        lights: '[[44,3,"Lamp42","standard"]]',
+        gates: '[[4,7,"118.1","117.2","Open"],[76,1,"118.2","119.1","Gold"]]',
+        keys: '[[40,0]]',
+        skills: '[[11,"Heart"],[15,"Mana"],[19,"Shield"],[25,"Magic"]]',
+        oracles: '[[36,5,"VictoryOracle"]]',
     }
+    ,
+    119 : {
+        name: "Forge Your Future",
+        sg: 0,
+        data: '{"width":"21","height":"21","map":"BB2ABABB55ABB24$BB355A"}',
+        wall: "BrownBricks37",
+        floor: "RedMArbleFloor3",
+        ceil: "MossFloor105",
+        start: '[31,7]',
+        gates: '[[10,7,"119.1","118.2","Open"]]',
+        }
 };

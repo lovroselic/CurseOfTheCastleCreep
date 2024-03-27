@@ -977,7 +977,6 @@ const ORACLE_TYPE = {
         text: "Take time and prepare for the fight with GhostFace.",
         interactionCategory: "oracle",
     },
-
     GF_oracle1: {
         name: "GF_oracle1",
         sprite: "GF_oracle1",
@@ -986,7 +985,6 @@ const ORACLE_TYPE = {
         text: "GhostFace carries the Pearl Key. Don't miss it.",
         interactionCategory: "oracle",
     },
-
     GF_oracle2: {
         name: "GF_oracle2",
         sprite: "GF_oracle2",
@@ -995,7 +993,6 @@ const ORACLE_TYPE = {
         text: "GhostFace is the greatest sorceress ever. She is imunne to some spells.",
         interactionCategory: "oracle",
     },
-
     GF_oracle3: {
         name: "GF_oracle3",
         sprite: "GF_oracle3",
@@ -1004,7 +1001,6 @@ const ORACLE_TYPE = {
         text: "YOu just need to defeat GhostFace. But killing all, also helps.",
         interactionCategory: "oracle",
     },
-
     GF_oracle4: {
         name: "GF_oracle4",
         sprite: "GF_oracle4",
@@ -1013,8 +1009,14 @@ const ORACLE_TYPE = {
         text: "Some scrolls can be purchased.",
         interactionCategory: "oracle",
     },
-
-
+    VictoryOracle: {
+        name: "VictoryOracle",
+        sprite: "VictoryOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Bravo. GhostFace is defeated. But you still need the crown to claim the throne.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {

@@ -2223,7 +2223,7 @@ class BouncingMissile extends Missile {
 }
 
 class WallFeature3D {
-    constructor(grid, face, type) {
+    constructor(grid, face, type, gameContext = GAME, titleContext = TITLE) {
         this.interactive = true;
         this.active = true;
         this.grid = grid;
@@ -2236,6 +2236,8 @@ class WallFeature3D {
         this.height = this.texture.height;
         this.excludeFromInventory = true;
         this.reset();
+        this.gameContext = gameContext;
+        this.titleContext = titleContext;
     }
     deactivate() {
         this.active = false;
@@ -2253,6 +2255,81 @@ class WallFeature3D {
     }
     block() {
         this.ready = false;
+    }
+    deductGold(value) {
+        if (this.gameContext.gold >= value) {
+            this.gameContext.gold -= value;
+            this.titleContext.gold();
+            return true;
+        }
+        return false;
+    }
+}
+
+class Shrine extends WallFeature3D {
+    constructor(grid, face, type) {
+        super(grid, face, type);
+        this.expand = true;
+    }
+    interact() {
+
+        if (!this.ready) return;
+        this.block();
+        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
+
+        if (this.introduce) {
+            this.introduce = false;
+            this.speak(this.text);
+            return {
+                category: "oracle",
+                text: this.text
+            };
+        }
+
+        if (this.deductGold(this.price || 1)) {
+            this.storageLog();
+            this.deactivate();
+
+            return {
+                category: this.interactionCategory,
+                inventorySprite: this.inventorySprite,
+                which: this.which,
+                level: this.level,
+            };
+        } else {
+            AUDIO.MagicFail.play();
+            return null;
+        }
+    }
+    deactivate() {
+        this.interactive = false;
+    }
+    storageLog() {
+        this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
+    }
+}
+
+class Oracle extends WallFeature3D {
+    constructor(grid, face, type) {
+        super(grid, face, type);
+        this.expand = true;
+    }
+    interact() {
+        if (!this.ready) return;
+        this.block();
+        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
+
+        if (this.deductGold(this.price || 1)) {
+            this.speak(this.text);
+            return {
+                category: this.interactionCategory,
+                text: this.text
+            };
+
+        } else {
+            AUDIO.MagicFail.play();
+            return null;
+        }
     }
 }
 

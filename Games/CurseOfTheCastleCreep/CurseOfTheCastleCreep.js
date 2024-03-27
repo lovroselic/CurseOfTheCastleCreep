@@ -68,27 +68,27 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 117;
+        GAME.level = 118;
         GAME.gold = 1588;
-        HERO.maxHealth = 247;
-        HERO.health = 247;
-        HERO.maxMana = 322;
-        HERO.mana = 322;
-        HERO.attack = 54;
+        HERO.maxHealth = 267;
+        HERO.health = 267;
+        HERO.maxMana = 347;
+        HERO.mana = 59;
+        HERO.attack = 55;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 51;
+        HERO.defense = 52;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 52;
+        HERO.magic = 53;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 321;
-        HERO.defenseExp = 1645;
-        HERO.magicExp = 9984;
+        HERO.attackExp = 789;
+        HERO.defenseExp = 275;
+        HERO.magicExp = 9675;
         HERO.attackExpGoal = 13013;
-        HERO.defenseExpGoal = 1713;
-        HERO.magicExpGoal = 13013;
-        HERO.inventory.potion.red = 2;
-        HERO.inventory.potion.blue = 1;
-        let scrolls = ["DestroyWeapon", "DestroyWeapon", "MagicBoost", "Radar", "BoostArmor", "BoostWeapon", "Petrify", "Invisibility", "HalfLife", "Explode", "DestroyArmor"];
+        HERO.defenseExpGoal = 2570;
+        HERO.magicExpGoal = 19520;
+        HERO.inventory.potion.red = 0;
+        HERO.inventory.potion.blue = 0;
+        let scrolls = ["DrainMana", "DrainMana", "DrainMana", "DrainMana"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -103,7 +103,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = [];
+        let keys = ["Pearl"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -137,7 +137,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.02",
+    VERSION: "0.20.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -218,85 +218,6 @@ const PRG = {
         TITLE.startTitle();
     }
 };
-
-/** 
- * WebGL extensions with hardcoded external pointers
- * assume GAME.gold points to money
- * assume TITLE.gold refreshes display
- */
-
-class Shrine extends WallFeature3D {
-    constructor(grid, face, type) {
-        super(grid, face, type);
-        this.expand = true;
-    }
-    interact() {
-
-        if (!this.ready) return;
-        this.block();
-        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
-
-        if (this.introduce) {
-            this.introduce = false;
-            this.speak(this.text);
-            return {
-                category: "oracle",
-                text: this.text
-            };
-        }
-
-        if (GAME.gold >= this.price) {
-            this.storageLog();
-            this.deactivate();
-            GAME.gold -= this.price;
-            TITLE.gold();
-
-
-            return {
-                category: this.interactionCategory,
-                inventorySprite: this.inventorySprite,
-                which: this.which,
-                level: this.level,
-            };
-        } else {
-            AUDIO.MagicFail.play();
-            return null;
-        }
-    }
-    deactivate() {
-        this.interactive = false;
-    }
-    storageLog() {
-        this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
-    }
-}
-
-class Oracle extends WallFeature3D {
-    constructor(grid, face, type) {
-        super(grid, face, type);
-        this.expand = true;
-    }
-    interact() {
-        if (!this.ready) return;
-        this.block();
-        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
-
-        if (GAME.gold >= 1) {
-            GAME.gold -= 1;
-            TITLE.gold();
-            this.speak(this.text);
-            return {
-                category: this.interactionCategory,
-                text: this.text
-            };
-
-        } else {
-            AUDIO.MagicFail.play();
-            return null;
-        }
-    }
-}
-/** ******************************** */
 
 class Key {
     constructor(color, spriteClass) {
@@ -762,7 +683,7 @@ const HERO = {
 
 const GAME = {
     /** initialitzed  properties*/
-    gold: 0,                                // WebGl relies on this as default gold source - NOT
+    gold: 0,                                // WebGl relies on this as default gold source 
     loadWayPoint: null,                     // save game pointer, keep
     canBeSaved: true,
 

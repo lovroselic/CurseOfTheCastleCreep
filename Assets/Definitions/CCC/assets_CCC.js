@@ -887,6 +887,8 @@ LoadSprites = [
     { srcName: "FinalDefenceShrine.jpg", name: "FinalDefenceShrine" },
     { srcName: "FinalAttackShrine.jpg", name: "FinalAttackShrine" },
     { srcName: "ScrollSell_HalfLife.jpg", name: "ScrollSell_HalfLife" },
+    { srcName: "ScrollSell_BoostWeapon.jpg", name: "ScrollSell_BoostWeapon" },
+    { srcName: "ScrollSell_DestroyArmor.jpg", name: "ScrollSell_DestroyArmor" },
 
     //scrolls
     { srcName: "Invisibility.png", name: "SCR_Invisibility" },

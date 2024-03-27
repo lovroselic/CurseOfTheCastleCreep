@@ -684,9 +684,31 @@ const SHRINE_TYPE = {
         category: 'crest',
         interactionCategory: 'scrollshop',
         introduce: true,
+        price: 1000,
+        voice: "Female",
+        text: "HalfLife scroll - 1000 gold"
+    },
+    ScrollSell_BoostWeapon: {
+        name: "ScrollSell_BoostWeapon",
+        sprite: "ScrollSell_BoostWeapon",
+        which: "BoostWeapon",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
         price: 500,
         voice: "Female",
-        text: "HalfLife scroll - 500 gold"
+        text: "BoostWeapon scroll - 500 gold"
+    },
+    ScrollSell_DestroyArmor: {
+        name: "ScrollSell_DestroyArmor",
+        sprite: "ScrollSell_DestroyArmor",
+        which: "DestroyArmor",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 750,
+        voice: "Female",
+        text: "DestroyArmor scroll - 750 gold"
     },
 };
 

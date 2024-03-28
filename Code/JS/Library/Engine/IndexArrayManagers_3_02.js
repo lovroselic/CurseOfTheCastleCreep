@@ -626,6 +626,7 @@ class Missile3D extends IAM {
         this.IA = null;
         this.enemyIA = enemyIA;
         this.entity_IAM = entity_IAM;
+        this.reIndexRequired = true;
     }
     draw() {
         for (let obj of this.POOL) {
@@ -676,6 +677,7 @@ class ParticleEmmission3D extends IAM {
         super();
         this.IA = null;
         this.POOL = [];
+        this.reIndexRequired = true;
     }
     manage(date) {
         this.reIndex();

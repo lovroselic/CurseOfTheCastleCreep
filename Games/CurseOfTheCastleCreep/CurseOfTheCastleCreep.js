@@ -23,7 +23,7 @@ const DEBUG = {
     SETTING: true,
     VERBOSE: true,
     _2D_display: true,
-    INVINCIBLE: true,
+    INVINCIBLE: false,
     FREE_MAGIC: false,
     LOAD: false,
     STUDY: false,
@@ -73,7 +73,7 @@ const DEBUG = {
         GAME.level = 120; //119
         GAME.gold = 1588;
         HERO.maxHealth = 271;
-        HERO.health = 271;
+        HERO.health = 1;
         HERO.maxMana = 352;
         HERO.mana = 352;
         HERO.attack = 55;
@@ -139,7 +139,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.06",
+    VERSION: "0.20.07",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -648,8 +648,10 @@ const HERO = {
     die() {
         if (DEBUG.INVINCIBLE) return;
         this.dead = true;
+        GAME.setFirstPerson();
     },
     death() {
+        console.log("HERO.death");
         this.player.pos.set_y(0.1);
         for (const L of LIGHTS3D.POOL) {
             L.lightColor = Array(0, 0, 0);
@@ -1128,7 +1130,7 @@ const GAME = {
         }
     },
     checkIfProcessesComplete() {
-        console.info("Hero died. Waiting for processes to complete");
+        //console.info("Hero died. Waiting for processes to complete", EXPLOSION3D.POOL, VANISHING3D.POOL, MISSILE3D.POOL);
         for (let iam of [EXPLOSION3D, VANISHING3D, MISSILE3D]) {
             if (iam.POOL.length !== 0) return;
         }
@@ -1370,20 +1372,21 @@ const GAME = {
         console.info("GAME WON");
         ENGINE.TIMERS.stop();
         ENGINE.GAME.ANIMATION.resetTimer();
-        setTimeout(TITLE.music, 3000);
         TITLE.setEndingCreditsScroll();
         $("#pause").prop("disabled", true);
         $("#pause").off();
         ENGINE.GAME.ANIMATION.next(GAME.inBetween);
     },
     inBetween() {
+        const delay = 4000;
         const layersToClear = ["FPS", "info"];
         layersToClear.forEach(item => ENGINE.layersToClear.add(item));
         ENGINE.clearLayerStack();
-        ENGINE.GAME.ANIMATION.next(GAME.wonRun);
+        ENGINE.GAME.ANIMATION.waitThen(GAME.wonRun, Math.floor(delay / ENGINE.INI.ANIMATION_INTERVAL));
         setTimeout(function () {
             ENGINE.clearLayer("subtitle");
-        }, 3000);
+            TITLE.music();
+        }, delay);
     },
     wonRun(lapsedTime) {
         if (ENGINE.GAME.stopAnimation) return;
@@ -1973,6 +1976,8 @@ const TITLE = {
 
         Graphics taken from (hopefully) free resources
         or drawn with PiskelApp or made with Blender.
+        Most textures and images were created by AI: 
+        StableDiffusion, Ideogram, ...
 
         Supplementary tools written in 
         JavaScript or Python or C++.

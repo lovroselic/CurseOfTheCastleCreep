@@ -7,7 +7,7 @@
 ///////////////////////Dungeon.js///////////////
 //                                            //
 //        Procedureal maze and dungeon        //
-//             generation: 3.07               //
+//             generation                     //
 //                                            //
 //    dependencies: Prototype LS, ENGINE      //
 ////////////////////////////////////////////////

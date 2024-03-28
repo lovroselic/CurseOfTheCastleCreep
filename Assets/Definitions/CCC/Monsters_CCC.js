@@ -1017,6 +1017,14 @@ const ORACLE_TYPE = {
         text: "Bravo. GhostFace is defeated. But you still need the crown to claim the throne.",
         interactionCategory: "oracle",
     },
+    Icy: {
+        name: "Icy",
+        sprite: "Icy",
+        category: 'crest',
+        voice: "Female",
+        text: "",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -1225,7 +1233,6 @@ const DOOR_TYPE = {
         element: "CUBE_SM",
         material: MATERIAL.standardShine,
     },
-
 };
 
 const COMMON_ITEM_TYPE = {
@@ -2860,6 +2867,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Shell",
         text: "Pretty shell."
     },
+    Crown: {
+        name: "Crown",
+        category: "interaction_item",
+        inventorySprite: "Crown",
+        text: "My."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3669,7 +3682,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Egg and milk, now mixed within, Your reward, dough ready to spin."
         }
     },
-
     Spacy: {
         name: "Spacy",
         sprite: "Spacy",
@@ -3826,14 +3838,24 @@ const INTERACTION_ENTITY = {
             conclusion: "I can marry GhostFace now, and you can have this coin. Use it wisely."
         }
     },
-
-
-
-
-
-
     /** undef */
+};
 
+const INTERACTOR = {
+    TheThrone: {
+        name: "TheThrone",
+        sprite: "TheThrone",
+        category: 'crest',
+        voice: "Princess",
+        wants: ["Crown"],
+        spriteChange: "PrincessOnThrone",
+        action: "",
+        text: {
+            intro: "",
+            progress: "",
+            conclusion: ""
+        }
+    }
 };
 
 const INTERACTION_SHRINE = {

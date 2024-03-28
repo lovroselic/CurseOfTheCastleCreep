@@ -45,7 +45,9 @@ const DEBUG = {
     },
     checkpoint1() {
         /**
-         * current temple not used
+         * 
+         * crown is made by #### using: goldBAr, goldBar, ....
+         * snake wants and apple gives goldBar
            
    
          * items source
@@ -61,14 +63,14 @@ const DEBUG = {
             * 115
 
         
-        * missing keys:
+        * missing keys: emerald provisionally placed
            
         * excess keys: 
             
         * mock entity delivery:
          */
 
-        GAME.level = 119;
+        GAME.level = 120; //119
         GAME.gold = 1588;
         HERO.maxHealth = 271;
         HERO.health = 271;
@@ -103,7 +105,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Pearl"];
+        let keys = ["Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -137,7 +139,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.04",
+    VERSION: "0.20.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

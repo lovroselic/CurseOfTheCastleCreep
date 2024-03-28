@@ -401,6 +401,21 @@ LoadTextures = [
     { srcName: "DarkMarble52.jpg", name: "DarkMarble52" },
     { srcName: "DarkMarble54.jpg", name: "DarkMarble54" },
 
+    { srcName: "3d wall.jpg", name: "3d wall" },
+    { srcName: "3d wall2.jpg", name: "3d wall2" },
+    { srcName: "DarkRedBricks1.png", name: "DarkRedBricks1" },
+    { srcName: "DarkRedBricks2.jpg", name: "DarkRedBricks2" },
+    { srcName: "DarkRedBricks3.jpg", name: "DarkRedBricks3" },
+    { srcName: "RedAndGreyBricks1.jpg", name: "RedAndGreyBricks1" },
+    { srcName: "SpiderWall13.jpg", name: "SpiderWall13" },
+    { srcName: "SpiderWeb10.jpg", name: "SpiderWeb10" },
+    { srcName: "SpiderWeb12.jpg", name: "SpiderWeb12" },
+    { srcName: "SpiderWeb15.jpg", name: "SpiderWeb15" },
+    { srcName: "SpiderWeb22.jpg", name: "SpiderWeb22" },
+    { srcName: "SpiderWeb31.jpg", name: "SpiderWeb31" },
+    { srcName: "SpiderWeb334.jpg", name: "SpiderWeb334" },
+    { srcName: "SpiderWeb6.jpg", name: "SpiderWeb6" },
+
     /** other */
     { srcName: "Gold1.jpg", name: "Gold" },
     { srcName: "Silver1.jpg", name: "Silver" },
@@ -661,7 +676,11 @@ LoadSprites = [
     { srcName: "GF_oracle3.jpg", name: "GF_oracle3" },
     { srcName: "GF_oracle4.jpg", name: "GF_oracle4" },
     { srcName: "VictoryOracle.jpg", name: "VictoryOracle" },
+    { srcName: "Icy.jpg", name: "Icy" },
+    { srcName: "TheThrone.jpg", name: "TheThrone" },
+    { srcName: "PrincessOnThrone.jpg", name: "PrincessOnThrone" },
     //unused
+
 
 
     //action items
@@ -743,6 +762,7 @@ LoadSprites = [
     { srcName: "PurpleTear.png", name: "PurpleTear" },
     { srcName: "UraniumBar.png", name: "UraniumBar" },
     { srcName: "Shell.png", name: "Shell" },
+    { srcName: "Crown.png", name: "Crown" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

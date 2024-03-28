@@ -2414,6 +2414,19 @@ class InteractionEntity extends WallFeature3D {
 
 }
 
+class InterActor extends InteractionEntity {
+    constructor(grid, face, type) {
+        super(grid, face, type);
+        
+    }
+    interact(GA, inventory) {
+        if (!this.ready) return;
+        this.block();
+        setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
+
+    }
+}
+
 class Trigger extends WallFeature3D {
     constructor(grid, face, sprite, action, targetGrid, GA) {
         const type = {

@@ -53,7 +53,7 @@ const INI = {
   CANVAS_RESOLUTION: 256,
 };
 const PRG = {
-  VERSION: "0.10.00",
+  VERSION: "0.11.00",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024",
   CSS: "color: #239AFF;",
@@ -545,6 +545,24 @@ const GAME = {
 
           default:
             $("#error_message").html(`Entity decal placement not supported on value: ${currentValue}`);
+            return;
+        }
+
+        break;
+        case "interactor":
+        switch (currentValue) {
+          case MAPDICT.WALL:
+            dir = GAME.getSelectedDir();
+            if (dir.same(NOWAY)) {
+              $("#error_message").html(`Interactor decal placement requires face/direction`);
+              return;
+            }
+            $MAP.map.interactors.push(Array(gridIndex, dir.toInt(), $("#interactor_type")[0].value));
+            console.log($MAP.map.interactors);
+            break;
+
+          default:
+            $("#error_message").html(`Interactor decal placement not supported on value: ${currentValue}`);
             return;
         }
 
@@ -1048,6 +1066,10 @@ const GAME = {
       ENGINE.drawToId("movable_canvas", 0, 0, SPRITE[MOVABLE_INTERACTION_OBJECT[$("#movable_type")[0].value].inventorySprite]);
     });
     $("#movable_type").trigger("change");
+
+    for (const obj in INTERACTOR) {
+      $("#interactor_type").append(`<option value="${obj}">${obj}</option>`);
+    }
 
     for (const action of TRAP_ACTION_LIST) {
       $("#trap_type").append(`<option value="${action}">${action}</option>`);

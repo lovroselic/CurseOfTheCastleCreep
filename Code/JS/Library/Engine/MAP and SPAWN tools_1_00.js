@@ -94,29 +94,14 @@ const SG_DICT = {
 
 const SPAWN_TOOLS = {
     spawn(level) {
-        //console.info("spawning level", level);
         const map = MAP_TOOLS.MAP[level].map;
         const GA = map.GA;
-        this.decals(map, GA);
-        this.lights(map, GA);
-        this.shrines(map, GA);
-        this.oracles(map, GA);
-        this.externalGates(map, GA);
-        this.keys(map, GA);
-        this.monsters(map, GA);
-        this.scrolls(map, GA);
-        this.potions(map, GA);
-        this.gold(map, GA);
-        this.skills(map, GA);
-        this.containers(map, GA);
-        this.doors(map, GA);
-        this.triggers(map, GA);
-        this.entities(map, GA);
-        this.trainers(map, GA);
-        this.objects(map, GA);
-        this.movables(map, GA);
-        this.traps(map, GA);
-        //console.info("GA after spawning level", level, "->", GA.exportMap());
+        const methods = ['decals', 'lights', 'shrines', 'oracles', 'externalGates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills',
+            'containers', 'doors', 'triggers', 'entities', 'trainers', 'objects', 'movables', 'traps', 'interactors'];
+
+        methods.forEach(method => {
+            this[method](map, GA);
+        });
     },
     decals(map, GA) {
         for (const D of map.decals) {
@@ -268,6 +253,16 @@ const SPAWN_TOOLS = {
             const face = DirectionToFace(Vector.fromInt(E[1]));
             const type = INTERACTION_SHRINE[E[2]];
             const entity = new InteractionEntity(grid, face, type);
+            INTERACTIVE_DECAL3D.add(entity);
+        }
+    },
+    interactors(map, GA) {
+        for (const E of map.interactors) {
+            const grid = GA.indexToGrid(E[0]);
+            GA.addShrine(grid);
+            const face = DirectionToFace(Vector.fromInt(E[1]));
+            const type = INTERACTOR[E[2]];
+            const entity = new InterActor(grid, face, type);
             INTERACTIVE_DECAL3D.add(entity);
         }
     },

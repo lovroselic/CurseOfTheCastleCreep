@@ -2373,10 +2373,12 @@ const MAP = {
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB5AA5BB2ABAA2BB4AA99BAA7BAA4BB2AA4BAA8BABABB2AA3BAA7BB2AA14BAA15BABAA5BAA10BAA9BB3AA31BAA27BABAA3BB13ABB2AA3BABABB3ABB5ABB3AA2BB16ABB3ABB4AA2BB5AA2BAA5BB2ABB5AA6BB7ABB3ABB2ABB2ABB20ABB16A$"}',
         wall: "SpiderWeb22",
-        floor: "ScarletTIles3",
+        floor: "DarkMarble1",
         ceil: "Wood5",
         start: '[31,7]',
+        decals: '[[157,4,"RoundGrille96","crest"],[199,4,"RoundGrille96","crest"],[262,4,"Grate1_128","crest"],[180,3,"Skull11","crest"],[176,5,"Skull11","crest"]]',
         lights: '[[114,7,"Lamp42","standardDimmed"],[116,7,"Lamp42","standardDimmed"],[176,3,"Lamp41","standardDimmed"],[180,5,"Lamp41","standardDimmed"],[238,7,"Lamp46","standardDimmed"],[244,7,"Lamp46","standardDimmed"],[2,7,"Lamp52","fire"],[18,7,"Lamp52","fire"],[422,1,"Lamp52","fire"],[438,1,"Lamp52","fire"]]',
         gates: '[[10,7,"120.1","119.2","Open"]]',
+        interactors: '[[409,1,"TheThrone"]]',
         }
 };

@@ -3849,11 +3849,11 @@ const INTERACTOR = {
         voice: "Princess",
         wants: ["Crown"],
         spriteChange: "PrincessOnThrone",
-        action: "",
+        action: "concludeGame",
         text: {
-            intro: "",
-            progress: "",
-            conclusion: ""
+            intro: "At last, my journey's path leads here, To reclaim what's mine, the throne so dear.",
+            progress: null,
+            conclusion: "Through trials fierce, my spirit's quest, Now finds repose; my weary ass shall rest."
         }
     }
 };

@@ -98,7 +98,7 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [];
+        let invItems = ["Crown"];
         //let invItems = ["Blood", "IronBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
@@ -139,7 +139,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.05",
+    VERSION: "0.20.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -1003,6 +1003,7 @@ const GAME = {
         GAME.frameDraw(lapsedTime);
         HERO.concludeAction();
         if (HERO.dead) GAME.checkIfProcessesComplete();
+        if (GAME.completed) GAME.won();
     },
     processInteraction(interaction) {
         if (interaction.text) TURN.subtitle(interaction.text);
@@ -1111,6 +1112,11 @@ const GAME = {
             case "entity_interaction":
                 TITLE.keys()
                 break;
+            case "concludeGame":
+                GAME.completed = true;
+                HERO.player.setPos(Vector3.from_Grid(new FP_Grid(10.5, 18.0), HERO.height));
+                TITLE.keys()
+                break;
             default:
                 console.error("interaction category error", interaction);
         }
@@ -1129,7 +1135,6 @@ const GAME = {
         HERO.death();
     },
     frameDraw(lapsedTime) {
-        if (GAME.completed) return;
         if (DEBUG._2D_display) {
             GAME.drawPlayer();
         }
@@ -1362,10 +1367,10 @@ const GAME = {
         ENGINE.GAME.ANIMATION.next(GAME.gameOverRun);
     },
     won() {
-        GAME.completed = true;
+        console.info("GAME WON");
         ENGINE.TIMERS.stop();
         ENGINE.GAME.ANIMATION.resetTimer();
-        TITLE.music();
+        setTimeout(TITLE.music, 3000);
         TITLE.setEndingCreditsScroll();
         $("#pause").prop("disabled", true);
         $("#pause").off();
@@ -1376,7 +1381,9 @@ const GAME = {
         layersToClear.forEach(item => ENGINE.layersToClear.add(item));
         ENGINE.clearLayerStack();
         ENGINE.GAME.ANIMATION.next(GAME.wonRun);
-        WebGL.black();
+        setTimeout(function () {
+            ENGINE.clearLayer("subtitle");
+        }, 3000);
     },
     wonRun(lapsedTime) {
         if (ENGINE.GAME.stopAnimation) return;
@@ -1944,24 +1951,18 @@ const TITLE = {
     setEndingCreditsScroll() {
         console.group("endingCredits");
         const text = this.generateEndingCredits();
-        const RD = new RenderData("Moria", 16, "#DAA520", "text");
+        const RD = new RenderData("Moria", 16, "#DAA520", "text", "#000", 1, 1, 1);
         GAME.endingCreditText = new VerticalScrollingText(text, 1, RD);
         console.groupEnd("endingCredits");
     },
     generateEndingCredits() {
         const text = `Congratulations!
-        You have completed CrawlMaster II
+        You have completed
+        The Curse of the Castle Creep
         in ${GAME.time.timeString()}.
-        You certainly had fun.
-        You may think this ending is rather
-        anticlimactic ... just like as in
-        Crawl Master I ...
-        sure ...
-        but what would you prefer?
-        picking gold, without noticing that it's over?
-        like in 'Deep Down ...'?
-        There comes a time a project has to end.
-        Somehow.
+        You are living happily ever after as The Princess.
+        Or at least until the next game.
+        Or until you get bored.
         
         CREDITS:
         all libraries and game code: Lovro Selic,
@@ -1974,11 +1975,11 @@ const TITLE = {
         or drawn with PiskelApp or made with Blender.
 
         Supplementary tools written in 
-        JavaScript or Python.
+        JavaScript or Python or C++.
           
-        Music: Laughing Skull 
+        Music: 'Time Heals Nothing' 
         written and performed by LaughingSkull, 
-        ${"\u00A9"} 2006 Lovro Selic.
+        ${"\u00A9"} 2015 Lovro Selic.
     
         thanks for sticking 'till the end.\n`;
         return text;

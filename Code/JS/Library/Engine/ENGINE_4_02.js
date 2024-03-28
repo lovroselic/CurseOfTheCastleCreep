@@ -2395,7 +2395,7 @@ const ENGINE = {
           ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
         }
       }
-      const concat_shrines = [...maze.shrines, ...maze.trainers];
+      const concat_shrines = [...maze.shrines, ...maze.trainers, ...maze.interactors];
       if (concat_shrines) {
         for (const shrine of concat_shrines) {
           let grid = GA.indexToGrid(shrine[0]);

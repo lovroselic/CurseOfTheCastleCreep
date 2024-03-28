@@ -2411,19 +2411,44 @@ class InteractionEntity extends WallFeature3D {
     storageLog() {
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
     }
-
 }
 
 class InterActor extends InteractionEntity {
     constructor(grid, face, type) {
         super(grid, face, type);
-        
     }
     interact(GA, inventory) {
         if (!this.ready) return;
         this.block();
         setTimeout(this.reset.bind(this), WebGL.INI.INTERACTION_TIMEOUT);
+        let category = "entity_interaction";
 
+        if (!this.virgin) {
+            this.checkWants(inventory.item);
+            if (this.wants.length === 0) {
+                this.setMode("conclusion");
+                this.deactivate();
+                this.storageLog();
+                this.changeTexture();
+                category = this.action;
+
+            } else if (this.wants.length < this.wantCount) {
+                this.setMode("progress");
+            }
+        }
+
+        this.virgin = false;
+        let text = this.text[this.mode];
+        this.speak(text);
+
+        return {
+            category: category,
+            text: text,
+        };
+
+    }
+    changeTexture() {
+        this.texture = WebGL.createTexture(SPRITE[this.spriteChange]);
     }
 }
 

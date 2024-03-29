@@ -1590,119 +1590,120 @@ const ENGINE = {
         try {
           const model_files = await Promise.all(arrPath.map(model => load_glTF_files(model)));
 
-          model_files.forEach(
-            async (model) => {
-              const modelName = model.scenes[0].name;
-              if (ENGINE.verbose) console.info(modelName, model);
 
-              //assume single buffer!
-              if (model.buffers.length > 1) throw new Error(`Expected single buffer, got ${model.buffers.length}`);
-              const bin_name = ENGINE.MODEL_SOURCE + model.buffers[0].uri;
-              const buffer = await loadBinaryFile(bin_name);
+          for (const model of model_files) {
+            const modelName = model.scenes[0].name;
+            if (ENGINE.verbose) console.info(modelName, model);
 
-              //textures
-              const texture_names = model.images.map((uri) => ENGINE.MODEL_SOURCE + uri.uri);
-              const images = await Promise.all(texture_names.map(img => quickLoadImage(img)));
-              const samplers = processSamplers(model.samplers);
-              markparents(model.nodes);
+            //assume single buffer!
+            if (model.buffers.length > 1) throw new Error(`Expected single buffer, got ${model.buffers.length}`);
+            const bin_name = ENGINE.MODEL_SOURCE + model.buffers[0].uri;
+            const buffer = await loadBinaryFile(bin_name);
 
-              //meshes
-              let meshes = new Array(model.meshes.length);
-              for (let [index, mesh] of model.meshes.entries()) {
-                let primitives = new Array(mesh.primitives.length);
-                for (let [index, primitive] of mesh.primitives.entries()) {
-                  const indices = processAccessor(model, buffer, primitive.indices);
-                  const positions = processAccessor(model, buffer, primitive.attributes.POSITION);
-                  const normals = processAccessor(model, buffer, primitive.attributes.NORMAL);
-                  const textcoord = processAccessor(model, buffer, primitive.attributes.TEXCOORD_0);
-                  const joints = processAccessor(model, buffer, primitive.attributes.JOINTS_0);
-                  const weights = processAccessor(model, buffer, primitive.attributes.WEIGHTS_0);
-                  primitives[index] = new $Primitive(primitive.material, indices, positions, normals, textcoord, joints, weights);
-                }
-                meshes[index] = new $Mesh(mesh.name, primitives);
+            //textures
+            const texture_names = model.images.map((uri) => ENGINE.MODEL_SOURCE + uri.uri);
+            const images = await Promise.all(texture_names.map(img => quickLoadImage(img)));
+            const samplers = processSamplers(model.samplers);
+            markparents(model.nodes);
+
+            //meshes
+            let meshes = new Array(model.meshes.length);
+            for (let [index, mesh] of model.meshes.entries()) {
+              let primitives = new Array(mesh.primitives.length);
+              for (let [index, primitive] of mesh.primitives.entries()) {
+                const indices = processAccessor(model, buffer, primitive.indices);
+                const positions = processAccessor(model, buffer, primitive.attributes.POSITION);
+                const normals = processAccessor(model, buffer, primitive.attributes.NORMAL);
+                const textcoord = processAccessor(model, buffer, primitive.attributes.TEXCOORD_0);
+                const joints = processAccessor(model, buffer, primitive.attributes.JOINTS_0);
+                const weights = processAccessor(model, buffer, primitive.attributes.WEIGHTS_0);
+                primitives[index] = new $Primitive(primitive.material, indices, positions, normals, textcoord, joints, weights);
               }
-
-              /** skins */
-              let skins = new Array(model.skins.length);
-              for (let [index, skin] of model.skins.entries()) {
-                const invBindMatrices = processAccessor(model, buffer, skin.inverseBindMatrices);
-                markNodes(model.nodes, skin.joints, index);
-                const parentNodeIndex = findParentNode(model.nodes, skin.joints[0], index);
-                const parentJoint = createJoint(model.nodes, skin.joints, invBindMatrices.data, parentNodeIndex, null);
-                applyTRS(parentJoint);
-                const jointMatrix = new Float32Array(skin.joints.length * 16);
-                makeJointMatrix(parentJoint, jointMatrix, skin.joints);
-                skins[index] = new $Armature(skin.name, skin.joints, parentJoint, jointMatrix);
-              }
-
-              /** animations */
-              let animations = new Array(model.animations.length);
-              for (let [index, animation] of model.animations.entries()) {
-                //const skinJoints = model.skins[index].joints;
-                const skinJoints = model.skins[0].joints;                       //only single skin supported
-                const paths = {};
-                for (let channel of animation.channels) {
-                  if (channel.target.node === undefined) {
-                    if (ENGINE.verbose) console.warn(modelName, "undefined channel.target.node");
-                    continue;
-                  }
-                  if (model.nodes[channel.target.node].skinIndex === undefined) {
-                    if (ENGINE.verbose) console.warn(modelName, "undefined model.nodes[channel.target.node].skinIndex");
-                    continue;
-                  }
-                  const sampler = animation.samplers[channel.sampler];
-                  if (sampler.interpolation !== "LINEAR") {
-                    if (ENGINE.verbose) console.error("only LINEAR interpolation implemented and will be used as such!!");
-                  }
-                  const timeData = processAccessor(model, buffer, sampler.input);
-                  const animData = processAccessor(model, buffer, sampler.output);
-                  const nodeIndex = channel.target.node;
-
-                  if (!paths[nodeIndex]) paths[nodeIndex] = { jointIndex: skinJoints.indexOf(nodeIndex) };
-                  if (!paths[nodeIndex][channel.target.path]) paths[nodeIndex][channel.target.path] = {};
-                  paths[nodeIndex][channel.target.path].samples = [];
-                  const dataLength = animData.data.length / timeData.data.length;
-                  const samples = paths[nodeIndex][channel.target.path].samples;
-                  for (let i = 0; i < timeData.count; i++) {
-                    const ii = i * dataLength;
-                    samples.push({
-                      time: timeData.data[i],
-                      value: animData.data.slice(ii, ii + dataLength),
-                      max: timeData.max[0],
-                    });
-                  }
-                }
-
-                //to T,R,S
-                const nodes = {};
-                for (let nodeIndex in paths) {
-                  const node = paths[nodeIndex];
-                  const LEN = node.rotation.samples.length || node.translation.samples.length;
-                  nodes[nodeIndex] = { jointIndex: node.jointIndex };
-                  nodes[nodeIndex].time = new Array(LEN);
-                  nodes[nodeIndex].max = node.rotation.samples[0].max || node.translation.samples[0].max;
-                  nodes[nodeIndex].translation = new Array(LEN);
-                  nodes[nodeIndex].rotation = new Array(LEN);
-                  nodes[nodeIndex].scale = new Array(LEN);
-                  for (let t = 0; t < LEN; t++) {
-                    nodes[nodeIndex].time[t] = node.rotation.samples[t].time;
-                    nodes[nodeIndex].translation[t] = node.translation.samples[t].value;
-                    nodes[nodeIndex].rotation[t] = node.rotation.samples[t].value;
-                    nodes[nodeIndex].scale[t] = node.scale.samples[t].value;
-                  }
-                }
-
-                animations[index] = new $Animation(animation.name, nodes);
-              }
-
-              //add to models
-              $3D_MODEL[modelName] = new $3D_Model(modelName, buffer, images, meshes, samplers, skins, animations);
-              //finished
-
-              ENGINE.LOAD.Models++;
-              ENGINE.drawLoadingGraph("Models");
+              meshes[index] = new $Mesh(mesh.name, primitives);
             }
-          );
+
+            /** skins */
+            let skins = new Array(model.skins.length);
+            for (let [index, skin] of model.skins.entries()) {
+              const invBindMatrices = processAccessor(model, buffer, skin.inverseBindMatrices);
+              markNodes(model.nodes, skin.joints, index);
+              const parentNodeIndex = findParentNode(model.nodes, skin.joints[0], index);
+              const parentJoint = createJoint(model.nodes, skin.joints, invBindMatrices.data, parentNodeIndex, null);
+              applyTRS(parentJoint);
+              const jointMatrix = new Float32Array(skin.joints.length * 16);
+              makeJointMatrix(parentJoint, jointMatrix, skin.joints);
+              skins[index] = new $Armature(skin.name, skin.joints, parentJoint, jointMatrix);
+            }
+
+            /** animations */
+            let animations = new Array(model.animations.length);
+            for (let [index, animation] of model.animations.entries()) {
+              //const skinJoints = model.skins[index].joints;
+              const skinJoints = model.skins[0].joints;                       //only single skin supported
+              const paths = {};
+              for (let channel of animation.channels) {
+                if (channel.target.node === undefined) {
+                  if (ENGINE.verbose) console.warn(modelName, "undefined channel.target.node");
+                  continue;
+                }
+                if (model.nodes[channel.target.node].skinIndex === undefined) {
+                  if (ENGINE.verbose) console.warn(modelName, "undefined model.nodes[channel.target.node].skinIndex");
+                  continue;
+                }
+                const sampler = animation.samplers[channel.sampler];
+                if (sampler.interpolation !== "LINEAR") {
+                  if (ENGINE.verbose) console.error("only LINEAR interpolation implemented and will be used as such!!");
+                }
+                const timeData = processAccessor(model, buffer, sampler.input);
+                const animData = processAccessor(model, buffer, sampler.output);
+                const nodeIndex = channel.target.node;
+
+                if (!paths[nodeIndex]) paths[nodeIndex] = { jointIndex: skinJoints.indexOf(nodeIndex) };
+                if (!paths[nodeIndex][channel.target.path]) paths[nodeIndex][channel.target.path] = {};
+                paths[nodeIndex][channel.target.path].samples = [];
+                const dataLength = animData.data.length / timeData.data.length;
+                const samples = paths[nodeIndex][channel.target.path].samples;
+                for (let i = 0; i < timeData.count; i++) {
+                  const ii = i * dataLength;
+                  samples.push({
+                    time: timeData.data[i],
+                    value: animData.data.slice(ii, ii + dataLength),
+                    max: timeData.max[0],
+                  });
+                }
+              }
+
+              //to T,R,S
+              const nodes = {};
+              for (let nodeIndex in paths) {
+                const node = paths[nodeIndex];
+                const LEN = node.rotation.samples.length || node.translation.samples.length;
+                nodes[nodeIndex] = { jointIndex: node.jointIndex };
+                nodes[nodeIndex].time = new Array(LEN);
+                nodes[nodeIndex].max = node.rotation.samples[0].max || node.translation.samples[0].max;
+                nodes[nodeIndex].translation = new Array(LEN);
+                nodes[nodeIndex].rotation = new Array(LEN);
+                nodes[nodeIndex].scale = new Array(LEN);
+                for (let t = 0; t < LEN; t++) {
+                  nodes[nodeIndex].time[t] = node.rotation.samples[t].time;
+                  nodes[nodeIndex].translation[t] = node.translation.samples[t].value;
+                  nodes[nodeIndex].rotation[t] = node.rotation.samples[t].value;
+                  nodes[nodeIndex].scale[t] = node.scale.samples[t].value;
+                }
+              }
+
+              animations[index] = new $Animation(animation.name, nodes);
+            }
+
+            //add to models
+            $3D_MODEL[modelName] = new $3D_Model(modelName, buffer, images, meshes, samplers, skins, animations);
+            //finished
+
+            ENGINE.LOAD.Models++;
+            ENGINE.drawLoadingGraph("Models");
+
+          }
+
 
           if (ENGINE.verbose) console.info("$3D_MODELs", $3D_MODEL);
 

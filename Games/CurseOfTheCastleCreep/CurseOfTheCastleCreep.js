@@ -73,7 +73,7 @@ const DEBUG = {
         GAME.level = 120; //119
         GAME.gold = 1588;
         HERO.maxHealth = 271;
-        HERO.health = 1;
+        HERO.health = 271;
         HERO.maxMana = 352;
         HERO.mana = 352;
         HERO.attack = 55;
@@ -139,7 +139,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.07",
+    VERSION: "0.20.08",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -740,10 +740,6 @@ const GAME = {
         //AI.VERBOSE = true;
         GAME.completed = false;
         GAME.level = 1;                 //start
-        //GAME.level = 2;                 //entrance
-        //GAME.level = 3;               //which way
-
-        //GAME.gold = 10000;
         GAME.gold = 0;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D", "DYNAMIC_ITEM3D"];
@@ -1117,6 +1113,7 @@ const GAME = {
             case "concludeGame":
                 GAME.completed = true;
                 HERO.player.setPos(Vector3.from_Grid(new FP_Grid(10.5, 18.0), HERO.height));
+                HERO.player.setDir(Vector3.from_2D_dir(DOWN));
                 TITLE.keys()
                 break;
             default:
@@ -1130,7 +1127,6 @@ const GAME = {
         }
     },
     checkIfProcessesComplete() {
-        //console.info("Hero died. Waiting for processes to complete", EXPLOSION3D.POOL, VANISHING3D.POOL, MISSILE3D.POOL);
         for (let iam of [EXPLOSION3D, VANISHING3D, MISSILE3D]) {
             if (iam.POOL.length !== 0) return;
         }
@@ -1375,26 +1371,27 @@ const GAME = {
         TITLE.setEndingCreditsScroll();
         $("#pause").prop("disabled", true);
         $("#pause").off();
-        ENGINE.GAME.ANIMATION.next(GAME.inBetween);
-    },
-    inBetween() {
-        const delay = 4000;
         const layersToClear = ["FPS", "info"];
         layersToClear.forEach(item => ENGINE.layersToClear.add(item));
         ENGINE.clearLayerStack();
-        ENGINE.GAME.ANIMATION.waitThen(GAME.wonRun, Math.floor(delay / ENGINE.INI.ANIMATION_INTERVAL));
+        ENGINE.GAME.ANIMATION.next(GAME.doNothing);
+        const delay = 4000;
         setTimeout(function () {
             ENGINE.clearLayer("subtitle");
             TITLE.music();
+            ENGINE.GAME.ANIMATION.next(GAME.wonRun);
         }, delay);
+    },
+    doNothing() {
+        // does nothing, obviously, but needs to exist!
     },
     wonRun(lapsedTime) {
         if (ENGINE.GAME.stopAnimation) return;
-        if (ENGINE.GAME.keymap[ENGINE.KEY.map.enter]) {
-            ENGINE.GAME.ANIMATION.waitThen(TITLE.startTitle);
-        }
         GAME.endingCreditText.process(lapsedTime);
         GAME.wonFrameDraw();
+        if (ENGINE.GAME.keymap[ENGINE.KEY.map.enter]) {
+            ENGINE.GAME.ANIMATION.next(TITLE.startTitle);
+        }
     },
     wonFrameDraw() {
         GAME.endingCreditText.draw();

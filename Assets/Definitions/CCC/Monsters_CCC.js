@@ -1022,7 +1022,7 @@ const ORACLE_TYPE = {
         sprite: "Icy",
         category: 'crest',
         voice: "Female",
-        text: "",
+        text: "I wonder how crown can be forged? Metals? Gems?",
         interactionCategory: "oracle",
     },
 };

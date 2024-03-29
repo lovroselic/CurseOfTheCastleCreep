@@ -46,21 +46,30 @@ const DEBUG = {
     checkpoint1() {
         /**
          * 
-         * crown is made by #### using: goldBAr, goldBar, ....
-         * snake wants and apple gives goldBar
+         * crown is made by Crownelle using: goldBAr, red gem, goldsteel, diamond
+         * snake wants apple (2x) and gives goldBar
+         * Demonica wants blood (2x) and gives red gem
+         * Finette wants #### gives GoldSteel
+         * Jeweliet  wants ### gives diamond
            
    
          * items source
+            * apple (2x)
+            * blood (2x)
 
         * who needs
     
          * entitites:
+            * Viperess
+            * Demonica
+            * Crownelle
+            * Finette
 
             * TODO
                 
                 
          * rooms
-            * 115
+          
 
         
         * missing keys: emerald provisionally placed
@@ -70,7 +79,7 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 120; //119
+        GAME.level = 119; //119
         GAME.gold = 1588;
         HERO.maxHealth = 271;
         HERO.health = 271;
@@ -98,14 +107,14 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Crown"];
+        let invItems = [];
         //let invItems = ["Blood", "IronBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
         //let keys = [];
-        let keys = ["Emerald"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -139,7 +148,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.20.08",
+    VERSION: "0.21.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

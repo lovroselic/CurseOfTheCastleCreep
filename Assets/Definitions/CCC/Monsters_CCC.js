@@ -2873,6 +2873,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Crown",
         text: "My."
     },
+    FishBone: {
+        name: "FishBone",
+        category: "interaction_item",
+        inventorySprite: "FishBone",
+        text: "Smelly fish skeleton."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3838,6 +3844,20 @@ const INTERACTION_ENTITY = {
             conclusion: "I can marry GhostFace now, and you can have this coin. Use it wisely."
         }
     },
+    Viperess: {
+        name: "Viperess",
+        sprite: "Viperess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Apple", "Apple"],
+        gives: "GoldBar",
+        text: {
+            intro: "From shadows deep, a hiss, a plea: Forbidden fruit, for you and me.",
+            progress: "One apple from the tree of lore, Seek its twin, one quest more.",
+            conclusion: "With apples two, the knowledge sown, A gold bar for you, to forge your crown."
+        }
+    },
+    
     /** undef */
 };
 

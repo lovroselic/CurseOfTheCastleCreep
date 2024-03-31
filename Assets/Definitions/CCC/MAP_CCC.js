@@ -2356,21 +2356,21 @@ const MAP = {
         oracles: '[[36,5,"VictoryOracle"]]',
     }
     ,
-    119 : {
+    119: {
         name: "Forge Your Future",
         sg: 0,
-        data: '{"width":"21","height":"21","map":"BB3AA8ÁAA3BAA15BAA2BAA9BAA6BAA4BAA3BAA3ÁBAA2BB2ABB3ABB2ÁAÁBAA18BB4AA9BABAA10BB3AA4ÁABB2AÁABAA3BB2AA8BAA33BABAA3BAA11BABB2AA3BAA2BB4AA2BB3AA4BAA8BB3ABABB2AA2BB8ABB10AA2BB2ABB2AA2BB4ABABB5AA3BÁBAA3BB3AA4BB7AA3BB4ABB7ABAA2BABAA2BB2ABAA2BB4ABB2ABB7ABB3AA3BABAA2BB3ABB4ABB27AB$ÁABB4ÁÁ3AA2ÁÁ3BÁÁ3AÁÁ2BÁAÁÁ2AÁÁ8A"}',
-        wall: "3d wall2",
+        data: '{"width":"21","height":"21","map":"BB3AA8ÁAA3BAA15BAA2BAA9BAA6BAA4BAA3BAA3ÁBAA2BABB3ABB3ÁAÁBAA18BB3AA10BB2AA9BB4AA3BAÁABB2AÁABAA3BB2AA8BAA34BABAA13BB2ABB2AA4BAA3BB4AA2BB2AA4BAA8BB3ABABB2AA2BB8ABB5ABB6ABB2ABB3ABB3ABB5ABAA3BÁBAA2BB3AA4BABB7AA3BABB5ABB4ABAA2BAA3BABAA2BB2ABABB4ABB4ABB5AA2BABAA2BABB7ABB26AB$ÁABB4ÁÁ3AA2ÁÁ3BÁÁ3AÁÁ2BÁAÁÁ2AÁÁ8A"}',
+        wall: "PebbleWall3",
         floor: "RedMArbleFloor3",
         ceil: "MossyWall4",
         start: '[31,7]',
         lights: '[[136,1,"WallLamp31","standardDimmed"],[136,7,"Lamp52","standardDimmed"],[87,1,"Lamp51","standardRedish"],[101,1,"Lamp51","standardRedish"],[87,7,"WallLamp17","standardDimmed"],[101,7,"WallLamp31","standardDimmed"],[364,1,"WallLamp10","standardDimmed"],[370,1,"Lamp40","standardDimmed"],[422,1,"WallLamp31","fire"],[438,1,"Lamp52","fire"]]',
-        gates: '[[10,7,"119.1","118.2","Open"],[430,1,"119.2","120.1","Emerald"]]',
+        gates: '[[10,7,"119.1","118.2","Open"],[430,1,"119.2","120.1","Emerald"],[174,7,"119.3","121.1","Down"],[250,7,"119.4","122.1","Down"],[211,7,"119.5","123.1","Down"],[226,3,"119.6","124.1","Down"]]',
         triggers: '[[269,7,"RockTriggerButton",0,304],[255,7,"RockTriggerButton",0,283],[3,7,"RockTriggerButton",0,325],[17,7,"RockTriggerButton",0,262]]',
         oracles: '[[213,1,"Icy"]]',
-        }
+    }
     ,
-    120 : {
+    120: {
         name: "The Throne Room",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB5AA5BB2ABAA2BB4AA99BAA7BAA4BB2AA4BAA8BABABB2AA3BAA7BB2AA14BAA15BABAA5BAA10BAA9BB3AA31BAA27BABAA3BB13ABB2AA3BABABB3ABB5ABB3AA2BB16ABB3ABB4AA2BB5AA2BAA5BB2ABB5AA6BB7ABB3ABB2ABB2ABB20ABB16A$"}',
@@ -2384,5 +2384,57 @@ const MAP = {
         monsters: '[[88,"Bat"],[319,"Bat"],[332,"Bat"],[100,"Bat"],[153,"RedGoldBat"],[233,"RedGoldBat"],[248,"RedGoldBat"],[161,"RedGoldBat"]]',
         gold: '[[44,"GoldBar"],[60,"GoldBar"],[380,"GoldBar"],[396,"GoldBar"]]',
         interactors: '[[409,1,"TheThrone"]]',
+    }
+    ,
+    121: {
+        name: "Dungeon Jungle",
+        sg: 0,
+        data: '{"width":"13","height":"13","map":"BB3AA6BAA3BAA2BAA4BAA5BAA2BB2AA7BAA6BAA2BABB5ABAA2BB3ABB3ABAA2BABB2AA2BB4ABAA4BB4AA2BB2AA7BAA2BB3ABAA2BABAA2BB5AA2BB4ABB11ABB15EBB3ABB5$ABB2"}',
+        wall: "3d wall2",
+        floor: "TiledFloor10",
+        ceil: "DarkMarble51",
+        start: '[149,1]',
+        decals: '[[14,7,"Forest5","texture"],[15,7,"Forest5","texture"],[16,7,"Forest5","texture"],[17,7,"Forest5","texture"],[18,7,"Forest5","texture"],[20,7,"Forest5","texture"],[21,7,"Forest5","texture"],[22,7,"Forest5","texture"],[23,7,"Forest5","texture"],[24,7,"Forest5","texture"],[41,7,"Forest5","texture"],[43,7,"Forest5","texture"],[47,7,"Forest5","texture"],[49,7,"Forest5","texture"],[75,7,"Forest5","texture"],[73,7,"Forest5","texture"],[69,7,"Forest5","texture"],[67,7,"Forest5","texture"],[93,1,"Forest5","texture"],[94,1,"Forest5","texture"],[95,1,"Forest5","texture"],[96,1,"Forest5","texture"],[98,1,"Forest5","texture"],[99,1,"Forest5","texture"],[100,1,"Forest5","texture"],[101,1,"Forest5","texture"],[102,1,"Forest5","texture"],[75,1,"Forest5","texture"],[73,1,"Forest5","texture"],[69,1,"Forest5","texture"],[67,1,"Forest5","texture"],[41,1,"Forest5","texture"],[43,1,"Forest5","texture"],[47,1,"Forest5","texture"],[49,1,"Forest5","texture"],[26,5,"Forest5","texture"],[39,5,"Forest5","texture"],[52,5,"Forest5","texture"],[65,5,"Forest5","texture"],[78,5,"Forest5","texture"],[41,5,"Forest5","texture"],[67,5,"Forest5","texture"],[43,5,"Forest5","texture"],[69,5,"Forest5","texture"],[47,5,"Forest5","texture"],[73,5,"Forest5","texture"],[49,5,"Forest5","texture"],[75,5,"Forest5","texture"],[41,3,"Forest5","texture"],[67,3,"Forest5","texture"],[43,3,"Forest5","texture"],[69,3,"Forest5","texture"],[47,3,"Forest5","texture"],[73,3,"Forest5","texture"],[49,3,"Forest5","texture"],[75,3,"Forest5","texture"],[38,3,"Forest5","texture"],[51,3,"Forest5","texture"],[64,3,"Forest5","texture"],[77,3,"Forest5","texture"],[90,3,"Forest5","texture"],[20,3,"Forest5","texture"],[18,5,"Forest5","texture"]]',
+        lights: '[[84,1,"WallLamp32","standardDimmed"],[131,5,"WallLamp33","standardDimmed"],[101,7,"WallLamp15","dimRed"]]',
+        gates: '[[162,1,"121.1","119.3","Up"]]',
+        doors: '[92]',
+        entities: '[[6,7,"Viperess"]]',
+    }
+    ,
+    122: {
+        name: "A See D Sea",
+        sg: 0,
+        data: '{"width":"15","height":"15","map":"BB5AA12BAA14BABAA5BB2AA12BAA3BB3ABB2AA7BB5ABB4AA2BAA27BAA7BAA4BAA11BAA3BB5ABAA3BB8ABB2ABB5ABB3AA4BB2AA5BAA9BB4AA2BB5ABB20A$"}',
+        wall: "MossFloor105",
+        floor: "Water12",
+        ceil: "Clouds11",
+        start: '[202,1]',
+        lights: '[[22,7,"Lamp52","standard"],[167,1,"WallLamp20","standard"],[177,1,"WallLamp17","standard"]]',
+        gates: '[[217,1,"122.1","119.4","Up"]]',
+    }
+    ,
+    123: {
+        name: "Final Hell",
+        sg: 0,
+        data: '{"width":"21","height":"21","map":"BB2AA5BAA8BAA5BABABAA5BAA2BB3ABABABABB3AA12BAA6BABAA2BABB2ABAA2BAA7BAA4BB2AA2BAA22BABAA2BB4AA2BB2ABAA2BB5ABB2ABB3AA2BABB2AA2BB2ABABABB4ABB2ABB4ABB2AA3BB3ABB10ABB3ABABB4AA2BB2AA3BB2ABB3AA3BAA3BAA3BABABB3AA2BAA3BB2AA2BAA2BABB6ABABABAA3BABAA6BB3AA2BAA3BB3ABAA3BAA3BB3AA2BB3AA2BB2ABB2ABB7ABB3ABB4AA2BABB2AA2BAA2BB2ABABB7ABB2ABB4ABB2ABB4ABB5ABB6ABB6ABB6ABB8ABB2AA2BB21ABB8A$"}',
+        wall: "SmallBricks5",
+        floor: "IrregularTiles1",
+        ceil: "Wood21",
+        start: '[409,1]',
+        decals: '[[8,7,"TombRaider107","picture"],[16,7,"TimeTunnel70","picture"],[53,7,"HalfLife60","picture"],[45,7,"RobinOfTheWood50","picture"],[49,7,"ORileysMine2","picture"],[288,7,"Sorcery31","picture"],[116,7,"Infiltrator71","picture"],[99,7,"Yennefer","picture"],[433,1,"C64","picture"],[439,1,"OilWell51","picture"],[292,1,"RobinOfTheWood88","picture"],[198,1,"Rambo3","picture"],[211,1,"Vixen50","picture"],[216,1,"HalfLife 89","picture"],[322,1,"TombRaider95","picture"],[217,7,"DonkeyKong200","picture"],[242,7,"Athanor201","picture"],[326,1,"KL102","picture"],[332,7,"PQ3","picture"],[204,1,"Popeye2","picture"],[248,1,"DigDug2","picture"],[200,1,"RobinToTheRescue1","picture"],[122,1,"Cauldron10","picture"],[131,1,"DungeonMaster70","picture"],[133,1,"Cuthbert70","picture"],[171,1,"LeisureSuitLarry73","picture"],[324,7,"SabreWulf11","picture"],[326,7,"CrawlMaster132","picture"],[297,1,"Apshai3","picture"],[46,1,"EyeOfTheBeholder110","picture"],[55,1,"BattleThroughTime2","picture"],[175,5,"AticAtac140","picture"],[126,5,"RobinToTheRescue89","picture"],[73,5,"Prince50","picture"],[412,4,"Pitfall72","picture"],[218,5,"Valhalla88","picture"],[297,5,"SP68","picture"],[315,5,"CodenameIceman2","picture"],[321,3,"ForbiddenForest91","picture"],[297,3,"TombRaider105","picture"],[125,3,"SkyrimElf","picture"],[81,3,"Tutanham11","picture"],[272,3,"Zaxxon89","picture"],[86,3,"Underwurlde111","picture"],[242,1,"JetPac50","picture"],[245,1,"ScubaDive60","picture"],[247,7,"WOW10","picture"],[394,7,"MissileCommand","picture"],[282,7,"Jawbreaker","picture"],[186,5,"Fred100","picture"],[354,5,"LodeRunner10","picture"],[371,5,"Fred101","picture"]]',
+        lights: '[[297,7,"WallLamp32","standardDimmed"],[244,7,"WallLamp20","standardDimmed"],[292,7,"Lamp41","standardDimmed"],[19,7,"WallLamp35","standardDimmed"],[1,7,"WallLamp13","standardRedish"],[132,7,"WallLamp13","standardRedish"],[51,7,"WallLamp13","standardRedish"],[55,7,"WallLamp13","standardRedish"],[122,7,"WallLamp13","standardRedish"],[198,7,"WallLamp13","standardRedish"],[213,7,"WallLamp13","standardRedish"],[371,3,"Lamp49","standard"]]',
+        gates: '[[430,1,"123.1","119.5","Up"]]',
+    }
+    ,
+    124 : {
+        name: "Jeweliet",
+        sg: 0,
+        data: '{"width":"21","height":"15","map":"BB3ABABB2AA4BABB2AA2BB2AA5BAA2BB2ÁAA2ÁÁ3BÁÁ3AA10ÁÁ2AA2ÁBB2ABABAÁÁ2AA2ÁAA5BB4AA24BAA13BABABB3AA2BABB2ABAA10BABB3AA2BAA12BABB2ABB3ABB12AA3BB2ABB3ABB7AA2BB2AA3BB4AA8BB6AA4BB4AA4BAA6BAA2BABB2ABAA6BB2AA2BB34AB$AA7ÁÁ6AA6"}',
+        wall: "DarkRedBricks3",
+        floor: "DarkMarble50",
+        ceil: "SpiderWeb10",
+        start: '[43,5]',
+        lights: '[[48,3,"Lamp49","standardDimmed"],[70,5,"Lamp49","standardDimmed"],[237,3,"WallLamp32","standardDimmed"],[62,3,"Lamp51","dimRed"],[146,3,"Lamp51","dimRed"],[230,3,"Lamp51","dimRed"],[293,3,"Lamp51","dimRed"],[265,3,"Lamp49","standardRedish"],[111,7,"WallLamp33","standardRedish"],[12,7,"WallLamp","yellowgreen"],[202,3,"Lamp46","gold"]]',
+        gates: '[[42,5,"124.1","119.6","Up"]]',
         }
 };

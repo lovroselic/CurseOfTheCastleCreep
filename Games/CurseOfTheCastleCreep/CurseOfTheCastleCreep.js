@@ -49,13 +49,16 @@ const DEBUG = {
          * crown is made by Crownelle using: goldBAr, red gem, goldsteel, diamond
          * snake wants apple (2x) and gives goldBar
          * Demonica wants blood (2x) and gives red gem
-         * Finette wants #### gives GoldSteel
-         * Jeweliet  wants ### gives diamond
+         * Finette wants ancestors gives GoldSteel
+         * Jeweliet  wants blue an dgreen gem gives diamond
            
    
          * items source
             * apple (2x)
             * blood (2x)
+            * fishbone (2x)
+            * green gem
+            * blue gem
 
         * who needs
     
@@ -107,8 +110,8 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = [];
-        //let invItems = ["Blood", "IronBar"];
+        //let invItems = [];
+        let invItems = ["Blood", "Blood", "Apple", "Apple", "Crown"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -148,7 +151,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.21.00",
+    VERSION: "0.21.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -1383,16 +1386,13 @@ const GAME = {
         const layersToClear = ["FPS", "info"];
         layersToClear.forEach(item => ENGINE.layersToClear.add(item));
         ENGINE.clearLayerStack();
-        ENGINE.GAME.ANIMATION.next(GAME.doNothing);
+        ENGINE.GAME.ANIMATION.stop();
         const delay = 4000;
         setTimeout(function () {
             ENGINE.clearLayer("subtitle");
             TITLE.music();
             ENGINE.GAME.ANIMATION.next(GAME.wonRun);
         }, delay);
-    },
-    doNothing() {
-        // does nothing, obviously, but needs to exist!
     },
     wonRun(lapsedTime) {
         if (ENGINE.GAME.stopAnimation) return;

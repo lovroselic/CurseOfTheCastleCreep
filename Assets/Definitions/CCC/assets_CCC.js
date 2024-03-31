@@ -679,6 +679,7 @@ LoadSprites = [
     { srcName: "Icy.jpg", name: "Icy" },
     { srcName: "TheThrone.jpg", name: "TheThrone" },
     { srcName: "PrincessOnThrone.jpg", name: "PrincessOnThrone" },
+    { srcName: "Viperess.jpg", name: "Viperess" },
     //unused
 
 
@@ -763,6 +764,7 @@ LoadSprites = [
     { srcName: "UraniumBar.png", name: "UraniumBar" },
     { srcName: "Shell.png", name: "Shell" },
     { srcName: "Crown.png", name: "Crown" },
+    { srcName: "FishBone.png", name: "FishBone" },
 
     //action movables
     { srcName: "Spider.png", name: "Spider" },

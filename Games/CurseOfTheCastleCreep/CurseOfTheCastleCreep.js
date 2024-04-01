@@ -111,7 +111,7 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
         //let invItems = [];
-        let invItems = ["Blood", "Blood", "Apple", "Apple", "Crown"];
+        let invItems = ["Blood", "Blood", "Apple", "Apple", "Crown", "RedGem", "GoldBar", "Diamond", "GoldSteel"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -151,7 +151,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.21.01",
+    VERSION: "0.21.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

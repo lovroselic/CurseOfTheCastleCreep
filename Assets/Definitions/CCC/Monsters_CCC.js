@@ -2879,6 +2879,11 @@ const INTERACTION_ITEM = {
         inventorySprite: "FishBone",
         text: "Smelly fish skeleton."
     },
+    RedGem: {
+        name: "RedGem",
+        category: "interaction_item",
+        inventorySprite: "RedGem",
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -3857,6 +3862,34 @@ const INTERACTION_ENTITY = {
             conclusion: "With apples two, the knowledge sown, A gold bar for you, to forge your crown."
         }
     },
+    DeMonica: {
+        name: "DeMonica",
+        sprite: "DeMonica",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Blood", "Blood"],
+        gives: "RedGem",
+        text: {
+            intro: "In the night's embrace, a pact of shade, Two vials of life, for my trade.",
+            progress: "One vial secured, shadows stir, Another awaits, for magic to occur.",
+            conclusion: "Blood's essence bound, a gem so red, For your crown, by darkness wed."
+        }
+    },
+    Crownelle: {
+        name: "Crownelle",
+        sprite: "Crownelle",
+        category: 'crest',
+        voice: "Female",
+        wants: ["RedGem", "GoldBar", "Diamond", "GoldSteel"],
+        gives: "Crown",
+        text: {
+            intro: "In realms of gold and gemstone bright, A crown I'll forge, to claim your right.",
+            progress: "Materials gather, the crown takes shape, Your destiny, no longer draped in drape.",
+            conclusion: "With gem, gold, and steel now bound, A princess's crown, in splendor, found."
+        }
+    },
+    
+    
     
     /** undef */
 };

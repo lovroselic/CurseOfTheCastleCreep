@@ -1,4 +1,4 @@
-/* LS CSS v0.3.0 */
+/* LS CSS v0.3.1 */
 
 @charset "utf-8";
 
@@ -67,7 +67,7 @@ body {
             #212121 80%,
             #202020 100%);
 
-    background-image: url('/Images/CloudyBackground.webp') !important;
+    background-image: url('/Images/DarkCloudyBackground3.webp') !important;
     background-repeat: repeat;
     font-family: "Lora", serif !important;
 }

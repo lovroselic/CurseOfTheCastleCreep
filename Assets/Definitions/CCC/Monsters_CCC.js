@@ -3888,6 +3888,32 @@ const INTERACTION_ENTITY = {
             conclusion: "With gem, gold, and steel now bound, A princess's crown, in splendor, found."
         }
     },
+    Finette: {
+        name: "Finette",
+        sprite: "Finette",
+        category: 'crest',
+        voice: "Female",
+        wants: ["FishBone", "FishBone"],
+        gives: "GoldSteel",
+        text: {
+            intro: "From ocean's depths, a plea for respect, Ancestors' remains, I wish to collect.",
+            progress: "One relic returned to the sea's embrace, Seek another, to complete the grace.",
+            conclusion: "Ancestors honored, their rest now serene, For you, GoldSteel, from the deep, unseen."
+        }
+    },
+    Jeweliet: {
+        name: "Jeweliet",
+        sprite: "Jeweliet",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GreenGem", "BlueGem"],
+        gives: "Diamond",
+        text: {
+            intro: "Amidst the sparkle, I yearn for hue, Green and blue, a trade for you.",
+            progress: "A gem of color, a start so bright, Yet more I seek, to my delight.",
+            conclusion: "Green and blue, now mine to hold, For you, a diamond, clear and bold."
+        }
+    },
     
     
     

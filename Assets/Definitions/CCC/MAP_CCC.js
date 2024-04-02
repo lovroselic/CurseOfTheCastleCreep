@@ -2391,7 +2391,7 @@ const MAP = {
         interactors: '[[409,1,"TheThrone"]]',
     }
     ,
-    121: {
+    121 : {
         name: "Dungeon Jungle",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB3AA6BAA3BAA2BAA4BAA5BAA2BB2AA7BAA6BAA2BABB5ABAA2BB3ABB3ABAA2BABB2AA2BB4ABAA4BB4AA2BB2AA7BAA2BB3ABAA2BABAA2BB5AA2BB4ABB11ABB15EBB3ABB5$ABB2"}',
@@ -2399,14 +2399,17 @@ const MAP = {
         floor: "TiledFloor10",
         ceil: "DarkMarble51",
         start: '[149,1]',
-        decals: '[[14,7,"Forest5","texture"],[15,7,"Forest5","texture"],[16,7,"Forest5","texture"],[17,7,"Forest5","texture"],[18,7,"Forest5","texture"],[20,7,"Forest5","texture"],[21,7,"Forest5","texture"],[22,7,"Forest5","texture"],[23,7,"Forest5","texture"],[24,7,"Forest5","texture"],[41,7,"Forest5","texture"],[43,7,"Forest5","texture"],[47,7,"Forest5","texture"],[49,7,"Forest5","texture"],[75,7,"Forest5","texture"],[73,7,"Forest5","texture"],[69,7,"Forest5","texture"],[67,7,"Forest5","texture"],[93,1,"Forest5","texture"],[94,1,"Forest5","texture"],[95,1,"Forest5","texture"],[96,1,"Forest5","texture"],[98,1,"Forest5","texture"],[99,1,"Forest5","texture"],[100,1,"Forest5","texture"],[101,1,"Forest5","texture"],[102,1,"Forest5","texture"],[75,1,"Forest5","texture"],[73,1,"Forest5","texture"],[69,1,"Forest5","texture"],[67,1,"Forest5","texture"],[41,1,"Forest5","texture"],[43,1,"Forest5","texture"],[47,1,"Forest5","texture"],[49,1,"Forest5","texture"],[26,5,"Forest5","texture"],[39,5,"Forest5","texture"],[52,5,"Forest5","texture"],[65,5,"Forest5","texture"],[78,5,"Forest5","texture"],[41,5,"Forest5","texture"],[67,5,"Forest5","texture"],[43,5,"Forest5","texture"],[69,5,"Forest5","texture"],[47,5,"Forest5","texture"],[73,5,"Forest5","texture"],[49,5,"Forest5","texture"],[75,5,"Forest5","texture"],[41,3,"Forest5","texture"],[67,3,"Forest5","texture"],[43,3,"Forest5","texture"],[69,3,"Forest5","texture"],[47,3,"Forest5","texture"],[73,3,"Forest5","texture"],[49,3,"Forest5","texture"],[75,3,"Forest5","texture"],[38,3,"Forest5","texture"],[51,3,"Forest5","texture"],[64,3,"Forest5","texture"],[77,3,"Forest5","texture"],[90,3,"Forest5","texture"],[20,3,"Forest5","texture"],[18,5,"Forest5","texture"]]',
+        decals: '[[14,7,"Forest5","texture"],[15,7,"Forest5","texture"],[16,7,"Forest5","texture"],[17,7,"Forest5","texture"],[18,7,"Forest5","texture"],[20,7,"Forest5","texture"],[21,7,"Forest5","texture"],[22,7,"Forest5","texture"],[23,7,"Forest5","texture"],[24,7,"Forest5","texture"],[41,7,"Forest5","texture"],[43,7,"Forest5","texture"],[47,7,"Forest5","texture"],[49,7,"Forest5","texture"],[75,7,"Forest5","texture"],[73,7,"Forest5","texture"],[69,7,"Forest5","texture"],[67,7,"Forest5","texture"],[93,1,"Forest5","texture"],[94,1,"Forest5","texture"],[95,1,"Forest5","texture"],[96,1,"Forest5","texture"],[98,1,"Forest5","texture"],[99,1,"Forest5","texture"],[100,1,"Forest5","texture"],[101,1,"Forest5","texture"],[102,1,"Forest5","texture"],[75,1,"Forest5","texture"],[73,1,"Forest5","texture"],[69,1,"Forest5","texture"],[67,1,"Forest5","texture"],[41,1,"Forest5","texture"],[43,1,"Forest5","texture"],[47,1,"Forest5","texture"],[49,1,"Forest5","texture"],[26,5,"Forest5","texture"],[39,5,"Forest5","texture"],[52,5,"Forest5","texture"],[65,5,"Forest5","texture"],[78,5,"Forest5","texture"],[41,5,"Forest5","texture"],[67,5,"Forest5","texture"],[43,5,"Forest5","texture"],[69,5,"Forest5","texture"],[47,5,"Forest5","texture"],[73,5,"Forest5","texture"],[49,5,"Forest5","texture"],[75,5,"Forest5","texture"],[41,3,"Forest5","texture"],[67,3,"Forest5","texture"],[43,3,"Forest5","texture"],[69,3,"Forest5","texture"],[47,3,"Forest5","texture"],[73,3,"Forest5","texture"],[49,3,"Forest5","texture"],[75,3,"Forest5","texture"],[38,3,"Forest5","texture"],[51,3,"Forest5","texture"],[64,3,"Forest5","texture"],[77,3,"Forest5","texture"],[90,3,"Forest5","texture"],[20,3,"Forest5","texture"],[18,5,"Forest5","texture"],[143,5,"Apshai10","picture"],[109,5,"Tutanham11","picture"],[116,3,"DungeonMaster201","picture"],[155,3,"Pitfall88","picture"],[95,7,"ManicMiner63","picture"],[99,7,"Frogger2","picture"],[164,1,"RadarRatRace20","picture"],[166,1,"TombRaider107","picture"],[97,7,"Invasion","picture"],[106,7,"SpikesPeak1","picture"],[139,3,"SabreWulf50","picture"]]',
         lights: '[[84,1,"WallLamp32","standardDimmed"],[131,5,"WallLamp33","standardDimmed"],[101,7,"WallLamp15","dimRed"]]',
         gates: '[[162,1,"121.1","119.3","Up"]]',
+        monsters: '[[105,"BlueSkeleton"],[154,"BlueSkeleton"],[29,"GreenSkeleton"],[35,"GreenSkeleton"]]',
+        skills: '[[108,"Shield"]]',
         doors: '[92]',
         entities: '[[6,7,"Viperess"]]',
-    }
+        objects: '[[48,"GreenGem"],[42,"Blood"]]',
+        }
     ,
-    122: {
+    122 : {
         name: "A See D Sea",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB5AA12BAA14BABAA5BB2AA12BAA3BB3ABB2AA7BB5ABB4AA2BAA27BAA7BAA4BAA11BAA3BB5ABAA3BB8ABB2ABB5ABB3AA4BB2AA5BAA9BB4AA2BB5ABB20A$"}',
@@ -2414,9 +2417,17 @@ const MAP = {
         floor: "Water12",
         ceil: "Clouds11",
         start: '[202,1]',
+        decals: '[[3,7,"KQ100","picture"],[11,7,"Ultima50","picture"],[140,7,"FireAnt70","picture"],[144,7,"Prince4","picture"],[167,7,"SVS102","picture"],[177,7,"Montezumas revenge2","picture"],[213,1,"UW10","picture"],[221,1,"SP62","picture"],[200,1,"SammyLightfoot2","picture"],[204,1,"LeisureSuitLarry60","picture"],[65,1,"AticAtac202","picture"],[69,1,"Galaga70","picture"],[45,5,"BrianBloodaxe71","picture"],[167,5,"LeisureSuitLarry94","picture"],[177,5,"Tutankham102","picture"],[135,5,"SVS132","picture"],[59,3,"LeisureSuitLarry89","picture"],[177,3,"TheHobbit13","picture"],[167,3,"TheHobbit89","picture"],[149,3,"Pitfall27","picture"],[94,3,"ManicMiner64","picture"],[100,5,"SVS110","picture"]]',
         lights: '[[22,7,"Lamp52","standard"],[167,1,"WallLamp20","standard"],[177,1,"WallLamp17","standard"]]',
         gates: '[[217,1,"122.1","119.4","Up"]]',
-    }
+        monsters: '[[50,"Drax"],[54,"Drax"],[97,"GreenSkeleton"],[92,"BlueSkeleton"],[102,"BlueSkeleton"]]',
+        scrolls: '[[175,11],[169,9],[82,8],[16,1],[57,5]]',
+        gold: '[[32,"GreenGem"],[147,"RedGem"],[52,"GoldBar"],[137,"GoldBar"]]',
+        skills: '[[23,"Mana"]]',
+        containers: '[[157,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[20,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[28,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[80,"Wardrobe","GOLD_ITEM_TYPE.GoldBar",7],[84,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[122,"Crate","GOLD_ITEM_TYPE.SilverBar",4],[117,"Crate","GOLD_ITEM_TYPE.SilverBar",4]]',
+        entities: '[[142,1,"Finette"]]',
+        objects: '[[42,"BlueGem"],[166,"Apple"]]',
+        }
     ,
     123 : {
         name: "Final Hell",

@@ -54,11 +54,11 @@ const DEBUG = {
            
    
          * items source
-            * apple (2x)
-            * blood (2x)
-            * fishbone (2x)
-            * green gem
-            * blue gem
+            * apple (2x): 122
+            * blood (2x): 121,
+            * fishbone (2x): 
+            * green gem: 121,
+            * blue gem: 122
 
         * who needs
     
@@ -72,6 +72,10 @@ const DEBUG = {
                 
                 
          * rooms
+                * 119 DONE
+                * 121 DONE
+                * 122 DONE
+            * 123
           
 
         
@@ -82,27 +86,27 @@ const DEBUG = {
         * mock entity delivery:
          */
 
-        GAME.level = 119; //119
-        GAME.gold = 1588;
+        GAME.level = 123;  //119
+        GAME.gold = 43;
         HERO.maxHealth = 271;
-        HERO.health = 271;
-        HERO.maxMana = 352;
-        HERO.mana = 352;
+        HERO.health = 226;
+        HERO.maxMana = 357;
+        HERO.mana = 357;
         HERO.attack = 55;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 53;
+        HERO.defense = 55;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 54;
+        HERO.magic = 55;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 789;
-        HERO.defenseExp = 275;
-        HERO.magicExp = 9675;
+        HERO.attackExp = 1931;
+        HERO.defenseExp = 500;
+        HERO.magicExp = 11363;
         HERO.attackExpGoal = 13013;
         HERO.defenseExpGoal = 2570;
         HERO.magicExpGoal = 19520;
-        HERO.inventory.potion.red = 0;
+        HERO.inventory.potion.red = 1;
         HERO.inventory.potion.blue = 0;
-        let scrolls = ["DrainMana", "DrainMana", "DrainMana", "DrainMana"];
+        let scrolls = ["DrainMana", "DrainMana", "DrainMana", "MagicBoost", "HalfLife", "BoostArmor", "Invisibility"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -110,8 +114,8 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        //let invItems = [];
-        let invItems = ["Blood", "Blood", "Apple", "Apple", "Crown", "RedGem", "GoldBar", "Diamond", "GoldSteel"];
+        let invItems = ["Blood", "GreenGem", "Apple", "BlueGem" ];
+        //let invItems = ["Blood", "Blood", "Apple", "Apple", "Crown", "RedGem", "GoldBar", "Diamond", "GoldSteel"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
@@ -151,7 +155,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.21.02",
+    VERSION: "0.21.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

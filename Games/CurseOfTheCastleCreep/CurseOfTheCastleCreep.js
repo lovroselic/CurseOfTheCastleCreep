@@ -155,7 +155,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.21.04",
+    VERSION: "0.21.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

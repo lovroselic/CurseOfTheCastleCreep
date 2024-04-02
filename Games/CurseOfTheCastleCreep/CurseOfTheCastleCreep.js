@@ -54,9 +54,9 @@ const DEBUG = {
            
    
          * items source
-            * apple (2x): 122
+            * apple (2x): 122, 123
             * blood (2x): 121,
-            * fishbone (2x): 
+            * fishbone (2x): 123, 
             * green gem: 121,
             * blue gem: 122
 
@@ -155,7 +155,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.21.03",
+    VERSION: "0.21.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

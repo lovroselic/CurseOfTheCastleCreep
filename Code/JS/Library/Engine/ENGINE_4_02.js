@@ -77,6 +77,9 @@ const ENGINE = {
   readyCall: null,
   start: null,
   SOURCE: "/Assets/Graphics/",
+  TEXTURE_SOURCE: "/Assets/Graphics/Textures/",
+  SPRITE_SOURCE: "/Assets/Graphics/Sprites/",
+  SHEET_SQUENCE_SOURCE: "/Assets/Graphics/SheetSequences/",
   WASM_SOURCE: "/Assets/WASM/",
   AUDIO_SOURCE: "/Assets/Sounds/",
   FONT_SOURCE: "/Assets/Fonts/",
@@ -1294,7 +1297,7 @@ const ENGINE = {
           ENGINE.LOAD.HMTextures = arrPath.length;
           if (ENGINE.LOAD.HMTextures) appendCanvas("Textures");
 
-          const obj = await Promise.all(arrPath.map((img) => loadImage(img, "Textures")));
+          const obj = await Promise.all(arrPath.map((img) => loadImage(img, "Textures", ENGINE.TEXTURE_SOURCE)));
           obj.forEach(function (el) {
             ENGINE.imgToTexture(el);
           });
@@ -1312,7 +1315,7 @@ const ENGINE = {
           console.log(`%c ...loading ${arrPath.length} sprites`, ENGINE.CSS);
           ENGINE.LOAD.HMSprites = arrPath.length;
           if (ENGINE.LOAD.HMSprites) appendCanvas("Sprites");
-          const obj = await Promise.all(arrPath.map((img) => loadImage(img, "Sprites")));
+          const obj = await Promise.all(arrPath.map((img) => loadImage(img, "Sprites", ENGINE.SPRITE_SOURCE)));
           obj.forEach(function (el) {
             ENGINE.imgToSprite(el);
           });
@@ -1423,7 +1426,7 @@ const ENGINE = {
 
           ENGINE.LOAD.HMSheetSequences = toLoad.length;
           if (ENGINE.LOAD.HMSheetSequences) appendCanvas("SheetSequences");
-          const sequences = await Promise.all(toLoad.map((img) => loadImage(img, "SheetSequences")));
+          const sequences = await Promise.all(toLoad.map((img) => loadImage(img, "SheetSequences", ENGINE.SHEET_SQUENCE_SOURCE)));
           sequences.forEach((el) => ENGINE.seqToSprite(el));
           return true;
         } catch (error) {
@@ -1867,6 +1870,7 @@ const ENGINE = {
         }
 
         const src = dir + srcName;
+        //console.log("load image path:", src);
 
         try {
           const img = new Image();

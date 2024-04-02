@@ -3979,7 +3979,7 @@ const INTERACTION_SHRINE = {
     },
     Sorceress: {
         name: "Sorceress",
-        sprite: "Sorceress",
+        sprite: "Sorceress2",
         category: 'crest',
         voice: "Female",
         wants: ["GoldCoin"],

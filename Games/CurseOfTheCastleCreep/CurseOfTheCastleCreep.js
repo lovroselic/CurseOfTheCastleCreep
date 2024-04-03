@@ -19,8 +19,8 @@ known bugs:
 
 const DEBUG = {
     FPS: true,
-    BUTTONS: true,
-    SETTING: true,
+    BUTTONS: false,
+    SETTING: false,
     VERBOSE: true,
     _2D_display: true,
     INVINCIBLE: false,
@@ -118,7 +118,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.80.00",
+    VERSION: "0.80.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -162,6 +162,9 @@ const PRG = {
             $("#about").toggle(400);
         });
 
+        $("#toggleVersion").click(function () {
+            $("#debug").toggle(400);
+        });
 
         //boxes
         ENGINE.gameWIDTH = 800;

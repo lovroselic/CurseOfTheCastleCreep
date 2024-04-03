@@ -14,11 +14,11 @@
 console.log("%cMonsters for CCC loaded.", "color: #888");
 
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald", "Purple", "Pearl"];
-
 const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald", "Purple", "Pearl"];
 const KEY_TEXTURES = ["Gold", "Silver", "RedMetal", "GreenMetal", "BlueMetal", "EmeraldTexture", "PurpleMetal", "PearlTexture"];
 const KEY_MATERIAL = ["gold", "silver", "redShine", "greenShine", "blueShine", "standard", "standard", "whiteShine"];
 const KEY_TYPE = {};
+
 for (let [index, key] of KEY_TYPES.entries()) {
     KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
 }
@@ -3914,10 +3914,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Green and blue, now mine to hold, For you, a diamond, clear and bold."
         }
     },
-    
-    
-    
-    /** undef */
 };
 
 const INTERACTOR = {
@@ -4146,10 +4142,6 @@ const INTERACTION_SHRINE = {
             conclusion: "The coin's glow fades, but in its wake, A surge of magic, yours to take."
         }
     },
-
-
-
-
 };
 
 //container content
@@ -4161,9 +4153,6 @@ const TRAP_ACTIONS = {
     Spawn: listObjectKeys(MONSTER_TYPE)
 };
 const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
-
-
-
 const POTION_TYPES = ["Red", "Blue"];
 const POTION_TEXTURES = ["RedLiquid", "BlueLiquid"];
 const POTION_MATERIAL = ["redShine", "blueShine"];

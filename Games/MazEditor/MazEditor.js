@@ -7,6 +7,7 @@
 /*
  forked from: LevelEditor for Deep Down Into Darkness, v0.18.0
  ported to gen 3 ENGINE, GRID
+ported to gen 4 ENGINE, GRID
  forked from MazeMaster 1.03
       
  to do:
@@ -106,15 +107,12 @@ const PRG = {
     GAME.start();
   }
 };
-/**
- * most of HERo is redundant - clean!
- */
+
 const HERO = {};
 
 const GAME = {
   start() {
     $MAP.properties = MAP_TOOLS.properties;
-    console.warn("$MAP.properties", $MAP.properties);
     $("#bottom")[0].scrollIntoView();
     ENGINE.topCanvas = ENGINE.getCanvasName("ROOM");
     $(ENGINE.topCanvas).on("click", { layer: ENGINE.topCanvas }, GAME.mouseClick);
@@ -124,7 +122,6 @@ const GAME = {
     GAME.levelStart();
   },
   levelStart() {
-    console.log("starting level", GAME.level);
     GAME.initLevel(GAME.level);
     GAME.setFirstPerson();
     WebGL.renderScene();
@@ -313,7 +310,6 @@ const GAME = {
         $("#error_message").html("All is fine: grid cleared");
         break;
       case "start":
-        //console.log("start, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             dir = GAME.getSelectedDir();
@@ -345,7 +341,6 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
       case "monster":
-        //console.log("monster, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let monsterValue = $("#monster_type")[0].value;
@@ -406,19 +401,16 @@ const GAME = {
         }
         break;
       case 'container':
-        console.log("container, value", currentValue, "grid", grid);
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let containerValue = $("#container_type")[0].value;
             let itemValue = $("#content_type")[0].value;
             let orientationType = $("input[name=orientation]:checked").val();
-            console.log("orientationType", orientationType);
             if (orientationType === "FIXED") {
               dir = GAME.getSelectedDir();
               dirIndex = dir.toInt();
             } else dirIndex = null;
             $MAP.map.containers.push(Array(gridIndex, containerValue, itemValue, dirIndex));
-            console.log("$MAP.map.containers", $MAP.map.containers);
             break;
           default:
             $("#error_message").html(`Container placement not supported on value: ${currentValue}`);
@@ -514,7 +506,6 @@ const GAME = {
 
           case 2:
             const expectedValue = MAPDICT[$("#trigger_actions")[0].value.split("->")[0]];
-            console.log(".expectedValue", expectedValue, "currentValue", currentValue);
             if (currentValue !== expectedValue) {
               $("#error_message").html(`Trigger target doesn't match selected grid value!!`);
               GAME.stack.triggerCount--;
@@ -629,7 +620,6 @@ const GAME = {
 
           case 2:
             const expectedValue = MAPDICT.EMPTY;
-            console.log(".expectedValue", expectedValue, "currentValue", currentValue);
             if (currentValue !== expectedValue) {
               $("#error_message").html(`Trap target doesn't match selected grid value!!`);
               GAME.stack.triggerCount--;
@@ -638,7 +628,7 @@ const GAME = {
 
             //success
             GAME.stack.elementBuilt.push(gridIndex);
-            console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.trapCount", GAME.stack.trapCount);
+            //console.log("GAME.stack.elementBuilt", GAME.stack.elementBuilt, "GAME.stack.trapCount", GAME.stack.trapCount);
             $MAP.map.traps.push(GAME.stack.elementBuilt.clone());
             GAME.stack.elementBuilt = null;
             $("#error_message").html(`Trap part 2 OK`);
@@ -647,8 +637,8 @@ const GAME = {
 
         break;
     }
-    GAME.stack.previousRadio = radio;
 
+    GAME.stack.previousRadio = radio;
     GAME.render();
   },
   stack: {
@@ -677,7 +667,6 @@ const GAME = {
         if (element[1] === dirIndex) {
           let remove = array.splice(index, 1);
           $("#error_message").html("removed duplicate decal");
-          console.warn("removed duplicate decal", remove);
           return;
         }
       }
@@ -706,7 +695,6 @@ const GAME = {
   },
   getSelectedDecal() {
     const radio = $("#selector2 input[name=decalusage]:checked").val();
-    console.warn("radio", radio);
     switch (radio) {
       case "picture":
         return [$("#picture_decal")[0].value, radio];
@@ -1184,6 +1172,7 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     $("#WEBGL_canvas_0").css("top", `${ENGINE.gameHEIGHT + 16}px`)
   },
 };
+
 $(function () {
   PRG.INIT();
   PRG.setup();

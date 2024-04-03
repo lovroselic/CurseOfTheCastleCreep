@@ -46,67 +46,30 @@ const DEBUG = {
     checkpoint1() {
         /**
          * 
-         * crown is made by Crownelle using: goldBAr, red gem, goldsteel, diamond
-         * snake wants apple (2x) and gives goldBar
-         * Demonica wants blood (2x) and gives red gem
-         * Finette wants ancestors gives GoldSteel
-         * Jeweliet  wants blue an dgreen gem gives diamond
-           
-   
-         * items source
-            * apple (2x): 122, 123
-            * blood (2x): 121,
-            * fishbone (2x): 123, 
-            * green gem: 121,
-            * blue gem: 122
 
-        * who needs
-    
-         * entitites:
-            * Viperess
-            * Demonica
-            * Crownelle
-            * Finette
-
-            * TODO
-                
-                
-         * rooms
-                * 119 DONE
-                * 121 DONE
-                * 122 DONE
-            * 123
-          
-
-        
-        * missing keys: emerald provisionally placed
-           
-        * excess keys: 
-            
-        * mock entity delivery:
          */
 
-        GAME.level = 123;  //119
-        GAME.gold = 43;
-        HERO.maxHealth = 271;
-        HERO.health = 226;
-        HERO.maxMana = 357;
-        HERO.mana = 357;
-        HERO.attack = 55;
+        GAME.level = 1;
+        GAME.gold = 1000000;
+        HERO.maxHealth = 1000;
+        HERO.health = 1000;
+        HERO.maxMana = 1000;
+        HERO.mana = 1000;
+        HERO.attack = 99;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 55;
+        HERO.defense = 99;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 55;
+        HERO.magic = 99;
         HERO.reference_magic = HERO.magic;
-        HERO.attackExp = 1931;
-        HERO.defenseExp = 500;
-        HERO.magicExp = 11363;
-        HERO.attackExpGoal = 13013;
-        HERO.defenseExpGoal = 2570;
-        HERO.magicExpGoal = 19520;
-        HERO.inventory.potion.red = 1;
-        HERO.inventory.potion.blue = 0;
-        let scrolls = ["DrainMana", "DrainMana", "DrainMana", "MagicBoost", "HalfLife", "BoostArmor", "Invisibility"];
+        HERO.attackExp = 0;
+        HERO.defenseExp = 0;
+        HERO.magicExp = 0;
+        //HERO.attackExpGoal = 13013;
+        //HERO.defenseExpGoal = 2570;
+        //HERO.magicExpGoal = 19520;
+        HERO.inventory.potion.red = 99;
+        HERO.inventory.potion.blue = 99;
+        let scrolls = [];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -114,13 +77,13 @@ const DEBUG = {
         }
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
-        let invItems = ["Blood", "GreenGem", "Apple", "BlueGem" ];
-        //let invItems = ["Blood", "Blood", "Apple", "Apple", "Crown", "RedGem", "GoldBar", "Diamond", "GoldSteel"];
+
+        let invItems = [];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
-        //let keys = [];
+
         let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -155,7 +118,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.21.05",
+    VERSION: "0.80.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

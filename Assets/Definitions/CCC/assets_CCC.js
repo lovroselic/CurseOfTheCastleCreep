@@ -388,7 +388,7 @@ LoadTextures = [
     { srcName: "Wall/ThatchFloor.jpg", name: "ThatchFloor" },
     { srcName: "Wall/Tile.jpg", name: "Tile" },
     { srcName: "Wall/TiledFloor10.jpg", name: "TiledFloor10" },
-    { srcName: "Wall/TiledFloor5.jpg", name: "TiledFloor5" },
+    { srcName: "Wall/TiledFloor5.jpg", name: "TiledFloor" },
     { srcName: "Wall/TinyBricks.jpg", name: "TinyBricks" },
     { srcName: "Wall/TlakFloor3.jpg", name: "TlakFloor3" },
     { srcName: "Wall/Wall10.jpg", name: "Wall10" },
@@ -465,6 +465,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/TreasureChest.JPG", name: "TreasureChest" },
     { srcName: "ObjectTextures/Wardrobe.jpg", name: "Wardrobe" },
     { srcName: "ObjectTextures/Wood1.jpg", name: "Wood1" },
+    { srcName: "ObjectTextures/SpiderGreen.jpg", name: "SpiderGreen" },
 
     //decal-gates
     { srcName: "Gates/WoodenGate.jpg", name: "WoodenGate1" },
@@ -1644,7 +1645,7 @@ LoadSprites = [
     { srcName: "PicDecals/SpaceQuest200.png", name: "SpaceQuest200" },
     { srcName: "PicDecals/SpectrumGame1.png", name: "SpectrumGame1" },
     { srcName: "PicDecals/Spelunker70.png", name: "Spelunker70" },
-    { srcName: "PicDecals/SpiderGreen.jpg", name: "SpiderGreen" },
+    
     { srcName: "PicDecals/SpikesPeak1.png", name: "SpikesPeak1" },
     { srcName: "PicDecals/SpyVsSpy41.png", name: "SpyVsSpy41" },
     { srcName: "PicDecals/SumerGames60.png", name: "SumerGames60" },

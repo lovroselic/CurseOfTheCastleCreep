@@ -1,4 +1,4 @@
-/* LS CSS v0.3.1 */
+/* LS CSS v0.4.0 */
 
 @charset "utf-8";
 
@@ -51,8 +51,14 @@
 }
 
 @font-face {
-    font-family: Carolingia;
+    font-family: "Carolingia";
     src: url("/Assets/Fonts/carolingia.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "CosmicAlien";
+    src: url("/Assets/Fonts/CosmicAlien.ttf");
     font-display: swap;
 }
 
@@ -69,7 +75,7 @@ body {
 
     background-image: url('/Images/DarkCloudyBackground3.webp') !important;
     background-repeat: repeat;
-    font-family: "Lora", serif !important;
+    font-family: "OpenSans", serif !important;
 }
 
 
@@ -79,11 +85,15 @@ fieldset, legend {
 
 body, td, tfoot, th, thead, tr {
     border: none !important;
-  }
+}
+
+a, a:visited {
+    color: #DDE0DD;
+}
 
 /* LS theme */
 
-h1 {
+h1, h2 {
     color: #FF0000;
 }
 
@@ -97,13 +107,21 @@ h1 {
     font-size: 15px;
 }
 
+.alien {
+    font-family: CosmicAlien;
+}
+
 .LS_radius {
     border-radius: 0.25rem !important;
 }
 
 
-h2, h3, h4, h5, h6, p, section, fieldset {
+h3, h4, h5, h6, p, section, fieldset {
     color: #DDE0DD;
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 .terminal {
@@ -125,6 +143,13 @@ input[type="button"] {
     padding: 6px;
 }
 
+button {
+    background-color: #d9d9b3;
+    padding: 6px;
+    margin: 0.6rem;
+    border-radius: 5px;
+}
+
 input {
     margin: 5px;
 }
@@ -143,6 +168,11 @@ input {
     width: auto;
 }
 
+.asset_select {
+    height: 2.5rem;
+    /*margin-top: 8px;*/
+}
+
 /*  navigation specifics */
 
 .nav_back {
@@ -156,7 +186,7 @@ input {
 .bright-white {
     color: #FFFFFF;
     text-shadow: 1px 1px 2px #000;
-    font-family: 'Lora', 'serif';
+    font-family: 'OpenSans', 'serif';
     font-weight: 600;
     font-size: 1.5rem;
 }
@@ -166,6 +196,14 @@ input {
     text-shadow: 1px 1px 2px #000;
     font-family: 'LaughingSkull', Times, serif;
     font-size: 3rem;
+}
+
+a.crimson-red:visited {
+    color: #FF0000;
+}
+
+label {
+    color: #fff;
 }
 
 /* changing bootstrap*/
@@ -186,8 +224,11 @@ a.nav-link.bright-white:hover {
     text-shadow: 1px 1px 2px #000 !important;
 }
 
-
 /* LaughingSkull classes */
+
+.white_text {
+    color: white;
+}
 
 .LS_title {
     font-family: LaughingSkull;
@@ -202,6 +243,27 @@ a.nav-link.bright-white:hover {
     font-family: Arcade;
     color: #FF0000;
     text-shadow: 1px 1px #666;
+}
+
+.game_start_btn {
+    border-radius: 13px;
+    border: #666 1px solid;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+    display: inline-block;
+    background-color: #DDE0DD;
+    padding: 10px 8px;
+    color: #111 !important;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    width: 75%;
+}
+
+.game_start_btn:hover, .game_start_btn:focus {
+    background-color: #AAA;
+    color: black;
+    text-decoration: none;
 }
 
 /* old LS music page classes */
@@ -243,6 +305,14 @@ a.nav-link.bright-white:hover {
     border-radius: 13px;
 }
 
+.custom-boundary {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 3rem);
+    /* Adjust the 2rem value as needed to increase/decrease the boundary */
+}
+
+
 .win {
     background: #2a2a2a;
     border: 2px #AAA ridge;
@@ -270,16 +340,11 @@ a.nav-link.bright-white:hover {
     padding: 20px;
     box-shadow: 2px 3px 3px 3px #333;
     font-family: "Courier New", Courier, monospace;
-    font-size: 12px;
+    font-size: 1rem;
     white-space: pre;
-    width: 250px;
-    margin-top: 8px;
-    line-height: 1.2;
+    width: 80%;
 }
 
-#SC {
-    float: right;
-}
 
 .gw {
     float: left;
@@ -306,24 +371,30 @@ a.nav-link.bright-white:hover {
     color: #00FF00;
 }
 
+.version_big {
+    font-family: Consolas, serif !important;
+    font-size: 1rem !important;
+    color: #00FF00;
+}
+
 .section {
     display: none;
     font-family: Consolas, serif !important;
     font-size: 0.7rem !important;
 }
 
-.section fieldset {
+fieldset {
     border: 2px #AAA ridge;
     border-radius: 7px !important;
     padding: 20px;
     background: #2a2a2a;
 }
 
-.section fieldset p {
+fieldset p {
     font-size: 0.7rem !important;
 }
 
-.section fieldset legend {
+fieldset legend {
     font-size: 0.7rem !important;
 }
 
@@ -371,4 +442,17 @@ a.nav-link.bright-white:hover {
         margin-left: 0px !important;
         margin-right: 0px !important;
     }
+}
+
+/* game specific styles */
+
+.CCC {
+    font-family: 'Annie';
+    font-size: 1.5em;
+    text-shadow: 1px 1px #666;
+}
+
+.CCC h2 {
+    font-weight: bold;
+    font-size: 2.5em;
 }

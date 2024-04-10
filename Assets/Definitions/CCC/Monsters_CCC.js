@@ -2941,7 +2941,7 @@ const INTERACTION_ENTITY = {
     },
     Squirell: {
         name: "Squirell",
-        sprite: "Squirell",
+        sprite: "Squirrel",
         category: 'crest',
         voice: "FemHighQuick",
         wants: ["Acorn", "Acorn"],

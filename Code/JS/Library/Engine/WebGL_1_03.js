@@ -1657,7 +1657,12 @@ class ExternalGate extends Portal {
         this.open = true;
         this.interactive = false;
         this.color = "Open";
-        this.texture = WebGL.createTexture(SPRITE.DungeonDoor_Open);
+        
+        if (this.texture instanceof WebGLTexture) {
+            this.texture = WebGL.createTexture(SPRITE.DungeonDoor_Open);
+        } else {
+            this.texture = SPRITE.DungeonDoor_Open;
+        }
     }
     block() {
         //console.warn("WebGL::blocking door", this);

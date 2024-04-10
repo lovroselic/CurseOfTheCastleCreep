@@ -14,6 +14,12 @@ const MAP_TEXT = {
     2: "I should leave no stone unturned.",
     3: "Hmm? Which way to go first?",
     4: "I wonder if you are smart enough to lead me over GhostFace's traps?",
+    5: "I hope you are not rushing in the wrong direction?",
+    6: "At the crossroads, turn right.",
+    8: "Do I need some healing? Training? Spend gold wisely.",
+    9: "Miss Spiky. Long time no see.", 
+    11: "I need to find som more fruit.",
+    17: "My friend Pretty Bunny lives near.", 
     23: "A Witch's lair. Maybe I can find some magical items here.",
     32: "This is my gold! Pick up everything!",
     42: "I hope you know what you are doing? This is becoming dangerous.",
@@ -161,15 +167,15 @@ const MAP = {
         objects: '[[11,"RedGem"]]',
     }
     ,
-    9: {
+    9 : {
         name: "East Tower - Hedgehog",
         sg: 0,
-        data: '{"width":"13","height":"13","map":"BB3AA3BABAA8BB3AA5BB2AA2BB3AA5BAA13BAA7BAA6BB13ABABB23AA4BB3ABB3AA2BB2ABB4AA2BB10ABB9ABB6ABB13$A"}',
+        data: '{"width":"13","height":"13","map":"BB3AA3BABAA8BB3AA5BB2AA2BB2AA5BAA12BAA6BABAA5BB12ABABB24AA4BB7AA2BB2ABABB3AA2BB10ABB8ABB7ABB14A$"}',
         wall: "BrownishWall",
         floor: "MarbleFloor5",
         ceil: "MossyCeiling",
         start: '[149,1]',
-        decals: '[[32,4,"FlatPond","crest"],[68,4,"FlatPond2","crest"],[74,4,"FlatPond3","crest"],[110,4,"RoundGrille96","crest"],[58,1,"Reaper","crest"],[70,3,"DancingSkeletons2","crest"],[72,5,"PrayingSkeleton10","crest"],[5,7,"WOW104","picture"],[7,7,"WOW10","picture"],[28,7,"Fred110","picture"],[21,7,"Fred102","picture"],[148,1,"Arena200","picture"],[150,1,"Arena2","picture"],[138,1,"TombRaider113","picture"],[114,1,"LSL102","picture"],[106,1,"CastleOfTerror4","picture"],[120,1,"Sorcery88","picture"],[53,5,"AticAtac204","picture"],[79,5,"AticAtac203","picture"],[63,3,"SasbreWulf60","picture"],[89,3,"SabreWulf99","picture"],[36,7,"SP111","picture"],[17,7,"WhoDaresWins88","picture"],[40,5,"LadyTut102","picture"],[92,5,"JetSetWilly60","picture"],[106,5,"Sentinel2","picture"],[134,5,"CodenameIceman98","picture"],[102,3,"Witcher100","picture"],[126,3,"RobinHood3","picture"]]',
+        decals: '[[32,4,"FlatPond","crest"],[68,4,"FlatPond2","crest"],[74,4,"FlatPond3","crest"],[110,4,"RoundGrille96","crest"],[58,1,"Reaper","crest"],[70,3,"DancingSkeletons2","crest"],[72,5,"PrayingSkeleton10","crest"],[28,7,"Fred110","picture"],[21,7,"Fred102","picture"],[148,1,"Arena200","picture"],[150,1,"Arena2","picture"],[138,1,"TombRaider113","picture"],[114,1,"LSL102","picture"],[106,1,"CastleOfTerror4","picture"],[120,1,"Sorcery88","picture"],[53,5,"AticAtac204","picture"],[79,5,"AticAtac203","picture"],[63,3,"SasbreWulf60","picture"],[89,3,"SabreWulf99","picture"],[36,7,"SP111","picture"],[17,7,"WhoDaresWins88","picture"],[40,5,"LadyTut102","picture"],[92,5,"JetSetWilly60","picture"],[106,5,"Sentinel2","picture"],[134,5,"CodenameIceman98","picture"],[102,3,"Witcher100","picture"],[126,3,"RobinHood3","picture"],[18,7,"WizardOfWor89","picture"],[20,7,"WOW104","picture"]]',
         lights: '[[16,7,"Lamp4","dim"],[36,3,"Lamp4","dim"],[126,1,"Lamp4","dim"],[120,5,"Lamp4","dim"]]',
         gates: '[[162,1,"9.1","5.2","Down"],[65,5,"9.2","10.1","Closed"],[77,3,"9.3","11.1","Closed"],[6,7,"9.4","12.1","Up"]]',
         monsters: '[[97,"RedGoldBat"],[66,"MissGalaxyGreen"],[75,"Spider"],[45,"SpiderGreen"]]',
@@ -179,7 +185,7 @@ const MAP = {
         containers: '[[35,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[29,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[121,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[113,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[44,"Chest","GOLD_ITEM_TYPE.SilverBar",1]]',
         triggers: '[[59,5,"PurpleTriggerButton",1,50],[85,5,"PurpleTriggerButton",1,37]]',
         entities: '[[71,7,"HedgeHog"]]',
-    }
+        }
     ,
     10: {
         name: "Fruit Quest",

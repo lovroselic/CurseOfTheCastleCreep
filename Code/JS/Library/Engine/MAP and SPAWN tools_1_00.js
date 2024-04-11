@@ -222,7 +222,7 @@ const SPAWN_TOOLS = {
         for (const door of map.doors) {
             const grid = GA.indexToGrid(door);
             GA.closeDoor(grid);
-            GATE3D.add(new Gate(grid, DOOR_TYPE.Common));
+            GATE3D.add(new Gate(grid, DOOR_TYPE.Common, GA));
         }
     },
     triggers(map, GA) {

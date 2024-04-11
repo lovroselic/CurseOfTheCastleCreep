@@ -1657,7 +1657,7 @@ class ExternalGate extends Portal {
         this.open = true;
         this.interactive = false;
         this.color = "Open";
-        
+
         if (this.texture instanceof WebGLTexture) {
             this.texture = WebGL.createTexture(SPRITE.DungeonDoor_Open);
         } else {
@@ -1953,11 +1953,12 @@ class $POV extends Drawable_object {
 }
 
 class Gate extends Drawable_object {
-    constructor(grid, type) {
+    constructor(grid, type, GA) {
         super();
         this.grid = grid;
         this.pos = Vector3.from_Grid(grid);
         this.type = type;
+        this.GA = GA;
         this.interactive = true;
         this.excludeFromInventory = true;
         for (const prop in type) {
@@ -1975,8 +1976,7 @@ class Gate extends Drawable_object {
         this.mTranslationMatrix = mTranslationMatrix;
     }
     lift() {
-        let gate = new LiftingGate(this);
-        VANISHING3D.add(gate);
+        VANISHING3D.add(new LiftingGate(this));
     }
     interact(GA, inventory) {
         if (this.locked) {
@@ -1988,18 +1988,21 @@ class Gate extends Drawable_object {
         }
 
         if (!this.locked) {
-            this.storageLog();
-            this.deactivate();
-            this.lift();
-            GA.openDoor(this.grid);
+            this.open();
             AUDIO.LiftGate.play();
             return { category: "title", section: "keys" };
         } else {
             AUDIO.ClosedDoor.play();
         }
     }
+    open() {
+        this.storageLog();
+        this.deactivate();
+        this.GA.openDoor(this.grid);
+        this.lift();
+    }
     storageLog() {
-        this.IAM.map.storage.add(new IAM_Storage_item("GATE3D", this.id, "deactivate"));
+        this.IAM.map.storage.add(new IAM_Storage_item("GATE3D", this.id, "open"));
     }
 }
 

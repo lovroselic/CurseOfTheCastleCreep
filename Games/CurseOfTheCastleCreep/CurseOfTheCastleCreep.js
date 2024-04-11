@@ -49,7 +49,7 @@ const DEBUG = {
 
          */
 
-        GAME.level = 18; //18 from start or resumw
+        GAME.level = 19; //19 from start or resumw
         GAME.gold = 1000000;
         HERO.maxHealth = 1000;
         HERO.health = 1000;
@@ -69,7 +69,7 @@ const DEBUG = {
         //HERO.magicExpGoal = 19520;
         HERO.inventory.potion.red = 99;
         HERO.inventory.potion.blue = 99;
-        let scrolls = ["MagicBoost", "DestroyArmor", "Light", "Cripple", "Invisibility" ];
+        let scrolls = [ "MagicBoost", "DestroyArmor", "DestroyArmor", "Light", "Light", "Light", "Cripple", "Invisibility", "BoostArmor", "DestroyWeapon"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -78,13 +78,13 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
 
-        let invItems = ["RedGem", "BlueGem", "Acorn" ];
+        let invItems = ["RedRose", "Sword", "Shield", "PurpleRose"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Red", "Blue"];
+        let keys = ["Silver", "Blue"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -118,7 +118,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.80.02",
+    VERSION: "0.80.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

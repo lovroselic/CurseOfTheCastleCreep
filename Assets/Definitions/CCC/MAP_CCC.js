@@ -20,6 +20,7 @@ const MAP_TEXT = {
     9: "Miss Spiky. Long time no see.", 
     11: "I need to find som more fruit.",
     17: "My friend Pretty Bunny lives near.", 
+    21: "I'll get my boots wet.",
     23: "A Witch's lair. Maybe I can find some magical items here.",
     32: "This is my gold! Pick up everything!",
     42: "I hope you know what you are doing? This is becoming dangerous.",

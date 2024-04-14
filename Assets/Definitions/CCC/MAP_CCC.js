@@ -17,12 +17,19 @@ const MAP_TEXT = {
     5: "I hope you are not rushing in the wrong direction?",
     6: "At the crossroads, turn right.",
     8: "Do I need some healing? Training? Spend gold wisely.",
-    9: "Miss Spiky. Long time no see.", 
+    9: "Miss Spiky. Long time no see.",
     11: "I need to find som more fruit.",
-    17: "My friend Pretty Bunny lives near.", 
+    17: "My friend Pretty Bunny lives near.",
+    19: "My gut feeling says down first.",
     21: "I'll get my boots wet.",
     23: "A Witch's lair. Maybe I can find some magical items here.",
+    24: "Modern computers. I will make my own game someday.",
+    26: "So far no bugs.",
+    28: "Avoid the fireballs.",
+    29: "Creepiness is in the air.",
     32: "This is my gold! Pick up everything!",
+    36: "Rats!",
+    40: "Where are the books?",
     42: "I hope you know what you are doing? This is becoming dangerous.",
     117: "Oh. Surprise. Ghostface is a woman.",
 };
@@ -168,7 +175,7 @@ const MAP = {
         objects: '[[11,"RedGem"]]',
     }
     ,
-    9 : {
+    9: {
         name: "East Tower - Hedgehog",
         sg: 0,
         data: '{"width":"13","height":"13","map":"BB3AA3BABAA8BB3AA5BB2AA2BB2AA5BAA12BAA6BABAA5BB12ABABB24AA4BB7AA2BB2ABABB3AA2BB10ABB8ABB7ABB14A$"}',
@@ -186,7 +193,7 @@ const MAP = {
         containers: '[[35,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[29,"Barrel","GOLD_ITEM_TYPE.GoldBar",7],[121,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[113,"Crate","GOLD_ITEM_TYPE.SilverBar",1],[44,"Chest","GOLD_ITEM_TYPE.SilverBar",1]]',
         triggers: '[[59,5,"PurpleTriggerButton",1,50],[85,5,"PurpleTriggerButton",1,37]]',
         entities: '[[71,7,"HedgeHog"]]',
-        }
+    }
     ,
     10: {
         name: "Fruit Quest",
@@ -470,7 +477,7 @@ const MAP = {
     24: {
         name: "Server Room",
         sg: 0,
-        data: '{"width":"11","height":"11","map":"BB5AA8BB2AA5BABABAA4BABAA17BABB7AA2BB3ABB14AA2BAA5BB15ABABB16A$"}',
+        data: '{"width":"11","height":"11","map":"BB5AA8BB2AA5BABABAA4BABAA10BAA7BABB7AA2BB3ABABB13AA2BAA5BB15ABABB13$BA"}',
         wall: "Rough",
         floor: "Wall7",
         ceil: "RockCeiling",
@@ -481,6 +488,7 @@ const MAP = {
         monsters: '[[27,"Bat"],[71,"RedGoldBat"]]',
         containers: '[[78,"Wardrobe","INTERACTION_ITEM.Chip",5],[86,"Wardrobe","INTERACTION_ITEM.Floppy",3],[24,"Crate","GOLD_ITEM_TYPE.GoldBar",7],[30,"Crate","GOLD_ITEM_TYPE.GoldBar",7]]',
         shrines: '[[5,7,"Attack1_4"],[33,5,"Defense1_4"],[43,3,"Defense1_8"]]',
+        oracles: '[[3,7,"GeekOracle"]]',
     }
     ,
     25: {
@@ -534,7 +542,7 @@ const MAP = {
     28: {
         name: "Blacksmithstress",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB10AA16BAA9ÁAA4BAA7EAÁÁ2BB2AA4BAA7ÁÁ2AA6BAA11BÁÁ4AA2ÁÁ2AÁÁ5AÁÁ8BB16ABÁÁ3AÁÁ4AÁAÁÁ2BB3ABB29ÁBB2$AÁEBB4AEABB3AA7BABABABB3ÁÁ2AA2BB2ÁÁ8BB9AA10ÁAA11ÁÁ3B"}',
+        data: '{"width":"16","height":"16","map":"BB10AA16BAA9ÁAA4BAA7EAÁÁ2BB2AA4BAA7ÁÁ2AA5ÁABAA11BÁÁ4AA2ÁÁ2AÁÁ4AÁÁ8BB16ABÁÁ3AÁÁ4ABAÁÁ2BB3AA2BB29ÁBB2$AÁEBB4AEABB3AA3BAA5BABABB3ÁÁ2AA2ÁBB2ÁÁ7BB9AA9ÁAA11ÁÁ3B"}',
         wall: "SpideryWall",
         floor: "ScarletFloor1",
         ceil: "Wall100",
@@ -784,14 +792,14 @@ const MAP = {
     40: {
         name: "Library",
         sg: 0,
-        data: '{"width":"16","height":"16","map":"BB9AA40BAA25QAA2BB2AA10BB4ABAA13BB2AA12BB2AA3BB52AA4BAA2BB5ABAA6BAA3BB6ABB9ABB29ABB3$AA2"}',
+        data: '{"width":"16","height":"16","map":"BB2ABB7AA40BAA25QAA3BB2AA10BB5AA14BB2AA11BB2AA3BB49ABB2AA4BAA2BB5AA2BAA4BAA3BB6ABB9ABB29ABB3$AA2"}',
         wall: "GreyWall",
         floor: "IceFloor5",
         ceil: "Pavement",
         start: '[19,7]',
         decals: '[[177,5,"MissileCommand","picture"],[33,5,"SabreWulf50","picture"],[113,5,"Wolfenstein31","picture"],[46,3,"Jawbreaker","picture"],[206,3,"RadarRatRace10","picture"],[126,3,"ManicMiner12","picture"],[247,1,"BeachHead100","picture"],[214,1,"SpectrumGame1","picture"],[67,1,"Pitfall88","picture"],[211,1,"Fred100","picture"],[218,1,"Arnie202","picture"],[221,1,"Witcher130","picture"],[116,1,"BackToNature1","picture"],[122,1,"Pooyan3","picture"],[164,1,"SkyrimElf","picture"],[169,1,"Breakout200","picture"],[68,7,"BlueMax20","picture"],[73,7,"Underwurlde100","picture"],[122,7,"BruceLee200","picture"],[169,7,"Pssst","picture"],[164,7,"SVS111","picture"],[22,7,"MrRobot60","picture"],[28,7,"AticAtac202","picture"],[220,7,"Tutankham104","picture"],[212,7,"IK200","picture"],[117,7,"Cuthbert90","picture"],[73,1,"GIJoe70","picture"],[238,3,"AticAtacCrest1","crest"]]',
         lights: '[[81,5,"WallLamp","standard"],[145,5,"WallLamp","standard"],[94,3,"WallLamp","standard"],[158,3,"WallLamp","standard"]]',
-        gates: '[[3,7,"40.1","26.9","Open"],[225,5,"40.2","41.1","Down"]]',
+        gates: '[[3,7,"40.1","26.9","Open"],[225,5,"40.2","41.1","Down"],[143,3,"40.3","125.1","Closed"]]',
         monsters: '[[229,"Wolf"],[104,"GhostMinion"],[150,"GhostMinionGreen"],[59,"Wolf"]]',
         potions: '[[55,0],[184,0]]',
         gold: '[[84,"GoldCube"],[153,"GoldCube"],[235,"GoldCube"],[76,"SilverBar"],[162,"GoldBar"]]',
@@ -2479,4 +2487,17 @@ const MAP = {
         entities: '[[231,5,"Jeweliet"]]',
         objects: '[[259,"Blood"]]',
     }
+    ,
+    125 : {
+        name: "Scroll Bazaar",
+        sg: 0,
+        data: '{"width":"16","height":"16","map":"BB3ABAA2BABAA30BB2AA2BAA2BB2ABB2AA2BABB2AA3BAA4BB2AA6BB2ABAA5BB2AA15BABAA2BAA10BABAA2BB4AA15BB2AA8BB6AA5BB14AA6BABB3ABB7AA2BB2AA4BABABB4ABABB2AA3BAA3BB4ABB2AA3BB23A$"}',
+        wall: "3d wall",
+        floor: "OrnateFloor343",
+        ceil: "BlackBricks45",
+        start: '[49,5]',
+        lights: '[[87,1,"WallLamp35","standardDimmed"],[117,3,"WallLamp14","standardDimmed"],[121,5,"WallLamp31","standardDimmed"],[151,7,"WallLamp18","standardDimmed"],[60,5,"WallLamp31","dimRed"],[204,5,"Lamp52","dimRed"],[194,7,"Lamp51","dimRed"],[82,1,"Lamp45","dimRed"]]',
+        gates: '[[48,5,"125.1","40.3","Open"]]',
+        shrines: '[[7,7,"ScrollSell_HalfLife2"],[112,5,"ScrollSell_DestroyArmor2"],[247,1,"ScrollSell_Explode"],[127,3,"ScrollSell_BoostWeapon2"]]',
+        }
 };

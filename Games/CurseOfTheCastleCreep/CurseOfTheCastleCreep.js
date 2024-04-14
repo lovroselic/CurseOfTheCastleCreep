@@ -49,7 +49,7 @@ const DEBUG = {
 
          */
 
-        GAME.level = 19; //19 from start or resumw
+        GAME.level = 26; //26 from start or resumw
         GAME.gold = 1000000;
         HERO.maxHealth = 1000;
         HERO.health = 1000;
@@ -78,13 +78,13 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
 
-        let invItems = ["RedRose", "Sword", "Shield", "PurpleRose"];
+        let invItems = ["GoldBar", "GoldBar"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Silver", "Blue"];
+        let keys = ["Gold", "Gold"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -118,7 +118,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.80.03",
+    VERSION: "0.80.04",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

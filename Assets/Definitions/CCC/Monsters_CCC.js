@@ -710,6 +710,51 @@ const SHRINE_TYPE = {
         voice: "Female",
         text: "DestroyArmor scroll - 750 gold"
     },
+
+    ScrollSell_HalfLife2: {
+        name: "ScrollSell_HalfLife2",
+        sprite: "ScrollSeller1",
+        which: "HalfLife",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 1000,
+        voice: "Female",
+        text: "HalfLife scroll - 1000 gold"
+    },
+    ScrollSell_BoostWeapon2: {
+        name: "ScrollSell_BoostWeapon2",
+        sprite: "ScrollSeller2",
+        which: "BoostWeapon",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 500,
+        voice: "Female",
+        text: "BoostWeapon scroll - 500 gold"
+    },
+    ScrollSell_DestroyArmor2: {
+        name: "ScrollSell_DestroyArmor2",
+        sprite: "ScrollSeller3",
+        which: "DestroyArmor",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 750,
+        voice: "Female",
+        text: "DestroyArmor scroll - 750 gold"
+    },
+    ScrollSell_Explode: {
+        name: "ScrollSell_Explode",
+        sprite: "ScrollSeller4",
+        which: "Explode",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 1000,
+        voice: "Female",
+        text: "Explode scroll - 1000 gold"
+    },
 };
 
 const ORACLE_TYPE = {
@@ -1023,6 +1068,14 @@ const ORACLE_TYPE = {
         category: 'crest',
         voice: "Female",
         text: "I wonder how crown can be forged? Metals? Gems?",
+        interactionCategory: "oracle",
+    },
+    GeekOracle: {
+        name: "GeekOracle",
+        sprite: "GeekOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Standing behind the opening gate is the surest way to get fireball in your face.",
         interactionCategory: "oracle",
     },
 };

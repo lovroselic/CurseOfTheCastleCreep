@@ -684,6 +684,11 @@ LoadSprites = [
     { srcName: "EntityPictures/WitchOracle1.jpg", name: "WitchOracle1" },
     { srcName: "EntityPictures/WitchOracle2.jpg", name: "WitchOracle2" },
     { srcName: "EntityPictures/Wolfie.jpg", name: "Wolfie" },
+    { srcName: "EntityPictures/GeekOracle.jpg", name: "GeekOracle" },
+    { srcName: "EntityPictures/ScrollSeller1.jpg", name: "ScrollSeller1" },
+    { srcName: "EntityPictures/ScrollSeller2.jpg", name: "ScrollSeller2" },
+    { srcName: "EntityPictures/ScrollSeller3.jpg", name: "ScrollSeller3" },
+    { srcName: "EntityPictures/ScrollSeller4.jpg", name: "ScrollSeller4" },
 
     // items
     { srcName: "Items/Acorn.png", name: "Acorn" },
@@ -1303,7 +1308,7 @@ LoadSprites = [
     { srcName: "PicDecals/HeroQuest50.png", name: "HeroQuest50" },
     { srcName: "PicDecals/HeroesOfKarn80.png", name: "HeroesOfKarn80" },
     { srcName: "PicDecals/Hobbit101.png", name: "Hobbit101" },
-    { srcName: "PicDecals/HoraceSki2.png", name: "HoraceSki2" },
+    { srcName: "PicDecals/HoraceSki2.png", name: "HoraceSki" },
     { srcName: "PicDecals/HunchBack10.png", name: "HunchBack10" },
     { srcName: "PicDecals/HunchBack70.png", name: "HunchBack70" },
     { srcName: "PicDecals/HunchBack71.png", name: "HunchBack71" },
@@ -1645,7 +1650,6 @@ LoadSprites = [
     { srcName: "PicDecals/SpaceQuest200.png", name: "SpaceQuest200" },
     { srcName: "PicDecals/SpectrumGame1.png", name: "SpectrumGame1" },
     { srcName: "PicDecals/Spelunker70.png", name: "Spelunker70" },
-    
     { srcName: "PicDecals/SpikesPeak1.png", name: "SpikesPeak1" },
     { srcName: "PicDecals/SpyVsSpy41.png", name: "SpyVsSpy41" },
     { srcName: "PicDecals/SumerGames60.png", name: "SumerGames60" },
@@ -1718,7 +1722,7 @@ LoadSprites = [
     { srcName: "PicDecals/Unknown3.png", name: "Unknown3" },
     { srcName: "PicDecals/Unknown30.png", name: "Unknown30" },
     { srcName: "PicDecals/Uridium2.png", name: "Uridium2" },
-    { srcName: "PicDecals/VIC20-2.png", name: "VIC20-2" },
+    { srcName: "PicDecals/VIC20-2.png", name: "VIC20" },
     { srcName: "PicDecals/Valhalla2.png", name: "Valhalla2" },
     { srcName: "PicDecals/Valhalla88.png", name: "Valhalla88" },
     { srcName: "PicDecals/Vixen3.png", name: "Vixen3" },

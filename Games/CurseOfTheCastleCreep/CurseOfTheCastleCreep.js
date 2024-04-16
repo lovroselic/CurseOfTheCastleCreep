@@ -10,7 +10,7 @@
 TODO:
     * 
 known bugs: 
-    * model loading fulfills promise too soon
+    * n-plication of storage events
     * i don't do bugs
     
 
@@ -49,7 +49,7 @@ const DEBUG = {
 
          */
 
-        GAME.level = 26; //26 from start or resumw
+        GAME.level = 42; //42 from start or resumw
         GAME.gold = 1000000;
         HERO.maxHealth = 1000;
         HERO.health = 1000;
@@ -64,12 +64,9 @@ const DEBUG = {
         HERO.attackExp = 0;
         HERO.defenseExp = 0;
         HERO.magicExp = 0;
-        //HERO.attackExpGoal = 13013;
-        //HERO.defenseExpGoal = 2570;
-        //HERO.magicExpGoal = 19520;
         HERO.inventory.potion.red = 99;
         HERO.inventory.potion.blue = 99;
-        let scrolls = [ "MagicBoost", "DestroyArmor", "DestroyArmor", "Light", "Light", "Light", "Cripple", "Invisibility", "BoostArmor", "DestroyWeapon"];
+        let scrolls = ["MagicBoost", "DestroyArmor", "DestroyArmor", "Light", "Light", "Light", "Cripple", "Invisibility", "BoostArmor", "DestroyWeapon"];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -78,13 +75,14 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
 
-        let invItems = ["GoldBar", "GoldBar"];
+        let invItems = ["Quill"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Gold", "Gold"];
+        let keys = ["Gold", ];
+        //let keys = ["Gold", "Gold", "Gold", "Gold", "Gold", "Gold"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -118,7 +116,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.80.04",
+    VERSION: "0.80.05",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

@@ -187,11 +187,14 @@ const SAVE_MAP_IAM = {
     for (const level in MAP_REFERENCE) {
       const storage = MAP_REFERENCE[level]?.map?.storage;
       if (storage && !storage.empty()) {
-        console.log("adding storage", level, storage,);
+        console.log("adding storage", level, storage);
         map_iam[level] = storage;
+      } else if (MAP_REFERENCE[level].unused_storage) {
+        console.log("adding unused storage", level, MAP_REFERENCE[level].unused_storage);
+        map_iam[level] = MAP_REFERENCE[level].unused_storage;
       }
     }
-    //console.warn("save map_iam", map_iam);
+    console.warn("save map_iam", map_iam);
     const map_iam_string = JSON.stringify(map_iam);
     localStorage.setItem(SAVE_GAME.key + SAVE_GAME.IAMABR, SAVE_GAME.code(map_iam_string));
   },

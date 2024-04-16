@@ -689,6 +689,7 @@ LoadSprites = [
     { srcName: "EntityPictures/ScrollSeller2.jpg", name: "ScrollSeller2" },
     { srcName: "EntityPictures/ScrollSeller3.jpg", name: "ScrollSeller3" },
     { srcName: "EntityPictures/ScrollSeller4.jpg", name: "ScrollSeller4" },
+    { srcName: "EntityPictures/EngineOracle.jpg", name: "EngineOracle" },
 
     // items
     { srcName: "Items/Acorn.png", name: "Acorn" },

@@ -79,10 +79,10 @@ const MAP_TOOLS = {
     applyStorageActions(level) {
         if (!this.MAP[level].unused_storage) return;
         if (!this.MAP[level].map.storage.empty()) return;
-        //console.info("Applying actions for level", level);
+        console.info("Applying actions for level", level);
         this.MAP[level].unused_storage.apply();
         this.MAP[level].map.storage.addStorage(this.MAP[level].unused_storage);
-        //console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
+        console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
     }
 };
 

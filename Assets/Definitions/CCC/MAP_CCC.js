@@ -28,10 +28,30 @@ const MAP_TEXT = {
     28: "Avoid the fireballs.",
     29: "Creepiness is in the air.",
     32: "This is my gold! Pick up everything!",
+    34: "I smell aliens.",
     36: "Rats!",
+    37: "Nice kitty.",
+    38: "Mother of tiny lizards.",
     40: "Where are the books?",
+    41: "It seems nobody came here for centuries.",
     42: "I hope you know what you are doing? This is becoming dangerous.",
+    45: "Does this room really looks like chicken?",
+    46: "She might be foxy. But is she a lady?",
+    50: "I don't think we are half way yet. Keep on playing.",
+    51: "We are pretty deep in the dungeons. Be careful.",
+    52: "It's not how much you pray, it's about how much gold you give.",
+    53: "Bear is a maiden fair.",
+    58: "Ghostface claimed my dungeons. Time to put a heel through his heart.",
+    59: "It's a kind of magic. Do you sing?",
+    60: "Grab the key and run back upstairs.",
+    62: "Here comes Granny!",
+    64: "Big bad Wolfie lives here.",
+    68: "Wellcome to the jungle. Where is Purrrscila?",
+    69: "I should take some time to train my skills. I am not yet ready for GhostFace.",
+    76: "Marble angels.",
+    80: "Pick all the gold like a pacman you are.",
     117: "Oh. Surprise. Ghostface is a woman.",
+    125: "I hope you saved some gold for scrolls?",
 };
 
 /** Map definitions */
@@ -1015,10 +1035,10 @@ const MAP = {
         containers: '[[168,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[148,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[191,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
     }
     ,
-    51: {
+    51 : {
         name: "The Cellar",
         sg: 0,
-        data: '{"width":"21","height":"21","map":"BEQABB3ABB3ABAA4BAA4BABB2AA9BB4AA3BB5AA4BAA2BAA3BB3AA25BABAQBAA9BAA2BAA18BB2AA2BB2AA3BAA15BB4ABAA6BAA7EBB3AA7BABAA4BAA4EAA4BAA3BAA8BB2AA3BAA2BABAA6BABAA3BB5ABB5ABB6ABB3AA2BAA3BB2AA6BAA2BB2AA3BABB4ABB7ABB2ABB3ABB7ABABABB5ABB4ABAA2BB3AA3BAA3BABB3ABB2ABB8AA2BABB8ABB7AA2BB3ABEBB9EBB3ABB6ABB21AB$AA2BB9AA3BB2AA2"}',
+        data: '{"width":"21","height":"21","map":"BEQABB3ABB3ABAA4BAA4BABB2AA9BB4AA3BB5AA4BAA2BAA3BB2AA9BAA15BABAQBAA9BAA3BAA17BB2AA2BB2AA3BAA16BB4ABAA6BAA6EBB3AA7BABAA4BAA4EAA5BAA3BAA8BB2AA3BAA2BABAA2BAA3BABAA3BB5ABB5ABB6ABB3AA2BAA3BB2AA6BAA2BB2AA3BABB4AA2BB7ABB2ABB3ABB7ABABABB5ABB4ABAA2BB3AA5BABABB3ABB2ABB8AA2BABB8ABB7AA2BB3ABEBB9EBB3ABB6ABB21AB$AA2BB8AA3BB2AA2"}',
         wall: "BrownWall2",
         floor: "GreyGreenishTiles1",
         ceil: "BrownMC_ceiling",
@@ -1035,9 +1055,9 @@ const MAP = {
         doors: '[90,180,218,297,342]',
         triggers: '[[135,7,"RockTriggerButton",1,100]]',
         objects: '[[54,"Pear"]]',
-        oracles: '[[184,7,"CatOracle"]]',
+        oracles: '[[184,7,"CatOracle"],[153,7,"EngineOracle"]]',
         movables: '[[267,"Cat"],[395,"Cat"]]',
-    }
+        }
     ,
     52: {
         name: "Say Your Prayers",
@@ -1289,7 +1309,7 @@ const MAP = {
         oracles: '[[146,5,"PunisherOracle"]]',
     }
     ,
-    64: {
+    64 : {
         name: "Wolf Den",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB8AA7BAA6BAA10BAA2BB2AA2BAA3ÁAA2BAA15BB4AA3BB2ABB3ABB10AA4BAA2BB2ABABB5ABB3ABB2AA6BAA3BAA5QBB2AA4BB4ABAA2QBB2ABB3ABABB6AA2BAA7BABB3AA2BB5ABB7AA2BB2ABABB2ABB19$BB2AA3BB2A"}',
@@ -1310,7 +1330,8 @@ const MAP = {
         entities: '[[220,1,"Wolfie"]]',
         objects: '[[78,"GoldCoin"]]',
         traps: '[[130,5,"RockTriggerButton",0,"Bounceball",178],[130,1,"RockTriggerButton",0,"Bounceball",172]]',
-    }
+        movables: '[[190,"LittleChicken"]]',
+        }
     ,
     65: {
         name: "The Cliff",
@@ -2488,7 +2509,7 @@ const MAP = {
         objects: '[[259,"Blood"]]',
     }
     ,
-    125 : {
+    125: {
         name: "Scroll Bazaar",
         sg: 0,
         data: '{"width":"16","height":"16","map":"BB3ABAA2BABAA30BB2AA2BAA2BB2ABB2AA2BABB2AA3BAA4BB2AA6BB2ABAA5BB2AA15BABAA2BAA10BABAA2BB4AA15BB2AA8BB6AA5BB14AA6BABB3ABB7AA2BB2AA4BABABB4ABABB2AA3BAA3BB4ABB2AA3BB23A$"}',
@@ -2496,8 +2517,12 @@ const MAP = {
         floor: "OrnateFloor343",
         ceil: "BlackBricks45",
         start: '[49,5]',
+        decals: '[[52,7,"Ultima11","picture"],[58,7,"OReillyMine50","picture"],[60,7,"LSL_Eve2","picture"],[119,7,"Frogger110","picture"],[117,7,"SumerGames60","picture"],[121,7,"Underwurlde140","picture"],[204,7,"MontyMole50","picture"],[3,7,"Scramble10","picture"],[11,7,"SirFred70","picture"],[14,7,"BlueMax20","picture"],[87,7,"LeisureSuitLarry75","picture"],[158,7,"SabreWulf89","picture"],[161,7,"Unknown3","picture"],[196,1,"LodeRunner10","picture"],[202,1,"HunchBack70","picture"],[119,1,"ArticShipwreck2","picture"],[151,1,"CrawlMaster112","picture"],[251,1,"SVS132","picture"],[254,1,"Sorcery88","picture"],[243,1,"Prince4","picture"],[194,1,"BC90","picture"],[204,1,"TheHobbit16","picture"],[60,1,"Vixen89","picture"],[117,1,"HalfLife11","picture"],[121,1,"Blackwyche110","picture"],[93,3,"Daggerfall4","picture"],[157,3,"Vixen79","picture"],[79,3,"Tutanham11","picture"],[60,3,"AztecChallenge101","picture"],[204,3,"Arena2","picture"],[191,3,"Cavelon13","picture"],[119,3,"ESB","picture"],[87,3,"SexOlympics2","picture"],[151,3,"ZimSalaBim200","picture"],[121,3,"BoogaBoo11","picture"],[194,3,"Fred100","picture"],[36,3,"RickDangerous70","picture"],[82,5,"Pipeline51","picture"],[146,5,"WinterGames79","picture"],[119,5,"ManicMiner51","picture"],[87,5,"KQ102","picture"],[151,5,"TempleOfApshai89","picture"],[194,5,"Pacman201","picture"],[176,5,"TheHobbit73","picture"],[16,5,"SabreWulf11","picture"],[208,5,"SeaWolf88","picture"],[117,5,"TombRaider110","picture"]]',
         lights: '[[87,1,"WallLamp35","standardDimmed"],[117,3,"WallLamp14","standardDimmed"],[121,5,"WallLamp31","standardDimmed"],[151,7,"WallLamp18","standardDimmed"],[60,5,"WallLamp31","dimRed"],[204,5,"Lamp52","dimRed"],[194,7,"Lamp51","dimRed"],[82,1,"Lamp45","dimRed"]]',
         gates: '[[48,5,"125.1","40.3","Open"]]',
+        monsters: '[[50,"RedGoldBat"],[61,"RedGoldBat"],[55,"RedGoldBat"],[210,"RedGoldBat"],[114,"RedGoldBat"],[125,"RedGoldBat"],[222,"RedGoldBat"]]',
+        gold: '[[183,"GoldBar"],[149,"GoldBar"],[115,"GoldBar"],[122,"GoldBar"],[71,"GoldBar"],[206,"GoldBar"],[84,"GoldBar"],[155,"GoldBar"]]',
+        containers: '[[225,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[237,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[18,"Crate","GOLD_ITEM_TYPE.SilverBar",7],[29,"Crate","GOLD_ITEM_TYPE.SilverBar",7],[118,"Barrel","GOLD_ITEM_TYPE.SilverBar",5],[120,"Barrel","GOLD_ITEM_TYPE.SilverBar",3],[103,"Barrel","GOLD_ITEM_TYPE.SilverBar",7],[135,"Barrel","GOLD_ITEM_TYPE.SilverBar",1]]',
         shrines: '[[7,7,"ScrollSell_HalfLife2"],[112,5,"ScrollSell_DestroyArmor2"],[247,1,"ScrollSell_Explode"],[127,3,"ScrollSell_BoostWeapon2"]]',
-        }
+    }
 };

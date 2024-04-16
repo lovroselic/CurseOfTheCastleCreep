@@ -851,7 +851,7 @@ const ORACLE_TYPE = {
         sprite: "PriceOracle",
         category: 'crest',
         voice: "Female",
-        text: "Some shrines are more expensive than others. But the also give more. Maybe.",
+        text: "Some shrines are more expensive than others. But they also give more. Maybe.",
         interactionCategory: "oracle",
     },
     CrouchingDom: {
@@ -1076,6 +1076,14 @@ const ORACLE_TYPE = {
         category: 'crest',
         voice: "Female",
         text: "Standing behind the opening gate is the surest way to get fireball in your face.",
+        interactionCategory: "oracle",
+    },
+    EngineOracle: {
+        name: "EngineOracle",
+        sprite: "EngineOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "Did you know The Curse of the Castle Creep uses same game engine as Crawl Master II?",
         interactionCategory: "oracle",
     },
 };
@@ -3313,10 +3321,10 @@ const INTERACTION_ENTITY = {
         gives: "Poison",
         text: {
             intro: "In shadows deep, where secrets bloom, bring me mushrooms, filled with doom.",
-            progress: "Mushrooms enough for my dark concoction. Here's your poison, a lethal potion.",
+            progress: "Mushrooms gather, the potion brews, more still needed for the deadly hues.",
             conclusion: "Enough for a deadly stew, so sly, take this flask of poison, let your enemies die."
         }
-    },
+    },    
     RedRidingHood: {
         name: "RedRidingHood",
         sprite: "RedRidingHood",

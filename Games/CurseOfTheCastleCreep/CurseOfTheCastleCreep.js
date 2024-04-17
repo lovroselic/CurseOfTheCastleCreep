@@ -8,11 +8,12 @@
 /*
       
 TODO:
-    * 
+    * oracle: 'Explore walls and floors carefully. You don't want to overlook something, right?'
 known bugs: 
-    * n-plication of storage events
     * i don't do bugs
-    
+retests:
+    * pick and deliver lamb
+
 
  */
 ////////////////////////////////////////////////////
@@ -49,17 +50,17 @@ const DEBUG = {
 
          */
 
-        GAME.level = 42; //42 from start or resumw
+        GAME.level = 99; //42 from start or resumw
         GAME.gold = 1000000;
         HERO.maxHealth = 1000;
         HERO.health = 1000;
         HERO.maxMana = 1000;
         HERO.mana = 1000;
-        HERO.attack = 99;
+        HERO.attack = 150;
         HERO.reference_attack = HERO.attack;
-        HERO.defense = 99;
+        HERO.defense = 150;
         HERO.reference_defense = HERO.defense;
-        HERO.magic = 99;
+        HERO.magic = 150;
         HERO.reference_magic = HERO.magic;
         HERO.attackExp = 0;
         HERO.defenseExp = 0;
@@ -75,13 +76,13 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
 
-        let invItems = ["Quill"];
+        let invItems = [];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Gold", ];
+        let keys = [];
         //let keys = ["Gold", "Gold", "Gold", "Gold", "Gold", "Gold"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
@@ -116,7 +117,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.80.05",
+    VERSION: "0.80.06",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

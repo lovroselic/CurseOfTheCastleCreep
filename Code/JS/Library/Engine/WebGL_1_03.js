@@ -1988,21 +1988,21 @@ class Gate extends Drawable_object {
         }
 
         if (!this.locked) {
-            this.open();
+            this.open(true);
             AUDIO.LiftGate.play();
             return { category: "title", section: "keys" };
         } else {
             AUDIO.ClosedDoor.play();
         }
     }
-    open() {
-        this.storageLog();
+    open(logFlag) {
+        if (logFlag) this.storageLog();
         this.deactivate();
         this.GA.openDoor(this.grid);
         this.lift();
     }
     storageLog() {
-        this.IAM.map.storage.add(new IAM_Storage_item("GATE3D", this.id, "open"));
+        this.IAM.map.storage.add(new IAM_Storage_item("GATE3D", this.id, "open", false));
     }
 }
 

@@ -3577,7 +3577,7 @@ const INTERACTION_ENTITY = {
         sprite: "Shepardess",
         category: 'crest',
         voice: "Female",
-        wants: ["Sheep", "Sheep", "Sheep", "Sheep", "Sheep"],
+        wants: ["BabySheep", "BabySheep", "BabySheep", "BabySheep", "BabySheep"],
         gives: "Diamond",
         text: {
             intro: "Lost in meadows, my sheep, my care, Find them please, this task I dare.",
@@ -4074,8 +4074,8 @@ const INTERACTION_SHRINE = {
         }
     },
     ManaGoddess: {
-        name: "ManaGoddess",
-        sprite: "ManaGoddess",
+        name: "ManaGodess",
+        sprite: "ManaGodess",
         category: 'crest',
         voice: "Female",
         wants: ["GoldCoin"],

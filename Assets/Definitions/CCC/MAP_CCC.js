@@ -49,7 +49,19 @@ const MAP_TEXT = {
     68: "Wellcome to the jungle. Where is Purrrscila?",
     69: "I should take some time to train my skills. I am not yet ready for GhostFace.",
     76: "Marble angels.",
+    79: "Let's blast them to pieces.",
     80: "Pick all the gold like a pacman you are.",
+    81: "It's a hard work reclaiming the throne, what do you think?.",
+    83: "Wanna take a bath?",
+    85: "Freeeze. Ha ha.",
+    87: "Ribbit.",
+    88: "Horns up!",
+    89: "Let's scare her.",
+    92: "I hear silence of the lambs.",
+    93: "Author of this game must really like witches?",
+    94: "This library is ancient.",
+    97: "Are you taking good care of my health?",
+    99: "We are going deep down into the darkness. Are you scared? You should be.",
     117: "Oh. Surprise. Ghostface is a woman.",
     125: "I hope you saved some gold for scrolls?",
 };
@@ -1035,7 +1047,7 @@ const MAP = {
         containers: '[[168,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[148,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[191,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
     }
     ,
-    51 : {
+    51: {
         name: "The Cellar",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BEQABB3ABB3ABAA4BAA4BABB2AA9BB4AA3BB5AA4BAA2BAA3BB2AA9BAA15BABAQBAA9BAA3BAA17BB2AA2BB2AA3BAA16BB4ABAA6BAA6EBB3AA7BABAA4BAA4EAA5BAA3BAA8BB2AA3BAA2BABAA2BAA3BABAA3BB5ABB5ABB6ABB3AA2BAA3BB2AA6BAA2BB2AA3BABB4AA2BB7ABB2ABB3ABB7ABABABB5ABB4ABAA2BB3AA5BABABB3ABB2ABB8AA2BABB8ABB7AA2BB3ABEBB9EBB3ABB6ABB21AB$AA2BB8AA3BB2AA2"}',
@@ -1057,7 +1069,7 @@ const MAP = {
         objects: '[[54,"Pear"]]',
         oracles: '[[184,7,"CatOracle"],[153,7,"EngineOracle"]]',
         movables: '[[267,"Cat"],[395,"Cat"]]',
-        }
+    }
     ,
     52: {
         name: "Say Your Prayers",
@@ -1309,7 +1321,7 @@ const MAP = {
         oracles: '[[146,5,"PunisherOracle"]]',
     }
     ,
-    64 : {
+    64: {
         name: "Wolf Den",
         sg: 0,
         data: '{"width":"15","height":"15","map":"BB8AA7BAA6BAA10BAA2BB2AA2BAA3ÁAA2BAA15BB4AA3BB2ABB3ABB10AA4BAA2BB2ABABB5ABB3ABB2AA6BAA3BAA5QBB2AA4BB4ABAA2QBB2ABB3ABABB6AA2BAA7BABB3AA2BB5ABB7AA2BB2ABABB2ABB19$BB2AA3BB2A"}',
@@ -1331,7 +1343,7 @@ const MAP = {
         objects: '[[78,"GoldCoin"]]',
         traps: '[[130,5,"RockTriggerButton",0,"Bounceball",178],[130,1,"RockTriggerButton",0,"Bounceball",172]]',
         movables: '[[190,"LittleChicken"]]',
-        }
+    }
     ,
     65: {
         name: "The Cliff",

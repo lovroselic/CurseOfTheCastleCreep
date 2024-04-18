@@ -1086,6 +1086,38 @@ const ORACLE_TYPE = {
         text: "Did you know The Curse of the Castle Creep uses same game engine as Crawl Master II?",
         interactionCategory: "oracle",
     },
+    LightKnightHonourGuard: {
+        name: "LightKnightHonourGuard",
+        sprite: "LightKnightHonourGuard",
+        category: 'crest',
+        voice: "Female",
+        text: "I hope you have enjoyed the game. All it's 126 dungeons.",
+        interactionCategory: "oracle",
+    },
+    EquestrienneHonorGuard: {
+        name: "EquestrienneHonorGuard",
+        sprite: "EquestrienneHonorGuard",
+        category: 'crest',
+        voice: "Female",
+        text: "All code written by LaughingSkull.",
+        interactionCategory: "oracle",
+    },
+    DarkKnightHonorGuard: {
+        name: "DarkKnightHonorGuard",
+        sprite: "DarkKnightHonorGuard",
+        category: 'crest',
+        voice: "Female",
+        text: "Thanks for playing The Curse of the Castle Creep.",
+        interactionCategory: "oracle",
+    },
+    ButterFlyHonorGuard: {
+        name: "ButterFlyHonorGuard",
+        sprite: "ButterFlyHonorGuard",
+        category: 'crest',
+        voice: "Female",
+        text: "All of us - the cuties - were generated with stable diffusion and ideogram.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {
@@ -3324,7 +3356,7 @@ const INTERACTION_ENTITY = {
             progress: "Mushrooms gather, the potion brews, more still needed for the deadly hues.",
             conclusion: "Enough for a deadly stew, so sly, take this flask of poison, let your enemies die."
         }
-    },    
+    },
     RedRidingHood: {
         name: "RedRidingHood",
         sprite: "RedRidingHood",

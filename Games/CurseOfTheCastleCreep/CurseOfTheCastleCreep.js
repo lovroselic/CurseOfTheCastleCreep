@@ -9,10 +9,11 @@
       
 TODO:
     * oracle: 'Explore walls and floors carefully. You don't want to overlook something, right?'
+    * oracle: 'you can save the game by going out of the gate. smart. unless you die in the process.'
 known bugs: 
     * i don't do bugs
 retests:
-    * pick and deliver lamb
+
 
 
  */
@@ -50,7 +51,7 @@ const DEBUG = {
 
          */
 
-        GAME.level = 99; //42 from start or resumw
+        GAME.level = 126; //120
         GAME.gold = 1000000;
         HERO.maxHealth = 1000;
         HERO.health = 1000;
@@ -67,7 +68,7 @@ const DEBUG = {
         HERO.magicExp = 0;
         HERO.inventory.potion.red = 99;
         HERO.inventory.potion.blue = 99;
-        let scrolls = ["MagicBoost", "DestroyArmor", "DestroyArmor", "Light", "Light", "Light", "Cripple", "Invisibility", "BoostArmor", "DestroyWeapon"];
+        let scrolls = [];
 
         for (let scr of scrolls) {
             let scroll = new Scroll(scr);
@@ -76,14 +77,13 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
 
-        let invItems = [];
+        let invItems = ["Crown"];
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
 
         let keys = [];
-        //let keys = ["Gold", "Gold", "Gold", "Gold", "Gold", "Gold"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -117,7 +117,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.80.06",
+    VERSION: "0.81.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

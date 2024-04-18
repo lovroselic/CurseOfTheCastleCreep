@@ -419,6 +419,9 @@ LoadTextures = [
     { srcName: "Wall/Wood7.jpg", name: "Wood7" },
     { srcName: "Wall/Wood8.jpg", name: "Wood8" },
     { srcName: "Wall/Wood9.jpg", name: "Wood9" },
+
+    /** decals that are textures */
+    { srcName: "Wall/Nook1.jpg", name: "Nook1" },
     
     /** object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
@@ -690,6 +693,11 @@ LoadSprites = [
     { srcName: "EntityPictures/ScrollSeller3.jpg", name: "ScrollSeller3" },
     { srcName: "EntityPictures/ScrollSeller4.jpg", name: "ScrollSeller4" },
     { srcName: "EntityPictures/EngineOracle.jpg", name: "EngineOracle" },
+
+    { srcName: "EntityPictures/LightKnightHonourGuard.jpg", name: "LightKnightHonourGuard" },
+    { srcName: "EntityPictures/EquestrienneHonorGuard.jpg", name: "EquestrienneHonorGuard" },
+    { srcName: "EntityPictures/DarkKnightHonorGuard.jpg", name: "DarkKnightHonorGuard" },
+    { srcName: "EntityPictures/ButterFlyHonorGuard.jpg", name: "ButterFlyHonorGuard" },
 
     // items
     { srcName: "Items/Acorn.png", name: "Acorn" },
@@ -981,7 +989,7 @@ LoadSprites = [
     { srcName: "ObjDecals/Grate1_128.png", name: "Grate1_128" },
     { srcName: "ObjDecals/LS.png", name: "LS" },
     { srcName: "ObjDecals/MagicShrine256.png", name: "MagicShrine256" },
-    { srcName: "ObjDecals/Nook1.jpg", name: "Nook1" },
+    
     { srcName: "ObjDecals/PrayingSkeleton10.png", name: "PrayingSkeleton10" },
     { srcName: "ObjDecals/Reaper.png", name: "Reaper" },
     { srcName: "ObjDecals/RoundGrille96.png", name: "RoundGrille96" },

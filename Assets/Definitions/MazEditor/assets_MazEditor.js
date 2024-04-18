@@ -419,6 +419,9 @@ LoadTextures = [
     { srcName: "Wall/Wood7.jpg", name: "Wood7" },
     { srcName: "Wall/Wood8.jpg", name: "Wood8" },
     { srcName: "Wall/Wood9.jpg", name: "Wood9" },
+
+    /** decals that are textures */
+    { srcName: "Wall/Nook1.jpg", name: "Nook1" },
 ];
 
 LoadSheetSequences = [
@@ -621,7 +624,6 @@ LoadSprites = [
     { srcName: "ObjDecals/Grate1_128.png", name: "Grate1_128" },
     { srcName: "ObjDecals/LS.png", name: "LS" },
     { srcName: "ObjDecals/MagicShrine256.png", name: "MagicShrine256" },
-    { srcName: "ObjDecals/Nook1.jpg", name: "Nook1" },
     { srcName: "ObjDecals/PrayingSkeleton10.png", name: "PrayingSkeleton10" },
     { srcName: "ObjDecals/Reaper.png", name: "Reaper" },
     { srcName: "ObjDecals/RoundGrille96.png", name: "RoundGrille96" },

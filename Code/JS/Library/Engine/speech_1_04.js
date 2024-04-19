@@ -69,7 +69,7 @@ const SPEECH = {
       console.log(`%cSPEECH not ready ....`, "color: #A00");
       return;
     }
-    if (speechSynthesis.pending) {
+    if (speechSynthesis.pending || speechSynthesis.speaking) {
       if (SPEECH.VERBOSE) console.log(`%cSPEECH is already speaking. Skipping new text.`, "color: #A00");
       return;
     }
@@ -187,7 +187,7 @@ const VOICE = {
   },
   'FemHighQuick': {
     voice: 1,
-    setting: new VoiceSetting(1.4, 2.1, 1.0)
+    setting: new VoiceSetting(1.4, 2.0, 1.0)
   },
   'GlaDOS': {
     voice: 1,
@@ -195,7 +195,11 @@ const VOICE = {
   },
   'Princess': {
     voice: 6,
-    setting: new VoiceSetting(1.2, 2.5, 1.0)
+    setting: new VoiceSetting(1.2, 2.0, 1.0)
+  },
+  'GhostFace': {
+    voice: 1,
+    setting: new VoiceSetting(2.0, 0.0, 1.0)
   },
 };
 console.log(`%cSPEECH ${SPEECH.VERSION} loaded.`, SPEECH.CSS);

@@ -698,6 +698,8 @@ LoadSprites = [
     { srcName: "EntityPictures/EquestrienneHonorGuard.jpg", name: "EquestrienneHonorGuard" },
     { srcName: "EntityPictures/DarkKnightHonorGuard.jpg", name: "DarkKnightHonorGuard" },
     { srcName: "EntityPictures/ButterFlyHonorGuard.jpg", name: "ButterFlyHonorGuard" },
+    { srcName: "EntityPictures/GhostFace.jpg", name: "GhostFace" },
+    { srcName: "EntityPictures/QueenMother.jpg", name: "QueenMother" },
 
     // items
     { srcName: "Items/Acorn.png", name: "Acorn" },

@@ -1118,6 +1118,22 @@ const ORACLE_TYPE = {
         text: "All of us - the cuties - were generated with stable diffusion and ideogram.",
         interactionCategory: "oracle",
     },
+    GhostFace: {
+        name: "GhostFace",
+        sprite: "GhostFace",
+        category: 'crest',
+        voice: "GhostFace",
+        text: "How do you dare? Little brat? Defeating me, the mighty GhostFace?",
+        interactionCtegory: "oracle",
+    },
+    QueenMother: {
+        name: "QueenMother",
+        sprite: "QueenMother",
+        category: 'crest',
+        voice: "Princess",
+        text: "Are you proud of me now? Mother? At last?",
+        interactionCtegory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {

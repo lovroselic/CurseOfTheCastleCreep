@@ -51,7 +51,7 @@ const DEBUG = {
 
          */
 
-        GAME.level = 126; //120
+        GAME.level = 126; //126
         GAME.gold = 1000000;
         HERO.maxHealth = 1000;
         HERO.health = 1000;
@@ -117,7 +117,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.81.00",
+    VERSION: "0.81.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

@@ -2437,7 +2437,7 @@ const MAP = {
         oracles: '[[213,1,"Icy"]]',
     }
     ,
-    120: {
+    120 : {
         name: "The Throne Room",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB5AA5BB2ABAA2BB4AA99BAA7BAA4BB2AA4BAA8BABABB2AA3BAA7BB2AA14BAA15BABAA5BAA10BAA9BB3AA31BAA27BABAA3BB13ABB2AA3BABABB3ABB5ABB3AA2BB16ABB3ABB4AA2BB5AA2BAA5BB2ABB5AA6BB7ABB3ABB2ABB2ABB20ABB16A$"}',
@@ -2451,9 +2451,9 @@ const MAP = {
         monsters: '[[88,"Bat"],[319,"Bat"],[332,"Bat"],[100,"Bat"],[153,"RedGoldBat"],[233,"RedGoldBat"],[248,"RedGoldBat"],[161,"RedGoldBat"]]',
         gold: '[[44,"GoldBar"],[60,"GoldBar"],[380,"GoldBar"],[396,"GoldBar"]]',
         containers: '[[366,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[368,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[348,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[344,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[400,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[402,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[416,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[418,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[22,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[24,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[38,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[40,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[259,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[265,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[48,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[56,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
-        oracles: '[[147,5,"DarkKnightHonorGuard"],[167,3,"LightKnightHonourGuard"],[251,3,"EquestrienneHonorGuard"],[231,5,"ButterFlyHonorGuard"]]',
+        oracles: '[[147,5,"DarkKnightHonorGuard"],[167,3,"LightKnightHonourGuard"],[251,3,"EquestrienneHonorGuard"],[231,5,"ButterFlyHonorGuard"],[315,5,"GhostFace"],[335,3,"QueenMother"]]',
         interactors: '[[409,1,"TheThrone"]]',
-    }
+        }
     ,
     121: {
         name: "Dungeon Jungle",

@@ -1134,6 +1134,38 @@ const ORACLE_TYPE = {
         text: "Are you proud of me now? Mother? At last?",
         interactionCtegory: "oracle",
     },
+    Rusty: {
+        name: "Rusty",
+        sprite: "Rusty",
+        category: 'crest',
+        voice: "Female",
+        text: "Explore walls and floors carefully. You don't want to overlook something, right?",
+        interactionCategory: "oracle",
+    },
+    GhostFaceCameo: {
+        name: "GhostFaceCameo",
+        sprite: "GhostFaceCameo",
+        category: 'crest',
+        voice: "GhostFace",
+        text: "You don't know who I am? No? You will. Oh, you will.",
+        interactionCategory: "oracle",
+    },
+    SaveGameOracle: {
+        name: "SaveGameOracle",
+        sprite: "SaveGameOracle",
+        category: 'crest',
+        voice: "Female",
+        text: "You can save the game by going out of the gate. Smart. Unless you die on the other side.",
+        interactionCategory: "oracle",
+    },
+    Teacher: {
+        name: "Teacher",
+        sprite: "Teacher",
+        category: 'crest',
+        voice: "Female",
+        text: "Be mindful how you use the scrolls. Don't overkill.",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {

@@ -1421,6 +1421,18 @@ LoadSprites = [
     { srcName: "PicDecals/ZimSalaBim2.png", name: "ZimSalaBim2" },
     { srcName: "PicDecals/ZimSalaBim200.png", name: "ZimSalaBim200" },
     { srcName: "PicDecals/ZimSalaBim201.png", name: "ZimSalaBim201" },
+
+    { srcName: "PicDecals/BetrayedAlliance.png", name: "BetrayedAlliance" },
+    { srcName: "PicDecals/Commando100.png", name: "Commando100" },
+    { srcName: "PicDecals/Elite100.png", name: "Elite100" },
+    { srcName: "PicDecals/F4.png", name: "F4" },
+    { srcName: "PicDecals/GhostFace1.png", name: "GhostFace1" },
+    { srcName: "PicDecals/GhostFace2.png", name: "GhostFace2" },
+    { srcName: "PicDecals/GhostFace3.png", name: "GhostFace3" },
+    { srcName: "PicDecals/GhostFace4.png", name: "GhostFace4" },
+    { srcName: "PicDecals/Movie.png", name: "Movie" },
+    { srcName: "PicDecals/SpyHunter200.png", name: "SpyHunter200" },
+    { srcName: "PicDecals/LeisureSuitLarry300.png", name: "LeisureSuitLarry300" },
 ];
 
 LoadShaders = [

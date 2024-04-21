@@ -2437,7 +2437,7 @@ const MAP = {
         oracles: '[[213,1,"Icy"]]',
     }
     ,
-    120 : {
+    120: {
         name: "The Throne Room",
         sg: 0,
         data: '{"width":"21","height":"21","map":"BB5AA5BB2ABAA2BB4AA99BAA7BAA4BB2AA4BAA8BABABB2AA3BAA7BB2AA14BAA15BABAA5BAA10BAA9BB3AA31BAA27BABAA3BB13ABB2AA3BABABB3ABB5ABB3AA2BB16ABB3ABB4AA2BB5AA2BAA5BB2ABB5AA6BB7ABB3ABB2ABB2ABB20ABB16A$"}',
@@ -2453,7 +2453,7 @@ const MAP = {
         containers: '[[366,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[368,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[348,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[344,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[400,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[402,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[416,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[418,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",1],[22,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[24,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[38,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[40,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[259,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[265,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[48,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[56,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7]]',
         oracles: '[[147,5,"DarkKnightHonorGuard"],[167,3,"LightKnightHonourGuard"],[251,3,"EquestrienneHonorGuard"],[231,5,"ButterFlyHonorGuard"],[315,5,"GhostFace"],[335,3,"QueenMother"]]',
         interactors: '[[409,1,"TheThrone"]]',
-        }
+    }
     ,
     121: {
         name: "Dungeon Jungle",
@@ -2557,12 +2557,15 @@ const MAP = {
     126 : {
         name: "Dungeon Information Center",
         sg: 0,
-        data: '{"width":"17","height":"17","map":"BB5AA7BABAA6BB2ABAA5BAA30BB3AA7BAA45BB4AA5BAA2BAA27BB2AA9BABAA9BABB12AA4BAA3BB4AA2BB2AA2BB7ABAA2BB3AA3BAA2BB7AA5BB3ABB9AA2BAA2BB26A$"}',
+        data: '{"width":"17","height":"17","map":"BB3AA2BB2AA14BB3AA2BAA11BB2AA4BB2AA4BB2AA8BB2AA3BB2AA9BB5AA2BB2AA5BB5AA30BB2AA13BB2AA14BAA3BB8AA2BAA5BB4AA2BB6ABABB7AA2BB10AA2BAA6BABB2ABB2AA2BB7AA9BB3ABB9AA2BAA2BB26A$"}',
         wall: "BrownWall32",
         floor: "BlackWall45",
         ceil: "Wood7",
         start: '[151,3]',
+        decals: '[[8,7,"GhostFace1","picture"],[280,1,"GhostFace2","picture"],[136,5,"GhostFace3","picture"],[175,5,"GhostFace4","picture"],[107,7,"F4","picture"],[87,5,"LeisureSuitLarry300","picture"],[113,5,"BetrayedAlliance","picture"],[181,5,"SpyHunter200","picture"],[107,5,"Commando100","picture"],[113,7,"Arena200","picture"],[99,7,"SabreWulf89","picture"],[175,7,"ImpossibleMsission112","picture"],[87,7,"BoogaBoo11","picture"],[181,7,"SpaceQuest10","picture"],[201,1,"Elite100","picture"],[134,3,"SVS112","picture"],[168,3,"WOW104","picture"],[99,3,"PharaohCurse112","picture"],[201,3,"LaraCroft21","picture"],[113,3,"KokotoniWilf70","picture"],[181,3,"Kangaroo60","picture"],[107,3,"MonkeyIsland142","picture"],[189,3,"WinterGames11","picture"],[87,3,"RickDangerous60","picture"],[175,3,"Shamus4","picture"],[120,5,"DungeonMaster203","picture"],[154,5,"Barbarian131","picture"],[99,5,"Elite201","picture"],[201,5,"Choplifter12","picture"],[208,1,"SasbreWulf60","picture"],[175,1,"LadyTut102","picture"],[181,1,"SpaceQuest200","picture"],[107,1,"HeadOverHeels3","picture"],[113,1,"ImpossibleMsission111","picture"],[216,1,"Ultima89","picture"],[189,1,"DonkeyKong100","picture"],[189,5,"Scramble23","picture"],[72,7,"AticAtac203","picture"],[80,7,"LSL100","picture"],[40,7,"Skull21","crest"],[44,7,"Skull21","crest"],[244,1,"Skull20","crest"],[248,1,"Skull20","crest"],[110,4,"Drain64","crest"],[142,4,"Drain64","crest"],[146,4,"Drain64","crest"],[178,4,"Drain64","crest"],[68,5,"MonkeyIsland140","picture"],[204,5,"Portal131","picture"],[84,3,"TombRaider100","picture"],[220,3,"Goonies5","picture"],[80,3,"Scramble10","picture"],[216,3,"ManicMiner11","picture"],[72,5,"Miner3","picture"],[208,5,"SirFred60","picture"]]',
         lights: '[[87,1,"Lamp41","dim"],[99,1,"Lamp51","dim"],[189,7,"WallLamp10","dim"],[201,7,"WallLamp15","dim"],[144,7,"Lamp47","standardRedish"],[144,1,"WallLamp32","standardRedish"],[144,3,"WallLamp31","standardRedish"],[144,5,"Lamp49","standardRedish"]]',
         gates: '[[152,3,"126.1","3.5","Open"]]',
+        monsters: '[[147,"Bat"],[93,"Bat"],[140,"Bat"],[195,"Bat"],[36,"RedGoldBat"],[48,"RedGoldBat"],[240,"RedGoldBat"],[235,"RedGoldBat"]]',
+        oracles: '[[2,7,"Rusty"],[14,7,"GhostFaceCameo"],[274,1,"SaveGameOracle"],[286,1,"Teacher"]]',
         }
 };

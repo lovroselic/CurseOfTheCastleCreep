@@ -8,12 +8,11 @@
 /*
       
 TODO:
-    * oracle: 'Explore walls and floors carefully. You don't want to overlook something, right?'
-    * oracle: 'you can save the game by going out of the gate. smart. unless you die in the process.'
+    * everything dones
 known bugs: 
     * i don't do bugs
 retests:
-
+    * 
 
 
  */
@@ -51,7 +50,7 @@ const DEBUG = {
 
          */
 
-        GAME.level = 126; //126
+        GAME.level = 29; 
         GAME.gold = 1000000;
         HERO.maxHealth = 1000;
         HERO.health = 1000;
@@ -117,7 +116,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.81.01",
+    VERSION: "0.81.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

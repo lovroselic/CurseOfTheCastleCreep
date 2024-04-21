@@ -57,7 +57,8 @@ const DECAL_PAINTINGS = [
     "Underwurlde131", "Underwurlde140", "Underwurlde141", "Unknown3", "Unknown30", "Uridium2", "VIC20-2", "Valhalla2", "Valhalla88", "Vixen3", "Vixen50", "Vixen51", "Vixen70", "Vixen79", "Vixen89", "WOW10", "WOW104",
     "Wadca", "Wally88", "Wally99", "WhoDaresWins1", "WhoDaresWins10", "WhoDaresWins50", "WhoDaresWins70", "WhoDaresWins71", "WhoDaresWins88", "WinterGames10", "WinterGames11", "WinterGames79", "Witcher100", "Witcher101",
     "Witcher102", "Witcher103", "Witcher110", "Witcher111", "Witcher112", "Witcher113", "Witcher130", "Witcher47", "WizardOfWor89", "Wolf10", "Wolfenstein31", "Wolfenstein50", "Wolfenstein70", "Yennefer", "Yennefer21",
-    "Yeppelin70", "ZX Spectrum", "ZX81-89", "Zak50", "Zak51", "ZakMcKraken89", "Zaxxon3", "Zaxxon70", "Zaxxon89", "Zeppelin4", "Zeppelin50", "Zeppelin88", "Zeppelin89", "ZimSalaBim2", "ZimSalaBim200", "ZimSalaBim201"
+    "Yeppelin70", "ZX Spectrum", "ZX81-89", "Zak50", "Zak51", "ZakMcKraken89", "Zaxxon3", "Zaxxon70", "Zaxxon89", "Zeppelin4", "Zeppelin50", "Zeppelin88", "Zeppelin89", "ZimSalaBim2", "ZimSalaBim200", "ZimSalaBim201",
+    "BetrayedAlliance", "Commando100", "Elite100", "F4", "GhostFace1", "GhostFace2", "GhostFace3", "GhostFace4", "Movie", "SpyHunter200", "LeisureSuitLarry300",
 ].sort();
 
 /** Crests */

@@ -422,7 +422,7 @@ LoadTextures = [
 
     /** decals that are textures */
     { srcName: "Wall/Nook1.jpg", name: "Nook1" },
-    
+
     /** object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
     { srcName: "ObjectTextures/AstroRed.jpg", name: "AstroRed" },
@@ -668,7 +668,6 @@ LoadSprites = [
     { srcName: "EntityPictures/SpiderDominaOracle2.jpg", name: "SpiderDominaOracle2" },
     { srcName: "EntityPictures/Spideress.jpg", name: "Spideress" },
     { srcName: "EntityPictures/Squirrel.jpg", name: "Squirrel" },
-    { srcName: "EntityPictures/Squirrel3.jpg", name: "Squirrel3" },
     { srcName: "EntityPictures/StandingDomme.jpg", name: "StandingDomme" },
     { srcName: "EntityPictures/SwordGirl.jpg", name: "SwordGirl" },
     { srcName: "EntityPictures/TempleGuardian.jpg", name: "TempleGuardian" },
@@ -693,13 +692,16 @@ LoadSprites = [
     { srcName: "EntityPictures/ScrollSeller3.jpg", name: "ScrollSeller3" },
     { srcName: "EntityPictures/ScrollSeller4.jpg", name: "ScrollSeller4" },
     { srcName: "EntityPictures/EngineOracle.jpg", name: "EngineOracle" },
-
     { srcName: "EntityPictures/LightKnightHonourGuard.jpg", name: "LightKnightHonourGuard" },
     { srcName: "EntityPictures/EquestrienneHonorGuard.jpg", name: "EquestrienneHonorGuard" },
     { srcName: "EntityPictures/DarkKnightHonorGuard.jpg", name: "DarkKnightHonorGuard" },
     { srcName: "EntityPictures/ButterFlyHonorGuard.jpg", name: "ButterFlyHonorGuard" },
     { srcName: "EntityPictures/GhostFace.jpg", name: "GhostFace" },
     { srcName: "EntityPictures/QueenMother.jpg", name: "QueenMother" },
+    { srcName: "EntityPictures/Rusty.jpg", name: "Rusty" },
+    { srcName: "EntityPictures/GhostFaceCameo.jpg", name: "GhostFaceCameo" },
+    { srcName: "EntityPictures/SaveGameOracle.jpg", name: "SaveGameOracle" },
+    { srcName: "EntityPictures/Teacher.jpg", name: "Teacher" },
 
     // items
     { srcName: "Items/Acorn.png", name: "Acorn" },
@@ -991,7 +993,7 @@ LoadSprites = [
     { srcName: "ObjDecals/Grate1_128.png", name: "Grate1_128" },
     { srcName: "ObjDecals/LS.png", name: "LS" },
     { srcName: "ObjDecals/MagicShrine256.png", name: "MagicShrine256" },
-    
+
     { srcName: "ObjDecals/PrayingSkeleton10.png", name: "PrayingSkeleton10" },
     { srcName: "ObjDecals/Reaper.png", name: "Reaper" },
     { srcName: "ObjDecals/RoundGrille96.png", name: "RoundGrille96" },
@@ -1789,4 +1791,16 @@ LoadSprites = [
     { srcName: "PicDecals/ZimSalaBim2.png", name: "ZimSalaBim2" },
     { srcName: "PicDecals/ZimSalaBim200.png", name: "ZimSalaBim200" },
     { srcName: "PicDecals/ZimSalaBim201.png", name: "ZimSalaBim201" },
+
+    { srcName: "PicDecals/BetrayedAlliance.png", name: "BetrayedAlliance" },
+    { srcName: "PicDecals/Commando100.png", name: "Commando100" },
+    { srcName: "PicDecals/Elite100.png", name: "Elite100" },
+    { srcName: "PicDecals/F4.png", name: "F4" },
+    { srcName: "PicDecals/GhostFace1.png", name: "GhostFace1" },
+    { srcName: "PicDecals/GhostFace2.png", name: "GhostFace2" },
+    { srcName: "PicDecals/GhostFace3.png", name: "GhostFace3" },
+    { srcName: "PicDecals/GhostFace4.png", name: "GhostFace4" },
+    { srcName: "PicDecals/Movie.png", name: "Movie" },
+    { srcName: "PicDecals/SpyHunter200.png", name: "SpyHunter200" },
+    { srcName: "PicDecals/LeisureSuitLarry300.png", name: "LeisureSuitLarry300" },
 ];

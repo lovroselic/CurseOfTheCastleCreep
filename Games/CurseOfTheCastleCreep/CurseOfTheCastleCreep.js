@@ -44,11 +44,8 @@ const DEBUG = {
     goto(grid) {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
-    checkpoint1() {
-        /**
-         * 
-
-         */
+    /*checkpoint1() {
+   
 
         GAME.level = 29; 
         GAME.gold = 1000000;
@@ -88,7 +85,7 @@ const DEBUG = {
             HERO.inventory.key.push(K);
         }
         TITLE.keys();
-    }
+    }*/
 };
 const INI = {
     MIMIMAP_HEIGHT: 200,
@@ -116,7 +113,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "1.00.01",
+    VERSION: "1.00.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -139,7 +136,7 @@ const PRG = {
     },
     setup() {
         if (DEBUG.SETTING) {
-            $('#debug').show();
+            //$('#debug').show();
             $("#engine_version").html(ENGINE.VERSION);
             $("#grid_version").html(GRID.VERSION);
             $("#maze_version").html(DUNGEON.VERSION);

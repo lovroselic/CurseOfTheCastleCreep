@@ -21,7 +21,7 @@ retests:
 const DEBUG = {
     FPS: false,
     BUTTONS: false,
-    SETTING: false,
+    SETTING: true,
     VERBOSE: false,
     _2D_display: false,
     INVINCIBLE: false,
@@ -116,7 +116,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "1.00",
+    VERSION: "1.00.01",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",

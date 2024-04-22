@@ -19,16 +19,16 @@ retests:
 ////////////////////////////////////////////////////
 
 const DEBUG = {
-    FPS: true,
+    FPS: false,
     BUTTONS: false,
     SETTING: false,
-    VERBOSE: true,
-    _2D_display: true,
+    VERBOSE: false,
+    _2D_display: false,
     INVINCIBLE: false,
     FREE_MAGIC: false,
     LOAD: false,
     STUDY: false,
-    keys: true,
+    keys: false,
     displayInv() {
         HERO.inventory.scroll.display();
         const list = [];
@@ -116,7 +116,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "0.81.02",
+    VERSION: "1.00",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -730,7 +730,7 @@ const GAME = {
          * debug
          */
 
-        DEBUG.checkpoint1();
+        //DEBUG.checkpoint1();
 
         /** debug end */
 

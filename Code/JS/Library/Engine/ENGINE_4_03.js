@@ -6,7 +6,7 @@
 
 //////////////////engine.js/////////////////////////
 //                                                //
-//      ENGINE version 4.00        by LS          //
+//      ENGINE version 4.03        by LS          //
 //                                                //
 ////////////////////////////////////////////////////
 
@@ -47,7 +47,7 @@ const DownRight = new Vector(1, 1);
 const DownLeft = new Vector(-1, 1);
 
 const ENGINE = {
-  VERSION: "4.02",
+  VERSION: "4.03",
   CSS: "color: #0FA",
   INI: {
     ANIMATION_INTERVAL: 16,
@@ -2400,19 +2400,21 @@ const ENGINE = {
           ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
         }
       }
-      const concat_shrines = [...maze.shrines, ...maze.trainers, ...maze.interactors];
-      if (concat_shrines) {
-        for (const shrine of concat_shrines) {
-          let grid = GA.indexToGrid(shrine[0]);
-          let mid = GRID.gridToCenterPX(grid);
-          let dir = Vector.fromInt(shrine[1]);
-          let start = mid.translate(dir, W);
-          let color = "green";
-          ENGINE.drawCircle(CTX, start, decalWidth * 3, color);
-          start = start.translate(LEFT, W / 2);
-          let pEnd = start.translate(RIGHT, W)
-          ENGINE.drawLine(CTX, start, pEnd, color, decalWidth);
-          write(mid, shrine[2]);
+      if (maze.shrines && maze.trainers && maze.interactors) {
+        const concat_shrines = [...maze.shrines, ...maze.trainers, ...maze.interactors];
+        if (concat_shrines) {
+          for (const shrine of concat_shrines) {
+            let grid = GA.indexToGrid(shrine[0]);
+            let mid = GRID.gridToCenterPX(grid);
+            let dir = Vector.fromInt(shrine[1]);
+            let start = mid.translate(dir, W);
+            let color = "green";
+            ENGINE.drawCircle(CTX, start, decalWidth * 3, color);
+            start = start.translate(LEFT, W / 2);
+            let pEnd = start.translate(RIGHT, W)
+            ENGINE.drawLine(CTX, start, pEnd, color, decalWidth);
+            write(mid, shrine[2]);
+          }
         }
       }
       if (maze.gates) {
@@ -2489,7 +2491,7 @@ const ENGINE = {
           CTX.fillText(gate[3], mid.x, mid.y);
         }
       }
-      if (maze.keys) {
+      if (maze.keys && Array.isArray(maze.keys)) {
         for (const key of maze.keys) {
           const KEY_COLORS = ["gold", "silver", "red", "green", "blue", "#50C878", "purple", "beige"];
           const color = KEY_COLORS[key[1]];
@@ -2540,13 +2542,15 @@ const ENGINE = {
           write(mid, gold[1]);
         }
       }
-      const concat_objects = [...maze.objects, ...maze.movables];
-      if (concat_objects) {
-        for (const obj of concat_objects) {
-          let grid = GA.indexToGrid(obj[0]);
-          let mid = GRID.gridToCenterPX(grid);
-          let text = `-${obj[1]}-`;
-          write(mid, text, "#00F");
+      if (maze.objects && maze.movables) {
+        const concat_objects = [...maze.objects, ...maze.movables];
+        if (concat_objects) {
+          for (const obj of concat_objects) {
+            let grid = GA.indexToGrid(obj[0]);
+            let mid = GRID.gridToCenterPX(grid);
+            let text = `-${obj[1]}-`;
+            write(mid, text, "#00F");
+          }
         }
       }
       if (maze.skills) {

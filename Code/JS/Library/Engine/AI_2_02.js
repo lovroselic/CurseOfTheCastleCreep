@@ -26,7 +26,7 @@ knownBugs:
 /////////////////////////////////////////
 
 const AI = {
-  VERSION: "2.01",
+  VERSION: "2.02",
   CSS: "color: silver",
   VERBOSE: false,
   INI: {
@@ -339,7 +339,7 @@ class Behaviour {
     }
   }
   manage(enemy, distance, passiveFlag) {
-    if (passiveFlag) {
+    if (passiveFlag || !distance) {
       this.strategy = this.getPassive();
       return;
     }

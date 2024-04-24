@@ -38,7 +38,7 @@
  */
 
 const WebGL = {
-    VERSION: "1.03",
+    VERSION: "1.04",
     CSS: "color: gold",
     CTX: null,
     VERBOSE: false,
@@ -83,6 +83,13 @@ const WebGL = {
                     throw `WebGL CONFIG type error: ${type}`;
             }
             if (WebGL.VERBOSE) console.info(`%cWebGL set to type: ${type}, dual mode: ${dual}, prevent_movement_in_exlusion_grids: ${prevent}`, WebGL.CSS);
+        },
+        holesSupported: true,
+        supportHoles() {
+            this.holesSupported = true;
+        },
+        ignoreHoles() {
+            this.holesSupported = false;
         }
     },
     programs_compiled: false,
@@ -541,7 +548,7 @@ const WebGL = {
         for (let iam of this.dynamicLightSources) {
             for (let LS of iam.POOL) {
                 if (!LS) continue;
-                //console.warn("LS", LS)
+
                 dynLights.push(...LS.pos.array);
                 dynLightColors.push(...LS.lightColor);
                 dynLightDirs.push(255, 255, 255);
@@ -842,10 +849,7 @@ const RAY = {
 const WORLD = {
     bufferTypes: ["positions", 'indices', "textureCoordinates", "vertexNormals"],
     objectTypes: ["wall", "floor", "ceil", "decal"],
-    init(object_types) {
-        for (let O of object_types) {
-            this.objectTypes.push(O);
-        }
+    init() {
         for (let BT of this.bufferTypes) {
             this[BT] = [];
         }
@@ -903,13 +907,13 @@ const WORLD = {
             resolution = this.divineResolution(decal.texture);
             decal.resolution = resolution;
         }
+        //console.info("addpic", decal, resolution);
         const [leftX, rightX, topY, bottomY] = this.getBoundaries(decal.category, decal.width, decal.height, resolution);
         const E = ELEMENT[`${decal.face}_FACE`];
         let positions = E.positions.slice();
         let indices = E.indices.slice();
         let textureCoordinates = E.textureCoordinates.slice();
         let vertexNormals = E.vertexNormals.slice();
-
 
         //scale
         switch (decal.face) {
@@ -1058,10 +1062,10 @@ const WORLD = {
         this[type].textureCoordinates.push(...textureCoordinates);
         this[type].vertexNormals.push(...vertexNormals);
     },
-    build(map, Y = 0, object_map = []) {
+    build(map, Y = 0) {
         const GA = map.GA;
         console.time("WorldBuilding");
-        this.init(object_map);
+        this.init();
 
         for (let [index, value] of GA.map.entries()) {
             let grid = GA.indexToGrid(index);
@@ -1077,7 +1081,7 @@ const WORLD = {
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
                     this.addCube(Y, grid, "wall");
-                    this.addCube(Y - 1, grid, "wall");                  //support for holes
+                    if (WebGL.CONFIG.holesSupported) this.addCube(Y - 1, grid, "wall");                  //support for holes //breaks CM2 if on - why?
                     break;
                 case MAPDICT.HOLE:
                     this.addCube(Y + 1, grid, "ceil");
@@ -1097,11 +1101,6 @@ const WORLD = {
             for (const decal of iam.POOL) {
                 this.addPic(Y, decal, "decal");
             }
-        }
-
-        /** object map */
-        for (let element of object_map) {
-            this.reserveObject(ELEMENT[element], element);
         }
 
         /** map indices */
@@ -1702,6 +1701,7 @@ class ExternalGate extends Portal {
         }
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_BUMP3D", this.id, "openGate"));
     }
 }
@@ -2002,6 +2002,7 @@ class Gate extends Drawable_object {
         this.lift();
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         this.IAM.map.storage.add(new IAM_Storage_item("GATE3D", this.id, "open", false));
     }
 }
@@ -2106,6 +2107,7 @@ class FloorItem3D extends Drawable_object {
         };
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         if (this.dropped) return;
         this.IAM.map.storage.add(new IAM_Storage_item("ITEM3D", this.id, "deactivate"));
     }
@@ -2252,6 +2254,7 @@ class WallFeature3D {
         this.interactive = false;
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
     }
     speak(text) {
@@ -2313,6 +2316,7 @@ class Shrine extends WallFeature3D {
         this.interactive = false;
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
     }
 }
@@ -2417,6 +2421,7 @@ class InteractionEntity extends WallFeature3D {
         this.interactive = false;
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         this.IAM.map.storage.add(new IAM_Storage_item("INTERACTIVE_DECAL3D", this.id, "deactivate"));
     }
 }
@@ -2970,6 +2975,7 @@ class StaticParticleBomb extends ParticleEmmiter {
 class $3D_Entity {
     constructor(grid, type, dir = UP) {
         this.distance = null;
+        this.airDistance = null;
         this.proximityDistance = null;                                      //euclidian distance when close up
         this.swordTipDistance = null;                                       //attack priority resolution
         this.dirStack = [];
@@ -3060,7 +3066,7 @@ class $3D_Entity {
         }
 
         let distance = nodemap[gridPosition.x][gridPosition.y].distance;
-        if (distance < Infinity) {
+        if (distance >= 0 && distance < Infinity) {
             this[prop] = distance;
         } else this[prop] = null;
     }
@@ -3278,6 +3284,7 @@ class $3D_Entity {
         this.texture = WebGL.createTexture(this.texture);
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         if (this.dropped) return;
         this.IAM.map.storage.add(new IAM_Storage_item("ENTITY3D", this.id, "remove"));
     }
@@ -3318,6 +3325,7 @@ class $Movable_Interactive_entity extends $3D_Entity {
         };
     }
     storageLog() {
+        if (!this.IAM.map.storage) return;
         if (this.dropped) return;
         this.IAM.map.storage.add(new IAM_Storage_item("DYNAMIC_ITEM3D", this.id, "remove"));
     }

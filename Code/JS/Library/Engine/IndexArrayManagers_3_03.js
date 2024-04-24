@@ -12,7 +12,7 @@ TODO:
 */
 
 const IndexArrayManagers = {
-    VERSION: "3.02",
+    VERSION: "3.03",
     VERBOSE: false,
     DEAD_LAPSED_TIME: 5,
 };
@@ -575,9 +575,10 @@ class Decal_IA_3D extends IAM {
 }
 
 class Decal3D extends IAM {
-    constructor(len = null, IA = null) {
+    constructor(len = null, IA = null, ri= false) {
         super();
         this.IA = IA;
+        this.reIndexRequired = ri;
         this.id_offset = null;
         this.len = len;
         if (this.len) {
@@ -823,6 +824,7 @@ class Animated_3d_entity extends IAM {
                 if (entity.caster) {
                     distance = entity.airDistance;
                 }
+
                 entity.behaviour.manage(entity, distance, passiveFlag);
                 if (!entity.hasStack()) {
                     let ARG = {
@@ -930,7 +932,7 @@ const MISSILE = new Missile_RC();
 const DECAL = new Decal_IA();
 const DECAL3D = new Decal3D();
 const LIGHTS3D = new Decal3D();
-const VANISHING3D = new Decal3D();
+const VANISHING3D = new Decal3D(null, null, true);
 const INTERFACE3D = new Decal3D();
 const GATE3D = new Decal3D(256);
 const ITEM3D = new Decal3D(1024);

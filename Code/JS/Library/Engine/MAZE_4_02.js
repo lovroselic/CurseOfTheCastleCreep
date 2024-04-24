@@ -16,7 +16,7 @@
 TODO:
 
 known bugs:
-    * no connection after tunneling should return new dungeon
+    
 */
 
 class Room {
@@ -1272,9 +1272,9 @@ class Maze extends MasterDungeon {
     }
 }
 class Arena extends MasterDungeon {
-    constructor(sizeX, sizeY) {
+    constructor(sizeX, sizeY, byte = 1) {
         let t0 = performance.now();
-        super(sizeX, sizeY);
+        super(sizeX, sizeY, byte);
         this.type = "ARENA";
         this.GA.massClear();
         this.GA.border(2);
@@ -1407,9 +1407,9 @@ class Arena extends MasterDungeon {
     }
 }
 class Dungeon extends MasterDungeon {
-    constructor(sizeX, sizeY) {
+    constructor(sizeX, sizeY, byte = 1) {
         let t0 = performance.now();
-        super(sizeX, sizeY);
+        super(sizeX, sizeY, byte);
         this.type = "DUNGEON";
         if (DUNGEON.SINGLE_CENTERED_ROOM) {
             this.rooms = this.singleCenteredRoom();
@@ -1762,12 +1762,12 @@ const ARENA = {
     PAD: null,
     FREE: null,
     ITERATIONS: 6,
-    create(sizeX, sizeY) {
+    create(sizeX, sizeY, byte = 1) {
         this.PAD = this.MIN_ROOM + (1.5 * this.MIN_PADDING) | 0; //minimum area
         this.FREE = this.MAX_ROOM + 2 * this.MIN_PADDING; //not carving further
         this.MIN_SIZE = this.MIN_ROOM; //compatibility
         this.MAX_SIZE = this.MAX_ROOM; //compatibility
-        var arena = new Arena(sizeX, sizeY);
+        var arena = new Arena(sizeX, sizeY, byte);
         return arena;
     }
 };
@@ -1778,11 +1778,11 @@ const FREE_MAP = {
     import(data, byte = 1) {
         data.map = GridArray.importMap(data.map);
         data.map = GridArray.fromString(data.width, data.height, data.map, byte);
-        return FREE_MAP.create(parseInt(data.width, 10), parseInt(data.height, 10), data.map);
+        return FREE_MAP.create(parseInt(data.width, 10), parseInt(data.height, 10), data.map, byte);
     }
 };
 const DUNGEON = {
-    VERSION: "4.01",
+    VERSION: "4.02",
     CSS: "color: #f4ee42",
     REFUSE_CONNECTION_TO_ROOM: true,
     LIMIT_ROOMS: false,
@@ -1818,10 +1818,9 @@ const DUNGEON = {
         this.FREE = this.MAX_ROOM + 4 * this.MIN_PADDING; //not carving further
         if (this.MIN_ROOM < 3) this.MIN_ROOM = 3;
     },
-    create(sizeX, sizeY) {
+    create(sizeX, sizeY, byte = 1) {
         this.init();
-        //const dungeon = new Dungeon(sizeX, sizeY);
-        return new Dungeon(sizeX, sizeY);
+        return new Dungeon(sizeX, sizeY, byte);
     }
 };
 

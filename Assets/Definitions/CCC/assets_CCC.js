@@ -542,7 +542,7 @@ LoadObjects = [
 LoadModels = ['GhostFace.gltf', 'Bat.gltf', 'Hulk.gltf', 'Viking.gltf', 'Astro.gltf', 'MissWhite.gltf',
     'Spider.gltf', 'Wolf.gltf', 'Skeleton.gltf', 'Goblin.gltf', 'Drax.gltf', 'MissGalaxy.gltf',
     'ThePrincess.gltf', 'Chicken.gltf', 'Cat.gltf', "Dragon.gltf", "Basilisk.gltf", "Rex.gltf",
-    'Sheep.gltf', 'MissGHostFace.gltf'
+    'Sheep.gltf', 'MissGhostFace.gltf'
 ];
 
 LoadSprites = [
@@ -993,6 +993,7 @@ LoadSprites = [
     { srcName: "ObjDecals/Grate1_128.png", name: "Grate1_128" },
     { srcName: "ObjDecals/LS.png", name: "LS" },
     { srcName: "ObjDecals/MagicShrine256.png", name: "MagicShrine256" },
+
     { srcName: "ObjDecals/PrayingSkeleton10.png", name: "PrayingSkeleton10" },
     { srcName: "ObjDecals/Reaper.png", name: "Reaper" },
     { srcName: "ObjDecals/RoundGrille96.png", name: "RoundGrille96" },
@@ -1790,6 +1791,7 @@ LoadSprites = [
     { srcName: "PicDecals/ZimSalaBim2.png", name: "ZimSalaBim2" },
     { srcName: "PicDecals/ZimSalaBim200.png", name: "ZimSalaBim200" },
     { srcName: "PicDecals/ZimSalaBim201.png", name: "ZimSalaBim201" },
+
     { srcName: "PicDecals/BetrayedAlliance.png", name: "BetrayedAlliance" },
     { srcName: "PicDecals/Commando100.png", name: "Commando100" },
     { srcName: "PicDecals/Elite100.png", name: "Elite100" },

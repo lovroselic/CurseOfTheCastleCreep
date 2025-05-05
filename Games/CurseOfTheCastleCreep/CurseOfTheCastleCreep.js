@@ -8,12 +8,13 @@
 /*
       
 TODO:
-    * everything dones
+    * everything done
 known bugs: 
     * i don't do bugs
 retests:
     * 
-
+Total File Size: 164.47 MB
+Total Number of Lines: 27043
 
  */
 ////////////////////////////////////////////////////
@@ -113,7 +114,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "1.01.03",
+    VERSION: "1.02",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -144,7 +145,7 @@ const PRG = {
             $("#lib_version").html(LIB.VERSION);
             $("#webgl_version").html(WebGL.VERSION);
             $("#maptools_version").html(MAP_TOOLS.VERSION);
-
+            $("#speech_version").html(SPEECH.VERSION);
         } else {
             $('#debug').hide();
         }

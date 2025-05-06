@@ -1191,7 +1191,7 @@ class $3D_player {
         this.setR(size / 2.0);
         this.setFov();
         this.rotationResolution = 64;
-        this.setSpeed(4.0);
+        this.setSpeed(2.0);
         this.type = type;
         if (this.type) {
             for (const prop in type) {

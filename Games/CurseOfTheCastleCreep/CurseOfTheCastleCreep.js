@@ -114,7 +114,7 @@ const INI = {
     COMPLAIN_TIMEOUT: 400,
 };
 const PRG = {
-    VERSION: "1.02",
+    VERSION: "1.03",
     NAME: "The Curse Of The Castle Creep",
     YEAR: "2023, 2024",
     SG: "CCC",
@@ -137,7 +137,6 @@ const PRG = {
     },
     setup() {
         if (DEBUG.SETTING) {
-            //$('#debug').show();
             $("#engine_version").html(ENGINE.VERSION);
             $("#grid_version").html(GRID.VERSION);
             $("#maze_version").html(DUNGEON.VERSION);
@@ -1162,7 +1161,7 @@ const GAME = {
         $("#p3").prop("disabled", false);
         WebGL.CONFIG.set("first_person", true);
         HERO.player.clearCamera();
-        HERO.player.moveSpeed = 4.0;
+        HERO.player.moveSpeed = 2.75;
         WebGL.setCamera(HERO.player);
     },
     setThirdPerson() {
